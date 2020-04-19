@@ -1,0 +1,1138 @@
+﻿###########################
+# Events for Everrealm
+###########################
+
+add_namespace = everrealm
+
+country_event = { #Coup in Rudistan
+	id = everrealm.0
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.0"}
+	title = everrealm.0.t
+	desc = everrealm.0.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	trigger = {
+		date > 1936.07.01
+		tag = RUD
+	}
+
+	option = { #start civil war
+		name = everrealm.0.a
+		start_civil_war = {
+   			ruling_party = monarchism
+   			ideology = fascism
+    		capital = 426
+    		states = { 426 407 480 327 }
+		}
+		add_named_threat = { 
+    		threat = 3 
+    		name = rudistan_coup
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = middleage_tech
+					}
+				}
+				add_ideas = {
+					middleage_tech
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = RUD
+					has_government = fascism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = middleage_tech
+						}
+					}
+					add_ideas = {
+						middleage_tech
+					}
+				}
+				load_oob = RUD_fascist_cw
+				add_manpower = 10000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Coup in Khaldoun
+	id = everrealm.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.1"}
+	title = everrealm.1.t
+	desc = everrealm.1.d
+	picture = GFX_report_everrealm_palace
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1937.03.14
+		tag = KHA
+	}
+
+	option = { #start civil war
+		name = everrealm.1.a
+		start_civil_war = {
+   			ruling_party = monarchism
+   			ideology = fascism
+    		capital = 525
+    		states = { 525 523 300 279 340 313 }
+		}
+		add_named_threat = { 
+    		threat = 3 
+    		name = khaldoun_coup
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.29
+				hours = 12
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = middleage_tech
+					}
+				}
+				add_ideas = {
+					middleage_tech
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = KHA
+					has_government = fascism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = middleage_tech
+						}
+					}
+					add_ideas = {
+						middleage_tech
+					}
+				}
+				load_oob = KHA_fascist_cw
+				add_manpower = 10000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Coup in Corinthia
+	id = everrealm.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.2"}
+	title = everrealm.2.t
+	desc = everrealm.2.d
+	picture = GFX_report_everrealm_palace
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1936.04.18
+		tag = COR
+	}
+
+	option = { #start civil war
+		name = everrealm.2.a
+		start_civil_war = {
+   			ruling_party = monarchism
+   			ideology = communism
+    		capital = 568
+    		states = { 547 568 598 573 567 }
+		}
+		add_named_threat = { 
+    		threat = 3 
+    		name = corinthia_coup
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.28
+				hours = 12
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = middleage_tech
+					}
+				}
+				add_ideas = {
+					middleage_tech
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = COR
+					has_government = communism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = middleage_tech
+						}
+					}
+					add_ideas = {
+						middleage_tech
+					}
+				}
+				load_oob = COR_communists_cw
+				add_manpower = 10000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Coup in Trufflandia
+	id = everrealm.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.3"}
+	title = everrealm.3.t
+	desc = everrealm.3.d
+	picture = GFX_report_everrealm_palace
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		date > 1937.02.07
+		tag = TRU
+	}
+
+	option = { #start civil war
+		name = everrealm.3.a
+		start_civil_war = {
+   			ruling_party = monarchism
+   			ideology = communism
+    		capital = 587
+    		states = { 587 554 578 564 600 594 }
+		}
+		add_named_threat = { 
+    		threat = 3 
+    		name = trufflandia_coup
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_idea = middleage_tech
+					}
+				}
+				add_ideas = {
+					middleage_tech
+				}
+			}
+			every_country = {
+				limit = {
+					original_tag = TRU
+					has_government = communism
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_idea = middleage_tech
+						}
+					}
+					add_ideas = {
+						middleage_tech
+					}
+				}
+				load_oob = TRU_communists_cw
+				add_manpower = 10000
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_0
+					amount = 5000
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Sorcerers League is officially created
+	id = everrealm.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.4"}
+	title = everrealm.4.t
+	desc = everrealm.4.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	trigger = {
+		date > 1938.08.01
+		tag = RUD
+		KHA = {
+			has_government = fascism
+		}
+		RUD = {
+			has_government = fascism
+		}
+	}
+
+	option = { #start civil war
+		name = everrealm.4.a
+		trigger = {
+			RUD = {
+				is_in_faction = no
+			}
+		}
+		create_faction = sorcerers_league
+		add_to_faction = KHA
+	}
+
+	option = { #start civil war
+		name = everrealm.4.a
+		trigger = {
+			RUD = {
+				is_in_faction = yes
+			}
+		}
+		add_to_faction = KHA
+	}
+}
+
+country_event = { #Enchancian CW, support event triggered by focus trees
+	id = everrealm.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.5"}
+	title = everrealm.5.t
+	desc = everrealm.5.d
+	picture = GFX_report_everrealm_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = everrealm.5.a
+		custom_effect_tooltip = ROOT_helps_enc
+		trigger = {
+			ENC = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 34
+			modifier = {
+				tag = FRI
+				NOT = {
+					MAI = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+					AVA = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+				}
+				add = 67
+			}
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+					MAI = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+					AVA = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+				}
+				add = -34
+			}
+		}
+		hidden_effect = {
+			ENC = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				
+				}
+			}
+			set_country_flag = ECW_support_dunwiddie
+		}
+	}
+
+	option = {
+		name = everrealm.5.b
+		custom_effect_tooltip = ROOT_helps_en1
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 33
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_james
+					}
+					MAI = {
+						has_country_flag = ECW_support_james
+					}
+					AVA = {
+						has_country_flag = ECW_support_james
+					}
+				}
+				add = -33
+			}
+		}
+		hidden_effect = {
+			EN1 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				
+				}
+			}
+			set_country_flag = ECW_support_james
+		}
+	}
+
+	option = {
+		name = everrealm.5.c
+		custom_effect_tooltip = ROOT_helps_en2
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 33
+			modifier = {
+				tag = AVA
+				NOT = {
+					MAI = {
+						has_country_flag = ECW_support_amber
+					}
+					FRI = {
+						has_country_flag = ECW_support_amber
+					}
+				}
+				add = 67
+			}
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_amber
+					}
+					MAI = {
+						has_country_flag = ECW_support_amber
+					}
+					AVA = {
+						has_country_flag = ECW_support_amber
+					}
+				}
+				add = -33
+			}
+		}
+		hidden_effect = {
+			EN2 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				
+				}
+			}
+			set_country_flag = ECW_support_amber
+		}
+	}
+}
+
+country_event = { #Civil War in Wei-Ling
+	id = everrealm.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.10"}
+	title = everrealm.10.t
+	desc = everrealm.10.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		wei_ling_civil_war_start = yes
+	}
+
+	option = { #start civil war
+		name = everrealm.10.a
+		add_named_threat = { 
+    		threat = 5
+    		name = wei_ling_civil_war
+		}
+		WEI = {
+			declare_war_on = {
+				target = WLC
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			set_global_flag = wei_ling_civil_war_start
+		}
+	}
+}
+
+country_event = { #Enchancia offers peace talks - WEI
+	id = everrealm.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.11"}
+	title = everrealm.11.t
+	desc = everrealm.11.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Good idea
+		name = everrealm.11.a
+		WLC = {
+			country_event = {
+				id = everrealm.12
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #We will fight till death!
+		name = everrealm.11.a
+		EN1 = {
+			country_event = {
+				id = everrealm.23
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Enchancia offers peace talks - WLC
+	id = everrealm.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.12"}
+	title = everrealm.11.t
+	desc = everrealm.11.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Good idea
+		name = everrealm.11.a
+		EN1 = {
+			country_event = {
+				id = everrealm.13
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #We will fight till death!
+		name = everrealm.11.a
+		EN1 = {
+			country_event = {
+				id = everrealm.23
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Both WEI and WLC agree to peace talks
+	id = everrealm.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.13"}
+	title = everrealm.13.t
+	desc = everrealm.13.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Let's start then
+		name = everrealm.13.a
+		country_event = {
+			id = everrealm.14
+			days = 1
+		}
+	}
+}
+
+country_event = { #Enchancian peace proposal
+	id = everrealm.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.14"}
+	title = everrealm.14.t
+	desc = everrealm.14.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Huang-si river line proposal
+		name = everrealm.14.a
+		WEI = {
+			country_event = {
+				id = everrealm.15
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Status-quo proposal
+		name = everrealm.14.b
+		WEI = {
+			country_event = {
+				id = everrealm.15
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Huang-si line proposal - WEI
+	id = everrealm.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.15"}
+	title = everrealm.15.t
+	desc = everrealm.15.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #That's a good deal
+		name = everrealm.15.a
+		WLC = {
+			country_event = {
+				id = everrealm.16
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Huang-si line proposal - WLC
+	id = everrealm.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.16"}
+	title = everrealm.15.t
+	desc = everrealm.16.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #That's a good deal
+		name = everrealm.15.a
+		EN1 = {
+			country_event = {
+				id = everrealm.17
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Huang-si line proposal is accepted
+	id = everrealm.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.17"}
+	title = everrealm.17.t
+	desc = everrealm.17.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #And peace treaty is signed
+		name = everrealm.17.a
+		WEI = {
+			white_peace = {
+			    tag = WLC
+			    message = port_ludlow_peace_treaty
+			}
+		}
+		WLC = {
+			transfer_state = 326
+		}
+		FLO = {
+			give_guarantee = WLC
+		}
+	}
+}
+
+country_event = { #Status quo proposal - WEI
+	id = everrealm.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.18"}
+	title = everrealm.18.t
+	desc = everrealm.18.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We can accept it
+		name = everrealm.18.a
+		WLC = {
+			country_event = {
+				id = everrealm.19
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Status quo proposal - WLC
+	id = everrealm.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.19"}
+	title = everrealm.18.t
+	desc = everrealm.19.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We can accept it
+		name = everrealm.19.a
+		EN1 = {
+			country_event = {
+				id = everrealm.20
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+
+	option = { #Demand Xinzhuang
+		name = everrealm.19.b
+		WEI = {
+			country_event = {
+				id = everrealm.21
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = { #Status quo proposal is accepted
+	id = everrealm.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.20"}
+	title = everrealm.20.t
+	desc = everrealm.20.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #And peace treaty is signed
+		name = everrealm.17.a
+		WEI = {
+			white_peace = {
+			    tag = WLC
+			    message = port_ludlow_peace_treaty
+			}
+		}
+		FLO = {
+			give_guarantee = WLC
+		}
+	}
+}
+
+country_event = { #WLC demands Xinzhuang
+	id = everrealm.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.21"}
+	title = everrealm.21.t
+	desc = everrealm.21.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We can accept it
+		name = everrealm.21.a
+		EN1 = {
+			country_event = {
+				id = everrealm.22
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #We won't accept it!
+		name = everrealm.21.b
+		EN1 = {
+			country_event = {
+				id = everrealm.23
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #WLC and WEI agree to... Huang-si line
+	id = everrealm.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.22"}
+	title = everrealm.21.t
+	desc = everrealm.22.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #And peace treaty is signed
+		name = everrealm.17.a
+		WEI = {
+			white_peace = {
+			    tag = WLC
+			    message = port_ludlow_peace_treaty
+			}
+		}
+		WLC = {
+			transfer_state = 326
+		}
+		FLO = {
+			give_guarantee = WLC
+		}
+	}
+}
+
+country_event = { #WLC and WEI don't reach agreement
+	id = everrealm.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.23"}
+	title = everrealm.23.t
+	desc = everrealm.23.d
+	picture = GFX_report_everrealm_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #The war carries on...
+		name = everrealm.23.a
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = EN1
+				}
+				unlock_national_focus = EN1_intervene_in_the_civil_war
+			}
+		}
+	}
+}
+
+country_event = { #Avalor wants to join our faction
+	id = everrealm.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.24"}
+	title = everrealm.24.t
+	desc = everrealm.24.d
+	picture = GFX_report_everrealm_palace
+
+	is_triggered_only = yes
+
+	option = { #OK
+		name = everrealm.24.a 
+		ai_chance = {
+			factor = 85
+		}
+		add_to_faction = AVA
+		AVA = {
+			country_event = {
+				id = everrealm.25
+				days = 1
+			}
+		}
+	}
+
+	option = { #nope.
+		name = everrealm.24.b 
+		ai_chance = {
+			factor = 15
+		}
+		AVA = {
+			country_event = {
+				id = everrealm.26
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = everrealm.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.25"}
+	title = everrealm.25.t
+	desc = everrealm.25.d
+	picture = GFX_report_everrealm_palace
+
+	is_triggered_only = yes
+
+	option = { #good
+		name = everrealm.25.a
+	}
+}
+
+country_event = { #They reject
+	id = everrealm.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.26"}
+	title = everrealm.26.t
+	desc = everrealm.26.d
+	picture = GFX_report_everrealm_palace
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = everrealm.26.a
+	}
+}
+
+
+#############
+#DULOC EVENTS GO HERE
+
+country_event = { #Duloc demands referendum in Fire Kingdom
+	id = everrealm.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.6"}
+	title = everrealm.6.t
+	desc = everrealm.6.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Give in
+		name = everrealm.6.a
+		FRK = {
+			every_owned_state = {
+				add_core_of = DUL
+			}
+		}
+		DUL = {
+			annex_country = {
+				target = FRK
+				transfer_troops = yes
+			}
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = referendum_in_fire_kingdom
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+
+	option = { #Refuse
+		name = everrealm.6.b
+		DUL = {
+			declare_war_on = {
+				target = FRK
+				type = annex_everything
+			}
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = no_referendum_in_fire_kingdom
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = { #Duloc demands EverRealm Gate (Enchancia edition)
+	id = everrealm.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.7"}
+	title = everrealm.7.t
+	desc = everrealm.7.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Give in
+		name = everrealm.7.a
+		DUL = {
+			transfer_state = 330
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = everrealm_gate_transfered
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.35
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Refuse
+		name = everrealm.7.b
+		DUL = {
+			country_event = {
+				id = everrealm.8
+				days = 1
+			}
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = everrealm_gate_not_transfered
+		}
+	}
+}
+
+country_event = { #Duloc demands EverRealm Gate, but not given
+	id = everrealm.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.8"}
+	title = everrealm.8.t
+	desc = everrealm.8.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They will taste our sword!
+		name = everrealm.8.a
+		DUL = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = ENC
+					}
+				}
+				ISL = {
+					declare_war_on = {
+						target = DUL
+						type = annex_everything
+					}
+				}
+				MAR = {
+					declare_war_on = {
+						target = DUL
+						type = annex_everything
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Duloc demands EverRealm Gate (Enchancian CW edition)
+	id = everrealm.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event everrealm.9"}
+	title = everrealm.9.t
+	desc = everrealm.9.d
+	picture = GFX_report_event_german_speech
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Give in
+		name = everrealm.9.a
+		DUL = {
+			transfer_state = 330
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = everrealm_gate_transfered
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.36
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Refuse
+		name = everrealm.9.b
+		DUL = {
+			country_event = {
+				id = everrealm.8
+				days = 1
+			}
+		}
+		add_named_threat = { 
+    		threat = 5 
+    		name = everrealm_gate_not_transfered
+		}
+	}
+}

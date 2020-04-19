@@ -1,0 +1,26 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Enchancian Royal Navy"			
+		naval_base = 19
+		task_force = {				
+			name = "Southern Fleet"
+			location = 19
+			ship = { name = "King Roland I" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "King Roland II" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Queen Miranda" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Prince James" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Princess Amber" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Princess Sofia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Princess Tilly" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+		}
+		task_force = {
+			name = "Eastern Fleet"
+			location = 6280
+			ship = { name = "Ridott" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Slaton City" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Palmhurst" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+			ship = { name = "Millry" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN1 } } }
+		}
+	}
+}

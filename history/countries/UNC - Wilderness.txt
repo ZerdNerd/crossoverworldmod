@@ -1,0 +1,87 @@
+﻿capital = 55
+
+oob = "UNC_1936"
+
+# Starting tech
+set_technology = {
+}
+
+add_ideas = {
+	middleage_tech
+}
+
+set_convoys = 0
+
+set_popularities = {
+	democratic = 0
+	fascism = 0
+		
+	communism = 0
+		
+	neutrality = 100
+		
+	monarchism = 0
+}
+set_politics = {
+	ruling_party = democratic
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.85
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Wilderness"
+	desc = "POLITICS_WILDERNESS_DESC"
+	picture = "wilderness.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}

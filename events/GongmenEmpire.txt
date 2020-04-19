@@ -1,0 +1,64 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = gongmenempire
+
+country_event = { #Gongmen Empire invites us to faction
+	id = gongmenempire.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.1"}
+	title = gongmenempire.1.t
+	desc = gongmenempire.1.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #we'll join
+		name = gongmenempire.1.a
+		GON = {
+			country_event = {
+				id = gongmenempire.2
+				days = 1
+			}
+		}
+	}
+
+	option = { #No way
+		name = gongmenempire.1.b
+		GON = {
+			country_event = {
+				id = gongmenempire.3
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = gongmenempire.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.2"}
+	title = gongmenempire.2.t
+	desc = gongmenempire.2.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #great
+		name = gongmenempire.2.a
+		add_to_faction = FROM
+	}
+}
+
+country_event = { #They reject
+	id = gongmenempire.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.3"}
+	title = gongmenempire.3.t
+	desc = gongmenempire.3.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #damn
+		name = gongmenempire.3.a
+	}
+}

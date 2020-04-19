@@ -1,0 +1,2910 @@
+﻿###########################
+# Children Parliament Events
+###########################
+
+add_namespace = childrenparliament
+
+# The Original Parliament
+
+country_event = { #No session because there are no bills to be discussed
+	id = childrenparliament.0
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.0"}
+	title = childrenparliament.0.t
+	desc = childrenparliament.0.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.0.a
+		hidden_effect = {
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+	}
+}
+
+country_event = {
+	id = childrenparliament.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.1"}
+	title = childrenparliament.1.t
+	desc = childrenparliament.1.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.1.a
+		hidden_effect = {
+			set_variable = { chp_leader_icon_temp_number = 1 }
+			recalc_children_parliament_leader_icon = yes
+			set_country_flag = children_parliament
+			set_country_flag = MAI_chp_next_session_every_30_days
+			set_country_flag = MAI_chp_first_session_after_elections
+			set_variable = {
+    			var = MAI_children_parliament_party_1_popularity
+    			value = 100
+			}
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+	}
+}
+
+country_event = {
+	id = childrenparliament.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.2"}
+	title = childrenparliament.2.t
+	desc = childrenparliament.2.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.2.a
+		hidden_effect = {
+			set_variable = { chp_leader_icon_temp_number = 2 }
+			recalc_children_parliament_leader_icon = yes
+			clr_country_flag = MAI_chp_first_session_after_elections
+			set_country_flag = MAI_chp_topic_1_not_taken
+			activate_mission = MAI_next_seating_of_children_parliament
+			country_event = {
+				id = childrenparliament.3
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = {
+	id = childrenparliament.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.3"}
+	title = childrenparliament.3.t
+	desc = childrenparliament.3.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.3.a
+		hidden_effect = {
+			clr_country_flag = MAI_chp_topic_1_not_taken
+			set_country_flag = MAI_chp_topic_1_taken_option_1
+			set_country_flag = MAI_chp_rcl_proposed
+		}
+	}
+}
+
+country_event = {
+	id = childrenparliament.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.4"}
+	title = childrenparliament.4.t
+	desc = childrenparliament.4.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.4.a
+		hidden_effect = {
+			country_event = {
+				id = childrenparliament.5
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = childrenparliament.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.5"}
+	title = childrenparliament.5.t
+	desc = childrenparliament.5.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.5.a
+		add_ideas = {
+			MAI_the_great_switcheroo
+		}
+		hidden_effect = {
+			clr_country_flag = MAI_chp_topic_1_taken_option_1
+			clr_country_flag = MAI_chp_rcl_proposed
+			set_country_flag = MAI_chp_topic_1_not_taken
+			set_country_flag = MAI_chp_topic_2_not_taken
+			set_country_flag = MAI_chp_topic_3_not_taken
+			news_event = {
+				id = worldnews.16
+				days = 9
+			}
+			FRI = {
+				country_event = {
+					id = centralkingdom.29
+					days = 14
+				}
+			}
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+	}
+}
+
+country_event = { #Voting on talks with James
+	id = childrenparliament.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.6"}
+	title = childrenparliament.6.t
+	desc = childrenparliament.6.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				95 = {
+					country_event = {
+						id = childrenparliament.7
+						days = 0
+					}
+				}
+				5 = {
+					country_event = {
+						id = childrenparliament.8
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on talks with James - Yay
+	id = childrenparliament.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.7"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.7.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = talks_with_james_yay
+			clr_country_flag = MAI_talks_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_2
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_2
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_2
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on talks with James - Nay
+	id = childrenparliament.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.8"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_talks_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_2
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_2
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_2
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_2
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on adjusting the economy
+	id = childrenparliament.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.9"}
+	title = childrenparliament.9.t
+	desc = childrenparliament.9.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				95 = {
+					country_event = {
+						id = childrenparliament.10
+						days = 0
+					}
+				}
+				5 = {
+					country_event = {
+						id = childrenparliament.11
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on adjusting the economy - Yay
+	id = childrenparliament.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.10"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = adjusting_the_economy_yay
+			clr_country_flag = MAI_adjustment_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_3
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_3
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_3
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on adjusting the economy - Nay
+	id = childrenparliament.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.11"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_adjustment_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_3
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_3
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_3
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_3
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on children in army leadership
+	id = childrenparliament.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.12"}
+	title = childrenparliament.12.t
+	desc = childrenparliament.12.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				95 = {
+					country_event = {
+						id = childrenparliament.13
+						days = 0
+					}
+				}
+				5 = {
+					country_event = {
+						id = childrenparliament.14
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on children in army leadership - Yay
+	id = childrenparliament.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.13"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		add_popularity = {
+   			ideology = monarchism
+    		popularity = -0.05
+		}
+		add_popularity = {
+   			ideology = fascism
+    		popularity = 0.05
+		}
+		hidden_effect = {
+			set_country_flag = children_in_army_leadership_yay
+			clr_country_flag = MAI_army_amendment_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_4
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_4
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_4
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on children in army leadership - Nay
+	id = childrenparliament.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.14"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_army_amendment_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_4
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_4
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_4
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_4
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Free Future Party is formed
+	id = childrenparliament.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.15"}
+	title = childrenparliament.15.t
+	desc = childrenparliament.15.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.15.a
+		hidden_effect = {
+			country_event = {
+				id = childrenparliament.16
+				days = 5
+			}
+			set_country_flag = free_future_party_formed
+		}
+	}
+}
+
+country_event = { #Time for kids is formed
+	id = childrenparliament.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.16"}
+	title = childrenparliament.16.t
+	desc = childrenparliament.16.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.16.a
+		hidden_effect = {
+			country_event = {
+				id = childrenparliament.17
+				days = 5
+			}
+			set_country_flag = time_for_kids_formed
+		}
+	}
+}
+
+country_event = { #CCFRoK is formed
+	id = childrenparliament.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.17"}
+	title = childrenparliament.17.t
+	desc = childrenparliament.17.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.17.a
+		hidden_effect = {
+			set_country_flag = children_coalition_for_the_renewal_of_the_kingdom_formed
+		}
+	}
+}
+
+country_event = { #Second elections
+	id = childrenparliament.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.18"}
+	title = childrenparliament.18.t
+	desc = childrenparliament.18.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.18.a
+		custom_effect_tooltip = MAI_national_children_party_wins
+		hidden_effect = {
+			set_country_flag = national_children_party_wins
+			activate_mission = MAI_next_seating_of_children_parliament
+			set_variable = {
+    			var = MAI_children_parliament_party_1_popularity
+    			value = 53
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_2_popularity
+    			value = 23
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_3_popularity
+    			value = 16
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_4_popularity
+    			value = 8
+			}
+			set_variable = { chp_leader_icon_temp_number = 2 }
+			recalc_children_parliament_leader_icon = yes
+		}
+	}
+
+	option = {
+		name = childrenparliament.18.b
+		custom_effect_tooltip = MAI_free_future_party_wins
+		hidden_effect = {
+			set_country_flag = free_future_party_wins
+			activate_mission = MAI_next_seating_of_children_parliament
+			set_variable = {
+    			var = MAI_children_parliament_party_1_popularity
+    			value = 21
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_2_popularity
+    			value = 55
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_3_popularity
+    			value = 14
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_4_popularity
+    			value = 10
+			}
+			set_variable = { chp_leader_icon_temp_number = 3 }
+			recalc_children_parliament_leader_icon = yes
+		}
+	}
+
+	option = {
+		name = childrenparliament.18.c
+		custom_effect_tooltip = MAI_time_for_kids_wins
+		hidden_effect = {
+			set_country_flag = time_for_kids_wins
+			activate_mission = MAI_next_seating_of_children_parliament
+			set_variable = {
+    			var = MAI_children_parliament_party_1_popularity
+    			value = 19
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_2_popularity
+    			value = 15
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_3_popularity
+    			value = 51
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_4_popularity
+    			value = 15
+			}
+			set_variable = { chp_leader_icon_temp_number = 4 }
+			recalc_children_parliament_leader_icon = yes
+		}
+	}
+
+	option = {
+		name = childrenparliament.18.e
+		custom_effect_tooltip = MAI_children_coalition_for_the_renewal_of_the_kingdom_wins
+		hidden_effect = {
+			set_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+			activate_mission = MAI_next_seating_of_children_parliament
+			set_variable = {
+    			var = MAI_children_parliament_party_1_popularity
+    			value = 23
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_2_popularity
+    			value = 10
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_3_popularity
+    			value = 10
+			}
+			set_variable = {
+    			var = MAI_children_parliament_party_4_popularity
+    			value = 57
+			}
+			set_variable = { chp_leader_icon_temp_number = 5 }
+			recalc_children_parliament_leader_icon = yes
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.19"}
+	title = childrenparliament.19.t
+	desc = childrenparliament.19.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.20
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.21
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.20"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_grn_flag
+			clr_country_flag = MAI_liberation_greenland_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_5
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_5
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_5
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.21"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_liberation_greenland_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_5
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_5
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_5
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_5
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.22"}
+	title = childrenparliament.22.t
+	desc = childrenparliament.22.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.23
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.24
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.23"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_colonies_flag
+			clr_country_flag = MAI_colonization_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_6
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_6
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_6
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.24"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_colonization_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_6
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_6
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_6
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_6
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.25"}
+	title = childrenparliament.25.t
+	desc = childrenparliament.25.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.26
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.27
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.26"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_unity_flag
+			clr_country_flag = MAI_unity_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_7
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_7
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_7
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.27"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_unity_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_7
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_7
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_7
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_7
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.28"}
+	title = childrenparliament.28.t
+	desc = childrenparliament.28.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.29
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.30
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.29"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_quarrel_flag
+			clr_country_flag = MAI_quarrel_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_8
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_8
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_8
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.30"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_quarrel_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_8
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_8
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_8
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_8
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.31"}
+	title = childrenparliament.31.t
+	desc = childrenparliament.31.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.32
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.33
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.32"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_shen_flag
+			clr_country_flag = MAI_shen_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_9
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_9
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_9
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.33"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_shen_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_9
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_9
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_9
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_9
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.34"}
+	title = childrenparliament.34.t
+	desc = childrenparliament.34.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.35
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.36
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.35"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+			clr_country_flag = MAI_enchancian_freedom_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_10
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_10
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_10
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.36"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_enchancian_freedom_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_10
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_10
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_10
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_10
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.37"}
+	title = childrenparliament.37.t
+	desc = childrenparliament.37.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.38
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.39
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.38"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_khaldoun_flag
+			clr_country_flag = MAI_khaldoun_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_11
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_11
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_11
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.39"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_khaldoun_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_11
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_11
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_11
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_11
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.40"}
+	title = childrenparliament.40.t
+	desc = childrenparliament.40.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.41
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.42
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.41"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_rudistan_flag
+			clr_country_flag = MAI_rudistan_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_12
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_12
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_12
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.42"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_rudistan_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_12
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_12
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_12
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_12
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.43"}
+	title = childrenparliament.43.t
+	desc = childrenparliament.43.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.44
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.45
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.44"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_corinthia_flag
+			clr_country_flag = MAI_corinthia_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_13
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_13
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_13
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.45"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_corinthia_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_13
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_13
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_13
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_13
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #
+	id = childrenparliament.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.46"}
+	title = childrenparliament.46.t
+	desc = childrenparliament.46.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.6.a
+		hidden_effect = {
+			random_list = {
+				
+				75 = {
+					country_event = {
+						id = childrenparliament.47
+						days = 0
+					}
+				}
+				25 = {
+					country_event = {
+						id = childrenparliament.48
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Yay
+	id = childrenparliament.47
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.47"}
+	title = childrenparliament.7.t
+	desc = childrenparliament.10.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.7.a
+		hidden_effect = {
+			set_country_flag = MAI_parliament_passed_trufflandia_flag
+			clr_country_flag = MAI_trufflandia_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_14
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_14
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_14
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Voting on  - Nay
+	id = childrenparliament.48
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.48"}
+	title = childrenparliament.8.t
+	desc = childrenparliament.8.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.8.a
+		hidden_effect = {
+			clr_country_flag = MAI_trufflandia_proposed
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_1_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_1_taken_option_14
+				set_country_flag = MAI_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_2_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_2_taken_option_14
+				set_country_flag = MAI_chp_topic_2_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = MAI_chp_topic_3_taken_option_14
+				}
+				clr_country_flag = MAI_chp_topic_3_taken_option_14
+				set_country_flag = MAI_chp_topic_3_not_taken
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+###########################################################################################################################################################################################
+#
+#	EEEEEEE NN   NN  CCCCC  HH   HH   AAA   NN   NN  CCCCC  IIIII   AAA   NN   NN 
+#	EE      NNN  NN CC    C HH   HH  AAAAA  NNN  NN CC    C  III   AAAAA  NNN  NN 
+#	EEEEE   NN N NN CC      HHHHHHH AA   AA NN N NN CC       III  AA   AA NN N NN 
+#	EE      NN  NNN CC    C HH   HH AAAAAAA NN  NNN CC    C  III  AAAAAAA NN  NNN 
+#	EEEEEEE NN   NN  CCCCC  HH   HH AA   AA NN   NN  CCCCC  IIIII AA   AA NN   NN 
+#
+###########################################################################################################################################################################################
+
+country_event = { #Elections
+	id = childrenparliament.200
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.200"}
+	title = childrenparliament.200.t
+	desc = childrenparliament.200.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.200.a
+		hidden_effect = {
+			set_variable = { EN1_royalist_party_pop = random }
+			multiply_variable = { EN1_royalist_party_pop = 100 }
+			round_variable = EN1_royalist_party_pop
+			EN1_royalist_party_win = yes
+			set_country_flag = royalist_party_won
+			set_country_flag = EN1_chp_topic_1_not_taken
+			if = {
+				limit = {
+					has_country_flag = leader_sofia
+				}
+				set_global_flag = EN1_sofia_premier
+			}
+			if = {
+				limit = {
+					has_country_flag = leader_amber
+				}
+				set_global_flag = EN1_amber_premier
+			}
+		}
+	}
+
+	option = {
+		name = childrenparliament.200.b
+		hidden_effect = {
+			set_variable = { EN1_rural_party_pop = random }
+			multiply_variable = { EN1_rural_party_pop = 100 }
+			round_variable = EN1_rural_party_pop
+			EN1_rural_party_win = yes
+			set_country_flag = rural_party_won
+			set_country_flag = EN1_chp_topic_1_not_taken
+			if = {
+				limit = {
+					has_country_flag = leader_peter
+				}
+				set_global_flag = EN1_peter_premier
+			}
+			if = {
+				limit = {
+					has_country_flag = leader_heidi
+				}
+				set_global_flag = EN1_heidi_premier
+			}
+		}
+	}
+
+	option = {
+		name = childrenparliament.200.c
+		hidden_effect = {
+			set_variable = { EN1_justice_party_pop = random }
+			multiply_variable = { EN1_justice_party_pop = 100 }
+			round_variable = EN1_justice_party_pop
+			EN1_justice_party_win = yes
+			set_country_flag = justice_party_won
+			set_country_flag = EN1_chp_topic_1_not_taken
+			if = {
+				limit = {
+					has_country_flag = leader_ronja
+				}
+				set_global_flag = EN1_ronja_premier
+			}
+			if = {
+				limit = {
+					has_country_flag = leader_birk
+				}
+				set_global_flag = EN1_birk_premier
+			}
+		}
+	}
+
+	option = {
+		name = childrenparliament.200.e
+		hidden_effect = {
+			set_variable = { EN1_future_party_pop = random }
+			multiply_variable = { EN1_future_party_pop = 100 }
+			round_variable = EN1_future_party_pop
+			EN1_future_party_win = yes
+			set_country_flag = future_party_won
+			set_country_flag = EN1_chp_topic_1_not_taken
+			if = {
+				limit = {
+					has_country_flag = leader_nella
+				}
+				set_global_flag = EN1_nella_premier
+			}
+			if = {
+				limit = {
+					has_country_flag = leader_garrett
+				}
+				set_global_flag = EN1_garrett_premier
+			}
+		}
+	}
+}
+
+country_event = { #Bill proposal in ECP
+	id = childrenparliament.201
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.201"}
+	title = childrenparliament.201.t
+	desc = childrenparliament.201.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = royalist_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+					}
+				}
+				AND = {
+					has_country_flag = rural_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+					}
+				}
+				AND = {
+					has_country_flag = justice_party_won
+					OR = {
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+					}
+				}
+				AND = {
+					has_country_flag = future_party_won
+					OR = {
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+			}
+		}
+		name = childrenparliament.201.a
+		hidden_effect = {
+			country_event = {
+				id = childrenparliament.202
+				days = 0
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = royalist_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				AND = {
+					has_country_flag = rural_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				AND = {
+					has_country_flag = justice_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				AND = {
+					has_country_flag = future_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+					}
+				}
+			}
+		}
+		name = childrenparliament.201.a
+		hidden_effect = {
+			random_list = {
+				
+				50 = {
+					country_event = {
+						id = childrenparliament.202
+						days = 0
+					}
+				}
+				50 = {
+					country_event = {
+						id = childrenparliament.203
+						days = 0
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+country_event = { #Bill passed
+	id = childrenparliament.202
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.202"}
+	title = childrenparliament.202.t
+	desc = childrenparliament.202.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.202.a
+		hidden_effect = {
+			#Ruling Party Bills
+			if = {
+				limit = {
+					has_country_flag = royalist_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+					}
+				}
+				add_to_variable = { EN1_royalist_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						subtract_from_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_justice_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = rural_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+					}
+				}
+				add_to_variable = { EN1_rural_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						subtract_from_variable = { EN1_royalist_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_justice_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = justice_party_won
+					OR = {
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+					}
+				}
+				add_to_variable = { EN1_rural_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						subtract_from_variable = { EN1_royalist_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = future_party_won
+					OR = {
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				add_to_variable = { EN1_rural_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						subtract_from_variable = { EN1_royalist_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						subtract_from_variable = { EN1_justice_party_pop = 2 }
+					}
+				}
+			}
+			#Non-ruling Party Bills
+			if = {
+				limit = {
+					has_country_flag = royalist_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				subtract_from_variable = { EN1_royalist_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						add_to_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_justice_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = rural_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				subtract_from_variable = { EN1_rural_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						add_to_variable = { EN1_royalist_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_justice_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = justice_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				subtract_from_variable = { EN1_justice_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						add_to_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_royalist_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_future_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = future_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+					}
+				}
+				subtract_from_variable = { EN1_future_party_pop = 2 }
+				random_list = {
+					
+					34 = {
+						add_to_variable = { EN1_rural_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_justice_party_pop = 2 }
+					}
+					33 = {
+						add_to_variable = { EN1_royalist_party_pop = 2 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = small_businesses_reform_proposed
+				}
+				add_political_power = 100
+				clr_country_flag = small_businesses_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = school_reform_proposed
+				}
+				add_ideas = {
+					EN1_modern_school_system_bill
+				}
+				clr_country_flag = school_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = international_contacts_proposed
+				}
+				add_ideas = {
+					EN1_children_contacts_bureau_1
+				}
+				clr_country_flag = international_contacts_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = summer_trips_reform_proposed
+				}
+				add_political_power = 50
+				add_stability = 0.05
+				clr_country_flag = summer_trips_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = pardon_all_outlaws_reform_proposed
+				}
+				add_political_power = 50
+				add_stability = -0.35
+				hidden_effect = {
+					add_ideas = {
+						EN1_bandits_raging_again
+					}
+				}
+				clr_country_flag = pardon_all_outlaws_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = every_child_a_horse_proposed
+				}
+				add_ideas = {
+					EN1_every_child_a_pony_1
+				}
+				clr_country_flag = every_child_a_horse_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = local_youth_councils_reform_proposed
+				}
+				add_ideas = {
+					EN1_youth_councils_1
+				}
+				clr_country_flag = local_youth_councils_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = free_healthcare_for_children_reform_proposed
+				}
+				add_political_power = 50
+				add_stability = 0.1
+				clr_country_flag = free_healthcare_for_children_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = invite_children_from_war_zones_proposed
+				}
+				add_ideas = {
+					EN1_children_from_war_zones_1
+				}
+				clr_country_flag = invite_children_from_war_zones_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+				}
+				clr_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = reforge_old_bonds_reform_proposed
+				}
+				clr_country_flag = reforge_old_bonds_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = help_civil_war_orphans_proposed
+				}
+				clr_country_flag = help_civil_war_orphans_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+		}	
+	}
+}
+
+country_event = { #Bill rejected
+	id = childrenparliament.203
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.203"}
+	title = childrenparliament.203.t
+	desc = childrenparliament.203.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.203.a
+		hidden_effect = {
+			#Non-ruling Party Bills ONLY
+			if = {
+				limit = {
+					has_country_flag = royalist_party_won
+					OR = {
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				random_list = {
+					50 = {
+						subtract_from_variable = { EN1_royalist_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								add_to_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_justice_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+					50 = {
+						add_to_variable = { EN1_royalist_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								subtract_from_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_justice_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = rural_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				random_list = {
+					50 = {
+						subtract_from_variable = { EN1_rural_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								add_to_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_justice_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+					50 = {
+						add_to_variable = { EN1_rural_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								subtract_from_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_justice_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = justice_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+						has_country_flag = reforge_old_bonds_reform_proposed
+						has_country_flag = help_civil_war_orphans_proposed
+					}
+				}
+				random_list = {
+					50 = {
+						subtract_from_variable = { EN1_justice_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								add_to_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+					50 = {
+						add_to_variable = { EN1_justice_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								subtract_from_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_future_party_pop = 2 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = future_party_won
+					OR = {
+						has_country_flag = small_businesses_reform_proposed
+						has_country_flag = school_reform_proposed
+						has_country_flag = international_contacts_proposed
+						has_country_flag = local_youth_councils_reform_proposed
+						has_country_flag = free_healthcare_for_children_reform_proposed
+						has_country_flag = invite_children_from_war_zones_proposed
+						has_country_flag = summer_trips_reform_proposed
+						has_country_flag = pardon_all_outlaws_reform_proposed
+						has_country_flag = every_child_a_horse_proposed
+					}
+				}
+				random_list = {
+					50 = {
+						subtract_from_variable = { EN1_future_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								add_to_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								add_to_variable = { EN1_justice_party_pop = 2 }
+							}
+						}
+					}
+					50 = {
+						add_to_variable = { EN1_future_party_pop = 2 }
+						random_list = {
+							
+							34 = {
+								subtract_from_variable = { EN1_royalist_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_rural_party_pop = 2 }
+							}
+							33 = {
+								subtract_from_variable = { EN1_justice_party_pop = 2 }
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = small_businesses_reform_proposed
+				}
+				clr_country_flag = small_businesses_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+						has_country_flag = school_reform_proposed
+					}
+					clr_country_flag = school_reform_proposed
+					set_country_flag = EN1_chp_topic_1_not_taken
+				}
+			if = {
+				limit = {
+					has_country_flag = international_contacts_proposed
+				}
+				clr_country_flag = international_contacts_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = summer_trips_reform_proposed
+				}
+				clr_country_flag = summer_trips_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = pardon_all_outlaws_reform_proposed
+				}
+				clr_country_flag = pardon_all_outlaws_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = every_child_a_horse_proposed
+				}
+				clr_country_flag = every_child_a_horse_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = local_youth_councils_reform_proposed
+				}
+				clr_country_flag = local_youth_councils_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = free_healthcare_for_children_reform_proposed
+				}
+				clr_country_flag = free_healthcare_for_children_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+				}
+			if = {
+				limit = {
+					has_country_flag = invite_children_from_war_zones_proposed
+				}
+				clr_country_flag = invite_children_from_war_zones_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+				}
+				clr_country_flag = every_royal_in_enchancia_is_equal_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = reforge_old_bonds_reform_proposed
+				}
+				clr_country_flag = reforge_old_bonds_reform_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+			if = {
+				limit = {
+					has_country_flag = help_civil_war_orphans_proposed
+				}
+				clr_country_flag = help_civil_war_orphans_proposed
+				set_country_flag = EN1_chp_topic_1_not_taken
+			}
+		}
+	}
+}
+
+country_event = { #No session because there are no bills to be discussed
+	id = childrenparliament.204
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.204"}
+	title = childrenparliament.204.t
+	desc = childrenparliament.204.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.0.a
+		trigger = {
+			NOT = {
+			AND = {
+				has_decision = EN1_school_reform
+				has_decision = EN1_small_business_reform
+				has_decision = EN1_international_contacts
+				has_decision = EN1_local_youth_councils_reform
+				has_decision = EN1_free_healthcare_for_children_reform
+				has_decision = EN1_invite_children_from_war_zones
+				has_decision = EN1_summer_trips_reform
+				has_decision = EN1_pardon_all_outlaws_reform
+				has_decision = EN1_every_child_a_horse
+				has_decision = EN1_every_royal_in_enchancia_is_equal
+				has_decision = EN1_reforge_old_bonds
+				has_decision = EN1_help_civil_war_orphans
+			}
+			}
+		}
+		hidden_effect = {
+			activate_mission = EN1_next_seating_of_children_parliament
+		}
+	}
+
+	option = {
+		name = childrenparliament.204.a
+		trigger = {
+			AND = {
+				has_decision = EN1_school_reform
+				has_decision = EN1_small_business_reform
+				has_decision = EN1_international_contacts
+				has_decision = EN1_local_youth_councils_reform
+				has_decision = EN1_free_healthcare_for_children_reform
+				has_decision = EN1_invite_children_from_war_zones
+				has_decision = EN1_summer_trips_reform
+				has_decision = EN1_pardon_all_outlaws_reform
+				has_decision = EN1_every_child_a_horse
+				has_decision = EN1_every_royal_in_enchancia_is_equal
+				has_decision = EN1_reforge_old_bonds
+				has_decision = EN1_help_civil_war_orphans
+			}
+		}
+		hidden_effect = {
+			add_political_power = 50
+			hidden_effect = {
+				set_country_flag = were_done_here
+			}
+		}
+	}
+}

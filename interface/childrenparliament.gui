@@ -1,0 +1,260 @@
+@SENATE_TEXT_X = 3
+@HOUSE_TEXT_X = 212
+@HEADERS_Y = 0
+@STATUS_Y = 52
+guiTypes = {
+	containerWindowType = {
+		name = "children_parliament_container"
+		position = { x = 1035 y = 4 }
+		
+		background ={
+			name ="children_parliament_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=0 y=0 }
+			shortcut = "ctrl+k"
+		}
+		
+		instantTextBoxType = {
+			name ="children_parliament_text"
+			position = { x= 10 y = 4 }
+			font = "hoi_18mbs"
+			text = "CHILDREN_PARLIAMENT_IN_SESSION"
+			format = left
+			maxWidth = 175
+			maxHeight = 24
+			fixedsize = yes
+			
+			pdx_tooltip = "CHILDREN_PARLIAMENT_TOOLTIP"
+			pdx_tooltip_delayed = "CHILDREN_PARLIAMENT_TOOLTIP_DELAYED"
+		}
+	}
+
+	containerWindowType = {
+		name = "children_parliament_choose_leader_window"
+		position = { x = 1035 y = 100 }
+		
+		background ={
+			name ="children_parliament_bg"
+			spriteType = "GFX_generic_box"
+			position = { x=0 y=0 }
+		}
+	}
+
+	containerWindowType = {
+		name = "children_parliament_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 500 }
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_parties_support_header"
+			position = { x = 0 y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_parties_support_header"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_party_list_party_1_name"
+			position = { x = 0 y = 27 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_party_list_party_1"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_party_list_party_2_name"
+			position = { x = 0 y = 51 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_party_list_party_2"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_party_list_party_3_name"
+			position = { x = 0 y = 75 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_party_list_party_3"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+
+			pdx_tooltip = "CHILDREN_PARLIAMENT_PARTY_3_TOOLTIP"	
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_party_list_party_4_name"
+			position = { x = 0 y = 99 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_party_list_party_4"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_current_leader_header"
+			position = { x = 248 y = 0 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_current_leader_header"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "children_parliament_current_leader_icon"
+			position = {x=343 y=34}	
+			spriteType ="GFX_decision_mai_ch_par_leaders"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "leader_frame2"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 339 y = 30 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "children_parliament_current_leader_name"
+			position = { x = 321 y = 187 }
+			font = "hoi_18mbs"
+			text = "MAI_children_parliament_current_leader_name"
+			maxWidth = 155
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+
+
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_header"
+			position = { x = 3 y = 200}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_header"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_date"
+			position = { x = 3 y = 254 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_date_date"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topics_header"
+			position = { x = 0 y = 300}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_topics_header_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topic_1"
+			position = { x = 0 y = 354 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_topic_1_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topic_2"
+			position = { x = 0 y = 394 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_topic_2_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topic_3"
+			position = { x = 0 y = 434 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_topic_3_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+	}
+
+	containerWindowType = {
+		name = "children_parliament_leader_select_entry"
+		size = { width = 231 height = 74 }
+		clipping = no
+			
+		background = {
+			name = "idea_entry_bg"
+			position = { x = 3 y = 0 }
+			spriteType = "GFX_idea_entry_bg_2"
+		}
+			
+		iconType = {
+			name = "icon"
+			position = { x = 42 y = 38 }
+			spriteType = "GFX_placeholder_bordered"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "idea_traits"
+			position = { x = 53 y = 51 }
+			spriteType = "GFX_idea_traits_strip"
+			centerposition = yes
+			alwaystransparent = yes
+			frame = 1
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 66 y = 10 }
+			font = "hoi_18mbs"
+			fixedsize = yes			
+			text = "name"
+			maxWidth = 160
+			maxHeight = 18
+			format = center	
+			alwaystransparent = yes			
+		}
+		
+		gridboxtype = {
+			name = "traits_grid"
+			position = { x = 90 y = 28 }
+			size = { width = 231 height = 100%% }
+			slotsize = { width = 200 height = 15 }
+			add_horizontal = no
+			format = "UPPER_LEFT"
+		}
+		
+		instantTextboxType = {
+			name = "cost"
+			position = { x = 80 y = 47 }
+			font = "hoi_16mbs"
+			text = ""
+			maxWidth = 142
+			maxHeight = 10
+			format = right
+			alwaystransparent = yes
+		}
+	}
+}

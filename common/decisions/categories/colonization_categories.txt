@@ -1,0 +1,52 @@
+colonization_ICW_dec_category = {
+	icon = military_operation
+	allowed = {
+        original_tag = ICW
+	}
+
+    visible = {
+        has_completed_focus = ICW_begin_colonization
+    }
+	
+	priority = 50
+}
+
+colonization_FRI_dec_category = {
+	icon = military_operation
+	allowed = {
+        original_tag = FRI
+	}
+
+    visible = {
+        has_completed_focus = FRI_continue_colonization
+    }
+	
+	priority = 50
+}
+
+colonization_DUL_dec_category = {
+	icon = military_operation
+	allowed = {
+        original_tag = DUL
+	}
+
+    visible = {
+        has_completed_focus = DUL_set_foot_on_eastern_continent
+    }
+	
+	priority = 50
+}
+
+colonization_SKO_dec_category = {
+	icon = military_operation
+	allowed = {
+        original_tag = SKO
+	}
+
+    visible = {
+        has_completed_focus = SKO_controlling_the_central_seas
+        has_completed_focus = SKO_first_colony_in_the_east
+    }
+	
+	priority = 50
+}

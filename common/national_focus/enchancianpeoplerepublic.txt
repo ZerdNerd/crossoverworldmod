@@ -1,0 +1,2605 @@
+focus_tree = { 
+	id = enchancian_people_republic
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = EN4
+		} 
+	} 
+
+	focus = { 
+		id = EN4_victory_in_civil_war
+		icon = GFX_goal_support_communism
+		x = 3
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_ecw_ended
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN4_indoctrination
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_propagate_socialist_ideas
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_indoctrination
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_new_road_network
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_propagate_socialist_ideas
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_rally_support_for_communism
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_promote_world_communism
+		icon = GFX_focus_ger_great_red_menace
+		x = 2
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_rally_support_for_communism
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = 10000
+		} 
+	}
+
+	focus = { 
+		id = EN4_rebuild_the_cities
+		icon = GFX_goal_generic_construction
+		x = 2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_promote_world_communism
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			166 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			187 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_fate_of_royal_family
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = eprep.1
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_put_cedric_on_trial
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 6
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = eprep.5
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_root_out_opposition
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_fate_of_royal_family
+			focus = EN4_put_cedric_on_trial
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			if = {
+				limit = {
+					has_idea = ENC_monarchist_guerillas
+				}
+				remove_ideas = {
+					ENC_monarchist_guerillas
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_rebuilding_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 4
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_root_out_opposition
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			166 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			187 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_demand_gate
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_root_out_opposition
+		}
+		bypass = {
+			ISL = {
+				NOT = {
+					has_full_control_of_state = 330
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			ISL = {
+				country_event = {
+					id = enchancia.52
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_enchancia_under_red_banner
+		icon = GFX_focus_prc_proclaim_the_peoples_republic
+		x = 3
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_new_road_network
+		}
+		prerequisite = {
+			focus = EN4_rebuild_the_cities
+		}
+		prerequisite = {
+			focus = EN4_rebuilding_military_industry
+		}
+		prerequisite = {
+			focus = EN4_demand_gate
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			remove_ideas = {
+				ENC_aftermath_of_civil_war
+				FLO_helps_rebuild
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_modern_communism
+		icon = GFX_goal_generic_construction
+		x = 3
+		y = 5
+		cost = 30
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_enchancia_under_red_banner
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 3
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		} 
+	}
+
+
+
+	focus = { 
+		id = EN4_first_communist_convention
+		icon = GFX_focus_generic_soviet_politics
+		x = 17
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			has_completed_focus = EN4_enchancia_under_red_banner
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+			country_event = {
+				id = eprep.8
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_enchancian_socialism
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 12
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_first_communist_convention
+		}
+		mutually_exclusive = {
+			focus = EN4_more_radical_approach
+		}
+		available = {
+			always = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			set_cosmetic_tag = EPR_socialist_republic
+		} 
+	}
+
+	focus = { 
+		id = EN4_protect_the_farmers
+		icon = GFX_goal_generic_defence
+		x = 10
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_enchancian_socialism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.03
+		} 
+	}
+
+	focus = { 
+		id = EN4_reward_artisans
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_enchancian_socialism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_deal_with_aristocracy
+		icon = GFX_focus_rom_parties_end
+		x = 11
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_protect_the_farmers
+		}
+		prerequisite = {
+			focus = EN4_reward_artisans
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = -0.02
+			add_ideas = {
+				EN4_complete_equality
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_promote_industrialism
+		icon = GFX_goal_generic_consumer_goods
+		x = 14
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_enchancian_socialism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN4_promotion_of_industrialism
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_cut_the_food_prices
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 13
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_promote_industrialism
+		}
+		prerequisite = {
+			focus = EN4_reward_artisans
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_the_socialist_economy
+		icon = GFX_goal_generic_soviet_construction
+		x = 12
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_deal_with_aristocracy
+		}
+		prerequisite = {
+			focus = EN4_cut_the_food_prices
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN4_socialist_economy
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_eliminate_bandit_threat
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_enchancian_socialism focus = EN4_more_radical_approach
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			remove_ideas = {
+				ENC_bandits
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_more_radical_approach
+		icon = GFX_focus_generic_join_comintern
+		x = 22
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_first_communist_convention
+		}
+		mutually_exclusive = {
+			focus = EN4_enchancian_socialism
+		}
+		available = {
+			always = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			set_cosmetic_tag = EPR_union
+		} 
+	}
+
+	focus = { 
+		id = EN4_create_safety_bureau
+		icon = GFX_goal_generic_political_pressure
+		x = 20
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_more_radical_approach
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = {
+				EN4_enchancian_safety_bureau
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_shut_up_the_opposition
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 22
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_more_radical_approach
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN4_control_the_press
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 24
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_more_radical_approach
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN4_promote_communist_school_of_thought
+		icon = GFX_focus_generic_socialist_science
+		x = 21
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_create_safety_bureau
+		}
+		prerequisite = {
+			focus = EN4_shut_up_the_opposition
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = EN4_introduce_economic_plans
+		icon = GFX_goal_generic_soviet_construction
+		x = 23
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_control_the_press
+		}
+		prerequisite = {
+			focus = EN4_shut_up_the_opposition
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+			#unlocks decisions
+		} 
+	}
+
+	focus = { 
+		id = EN4_total_communism
+		icon = GFX_focus_generic_military_mission
+		x = 22
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_promote_communist_school_of_thought
+		}
+		prerequisite = {
+			focus = EN4_introduce_economic_plans
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.1
+			add_ideas = {
+				EN4_totalist_communism
+			}
+		} 
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = EN4_reopen_to_international_relations
+		icon = GFX_goal_generic_position_armies
+		x = 14
+		y = 6
+		cost = 7.25.2
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_ecw_ended
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_idea = ENC_aftermath_of_civil_war
+			}
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = EN4_communism_in_everrealm
+		icon = GFX_goal_generic_major_alliance
+		x = 4
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = COR
+						tag = TRU
+						tag = ZUM
+						tag = RUD
+						tag = AVA
+						tag = ISL
+						tag = MAR
+						tag = WLC
+					}
+					has_government = communism
+					exists = yes
+					NOT = {
+						has_opinion_modifier = TCWmod_generic_relations
+						has_civil_war = yes
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN4
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_maintain_the_communist_spirits
+		icon = GFX_focus_generic_little_entente
+		x = 1
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_communism_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = EN4_intervene_in_the_civil_war
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 0
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WEI_WLC_fight
+				has_global_flag = wei_ling_civil_war_start
+			}
+		}
+		bypass = {
+			WEI = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = EN4_maintain_the_communist_spirits
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_to_war = { 
+    			targeted_alliance = WLC 
+    			enemy = WEI 
+    			hostility_reason = intervention
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_help_rebuild_the_country
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			WLC = {
+				NOT = {
+					has_war_with = WEI
+				}
+			}
+			WEI = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = EN4_intervene_in_the_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+			WLC = {
+				add_political_power = 100
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_modernize_their_army
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_help_rebuild_the_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 25
+			WLC = {
+				army_experience = 25
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_the_first_communists_in_everrealm
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		bypass = {
+			COR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN4_maintain_the_communist_spirits
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			COR = {
+				add_opinion_modifier = {
+    				target = EN4
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_little_comrades_in_south
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		bypass = {
+			TRU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN4_the_first_communists_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			TRU = {
+				add_opinion_modifier = {
+    				target = EN4
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_relations_with_wei_ling_commune
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		bypass = {
+			TRU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN4_little_comrades_in_south
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			WLC = {
+				add_opinion_modifier = {
+    				target = EN4
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_expansion_of_communism_in_everrealm
+		icon = GFX_focus_ger_great_red_menace
+		x = 7
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_communism_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 10
+			navy_experience = 10
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_khaldoun
+		icon = GFX_goal_generic_major_war
+		x = 5
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_expansion_of_communism_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = KHA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_maarswik
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_expansion_of_communism_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = MAR
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_isleworth
+		icon = GFX_goal_generic_major_war
+		x = 9
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_expansion_of_communism_in_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = ISL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_corinthia
+		icon = GFX_goal_generic_major_war
+		x = 4
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_into_khaldoun
+		}
+		bypass = {
+			COR = {
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = COR
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_rudistan
+		icon = GFX_goal_generic_major_war
+		x = 6
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_into_maarswik
+		}
+		prerequisite = {
+			focus = EN4_into_khaldoun
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = RUD
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_zumaria
+		icon = GFX_goal_generic_major_war
+		x = 8
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_into_maarswik
+		}
+		prerequisite = {
+			focus = EN4_into_isleworth
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = ZUM
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_into_trufflandia
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_into_isleworth
+		}
+		bypass = {
+			TRU = {
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = TRU
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_valor
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_into_rudistan
+		}
+		prerequisite = {
+			focus = EN4_into_zumaria
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = AVA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_military_movements
+		icon = GFX_goal_generic_military_sphere
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 5
+			navy_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = EN4_prepare_to_strike_back
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 14
+		y = 8
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_military_movements
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			transfer_state = 9
+			9 = {
+				add_manpower = 7500
+				add_building_construction = { 
+					type = naval_base
+					level = 3
+					instant_build = yes 
+					province = 328
+				}
+				add_building_construction = { 
+					type = naval_base
+					level = 2
+					instant_build = yes 
+					province = 4659
+				}
+				add_building_construction = { 
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = rural
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_torch
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 12
+		y = 9
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			has_war_with = DUL
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = DUL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_overlord
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 14
+		y = 9
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = LEC
+				LEC = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = LEC
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_far_sun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 9
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = FFA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_southern_sun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 13
+		y = 10
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_operation_torch
+		}
+		prerequisite = {
+			focus = EN4_operation_overlord
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = JPN
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_operation_eastern_sun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 15
+		y = 10
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_operation_far_sun
+		}
+		prerequisite = {
+			focus = EN4_operation_overlord
+		}
+		bypass = {
+			OR = {
+				WOL = {
+					exists = no
+				}
+				has_war_with = WOL
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = WOL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_the_case_of_our_allies
+		icon = GFX_goal_generic_national_unity
+		x = 21
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN4_everrealm_communes_pact
+		icon = GFX_goal_generic_major_alliance
+		x = 19
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_the_case_of_our_allies
+		}
+		mutually_exclusive = {
+			focus = EN4_together_with_flower_hill
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_faction = everrealm_communes_pact
+		} 
+	}
+
+	focus = { 
+		id = EN4_invite_wei_ling
+		icon = GFX_goal_generic_improve_relations
+		x = 18
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_everrealm_communes_pact
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			WLC = {
+				country_event = {
+					id = eprep.6
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_invite_trufflandia
+		icon = GFX_goal_generic_improve_relations
+		x = 19
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_invite_corinthia
+		}
+		prerequisite = {
+			focus = EN4_invite_wei_ling
+		}
+		bypass = {
+			TRU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			TRU = {
+				country_event = {
+					id = eprep.6
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_invite_corinthia
+		icon = GFX_goal_generic_improve_relations
+		x = 20
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		bypass = {
+			COR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN4_everrealm_communes_pact
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			COR = {
+				country_event = {
+					id = eprep.6
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_combined_manouvers
+		icon = GFX_goal_generic_military_sphere
+		x = 19
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN4_invite_trufflandia
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 15
+			every_country = {
+				limit = {
+					is_in_faction_with = EN4
+				}
+				army_experience = 15
+				navy_experience = 15
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_together_with_flower_hill
+		icon = GFX_goal_anschluss
+		x = 23
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		available = {
+			FLO = {
+				exists = yes
+			}
+		} 
+		prerequisite = {
+			focus = EN4_the_case_of_our_allies
+		}
+		mutually_exclusive = {
+			focus = EN4_everrealm_communes_pact
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FLO = {
+				add_to_faction = EN4
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_send_them_weapons
+		icon = GFX_goal_generic_army_artillery2
+		x = 22
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_together_with_flower_hill
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FLO = {
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_1
+    				amount = 5000
+    				producer = EN4
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN4_combined_navy_manouvers
+		icon = GFX_focus_generic_navy_battleship2
+		x = 24
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN4_together_with_flower_hill
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			navy_experience = 10
+			FLO = {
+				navy_experience = 10
+			}
+		} 
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN4_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 32
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_enchancian_guns
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = EN4_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = EN4_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = EN4_enchancian_guns }
+		x = 1
+		y = 1
+		relative_position_id = EN4_enchancian_guns
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = EN4_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = EN4_artillery_research
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = EN4_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = EN4_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN4_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN4_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_workers_industries
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = EN4_enchancian_guns }
+		x = -1
+		y = 1
+		relative_position_id = EN4_enchancian_guns
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = EN4_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = EN4_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EN4_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = EN4_practice_reverse_engineering
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = EN4_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = EN4_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN4_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN4_doctrine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_workers_tactics_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = EN4_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = EN4_doctrine_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				EN4_workers_academy_of_tactics
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_enchancian_guns_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = EN4_workers_industries }
+		x = 0
+		y = 1
+		relative_position_id = EN4_workers_industries
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EN4_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN4_mechanization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = EN4_enchancian_guns_3 }
+		prerequisite = { focus = EN4_workers_tactics_academy }
+		prerequisite = { focus = EN4_armor_effort }
+		prerequisite = { focus = EN4_new_officer_corps }
+		prerequisite = { focus = EN4_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = EN4_enchancian_guns_3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN4_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 32
+		y = 12
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = EN4_naval_effort }
+		mutually_exclusive = { focus = EN4_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = EN4_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = EN4_naval_effort }
+		mutually_exclusive = { focus = EN4_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = EN4_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_workers_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EN4_flexible_navy focus = EN4_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = EN4_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = EN4_workers_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = EN4_workers_naval_academy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = EN4_flexible_navy focus = EN4_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = EN4_flexible_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = EN4_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN4_destroyer_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = EN4_large_navy focus = EN4_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = EN4_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = EN4_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = EN4_floating_airfields
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = EN4_large_navy focus = EN4_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = EN4_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = EN4_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN4_cruiser_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN4_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 32
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EN4_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = EN4_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EN4_fighter_focus }
+		prerequisite = { focus = EN4_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = EN4_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = EN4_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = EN4_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_enchancian_pilot_school
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EN4_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = EN4_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN4_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = EN4_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = EN4_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = EN4_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = EN4_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN4_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = EN4_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN4_heavy_fighter_focus }
+		prerequisite = { focus = EN4_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = EN4_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = EN4_strategic_bombing
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = EN4_heavy_fighter_focus }
+		prerequisite = { focus = EN4_CAS_effort }
+		prerequisite = { focus = EN4_enchancian_pilot_school }
+		x = 0
+		y = 1
+		relative_position_id = EN4_CAS_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN4_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = EN4_aviation_effort_2 }
+		prerequisite = { focus = EN4_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = EN4_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+}

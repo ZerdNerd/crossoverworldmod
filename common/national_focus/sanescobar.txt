@@ -1,0 +1,655 @@
+focus_tree = { 
+	id = vivasanescobar
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = SAN
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = SAN_stonoga_rejects_elections
+		icon = GFX_focus_usa_voter_registration_act
+		x = 8
+		y = 0
+		cost = 7.25
+		available_if_capitulated = no
+		available = {
+			has_country_flag = SAN_stonoga_rejected_elections
+		}
+		bypass = {
+			has_country_flag = SAN_stonoga_rejected_elections
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SAN_eliminate_the_opposition
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_stonoga_rejects_elections
+		}
+		mutually_exclusive = {
+			focus = SAN_cool_down_situation
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = SAN_never_another_spalding
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_eliminate_the_opposition
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_popularity = {
+    			ideology = communism
+    			popularity = -0.1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_eradicate_ppu
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_never_another_spalding
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = SAN_this_can_initiate_downfall_of_stonoga
+		} 
+	}
+
+	focus = { 
+		id = SAN_order_persecutions
+		icon = GFX_focus_secret_rearmament
+		x = 2
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_eliminate_the_opposition
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_stability = -0.05
+		} 
+	}
+
+	focus = { 
+		id = SAN_rally_public_opinion
+		icon = GFX_goal_generic_propaganda
+		x = 2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_order_persecutions
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SAN_unsuited_for_democracy
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 4
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_eliminate_the_opposition
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = democratic
+    			popularity = -0.1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_arrest_sznuk
+		icon = GFX_goal_generic_demand_territory
+		x = 4
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_unsuited_for_democracy
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SAN_this_will_be_very_unpopular_decision
+		} 
+	}
+
+	focus = { 
+		id = SAN_stonoga_rules_alone
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_eradicate_ppu
+		}
+		prerequisite = {
+			focus = SAN_rally_public_opinion
+		}
+		prerequisite = {
+			focus = SAN_arrest_sznuk
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 100
+			#idea
+		} 
+	}
+
+	focus = { 
+		id = SAN_cool_down_situation
+		icon = GFX_goal_generic_forceful_treaty
+		x = 14
+		y = 1
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_stonoga_rejects_elections
+		}
+		mutually_exclusive = {
+			focus = SAN_eliminate_the_opposition
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = -150
+		} 
+	}
+
+	focus = { 
+		id = SAN_negotiate_with_ppu
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 12
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_cool_down_situation
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = communism
+    			popularity = 0.1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_local_government_deal
+		icon = GFX_focus_generic_concessions
+		x = 12
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_negotiate_with_ppu
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+    			ideology = communism
+    			popularity = 0.05
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_limit_public_meetings
+		icon = GFX_goal_generic_propaganda
+		x = 14
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_cool_down_situation
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_stability = -0.1
+		} 
+	}
+
+	focus = { 
+		id = SAN_military_stands_down
+		icon = GFX_goal_generic_military_sphere
+		x = 14
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_limit_public_meetings
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SAN_negotiate_with_democrats
+		icon = GFX_goal_generic_improve_relations
+		x = 16
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_cool_down_situation
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_technology_and_research_deal
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 16
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_negotiate_with_democrats
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.05
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_senderos_agreement
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 14
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_local_government_deal
+		}
+		prerequisite = {
+			focus = SAN_military_stands_down
+		}
+		prerequisite = {
+			focus = SAN_technology_and_research_deal
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+		completion_reward = {
+			add_political_power = 50
+			#idea
+		} 
+	}
+
+	focus = { 
+		id = SAN_economy_buildup
+		icon = GFX_goal_generic_construct_civilian
+		x = 8
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		available = {
+			OR = {
+				has_completed_focus = SAN_stonoga_rules_alone
+				has_completed_focus = SAN_senderos_agreement
+			}
+		}
+		prerequisite = {
+			focus = SAN_stonoga_rejects_elections
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_giving_people_what_they_want
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 7
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_economy_buildup
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			621 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_al_pacino_factories
+		icon = GFX_goal_generic_construction
+		x = 7
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_giving_people_what_they_want
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			585 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_expanding_military_sector
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 9
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_economy_buildup
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			621 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			645 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_military_complex_frontera
+		icon = GFX_focus_generic_tank_production
+		x = 9
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_expanding_military_sector
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			667 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	###########################################################################################################################################################
+	#
+	#	EEEEEEE LL      EEEEEEE  CCCCC  TTTTTTT IIIII  OOOOO  NN   NN    PPPPPP    AAA   TTTTTTT HH   HH 
+	#	EE      LL      EE      CC    C   TTT    III  OO   OO NNN  NN    PP   PP  AAAAA    TTT   HH   HH 
+	#	EEEEE   LL      EEEEE   CC        TTT    III  OO   OO NN N NN    PPPPPP  AA   AA   TTT   HHHHHHH 
+	#	EE      LL      EE      CC    C   TTT    III  OO   OO NN  NNN    PP      AAAAAAA   TTT   HH   HH 
+	#	EEEEEEE LLLLLLL EEEEEEE  CCCCC    TTT   IIIII  OOOO0  NN   NN    PP      AA   AA   TTT   HH   HH 
+    #
+    ###########################################################################################################################################################
+
+    focus = { 
+		id = SAN_the_promised_elections
+		icon = GFX_focus_generic_elections
+		x = 30
+		y = 0
+		cost = 5
+		available_if_capitulated = no
+		available = {
+			has_country_flag = SAN_stonoga_allowed_elections
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			#event
+		} 
+	}
+
+	focus = { 
+		id = SAN_the_one_and_only
+		icon = GFX_goal_support_democracy
+		x = 22
+		y = 1
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_the_promised_elections
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAN_sznuk_won
+				has_government = democratic
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAN_sznuk_won
+				has_government = democratic
+			}
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SAN_democratization_of_public_life
+		icon = GFX_goal_generic_improve_relations
+		x = 22
+		y = 2
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_the_one_and_only
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.15
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_technocratic_university
+		icon = GFX_goal_generic_scientific_exchange
+		x = 22
+		y = 3
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_democratization_of_public_life
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_research_slot = 1
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.05
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_ppu_takes_the_reign
+		icon = GFX_goal_support_communism
+		x = 38
+		y = 1
+		cost = 5
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_the_promised_elections
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SAN_ppu_won
+				has_government = communism
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = SAN_ppu_won
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+}

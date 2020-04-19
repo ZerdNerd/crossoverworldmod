@@ -1,0 +1,574 @@
+ENC_release_EN1 = {
+	hidden_effect = {
+		EN1 = { #James supporters
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 10000
+			}
+			transfer_state = 230
+			transfer_state = 203
+			transfer_state = 242
+			transfer_state = 225
+			transfer_state = 183
+			add_state_core = 230
+			add_state_core = 203
+			add_state_core = 242
+			add_state_core = 225
+			add_state_core = 183
+			load_oob = EN1_civil_war
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+
+				fascism = 0
+	
+				communism = 0
+	
+				neutrality = 0
+		
+				monarchism = 100
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENC
+					NOT = { is_core_of = EN1 }
+					NOT = { is_claimed_by = EN1 }
+				}
+				add_claim_by = EN1
+			}
+		}
+		ENC = {
+			EN1 = {
+				transfer_technology = yes
+			}
+		}
+		ENC = {
+			if = {
+				limit = {
+					has_country_flag = king_james
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = administrative_monarchy
+					traits = {
+						#
+					}
+				}
+
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						#
+					}
+				}
+		
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						#
+					}
+				}
+			}
+		}
+	}
+}
+
+ENC_release_EN2 = {
+	hidden_effect = {
+		EN2 = { #Amber supporters
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 10000
+			}
+			transfer_state = 5
+			transfer_state = 80
+			transfer_state = 8
+			transfer_state = 98
+			transfer_state = 95
+			transfer_state = 112
+			transfer_state = 111
+			transfer_state = 115
+			transfer_state = 114
+			add_state_core = 5
+			add_state_core = 80
+			add_state_core = 8
+			add_state_core = 98
+			add_state_core = 95
+			add_state_core = 112
+			add_state_core = 111
+			add_state_core = 115
+			add_state_core = 114
+			load_oob = EN2_civil_war
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+
+				fascism = 0
+	
+				communism = 0
+	
+				neutrality = 0
+		
+				monarchism = 100
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENC
+					NOT = { is_core_of = EN2 }
+					NOT = { is_claimed_by = EN2 }
+				}
+				add_claim_by = EN2
+			}
+		}
+		ENC = {
+			EN2 = {
+				transfer_technology = yes
+			}
+		}
+		ENC = {
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = queen_amber
+						has_country_flag = queen_sofia
+					}
+				}
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = administrative_monarchy
+					traits = {
+						#
+					}
+				}
+
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+						#
+					}
+				}
+		
+				create_country_leader = {
+					name = "Miranda"
+					desc = "POLITICS_MIRANDA_DESC"
+					picture = "miranda.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						#
+					}
+				}
+			}
+		}
+	}
+}
+
+ENC_release_EN3 = {
+	hidden_effect = {
+		EN3 = { #Cedric supporters
+			add_manpower = 50000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 10000
+			}
+			transfer_state = 182
+			transfer_state = 234
+			transfer_state = 259
+			transfer_state = 174
+			transfer_state = 179
+			add_state_core = 182
+			add_state_core = 234
+			add_state_core = 259
+			add_state_core = 174
+			add_state_core = 179
+			load_oob = EN3_civil_war
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+
+				fascism = 100
+	
+				communism = 0
+	
+				neutrality = 0
+		
+				monarchism = 0
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Royal Infantry Division"
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENC
+					NOT = { is_core_of = EN3 }
+					NOT = { is_claimed_by = EN3 }
+				}
+				add_claim_by = EN3
+			}
+		}
+		ENC = {
+			EN3 = {
+				transfer_technology = yes
+			}
+			add_manpower = 50000
+		}
+	}
+}
+
+ENC_release_EN4 = {
+	hidden_effect = {
+		EN4 = { #Artisans, vel Workers vel Enchancian People's Republic
+			add_manpower = 75000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 15000
+			}
+			transfer_state = 124
+			transfer_state = 141
+			transfer_state = 151
+			transfer_state = 104
+			transfer_state = 156
+			add_state_core = 124
+			add_state_core = 141
+			add_state_core = 151
+			add_state_core = 156
+			add_state_core = 104
+			load_oob = EN4_civil_war
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+
+				fascism = 0
+	
+				communism = 100
+	
+				neutrality = 0
+		
+				monarchism = 0
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Royal Infantry Division"
+			}
+			every_state = {
+				limit = {
+					is_core_of = ENC
+					NOT = { is_core_of = EN4 }
+					NOT = { is_claimed_by = EN4 }
+				}
+				add_claim_by = EN4
+			}
+		}
+		ENC = {
+			EN4 = {
+				transfer_technology = yes
+			}
+		}
+	}
+}
+
+ECW_end_capital = {
+	hidden_effect = {
+		if = {
+			limit = {
+				ROOT = {
+					187 = {
+						is_capital = no
+					}
+				}
+			}
+			set_capital = 187
+		}
+	}
+}
+ECW_remove_other_cores = {
+	hidden_effect = {
+		if = {
+			limit = {
+				is_core_of = EN1
+				ROOT = { NOT = { tag = EN1 } }
+			}
+			remove_core_of = EN1
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN1
+				ROOT = { NOT = { tag = EN1 } }
+			}
+			remove_claim_by = EN1
+		}
+		if = {
+			limit = {
+				is_core_of = EN2
+				ROOT = { NOT = { tag = EN2 } }
+			}
+			remove_core_of = EN2
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN2
+				ROOT = { NOT = { tag = EN2 } }
+			}
+			remove_claim_by = EN2
+		}
+		if = {
+			limit = {
+				is_core_of = EN3
+				ROOT = { NOT = { tag = EN3 } }
+			}
+			remove_core_of = EN3
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN3
+				ROOT = { NOT = { tag = EN3 } }
+			}
+			remove_claim_by = EN3
+		}
+		if = {
+			limit = {
+				is_core_of = EN4
+				ROOT = { NOT = { tag = EN4 } }
+			}
+			remove_core_of = EN4
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN4
+				ROOT = { NOT = { tag = EN4 } }
+			}
+			remove_claim_by = EN4
+		}
+
+	}
+}
+
+ECW_add_winner_cores = {
+	hidden_effect = {
+		if = {
+			limit = {
+				ROOT = { tag = EN1 }
+				is_claimed_by = EN1
+			}
+			add_core_of = EN1
+		}
+		if = {
+			limit = {
+				ROOT = { tag = EN2 }
+				is_claimed_by = EN2
+			}
+			add_core_of = EN2
+		}
+		if = {
+			limit = {
+				ROOT = { tag = EN3 }
+				is_claimed_by = EN3
+			}
+			add_core_of = EN3
+		}
+		if = {
+			limit = {
+				ROOT = { tag = EN4 }
+				is_claimed_by = EN4
+			}
+			add_core_of = EN4
+		}
+	}
+}
+
+ECW_gate_to_everrealm_core_switch = {
+	hidden_effect = {
+		if = {
+			limit = {
+				is_core_of = EN1
+				EN1 = {
+					exists = no
+				}
+			}
+			remove_core_of = EN1
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN1
+				EN1 = {
+					exists = no
+				}
+			}
+			remove_claim_by = EN1
+		}
+		if = {
+			limit = {
+				is_core_of = EN2
+				EN2 = {
+					exists = no
+				}
+			}
+			remove_core_of = EN2
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN2
+				EN2 = {
+					exists = no
+				}
+			}
+			remove_claim_by = EN2
+		}
+		if = {
+			limit = {
+				is_core_of = EN3
+				EN3 = {
+					exists = no
+				}
+			}
+			remove_core_of = EN3
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN3
+				EN3 = {
+					exists = no
+				}
+			}
+			remove_claim_by = EN3
+		}
+		if = {
+			limit = {
+				is_core_of = EN4
+				EN4 = {
+					exists = no
+				}
+			}
+			remove_core_of = EN4
+		}
+		if = {
+			limit = {
+				is_claimed_by = EN4
+				EN4 = {
+					exists = no
+				}
+			}
+			remove_claim_by = EN4
+		}
+		if = {
+			limit = {
+				EN1 = {
+					exists = yes
+				}
+				is_claimed_by = EN1
+			}
+			add_core_of = EN1
+		}
+		if = {
+			limit = {
+				EN2 = {
+					exists = yes
+				}
+				is_claimed_by = EN2
+			}
+			add_core_of = EN2
+		}
+		if = {
+			limit = {
+				EN3 = {
+					exists = yes
+				}
+				is_claimed_by = EN3
+			}
+			add_core_of = EN3
+		}
+		if = {
+			limit = {
+				EN4 = {
+					exists = yes
+				}
+				is_claimed_by = EN4
+			}
+			add_core_of = EN4
+		}
+	}
+}
+
+wei_ling_civil_war_start = {
+	hidden_effect = {
+		WLC = { #Wei-Ling Commune rises
+			add_manpower = 150000
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 45000
+			}
+			transfer_state = 287
+			transfer_state = 278
+			transfer_state = 303
+			transfer_state = 335
+			transfer_state = 352
+			transfer_state = 349
+			transfer_state = 339
+			transfer_state = 290
+			transfer_state = 350
+			transfer_state = 363
+			transfer_state = 420
+			load_oob = EN4_civil_war
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+
+				fascism = 0
+	
+				communism = 100
+	
+				neutrality = 0
+		
+				monarchism = 0
+			}
+			every_state = {
+				limit = {
+					is_core_of = WEI
+					NOT = { is_core_of = WLC }
+				}
+				add_core_of = WLC
+			}
+		}
+		WEI = {
+			WLC = {
+				transfer_technology = yes
+			}
+		}
+	}
+}

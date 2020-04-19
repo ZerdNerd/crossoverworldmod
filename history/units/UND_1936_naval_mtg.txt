@@ -1,0 +1,31 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Royal Navy"			
+		naval_base = 7988
+		task_force = {				
+			name = "Western Fleet"
+			location = 7988	
+			ship = { name = "Asgore Dreemur" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }			
+			ship = { name = "Toriel Dreemur" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Undyne the Undying" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Papyrus" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Sans" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Mettaton" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "W.D. Gaster" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+		}
+		task_force = {				
+			name = "Eastern Fleet"
+			location = 7230	
+			ship = { name = "New Home" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }			
+			ship = { name = "Ruins" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Snowdin Forest" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Snowdin Town" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Core" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Waterfall" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Hotland" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Royal Scientist Alphys" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+			ship = { name = "Asriel Dreemur" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = UND } } }
+		}
+	}
+}

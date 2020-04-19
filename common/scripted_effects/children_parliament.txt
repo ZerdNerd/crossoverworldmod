@@ -1,0 +1,1073 @@
+recalc_children_parliament_leader_icon = {
+	set_variable = { current_children_parliament_leader_icon_frame = chp_leader_icon_temp_number }
+}
+
+chp_next_session_date = {
+	set_variable = { MAI_next_chp_session = 0 }
+}
+
+recalc_en1_children_parliament_leader_icon_party_1 = {
+	set_variable = { current_en1_children_parliament_leader_icon_party_1_frame = en1_chp_leader_icon_party_1_temp_number }
+}
+
+recalc_en1_children_parliament_leader_icon_party_2 = {
+	set_variable = { current_en1_children_parliament_leader_icon_party_2_frame = en1_chp_leader_icon_party_2_temp_number }
+}
+
+recalc_en1_children_parliament_leader_icon_party_3 = {
+	set_variable = { current_en1_children_parliament_leader_icon_party_3_frame = en1_chp_leader_icon_party_3_temp_number }
+}
+
+recalc_en1_children_parliament_leader_icon_party_4 = {
+	set_variable = { current_en1_children_parliament_leader_icon_party_4_frame = en1_chp_leader_icon_party_4_temp_number }
+}
+
+EN1_royalist_party_win = {
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_royalist_party_pop
+				value = 9
+   				compare = less_than_or_equals
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 50 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 10
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 19
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 29
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 30
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 39
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 40
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 49
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 50
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 59
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_royalist_party_pop = 0 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 60
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 69
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_royalist_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 70
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 79
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_royalist_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 80
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 89
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_royalist_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 90
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_royalist_party_pop
+					value = 99
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_royalist_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = EN1_royalist_party_pop
+				value = 100
+				compare = equals
+			}
+		}
+		subtract_from_variable = { EN1_royalist_party_pop = 50 }
+	}
+	set_variable = { EN1_remaining_seats_to_distribute = 100 }
+	subtract_from_variable = { EN1_remaining_seats_to_distribute = EN1_royalist_party_pop }
+	set_variable = { EN1_which_opposing_party_gets_most_seats = random }
+	multiply_variable = { EN1_which_opposing_party_gets_most_seats = 100 }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 33
+   				compare = less_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_rural_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 34
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 66
+					compare = less_than_or_equals
+				}
+			}
+		}
+		set_variable = { EN1_opppsing_justice_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 67
+   				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_future_gets_most_seats = 1 }
+	}
+	clear_variable = EN1_which_opposing_party_gets_most_seats
+	divide_variable = { EN1_remaining_seats_to_distribute = 4 }
+	set_variable = { EN1_dominating_opposing_party = 2 }
+	multiply_variable = { EN1_dominating_opposing_party = EN1_remaining_seats_to_distribute }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_rural_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_rural_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_justice_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_justice_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_future_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_future_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	clear_variable = EN1_remaining_seats_to_distribute
+	clear_variable = EN1_dominating_opposing_party
+	clear_variable = EN1_opppsing_rural_gets_most_seats
+	clear_variable = EN1_opppsing_justice_gets_most_seats
+	clear_variable = EN1_opppsing_future_gets_most_seats
+}
+
+EN1_rural_party_win = {
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_rural_party_pop
+				value = 9
+   				compare = less_than_or_equals
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 50 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 10
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 19
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 29
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 30
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 39
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 40
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 49
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 50
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 59
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_rural_party_pop = 0 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 60
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 69
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_rural_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 70
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 79
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_rural_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 80
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 89
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_rural_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 90
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_rural_party_pop
+					value = 99
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_rural_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = EN1_rural_party_pop
+				value = 100
+				compare = equals
+			}
+		}
+		subtract_from_variable = { EN1_rural_party_pop = 50 }
+	}
+	set_variable = { EN1_remaining_seats_to_distribute = 100 }
+	subtract_from_variable = { EN1_remaining_seats_to_distribute = EN1_rural_party_pop }
+	set_variable = { EN1_which_opposing_party_gets_most_seats = random }
+	multiply_variable = { EN1_which_opposing_party_gets_most_seats = 100 }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 33
+   				compare = less_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_royalist_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 34
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 66
+					compare = less_than_or_equals
+				}
+			}
+		}
+		set_variable = { EN1_opppsing_justice_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 67
+   				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_future_gets_most_seats = 1 }
+	}
+	clear_variable = EN1_which_opposing_party_gets_most_seats
+	divide_variable = { EN1_remaining_seats_to_distribute = 4 }
+	set_variable = { EN1_dominating_opposing_party = 2 }
+	multiply_variable = { EN1_dominating_opposing_party = EN1_remaining_seats_to_distribute }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_royalist_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_royalist_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_justice_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_justice_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_future_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_future_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	clear_variable = EN1_remaining_seats_to_distribute
+	clear_variable = EN1_dominating_opposing_party
+	clear_variable = EN1_opppsing_royalist_gets_most_seats
+	clear_variable = EN1_opppsing_justice_gets_most_seats
+	clear_variable = EN1_opppsing_future_gets_most_seats
+}
+
+EN1_justice_party_win = {
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_justice_party_pop
+				value = 9
+   				compare = less_than_or_equals
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 50 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 10
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 19
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 29
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 30
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 39
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 40
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 49
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 50
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 59
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_justice_party_pop = 0 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 60
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 69
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_justice_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 70
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 79
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_justice_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 80
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 89
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_justice_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 90
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_justice_party_pop
+					value = 99
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_justice_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = EN1_justice_party_pop
+				value = 100
+				compare = equals
+			}
+		}
+		subtract_from_variable = { EN1_justice_party_pop = 50 }
+	}
+
+	set_variable = { EN1_remaining_seats_to_distribute = 100 }
+	subtract_from_variable = { EN1_remaining_seats_to_distribute = EN1_justice_party_pop }
+	set_variable = { EN1_which_opposing_party_gets_most_seats = random }
+	multiply_variable = { EN1_which_opposing_party_gets_most_seats = 100 }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 33
+   				compare = less_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_royalist_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 34
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 66
+					compare = less_than_or_equals
+				}
+			}
+		}
+		set_variable = { EN1_opppsing_rural_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 67
+   				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_future_gets_most_seats = 1 }
+	}
+	clear_variable = EN1_which_opposing_party_gets_most_seats
+	divide_variable = { EN1_remaining_seats_to_distribute = 4 }
+	set_variable = { EN1_dominating_opposing_party = 2 }
+	multiply_variable = { EN1_dominating_opposing_party = EN1_remaining_seats_to_distribute }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_royalist_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_royalist_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_rural_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_rural_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_future_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_future_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_future_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	clear_variable = EN1_remaining_seats_to_distribute
+	clear_variable = EN1_dominating_opposing_party
+	clear_variable = EN1_opppsing_royalist_gets_most_seats
+	clear_variable = EN1_opppsing_rural_gets_most_seats
+	clear_variable = EN1_opppsing_future_gets_most_seats
+}
+
+EN1_future_party_win = {
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_future_party_pop
+				value = 9
+   				compare = less_than_or_equals
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 50 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 10
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 19
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 20
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 29
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 30
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 39
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 40
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 49
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 50
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 59
+					compare = less_than_or_equals
+				}
+			}
+		}
+		add_to_variable = { EN1_future_party_pop = 0 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 60
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 69
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_future_party_pop = 10 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 70
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 79
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_future_party_pop = 20 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 80
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 89
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_future_party_pop = 30 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 90
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_future_party_pop
+					value = 99
+					compare = less_than_or_equals
+				}
+			}
+		}
+		subtract_from_variable = { EN1_future_party_pop = 40 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+				var = EN1_future_party_pop
+				value = 100
+				compare = equals
+			}
+		}
+		subtract_from_variable = { EN1_future_party_pop = 50 }
+	}
+
+	set_variable = { EN1_remaining_seats_to_distribute = 100 }
+	subtract_from_variable = { EN1_remaining_seats_to_distribute = EN1_future_party_pop }
+	set_variable = { EN1_which_opposing_party_gets_most_seats = random }
+	multiply_variable = { EN1_which_opposing_party_gets_most_seats = 100 }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 33
+   				compare = less_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_royalist_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 34
+					compare = greater_than_or_equals
+				}
+				check_variable = {
+					var = EN1_which_opposing_party_gets_most_seats
+					value = 66
+					compare = less_than_or_equals
+				}
+			}
+		}
+		set_variable = { EN1_opppsing_rural_gets_most_seats = 1 }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_which_opposing_party_gets_most_seats
+				value = 67
+   				compare = greater_than_or_equals
+			}
+		}
+		set_variable = { EN1_opppsing_justice_gets_most_seats = 1 }
+	}
+	clear_variable = EN1_which_opposing_party_gets_most_seats
+	divide_variable = { EN1_remaining_seats_to_distribute = 4 }
+	set_variable = { EN1_dominating_opposing_party = 2 }
+	multiply_variable = { EN1_dominating_opposing_party = EN1_remaining_seats_to_distribute }
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_royalist_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_royalist_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_rural_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_rural_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_justice_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	if = {
+		limit = {
+			check_variable = {
+   				var = EN1_opppsing_justice_gets_most_seats
+				value = 1
+   				compare = equals
+			}
+		}
+		set_variable = { EN1_justice_party_pop = EN1_dominating_opposing_party }
+		set_variable = { EN1_rural_party_pop = EN1_remaining_seats_to_distribute }
+		set_variable = { EN1_royalist_party_pop = EN1_remaining_seats_to_distribute }
+	}
+	clear_variable = EN1_remaining_seats_to_distribute
+	clear_variable = EN1_dominating_opposing_party
+	clear_variable = EN1_opppsing_royalist_gets_most_seats
+	clear_variable = EN1_opppsing_rural_gets_most_seats
+	clear_variable = EN1_opppsing_justice_gets_most_seats
+}

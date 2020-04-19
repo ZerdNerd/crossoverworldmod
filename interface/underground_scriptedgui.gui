@@ -1,0 +1,813 @@
+guiTypes = {
+  containerWindowType = {
+    name = "underground_event_1_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_1_window_background"
+      spriteType = "GFX_underground_event_bg1"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_1_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_1_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_1a_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_1a_window_background"
+      spriteType = "GFX_underground_event_bg1"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_1a_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1a_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1a_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1a_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1a_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1a_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_1a_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_1b_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_1b_window_background"
+      spriteType = "GFX_underground_event_bg1"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_1b_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1b_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1b_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1b_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_1b_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_1b_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_1b_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_2_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_2_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_2_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_2_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_2_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_2_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_2a_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_2a_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_2a_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2a_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_2a_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2a_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_2a_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_2a_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_2a_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_3_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_3_window_background"
+      spriteType = "GFX_underground_event_bg3"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_3_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_3_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_3_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_3_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_3_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_3_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_3_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = {
+    name = "underground_event_4_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_4_window_background"
+      spriteType = "GFX_underground_event_bg4"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_4_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_4_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_4_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_4_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_4_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_4_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_4_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #...
+    name = "underground_event_5a_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_5a_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_5a_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_5_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_5a_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_5_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_5a_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_5_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_5a_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #so youre still going to do this?
+    name = "underground_event_6a_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_6a_window_background"
+      spriteType = "GFX_underground_event_bg4"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_6a_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_6_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_6a_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_6_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_6a_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_6_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_6a_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #well, you don't give me much choice.
+    name = "underground_event_7a_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_7a_window_background"
+      spriteType = "GFX_underground_event_bg1"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_7a_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_7_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_7a_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_7_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_7a_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_7_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_7a_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #...
+    name = "underground_event_8_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_8_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_8_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_8_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_8_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_8_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_8_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_8_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_8_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #its a beautiful day outside...
+    name = "underground_event_9_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_9_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_9_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_9_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_9_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_9_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_9_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_9_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_9_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #and judging by that expression...
+    name = "underground_event_10_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_10_window_background"
+      spriteType = "GFX_underground_event_bg2"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_10_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_10_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_10_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_10_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_10_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_10_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_10_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+
+  containerWindowType = { #you already know the rest.
+    name = "underground_event_11_window"
+    position = { x = -18% y = -30% }
+    size = { width = 578 height = 152 }
+    orientation = CENTER_DOWN
+    
+    fade_time = 300
+    fade_type = linear
+    moveable = no
+    click_to_front = yes
+    
+    background = {
+      name = "underground_event_11_window_background"
+      spriteType = "GFX_underground_event_bg3"
+    }
+    
+    instantTextBoxType = {
+      name = "underground_event_11_textline_1"
+      position = { x = 144 y = 30 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_11_LINE_1]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_11_textline_2"
+      position = { x = 164 y = 66 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_11_LINE_2]"  
+      format = left
+    }
+
+    instantTextBoxType = {
+      name = "underground_event_11_textline_3"
+      position = { x = 164 y = 100 }
+      font = "comicsans"
+      maxWidth = 370
+      maxHeight = 20
+      text = "[UNDERGROUND_EVENT_11_LINE_3]"  
+      format = left
+    }
+    
+    buttonType = {
+      name = "underground_event_11_close_button"
+      position = { x = 31 y = 110 }
+      spriteType = "GFX_sort_button_83x29"
+      frame = 1
+      font = "hoi_18mbs"
+      text = ">"
+      format = center
+      shortcut = "ESCAPE"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+on_actions = {
+
+	on_startup = {
+		effect = {
+			every_country = {
+				limit = { 
+                    tag = GRN
+                }
+                set_variable = { dragon_counter = 0.001 }
+                set_variable = { dragon_counter_rate = 0.000 }
+            }
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = { 
+                    has_country_flag = dragon_immigration
+                }
+                
+                add_to_variable = { dragon_counter = dragon_counter_rate }
+			}
+		}
+	}
+}

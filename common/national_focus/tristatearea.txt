@@ -1,0 +1,2410 @@
+focus_tree = { 
+	id = danville
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = TSA 
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = TSA_fourth_industrial_programme
+		icon = GFX_goal_generic_production
+		x = 6
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		} 
+	} 
+
+	focus = { 
+		id = TSA_new_weapons_in_rosston
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_fourth_industrial_programme
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			680 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_rosston_cars_factory
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 7
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_fourth_industrial_programme
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			680 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_belville_complex
+		icon = GFX_goal_generic_construction
+		x = 6
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_new_weapons_in_rosston
+		}
+		prerequisite = {
+			focus = TSA_rosston_cars_factory
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			737 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_elections_of_1936
+		icon = GFX_focus_generic_elections
+		x = 6
+		y = 3
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_belville_complex
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			country_event = {
+				id = danville.6
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_tristate_dream_goes_on
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 3
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_elections_of_1936
+		}
+
+		mutually_exclusive = {
+			focus = TSA_heinz_becomes_president
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TSA_roger_wins
+				has_country_flag = TSA_roger_won_1936
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = TSA_roger_wins
+				has_country_flag = TSA_roger_won_1936
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TSA_expressway_to_western_border
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_tristate_dream_goes_on
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			724 = {
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			742 = {
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			709 = {
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			708 = {
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_dockyards_in_the_south
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_expressway_to_western_border
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			742 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			737 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_modernization_of_danville_subway
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_tristate_dream_goes_on
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			698 = {
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_modernization_of_danville_port
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_modernization_of_danville_subway
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			698 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = naval_base
+					level = 2
+					instant_build = yes 
+					province = 9439
+				}
+				add_building_construction= { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_new_cities
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 5
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_tristate_dream_goes_on
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			680 = {
+				set_state_category = city
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			737 = {
+				set_state_category = city
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			677 = {
+				set_state_category = town
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_more_food_factories
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 5
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_new_cities
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			680 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2
+					instant_build = yes 
+				}
+			}
+			737 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2
+					instant_build = yes 
+				}
+			}
+			677 = {
+				set_state_category = town
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_heinz_becomes_president
+		icon = GFX_goal_support_fascism
+		x = 9
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_elections_of_1936
+		}
+
+		mutually_exclusive = {
+			focus = TSA_tristate_dream_goes_on
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TSA_heinz_wins
+				has_country_flag = TSA_heinz_won_1936
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = TSA_heinz_wins
+				has_country_flag = TSA_heinz_won_1936
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TSA_express_militarization
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_heinz_becomes_president
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			724 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			742 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_doofwagen
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 7
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_express_militarization
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			677 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			709 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_power_on_the_seas
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 9
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_heinz_becomes_president
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			724 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			698 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = naval_base
+					level = 2
+					instant_build = yes 
+					province = 9439
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_fortify_the_channel
+		icon = GFX_goal_generic_construct_military
+		x = 9
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_power_on_the_seas
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			761 = {
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 9827
+				}
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 5128
+				}
+			}
+			742 = {
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 2797
+				}
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 4494
+				}
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 2225
+				}
+			}
+			698 = {
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 9439 
+				}
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 2623 
+				}
+				add_building_construction= { 
+					type = coastal_bunker
+					level = 2
+					instant_build = yes
+					province = 9486 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_establish_doofjungend
+		icon = GFX_focus_generic_military_mission
+		x = 11
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_heinz_becomes_president
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_political_power = -100
+			add_ideas = {
+				TSA_doofjungend
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_enforce_loyalty
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_establish_doofjungend
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_political_power = -50
+			hidden_effect = {
+				country_event = {
+					id = danville.1
+					days = 1
+				}
+			}
+		} 
+	}
+
+	################################################################################################################################################################
+	# 	DDD   OOO   OOO  FFFF  AA  N   N III  AA      PPPP   AA  TTTTTT H  H 
+	# 	D  D O   O O   O F    A  A NN  N  I  A  A     P   P A  A   TT   H  H 
+	# 	D  D O   O O   O FFF  AAAA N N N  I  AAAA     PPPP  AAAA   TT   HHHH 
+	# 	D  D O   O O   O F    A  A N  NN  I  A  A     P     A  A   TT   H  H 
+	# 	DDD   OOO   OOO  F    A  A N   N III A  A     P     A  A   TT   H  H 
+	################################################################################################################################################################
+
+	focus = { 
+		id = TSA_proclaim_doofania
+		icon = GFX_focus_ger_reichskommisariats
+		x = 22
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = TSA_OWCA_disloyal
+					has_country_flag = OWCA_disloyal
+				}
+				custom_trigger_tooltip = {
+					tooltip = TSA_OWCA_pacified
+					has_country_flag = OWCA_pacified
+					has_war = no
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_political_power = 100
+			set_cosmetic_tag = DOF
+			if = {
+				limit = {
+					has_country_flag = OWCA_disloyal
+				}
+				hidden_effect = {
+					country_event = {
+						id = danville.5
+						days = 3
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_westward_expansion
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			DCB = {
+				every_owned_state = {
+					add_claim_by = TSA
+				}
+			}
+			679 = {
+				add_core_of = TSA
+			}
+			711 = {
+				add_core_of = TSA
+			}
+			566 = {
+				add_claim_by = TSA
+			}
+			612 = {
+				add_claim_by = TSA
+			}
+			656 = {
+				add_claim_by = TSA
+			}
+			681 = {
+				add_claim_by = TSA
+			}
+			719 = {
+				add_claim_by = TSA
+			}
+			748 = {
+				add_claim_by = TSA
+			}
+			763 = {
+				add_claim_by = TSA
+			}
+			758 = {
+				add_claim_by = TSA
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_operation_ente
+		icon = GFX_goal_generic_major_war
+		x = 16
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_westward_expansion
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+				target = DCB
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_demand_border_strip_from_vineshroom
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_operation_ente
+		}
+
+		mutually_exclusive = {
+			focus = TSA_maintain_good_relations_with_vineshroom
+		}
+
+		available = {
+			has_war = no
+			VIS = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			VIS = {
+				country_event = {
+					id = danville.11
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_maintain_good_relations_with_vineshroom
+		icon = GFX_goal_generic_improve_relations
+		x = 17
+		y = 3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_operation_ente
+		}
+
+		mutually_exclusive = {
+			focus = TSA_demand_border_strip_from_vineshroom
+		}
+
+		available = {
+			has_war = no
+			VIS = {
+				has_government = fascism
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = VIS
+    			modifier = TCWmod_generic_relations
+			}
+			VIS = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_demand_border_strip_from_spalding
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 4
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_demand_border_strip_from_vineshroom
+			focus = TSA_maintain_good_relations_with_vineshroom
+		}
+
+		mutually_exclusive = {
+			focus = TSA_maintain_good_relations_with_spalding
+		}
+
+		available = {
+			has_war = no
+			SLD = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			SLD = {
+				country_event = {
+					id = danville.14
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_maintain_good_relations_with_spalding
+		icon = GFX_goal_generic_improve_relations
+		x = 17
+		y = 4
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_demand_border_strip_from_vineshroom
+			focus = TSA_maintain_good_relations_with_vineshroom
+		}
+
+		mutually_exclusive = {
+			focus = TSA_demand_border_strip_from_spalding
+		}
+
+		available = {
+			has_war = no
+			SLD = {
+				has_government = fascism
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = SLD
+    			modifier = TCWmod_generic_relations
+			}
+			SLD = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_demand_shore_from_friedewalt
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_demand_border_strip_from_spalding
+			focus = TSA_maintain_good_relations_with_spalding
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			FRI = {
+				country_event = {
+					id = danville.17
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_eastward_expansion
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 21
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			735 = {
+				add_core_of = TSA
+			}
+			753 = {
+				add_core_of = TSA
+			}
+			701 = {
+				add_core_of = TSA
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_eastern_belville
+		icon = GFX_goal_generic_position_armies
+		x = 21
+		y = 2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_eastward_expansion
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			MOO = {
+				country_event = {
+					id = danville.20
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_moomins_border_strip
+		icon = GFX_goal_demand_sudetenland
+		x = 21
+		y = 3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_eastern_belville
+		}
+
+		bypass = {
+			MOO = {
+				exists = no
+			}
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			MOO = {
+				country_event = {
+					id = danville.23
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_fate_of_moomin_republic
+		icon = GFX_goal_generic_political_pressure
+		x = 21
+		y = 4
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_moomins_border_strip
+		}
+
+		bypass = {
+			MOO = {
+				exists = no
+			}
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			MOO = {
+				country_event = {
+					id = danville.29
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_pact_with_humsin
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 20
+		y = 5
+		cost = 3
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_fate_of_moomin_republic
+		}
+
+		mutually_exclusive = {
+			focus = TSA_conquer_alone
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			base = 5
+			modifier = {
+				is_in_faction_with = DES
+				add = 95
+			}
+		}
+
+		completion_reward = { 
+			DES = {
+				country_event = {
+					id = danville.32
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_conquer_alone
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_fate_of_moomin_republic
+		}
+
+		mutually_exclusive = {
+			focus = TSA_pact_with_humsin
+		}
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			BRO = {
+				every_owned_state = {
+					add_claim_by = TSA
+				}
+			}
+			GRY = {
+				every_owned_state = {
+					add_claim_by = TSA
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_join_sand_pact
+		icon = GFX_goal_generic_major_alliance
+		x = 24
+		y = 1
+		cost = 3
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			is_in_faction = no
+		}
+
+		bypass = {
+			is_in_faction_with = DES
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			DES = {
+				country_event = {
+					id = danville.35
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_prepare_to_invade_greenland
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 24
+		y = 2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_join_sand_pact
+		}
+
+		available = {
+			is_in_faction_with = DES
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			23 = {
+				add_claim_by = TSA
+			}
+			22 = {
+				add_claim_by = TSA
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_join_gongmen_pact
+		icon = GFX_goal_generic_major_alliance
+		x = 26
+		y = 1
+		cost = 3
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			is_in_faction = no
+		}
+
+		bypass = {
+			is_in_faction_with = GON
+		}
+
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				AND = {
+					has_completed_focus = TSA_ally_sancti_magistri
+					has_completed_focus = TSA_join_sand_pact
+					is_in_faction = no
+				}
+				add = 5
+			}
+		}
+
+		completion_reward = { 
+			GON = {
+				country_event = {
+					id = danville.35
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_join_antiflowerhillalliance
+		icon = GFX_goal_generic_major_alliance
+		x = 28
+		y = 1
+		cost = 3
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			is_in_faction = no
+		}
+
+		bypass = {
+			is_in_faction_with = WOL
+		}
+
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				AND = {
+					has_completed_focus = TSA_ally_sancti_magistri
+					has_completed_focus = TSA_join_sand_pact
+					is_in_faction = no
+				}
+				add = 5
+			}
+		}
+
+		completion_reward = { 
+			WOL = {
+				country_event = {
+					id = danville.35
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_ally_sancti_magistri
+		icon = GFX_goal_generic_major_alliance
+		x = 30
+		y = 1
+		cost = 3
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_proclaim_doofania
+		}
+
+		available = {
+			is_in_faction = no
+			SKO = {
+				is_faction_leader = yes
+			}
+		}
+
+		bypass = {
+			is_in_faction_with = SKO
+		}
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = { 
+			SKO = {
+				country_event = {
+					id = danville.35
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_prepare_the_fleet
+		icon = GFX_goal_generic_navy_battleship
+		x = 28
+		y = 2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_join_gongmen_pact
+			focus = TSA_join_antiflowerhillalliance
+			focus = TSA_ally_sancti_magistri
+		}
+
+		available = {
+			OR = {
+				is_in_faction_with = GON
+				is_in_faction_with = WOL
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		} 
+	}
+
+	#################################################################################################################################################################################
+	#
+	#     DDDDD   EEEEEEE MM    MM  OOOOO   CCCCC  RRRRRR    AAA   TTTTTTT IIIII  CCCCC     PPPPPP    AAA   TTTTTTT HH   HH 
+	#	  DD  DD  EE      MMM  MMM OO   OO CC    C RR   RR  AAAAA    TTT    III  CC    C    PP   PP  AAAAA    TTT   HH   HH 
+	#     DD   DD EEEEE   MM MM MM OO   OO CC      RRRRRR  AA   AA   TTT    III  CC         PPPPPP  AA   AA   TTT   HHHHHHH 
+	#     DD   DD EE      MM    MM OO   OO CC    C RR  RR  AAAAAAA   TTT    III  CC    C    PP      AAAAAAA   TTT   HH   HH 
+	#     DDDDDD  EEEEEEE MM    MM  OOOO0   CCCCC  RR   RR AA   AA   TTT   IIIII  CCCCC     PP      AA   AA   TTT   HH   HH 
+	#
+	#################################################################################################################################################################################
+
+	focus = { 
+		id = TSA_bastion_of_democracy
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 15
+		y = 7
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TSA_finished_demo_reforms
+				has_completed_focus = TSA_dockyards_in_the_south
+				has_completed_focus = TSA_modernization_of_danville_port
+				has_completed_focus = TSA_more_food_factories
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_political_power = 100
+			add_popularity = {
+    			ideology = fascism
+    			popularity = -0.1
+			}
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+			set_rule = {
+    			can_create_factions = yes
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_propose_economic_union
+		icon = GFX_focus_generic_treaty
+		x = 10
+		y = 8
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_bastion_of_democracy
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				TSA_danville_economic_pact
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_invite_duckburg
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_propose_economic_union
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			DCB = {
+				country_event = {
+					id = danville.38
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_invite_moomins
+		icon = GFX_goal_generic_improve_relations
+		x = 9
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_propose_economic_union
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			MOO = {
+				country_event = {
+					id = danville.38
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_invite_bronks
+		icon = GFX_goal_generic_improve_relations
+		x = 11
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_propose_economic_union
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			BRO = {
+				country_event = {
+					id = danville.38
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_invite_vineshrooms
+		icon = GFX_goal_generic_improve_relations
+		x = 13
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_propose_economic_union
+		}
+
+		bypass = {
+			VIS = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+
+		available = {
+			NOT = {
+				VIS = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			VIS = {
+				country_event = {
+					id = danville.38
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_decentralization
+		icon = GFX_goal_generic_consumer_goods
+		x = 9
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = TSA_centralization
+		}
+
+		prerequisite = {
+			focus = TSA_invite_duckburg
+		}
+		prerequisite = {
+			focus = TSA_invite_moomins
+		}
+		prerequisite = {
+			focus = TSA_invite_bronks
+		}
+		prerequisite = {
+			focus = TSA_invite_vineshrooms
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			every_country = {
+				limit = {
+					has_idea = TSA_danville_economic_pact
+				}
+				swap_ideas = {
+					remove_idea = TSA_danville_economic_pact
+					add_idea = TSA_danville_economic_pact_decentralized
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_defence_pact
+		icon = GFX_goal_generic_defence
+		x = 9
+		y = 11
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = TSA_evolve_into_alliance
+		}
+
+		prerequisite = {
+			focus = TSA_decentralization
+			focus = TSA_centralization
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			every_country = {
+				limit = {
+					OR = {
+						has_idea = TSA_danville_economic_pact_decentralized
+						has_idea = TSA_danville_economic_pact_centralized
+					}
+					NOT = {
+						tag = TSA
+					}
+				}
+				country_event = {
+					id = danville.41
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_evolve_into_alliance
+		icon = GFX_goal_generic_major_alliance
+		x = 11
+		y = 11
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			is_in_faction = no
+		}
+
+		mutually_exclusive = {
+			focus = TSA_defence_pact
+		}
+
+		prerequisite = {
+			focus = TSA_decentralization
+			focus = TSA_centralization
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_faction = danville_alliance
+			every_country = {
+				limit = {
+					OR = {
+						has_idea = TSA_danville_economic_pact_decentralized
+						has_idea = TSA_danville_economic_pact_centralized
+					}
+					NOT = {
+						tag = TSA
+					}
+				}
+				country_event = {
+					id = danville.44
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_centralization
+		icon = GFX_goal_generic_demand_territory
+		x = 11
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = TSA_decentralization
+		}
+
+		prerequisite = {
+			focus = TSA_invite_duckburg
+		}
+		prerequisite = {
+			focus = TSA_invite_moomins
+		}
+		prerequisite = {
+			focus = TSA_invite_bronks
+		}
+		prerequisite = {
+			focus = TSA_invite_vineshrooms
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			every_country = {
+				limit = {
+					has_idea = TSA_danville_economic_pact
+				}
+				swap_ideas = {
+					remove_idea = TSA_danville_economic_pact
+					add_idea = TSA_danville_economic_pact_centralized
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_beyond_danville_bay
+		icon = GFX_goal_generic_national_unity
+		x = 21
+		y = 8
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_bastion_of_democracy
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = TSA_improve_relations_with_friedewalt
+		icon = GFX_goal_generic_improve_relations
+		x = 17
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_beyond_danville_bay
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = FRI
+    			modifier = TCWmod_generic_relations
+			}
+			FRI = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_relations_with_macius
+		icon = GFX_goal_generic_improve_relations
+		x = 17
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_improve_relations_with_friedewalt
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = MAI
+    			modifier = TCWmod_generic_relations
+			}
+			MAI = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_send_aid_to_turtles
+		icon = GFX_goal_generic_military_deal
+		x = 19
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_beyond_danville_bay
+		}
+
+		bypass = {
+			TRL = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 5000
+    			target = TRL
+			}
+			TRL = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_send_aid_to_squirrels
+		icon = GFX_goal_generic_military_deal
+		x = 19
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_send_aid_to_turtles
+		}
+
+		bypass = {
+			SQU = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 5000
+    			target = SQU
+			}
+			SQU = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_send_aid_to_sioux
+		icon = GFX_goal_generic_military_deal
+		x = 21
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_beyond_danville_bay
+		}
+
+		bypass = {
+			SIO = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 5000
+    			target = SIO
+			}
+			SIO = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_relations_with_greenland
+		icon = GFX_focus_greenland
+		x = 21
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_send_aid_to_sioux
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = GRN
+    			modifier = TCWmod_generic_relations
+			}
+			GRN = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_relations_with_enchancia
+		icon = GFX_focus_enchancia
+		x = 23
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_beyond_danville_bay
+		}
+
+		mutually_exclusive = {
+			focus = TSA_isolate_enchancian_tyrrany
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						ENC = {
+							exists = yes
+						}
+						EN1 = {
+							exists = yes
+						}
+						EN2 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+    				target = ENC
+    				modifier = TCWmod_generic_relations
+				}
+				ENC = {
+					add_opinion_modifier = {
+    					target = TSA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+				EN1 = {
+					add_opinion_modifier = {
+    					target = TSA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN2
+    				modifier = TCWmod_generic_relations
+				}
+				EN2 = {
+					add_opinion_modifier = {
+    					target = TSA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_relations_with_ffa
+		icon = GFX_goal_generic_improve_relations
+		x = 24
+		y = 10
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_relations_with_enchancia
+			focus = TSA_isolate_enchancian_tyrrany
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = FFA
+    			modifier = TCWmod_generic_relations
+			}
+			FFA = {
+				add_opinion_modifier = {
+    				target = TSA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_isolate_enchancian_tyrrany
+		icon = GFX_goal_generic_political_pressure
+		x = 25
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = TSA_beyond_danville_bay
+		}
+
+		mutually_exclusive = {
+			focus = TSA_relations_with_enchancia
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended_badder
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						EN3 = {
+							exists = yes
+						}
+						EN4 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = EN3
+					modifier = TCWmod_generic_isolation
+				}
+				EN3 = {
+					add_opinion_modifier = {
+						target = TSA
+						modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = EN4
+					modifier = TCWmod_generic_isolation
+				}
+				EN4 = {
+					add_opinion_modifier = {
+						target = TSA
+						modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_join_great_alliance
+		icon = GFX_goal_anschluss
+		x = 20
+		y = 11
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			MAI = {
+				is_faction_leader = yes
+			}
+			is_in_faction = no
+		}
+
+		prerequisite = {
+			focus = TSA_relations_with_macius
+		}
+		prerequisite = {
+			focus = TSA_send_aid_to_squirrels
+		}
+		prerequisite = {
+			focus = TSA_relations_with_greenland
+		}
+		prerequisite = {
+			focus = TSA_relations_with_ffa
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			MAI = {
+				country_event = {
+					id = danville.47
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TSA_join_greenland
+		icon = GFX_goal_anschluss
+		x = 22
+		y = 11
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			GRN = {
+				is_faction_leader = yes
+			}
+			is_in_faction = no
+		}
+
+		prerequisite = {
+			focus = TSA_relations_with_macius
+		}
+		prerequisite = {
+			focus = TSA_send_aid_to_squirrels
+		}
+		prerequisite = {
+			focus = TSA_relations_with_greenland
+		}
+		prerequisite = {
+			focus = TSA_relations_with_ffa
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			GRN = {
+				country_event = {
+					id = danville.47
+					days = 1
+				}
+			}
+		} 
+	}
+
+#End of focuses 
+}

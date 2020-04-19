@@ -1,0 +1,383 @@
+scripted_gui = {
+   underground_event_1_window = { #hiya.
+    context_type = player_context
+
+    window_name = "underground_event_1_window"
+
+    visible = {
+      is_ai = no
+      OR = {
+        has_global_flag = show_sans_warning_1
+        has_global_flag = show_sans_warning_2
+      }
+      OR = {
+        AND = {
+          tag = FRI
+          FRI = {
+            focus_progress = {
+              focus = FRI_someone_gonna_have_bad_time
+              progress > 0.1
+            }
+          }
+        }
+        AND = {
+          tag = DUL
+          DUL = {
+            focus_progress = {
+              focus = DUL_attack_underground
+              progress > 0.1
+            }
+          }
+        }
+        AND = {
+          tag = JPN
+          JPN = {
+            focus_progress = {
+              focus = JPN_operation_nordubung
+              progress > 0.1
+            }
+          }
+        }
+        AND = {
+          tag = SLD
+          SLD = {
+            focus_progress = {
+              focus = SLD_final_showdown
+              progress > 0.1
+            }
+          }
+        }
+        any_country = {
+          is_justifying_wargoal_against = UND
+        }
+      }
+    }
+
+    effects = {
+      underground_event_1_close_button_click = {
+        sound_effect = "click_close"
+        if = {
+          limit = {
+            has_global_flag = show_sans_warning_1
+          }
+          clr_global_flag = show_sans_warning_1
+        }
+        if = {
+          limit = {
+            has_global_flag = show_sans_warning_2
+          }
+          clr_global_flag = show_sans_warning_2
+        }
+        set_global_flag = warning_part_2
+      }
+    }
+  }
+
+  underground_event_2_window = { #it seems you want to attack us.
+    context_type = player_context
+
+    window_name = "underground_event_1a_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_2
+    }
+
+    effects = {
+      underground_event_1a_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_2
+        set_global_flag = warning_part_3
+      }
+    }
+  }
+
+  underground_event_3_window = { #well, it's not that surprising, considering what you already did.
+    context_type = player_context
+
+    window_name = "underground_event_4_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_3
+    }
+
+    effects = {
+      underground_event_4_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_3
+        set_global_flag = warning_part_4
+      }
+    }
+  }
+
+  underground_event_4_window = { #still, i hope you will change your mind and refrain from attacking us.
+    context_type = player_context
+
+    window_name = "underground_event_1b_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_4
+    }
+
+    effects = {
+      underground_event_1b_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_4
+        set_global_flag = warning_part_5
+      }
+    }
+  }
+
+  underground_event_5_window = { #because if you won't...
+    context_type = player_context
+
+    window_name = "underground_event_2_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_5
+    }
+
+    effects = {
+      underground_event_2_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_5
+        set_global_flag = warning_part_6
+      }
+    }
+  }
+
+  underground_event_6_window = { #...
+    context_type = player_context
+
+    window_name = "underground_event_2a_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_6
+    }
+
+    effects = {
+      underground_event_2a_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_6
+        set_global_flag = warning_part_7
+      }
+    }
+  }
+
+  underground_event_7_window = { #you're gonna have a bad time.
+    context_type = player_context
+
+    window_name = "underground_event_3_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = warning_part_7
+    }
+
+    effects = {
+      underground_event_3_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = warning_part_7
+        set_global_flag = you_dont_want_this
+      }
+    }
+  }
+
+  underground_event_5a_window = { #...
+    context_type = player_context
+
+    window_name = "underground_event_5a_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = you_dont_want_this
+      OR = {
+        AND = {
+          tag = FRI
+          FRI = {
+            focus_progress = {
+              focus = FRI_someone_gonna_have_bad_time
+              progress > 0.65
+            }
+          }
+        }
+        AND = {
+          tag = DUL
+          DUL = {
+            focus_progress = {
+              focus = DUL_attack_underground
+              progress > 0.65
+            }
+          }
+        }
+        AND = {
+          tag = JPN
+          JPN = {
+            focus_progress = {
+              focus = JPN_operation_nordubung
+              progress > 0.65
+            }
+          }
+        }
+        AND = {
+          tag = SLD
+          SLD = {
+            focus_progress = {
+              focus = SLD_final_showdown
+              progress > 0.65
+            }
+          }
+        }
+        any_country = {
+          is_justifying_wargoal_against = UND
+        }
+      }
+    }
+
+    effects = {
+      underground_event_5a_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = you_dont_want_this
+        set_global_flag = final_warning_part_2
+      }
+    }
+  }
+
+  underground_event_6a_window = { #so youre still going to do this?
+    context_type = player_context
+
+    window_name = "underground_event_6a_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_2
+    }
+
+    effects = {
+      underground_event_6a_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_2
+        set_global_flag = final_warning_part_3
+      }
+    }
+  }
+
+  underground_event_7a_window = { #well, you don't give me much choice.
+    context_type = player_context
+
+    window_name = "underground_event_7a_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_3
+    }
+
+    effects = {
+      underground_event_7a_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_3
+        set_global_flag = final_warning_part_4
+      }
+    }
+  }
+
+  underground_event_8_window = { #...
+    context_type = player_context
+
+    window_name = "underground_event_8_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_4
+    }
+
+    effects = {
+      underground_event_8_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_4
+        set_global_flag = final_warning_part_5
+      }
+    }
+  }
+
+  underground_event_9_window = { #its a beautiful day outside...
+    context_type = player_context
+
+    window_name = "underground_event_9_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_5
+    }
+
+    effects = {
+      underground_event_9_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_5
+        set_global_flag = final_warning_part_6
+      }
+    }
+  }
+
+  underground_event_10_window = { #and judging by that expression...
+    context_type = player_context
+
+    window_name = "underground_event_10_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_6
+    }
+
+    effects = {
+      underground_event_10_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_6
+        set_global_flag = final_warning_part_7
+      }
+    }
+  }
+
+  underground_event_11_window = { #you already know the rest.
+    context_type = player_context
+
+    window_name = "underground_event_11_window"
+
+    visible = {
+      is_ai = no
+      has_global_flag = final_warning_part_7
+    }
+
+    effects = {
+      underground_event_11_close_button_click = {
+        sound_effect = "click_close"
+        clr_global_flag = final_warning_part_7
+        ROOT = {
+          every_owned_state = {
+            add_claim_by = UND
+          }
+        }
+        UND = {
+          declare_war_on = {
+            target = ROOT
+            type = annex_everything
+          }
+          set_popularities = {
+            democratic = 0
+            neutrality = 51
+            fascism = 0
+            communism = 0
+            monarchism = 49
+          }
+          set_politics = {
+            ruling_party = neutrality
+          }
+        }
+      }
+    }
+  }
+}

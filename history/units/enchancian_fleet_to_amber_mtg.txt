@@ -1,0 +1,24 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Enchancian Royal Navy"			
+		naval_base = 923
+		task_force = {
+			name = "Western Fleet"
+			location = 923
+			ship = { name = "Port Ludlow" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Enchancia" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Bacliff" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Sardinnoza" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Floville" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+		}
+		task_force = {
+			name = "Eastern Fleet"
+			location = 923
+			ship = { name = "Ridott" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Slaton City" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Palmhurst" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+			ship = { name = "Millry" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = EN2 } } }
+		}
+	}
+}

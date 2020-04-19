@@ -1,0 +1,226 @@
+bookmarks = {
+	bookmark = {
+		name = "CGATHERING_STORM_NAME"
+		desc = "CGATHERING_STORM_DESC"
+		date = 1936.1.1.12
+		picture = "GFX_select_date_1936"
+		default_country = "MAI"
+		default = yes
+		
+		"MAI"={
+			history = "MAI_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				MAI_fighting_with_commies
+				MAI_landlocked
+			}
+			focuses = {
+				MAI_alliance_enc
+				MAI_royal_convention
+				MAI_children_parliament_focus
+			}
+		}
+
+		"FRI"={
+			history = "FRI_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				FRI_colonial_beginnings
+			}
+			focuses = {
+				FRI_expeditions_for_resources
+				FRI_continue_colonization
+				FRI_hartmut_rules
+			}
+		}
+		
+		"GRN"={
+			history = "GRN_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+				GRN_limited_staff
+			}
+			focuses = {
+				GRN_put_an_end_to_humsin_tricks
+				GRN_colonize_midlands
+				GRN_coronation_of_tabaluga
+			}
+		}
+		
+		"ICW"={
+			history = "ICW_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+				ICW_frozen_dragon_idea
+			}
+			focuses = {
+				ICW_leftovers_of_an_empire
+				ICW_try_second_time
+				ICW_versus_greenland
+			}
+		}
+		
+		"ENC"={
+			history = "ENC_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+				ENC_golden_age
+			}
+			focuses = {
+				ENC_preparing_the_country
+				ENC_victory_in_civil_war
+				ENC_the_dunwiddie_miracle
+			}
+		}
+		
+		"FLO"={
+			history = "FLO_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				FLO_country_divided
+			}
+			focuses = {
+				FLO_1936_flower_elections
+				FLO_take_back_whats_ours
+				FLO_exporting_revolution
+			}
+		}
+
+		"TSA"={
+			history = "TSA_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+				TSA_elections_of_1936
+				TSA_proclaim_doofania
+				TSA_bastion_of_democracy
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		#HERE COME THE MINORS
+
+		"GON"={ #sorry Shen, please don't kill me
+			minor = yes
+			history = "GON_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+				GON_monarchist_guerillas
+			}
+			focuses = {
+				GON_crush_remaining_monarchists
+				GON_begin_year_of_peacock
+				GON_crush_flower_hill
+			}
+		}
+
+		"DES"={
+			minor = yes
+			history = "DES_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+			}
+			focuses = {
+				DES_open_for_international_relations
+				DES_take_care_of_sioux_tribe
+				DES_demand_reclaimed_fields
+			}
+		}
+
+		"DUL"={
+			minor = yes
+			history = "DUL_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+			}
+			focuses = {
+				DUL_fund_colonial_expedition
+				DUL_demand_everrealm_gate
+				DUL_apply_the_antidote
+			}
+		}
+
+		"JPN"={
+			minor = yes
+			history = "JPN_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				JPN_courts_and_presidents
+			}
+			focuses = {
+				JPN_president_wright
+				JPN_president_edgeworth
+				JPN_manifest_freedom
+			}
+		}
+
+		"LEC"={
+			minor = yes
+			history = "LEC_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+			}
+			focuses = {
+				LEC_state_of_the_empire
+				LEC_found_karlino_axis
+				LEC_demand_southern_lechia_lands
+			}
+		}
+
+		"AVA"={
+			minor = yes
+			history = "AVA_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+				AVA_legacy_of_kingdom_of_maru
+				AVA_shuriki_dark_legacy_idea_1
+			}
+			focuses = {
+				AVA_shuriki_dark_legacy
+				AVA_economic_legacy_of_maru
+				AVA_clear_the_remnants_of_shuriki_rule
+			}
+		}
+
+		"KPT"={
+			minor = yes
+			history = "KPT_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+		}
+
+		"SKO"={
+			minor = yes
+			history = "SKO_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+		}
+
+		"SLD"={
+			minor = yes
+			history = "SLD_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+		}
+
+		"SAN"={
+			minor = yes
+			history = "SAN_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+		}
+		
+		effect = {
+			randomize_weather = 22345 # <- Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

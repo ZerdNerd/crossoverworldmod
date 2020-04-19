@@ -1,0 +1,18 @@
+fate_of_tabaluga_dec_category = {
+	fate_of_tabaluga_decision = {
+		icon = ger_mefo_bills
+		available = {
+		}
+		visible = { has_country_flag = GRN_dragon_captured }
+		cost = 0
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			country_event = {
+				id = greenland.6
+				days = 0
+			}
+		}
+	}
+}

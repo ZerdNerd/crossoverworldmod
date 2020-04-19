@@ -1,0 +1,32 @@
+guiTypes = {
+   containerWindowType = {
+       name = "dragon_counter_container"
+       position = { x = 1200 y = 4 }
+ 
+       iconType ={
+           name ="dragon_counter_bg"
+           spriteType = "GFX_generic_box_125"
+           position = { x=0 y=0 }
+       }
+ 
+       iconType = {
+           name ="dragon_counter_icon"
+           spriteType = "GFX_dragon_counter"
+           position = { x= 7 y = 6 }
+       }
+ 
+       instantTextBoxType = {
+           name ="dragon_counter_text"
+           position = { x= 15 y = 4 }
+           font = "hoi_18mbs"
+           text = "[?dragon_counter]K"
+           format = center
+           maxWidth = 102
+           maxHeight = 24
+           fixedsize = yes
+    
+           pdx_tooltip = "DRAGON_COUNTER_TOOLTIP"
+           pdx_tooltip_delayed = "DRAGON_COUNTER_TOOLTIP_DELAYED"
+       }
+   }
+}

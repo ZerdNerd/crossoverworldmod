@@ -1,0 +1,626 @@
+enchancian_cw_dunwiddie_support = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		has_war = no
+		is_subject = no
+		country_exists = ENC
+		NOT = { has_global_flag = enchancian_civil_war_ended }
+		OR = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+			has_country_flag = ECW_support_dunwiddie
+		}
+	}
+	abort = {
+		OR = {
+			has_global_flag = enchancian_civil_war_ended
+			has_war = yes
+			is_subject = yes
+			NOT = { country_exists = ENC }
+			has_government = fascism
+			has_government = communism
+			NOT = { has_country_flag = ECW_support_dunwiddie }
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "ENC"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "ENC"
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN1"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN2"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN3"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN4"
+		value = 100
+	}
+}
+
+enchancian_cw_james_support = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		has_war = no
+		is_subject = no
+		country_exists = EN1
+		NOT = { has_global_flag = enchancian_civil_war_ended }
+		OR = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+			has_country_flag = ECW_support_james
+		}
+	}
+	abort = {
+		OR = {
+			has_global_flag = enchancian_civil_war_ended
+			has_war = yes
+			is_subject = yes
+			NOT = { country_exists = EN1 }
+			has_government = fascism
+			has_government = communism
+			NOT = { has_country_flag = ECW_support_james }
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "EN1"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "EN1"
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ENC"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN2"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN3"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN4"
+		value = 100
+	}
+}
+
+enchancian_cw_amber_support = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		has_war = no
+		is_subject = no
+		country_exists = EN2
+		NOT = { has_global_flag = enchancian_civil_war_ended }
+		OR = {
+			NOT = {
+				has_government = fascism
+				has_government = communism
+			}
+			has_country_flag = ECW_support_amber
+		}
+	}
+	abort = {
+		OR = {
+			has_global_flag = enchancian_civil_war_ended
+			has_war = yes
+			is_subject = yes
+			NOT = { country_exists = EN2 }
+			has_government = fascism
+			has_government = communism
+			NOT = { has_country_flag = ECW_support_amber }
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "EN2"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "EN2"
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ENC"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN1"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN3"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN4"
+		value = 100
+	}
+}
+
+enchancian_cw_cedric_support = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		has_war = no
+		is_subject = no
+		country_exists = EN3
+		NOT = { has_global_flag = enchancian_civil_war_ended }
+		OR = {
+			AND = {
+				tag = SLD
+				has_country_flag = ECW_support_cedric
+			}
+			AND = {
+				NOT = {
+					tag = SLD
+					tag = SKO
+					tag = KPT
+					tag = JPN
+					tag = DES
+					tag = SAN
+				}
+				has_government = fascism
+			}
+		}
+	}
+	abort = {
+		OR = {
+			has_global_flag = enchancian_civil_war_ended
+			has_war = yes
+			is_subject = yes
+			NOT = { country_exists = EN3 }
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "EN3"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "EN3"
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ENC"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN1"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN2"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN4"
+		value = 100
+	}
+}
+
+enchancian_cw_artisans_support = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		has_war = no
+		is_subject = no
+		country_exists = EN4
+		has_government = communism
+		has_completed_focus = FLO_artisans_enchancia
+		NOT = { has_global_flag = enchancian_civil_war_ended }
+	}
+	abort = {
+		OR = {
+			has_global_flag = enchancian_civil_war_ended
+			has_war = yes
+			is_subject = yes
+			NOT = { country_exists = EN4 }
+			NOT = {
+				has_government = communism
+			}
+			NOT = {
+				has_completed_focus = FLO_artisans_enchancia
+			}
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "EN4"
+		value = 1000
+	}
+	ai_strategy = {
+		type = support
+		id = "EN4"
+		value = 1000
+	}
+	ai_strategy = {
+		type = ignore
+		id = "ENC"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN1"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN2"
+		value = 100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "EN3"
+		value = 100
+	}
+}
+
+enchancian_cw_faction_joining = {
+	
+	enable = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_ended
+		}
+	}
+	abort = {
+		has_global_flag = enchancian_civil_war_ended
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "ENC"
+		value = -1000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN1"
+		value = -1000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN2"
+		value = -1000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN3"
+		value = -1000
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN4"
+		value = -1000
+	}
+
+}
+
+#it was temporary here, now its permanent
+
+humsin_and_wolves = {
+	enable = {
+		tag = DES
+		NOT = {
+			has_completed_focus = DES_relations_with_wolves
+		}
+	}
+	abort = {
+		NOT = {
+			tag = DES
+		}
+	}
+	ai_strategy = {
+		type = ignore
+		id = "WOL"
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "WOL"
+		value = -100
+	}
+	ai_strategy = {
+		type = ignore
+		id = "WEA"
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "WEA"
+		value = -100
+	}
+}
+
+humsin_and_turtles = {
+	enable = {
+		tag = DES
+		NOT = {
+			has_completed_focus = DES_invest_in_republic_of_turtles
+		}
+	}
+	abort = {
+		NOT = {
+			tag = DES
+		}
+	}
+	ai_strategy = {
+		type = alliance
+		id = "TRL"
+		value = 100
+	}
+}
+
+flower_hill_towards_others = {
+	enable = {
+		original_tag = FLO
+	}
+	abort = {
+		NOT = {
+			original_tag = FLO
+		}
+	}
+	ai_strategy = {
+		type = invade
+		id = "MAI"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "FRI"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "WEK"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "TRI"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "DCB"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "ICW"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "GRN"
+		value = 100
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "DCB"
+		value = 100
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "ICW"
+		value = 100
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "GRN"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "ENC"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "EN1"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "EN2"
+		value = 100
+	}
+	ai_strategy = {
+		type = invade
+		id = "EN3"
+		value = 100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "MAI"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "FRI"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "WEK"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "TRI"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "DCB"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "ICW"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "GRN"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "ENC"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN1"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN2"
+		value = -100
+	}
+	ai_strategy = {
+		type = alliance
+		id = "EN3"
+		value = -100
+	}
+}
+
+hartmut_against_macius = {
+	enable = {
+		AND = {
+			tag = FRI
+			MAI = {
+				has_country_flag = hartmut_demands
+			}
+		}
+	}
+	abort = {
+		NOT = {
+			tag = FRI
+		}
+	}
+	ai_strategy = {
+		type = invade
+		id = "MAI"
+		value = 100
+	}
+	ai_strategy = {
+		type = conquer
+		id = "MAI"
+		value = 100
+	}
+}
+
+greenland_and_humsin_1 = {
+	enable = {
+		tag = GRN
+	}
+	abort = {
+		NOT = {
+			tag = GRN
+		}
+	}
+	ai_strategy = {
+		type = conquer
+		id = "DES"
+		value = 100
+	}
+}
+
+greenland_and_humsin_2 = {
+	enable = {
+		tag = DES
+	}
+	abort = {
+		NOT = {
+			tag = DES
+		}
+	}
+	ai_strategy = {
+		type = conquer
+		id = "GRN"
+		value = 100
+	}
+}
+
+wei_ling_civil_war_commune_support = {
+	
+	enable = {
+		OR = {
+			tag = FLO
+			AND = {
+				tag = EN4
+				has_global_flag = enchancian_civil_war_ended
+			}
+		}
+	}
+	abort = {
+		NOT = {
+			tag = FLO
+			tag = EN4
+		}
+	}
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "WLC"
+		value = 200
+	}
+	ai_strategy = {
+		type = support
+		id = "WLC"
+		value = 200
+	}
+	ai_strategy = {
+		type = ignore
+		id = "WEI"
+		value = 100
+	}
+}
+

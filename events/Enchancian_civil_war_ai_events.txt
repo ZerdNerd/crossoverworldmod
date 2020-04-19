@@ -1,0 +1,805 @@
+﻿###########################
+# enchancian_cw_ai Events
+###########################
+
+add_namespace = enchancian_cw_ai
+
+country_event = {
+	id = enchancian_cw_ai.1
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.1"
+	}
+	title = enchancian_cw_ai.1.t
+	desc = enchancian_cw_ai.1.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = ENC
+		is_ai = yes
+		EN1 = {
+			exists = yes
+			OR = {
+				is_puppet_of = ENC
+				NOT = {
+					has_war_with = ENC
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.1.a
+		hidden_effect = {
+			ENC = {
+				annex_country = {
+					target = EN1
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.2
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.2"
+	}
+	title = enchancian_cw_ai.2.t
+	desc = enchancian_cw_ai.2.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = ENC
+		is_ai = yes
+		EN2 = {
+			exists = yes
+			OR = {
+				is_puppet_of = ENC
+				NOT = {
+					has_war_with = ENC
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.2.a
+		hidden_effect = {
+			ENC = {
+				annex_country = {
+					target = EN2
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.3
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.3"
+	}
+	title = enchancian_cw_ai.3.t
+	desc = enchancian_cw_ai.3.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = ENC
+		is_ai = yes
+		EN3 = {
+			exists = yes
+			OR = {
+				is_puppet_of = ENC
+				NOT = {
+					has_war_with = ENC
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.3.a
+		hidden_effect = {
+			ENC = {
+				annex_country = {
+					target = EN3
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.4
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.4"
+	}
+	title = enchancian_cw_ai.4.t
+	desc = enchancian_cw_ai.4.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = ENC
+		is_ai = yes
+		EN4 = {
+			exists = yes
+			OR = {
+				is_puppet_of = ENC
+				NOT = {
+					has_war_with = ENC
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.4.a
+		hidden_effect = {
+			ENC = {
+				annex_country = {
+					target = EN4
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.5
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.5"
+	}
+	title = enchancian_cw_ai.5.t
+	desc = enchancian_cw_ai.5.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN1
+		is_ai = yes
+		ENC = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN1
+				NOT = {
+					has_war_with = EN1
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.5.a
+		hidden_effect = {
+			EN1 = {
+				annex_country = {
+					target = ENC
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.6
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.6"
+	}
+	title = enchancian_cw_ai.6.t
+	desc = enchancian_cw_ai.6.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN1
+		is_ai = yes
+		EN2 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN1
+				NOT = {
+					has_war_with = EN1
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.6.a
+		hidden_effect = {
+			EN1 = {
+				annex_country = {
+					target = EN2
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.7
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.7"
+	}
+	title = enchancian_cw_ai.7.t
+	desc = enchancian_cw_ai.7.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN1
+		is_ai = yes
+		EN3 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN1
+				NOT = {
+					has_war_with = EN1
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.7.a
+		hidden_effect = {
+			EN1 = {
+				annex_country = {
+					target = EN3
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.8
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.8"
+	}
+	title = enchancian_cw_ai.8.t
+	desc = enchancian_cw_ai.8.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN1
+		is_ai = yes
+		EN4 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN1
+				NOT = {
+					has_war_with = EN1
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.8.a
+		hidden_effect = {
+			EN1 = {
+				annex_country = {
+					target = EN4
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.9
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.9"
+	}
+	title = enchancian_cw_ai.9.t
+	desc = enchancian_cw_ai.9.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN2
+		is_ai = yes
+		ENC = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN2
+				NOT = {
+					has_war_with = EN2
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.9.a
+		hidden_effect = {
+			EN2 = {
+				annex_country = {
+					target = ENC
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.10
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.10"
+	}
+	title = enchancian_cw_ai.10.t
+	desc = enchancian_cw_ai.10.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN2
+		is_ai = yes
+		EN1 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN2
+				NOT = {
+					has_war_with = EN2
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.10.a
+		hidden_effect = {
+			EN2 = {
+				annex_country = {
+					target = EN1
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.11
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.11"
+	}
+	title = enchancian_cw_ai.11.t
+	desc = enchancian_cw_ai.11.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN2
+		is_ai = yes
+		EN3 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN2
+				NOT = {
+					has_war_with = EN2
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.11.a
+		hidden_effect = {
+			EN2 = {
+				annex_country = {
+					target = EN3
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.12
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.12"
+	}
+	title = enchancian_cw_ai.12.t
+	desc = enchancian_cw_ai.12.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN2
+		is_ai = yes
+		EN4 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN2
+				NOT = {
+					has_war_with = EN2
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.12.a
+		hidden_effect = {
+			EN2 = {
+				annex_country = {
+					target = EN4
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.13
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.13"
+	}
+	title = enchancian_cw_ai.13.t
+	desc = enchancian_cw_ai.13.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN3
+		is_ai = yes
+		ENC = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN3
+				NOT = {
+					has_war_with = EN3
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.13.a
+		hidden_effect = {
+			EN3 = {
+				annex_country = {
+					target = ENC
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.14
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.14"
+	}
+	title = enchancian_cw_ai.14.t
+	desc = enchancian_cw_ai.14.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN3
+		is_ai = yes
+		EN1 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN3
+				NOT = {
+					has_war_with = EN3
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.14.a
+		hidden_effect = {
+			EN3 = {
+				annex_country = {
+					target = EN1
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.15
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.15"
+	}
+	title = enchancian_cw_ai.15.t
+	desc = enchancian_cw_ai.15.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN3
+		is_ai = yes
+		EN2 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN3
+				NOT = {
+					has_war_with = EN3
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.15.a
+		hidden_effect = {
+			EN3 = {
+				annex_country = {
+					target = EN2
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.16
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.16"
+	}
+	title = enchancian_cw_ai.16.t
+	desc = enchancian_cw_ai.16.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN3
+		is_ai = yes
+		EN4 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN3
+				NOT = {
+					has_war_with = EN3
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.16.a
+		hidden_effect = {
+			EN3 = {
+				annex_country = {
+					target = EN4
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.17
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.17"
+	}
+	title = enchancian_cw_ai.17.t
+	desc = enchancian_cw_ai.17.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN4
+		is_ai = yes
+		ENC = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN4
+				NOT = {
+					has_war_with = EN4
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.17.a
+		hidden_effect = {
+			EN4 = {
+				annex_country = {
+					target = ENC
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.18
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.18"
+	}
+	title = enchancian_cw_ai.18.t
+	desc = enchancian_cw_ai.18.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN4
+		is_ai = yes
+		EN1 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN4
+				NOT = {
+					has_war_with = EN4
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.18.a
+		hidden_effect = {
+			EN4 = {
+				annex_country = {
+					target = EN1
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.19
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.19"
+	}
+	title = enchancian_cw_ai.19.t
+	desc = enchancian_cw_ai.19.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN4
+		is_ai = yes
+		EN2 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN4
+				NOT = {
+					has_war_with = EN4
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.19.a
+		hidden_effect = {
+			EN4 = {
+				annex_country = {
+					target = EN2
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = enchancian_cw_ai.20
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event enchancian_cw_ai.20"
+	}
+	title = enchancian_cw_ai.20.t
+	desc = enchancian_cw_ai.20.d
+	picture = GFX_report_enchancia_palace
+	
+	trigger = {
+		has_global_flag = enchancian_civil_war
+		NOT = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		tag = EN4
+		is_ai = yes
+		EN3 = {
+			exists = yes
+			OR = {
+				is_puppet_of = EN4
+				NOT = {
+					has_war_with = EN4
+				}
+			}
+		}
+	}
+	
+	option = { #fix this
+		name = enchancian_cw_ai.20.a
+		hidden_effect = {
+			EN4 = {
+				annex_country = {
+					target = EN3
+					transfer_troops = no
+				}
+			}
+		}
+	}
+}

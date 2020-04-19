@@ -1,0 +1,25 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Avalor Royal Navy"			
+		naval_base = 3776
+		task_force = {				
+			name = "Royal Fleet"
+			location = 3776
+			ship = { name = "Crown Princess Elena" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Princess Isabel" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "King Raul" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Queen Lucia" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+		}
+		task_force = {				
+			name = "1. Avalor Fleet"
+			location = 3776
+			ship = { name = "Avalor" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Avalorian-Enchancian Friendship" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Coaraci" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Wenlock" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Vitoria" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+			ship = { name = "Ecruzilhada" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = AVA } } }
+		}
+	}
+}

@@ -1,0 +1,42 @@
+scripted_gui = {
+	children_parliament_decision_ui = {
+    context_type = decision_category
+     	
+    window_name = "children_parliament_decision_ui_window"
+        
+    visible = {
+      has_completed_focus = MAI_first_elections
+    }
+
+    properties = {
+      children_parliament_current_leader_icon = {
+				frame = current_children_parliament_leader_icon_frame
+      }
+		}
+  }
+
+  en1_children_parliament_decision_ui = {
+    context_type = decision_category
+      
+    window_name = "en1_children_parliament_decision_ui_window"
+        
+    visible = {
+      has_completed_focus = EN1_a_parliament_for_children
+    }
+
+    properties = {
+      en1_children_parliament_current_leader_icon_party_1 = {
+        frame = current_en1_children_parliament_leader_icon_party_1_frame
+      }
+      en1_children_parliament_current_leader_icon_party_2 = {
+        frame = current_en1_children_parliament_leader_icon_party_2_frame
+      }
+      en1_children_parliament_current_leader_icon_party_3 = {
+        frame = current_en1_children_parliament_leader_icon_party_3_frame
+      }
+      en1_children_parliament_current_leader_icon_party_4 = {
+        frame = current_en1_children_parliament_leader_icon_party_4_frame
+      }
+    }
+  }
+}

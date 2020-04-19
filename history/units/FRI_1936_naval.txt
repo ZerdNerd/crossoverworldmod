@@ -1,0 +1,31 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Königliche Marine"			
+		naval_base = 2599
+		task_force = {				
+			name = "1. Flotte"
+			location = 2599
+			ship = { name = "König Friedewalt" definition = heavy_cruiser  equipment = { heavy_cruiser_1 = { amount = 1 owner = FRI } } }	
+			ship = { name = "Kronprinz Hartmut" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { heavy_cruiser_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Pantmawr" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = FRI } } } 		
+			ship = { name = "Leipzig" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = FRI } } }		
+			ship = { name = "Freie Stadt Valde" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = FRI } } }			
+			ship = { name = "Mark" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = FRI } } }	
+			ship = { name = "Murva" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = FRI } } }			
+			ship = { name = "Emdenen" definition = light_cruiser equipment = { light_cruiser_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Jaguar" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Leopard" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Luchs" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Tiger" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+		}
+		task_force = {
+			name = "2. Flotte"
+			location = 2599
+			ship = { name = "Falke" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Kondor" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Wolf" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+			ship = { name = "Iltis" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = FRI } } }
+		}
+	}
+}

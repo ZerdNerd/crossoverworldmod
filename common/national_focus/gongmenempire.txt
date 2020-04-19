@@ -1,0 +1,1289 @@
+focus_tree = { 
+	id = gongmen
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = GON
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = GON_expanding_industry
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 0
+		cost = 3
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_roads_from_east_to_west
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expanding_industry } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			167 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 2 
+					instant_build = yes }
+				}
+			181 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			192 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			199 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			236 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			251 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			249 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_northern_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_roads_from_east_to_west } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			163 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes }
+				}
+			177 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			194 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_expanding_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expanding_industry } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			163 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = arms_factory
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			194 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_new_cannon_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expanding_factories } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			194 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction= { 
+					type = arms_factory 
+					level = 3
+					instant_build = yes 
+				}
+			}
+			177 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_civilian_sector
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expanding_industry } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			163 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_rice_fields
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_civilian_sector } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			177 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = GON_moar_cannons
+		icon = GFX_goal_generic_army_artillery2
+		x = 1
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_northern_infrastructure }
+		prerequisite = { focus = GON_new_cannon_factories }
+		prerequisite = { focus = GON_rice_fields }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 2
+				category = artillery
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_moar_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_northern_infrastructure }
+		prerequisite = { focus = GON_new_cannon_factories }
+		prerequisite = { focus = GON_rice_fields }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+		
+		}
+		completion_reward = { 
+			190 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { 
+					type = dockyard
+					level = 3 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = {
+		id = GON_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = GON_moar_cannons }
+		x = 0
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 15
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GON_doctrine_effort2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = GON_doctrine_effort }
+		x = 0
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = GON_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = GON_moar_cannons }
+		prerequisite = { focus = GON_moar_dockyards }
+		x = 2
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = GON_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = GON_equipment_effort }
+		x = 2
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = GON_destroyers_and_cruisers
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = GON_moar_dockyards }
+		x = 4
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_destroyer
+				technology = basic_destroyer
+				technology = improved_destroyer
+				technology = advanced_destroyer
+			}
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = improved_light_cruiser
+				technology = advanced_light_cruiser
+				technology = improved_heavy_cruiser
+				technology = advanced_heavy_cruiser
+			}
+		}
+	}
+
+	focus = {
+		id = GON_capital_ships
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = GON_destroyers_and_cruisers }
+		x = 4
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = basic_battlecruiser
+				technology = basic_battleship
+				technology = improved_battleship
+				technology = advanced_battleship
+				technology = heavy_battleship
+				technology = heavy_battleship2
+				technology = early_carrier
+				technology = basic_carrier
+				technology = improved_carrier
+				technology = advanced_carrier
+			}
+		}
+	}
+
+	###POLITICAL AND EXPANSION
+
+	focus = { 
+		id = GON_crush_remaining_monarchists
+		icon = GFX_goal_generic_political_pressure
+		x = 12
+		y = 0
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			date > 1938.9.1
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			add_timed_idea = {
+				idea = GON_decreasing_monarchists
+				days = 200
+			}
+			remove_ideas = {
+				GON_monarchist_guerillas
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_go_solo
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_crush_remaining_monarchists }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			set_rule = {
+    			can_create_factions = yes
+			}
+			create_faction = gongmen_pact
+		}		
+	}
+
+	focus = { 
+		id = GON_invite_tri_state_area
+		icon = GFX_goal_anschluss
+		x = 9
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_go_solo }
+		available = {
+			TSA = {
+				has_government = fascism
+				is_in_faction = no
+			}
+		}
+		bypass = {
+			is_in_faction_with = TSA
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			TSA = {
+				country_event = {
+					id = gongmenempire.1
+					days = 1
+				}
+			} 
+		}		
+	}
+
+	focus = { 
+		id = GON_invite_spalding
+		icon = GFX_goal_anschluss
+		x = 7
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_go_solo }
+		available = {
+			SLD = {
+				has_government = fascism
+				is_in_faction = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SLD = {
+				country_event = {
+					id = gongmenempire.1
+					days = 1
+				}
+			} 
+		}		
+	}
+
+	focus = { 
+		id = GON_better_technology
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 8
+		y = 3
+		cost = 36
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_invite_tri_state_area focus = GON_invite_spalding }
+		available = {
+			OR = {
+				is_in_faction_with = TSA
+				is_in_faction_with = SLD
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+    			add_idea = modern_tech_idea
+			}
+			add_research_slot = 2
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		}		
+	}
+
+#	focus = { 
+#		id = GON_invite_humsin
+#		icon = GFX_goal_anschluss
+#		x = 11
+#		y = 2
+#		cost = 10
+#		available_if_capitulated = yes 
+#		prerequisite = { focus = GON_go_solo }
+#		mutually_exclusive = { focus = GON_invite_arktos }
+#		available = {
+#			DES = {
+#				is_in_faction = no
+#			}
+#		}
+#
+#		ai_will_do = { 
+#			factor = 1
+#		} 
+#		completion_reward = { 
+#			DES = {
+#				country_event = {
+#					id = gongmenempire.1
+#					days = 1
+#				}
+#			} 
+#		}		
+#	}
+
+	focus = { 
+		id = GON_invite_arktos
+		icon = GFX_goal_anschluss
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_go_solo }
+		available = {
+			ICW = {
+				is_in_faction = no
+				has_completed_focus = ICW_versus_greenland
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			ICW = {
+				country_event = {
+					id = gongmenempire.1
+					days = 1
+				}
+			} 
+		}		
+	}
+
+	focus = { 
+		id = GON_begin_year_of_peacock
+		icon = GFX_goal_generic_propaganda
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_go_solo }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_timed_idea = {
+				idea = GON_year_of_peacock
+				days = 365
+			}
+			add_named_threat = { 
+    			threat = 5 
+    			name = GON_year_of_peacock_begins
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_expansion_to_the_west
+		icon = GFX_goal_generic_position_armies
+		x = 9
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_begin_year_of_peacock }
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			190 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 5747
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 2287
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 4915
+				}
+			}
+			167 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 5815
+				}
+			}
+			181 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 1748
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 458
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes 
+					province = 1014
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_invade_republic_of_turtles
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expansion_to_the_west }
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			create_wargoal = {
+				target = TRL
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_economy_on_occupied_territory
+		icon = GFX_goal_generic_construction
+		x = 8
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_invade_republic_of_turtles }
+		available = {
+			227 = {
+				is_owned_by = GON
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			227 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = { 
+					type = arms_factory
+					level = 2 
+					instant_build = yes 
+				}
+				add_building_construction = { 
+					type = dockyard
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_preapre_to_invade_wolves
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 10
+		y = 5
+		cost = 4
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expansion_to_the_west }
+
+		available = {
+			NOT = {
+				is_in_faction_with = WOL
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			190 = {
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 5747
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 2287
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 4915
+				}
+			}
+			167 = {
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 5815
+				}
+			}
+			181 = {
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 1748
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 458
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 1014
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_attack_wolves
+		icon = GFX_goal_generic_territory_or_war
+		x = 10
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_preapre_to_invade_wolves }
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			create_wargoal = {
+				target = WOL
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_quick_take_squirrels
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 7
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_attack_wolves }
+		prerequisite = { focus = GON_economy_on_occupied_territory }
+
+		available = {
+			has_war = no
+		}
+
+		bypass = {
+			SQU = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = SQU
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_crush_flower_hill
+		icon = GFX_goal_anti_comintern_pact
+		x = 9
+		y = 8
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_quick_take_squirrels }
+
+		available = {
+			has_war = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			declare_war_on = {
+				target = FLO
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_invade_northern_republic
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_crush_remaining_monarchists }
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = NOT
+				type = annex_everything
+			}
+			add_named_threat = { 
+    			threat = 2 
+    			name = GON_invasion_of_northern_republic
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_expansion_to_the_north
+		icon = GFX_goal_generic_position_armies
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_invade_northern_republic }
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.25
+				uses = 1
+				category = land_doctrine
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_expansion_to_the_south
+		icon = GFX_goal_generic_position_armies
+		x = 14
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_begin_year_of_peacock }
+
+		available = {
+			293 = {
+				is_owned_by = GRN
+			}
+			262 = {
+				is_owned_by = GRN
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			251 = {
+				add_building_construction = { 
+					type = bunker
+					level = 1
+					instant_build = yes 
+					province = 6852
+				}
+			}
+			249 = {
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 4762
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 6754
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 6765
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 4684
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 6710
+				}
+			}
+			231 = {
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 1151
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 6689
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 2
+					instant_build = yes 
+					province = 4701
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_midlands_are_ours
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_expansion_to_the_south }
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			293 = {
+				add_claim_by = GON
+			}
+			262 = {
+				add_claim_by = GON
+			}
+			318 = {
+				add_claim_by = GON
+			}
+			342 = {
+				add_claim_by = GON
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_attack_greenland
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_midlands_are_ours }
+		available = {
+			has_war = no
+		}
+		bypass = {
+			has_war_with = GRN
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			create_wargoal = {
+				target = GRN
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_align_spalding
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_attack_greenland }
+
+		bypass = {
+			always = yes
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SLD = {
+				add_ideas = {
+					fascist_influence
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_attack_pantmawr
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_align_spalding }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		bypass = {
+			has_war_with = FRI
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+				target = FRI
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_attack_central_kingdom
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_align_spalding }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		bypass = {
+			has_war_with = MAI
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+				target = MAI
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = GON_attack_duckburg
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 16
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = GON_align_spalding }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		bypass = {
+			has_war_with = DCB
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+				target = DCB
+				type = annex_everything
+			}
+		}		
+	}
+}

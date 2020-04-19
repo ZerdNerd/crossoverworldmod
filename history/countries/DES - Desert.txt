@@ -1,0 +1,150 @@
+﻿capital = 550
+
+oob = "DES_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	early_fighter = 1
+	early_bomber = 1
+	CAS1 = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_destroyer = 1
+		early_light_cruiser = 1
+		transport = 1
+	}
+
+	set_naval_oob = DES_1936_naval
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		early_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		mtg_transport = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_secondary_battery = 1
+		basic_cruiser_armor_scheme = 1
+	}
+
+	set_naval_oob = DES_1936_naval_mtg
+}
+
+set_research_slots = 3
+
+create_faction = sand_pact
+
+add_ideas = {
+	pre-industrial_tech
+}
+
+
+set_convoys = 50
+
+set_popularities = {
+	democratic = 0
+
+	fascism = 100
+		
+	communism = 0
+		
+	neutrality = 0
+		
+	monarchism = 0
+}
+
+set_politics = {
+	ruling_party = fascism
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.85
+
+create_country_leader = {
+	name = "Humsin"
+	desc = "POLITICS_TBD_DESC"
+	picture = "humsin.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Humsin"
+	desc = "POLITICS_TBD_DESC"
+	picture = "humsin.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Humsin"
+	desc = "POLITICS_TBD_DESC"
+	picture = "humsin.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Humsin"
+	desc = "POLITICS_TBD_DESC"
+	picture = "humsin.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Humsin"
+	desc = "POLITICS_TBD_DESC"
+	picture = "humsin.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Kayo the Chameleon"
+		GFX = GFX_portrait_kayo
+		traits = { kayo_chameleon }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { DES }
+	}
+	create_operative_leader = {
+		name = "Vultur"
+		GFX = GFX_portrait_vultur
+		traits = { vultur_trait }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { DES }
+	}
+}

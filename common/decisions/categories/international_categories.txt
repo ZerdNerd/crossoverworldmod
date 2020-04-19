@@ -1,0 +1,26 @@
+expeditions_for_resources_dec_category = {
+	icon = generic_political_actions
+	allowed = {
+		original_tag = FRI
+		SIO = {
+			exists = yes
+		}
+		FRI = {
+			has_country_flag = FRI_sioux_accepted_expeditions
+		}
+	}
+	
+	priority = 50
+}
+
+international_policy_dec_category = {
+	icon = generic_political_actions
+	
+	priority = 49
+}
+
+integration_of_lands_dec_category = {
+	icon = generic_political_actions
+	
+	priority = 49
+}

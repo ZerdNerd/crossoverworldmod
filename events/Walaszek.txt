@@ -1,0 +1,207 @@
+﻿###########################
+# Events for Aliens and Starfleet
+###########################
+
+add_namespace = walaszek
+
+country_event = { #Sancti Magistri wants to join our faction
+	id = walaszek.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.1"}
+	title = walaszek.1.t
+	desc = walaszek.1.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = walaszek.1.a
+		add_to_faction = SKO
+		SKO = {
+			country_event = {
+				id = walaszek.2
+				days = 1
+			}
+		}
+	}
+
+	option = { #No way
+		name = walaszek.1.a
+		SKO = {
+			country_event = {
+				id = walaszek.3
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = walaszek.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.2"}
+	title = walaszek.2.t
+	desc = walaszek.2.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #great
+		name = walaszek.2.a
+	}
+}
+
+country_event = { #They reject
+	id = walaszek.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.3"}
+	title = walaszek.3.t
+	desc = walaszek.3.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #damn
+		name = walaszek.3.a
+	}
+}
+
+country_event = { #Friedewalt asks for peace
+	id = walaszek.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.4"}
+	title = walaszek.4.t
+	desc = walaszek.4.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #agree
+		ai_chance = {
+			factor = 50
+		}
+		name = walaszek.4.a
+		transfer_state = 905
+		transfer_state = 911
+		if = {
+			limit = {
+				872 = {
+					is_core_of = MAI
+				}
+			}
+			transfer_state = 884
+			884 = {
+				add_core_of = SKO
+			}
+		}
+		905 = {
+			add_core_of = SKO
+		}
+		911 = {
+			add_core_of = SKO
+		}
+		FRI = {
+			white_peace = SKO
+			if = {
+				limit = {
+					DES = {
+						is_in_faction_with = SKO
+					}
+				}
+				white_peace = DES
+			}
+			if = {
+				limit = {
+					TSA = {
+						is_in_faction_with = SKO
+					}
+				}
+				white_peace = TSA
+			}
+			if = {
+				limit = {
+					JPN = {
+						is_in_faction_with = SKO
+					}
+				}
+				white_peace = JPN
+			}
+		}
+	}
+
+	option = { #We will conquer them all!
+		name = walaszek.4.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = { #Starfleet opposes invasion of Paradoxawka and demands immediate withdrawal
+	id = walaszek.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.5"}
+	title = walaszek.5.t
+	desc = walaszek.5.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #lol no
+		name = walaszek.5.a
+		add_political_power = 50
+		KPT = {
+			country_event = {
+				id = walaszek.6
+				days = 1
+			}
+		}
+		add_named_threat = { 
+    		threat = 5
+    		name = sancti_magistri_rejects_starfleet_demand
+		}
+	}
+
+	option = { #ok then
+		name = walaszek.5.a
+		add_political_power = -100
+		white_peace = PDX
+		hidden_effect = {
+			set_country_flag = SKO_withdrawn_from_pdx
+		}
+		KPT = {
+			country_event = {
+				id = walaszek.7
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Sancti Magistri rejects our demand
+	id = walaszek.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.6"}
+	title = walaszek.6.t
+	desc = walaszek.6.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #Intervene!
+		name = walaszek.6.a
+		declare_war_on = {
+			target = SKO
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Sancti Magistri accepts our demand
+	id = walaszek.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event walaszek.7"}
+	title = walaszek.7.t
+	desc = walaszek.7.d
+	picture = GFX_report_event_korean_war_march
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = walaszek.7.a
+		add_political_power = 100
+	}
+}

@@ -1,0 +1,3838 @@
+focus_tree = { 
+	id = enchancia_james
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = EN1
+		} 
+	} 
+
+	focus = { 
+		id = EN1_victory_in_civil_war
+		icon = GFX_focus_james
+		x = 3
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_ecw_ended
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+			hidden_effect = {
+				country_event = {
+					id = enchancia.64
+					days = 120
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_king_of_the_people
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN1_uniting_enchancia_again
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_king_of_the_people
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN1_new_connections
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_uniting_enchancia_again
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_keep_up_the_spirit
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN1_promote_peaceful_ways_and_stabilization
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 2
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_keep_up_the_spirit
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			add_manpower = 7500
+		} 
+	}
+
+	focus = { 
+		id = EN1_rebuild_the_cities
+		icon = GFX_goal_generic_construction
+		x = 2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_promote_peaceful_ways_and_stabilization
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			166 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			187 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_rebuilding_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_new_connections
+		}
+		prerequisite = {
+			focus = EN1_rebuild_the_cities
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			166 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			187 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_put_cedric_on_trial
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = enchancia.49
+				days = 1
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_put_artisans_on_trial
+		icon = GFX_goal_anti_comintern_pact
+		x = 6
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_artisans_risen_up
+				ENC = {
+					has_country_flag = artisans_rise_up
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN1_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = enchancia.50
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_root_out_radicals
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_put_cedric_on_trial
+			focus = EN1_put_artisans_on_trial
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				ENC_rooting_out_radicals
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_reforging_old_bonds
+		icon = GFX_goal_anschluss
+		x = 4
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_root_out_radicals
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			WEI = {
+				add_opinion_modifier = {
+					target = EN1
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			if = {
+				limit = {
+					KHA = {
+						has_government = monarchism
+					}
+				}
+				KHA = {
+					add_opinion_modifier = {
+						target = EN1
+    					modifier = TCWMod_generic_relations
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_return_of_everrealm_gate
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_root_out_radicals
+		}
+		bypass = {
+			ISL = {
+				NOT = {
+					has_full_control_of_state = 330
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			ISL = {
+				country_event = {
+					id = enchancia.52
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_the_last_bastion_of_hope
+		icon = GFX_goal_support_democracy
+		x = 5
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_reforging_old_bonds
+		}
+		prerequisite = {
+			focus = EN1_return_of_everrealm_gate
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN1_beacon_of_the_west
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_enchancia_is_reunited
+		icon = GFX_focus_enchancia
+		x = 3
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_rebuilding_military_industry
+		}
+		prerequisite = {
+			focus = EN1_the_last_bastion_of_hope
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			remove_ideas = {
+				ENC_aftermath_of_civil_war
+				MAC_helps_rebuild
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_make_enchancia_modern
+		icon = GFX_goal_generic_construction
+		x = 3
+		y = 6
+		cost = 30
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN1_enchancia_is_reunited
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 3
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		} 
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = EN1_reopen_to_international_relations
+		icon = GFX_goal_generic_position_armies
+		x = 14
+		y = 6
+		cost = 7.25.2
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_ecw_ended
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				has_idea = ENC_aftermath_of_civil_war
+			}
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = EN1_the_basics_everrealm
+		icon = GFX_goal_generic_major_alliance
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = COR
+						tag = TRU
+						tag = ZUM
+						tag = RUD
+						tag = AVA
+						tag = ISL
+						tag = MAR
+					}
+					has_government = monarchism
+					NOT = {
+						has_opinion_modifier = TCWmod_generic_relations
+						has_civil_war = yes
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_wei_ling_bay_matters
+		icon = GFX_goal_generic_build_navy
+		x = 1
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_the_basics_everrealm
+		}
+		available = {
+			WEI = {
+				exists = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			WEI = {
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_intervene_in_the_civil_war
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 0
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WEI_WLC_fight
+				has_global_flag = wei_ling_civil_war_start
+			}
+		}
+		bypass = {
+			WLC = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = EN1_wei_ling_bay_matters
+		}
+		mutually_exclusive = {
+			focus = EN1_initiate_peace_talks
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_to_war = { 
+    			targeted_alliance = WEI 
+    			enemy = WLC 
+    			hostility_reason = intervention
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_help_rebuild_the_country
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			WEI = {
+				NOT = {
+					has_war_with = WLC
+				}
+			}
+			WLC = {
+				exists = no
+			}
+		}
+		prerequisite = {
+			focus = EN1_intervene_in_the_civil_war
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+			WEI = {
+				add_political_power = 100
+				add_offsite_building = { type = industrial_complex level = 3 }
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_modernize_their_army
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_help_rebuild_the_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 25
+			WEI = {
+				army_experience = 25
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_initiate_peace_talks
+		icon = GFX_goal_generic_dangerous_deal
+		x = 2
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = WEI_WLC_fight
+				has_global_flag = wei_ling_civil_war_start
+			}
+		}
+		mutually_exclusive = {
+			focus = EN1_intervene_in_the_civil_war
+		}
+		prerequisite = {
+			focus = EN1_wei_ling_bay_matters
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			WEI = {
+				country_event = {
+					id = everrealm.11
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_strengthen_independence_of_wei_ling
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			WEI = {
+				NOT = {
+					has_war_with = WLC
+				}
+			}
+			WLC = {
+				exists = yes
+			}
+		}
+		prerequisite = {
+			focus = EN1_initiate_peace_talks
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			give_guarantee = WEI
+			250 = {
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 3336
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 4210
+				}
+			}
+			248 = {
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 3863
+				}
+			}
+			320 = {
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 248
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7032
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7095
+				}
+			}
+			386 = {
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7147
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7213
+				}
+			}
+			394 = {
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 2449
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 700
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7337
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 7436
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 559
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 4
+					instant_build = yes
+					province = 1869
+				}
+			}
+			WEI = {
+				add_political_power = -100
+				give_military_access = EN1
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_send_weapons_and_commanders_to_wei_ling
+		icon = GFX_goal_generic_military_sphere
+		x = 2
+		y = 11
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			has_equipment = {
+    			infantry_equipment > 5000
+			}
+		}
+		prerequisite = {
+			focus = EN1_strengthen_independence_of_wei_ling
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 5
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 5000
+    			target = WEI
+			}
+			WEI = {
+				army_experience = 5
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_economic_deal_with_avalor
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 4
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_the_basics_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN1_enchancian_avalorian_trade_deal
+			}
+			AVA = {
+				add_ideas = {
+					EN1_enchancian_avalorian_trade_deal
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_military_deal_with_avalor
+		icon = GFX_goal_generic_military_deal
+		x = 6
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_the_basics_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			give_guarantee = AVA
+			give_military_access = AVA
+			AVA = {
+				give_guarantee = EN1
+				give_military_access = EN1
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_combined_navy_manouvers
+		icon = GFX_goal_generic_amphibious_assault
+		x = 4
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_economic_deal_with_avalor
+		}
+		prerequisite = {
+			focus = EN1_military_deal_with_avalor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			navy_experience = 15
+			AVA = {
+				navy_experience = 15
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_investments_in_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_economic_deal_with_avalor
+		}
+		prerequisite = {
+			focus = EN1_military_deal_with_avalor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -150
+			add_offsite_building = { type = industrial_complex level = 3 }
+			AVA = {
+				add_resource = {
+    				type = steel
+    				amount = 17
+    				state = 729
+				}
+				add_resource = {
+    				type = steel
+    				amount = 10
+    				state = 690
+				}
+				add_resource = {
+    				type = steel
+    				amount = 13
+    				state = 50
+				}
+				add_resource = {
+    				type = oil
+    				amount = 18
+    				state = 749
+				}
+				add_resource = {
+    				type = oil
+    				amount = 5
+    				state = 50
+				}
+				add_resource = {
+    				type = chromium
+    				amount = 15
+    				state = 723
+				}
+				give_resource_rights = { receiver = EN1 state = 729 }
+				give_resource_rights = { receiver = EN1 state = 723 }
+				729 = {
+					add_building_construction = { 
+						type = naval_base
+						level = 3
+						instant_build = yes 
+						province = 9733
+					}
+				}
+				50 = {
+					add_building_construction = { 
+						type = naval_base
+						level = 2
+						instant_build = yes 
+						province = 10427
+					}
+				}
+				857 = {
+					add_building_construction = { 
+						type = naval_base
+						level = 2
+						instant_build = yes 
+						province = 10405
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_expand_our_reach_further_south
+		icon = GFX_goal_generic_improve_relations
+		x = 5
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_combined_navy_manouvers
+		}
+		prerequisite = {
+			focus = EN1_investments_in_avalor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			KHU = {
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_enchancian_sea_matters
+		icon = GFX_goal_generic_build_navy
+		x = 9
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_the_basics_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			
+		} 
+	}
+
+	focus = { 
+		id = EN1_maarswik_matters
+		icon = GFX_goal_generic_improve_relations
+		x = 8
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_enchancian_sea_matters
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			MAR = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			MAR = {
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_isleworth_too
+		icon = GFX_goal_generic_improve_relations
+		x = 10
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_enchancian_sea_matters
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			ISL = {
+				exists = no
+			}
+		}
+		completion_reward = {
+			ISL = {
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_so_guarantee_them_both
+		icon = GFX_goal_generic_defence
+		x = 9
+		y = 10
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_maarswik_matters
+		}
+		prerequisite = {
+			focus = EN1_isleworth_too
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			give_guarantee = ISL
+			give_guarantee = MAR
+		} 
+	}
+
+	focus = { 
+		id = EN1_a_base_on_isleworth_sea
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 9
+		y = 11
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_so_guarantee_them_both
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -150
+			transfer_state = 18
+			18 = {
+				add_building_construction = { 
+					type = naval_base
+					level = 3
+					instant_build = yes 
+					province = 10733
+				}
+				add_building_construction = { 
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_manpower = 7500
+				set_state_category = rural
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_military_movements
+		icon = GFX_goal_generic_military_sphere
+		x = 14
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = COR
+						tag = TRU
+						tag = RUD
+						tag = KHA
+					}
+					OR = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_isolation
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_eliminate_the_sorcerers
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_military_movements
+		}
+		bypass = {
+			KHA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+			RUD = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		available = {
+			OR = {
+				KHA = {
+					has_government = fascism
+				}
+				RUD = {
+					has_government = fascism
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			if = {
+				limit = {
+					KHA = {
+						has_government = fascism
+					}
+				}
+				declare_war_on = {
+					target = KHA
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					RUD = {
+						has_government = fascism
+					}
+				}
+				declare_war_on = {
+					target = RUD
+					type = topple_government
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_eliminate_the_communes
+		icon = GFX_goal_anti_comintern_pact
+		x = 15
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_military_movements
+		}
+		bypass = {
+			COR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+			TRU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		available = {
+			OR = {
+				COR = {
+					has_government = communism
+				}
+				TRU = {
+					has_government = communism
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			if = {
+				limit = {
+					COR = {
+						has_government = communism
+					}
+				}
+				declare_war_on = {
+					target = COR
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					TRU = {
+						has_government = communism
+					}
+				}
+				declare_war_on = {
+					target = TRU
+					type = topple_government
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_prepare_to_strike_back
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 14
+		y = 9
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_eliminate_the_sorcerers
+		}
+		prerequisite = {
+			focus = EN1_eliminate_the_communes
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -150
+			transfer_state = 9
+			9 = {
+				add_manpower = 7500
+				add_building_construction = { 
+					type = naval_base
+					level = 3
+					instant_build = yes 
+					province = 328
+				}
+				add_building_construction = { 
+					type = naval_base
+					level = 2
+					instant_build = yes 
+					province = 4659
+				}
+				add_building_construction = { 
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				set_state_category = rural
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_operation_torch
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 12
+		y = 10
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			has_war_with = DUL
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = DUL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_operation_overlord
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 14
+		y = 10
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = LEC
+				LEC = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = LEC
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_operation_eastern_sun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 10
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_prepare_to_strike_back
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = WOL
+				WOL = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = WOL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_operation_southern_justice
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 13
+		y = 11
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_operation_torch
+		}
+		prerequisite = {
+			focus = EN1_operation_overlord
+		}
+		available = {
+			JPN = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			has_war_with = JPN
+			JPN = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = JPN
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_operation_actually_thinkable
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 15
+		y = 11
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_operation_eastern_sun
+		}
+		prerequisite = {
+			focus = EN1_operation_overlord
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			has_war_with = FLO
+		}
+		completion_reward = {
+			declare_war_on = {
+				target = FLO
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_teamwork_thinking
+		icon = GFX_goal_generic_national_unity
+		x = 21
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_reopen_to_international_relations
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_country = {
+				limit = {
+					is_in_faction_with = EN1
+					NOT = {
+						has_opinion_modifier = TCWmod_generic_relations
+					}
+				}
+				add_opinion_modifier = {
+    				target = EN1
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_shipments_to_greenland
+		icon = GFX_goal_generic_improve_relations
+		x = 18
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_teamwork_thinking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 4000
+    			target = GRN
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_shipments_to_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 20
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_teamwork_thinking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 4000
+    			target = AVA
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_shipments_to_khurain
+		icon = GFX_goal_generic_improve_relations
+		x = 22
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_teamwork_thinking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 4000
+    			target = KHU
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_shipments_to_central_kingdom
+		icon = GFX_goal_generic_improve_relations
+		x = 24
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_teamwork_thinking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 4000
+    			target = MAI
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_dragon_flight_schools
+		icon = GFX_goal_generic_air_fighter2
+		x = 18
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_shipments_to_greenland
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = GRN_has_dragons
+				GRN = {
+					has_country_flag = dragon_immigration
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 1
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_learn_tactics_from_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 20
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_shipments_to_avalor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_khurain_factory_technologies
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_shipments_to_khurain
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN1_khurain_factory_technologies_idea
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_order_new_ships_from_central_kingdom
+		icon = GFX_focus_generic_navy_battleship2
+		x = 24
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN1_shipments_to_central_kingdom
+		}
+		available = {
+			has_idea = modern_tech_idea
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_receive_ships_from_ck
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Man the Guns"
+						}
+					}
+					load_oob = enchancia_ships_from_macius
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					load_oob = enchancia_ships_from_macius_mtg
+				}
+			}
+		} 
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	TTTTTTT HH   HH EEEEEEE    PPPPPP    AAA   RRRRRR  LL      IIIII   AAA   MM    MM EEEEEEE NN   NN TTTTTTT 
+	#	  TTT   HH   HH EE         PP   PP  AAAAA  RR   RR LL       III   AAAAA  MMM  MMM EE      NNN  NN   TTT   
+	#	  TTT   HHHHHHH EEEEE      PPPPPP  AA   AA RRRRRR  LL       III  AA   AA MM MM MM EEEEE   NN N NN   TTT   
+	#	  TTT   HH   HH EE         PP      AAAAAAA RR  RR  LL       III  AAAAAAA MM    MM EE      NN  NNN   TTT   
+	#	  TTT   HH   HH EEEEEEE    PP      AA   AA RR   RR LLLLLLL IIIII AA   AA MM    MM EEEEEEE NN   NN   TTT   
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+	id = EN1_request_children_parliament
+	icon = GFX_focus_generic_the_giant_wakes
+	x = 11
+	y = 7
+	cost = 1
+	available_if_capitulated = yes
+	ai_will_do = { 
+		factor = 1
+	} 
+	prerequisite = {
+		focus = EN1_reopen_to_international_relations
+	}
+	available = { 
+		MAI = {
+			has_completed_focus = MAI_first_elections
+		}
+		custom_trigger_tooltip = {
+			tooltip = bandits_pacified
+			NOT = {
+				has_country_flag = bandits_army_sent
+			}
+		}
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = EN1_will_send_request_about_chp
+		hidden_effect = {
+			MAI = {
+				set_country_flag = request_from_enchancia_chp
+			}
+			if = {
+				limit = {
+					has_country_flag = enchancian_civil_war_made_me_do_this
+				}
+				country_event = {
+					id = enchancia.71
+					days = 0
+				}
+			}
+			random_list = {
+				50 = {
+					set_country_flag = leader_sofia
+					set_variable = { en1_chp_leader_icon_party_1_temp_number = 1 }
+					recalc_en1_children_parliament_leader_icon_party_1 = yes
+				}
+				50 = {
+					set_country_flag = leader_amber
+					set_variable = { en1_chp_leader_icon_party_1_temp_number = 10 }
+					recalc_en1_children_parliament_leader_icon_party_1 = yes
+				}
+			}
+		}
+	}
+}
+
+	focus = { 
+		id = EN1_a_parliament_for_children
+		icon = GFX_focus_generic_self_management
+		x = 23
+		y = 0
+		cost = 10
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_chp_agreed_to_export
+				has_global_flag = EN1_can_create_children_parliament
+			}
+			NOT = {
+				has_idea = ENC_aftermath_of_civil_war
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = EN1_will_create_children_parliament
+			hidden_effect = {
+				set_country_flag = EN1_children_parliament_created
+				set_variable = { EN1_royalist_party_pop = 0 }
+				set_variable = { EN1_rural_party_pop = 0 }
+				set_variable = { EN1_justice_party_pop = 0 }
+				set_variable = { EN1_future_party_pop = 0 }
+			}
+			country_event = {
+				id = childrenparliament.200
+				days = 0
+			}
+		} 
+	}
+
+	##################################################################################
+
+	# ROYALISTS
+
+	focus = { 
+		id = EN1_princess_premier_sofia
+		icon = GFX_focus_sofia
+		x = 10
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_princess_premier_amber
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_sofia_premier
+				has_global_flag = EN1_sofia_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_sofia_premier
+				has_global_flag = EN1_sofia_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_sofia_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_princess_premier_amber
+		icon = GFX_focus_amber
+		x = 12
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_princess_premier_sofia
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_amber_premier
+				has_global_flag = EN1_amber_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_amber_premier
+				has_global_flag = EN1_amber_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_amber_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_grants_for_excelling_children
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 8
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_sofia
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			add_war_support = 0.02
+		} 
+	}
+
+	focus = { 
+		id = EN1_lower_taxes_for_small_businesses
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 8
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_fund_grants_for_excelling_children
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = {
+				EN1_lower_taxes_for_small_businesses_bill
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_trips_to_dunwiddie_castle
+		icon = GFX_focus_enchancia
+		x = 10
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_sofia
+			focus = EN1_princess_premier_amber
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.01
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_invest_in_their_future
+		icon = GFX_focus_mex_privatisation
+		x = 10
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_fund_trips_to_dunwiddie_castle
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.02
+			add_ideas = {
+				EN1_chp_future_investments_bill
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_new_schools
+		icon = GFX_focus_generic_military_academy
+		x = 12
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_sofia
+			focus = EN1_princess_premier_amber
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_school_books
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 12
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_fund_new_schools
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN1_expand_the_contacts_bureau
+		icon = GFX_goal_generic_national_unity
+		x = 14
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_amber
+		}
+		available = {
+			has_idea = EN1_children_contacts_bureau_1
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+			swap_ideas = {
+				remove_idea = EN1_children_contacts_bureau_1
+				add_idea = EN1_children_contacts_bureau_2
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_international_students_exchange
+		icon = GFX_goal_generic_improve_relations
+		x = 14
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_expand_the_contacts_bureau
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+		} 
+	}
+
+	##################################################################################
+
+	# RURALS
+
+	focus = { 
+		id = EN1_premier_peter
+		icon = GFX_focus_peter
+		x = 18
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_premier_heidi
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_peter_premier
+				has_global_flag = EN1_peter_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_peter_premier
+				has_global_flag = EN1_peter_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_peter_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_premier_heidi
+		icon = GFX_focus_heidi
+		x = 20
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_premier_peter
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_heidi_premier
+				has_global_flag = EN1_heidi_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_heidi_premier
+				has_global_flag = EN1_heidi_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_heidi_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_give_more_power_to_youth_councils
+		icon = GFX_goal_generic_improve_relations
+		x = 16
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_peter
+		}
+		available = {
+			has_idea = EN1_youth_councils_1
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			swap_ideas = {
+				remove_idea = EN1_youth_councils_1
+				add_idea = EN1_youth_councils_2
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_create_school_councils
+		icon = GFX_focus_generic_elections
+		x = 16
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_give_more_power_to_youth_councils
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = EN1_fund_trips_to_curorts
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 18
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_peter
+			focus = EN1_premier_heidi
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.02
+			every_owned_state = {
+				limit = {
+					is_coastal = yes
+					NOT = {
+						state = 187
+					}
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_cut_food_prices_in_schools
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 18
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_fund_trips_to_curorts
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+			add_ideas = {
+				EN1_lower_food_prices_in_schools_bill
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_develop_rural_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 20
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_peter
+			focus = EN1_premier_heidi
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+			every_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_open_new_rural_schools
+		icon = GFX_focus_generic_military_academy
+		x = 20
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_develop_rural_roads
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+			every_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_state_modifier = {
+					modifier = {
+						MONTHLY_POPULATION = 0.05
+						local_resources_factor = 0.05
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_build_pioneer_camps_for_children
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_heidi
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = EN1_children_from_war_zones_1
+				add_idea = EN1_children_from_war_zones_2
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_organize_trips_for_the_refugee_children
+		icon = GFX_goal_generic_improve_relations
+		x = 22
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_build_pioneer_camps_for_children
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.1
+		} 
+	}
+
+	##################################################################################
+
+	# JUSTICE
+
+	focus = { 
+		id = EN1_premier_ronja
+		icon = GFX_focus_ronja
+		x = 26
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_premier_birk
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_ronja_premier
+				has_global_flag = EN1_ronja_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_ronja_premier
+				has_global_flag = EN1_ronja_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_ronja_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_premier_birk
+		icon = GFX_focus_birk
+		x = 28
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_premier_ronja
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_birk_premier
+				has_global_flag = EN1_birk_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_birk_premier
+				has_global_flag = EN1_birk_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_birk_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_about_those_outlaws
+		icon = GFX_goal_generic_dangerous_deal
+		x = 24
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_ronja
+		}
+		available = {
+			has_decision = EN1_pardon_all_outlaws_reform
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			remove_ideas = {
+				EN1_bandits_raging_again
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_turn_reformed_bandits_into_army_men
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 24
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_about_those_outlaws
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 25
+			army_experience = 15
+		} 
+	}
+
+	focus = { 
+		id = EN1_refurbish_the_curorts
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 26
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_ronja
+			focus = EN1_premier_birk
+		}
+		available = {
+			has_decision = EN1_summer_trips_reform
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = EN1_modernize_the_roads_to_curorts
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_refurbish_the_curorts
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_fight_illiteracy_in_rural_regions
+		icon = GFX_focus_generic_military_academy
+		x = 28
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_ronja
+			focus = EN1_premier_birk
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -200
+			add_timed_idea = {
+				idea = EN1_fighting_illiteracy
+				days = 400
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_provide_every_town_a_bigger_shop
+		icon = GFX_goal_generic_construct_civilian
+		x = 28
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_fight_illiteracy_in_rural_regions
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			every_owned_state = {
+				limit = {
+					has_state_category = town
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_establish_free_riding_schools
+		icon = GFX_goal_generic_cavalry
+		x = 30
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_birk
+		}
+		available = {
+			has_decision = EN1_every_child_a_horse
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			swap_ideas = {
+				remove_idea = EN1_every_child_a_pony_1
+				add_idea = EN1_every_child_a_pony_2
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_overhaul_the_flying_derby
+		icon = GFX_goal_generic_improve_relations
+		x = 30
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_establish_free_riding_schools
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+		} 
+	}
+
+	##################################################################################
+
+	# FUTURE
+
+	focus = { 
+		id = EN1_princess_premier_nella
+		icon = GFX_focus_nella
+		x = 34
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_premier_garrett
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_nella_premier
+				has_global_flag = EN1_nella_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_nella_premier
+				has_global_flag = EN1_nella_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_nella_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_premier_garrett
+		icon = GFX_focus_garrett
+		x = 36
+		y = 1
+		cost = 1
+		prerequisite = {
+			focus = EN1_a_parliament_for_children
+		}
+		mutually_exclusive = {
+			focus = EN1_princess_premier_nella
+		}
+		available_if_capitulated = yes 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_garrett_premier
+				has_global_flag = EN1_garrett_premier
+			}
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EN1_garrett_premier
+				has_global_flag = EN1_garrett_premier
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = EN1_garrett_unlock
+		} 
+	}
+
+	focus = { 
+		id = EN1_nellas_dynasty_is_also_royal
+		icon = GFX_focus_generic_home_defense
+		x = 32
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_nella
+		}
+		available = {
+			has_decision = EN1_every_royal_in_enchancia_is_equal
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_ideas = {
+				EN1_two_dynasties
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_solve_the_unwanted_crisis
+		icon = GFX_goal_generic_dangerous_deal
+		x = 32
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_nellas_dynasty_is_also_royal
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			country_event = {
+				id = enchancia.70
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_make_cities_greener
+		icon = GFX_goal_generic_construction
+		x = 34
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_nella
+			focus = EN1_premier_garrett
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			every_owned_state = {
+				limit = {
+					OR = {
+						has_state_category = town
+						has_state_category = city
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_introduce_kindergartens
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 34
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_make_cities_greener
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -100
+			add_ideas = {
+				EN1_kindergartens
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_modernize_the_nobility
+		icon = GFX_focus_generic_support_the_left_right
+		x = 36
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_princess_premier_nella
+			focus = EN1_premier_garrett
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = -0.15
+		} 
+	}
+
+	focus = { 
+		id = EN1_noble_kids_and_peasant_kids_are_equal
+		icon = GFX_goal_generic_national_unity
+		x = 36
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_modernize_the_nobility
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.15
+			remove_ideas = {
+				EN1_future_party_favoring_nobility
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_refurbish_holiday_destinations
+		icon = GFX_goal_generic_construction2
+		x = 38
+		y = 2
+		cost = 10
+		prerequisite = {
+			focus = EN1_premier_garrett
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			every_owned_state = {
+				limit = {
+					is_coastal = yes
+					has_state_category = town
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN1_bring_asphalt_to_enchancia
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 38
+		y = 3
+		cost = 10
+		prerequisite = {
+			focus = EN1_refurbish_holiday_destinations
+		}
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -150
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN1_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 32
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_enchancian_guns
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = EN1_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = EN1_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = EN1_enchancian_guns }
+		x = 1
+		y = 1
+		relative_position_id = EN1_enchancian_guns
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = EN1_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = EN1_artillery_research
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = EN1_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = EN1_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN1_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN1_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_slaton_industries
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = EN1_enchancian_guns }
+		x = -1
+		y = 1
+		relative_position_id = EN1_enchancian_guns
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = EN1_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = EN1_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EN1_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = EN1_practice_reverse_engineering
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = EN1_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = EN1_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN1_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN1_doctrine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_slaton_tactics_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = EN1_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = EN1_doctrine_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				EN1_slaton_academy_of_tactics
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_enchancian_guns_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = EN1_slaton_industries }
+		x = 0
+		y = 1
+		relative_position_id = EN1_slaton_industries
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EN1_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN1_mechanization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = EN1_enchancian_guns_3 }
+		prerequisite = { focus = EN1_slaton_tactics_academy }
+		prerequisite = { focus = EN1_armor_effort }
+		prerequisite = { focus = EN1_new_officer_corps }
+		prerequisite = { focus = EN1_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = EN1_enchancian_guns_3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN1_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 25
+		y = 11
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				instant_build = yes
+    				province = 19
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = EN1_naval_effort }
+		mutually_exclusive = { focus = EN1_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = EN1_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = EN1_naval_effort }
+		mutually_exclusive = { focus = EN1_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = EN1_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_slaton_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EN1_flexible_navy focus = EN1_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = EN1_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = EN1_slaton_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = EN1_slaton_naval_academy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = EN1_flexible_navy focus = EN1_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = EN1_flexible_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = EN1_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN1_destroyer_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = EN1_large_navy focus = EN1_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = EN1_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = EN1_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = EN1_floating_airfields
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = EN1_large_navy focus = EN1_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = EN1_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = EN1_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN1_cruiser_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN1_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 35
+		y = 11
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EN1_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = EN1_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = EN1_fighter_focus }
+		prerequisite = { focus = EN1_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = EN1_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = EN1_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = EN1_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_enchancian_pilot_school
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = EN1_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = EN1_fighter_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN1_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = EN1_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = EN1_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = EN1_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = EN1_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN1_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = EN1_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = EN1_heavy_fighter_focus }
+		prerequisite = { focus = EN1_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = EN1_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = EN1_strategic_bombing
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = EN1_heavy_fighter_focus }
+		prerequisite = { focus = EN1_CAS_effort }
+		prerequisite = { focus = EN1_enchancian_pilot_school }
+		x = 0
+		y = 1
+		relative_position_id = EN1_CAS_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN1_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = EN1_aviation_effort_2 }
+		prerequisite = { focus = EN1_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = EN1_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

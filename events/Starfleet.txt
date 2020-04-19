@@ -1,0 +1,884 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = starfleet
+
+country_event = { #Sultan kills Admiral
+	id = starfleet.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.1"}
+	title = starfleet.1.t
+	desc = starfleet.1.d
+	picture = GFX_report_KPT_old_admiral
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KPT
+		date > 1936.4.20
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = starfleet.1.a
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Trybunał Stanu Gwiezdnej Floty"
+			desc = "POLITICS_TRIBUNAL_I_DESC"
+			picture = "starfleet_council.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.2
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { #Elections - spots
+	id = starfleet.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.2"}
+	title = starfleet.2.t
+	desc = starfleet.2.d
+	picture = GFX_report_KPT_old_admiral
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = starfleet.2.a
+		trigger = {
+			OR = {
+				is_ai = yes
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.3
+				days = 0
+			}
+		}
+	}
+
+	option = {
+		name = starfleet.2.a
+		trigger = {
+			is_ai = no
+			NOT = {
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.3
+				days = 0
+			}
+			sound_effect = jachas_vote
+		}
+	}
+}
+
+country_event = { #Jachas spot
+	id = starfleet.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.3"}
+	title = starfleet.3.t
+	desc = starfleet.3.d
+	picture = GFX_report_KPT_jachas
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = starfleet.3.a
+		trigger = {
+			OR = {
+				is_ai = yes
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.4
+				days = 0
+			}
+		}
+	}
+
+	option = {
+		name = starfleet.3.a
+		trigger = {
+			is_ai = no
+			NOT = {
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.4
+				days = 0
+			}
+			sound_effect = kuj_vote
+		}
+	}
+}
+
+country_event = { #Kuj spot
+	id = starfleet.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.4"}
+	title = starfleet.4.t
+	desc = starfleet.4.d
+	picture = GFX_report_KPT_kuj
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = starfleet.4.a
+		trigger = {
+			OR = {
+				is_ai = yes
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.5
+				days = 0
+			}
+		}
+	}
+
+	option = {
+		name = starfleet.4.a
+		trigger = {
+			is_ai = no
+			NOT = {
+				has_global_flag = no_sound
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = starfleet.5
+				days = 0
+			}
+			sound_effect = brother_vote
+		}
+	}
+}
+
+country_event = { #Brother spot
+	id = starfleet.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.5"}
+	title = starfleet.5.t
+	desc = starfleet.5.d
+	picture = GFX_report_KPT_brother
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = starfleet.5.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.6
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = { #Elections - voting
+	id = starfleet.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.6"}
+	title = starfleet.6.t
+	desc = starfleet.6.d
+	picture = GFX_report_KPT_old_admiral
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Vote Jachas
+		name = starfleet.6.a
+		set_politics = {
+			ruling_party = communism
+		}
+		add_popularity = {
+    		ideology = neutrality
+    		popularity = -0.75
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.65
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.1
+		}
+		add_ideas = {
+			KPT_galakpizza
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.54
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Vote Kuj
+		name = starfleet.6.b
+		set_politics = {
+			ruling_party = fascism
+		}
+		add_popularity = {
+    		ideology = neutrality
+    		popularity = -0.7
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.45
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.25
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.54
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Vote Brother
+		name = starfleet.6.c
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Admirał Gwiezdnej Floty"
+			desc = "POLITICS_ADMIRAL_I_DESC"
+			picture = "first_admiral.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			set_country_flag = KPT_chose_brother
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.54
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Starfleet wants to ally with us
+	id = starfleet.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.7"}
+	title = starfleet.7.t
+	desc = starfleet.7.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Okay, let them join
+		name = starfleet.7.a
+		KPT = {
+			country_event = {
+				id = starfleet.8
+				days = 2
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_faction_leader = yes
+				}
+			}
+			give_guarantee = KPT
+			give_military_access = KPT
+			KPT = {
+				give_guarantee = ROOT
+				give_military_access = ROOT
+			}
+		}
+		if = {
+			limit = {
+				ROOT = {
+					is_faction_leader = yes
+				}
+			}
+			add_to_faction = KPT
+		}
+	}
+
+	option = { #Are they joking?
+		name = starfleet.7.b
+		KPT = {
+			country_event = {
+				id = starfleet.9
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = starfleet.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.8"}
+	title = starfleet.8.t
+	desc = starfleet.8.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = starfleet.8.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #They reject
+	id = starfleet.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.9"}
+	title = starfleet.9.t
+	desc = starfleet.9.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Damnit.
+		name = starfleet.9.a
+		add_political_power = -100
+	}
+}
+
+country_event = { #Starfleet wants to join our economic pact
+	id = starfleet.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.10"}
+	title = starfleet.10.t
+	desc = starfleet.10.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Okay, let them join
+		name = starfleet.10.a
+		KPT = {
+			country_event = {
+				id = starfleet.11
+				days = 1
+			}
+		}
+	}
+
+	option = { #Nope
+		name = starfleet.10.b
+		KPT = {
+			country_event = {
+				id = starfleet.12
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Friedewalt agrees
+	id = starfleet.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.11"}
+	title = starfleet.11.t
+	desc = starfleet.11.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = starfleet.11.a
+		add_political_power = 50
+		add_ideas = {
+			FRI_SLD_economic_agreement
+		}
+	}
+}
+
+country_event = { #Friedewalt denies
+	id = starfleet.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.12"}
+	title = starfleet.12.t
+	desc = starfleet.12.d
+	picture = GFX_report_KPT_old_admiral
+
+	is_triggered_only = yes
+
+	option = { #Damn
+		name = starfleet.12.a
+		add_political_power = -100
+	}
+}
+
+country_event = { #Torpeda begins his investigation
+	id = starfleet.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.13"}
+	title = starfleet.13.t
+	desc = starfleet.13.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #He won't find anything
+		name = starfleet.13.a
+	}
+}
+
+country_event = { #Torpeda finds first proofs
+	id = starfleet.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.14"}
+	title = starfleet.14.t
+	desc = starfleet.14.d
+	picture = GFX_report_KPT_jachas
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KPT
+		focus_progress = {
+    		focus = KPT_erase_any_proofs
+   			progress > 0.35
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Stop him!
+		name = starfleet.14.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16
+				days = 7
+			}
+		}
+	}
+
+	option = { #That's nothing yet, carry on
+		name = starfleet.14.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.15
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #Torpeda finds solid proofs
+	id = starfleet.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.15"}
+	title = starfleet.15.t
+	desc = starfleet.15.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Arrest him ASAP!
+		name = starfleet.15.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16
+				days = 3
+			}
+		}
+	}
+
+	option = { #Carry on
+		name = starfleet.15.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.18
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Michal Glus continues Torpeda's investigation
+	id = starfleet.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.16"}
+	title = starfleet.16.t
+	desc = starfleet.16.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #He's too stupid to do anything
+		name = starfleet.16.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.17
+				days = 4
+			}
+		}
+	}
+
+	option = { #Arrest him too!
+		name = starfleet.16.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.161
+				days = 8
+			}
+		}
+	}
+}
+
+country_event = { #Tribunal asks Jachas why Torpeda and Glus are in jail
+	id = starfleet.161
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.161"}
+	title = starfleet.161.t
+	desc = starfleet.161.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #They were spying for Sancti Magistri
+		name = starfleet.161.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.1611
+				days = 0
+			}
+		}
+	}
+
+	option = { #They tried to kill Jachas
+		name = starfleet.161.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.1612
+				days = 0
+			}
+		}
+	}
+
+	option = { #They rebelled against the Starfleet
+		name = starfleet.161.c
+		hidden_effect = {
+			country_event = {
+				id = starfleet.1613
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Tribunal demands proofs that Torpeda and Glus were spies
+	id = starfleet.1611
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.1611"}
+	title = starfleet.1611.t
+	desc = starfleet.1611.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas has proofs
+		name = starfleet.1611.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16111
+				days = 0
+			}
+		}
+	}
+
+	option = { #Jachas has no proofs
+		name = starfleet.1611.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16112
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Proofs that Torpeda and Glus were spies are false
+	id = starfleet.16111
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.16111"}
+	title = starfleet.16111.t
+	desc = starfleet.16111.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas goes to jail
+		name = starfleet.16111.a
+		create_country_leader = {
+			name = "JJ Torpeda"
+			desc = "POLITICS_TORPEDA_DESC"
+			picture = "torpeda.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.65
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.65
+		}
+	}
+}
+
+country_event = { #No proofs
+	id = starfleet.16112
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.16112"}
+	title = starfleet.16112.t
+	desc = starfleet.16112.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas goes to jail
+		name = starfleet.16111.a
+		create_country_leader = {
+			name = "JJ Torpeda"
+			desc = "POLITICS_TORPEDA_DESC"
+			picture = "torpeda.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.65
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.65
+		}
+	}
+}
+
+country_event = { #Tribunal demands proofs that Torpeda and Glus tried to kill Jachas
+	id = starfleet.1612
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.1612"}
+	title = starfleet.1612.t
+	desc = starfleet.1612.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas has proofs
+		name = starfleet.1612.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16121
+				days = 0
+			}
+		}
+	}
+
+	option = { #Jachas has no proofs
+		name = starfleet.1612.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16112
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Proofs that Torpeda and Glus tried to kill Jachas are false
+	id = starfleet.16121
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.16121"}
+	title = starfleet.16121.t
+	desc = starfleet.16121.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas goes to jail
+		name = starfleet.16121.a
+		create_country_leader = {
+			name = "JJ Torpeda"
+			desc = "POLITICS_TORPEDA_DESC"
+			picture = "torpeda.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.65
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.65
+		}
+	}
+}
+
+country_event = { #Tribunal demands proofs that Torpeda and Glus rebelled
+	id = starfleet.1613
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.1613"}
+	title = starfleet.1613.t
+	desc = starfleet.1613.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas has proofs
+		name = starfleet.1613.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16131
+				days = 0
+			}
+		}
+	}
+
+	option = { #Jachas has no proofs
+		name = starfleet.1613.b
+		hidden_effect = {
+			country_event = {
+				id = starfleet.16112
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Proofs that Torpeda and Glus rebelled turn out to be true
+	id = starfleet.16131
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.16131"}
+	title = starfleet.16131.t
+	desc = starfleet.16131.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Jachas survives!
+		name = starfleet.16131.a
+		add_political_power = 100
+		remove_unit_leader = 9551
+		remove_unit_leader = 9552
+		hidden_effect = {
+			remove_unit_leader = 9551
+			remove_unit_leader = 9552
+			set_country_flag = torpeda_glus_jailed
+		}
+	}
+}
+
+country_event = { #Michal Glus finds the proofs, but when confronted, gets away
+	id = starfleet.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.17"}
+	title = starfleet.17.t
+	desc = starfleet.17.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #Damnit!
+		name = starfleet.17.a
+		hidden_effect = {
+			country_event = {
+				id = starfleet.18
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #Bomba comes to Jachas and asks who is the CEO of Galak Pizza
+	id = starfleet.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.18"}
+	title = starfleet.18.t
+	desc = starfleet.18.d
+	picture = GFX_report_KPT_jachas
+
+	is_triggered_only = yes
+
+	option = { #FUCK! #yes, language, I know
+		name = starfleet.18.a
+		create_country_leader = {
+			name = "JJ Torpeda"
+			desc = "POLITICS_TORPEDA_DESC"
+			picture = "torpeda.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.65
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.65
+		}
+	}
+}
+
+country_event = { #Manpower from the Starfleet HQ
+	id = starfleet.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.19"}
+	title = starfleet.19.t
+	desc = starfleet.19.d
+	picture = GFX_report_KPT_kuj
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = starfleet.19.a
+		add_manpower = 20000
+		hidden_effect = {
+			country_event = {
+				id = starfleet.19
+				days = 180
+			}
+		}
+	}
+}

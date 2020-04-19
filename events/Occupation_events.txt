@@ -1,0 +1,54 @@
+﻿###########################
+# Events for Everrealm
+###########################
+
+add_namespace = occupation
+
+country_event = { #Dividing the Gongmen Empire
+	id = occupation.0
+	immediate = {log = "[GetDateText]: [Root.GetName]: event occupation.0"}
+	title = occupation.0.t
+	desc = occupation.0.d
+	picture = GFX_report_event_generic_conference
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+
+#	trigger = {
+#		tag = GRN
+#		has_war_with = GON
+#		FLO = {
+#			has_war_with = GON
+#		}
+#		GON = {
+#			surrender_progress > 0.25
+#		}
+#	}
+
+	option = { #divide Gongmen between Flower Hill and Greenland
+		name = occupation.0.a
+		GRN = {
+			add_state_claim = 268
+			add_state_claim = 251
+			add_state_claim = 249
+			add_state_claim = 231
+			add_state_claim = 194
+			add_state_claim = 177
+		}
+		FLO = {
+			add_state_claim = 190
+			add_state_claim = 167
+			add_state_claim = 181
+			add_state_claim = 192
+			add_state_claim = 163
+			add_state_claim = 213
+			add_state_claim = 199
+			add_state_claim = 236
+		}
+	}
+}

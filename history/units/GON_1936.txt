@@ -1,0 +1,79 @@
+﻿division_template = {
+	name = "Gongmen Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		artillery_brigade = { x = 0 y = 2 }
+		artillery_brigade = { x = 1 y = 0 }
+		artillery_brigade = { x = 1 y = 1 }
+		artillery_brigade = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Gongmen Panzer Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Gongmen Division"
+		location = 2593
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Gongmen Division"
+		location = 2593
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "3. Gongmen Division"
+		location = 2593
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "4. Gongmen Division"
+		location = 5484
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "5. Gongmen Division"
+		location = 5484
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "6. Gongmen Division"
+		location = 5484
+		division_template = "Gongmen Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "1. Gongmen Panzer Division"
+		location = 2593
+		division_template = "Gongmen Panzer Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Gongmen Panzer Division"
+		location = 2593
+		division_template = "Gongmen Panzer Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "3. Gongmen Panzer Division"
+		location = 2593
+		division_template = "Gongmen Panzer Division"
+		start_experience_factor = 0.4
+	}
+}
+

@@ -1,0 +1,536 @@
+duloc_invades_fire_kingdom = {
+	enable = {
+		tag = DUL
+		FRK = {
+			exists = yes
+		}
+		OR = {
+			has_completed_focus = DUL_demand_referendum_in_fire_kingdom
+			focus_progress = {
+    			focus = DUL_demand_referendum_in_fire_kingdom
+    			progress > 0.01
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "FRK"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "FRK"			
+		value = 7000
+	}
+}
+
+duloc_invades_ffa = {
+	enable = {
+		tag = DUL
+		FFA = {
+			exists = yes
+		}
+		OR = {
+			has_completed_focus = DUL_attack_far_far_away
+			focus_progress = {
+    			focus = DUL_attack_far_far_away
+    			progress > 0.01
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "FFA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "FFA"			
+		value = 7000
+	}
+}
+
+duloc_invades_ice_kingdom = {
+	enable = {
+		tag = DUL
+		ICK = {
+			exists = yes
+		}
+		OR = {
+			has_completed_focus = DUL_expand_further_south
+			focus_progress = {
+    			focus = DUL_expand_further_south
+    			progress > 0.01
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "ICK"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "ICK"			
+		value = 7000
+	}
+}
+
+iceworld_invasions_in_tree = {
+	enable = {
+		OR = {
+			tag = ICW
+			is_in_faction_with = ICW
+		}
+		DES = {
+			exists = no
+		}
+		GRN = {
+			exists = no
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "TSA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "DCB"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "MAI"			
+		value = 7000
+	}
+}
+
+macius_invasions_in_tree = {
+	enable = {
+		OR = {
+			tag = MAI
+			is_in_faction_with = MAI
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "ICW"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "DES"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "GON"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "WOL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "FLO"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN3"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN4"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "COR"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "TRU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KHA"			
+		value = 7000
+	}
+}
+
+japanifornian_invasions_in_tree = {
+	enable = {
+		OR = {
+			tag = JPN
+			is_in_faction_with = JPN
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = "LEC"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "COR"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "TRU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KHA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "AVA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "ENC"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN1"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN2"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN3"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN4"			
+		value = 7000
+	}
+}
+
+avalor_invasions_in_tree = {
+	enable = {
+		OR = {
+			tag = AVA
+			is_in_faction_with = AVA
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "COR"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "TRU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KHA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN3"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN4"			
+		value = 7000
+	}
+}
+
+lechinian_invasions_in_tree = {
+	enable = {
+		OR = {
+			tag = LEC
+			is_in_faction_with = LEC
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = conquer
+		id = "JPN"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "PAT"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SMU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "COR"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "TRU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "KHA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "AVA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "ENC"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN1"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN2"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN3"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "EN4"			
+		value = 7000
+	}
+}
+
+invade_avalor = {
+	enable = {
+		has_war_with = AVA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "AVA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "AVA"			
+		value = 7000
+	}
+}
+
+invade_flower_hill = {
+	enable = {
+		has_war_with = FLO
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "FLO"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "FLO"			
+		value = 7000
+	}
+}
+
+invade_tristate = {
+	enable = {
+		has_war_with = TSA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "TSA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "TSA"			
+		value = 7000
+	}
+}
+
+invade_underground = {
+	enable = {
+		has_war_with = UND
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "UND"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "UND"			
+		value = 7000
+	}
+}
+
+invade_sanescobar = {
+	enable = {
+		has_war_with = SAN
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "SAN"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SAN"			
+		value = 7000
+	}
+}
+
+invade_gummibears = {
+	enable = {
+		has_war_with = GUM
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "GUM"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "GUM"			
+		value = 7000
+	}
+}
+
+spalding_should_invade_san_escobar = {
+	enable = {
+		tag = SLD
+		has_wargoal_against = SAN
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "SAN"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SAN"			
+		value = 7000
+	}
+}
+
+flower_hill_shoulda_invade_wolves = {
+	enable = {
+		tag = FLO
+		has_wargoal_against = WOL
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "WOL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "WOL"			
+		value = 7000
+	}
+}

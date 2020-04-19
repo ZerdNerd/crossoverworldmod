@@ -1,0 +1,70 @@
+﻿###########################
+# Spalding
+###########################
+
+add_namespace = sanescobar
+
+country_event = { #Elections 1936, coming soon
+	id = sanescobar.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.1"}
+	title = sanescobar.1.t
+	desc = sanescobar.1.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sanescobar.1.a
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = neutrality
+    		popularity = -0.05
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+	}
+
+	option = {
+		name = sanescobar.1.b
+		set_politics = {
+			ruling_party = fascism
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -0.1
+		}
+		add_popularity = {
+    		ideology = neutrality
+    		popularity = -0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.15
+		}
+	}
+
+	option = {
+		name = sanescobar.1.c
+		set_politics = {
+			ruling_party = communism
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -0.12
+		}
+		add_popularity = {
+    		ideology = neutrality
+    		popularity = -0.05
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.17
+		}
+	}
+}

@@ -1,0 +1,29 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Revolutsyina Flotta"			
+		naval_base = 3684
+		task_force = {				
+			name = "1. Flotte"
+			location = 3684	
+			ship = { name = "Revolutsya" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }			
+			ship = { name = "Flower Hill" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Geumsaegi" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Darami" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Gomseudochi" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Freedom" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+		}
+		task_force = {				
+			name = "2. Flotta"
+			location = 3684	
+			ship = { name = "Kwangbok" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }			
+			ship = { name = "Chonsung" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Ragwon" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Kwangmyong" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Peace" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Kaeson" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "T'ongil" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+			ship = { name = "Ponghwa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLO } } }
+		}
+	}
+}

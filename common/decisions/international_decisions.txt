@@ -1,0 +1,1060 @@
+expeditions_for_resources_dec_category = {
+
+	expedition_in_search_of_oil = {
+		icon = generic_prospect_for_resources
+
+		visible = {
+			tag = FRI
+			has_country_flag = FRI_sioux_accepted_expeditions
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = friedewalt.700
+						days = 0
+					}
+				}
+				50 = {
+					country_event = {
+						id = friedewalt.701
+						days = 0
+					}
+				}
+			}
+		}
+	}
+
+	expedition_in_search_of_rubber = {
+		icon = generic_prospect_for_resources
+
+		visible = {
+			tag = FRI
+			has_country_flag = FRI_sioux_accepted_expeditions
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 60
+		remove_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = friedewalt.702
+						days = 0
+					}
+				}
+				50 = {
+					country_event = {
+						id = friedewalt.703
+						days = 0
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}
+
+international_policy_dec_category = {
+
+	sioux_return = {
+		icon = generic_operation
+		visible = {
+			has_idea = SIO_refugees
+			has_war_with = DES
+		}
+		available = {
+			has_equipment = {
+    			convoy > 10
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				SIO = {
+					every_unit_leader = {
+						retire = yes
+					}
+				}
+			}
+			add_equipment_to_stockpile = {
+    			type = var:convoys
+    			amount = -10
+			}
+			if = {
+				limit = {
+					any_unit_leader = {
+						OR = {
+							has_id = 9000
+							has_id = 9001
+						}
+					}
+				}
+				remove_unit_leader = 9000
+				remove_unit_leader = 9001
+			}
+			if = {
+				limit = {
+					has_template = "Sioux Calvary Division"
+				}
+				delete_unit_template_and_units = {
+    				division_template = "Sioux Calvary Division"
+				}
+			}
+		}
+		days_remove = 14
+		remove_effect = {
+			SIO = {
+				transfer_state = 705
+				transfer_state = 675
+				transfer_state = 688
+				transfer_state = 726
+				transfer_state = 697
+				transfer_state = 752
+				transfer_state = 744
+				transfer_state = 674
+				transfer_state = 643
+			}
+			DES = {
+				set_state_controller = 675
+				set_state_controller = 688
+				set_state_controller = 726
+				set_state_controller = 697
+				set_state_controller = 752
+				set_state_controller = 744
+				set_state_controller = 674
+				set_state_controller = 643
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						GRN = {
+							is_faction_leader = yes
+						}
+					}
+					GRN = {
+						add_to_faction = SIO
+					}
+				}
+				if = {
+					limit = {
+						MAI = {
+							is_faction_leader = yes
+						}
+					}
+					MAI = {
+						add_to_faction = SIO
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							is_in_faction = yes
+							NOT = {
+								is_faction_leader = yes
+							}
+						}
+						SIO = {
+							NOT = {
+								is_in_faction = yes
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							is_in_faction_with = GRN
+							is_faction_leader = yes
+						}
+						add_to_faction = SIO
+					}
+				}
+				SIO = {
+					load_oob = SIO_the_return
+					delete_unit_template_and_units = {
+    					division_template = "Sioux Calvary Division"
+					}
+					add_manpower = 50000
+					add_equipment_to_stockpile = {
+    					type = infantry_equipment_1
+    					amount = 10000
+					}
+					create_field_marshal = {
+						name = "Yakari"
+						portrait_path = "gfx/leaders/SIO/yakari_feathers.dds"
+						skill = 4
+   						attack_skill = 4
+    					defense_skill = 3
+    					planning_skill = 3
+   	 					logistics_skill = 3
+    					id = 9002
+					}
+					create_corps_commander = {
+						name = "Buffalo Seed"
+						portrait_path = "gfx/leaders/SIO/buffalo_seed.dds"
+						skill = 3
+   						attack_skill = 3
+    					defense_skill = 3
+    					planning_skill = 3
+    					logistics_skill = 2
+    					id = 9003
+					}
+					create_corps_commander = {
+						name = "Wild Wind"
+						portrait_path = "gfx/leaders/SIO/wild_wind.dds"
+						skill = 3
+   						attack_skill = 2
+    					defense_skill = 3
+    					planning_skill = 4
+    					logistics_skill = 2
+    					id = 9100
+					}
+					declare_war_on = { 
+						target = DES
+						type = annex_everything	
+					}
+				}
+				#SIO = {
+				#	country_event = {
+				#		id = desert.29
+				#		days = 1
+				#	}
+				#}
+				if = {
+					limit = {
+						original_tag = SIO
+					}
+					SIO = {
+						change_tag_from = ROOT
+					}
+				}
+				news_event = {
+					id = worldnews.41
+					hours = 6
+				}
+			}
+			add_equipment_to_stockpile = {
+    			type = var:convoys
+    			amount = 10
+			}
+		}
+	}
+
+	propose_truce_SKO_FRI = {
+		icon = generic_operation
+
+		visible = {
+			tag = FRI
+			has_war_with = SKO
+			has_war_with = MAI
+			911 = {
+				is_controlled_by = SKO
+			}
+			905 = {
+				is_controlled_by = SKO
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			SKO = {
+				country_event = {
+					id = walaszek.4
+					days = 0
+				}
+			}
+		}
+	}
+
+	propose_peace_with_honor_to_avalor = {
+		icon = generic_operation
+
+		visible = {
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+			is_faction_leader = yes
+			has_war_with = AVA
+			AVA = {
+				NOT = {
+					is_faction_leader = yes
+				}
+				all_allied_country = {
+					has_capitulated = yes
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			AVA = {
+				country_event = {
+					id = truce_proposal.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	oppose_invasion_of_paradoxawka = {
+		icon = generic_operation
+
+		visible = {
+			tag = KPT
+			SKO = {
+				has_war_with = PDX
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = KPT_if_SKO_rejects_were_forced_to_war
+			SKO = {
+				country_event = {
+					id = walaszek.5
+					days = 0
+				}
+			}
+		}
+	}
+}
+
+integration_of_lands_dec_category = {
+	integration_of_pdx_100 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_incorporation_of_western_lands
+			OR = {
+				953 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				921 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				915 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				929 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				941 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+			}
+		}
+
+		cost = 100
+
+		days_remove = 140
+
+		days_re_enable = 1
+		remove_effect = {
+			random_state = {
+				limit = {
+					OR = {
+						AND = {
+							state = 953
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 921
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 915
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 929
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 941
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+					}
+				}
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_pdx_150 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_incorporation_of_western_lands
+			OR = {
+				935 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				946 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				930 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 140
+
+		days_re_enable = 1
+		remove_effect = {
+			random_state = {
+				limit = {
+					OR = {
+						AND = {
+							state = 935
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 946
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 930
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+					}
+				}
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_kpt_150 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_incorporation_of_western_lands
+			OR = {
+				946 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				930 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				908 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				898 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				902 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				882 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				839 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				828 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				833 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+				848 = {
+					NOT = {
+						is_core_of = SKO
+					}
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 140
+		remove_effect = {
+			random_state = {
+				limit = {
+					OR = {
+						AND = {
+							state = 946
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 930
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 908
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 898
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 902
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 882
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 839
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 828
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 833
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+						AND = {
+							state = 848
+							NOT = {
+								is_core_of = SKO
+							}
+						}
+					}
+				}
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_kpt_904 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_integration_of_northern_lands
+		}
+
+		fire_only_once = yes
+
+		cost = 175
+
+		days_remove = 140
+		remove_effect = {
+			904 = {
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_kpt_896 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_integration_of_northern_lands
+		}
+
+		fire_only_once = yes
+
+		cost = 175
+
+		days_remove = 140
+		remove_effect = {
+			896 = {
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_kpt_874 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SKO
+			has_completed_focus = SKO_integration_of_northern_lands
+		}
+
+		fire_only_once = yes
+
+		cost = 200
+
+		days_remove = 140
+		remove_effect = {
+			874 = {
+				add_core_of = SKO
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_smu_710 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 710
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 140
+		remove_effect = {
+			710 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_smu_741 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 741
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			741 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_smu_759 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 759
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			759 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_smu_704 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 704
+		}
+
+		fire_only_once = yes
+
+		cost = 50
+
+		days_remove = 140
+		remove_effect = {
+			704 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_pat_784 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 784
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 140
+		remove_effect = {
+			784 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_pat_804 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 804
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			804 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_pat_785 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_westward_expansion
+			owns_state = 785
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			785 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_fri_790 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 790
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			790 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_fri_763 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 763
+		}
+
+		fire_only_once = yes
+
+		cost = 125
+
+		days_remove = 140
+		remove_effect = {
+			763 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_fri_758 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 758
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			758 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_dcb_711 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 711
+		}
+
+		fire_only_once = yes
+
+		cost = 150
+
+		days_remove = 140
+		remove_effect = {
+			711 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_dcb_683 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 683
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			683 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_vis_681 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 681
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			681 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_vis_672 = {
+		icon = generic_operation
+
+		visible = {
+			tag = SLD
+			has_completed_focus = SLD_eastward_expansion
+			owns_state = 672
+		}
+
+		fire_only_once = yes
+
+		cost = 100
+
+		days_remove = 140
+		remove_effect = {
+			672 = {
+				add_core_of = SLD
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

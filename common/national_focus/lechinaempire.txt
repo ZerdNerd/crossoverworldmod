@@ -1,0 +1,2856 @@
+focus_tree = { 
+	id = lechinaempire
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = LEC
+		} 
+	} 
+
+	focus = { 
+		id = LEC_state_of_the_empire
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 10
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			country_event = {
+				id = lechina.1
+				days = 0
+			}
+		}
+	} 
+
+	focus = { 
+		id = LEC_times_of_change
+		icon = GFX_goal_generic_improve_relations
+		x = 3
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_state_of_the_empire
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_reforms_unlocked
+				has_country_flag = LEC_unlock_reforms
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			custom_effect_tooltip = LEC_reform_time
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = LEC_druzynowa_akademia_techniczna
+		icon = GFX_goal_rhineland
+		x = 1
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_times_of_change
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_ideas = {
+				LEC_druzynowa_akademia_techniczna_idea
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_fundusz_opieki_spolecznej
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_druzynowa_akademia_techniczna
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_ideas = {
+				LEC_social_care_fund
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_promote_pro-family_values
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_druzynowa_akademia_techniczna
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.05
+		}
+	}
+
+	focus = { 
+		id = LEC_everyone_is_welcome
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_fundusz_opieki_spolecznej
+		}
+		prerequisite = {
+			focus = LEC_promote_pro-family_values
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_ideas = {
+				LEC_every_welcome
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_give_more_power_to_local_governments
+		icon = GFX_goal_support_democracy
+		x = 5
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_times_of_change
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_political_power = -100
+			add_stability = 0.05
+			add_war_support = 0.02
+		}
+	}
+
+	focus = { 
+		id = LEC_investments_in_southern_states
+		icon = GFX_goal_generic_construction
+		x = 4
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_give_more_power_to_local_governments
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 650
+						state = 655
+						state = 685
+						state = 682
+						state = 673
+						state = 716
+						state = 746
+						state = 766
+						state = 725
+						state = 730
+						state = 720
+						state = 702
+						state = 694
+						state = 693
+						state = 721
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_investments_in_northern_states
+		icon = GFX_goal_generic_construction
+		x = 6
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_give_more_power_to_local_governments
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 738
+						state = 754
+						state = 739
+						state = 764
+						state = 781
+						state = 778
+						state = 771
+						state = 772
+						state = 779
+						state = 800
+						state = 810
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_everybody_is_equal
+		icon = GFX_goal_generic_neutrality_focus
+		x = 5
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_investments_in_southern_states
+		}
+		prerequisite = {
+			focus = LEC_investments_in_northern_states
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_ideas = {
+				LEC_every_equal
+			}
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = LEC_new_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 3
+		y = 5
+		cost = 25.8
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_everyone_is_welcome
+		}
+		prerequisite = {
+			focus = LEC_everybody_is_equal
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_political_power = 100
+			add_ideas = {
+				LEC_constitution
+			}
+			hidden_effect = {
+				JPN = {
+					country_event = {
+						id = lechina.5
+						days = 21
+					}
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.49
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_maintain_power_of_king
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_state_of_the_empire
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_statusquo_unlocked
+				has_country_flag = LEC_unlock_status_quo
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			custom_effect_tooltip = LEC_status_quo
+			add_political_power = 100
+		}
+	}
+
+	focus = { 
+		id = LEC_address_the_people
+		icon = GFX_goal_generic_propaganda
+		x = 9
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_maintain_power_of_king
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.05
+		}
+	}
+
+	focus = { 
+		id = LEC_centralize_the_power
+		icon = GFX_goal_generic_political_pressure
+		x = 9
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_address_the_people
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_war_support = 0.05
+		}
+	}
+
+	focus = { 
+		id = LEC_lechickie_linie_lotnicze
+		icon = GFX_focus_usa_escort_fighters
+		x = 7
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_centralize_the_power
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			655 = {
+				add_building_construction = { 
+					type = air_base
+					level = 4
+					instant_build = yes 
+				}
+			}
+			746 = {
+				add_building_construction = { 
+					type = air_base
+					level = 3
+					instant_build = yes 
+				}
+			}
+			764 = {
+				add_building_construction = { 
+					type = air_base
+					level = 3
+					instant_build = yes 
+				}
+			}
+			771 = {
+				add_building_construction = { 
+					type = air_base
+					level = 2
+					instant_build = yes 
+				}
+			}
+			702 = {
+				add_building_construction = { 
+					type = air_base
+					level = 2
+					instant_build = yes 
+				}
+			}
+			add_ideas = {
+				LEC_airways
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_fatherland_needs_everyone
+		icon = GFX_goal_generic_defence
+		x = 9
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_centralize_the_power
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_manpower = 20000
+		}
+	}
+
+	focus = { 
+		id = LEC_lechina_research_bureau
+		icon = GFX_focus_research
+		x = 11
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_maintain_power_of_king
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_research_slot = 1
+			add_ideas = {
+				LEC_research_bureau
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_get_new_advisors
+		icon = GFX_goal_generic_improve_relations
+		x = 11
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_lechina_research_bureau
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.02
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = LEC_be_prepared
+		icon = GFX_goal_generic_small_arms
+		x = 11
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_get_new_advisors
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_war_support = 0.05
+			add_manpower = 5000
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 5000
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_promote_national_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 13
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_get_new_advisors
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_the_empire_marches_on
+		icon = GFX_focus_hol_united_netherlands
+		x = 10
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_lechickie_linie_lotnicze
+		}
+		prerequisite = {
+			focus = LEC_fatherland_needs_everyone
+		}
+		prerequisite = {
+			focus = LEC_be_prepared
+		}
+		prerequisite = {
+			focus = LEC_promote_national_industries
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.1
+			add_political_power = 100
+			hidden_effect = {
+				JPN = {
+					country_event = {
+						id = lechina.5
+						days = 21
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_military_takeover
+		icon = GFX_goal_generic_political_pressure
+		x = 17
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_state_of_the_empire
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_takeover_unlocked
+				has_country_flag = LEC_unlock_takeover
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			custom_effect_tooltip = LEC_military_will_bring_back_the_order
+			add_stability = -0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = LEC_additional_conscripts
+		icon = GFX_focus_prc_infiltration
+		x = 16
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_military_takeover
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_manpower = 70000
+		}
+	}
+
+	focus = { 
+		id = LEC_contacts_in_northern_ajeto
+		icon = GFX_goal_generic_propaganda
+		x = 16
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_additional_conscripts
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_war_support = 0.05
+			703 = {
+				add_claim_by = LEC
+			}
+			756 = {
+				add_claim_by = LEC
+			}
+			731 = {
+				add_claim_by = LEC
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_grant_lands_in_the_north
+		icon = GFX_goal_generic_improve_relations
+		x = 16
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_contacts_in_northern_ajeto
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 738
+						state = 754
+						state = 739
+						state = 764
+						state = 781
+						state = 778
+						state = 771
+						state = 772
+						state = 779
+						state = 800
+						state = 810
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_organize_manouvers_in_the_south
+		icon = GFX_goal_generic_army_tanks
+		x = 18
+		y = 2
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_military_takeover
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_named_threat = { 
+    			threat = 2.5 
+    			name = LEC_manouvers
+			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.48
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_create_lechinian_institute
+		icon = GFX_focus_research
+		x = 18
+		y = 3
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_organize_manouvers_in_the_south
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_research_slot = 1
+			add_ideas = {
+				LEC_institute
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_inspect_the_navy
+		icon = GFX_focus_generic_destroyer
+		x = 18
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_create_lechinian_institute
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			655 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			764 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			746 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			781 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { 
+					type = dockyard
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_military_might_of_empire
+		icon = GFX_focus_generic_military_mission
+		x = 17
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_grant_lands_in_the_north
+		}
+		prerequisite = {
+			focus = LEC_inspect_the_navy
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_stability = 0.05
+			add_political_power = 50
+			hidden_effect = {
+				JPN = {
+					country_event = {
+						id = lechina.5
+						days = 21
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_expedition_for_the_technology
+		icon = GFX_focus_research
+		x = 10
+		y = 6
+		cost = 15
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_new_constitution
+			focus = LEC_the_empire_marches_on
+			focus = LEC_military_might_of_empire
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_border_incident_not_cooled_down
+		icon = GFX_goal_generic_dangerous_deal
+		x = 14
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_incident_not_cooled_down
+				has_country_flag = LEC_incident_not_cooled
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = LEC_found_karlino_axis
+		icon = GFX_goal_generic_major_alliance
+		x = 14
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_border_incident_not_cooled_down
+		}
+		prerequisite = {
+			focus = LEC_military_might_of_empire
+			focus = LEC_the_empire_marches_on
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_faction = karlino_axis
+			601 = {
+				add_claim_by = LEC
+			}
+			604 = {
+				add_claim_by = LEC
+			}
+			648 = {
+				add_claim_by = LEC
+			}
+			668 = {
+				add_claim_by = LEC
+			}
+			if = {
+				limit = {
+					703 = {
+						NOT = {
+							is_claimed_by = LEC
+						}
+					}
+					756 = {
+						NOT = {
+							is_claimed_by = LEC
+						}
+					}
+					731 = {
+						NOT = {
+							is_claimed_by = LEC
+						}
+					}
+				}
+				703 = {
+					add_claim_by = LEC
+				}
+				756 = {
+					add_claim_by = LEC
+				}
+				731 = {
+					add_claim_by = LEC
+				}
+			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.50
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_operation_north
+		icon = GFX_focus_secret_rearmament
+		x = 14
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_found_karlino_axis
+		}
+
+		bypass = {
+			ICK = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			target = ICK
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_invasion_of_ajeto
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 13
+		y = 8
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_operation_north
+		}
+
+		bypass = {
+			PAT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			target = PAT
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_march_to_spalding_bay
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 13
+		y = 9
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_invasion_of_ajeto
+		}
+
+		bypass = {
+			SMU = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			target = SMU
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_northern_fortifications
+		icon = GFX_goal_generic_construct_military
+		x = 15
+		y = 8
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_operation_north
+		}
+
+		available = {
+			604 = {
+				is_controlled_by = LEC
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			604 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 8735
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 1825
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_prepare_roads_in_the_south
+		icon = GFX_goal_generic_construct_military
+		x = 15
+		y = 9
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_northern_fortifications
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			810 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			800 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			779 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			772 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_border_incident_cooled_down
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 5
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = LEC_incident_cooled_down
+				has_country_flag = LEC_incident_cooled
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = LEC_barton-truro_for_protection
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 6
+		y = 6
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_border_incident_cooled_down
+		}
+		prerequisite = {
+			focus = LEC_new_constitution
+			focus = LEC_the_empire_marches_on
+		}
+
+		bypass = {
+			ICK = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			ICK = {
+				country_event = {
+					id = lechina.9
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_establish_relations_with_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 7
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_barton-truro_for_protection
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = AVA
+    			modifier = TCWmod_generic_relations
+			}
+			AVA = {
+				add_opinion_modifier = {
+					target = LEC
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_begin_influencing_khurain
+		icon = GFX_goal_generic_improve_relations
+		x = 5
+		y = 8
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_establish_relations_with_avalor
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = KHU
+    			modifier = TCWmod_generic_relations
+			}
+			KHU = {
+				add_opinion_modifier = {
+					target = LEC
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_case_of_northern_ajeto
+		icon = GFX_goal_generic_dangerous_deal
+		x = 5
+		y = 9
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_begin_influencing_khurain
+		}
+
+		bypass = {
+			PAT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			PAT = {
+				country_event = {
+					id = lechina.11
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_talk_with_western_kingdom
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 8
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_establish_relations_with_avalor
+		}
+
+		bypass = {
+			WEK = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = WEK
+    			modifier = TCWmod_generic_relations
+			}
+			WEK = {
+				add_opinion_modifier = {
+					target = LEC
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_case_of_northern_smurfs
+		icon = GFX_goal_generic_dangerous_deal
+		x = 7
+		y = 9
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_talk_with_western_kingdom
+		}
+
+		bypass = {
+			SMU = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			SMU = {
+				country_event = {
+					id = lechina.13
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_demand_southern_lechia_lands
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 10
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_case_of_northern_ajeto
+			focus = LEC_prepare_roads_in_the_south
+		}
+		prerequisite = {
+			focus = LEC_case_of_northern_smurfs
+			focus = LEC_march_to_spalding_bay
+		}
+
+		available = {
+			has_war = no
+		}
+
+		bypass = {
+			owns_state = 836
+			owns_state = 823
+			owns_state = 806
+			owns_state = 783
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			JPN = {
+				country_event = {
+					id = lechina.15
+					days = 0
+				}
+			}
+			add_named_threat = {
+				threat = 10 
+    			name = LEC_demands_southern_lechia
+			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.51
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_operation_white_wolf
+		icon = GFX_goal_generic_amphibious_assault
+		x = 10
+		y = 11
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_demand_southern_lechia_lands
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = KHU
+				KHU = {
+					exists = no
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			declare_war_on = {
+    			target = KHU
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_beachhead_in_everrealm
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 12
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_operation_white_wolf
+		}
+
+		bypass = {
+			has_war_with = AVA
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			declare_war_on = {
+    			target = AVA
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_northern_enemy
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 13
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_beachhead_in_everrealm
+		}
+
+		bypass = {
+			has_war_with = DUL
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+    			target = DUL
+    			type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = LEC_expansion_in_the_east
+		icon = GFX_goal_generic_major_war
+		x = 9
+		y = 13
+		cost = 10
+
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = LEC_beachhead_in_everrealm
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+    			target = SLD
+    			type = annex_everything
+			}
+			create_wargoal = {
+    			target = MAI
+    			type = annex_everything
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = WEK
+					}
+				}
+				create_wargoal = {
+    				target = WEK
+    				type = annex_everything
+				}
+			}
+		}
+	}
+
+	########################################################################################################################
+	########################################################################################################################
+	########################################################################################################################
+	########################################################################################################################
+	########################################################################################################################
+
+	focus = { 
+		id = LEC_lechinian_economy
+		icon = GFX_goal_generic_consumer_goods
+		x = 23
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			OR = {
+				has_completed_focus = LEC_times_of_change
+				has_completed_focus = LEC_maintain_power_of_king
+				has_completed_focus = LEC_military_takeover
+			}
+		}
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_roads_in_the_country
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 21
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_lechinian_economy
+		}
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_first_lechinian_highway
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_roads_in_the_country
+		}
+		completion_reward = { 
+			655 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			685 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			702 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			720 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			754 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			764 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_lechinian_industry_is_the_best_in_the_world
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 23
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_lechinian_economy
+		}
+		completion_reward = { 
+			655 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			764 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			746 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_new_city_is_born
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_lechinian_industry_is_the_best_in_the_world
+		}
+		completion_reward = { 
+			771 = {
+				set_state_category = city
+				add_manpower = 450000
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_military_might
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 25
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_lechinian_economy
+		}
+		completion_reward = { 
+			764 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			730 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			725 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			746 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = LEC_expansion_of_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = LEC_military_might
+		}
+		completion_reward = {
+			764 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			766 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = LEC_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 23
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_completed_focus = LEC_times_of_change
+				has_completed_focus = LEC_maintain_power_of_king
+				has_completed_focus = LEC_military_takeover
+			}
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = LEC_army_effort }
+		x = -1
+		y = 1
+		relative_position_id = LEC_army_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = LEC_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 1
+		y = 1
+		relative_position_id = LEC_army_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = LEC_army_effort }
+		x = 0
+		y = 2
+		relative_position_id = LEC_army_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = LEC_equipment_effort }
+		x = -1
+		y = 1
+		relative_position_id = LEC_equipment_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = LEC_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = LEC_motorization_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = LEC_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = LEC_doctrine_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = LEC_equipment_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = LEC_equipment_effort_2
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = LEC_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = LEC_mechanization_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = LEC_equipment_effort_3 }
+		prerequisite = { focus = LEC_doctrine_effort_2 }
+		prerequisite = { focus = LEC_armor_effort }
+		x = 2
+		y = 1
+		relative_position_id = LEC_equipment_effort_3
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = LEC_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 28
+		y = 4
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_idea = modern_tech_idea
+				has_completed_focus = LEC_lechickie_linie_lotnicze
+			}
+		}
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = LEC_aviation_effort }
+		mutually_exclusive = { focus = LEC_bomber_focus }
+		x = -1
+		y = 1
+		relative_position_id = LEC_aviation_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = LEC_aviation_effort }
+		mutually_exclusive = { focus = LEC_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = LEC_aviation_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = LEC_bomber_focus focus = LEC_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = LEC_bomber_focus
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							NOT = { is_controlled_by = ROOT }
+							NOT = {
+								free_building_slots = {
+									building = air_base
+									size > 1
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = LEC_aviation_effort_2 }
+		x = -1
+		y = 1
+		relative_position_id = LEC_aviation_effort_2
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = LEC_aviation_effort_2 }
+		x = 0
+		y = 2
+		relative_position_id = LEC_aviation_effort_2
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = LEC_aviation_effort_2 }
+		x = 1
+		y = 1
+		relative_position_id = LEC_aviation_effort_2
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = LEC_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 23
+		y = 9
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		available = {
+			OR = {
+				has_completed_focus = LEC_times_of_change
+				has_completed_focus = LEC_maintain_power_of_king
+				has_completed_focus = LEC_military_takeover
+			}
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}			
+		}
+	}
+
+	focus = {
+		id = LEC_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = LEC_naval_effort }
+		mutually_exclusive = { focus = LEC_large_navy }
+		x = -1
+		y = 1
+		relative_position_id = LEC_naval_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = LEC_naval_effort }
+		mutually_exclusive = { focus = LEC_flexible_navy }
+		x = 1
+		y = 1
+		relative_position_id = LEC_naval_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = LEC_flexible_navy focus = LEC_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = LEC_flexible_navy
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = LEC_large_navy focus = LEC_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = LEC_large_navy
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = LEC_submarine_effort }
+		x = 0
+		y = 1
+		relative_position_id = LEC_submarine_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = LEC_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = LEC_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = LEC_cruiser_effort
+		cost = 7.2
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+	}
+
+
+}

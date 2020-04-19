@@ -1,0 +1,1651 @@
+﻿###########################
+# Danville Events
+###########################
+
+add_namespace = danville
+
+country_event = { #OWCA refuses to be loyal to Doof
+	id = danville.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.1"}
+	title = danville.1.t
+	desc = danville.1.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Send a negotiator to them
+		name = danville.1.a
+		hidden_effect = {
+			TSA = {
+				country_event = {
+					id = danville.2
+					days = 3
+				}
+			}
+		}
+	}
+
+	option = { #Send military to their HQ
+		name = danville.1.b
+		hidden_effect = {
+			TSA = {
+				country_event = {
+					id = danville.3
+					days = 3
+				}
+			}
+		}
+	}
+}
+
+country_event = { #OWCA still refuses to be loyal to Doof after negotiations
+	id = danville.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.2"}
+	title = danville.2.t
+	desc = danville.2.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Leave it be, they won't do harm
+		name = danville.2.a
+		add_political_power = -100
+		hidden_effect = {
+			set_country_flag = OWCA_disloyal
+		}
+	}
+
+	option = { #Send military to their HQ
+		name = danville.2.b
+		hidden_effect = {
+			TSA = {
+				country_event = {
+					id = danville.3
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Army surrounds OWCA headquarters
+	id = danville.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.3"}
+	title = danville.3.t
+	desc = danville.3.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Wait for their reply
+		name = danville.3.a
+		hidden_effect = {
+			TSA = {
+				country_event = {
+					id = danville.4
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #OWCA opens fire!
+	id = danville.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.4"}
+	title = danville.4.t
+	desc = danville.4.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #So it's war, then!
+		name = danville.4.a
+		hidden_effect = {
+			start_civil_war = {
+    			ruling_party = fascism
+    			ideology = neutrality
+    			capital = 737
+    			states = { 
+      	  			737 761 742 724 708 677
+    			}
+			}
+			set_popularities = {
+				democratic = 10
+				fascism = 90
+				communism = 0
+				neutrality = 0
+				monarchism = 0
+			}
+			create_corps_commander = {
+				name = "Heinz Doofenshmirtz"
+				portrait_path = "gfx/leaders/TSA/heinz.dds"
+				traits = { }
+				skill = 2
+    			attack_skill = 2
+    			defense_skill = 2
+    			planning_skill = 1
+    			logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Norm"
+				portrait_path = "gfx/leaders/TSA/norm_1.dds"
+				traits = { }
+				skill = 1
+    			attack_skill = 1
+    			defense_skill = 2
+   				planning_skill = 1
+    			logistics_skill = 2
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = OWCA_disloyal
+					}
+				}
+				set_country_flag = OWCA_pacified
+			}
+			remove_unit_leader = 2137
+			remove_unit_leader = 2138
+			random_other_country = {
+			limit = {
+				original_tag = TSA
+				has_government = neutrality
+			}
+			set_equipment_fraction = 0.5
+			set_popularities = {
+				democratic = 50
+				fascism = 0
+				communism = 0
+				neutrality = 50
+				monarchism = 0
+			}
+			load_oob = TSA_OWCA_units
+			create_corps_commander = {
+				name = "Perry the Platypus"
+				portrait_path = "gfx/leaders/TSA/perry.dds"
+				traits = { brilliant_strategist }
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "Peter the Panda"
+				portrait_path = "gfx/leaders/TSA/peter_panda.dds"
+				traits = { }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "Pinky the Chihuahua" #fuck such english words. you speak different, you write it different.
+				portrait_path = "gfx/leaders/TSA/pinky.dds"
+				traits = { }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Francis Monogram"
+				portrait_path = "gfx/leaders/TSA/monobrow.dds"
+				traits = { }
+				skill = 4
+			    attack_skill = 4
+			    defense_skill = 3
+			    planning_skill = 3
+			    logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Colonel Contraction"
+				portrait_path = "gfx/leaders/TSA/col_contraction.dds"
+				traits = { }
+				skill = 4
+			    attack_skill = 4
+			    defense_skill = 3
+			    planning_skill = 3
+			    logistics_skill = 3
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = modern_tech_idea
+					}
+				}
+				add_ideas = {
+					modern_tech_idea
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = modern_tech_idea
+				}
+			}
+			add_ideas = {
+				modern_tech_idea
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = TSA_doofjungend
+				}
+				has_completed_focus = TSA_establish_doofjungend
+			}
+			add_ideas = {
+				TSA_doofjungend
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = GUP_saunders
+				}
+			}
+			add_ideas = {
+				GUP_saunders
+			}
+		}
+		}
+	}
+}
+
+country_event = { #OWCA march on Danville
+	id = danville.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.5"}
+	title = danville.5.t
+	desc = danville.5.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #So it's war, then!
+		name = danville.5.a
+		hidden_effect = {
+			start_civil_war = {
+    			ruling_party = fascism
+    			ideology = neutrality
+    			capital = 737
+    			states = { 
+      	  			737 761 742 724 708 677
+    			}
+			}
+			create_corps_commander = {
+				name = "Heinz Doofenshmirtz"
+				portrait_path = "gfx/leaders/TSA/heinz.dds"
+				traits = { }
+				skill = 2
+    			attack_skill = 2
+    			defense_skill = 2
+    			planning_skill = 1
+    			logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Norm"
+				portrait_path = "gfx/leaders/TSA/norm_1.dds"
+				traits = { }
+				skill = 1
+    			attack_skill = 1
+    			defense_skill = 2
+   				planning_skill = 1
+    			logistics_skill = 2
+			}
+			set_popularities = {
+				democratic = 10
+				fascism = 90
+				communism = 0
+				neutrality = 0
+				monarchism = 0
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = OWCA_disloyal
+					}
+				}
+				set_country_flag = OWCA_pacified
+			}
+			remove_unit_leader = 2137
+			remove_unit_leader = 2138
+			random_other_country = {
+			limit = {
+				original_tag = TSA
+				has_government = neutrality
+			}
+			set_equipment_fraction = 0.5
+			set_popularities = {
+				democratic = 50
+				fascism = 0
+				communism = 0
+				neutrality = 50
+				monarchism = 0
+			}
+			load_oob = TSA_OWCA_units
+			create_corps_commander = {
+				name = "Perry the Platypus"
+				portrait_path = "gfx/leaders/TSA/perry.dds"
+				traits = { brilliant_strategist }
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "Peter the Panda"
+				portrait_path = "gfx/leaders/TSA/peter_panda.dds"
+				traits = { }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 4
+				planning_skill = 3
+				logistics_skill = 2
+			}
+			create_corps_commander = {
+				name = "Pinky the Chihuahua" #fuck such english words. you speak different, you write it different.
+				portrait_path = "gfx/leaders/TSA/pinky.dds"
+				traits = { }
+				skill = 3
+				attack_skill = 3
+				defense_skill = 2
+				planning_skill = 2
+				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Francis Monogram"
+				portrait_path = "gfx/leaders/TSA/monobrow.dds"
+				traits = { }
+				skill = 4
+			    attack_skill = 4
+			    defense_skill = 3
+			    planning_skill = 3
+			    logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Colonel Contraction"
+				portrait_path = "gfx/leaders/TSA/col_contraction.dds"
+				traits = { }
+				skill = 4
+			    attack_skill = 4
+			    defense_skill = 3
+			    planning_skill = 3
+			    logistics_skill = 3
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = modern_tech_idea
+					}
+				}
+				add_ideas = {
+					modern_tech_idea
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = modern_tech_idea
+				}
+			}
+			add_ideas = {
+				modern_tech_idea
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = TSA_doofjungend
+				}
+				has_completed_focus = TSA_establish_doofjungend
+			}
+			add_ideas = {
+				TSA_doofjungend
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_idea = GUP_saunders
+				}
+			}
+			add_ideas = {
+				GUP_saunders
+			}
+		}
+		}
+	}
+}
+
+country_event = { #1936 Elections
+	id = danville.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.6"}
+	title = danville.6.t
+	desc = danville.6.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Roger
+		name = danville.6.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = TSA_roger_won_1936
+			news_event = {
+				id = worldnews.32
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Heinz
+		name = danville.6.b
+		add_political_power = 50
+		hidden_effect = {
+			set_politics = {
+				ruling_party = fascism
+			}
+			set_country_flag = TSA_heinz_won_1936
+			news_event = {
+				id = worldnews.33
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Heinz rally
+	id = danville.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.7"}
+	title = danville.7.t
+	desc = danville.7.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TSA
+		date > 1936.3.14
+	}
+
+	option = { #Happens.
+		name = danville.7.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = danville.8
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Heinz meeting
+	id = danville.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.8"}
+	title = danville.8.t
+	desc = danville.8.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #People show up
+		name = danville.8.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.12
+		}
+		hidden_effect = {
+			country_event = {
+				id = danville.9
+				days = 60
+			}
+		}
+	}
+
+	option = { #People don't show up
+		name = danville.8.b
+		hidden_effect = {
+			country_event = {
+				id = danville.9
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Another Heinz rally
+	id = danville.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.9"}
+	title = danville.9.t
+	desc = danville.9.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #People show up
+		name = danville.9.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.10
+		}
+		hidden_effect = {
+			country_event = {
+				id = danville.10
+				days = 60
+			}
+		}
+	}
+
+	option = { #People don't show up
+		name = danville.9.b
+		hidden_effect = {
+			country_event = {
+				id = danville.10
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Another Heinz meeting
+	id = danville.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.10"}
+	title = danville.10.t
+	desc = danville.10.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #People show up
+		name = danville.10.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.10
+		}
+	}
+
+	option = { #People don't show up
+		name = danville.10.b
+	}
+}
+
+country_event = { #Doofania demands border strip (Vineshroom)
+	id = danville.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.11"}
+	title = danville.11.t
+	desc = danville.11.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.11.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.12
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands border strip (Vineshroom gives in)
+	id = danville.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.12"}
+	title = danville.12.t
+	desc = danville.12.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 566
+		transfer_state = 612
+		transfer_state = 656
+		transfer_state = 681
+	}
+}
+
+country_event = { #Doofania demands border strip (Vineshroom resists)
+	id = danville.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.13"}
+	title = danville.13.t
+	desc = danville.13.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = VIS
+			type = annex_everything
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.13.b
+		add_political_power = -150
+		add_stability = -0.2
+	}
+}
+
+country_event = { #Doofania demands border strip (Spalding)
+	id = danville.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.14"}
+	title = danville.14.t
+	desc = danville.14.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.11.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.15
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.16
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands border strip (Spalding gives in)
+	id = danville.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.15"}
+	title = danville.15.t
+	desc = danville.15.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 719
+		transfer_state = 748
+	}
+}
+
+country_event = { #Doofania demands border strip (Spalding resists)
+	id = danville.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.16"}
+	title = danville.16.t
+	desc = danville.16.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = SLD
+			type = take_claimed_state
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.13.b
+		add_political_power = -150
+		add_stability = -0.2
+	}
+}
+
+country_event = { #Doofania demands shore (Friedewalt)
+	id = danville.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.17"}
+	title = danville.17.t
+	desc = danville.17.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.11.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.18
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.19
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands border strip (Friedewalt gives in)
+	id = danville.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.18"}
+	title = danville.18.t
+	desc = danville.18.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 758
+		transfer_state = 763
+	}
+}
+
+country_event = { #Doofania demands border strip (Friedewalt resists)
+	id = danville.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.19"}
+	title = danville.19.t
+	desc = danville.19.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = FRI
+			type = take_claimed_state
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.13.b
+		add_political_power = -150
+		add_stability = -0.2
+	}
+}
+
+country_event = { #Doofania demands Eastern Belville
+	id = danville.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.20"}
+	title = danville.20.t
+	desc = danville.20.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.11.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.21
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.22
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands Eastern Belville (Moomins gives in)
+	id = danville.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.21"}
+	title = danville.21.t
+	desc = danville.21.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 735
+	}
+}
+
+country_event = { #Doofania demands Eastern Belville (Moomins resists)
+	id = danville.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.22"}
+	title = danville.22.t
+	desc = danville.22.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = MOO
+			type = annex_everything
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.13.b
+		add_political_power = -150
+		add_stability = -0.2
+	}
+}
+
+country_event = { #Doofania demands Moomin border strip
+	id = danville.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.23"}
+	title = danville.23.t
+	desc = danville.23.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.11.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.24
+				days = 1
+			}
+		}
+		BRO = {
+			country_event = {
+				id = danville.260
+				days = 10
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.25
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands Moomin border strip (Moomins gives in)
+	id = danville.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.24"}
+	title = danville.24.t
+	desc = danville.24.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 701
+		transfer_state = 753
+	}
+}
+
+country_event = { #Doofania demands Moomin border strip (Moomins resists)
+	id = danville.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.25"}
+	title = danville.25.t
+	desc = danville.25.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = MOO
+			type = annex_everything
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.13.b
+		add_political_power = -150
+		add_stability = -0.2
+	}
+}
+
+country_event = { #Bronks event about Moomins breaking apart
+	id = danville.260
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.260"}
+	title = danville.260.t
+	desc = danville.260.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #go at them
+		name = danville.260.a
+		MOO = {
+			country_event = {
+				id = danville.26
+				days = 1
+			}
+		}
+		727 = {
+			add_claim_by = BRO
+		}
+		751 = {
+			add_claim_by = BRO
+		}
+	}
+}
+
+country_event = { #Bronks demands shore
+	id = danville.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.26"}
+	title = danville.26.t
+	desc = danville.26.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.26.a
+		add_political_power = -100
+		add_stability = -0.25
+		BRO = {
+			country_event = {
+				id = danville.27
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.11.b
+		add_political_power = 50
+		add_stability = 0.1
+		add_war_support = 0.1
+		BRO = {
+			country_event = {
+				id = danville.28
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Bronks demands shore (Moomins gives in)
+	id = danville.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.27"}
+	title = danville.27.t
+	desc = danville.27.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.12.a
+		add_political_power = 50
+		transfer_state = 727
+		transfer_state = 751
+	}
+}
+
+country_event = { #Bronks demands shore (Moomins resists)
+	id = danville.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.28"}
+	title = danville.28.t
+	desc = danville.28.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Even at their fall, they still resist.
+		name = danville.28.a
+		declare_war_on = {
+			target = MOO
+			type = take_claimed_state
+		}
+	}
+
+	option = { #We're not ready yet.
+		name = danville.28.b
+		add_political_power = -100
+	}
+}
+
+country_event = { #Doofania demands rest of Moomin Republic
+	id = danville.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.29"}
+	title = danville.29.t
+	desc = danville.29.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #give in
+		name = danville.29.a
+		add_political_power = -100
+		add_stability = -0.25
+		TSA = {
+			country_event = {
+				id = danville.30
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.29.b
+		add_political_power = 100
+		add_stability = 0.1
+		add_war_support = 0.1
+		TSA = {
+			country_event = {
+				id = danville.31
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania demands rest of Moomin Republic (Moomins gives in)
+	id = danville.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.30"}
+	title = danville.30.t
+	desc = danville.30.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.30.a
+		add_political_power = 50
+		annex_country = {
+    		target = MOO
+    		transfer_troops = no
+		}
+	}
+}
+
+country_event = { #Doofania demands rest of Moomin Republic (Moomins resists)
+	id = danville.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.31"}
+	title = danville.31.t
+	desc = danville.31.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They chose death.
+		name = danville.13.a
+		declare_war_on = {
+			target = MOO
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Doofania-Desert Pact
+	id = danville.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.32"}
+	title = danville.32.t
+	desc = danville.32.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.32.a
+		TSA = {
+			country_event = {
+				id = danville.33
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.32.b
+		TSA = {
+			country_event = {
+				id = danville.34
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Doofania-Desert Pact - Desert accepts
+	id = danville.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.33"}
+	title = danville.33.t
+	desc = danville.33.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #I like where this is going
+		name = danville.33.a
+		diplomatic_relation = {
+    		country = DES
+    		relation = non_aggression_pact
+   			active = yes
+		}
+		DES = {
+			diplomatic_relation = {
+    			country = TSA
+    			relation = non_aggression_pact
+   				active = yes
+			}
+		}
+		669 = {
+			add_claim_by = TSA
+		}
+		696 = {
+			add_claim_by = TSA
+		}
+		707 = {
+			add_claim_by = TSA
+		}
+		660 = {
+			add_claim_by = TSA
+		}
+		666 = {
+			add_claim_by = TSA
+		}
+		692 = {
+			add_claim_by = TSA
+		}
+		665 = {
+			add_claim_by = DES
+		}
+		641 = {
+			add_claim_by = DES
+		}
+		639 = {
+			add_claim_by = DES
+		}
+		618 = {
+			add_claim_by = DES
+		}
+		GRY = {
+			every_owned_state = {
+				add_claim_by = DES
+			}
+		}
+	}
+}
+
+country_event = { #Doofania-Desert Pact - Desert refuses
+	id = danville.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.34"}
+	title = danville.34.t
+	desc = danville.34.d
+	picture = GFX_report_danville
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Bruh moment
+		name = danville.34.a
+		BRO = {
+			every_owned_state = {
+				add_claim_by = TSA
+			}
+		}
+		GRY = {
+			every_owned_state = {
+				add_claim_by = TSA
+			}
+		}
+	}
+}
+
+country_event = { #Doofania wants to join our alliance
+	id = danville.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.35"}
+	title = danville.35.t
+	desc = danville.35.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.35.a
+		add_to_faction = TSA
+		TSA = {
+			country_event = {
+				id = danville.36
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.35.b
+		TSA = {
+			country_event = {
+				id = danville.37
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #We are accepted into alliance
+	id = danville.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.36"}
+	title = danville.36.t
+	desc = danville.36.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.36.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #They refused us to join the alliance
+	id = danville.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.37"}
+	title = danville.37.t
+	desc = danville.37.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Bruh moment
+		name = danville.37.a
+		add_political_power = -50
+	}
+}
+
+######################################################
+# ECONOMIC PACT EVENTS
+######################################################
+
+country_event = { #Tri-State Area invites us to economic pact
+	id = danville.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.38"}
+	title = danville.38.t
+	desc = danville.38.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.38.a
+		TSA = {
+			country_event = {
+				id = danville.39
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.38.b
+		TSA = {
+			country_event = {
+				id = danville.40
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agreed
+	id = danville.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.39"}
+	title = danville.39.t
+	desc = danville.39.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.39.a
+		add_political_power = 50
+		FROM = {
+			add_ideas = {
+				TSA_danville_economic_pact
+			}
+		}
+	}
+}
+
+country_event = { #They refused
+	id = danville.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.40"}
+	title = danville.40.t
+	desc = danville.40.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #It's their decision
+		name = danville.40.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Tri-State Area wants to evolve the economic pact into defence pact
+	id = danville.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.41"}
+	title = danville.41.t
+	desc = danville.41.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.41.a
+		TSA = {
+			country_event = {
+				id = danville.42
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.41.b
+		TSA = {
+			country_event = {
+				id = danville.43
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agreed
+	id = danville.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.42"}
+	title = danville.42.t
+	desc = danville.42.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.42.a
+		add_political_power = 50
+		FROM = {
+			give_guarantee = TSA
+		}
+		every_country = {
+			limit = {
+				OR = {
+					has_idea = TSA_danville_economic_pact_decentralized
+					has_idea = TSA_danville_economic_pact_centralized
+				}
+				NOT = {
+					tag = FROM
+				}
+			}
+			give_guarantee = FROM
+		}
+	}
+}
+
+country_event = { #They refused
+	id = danville.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.43"}
+	title = danville.43.t
+	desc = danville.43.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #It's their decision
+		name = danville.43.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Tri-State Area wants to evolve the economic pact into alliance
+	id = danville.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.44"}
+	title = danville.44.t
+	desc = danville.44.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.44.a
+		TSA = {
+			country_event = {
+				id = danville.45
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.44.b
+		TSA = {
+			country_event = {
+				id = danville.46
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agreed
+	id = danville.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.45"}
+	title = danville.45.t
+	desc = danville.45.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.45.a
+		add_political_power = 50
+		add_to_faction = FROM
+	}
+}
+
+country_event = { #They refused
+	id = danville.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.46"}
+	title = danville.46.t
+	desc = danville.46.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #It's their decision
+		name = danville.46.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #TSA wants to join our alliance
+	id = danville.47
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.47"}
+	title = danville.47.t
+	desc = danville.47.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = danville.47.a
+		add_to_faction = TSA
+		TSA = {
+			country_event = {
+				id = danville.48
+				days = 1
+			}
+		}
+	}
+
+	option = { #no way
+		name = danville.47.b
+		TSA = {
+			country_event = {
+				id = danville.49
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #We are accepted into alliance
+	id = danville.48
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.48"}
+	title = danville.48.t
+	desc = danville.48.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = danville.48.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #They refused us to join the alliance
+	id = danville.49
+	immediate = {log = "[GetDateText]: [Root.GetName]: event danville.49"}
+	title = danville.49.t
+	desc = danville.49.d
+	picture = GFX_report_danville
+
+	is_triggered_only = yes
+
+	option = { #Bruh moment
+		name = danville.49.a
+		add_political_power = -50
+	}
+}

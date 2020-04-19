@@ -1,0 +1,19 @@
+if_flower_hill_declares_then_fight_tsa = {
+	enable = {
+		tag = TSA
+		has_war_with = FLO
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "FLO"			
+		value = 7000 # that low means not going for islands either
+	}
+
+	ai_strategy = {
+		type = contain
+		id = "FLO"			
+		value = 7000 # that low means not going for islands either
+	}
+}

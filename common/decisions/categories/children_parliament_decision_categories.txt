@@ -1,0 +1,29 @@
+children_parliament_dec_category = {
+	icon = usa_congress
+	allowed = {
+		original_tag = MAI
+	}
+
+	visible = {
+		has_completed_focus = MAI_first_elections
+	}
+
+	scripted_gui = children_parliament_decision_ui
+
+	priority = 85
+}
+
+en1_children_parliament_dec_category = {
+	icon = usa_congress
+	allowed = {
+		original_tag = EN1
+	}
+
+	visible = {
+		has_completed_focus = EN1_a_parliament_for_children
+	}
+
+	scripted_gui = en1_children_parliament_decision_ui
+
+	priority = 85
+}

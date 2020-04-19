@@ -1,0 +1,59 @@
+﻿division_template = {
+	name = "Weasels Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Weasels Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Weasels Division"
+		location = 3892
+		division_template = "Weasels Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Weasels Division"
+		location = 3892
+		division_template = "Weasels Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "3. Weasels Division"
+		location = 7074
+		division_template = "Weasels Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "4. Weasels Division"
+		location = 7074
+		division_template = "Weasels Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "1. Weasels Tank Division"
+		location = 3892
+		division_template = "Weasels Tank Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Weasels Tank Division"
+		location = 3892
+		division_template = "Weasels Tank Division"
+		start_experience_factor = 0.4
+	}
+}
+

@@ -1,0 +1,2436 @@
+focus_tree = { 
+	id = friedewalt
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = FRI 
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = FRI_economic_expansion
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_royal_highway
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 1
+		cost = 5
+		prerequisite = { focus = FRI_economic_expansion }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			753 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			758 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_colonial_growth
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 2
+		y = 2
+		cost = 5
+		prerequisite = { focus = FRI_royal_highway }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			632 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 9036
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+			634 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_new_military_works
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		cost = 5
+		prerequisite = { focus = FRI_economic_expansion }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			794 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_prince_hartmut_arms_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 2
+		cost = 5
+		prerequisite = { focus = FRI_new_military_works }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			884 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_pantmawr_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 1
+		cost = 5
+		prerequisite = { focus = FRI_economic_expansion }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			811 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_sawadden_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 2
+		cost = 5
+		prerequisite = { focus = FRI_pantmawr_complex }
+		available = {
+			872 = {
+				is_owned_by = FRI
+			}
+		}
+		bypass = {
+			872 = {
+				is_owned_by = MAI
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			872 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_fund_new_cities
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 3
+		y = 3
+		cost = 5
+		prerequisite = { focus = FRI_colonial_growth }
+		prerequisite = { focus = FRI_sawadden_complex }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			835 = {
+				set_state_category = city
+			}
+			763 = {
+				set_state_category = city
+			}
+			794 = {
+				set_state_category = town
+			}
+			add_political_power = -100
+		}		
+	}
+
+	focus = { 
+		id = FRI_trade_with_starfleet
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 3
+		y = 4
+		cost = 5
+		prerequisite = { focus = FRI_fund_new_cities }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = KPT
+				modifier = TCWmod_generic_relations
+			}
+			KPT = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_naval_expansion
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 3
+		cost = 5
+		prerequisite = { focus = FRI_colonial_growth }
+		prerequisite = { focus = FRI_prince_hartmut_arms_factory }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			763 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			869 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_expeditions_for_resources
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 1
+		y = 4
+		cost = 5
+		prerequisite = { focus = FRI_naval_expansion }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SIO = {
+				country_event = {
+					id = friedewalt.10
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_continue_colonization
+		icon = GFX_goal_generic_navy_battleship
+		x = 2
+		y = 6
+		cost = 5
+		prerequisite = { focus = FRI_expeditions_for_resources }
+		prerequisite = { focus = FRI_trade_with_starfleet }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_political_power = 50
+			632 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 9036
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_western_outpost
+		icon = GFX_goal_generic_position_armies
+		x = 0
+		y = 7
+		cost = 11.5
+		prerequisite = { focus = FRI_continue_colonization }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 29
+			29 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1420
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = rural
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 50000
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_form_ties_with_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 8
+		cost = 5
+		prerequisite = { focus = FRI_western_outpost }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_opinion_modifier = {
+				target = AVA
+				modifier = TCWmod_generic_relations
+			}
+			AVA = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_political_power = 50
+		}		
+	}
+
+	focus = { 
+		id = FRI_assuming_control_on_central_islands
+		icon = GFX_goal_generic_position_armies
+		x = 2
+		y = 7
+		cost = 7.25
+		prerequisite = { focus = FRI_continue_colonization }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 38
+			38 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1949
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 150000
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_control_the_chokepoint
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 2
+		y = 8
+		cost = 7.25
+		prerequisite = { focus = FRI_assuming_control_on_central_islands }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 35
+			transfer_state = 40
+			transfer_state = 840
+			35 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10242
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 100000
+			}
+			40 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10333
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 150000
+			}
+			840 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = rural
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 50000
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_southern_colony
+		icon = GFX_goal_generic_position_armies
+		x = 4
+		y = 7
+		cost = 7.25
+		prerequisite = { focus = FRI_continue_colonization }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 901
+			901 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 4033
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 75000
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_far_east
+		icon = GFX_goal_generic_position_armies
+		x = 4
+		y = 8
+		cost = 11.5
+		prerequisite = { focus = FRI_southern_colony }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				AND = {
+					has_completed_focus = FRI_control_the_chokepoint
+					has_completed_focus = FRI_form_ties_with_avalor
+				}
+				add = 1
+			}
+		} 
+		completion_reward = {
+			transfer_state = 36
+			36 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10322
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_category = town
+				add_extra_state_shared_building_slots = 1
+				add_manpower = 75000
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_our_colonial_empire
+		icon = GFX_goal_generic_position_armies
+		x = 2
+		y = 9
+		cost = 7.25
+		prerequisite = { focus = FRI_form_ties_with_avalor }
+		prerequisite = { focus = FRI_control_the_chokepoint }
+		prerequisite = { focus = FRI_far_east }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			num_of_controlled_states > 25
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FRI_colonial_beginnings
+				add_idea = FRI_colonial_empire
+			}
+		}		
+	}
+
+#############################################################################################################################################
+#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+#############################################################################################################################################                                                
+	
+	focus = { 
+		id = FRI_look_into_international_sphere
+		icon = GFX_goal_generic_alliance
+		x = 10
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		available = {
+			date > 1937.1.1
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				has_global_flag = enchancian_civil_war
+				factor = 5
+			}
+		} 
+		completion_reward = { 
+			add_political_power = 50
+		}		
+	}
+
+	focus = { 
+		id = FRI_enchancian_civil_war
+		icon = GFX_focus_enchancia
+		x = 6
+		y = 1
+		cost = 5
+		prerequisite = { focus = FRI_look_into_international_sphere }
+		available_if_capitulated = yes
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+		} 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_didnt_broke
+				ENC = {
+					has_country_flag = civil_war_avoided
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				has_global_flag = enchancian_civil_war
+				factor = 5
+			}
+		} 
+		completion_reward = { 
+			country_event = {
+				id = everrealm.5
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_modern_boom
+		icon = GFX_goal_generic_national_unity
+		x = 7
+		y = 3
+		cost = 10
+		prerequisite = { focus = FRI_enchancian_civil_war }
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECW_ended_or_avoided
+				OR = {
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+					AND = {
+						has_global_flag = enchancian_civil_war_over
+						OR = {
+							ENC = {
+								exists = yes
+								NOT = {
+									has_cosmetic_tag = WIN
+								}
+							}
+							EN1 = {
+								exists = yes
+							}
+							EN2 = {
+								exists = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		bypass = {
+			ENC = {
+				has_cosmetic_tag = WIN
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+						NOT = {
+							has_cosmetic_tag = WIN
+						}
+					}
+				}
+				ENC = {
+					add_timed_idea = {
+						idea = ENC_into_modern_society
+						days = 200
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				EN1 = {
+					add_timed_idea = {
+						idea = ENC_into_modern_society
+						days = 200
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				EN2 = {
+					add_timed_idea = {
+						idea = ENC_into_modern_society
+						days = 200
+					}
+				}
+			}
+			add_political_power = -200
+		}		
+	}
+
+	focus = { 
+		id = FRI_our_companies_in_enchancia
+		icon = GFX_goal_generic_construction2
+		x = 7
+		y = 4
+		cost = 10
+		prerequisite = { focus = FRI_modern_boom }
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECW_ended_or_avoided
+				OR = {
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+					AND = {
+						has_global_flag = enchancian_civil_war_over
+						OR = {
+							ENC = {
+								exists = yes
+								NOT = {
+									has_cosmetic_tag = WIN
+								}
+							}
+							EN1 = {
+								exists = yes
+							}
+							EN2 = {
+								exists = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+						NOT = {
+							has_cosmetic_tag = WIN
+						}
+					}
+				}
+				ENC = {
+					add_ideas = {
+						ENC_foreign_companies
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				EN1 = {
+					add_ideas = {
+						ENC_foreign_companies
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				EN2 = {
+					add_ideas = {
+						ENC_foreign_companies
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_organise_guerillas_in_enchancia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 5
+		y = 3
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = { focus = FRI_enchancian_civil_war } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended_badder
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						EN3 = {
+							exists = yes
+						}
+						EN4 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				EN3 = {
+					add_ideas = {
+						ENC_monarchist_guerillas
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				EN4 = {
+					add_ideas = {
+						ENC_monarchist_guerillas
+					}
+				}
+			}
+			add_political_power = -150
+		}
+	}
+
+	focus = { 
+		id = FRI_support_exiled_family
+		icon = GFX_goal_generic_alliance
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		bypass = {
+			OR = {
+				EN3 = {
+					custom_trigger_tooltip = {
+						tooltip = EN3_royal_stripped
+						has_country_flag = royal_family_not_royal
+					}
+				}
+				EN4 = {
+					custom_trigger_tooltip = {
+						tooltip = EN3_royal_stripped
+						has_country_flag = royal_family_not_royal
+					}
+				}
+			}
+		}
+		prerequisite = {
+			focus = FRI_organise_guerillas_in_enchancia
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+						has_cosmetic_tag = WIN
+					}
+				}
+				ENC = {
+					add_equipment_to_stockpile = {
+    					type = infantry_equipment_0
+    					amount = 5000
+    					producer = FRI
+					}
+					add_manpower = 5000
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						exists = no
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = winslow_on_exile
+					}
+					add_political_power = 100
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_monarchies_stay_together
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 10
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_look_into_international_sphere }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = MAI
+				modifier = TCWmod_generic_relations
+			}
+			MAI = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = WEK
+				modifier = TCWmod_generic_relations
+			}
+			WEK = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_political_power = 50
+		}		
+	}
+
+	focus = { 
+		id = FRI_economic_agreement_with_spalding
+		icon = GFX_goal_generic_improve_relations
+		x = 9
+		y = 2
+		cost = 10
+		available = {
+			SLD = {
+				OR = {
+					has_government = monarchism
+					has_government = democratic
+				}
+			}
+		}
+		prerequisite = { focus = FRI_monarchies_stay_together }
+		mutually_exclusive = { focus = FRI_isolate_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SLD = {
+				country_event = {
+					id = friedewalt.1
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_isolate_spalding
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 2
+		cost = 10
+		available = {
+			SLD = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+		prerequisite = { focus = FRI_monarchies_stay_together }
+		mutually_exclusive = { focus = FRI_economic_agreement_with_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = SLD
+				modifier = TCWmod_generic_isolation
+			}
+			SLD = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_isolation
+				}
+				add_ideas = {
+					TCWmod_isolation
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_reach_to_duckburg
+		icon = GFX_goal_generic_improve_relations
+		x = 9
+		y = 3
+		cost = 10
+		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_isolate_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = DCB
+				modifier = TCWmod_generic_relations
+			}
+			DCB = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_reach_to_danville
+		icon = GFX_goal_generic_improve_relations
+		x = 11
+		y = 3
+		cost = 10
+		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_isolate_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = TSA
+				modifier = TCWmod_generic_relations
+			}
+			TSA = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_dangerous_desert
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 14
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_look_into_international_sphere }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					SIO = {
+						exists = yes
+					}
+				}
+				SIO = {
+					add_equipment_to_stockpile = {
+    					type = infantry_equipment_0
+    					amount = 5000
+    					producer = FRI
+					}
+					add_manpower = 5000
+				}
+			}
+			add_political_power = 50
+		}		
+	}
+
+	focus = { 
+		id = FRI_fortifying_colony
+		icon = GFX_goal_generic_fortify_city
+		x = 14
+		y = 2
+		cost = 10
+		prerequisite = { focus = FRI_dangerous_desert }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			634 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 1162
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 9064
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 9072
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 5778
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 3678
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_isolate_humsin
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 3
+		cost = 10
+		prerequisite = { focus = FRI_fortifying_colony }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = DES
+				modifier = TCWmod_generic_isolation
+			}
+			DES = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_isolation
+				}
+				add_ideas = {
+					TCWmod_isolation
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_hartmut_rules
+		icon = GFX_goal_generic_attack_allies
+		x = 10
+		y = 5
+		cost = 10
+		prerequisite = { focus = FRI_support_exiled_family focus = FRI_our_companies_in_enchancia }
+		prerequisite = { focus = FRI_reach_to_duckburg }
+		prerequisite = { focus = FRI_reach_to_danville }
+		prerequisite = { focus = FRI_isolate_humsin }
+		available = {
+			has_country_leader = {
+    			name = "Hartmut II"
+    			ruling_only = yes
+			}
+		}
+		bypass = {
+			has_country_leader = {
+    			name = "Hartmut II"
+    			ruling_only = yes
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			set_rule = {
+				can_create_factions = yes
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_convince_western_kingdom
+		icon = GFX_goal_generic_forceful_treaty
+		x = 8
+		y = 6
+		cost = 10
+		prerequisite = { focus = FRI_hartmut_rules }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			WEK = {
+				country_event = {
+					id = friedewalt.4
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_convince_spalding
+		icon = GFX_goal_generic_forceful_treaty
+		x = 10
+		y = 6
+		cost = 10
+		available = {
+			SLD = {
+				OR = {
+					has_government = democratic
+					has_government = monarchism
+				}
+			}
+		}
+		prerequisite = { focus = FRI_hartmut_rules }
+		mutually_exclusive = { focus = FRI_attack_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SLD = {
+				country_event = {
+					id = friedewalt.7
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_attack_spalding
+		icon = GFX_goal_generic_major_war
+		x = 12
+		y = 6
+		cost = 10
+		available = {
+			SLD = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+		prerequisite = { focus = FRI_hartmut_rules }
+		mutually_exclusive = { focus = FRI_convince_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			every_state = {
+				limit = {
+					is_owned_by = SLD
+				}
+				add_claim_by = FRI
+			}
+			declare_war_on = {
+				target = SLD
+				type = annex_everything	
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_prepare_to_destroy_macius
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 7
+		cost = 10
+		prerequisite = { focus = FRI_convince_western_kingdom }
+		prerequisite = { focus = FRI_convince_spalding focus = FRI_attack_spalding }
+		available_if_capitulated = no
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			army_experience = 20
+			create_faction = central_alliance
+			if = {
+				limit = {
+					has_country_flag = wek_accepted
+				}
+				add_to_faction = WEK
+				803 = {
+					add_claim_by = WEK
+				}
+				814 = {
+					add_claim_by = WEK
+				}
+				822 = {
+					add_claim_by = WEK
+				}
+				812 = {
+					add_claim_by = WEK
+				}
+				824 = {
+					add_claim_by = WEK
+				}
+				817 = {
+					add_claim_by = WEK
+				}
+				852 = {
+					add_claim_by = WEK
+				}
+				WEK = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = sld_accepted
+				}
+				if = {
+					limit = {
+						SLD = {
+							NOT = {
+								is_in_faction = yes
+							}
+						}
+					}
+					add_to_faction = SLD
+				}
+				789 = {
+					add_claim_by = SLD
+				}
+				798 = {
+					add_claim_by = SLD
+				}
+				796 = {
+					add_claim_by = SLD
+				}
+				792 = {
+					add_claim_by = SLD
+				}
+				799 = {
+					add_claim_by = SLD
+				}
+				SLD = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = sld_accepted
+						has_country_flag = wek_accepted
+					}
+				}
+				803 = {
+					add_claim_by = FRI
+				}
+				814 = {
+					add_claim_by = FRI
+				}
+				822 = {
+					add_claim_by = FRI
+				}
+				812 = {
+					add_claim_by = FRI
+				}
+				824 = {
+					add_claim_by = FRI
+				}
+				817 = {
+					add_claim_by = FRI
+				}
+				789 = {
+					add_claim_by = FRI
+				}
+				798 = {
+					add_claim_by = FRI
+				}
+				796 = {
+					add_claim_by = FRI
+				}
+				792 = {
+					add_claim_by = FRI
+				}
+				799 = {
+					add_claim_by = FRI
+				}
+				852 = {
+					add_claim_by = FRI
+				}
+			}
+			858 = {
+				add_claim_by = FRI
+			}
+			843 = {
+				add_claim_by = FRI
+			}
+			831 = {
+				add_claim_by = FRI
+			}
+			808 = {
+				add_claim_by = FRI
+			}
+			FRI = {
+				declare_war_on = {
+					target = MAI
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_march_to_the_north
+		icon = GFX_goal_generic_major_war
+		x = 9
+		y = 8
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_destroy_macius }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		bypass = {
+			SLD = {
+				exists = no
+			}
+		}
+		completion_reward = { 
+			SLD = {
+				every_state = {
+					add_claim_by = FRI
+				}
+				if = {
+					limit = {
+						is_in_faction_with = FRI
+					}
+					remove_from_faction = central_alliance
+				}
+			}
+			declare_war_on = {
+				target = SLD
+				type = annex_everything	
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_all_your_shrooms_belong_to_us
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 8
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_destroy_macius }
+		mutually_exclusive = {
+			focus = FRI_lets_tackle_totalitarism
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+			is_neighbor_of = VIS
+		}
+		completion_reward = { 
+			VIS = {
+				every_state = {
+					add_claim_by = FRI
+				}
+			}
+			MUS = {
+				every_state = {
+					add_claim_by = FRI
+				}
+			}
+			declare_war_on = {
+				target = VIS
+				type = annex_everything	
+			}
+			declare_war_on = {
+				target = MUS
+				type = annex_everything	
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_declaration_of_hartmut_empire
+		icon = GFX_goal_generic_demand_territory
+		x = 10
+		y = 9
+		cost = 10
+		prerequisite = { focus = FRI_march_to_the_north }
+		prerequisite = { focus = FRI_all_your_shrooms_belong_to_us }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			custom_effect_tooltip = FRI_empire
+			hidden_effect = {
+				create_country_leader = {
+					name = "Hartmut II"
+					desc = "POLITICS_HARTMUT_DESC"
+					picture = "hartmut.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						warmonger
+						inexperienced_imperialist
+					}
+				}
+				set_popularities = {
+					democratic = 0
+					neutrality = 0
+					fascism = 51
+					communism = 0
+					monarchism = 49
+				}
+				set_politics = {
+					ruling_party = fascism
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_return_of_friedewalt
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 5
+		y = 10
+		cost = 10
+		mutually_exclusive = { focus = FRI_invasion_of_san_escobar }
+		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			has_country_leader = {
+    			name = "Friedewalt III"
+   				ruling_only = yes
+			}
+			has_civil_war = no
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FRI_regain_control_in_the_army
+		icon = GFX_focus_generic_little_entente
+		x = 5
+		y = 11
+		cost = 10
+		prerequisite = { focus = FRI_return_of_friedewalt }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_disloyal_army
+		}		
+	}
+
+	focus = { 
+		id = FRI_fix_errors_in_economy
+		icon = GFX_goal_generic_consumer_goods
+		x = 7
+		y = 12
+		cost = 10
+		prerequisite = { focus = FRI_regain_control_in_the_army }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FRI_economy_on_downhill
+				add_idea = FRI_economy_on_downhill2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_redenomination_of_mark
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 7
+		y = 13
+		cost = 10
+		prerequisite = { focus = FRI_fix_errors_in_economy }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_economy_on_downhill2
+		}		
+	}
+
+	focus = { 
+		id = FRI_give_central_kingdom_independence
+		icon = GFX_goal_generic_major_alliance
+		x = 5
+		y = 12
+		cost = 10
+		prerequisite = { focus = FRI_regain_control_in_the_army }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			release = MAI
+			add_political_power = 50
+			add_stability = 0.05
+		}		
+	}
+
+	focus = { 
+		id = FRI_future_of_spalding
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 5
+		y = 13
+		cost = 10
+		prerequisite = { focus = FRI_give_central_kingdom_independence }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.17
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_what_to_do_with_hartmut
+		icon = GFX_focus_rom_abdicate
+		x = 3
+		y = 12
+		cost = 10
+		prerequisite = { focus = FRI_regain_control_in_the_army }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_war_with = HAR
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.16
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_reunite_local_governments
+		icon = GFX_goal_generic_improve_relations
+		x = 3
+		y = 13
+		cost = 10
+		prerequisite = { focus = FRI_what_to_do_with_hartmut }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_divided_local_governments
+		}		
+	}
+
+	focus = { 
+		id = FRI_united_once_more
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 5
+		y = 14
+		cost = 10
+		prerequisite = { focus = FRI_reunite_local_governments }
+		prerequisite = { focus = FRI_future_of_spalding }
+		prerequisite = { focus = FRI_redenomination_of_mark }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 50
+		}		
+	}
+
+	focus = { 
+		id = FRI_invasion_of_san_escobar
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 10
+		cost = 10
+		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
+		mutually_exclusive = { focus = FRI_return_of_friedewalt }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_country_leader = {
+    			name = "Hartmut II"
+   				ruling_only = yes
+			}
+			has_civil_war = no
+			has_war = no
+		}
+		completion_reward = { 
+			SAN = {
+				every_state = {
+					add_claim_by = FRI
+				}
+			}
+			declare_war_on = {
+				target = SAN
+				type = annex_everything	
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_someone_gonna_have_bad_time
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 11
+		cost = 10
+		prerequisite = { focus = FRI_invasion_of_san_escobar }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			UND = {
+				every_state = {
+					add_claim_by = FRI
+				}
+			}
+			declare_war_on = {
+				target = UND
+				type = annex_everything	
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_expand_further_west
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 12
+		cost = 10
+		prerequisite = { focus = FRI_someone_gonna_have_bad_time }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = SMU
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = PAT
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = LEC
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = ICK
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = CDK
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = FRK
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = DUL
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = SWA
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = FFA
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = ISL
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = MAR
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = GUM
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_lets_tackle_totalitarism
+		icon = GFX_goal_anti_comintern_pact
+		x = 18
+		y = 8
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_destroy_macius }
+		mutually_exclusive = {
+			focus = FRI_all_your_shrooms_belong_to_us
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					GRN = {
+						is_faction_leader = yes
+						NOT = {
+							has_war_with = FRI
+						}
+					}
+				}
+				GRN = {
+					add_to_faction = FRI
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_saving_danville_dreams
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 16
+		y = 9
+		cost = 10
+		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		available_if_capitulated = yes
+		available = {
+			TSA = {
+				has_government = fascism
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = TSA
+				type = topple_government
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_war_on_commies
+		icon = GFX_goal_anti_comintern_pact
+		x = 18
+		y = 9
+		cost = 10
+		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		mutually_exclusive = { focus = FRI_war_on_wolves }
+		available_if_capitulated = yes
+		available = {
+			FLO = {
+				exists = yes
+				has_government = communism
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = FLO
+				type = liberate_wargoal
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_war_on_wolves
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 20
+		y = 9
+		cost = 10
+		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		mutually_exclusive = { focus = FRI_war_on_commies }
+		available_if_capitulated = yes
+		available = {
+			WOL = {
+				exists = yes
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = FLO
+				type = liberate_wargoal
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_prepare_to_liberate_everrealm
+		icon = GFX_goal_generic_national_unity
+		x = 19
+		y = 10
+		cost = 10
+		prerequisite = { focus = FRI_war_on_commies focus = FRI_war_on_wolves }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			#event about Avalor in faction
+		}		
+	}
+
+	focus = { 
+		id = FRI_liberation_of_trufflandia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 17
+		y = 11
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
+		available = {
+			TRL = {
+				has_government = communism
+			}
+			has_war = no
+		}
+		bypass = {
+			TRL = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = KHA
+				type = topple_government
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_liberation_of_khaldoun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 19
+		y = 11
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
+		available = {
+			KHA = {
+				has_government = fascism
+			}
+			has_war = no
+		}
+		bypass = {
+			KHA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = KHA
+				type = topple_government
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_liberation_of_corinthia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 21
+		y = 11
+		cost = 10
+		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
+		available = {
+			COR = {
+				has_government = communism
+			}
+			has_war = no
+		}
+		bypass = {
+			COR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = COR
+				type = topple_government
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_winslows_return_to_homeland
+		icon = GFX_focus_enchancia
+		x = 19
+		y = 12
+		cost = 10
+		prerequisite = { focus = FRI_liberation_of_trufflandia focus = FRI_liberation_of_khaldoun focus = FRI_liberation_of_corinthia }
+		available = {
+			OR = {
+				EN3 = {
+					exists = yes
+				}
+				EN4 = {
+					exists = yes
+				}
+			}
+			has_war = no
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					AVA = {
+						has_country_flag = winslow_on_exile
+					}
+				}
+				ENC = {
+					set_province_controller = 4552
+				}
+				GRN = {
+					add_to_faction = ENC
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						owns_state = 19
+					}
+				}
+				ENC = {
+					set_province_controller = 4552
+				}
+				GRN = {
+					add_to_faction = ENC
+				}
+			}
+			if = {
+				limit = {
+					GRN = {
+						has_country_flag = winslow_on_exile
+					}
+				}
+				ENC = {
+					set_province_controller = 6280
+					set_province_controller = 6314
+				}
+				GRN = {
+					add_to_faction = ENC
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						owns_state = 12
+					}
+				}
+				ENC = {
+					set_province_controller = 6280
+					set_province_controller = 6314
+				}
+				GRN = {
+					add_to_faction = ENC
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				ENC = {
+					declare_war_on = {
+						target = EN3
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				ENC = {
+					declare_war_on = {
+						target = EN4
+						type = annex_everything
+					}
+				}
+			}
+		}		
+	}
+
+	focus = {
+		id = FRI_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 20
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = FRI_army_effort }
+		x = 19
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = FRI_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 21
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.75
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FRI_army_effort }
+		x = 20
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = FRI_equipment_effort }
+		x = 18
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = FRI_motorization_effort }
+		x = 22
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 0.5
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FRI_doctrine_effort }
+		x = 20
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 20
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FRI_equipment_effort_2 }
+		x = 18
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FRI_mechanization_effort }
+		x = 22
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 0.5
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = FRI_equipment_effort_3 }
+		prerequisite = { focus = FRI_doctrine_effort_2 }
+		prerequisite = { focus = FRI_armor_effort }  
+		x = 20
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 0.5
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+			add_research_slot = 1
+		}
+	}
+}

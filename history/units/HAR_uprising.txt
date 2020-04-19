@@ -1,0 +1,113 @@
+﻿division_template = {
+	name = "Hartmut Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 1 y = 3 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+		infantry = { x = 2 y = 3 }
+	}
+}
+
+division_template = {
+	name = "Hartmut Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+		light_armor = { x = 0 y = 3 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+		light_armor = { x = 1 y = 3 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Hartmut Infantry Division"
+		location = 9917
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Hartmut Infantry Division"
+		location = 9917
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "3. Hartmut Infantry Division"
+		location = 9917
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "4. Hartmut Infantry Division"
+		location = 9917
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "5. Hartmut Infantry Division"
+		location = 9917
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "6. Hartmut Infantry Division"
+		location = 862
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "7. Hartmut Infantry Division"
+		location = 862
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "8. Hartmut Infantry Division"
+		location = 862
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "9. Hartmut Infantry Division"
+		location = 862
+		division_template = "Hartmut Infantry Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "1. Hartmut Tank Division"
+		location = 9917
+		division_template = "Hartmut Tank Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Hartmut Tank Division"
+		location = 9917
+		division_template = "Hartmut Tank Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "3. Hartmut Tank Division"
+		location = 862
+		division_template = "Hartmut Tank Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "4. Hartmut Tank Division"
+		location = 862
+		division_template = "Hartmut Tank Division"
+		start_experience_factor = 0.3
+	}
+}
+

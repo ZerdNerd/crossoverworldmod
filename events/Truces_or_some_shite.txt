@@ -1,0 +1,112 @@
+﻿###########################
+# Truces or proposal or etc
+###########################
+
+add_namespace = truce_proposal
+
+country_event = { #Peace with Honor proposal for Avalor
+	id = truce_proposal.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.1"}
+	title = truce_proposal.1.t
+	desc = truce_proposal.1.d
+	picture = GFX_report_event_polish_tanks_01
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We can agree for this
+		name = truce_proposal.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = AVA_will_sign_peace_with_honor
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = truce_proposal.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { #Come and get us, fools!
+		name = truce_proposal.1.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = AVA_will_not_sign_peace_with_honor
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = truce_proposal.2
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Avalor accepts Peace with Honor
+	id = truce_proposal.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.2"}
+	title = truce_proposal.2.t
+	desc = truce_proposal.2.d
+	picture = GFX_report_event_polish_tanks_01
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Avalor is truly valor.
+		name = truce_proposal.2.a
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = AVA
+				}
+				set_country_flag = avalor_signed_peace_with_honor
+			}
+		}
+		AVA = {
+			leave_faction = yes
+		}
+		white_peace = AVA
+		every_country = {
+			limit = {
+				is_in_faction_with = ROOT
+			}
+			white_peace = AVA
+		}
+		hidden_effect = {
+			set_country_flag = signed_peace_with_honor
+			every_country = {
+				limit = {
+					is_in_faction_with = ROOT
+				}
+				set_country_flag = signed_peace_with_honor
+			}
+			news_event = {
+				id = worldnews.55
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Avalor rejects Peace with Honor
+	id = truce_proposal.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.3"}
+	title = truce_proposal.3.t
+	desc = truce_proposal.3.d
+	picture = GFX_report_event_polish_tanks_01
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They will regret this.
+		name = truce_proposal.3.a
+	}
+}

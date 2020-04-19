@@ -1,0 +1,1080 @@
+focus_tree = { 
+	id = desert
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = DES
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+	id = DES_economy_on_the_desert
+	icon = GFX_goal_generic_production
+	x = 2
+	y = 0
+	cost = 10
+	available_if_capitulated = yes 
+	ai_will_do = { 
+		factor = 1
+	} 
+
+	completion_reward = {
+		add_tech_bonus = {
+			name = industrial_bonus
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
+	} 
+}
+
+focus = {
+	id = DES_supplies_for_subjects
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = DES_economy_on_the_desert }
+	x = 0
+	y = 1
+	cost = 10
+
+	available_if_capitulated = yes
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+}
+
+focus = {
+	id = DES_food_on_the_desert
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = DES_supplies_for_subjects }
+	x = 0
+	y = 2
+	cost = 10
+
+	available_if_capitulated = yes
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}			
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = industrial_complex
+						size > 0
+						include_locked = yes
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+}
+
+focus = {
+	id = DES_factories_for_citizens
+	icon = GFX_goal_generic_construction
+	prerequisite = { focus = DES_food_on_the_desert }
+	x = 0
+	y = 3
+	cost = 10
+
+	available_if_capitulated = yes
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 1
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+										include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+	focus = {
+		id = DES_desert_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = DES_economy_on_the_desert }
+		x = 2
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		complete_tooltip = {
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					free_building_slots = {
+						building = infrastructure
+						size > 0
+					}
+					OR = {
+						is_in_home_area = yes
+						NOT = {
+							owner = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+									is_in_home_area = yes
+								}
+							}
+						}
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_every_state_a_road
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = DES_desert_roads }
+		x = 2
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_new_highways
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = DES_every_state_a_road }
+		x = 2
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_prepare_war_machine
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_economy_on_the_desert }
+		x = 4
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_weapon_projects
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_prepare_war_machine }
+		x = 4
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_final_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_weapon_projects }
+		x = 4
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_economy_works_fine
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = DES_new_highways }
+		prerequisite = { focus = DES_factories_for_citizens }
+		prerequisite = { focus = DES_final_factories }
+		x = 2
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = DES_open_for_international_relations
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 15
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = {
+				DES_foreign_affairs_bureau
+			}
+		}
+	}
+
+	focus = {
+		id = DES_invest_in_republic_of_turtles
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = DES_open_for_international_relations }
+		x = 14
+		y = 2
+		cost = 10
+
+		bypass = {
+			TRL = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			272 = {
+				add_resource = {
+    				type = steel
+    				amount = 10
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_southern_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_invest_in_republic_of_turtles }
+		x = 14
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			651 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 2682
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+#	focus = {
+#		id = DES_colonize_southwestern_land
+#		icon = GFX_focus_hol_the_foundations_of_defense
+#		prerequisite = { focus = DES_southern_port }
+#		x = 14
+#		y = 4
+#		cost = 20
+#
+#		available_if_capitulated = yes
+#
+#		completion_reward = {
+#			add_political_power = -250
+#			transfer_state = 665
+#			665 = {
+#				add_core_of = DES
+#				add_manpower = 70000
+#				add_building_construction = {
+#					type = infrastructure
+#					level = 1
+#					instant_build = yes
+#				}
+#				add_building_construction = {
+#					type = naval_base
+#					level = 1
+#					instant_build = yes
+#					province = 9147
+#				}
+#			}
+#		}
+#	}
+
+	focus = {
+		id = DES_relations_with_wolves
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = DES_open_for_international_relations }
+		x = 16
+		y = 2
+		cost = 10
+
+		bypass = {
+			TRL = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			add_opinion_modifier = {
+				target = WOL
+				modifier = TCWmod_generic_relations
+			}
+			WOL = {
+				add_opinion_modifier = {
+					target = DES
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_eastern_desert_point_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_relations_with_wolves }
+		x = 16
+		y = 3
+		cost = 10
+
+		bypass = {
+			TRL = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			557 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 8528
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_invade_tungu_pungu
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_eastern_desert_point_port }
+		prerequisite = { focus = DES_take_care_of_sioux_tribe }
+		x = 16
+		y = 4
+		cost = 10
+
+		available = {
+			always = no
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = {
+   				type = annex_everything
+   				target = TUG
+			}
+		}
+	}
+
+	focus = {
+		id = DES_preparations_for_invasion
+		icon = GFX_goal_generic_position_armies
+		x = 13
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 5
+		}
+	}
+
+	focus = {
+		id = DES_study_failed_attacks
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = DES_preparations_for_invasion }
+		x = 9
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.3
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_give_them_fleas
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = DES_study_failed_attacks }
+		x = 6
+		y = 2
+		cost = 10
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 1
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+			#event about the fleas
+		}
+	}
+
+	focus = {
+		id = DES_try_impersonating_arktos
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = DES_study_failed_attacks }
+		x = 8
+		y = 2
+		cost = 10
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 0.5
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+			#event about impersonating
+		}
+	}
+
+	focus = {
+		id = DES_steal_the_crystal_ball
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = DES_study_failed_attacks }
+		x = 10
+		y = 2
+		cost = 10
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			#event about stealing the crystal ball
+		}
+	}
+
+	focus = {
+		id = DES_hypnotize_greenlanders
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = DES_study_failed_attacks }
+		x = 12
+		y = 2
+		cost = 10
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 0.5
+				ahead_reduction = 1
+				uses = 1
+				technology = early_destroyer
+				technology = basic_destroyer
+			}
+			#event about hypnotizing them
+		}
+	}
+
+	focus = {
+		id = DES_the_aftermath_of_plans
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = DES_give_them_fleas }
+		prerequisite = { focus = DES_try_impersonating_arktos }
+		prerequisite = { focus = DES_steal_the_crystal_ball }
+		prerequisite = { focus = DES_hypnotize_greenlanders }
+		x = 9
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = DES_upgrade_our_weapons
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DES_preparations_for_invasion }
+		x = 19
+		y = 1
+		cost = 10
+
+		available = {
+			date > 1939.03.01
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DES_cooperate_with_arktos
+		icon = GFX_goal_generic_military_deal
+		prerequisite = { focus = DES_upgrade_our_weapons }
+		mutually_exclusive = { focus = DES_invade_alone }
+		x = 18
+		y = 2
+		cost = 10
+
+		available = {
+			ICW = {
+				NOT = {
+					has_completed_focus = ICW_versus_humsin
+					has_completed_focus = ICW_maintain_balance
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = -100
+			ICW = {
+				country_event = {
+					id = desert.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_invade_alone
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = DES_upgrade_our_weapons }
+		mutually_exclusive = { focus = DES_cooperate_with_arktos }
+		x = 20
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 10
+		}
+	}
+
+	focus = {
+		id = DES_take_care_of_sioux_tribe
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = DES_cooperate_with_arktos focus = DES_invade_alone }
+		x = 18
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			SIO = {
+				every_owned_state = {
+					add_claim_by = DES
+				}
+				country_event = {
+					id = desert.13
+					days = 1
+				}
+			}
+			add_named_threat = { 
+    			threat = 5 
+   				name = DES_has_demanded_sioux_lands
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						DES = {
+							is_in_faction_with = ICW
+						}
+					}
+					DES = {
+						country_event = {
+							id = desert.4
+							days = 18
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_the_case_of_salamanders
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = DES_cooperate_with_arktos focus = DES_invade_alone }
+		x = 20
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			country_event = {
+				id = desert.20
+				days = 1
+			}
+		}
+	}
+
+	focus = {
+		id = DES_straight_into_greenland
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = DES_take_care_of_sioux_tribe }
+		prerequisite = { focus = DES_the_case_of_salamanders }
+		mutually_exclusive = { focus = DES_around_their_lines }
+		x = 18
+		y = 4
+		cost = 10
+
+		available = {
+			date > 1939.07.14
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+		}
+	}
+
+	focus = {
+		id = DES_around_their_lines
+		icon = GFX_focus_around_their_lines
+		prerequisite = { focus = DES_take_care_of_sioux_tribe }
+		prerequisite = { focus = DES_the_case_of_salamanders }
+		mutually_exclusive = { focus =  DES_straight_into_greenland }
+		x = 20
+		y = 4
+		cost = 10
+
+		available = {
+			date > 1939.07.14
+			OUT = {
+				exists = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			OUT = {
+				country_event = {
+					id = desert.24
+					days = 1
+				}
+			}
+			add_named_threat = { 
+    			threat = 5 
+   				name = DES_has_demanded_outcast_lands
+			}
+		}
+	}
+
+	focus = {
+		id = DES_demand_reclaimed_fields
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = DES_straight_into_greenland focus = DES_around_their_lines }
+		x = 19
+		y = 5
+		cost = 10
+
+		bypass = {
+			OR = {
+				has_war_with = GRN
+				GRN = {
+					exists = no
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			GRN = {
+				country_event = {
+					id = desert.22
+					days = 1
+				}
+			}
+			add_named_threat = { 
+    			threat = 5 
+   				name = DES_reclaimed_fields_demanded
+			}
+		}
+	}
+
+	focus = {
+		id = DES_war_with_greenland
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = DES_demand_reclaimed_fields }
+		x = 19
+		y = 6
+		cost = 10
+
+		bypass = {
+			OR = {
+				has_war_with = GRN
+				GRN = {
+					exists = no
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			declare_war_on = { 
+				target = GRN
+				type = annex_everything	
+			}
+		}
+	}
+
+
+}

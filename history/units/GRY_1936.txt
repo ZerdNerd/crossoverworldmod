@@ -1,0 +1,60 @@
+﻿division_template = {
+	name = "Dywizja Gryfów"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Dywizja Pancerna"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Dywizja Gryfów"
+		location = 3873
+		division_template = "Dywizja Gryfów"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Dywizja Gryfów"
+		location = 3873
+		division_template = "Dywizja Gryfów"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "3. Dywizja Gryfów"
+		location = 3873
+		division_template = "Dywizja Gryfów"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "4. Dywizja Gryfów"
+		location = 3873
+		division_template = "Dywizja Gryfów"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "5. Dywizja Gryfów"
+		location = 3873
+		division_template = "Dywizja Gryfów"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "1.Dywizja Pancerna"
+		location = 3873
+		division_template = "Dywizja Pancerna"
+		start_experience_factor = 0.2
+	}
+}

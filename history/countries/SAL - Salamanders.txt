@@ -1,0 +1,98 @@
+﻿capital = 588
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+add_ideas = {
+	pre-industrial_tech
+}
+
+set_convoys = 50
+
+set_popularities = {
+	democratic = 0
+
+	fascism = 0
+		
+	communism = 0
+		
+	neutrality = 100
+		
+	monarchism = 0
+}
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.85
+
+create_country_leader = {
+	name = "Vacat"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Sally Salamander"
+	desc = "POLITICS_TBD_DESC"
+	picture = "sally.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Vacat"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Sally Salamander"
+	desc = "POLITICS_TBD_DESC"
+	picture = "sally.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Vacat"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Sally Salamander"
+	portrait_path = "gfx/leaders/SAL/sally.dds"
+	traits = { }
+	skill = 3
+    attack_skill = 4
+    defense_skill = 1
+    planning_skill = 2
+    logistics_skill = 3
+}

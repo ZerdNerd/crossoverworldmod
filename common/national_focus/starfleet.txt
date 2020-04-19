@@ -1,0 +1,4045 @@
+focus_tree = {
+	id = starfleet
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = KPT
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = KPT_admiral_jachas
+		icon = GFX_focus_KPT_jachas
+		x = 3
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = KPT_medium_hawaii
+		icon = GFX_focus_pineapple_pizza
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_jachas
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_big_hawaii
+		icon = GFX_focus_pineapple_pizza
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_medium_hawaii
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_new_drive_thrus
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_big_hawaii
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_new_pizzerias
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_big_hawaii
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_medium_pepperoni
+		icon = GFX_focus_pepperoni_pizza
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_jachas
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_big_pepperoni
+		icon = GFX_focus_pepperoni_pizza
+		x = 3
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_medium_pepperoni
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_new_recruits
+		icon = GFX_goal_generic_construction
+		x = 3
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_big_pepperoni
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_manpower = 10000
+		} 
+	}
+
+	focus = { 
+		id = KPT_start_selling_hotdogs
+		icon = GFX_focus_hotdog
+		x = 6
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_jachas
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			hidden_effect = {
+				country_event = {
+					id = starfleet.13
+					days = 2
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_erase_any_proofs
+		icon = GFX_goal_generic_political_pressure
+		x = 6
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_start_selling_hotdogs
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = KPT_hotdog_stands
+		icon = GFX_focus_hotdog
+		x = 5
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_erase_any_proofs
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_free_cola_for_everyone
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_erase_any_proofs
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_the_pizza_empire
+		icon = GFX_focus_pineapple_pizza
+		x = 3
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_new_drive_thrus
+		}
+		prerequisite = {
+			focus = KPT_new_pizzerias
+		}
+		prerequisite = {
+			focus = KPT_new_recruits
+		}
+		prerequisite = {
+			focus = KPT_hotdog_stands
+		}
+		prerequisite = {
+			focus = KPT_free_cola_for_everyone
+		}
+		available = {
+			has_country_leader = {
+    			name = "Dominik Jachaś"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_pizza_empire
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_admiral_kuj
+		icon = GFX_focus_KPT_kuj
+		x = 15
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			has_country_leader = {
+    			name = "Generał Kuj"
+    			ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+    			name = "Generał Kuj"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = KPT_arming_the_starfleet
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 12
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_kuj
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			874 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_equipping_the_seafleet
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 12
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_arming_the_starfleet
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			874 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_admiral_line
+		icon = GFX_goal_generic_construct_military
+		x = 11
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_equipping_the_seafleet
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			902 = {
+				add_building_construction = {
+					type = bunker
+					province = 1613
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10616
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 1581
+					level = 3
+					instant_build = yes
+				}
+			}
+			908 = {
+				add_building_construction = {
+					type = bunker
+					province = 3142
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 1768
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 1141
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 3263
+					level = 3
+					instant_build = yes
+				}
+			}
+			898 = {
+				add_building_construction = {
+					type = bunker
+					province = 26
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_general_lufa_line
+		icon = GFX_goal_generic_fortify_city
+		x = 13
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_equipping_the_seafleet
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			882 = {
+				add_building_construction = {
+					type = bunker
+					province = 10524
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 4207
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 3558
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 4332
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_economy_of_starfleet_I
+		icon = GFX_goal_generic_construct_civilian
+		x = 15
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_kuj
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			833 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_economy_of_starfleet_II
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 15
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_economy_of_starfleet_I
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			848 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_additional_draft
+		icon = GFX_focus_generic_manpower
+		x = 15
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_economy_of_starfleet_II
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_manpower = 15000
+		} 
+	}
+
+	focus = { 
+		id = KPT_additional_airfields
+		icon = GFX_goal_generic_air_fighter
+		x = 18
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_kuj
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			898 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			902 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_additional_dockyards
+		icon = GFX_goal_generic_navy_cruiser
+		x = 18
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_additional_airfields
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			874 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_modernize_the_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 17
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_additional_dockyards
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_expansion_of_naval_bases
+		icon = GFX_focus_generic_navy_battleship2
+		x = 19
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_additional_dockyards
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			834 = {
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				province = 10346
+    				instant_build = yes
+				}
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_forging_the_bullets
+		icon = GFX_focus_generic_military_mission
+		x = 15
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_admiral_line
+		}
+		prerequisite = {
+			focus = KPT_general_lufa_line
+		}
+		prerequisite = {
+			focus = KPT_additional_draft
+		}
+		prerequisite = {
+			focus = KPT_modernize_the_roads
+		}
+		prerequisite = {
+			focus = KPT_expansion_of_naval_bases
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_forging_the_bullets_idea
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_maintaing_old_course
+		icon = GFX_focus_KPT_admiral
+		x = 27
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				has_country_leader = {
+    				name = "Admirał Gwiezdnej Floty"
+    				ruling_only = yes
+				}
+			}
+			has_country_flag = KPT_chose_brother
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				has_country_leader = {
+    				name = "Admirał Gwiezdnej Floty"
+    				ruling_only = yes
+				}
+			}
+			has_country_flag = KPT_chose_brother
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = KPT_slight_armament
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 24
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_maintaing_old_course
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			874 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_slight_expansion_of_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 24
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_slight_armament
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			874 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_osieck_otloczyn_line
+		icon = GFX_goal_generic_construct_military
+		x = 23
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_slight_expansion_of_navy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			896 = {
+				add_building_construction = {
+					type = bunker
+					province = 3399
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 2005
+					level = 4
+					instant_build = yes
+				}
+			}
+			902 = {
+				add_building_construction = {
+					type = bunker
+					province = 10586
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 247
+					level = 4
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_building_construction = {
+					type = bunker
+					province = 2450
+					level = 4
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_attack_and_dont_sit
+		icon = GFX_focus_generic_support_the_left_right
+		x = 25
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_slight_expansion_of_navy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_expansion_of_economy
+		icon = GFX_goal_generic_construct_civilian
+		x = 27
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_maintaing_old_course
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			833 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_give_more_economic_freedoms
+		icon = GFX_goal_generic_improve_relations
+		x = 27
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_expansion_of_economy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = KPT_recruit_more_soldiers
+		icon = GFX_focus_generic_manpower
+		x = 27
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_give_more_economic_freedoms
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_manpower = 6500
+		} 
+	}
+
+	focus = { 
+		id = KPT_revive_the_plane_industry
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_maintaing_old_course
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			904 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_boost_the_dockyards
+		icon = GFX_goal_generic_navy_cruiser
+		x = 30
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_revive_the_plane_industry
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			828 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_more_funds_for_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 29
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_boost_the_dockyards
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_funds_for_naval_projects
+		icon = GFX_focus_generic_navy_battleship2
+		x = 31
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_boost_the_dockyards
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = dd_tech
+				category = ss_tech
+				category = cl_tech
+				category = ca_tech
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_starfleet_is_most_important
+		icon = GFX_goal_generic_demand_territory
+		x = 27
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_osieck_otloczyn_line
+		}
+		prerequisite = {
+			focus = KPT_attack_and_dont_sit
+		}
+		prerequisite = {
+			focus = KPT_recruit_more_soldiers
+		}
+		prerequisite = {
+			focus = KPT_more_funds_for_roads
+		}
+		prerequisite = {
+			focus = KPT_funds_for_naval_projects
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_starfleet_is_most_important_idea
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_admiral_torpeda
+		icon = GFX_focus_KPT_torpeda_admiral
+		x = 39
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			has_country_leader = {
+    			name = "JJ Torpeda"
+    			ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+    			name = "JJ Torpeda"
+    			ruling_only = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = KPT_repair_the_arms
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 36
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_torpeda
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			874 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_and_fix_the_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 36
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_repair_the_arms
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			874 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_torpeda_line
+		icon = GFX_goal_generic_construct_military
+		x = 35
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_and_fix_the_navy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			902 = {
+				add_building_construction = {
+					type = bunker
+					province = 1613
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10616
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 1581
+					level = 3
+					instant_build = yes
+				}
+			}
+			898 = {
+				add_building_construction = {
+					type = bunker
+					province = 26
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10593
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 3870
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_bomba_line
+		icon = GFX_goal_generic_construct_military
+		x = 37
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_and_fix_the_navy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			882 = {
+				add_building_construction = {
+					type = bunker
+					province = 3014
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 5741
+					level = 3
+					instant_build = yes
+				}
+			}
+			874 = {
+				add_building_construction = {
+					type = bunker
+					province = 272
+					level = 3
+					instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_reforming_the_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 39
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_torpeda
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			848 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_nationalisation_of_galak_pizza
+		icon = GFX_focus_pineapple_pizza
+		x = 39
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_reforming_the_economy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = KPT_galakpizza
+				add_idea = KPT_galakpizza_nationalized
+			}
+			add_political_power = -150
+		} 
+	}
+
+	focus = { 
+		id = KPT_new_recrutation_campaign
+		icon = GFX_focus_generic_manpower
+		x = 39
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_nationalisation_of_galak_pizza
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_manpower = 10500
+		} 
+	}
+
+	focus = { 
+		id = KPT_build_more_airfields
+		icon = GFX_goal_generic_air_fighter
+		x = 42
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_admiral_torpeda
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			874 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			904 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			898 = {
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_new_naval_bases
+		icon = GFX_goal_generic_navy_cruiser
+		x = 42
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_build_more_airfields
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			839 = {
+				add_building_construction = {
+					type = naval_base
+					province = 4282
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					province = 10302
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_modernization_of_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 41
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_new_naval_bases
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_fixing_the_surface_fleet
+		icon = GFX_focus_generic_navy_battleship2
+		x = 43
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_new_naval_bases
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 3
+				category = dd_tech
+				category = ss_tech
+				category = cl_tech
+				category = ca_tech
+			}
+			add_political_power = -25
+		} 
+	}
+
+	focus = { 
+		id = KPT_the_new_starfleet
+		icon = GFX_focus_generic_treaty
+		x = 39
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = KPT_torpeda_line
+		}
+		prerequisite = {
+			focus = KPT_bomba_line
+		}
+		prerequisite = {
+			focus = KPT_new_recrutation_campaign
+		}
+		prerequisite = {
+			focus = KPT_modernization_of_roads
+		}
+		prerequisite = {
+			focus = KPT_fixing_the_surface_fleet
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_new_starfleet
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_unleash_our_potential
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 9
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_the_pizza_empire
+			focus = KPT_forging_the_bullets
+		}
+		mutually_exclusive = {
+			focus = KPT_limited_attacking
+			focus = KPT_preparing_for_the_unavoidable
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 10
+			navy_experience = 10
+			air_experience = 10
+			add_ideas = {
+				KPT_unleash_the_energy
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_cut_all_ties_with_sancti_magistri
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		relative_position_id = KPT_unleash_our_potential
+		x = -3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_unleash_our_potential
+		}
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_opinion_modifier = {
+				target = SKO
+    			modifier = TCWMod_severed_ties
+			}
+			SKO = {
+				add_opinion_modifier = {
+					target = KPT
+    				modifier = TCWMod_severed_ties
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_shut_down_the_border
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		relative_position_id = KPT_cut_all_ties_with_sancti_magistri
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_cut_all_ties_with_sancti_magistri
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_stability = -0.15
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = KPT_reach_to_other_countries
+		icon = GFX_focus_generic_concessions
+		relative_position_id = KPT_unleash_our_potential
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_unleash_our_potential
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = KPT_flower_hill
+		icon = GFX_goal_support_communism
+		relative_position_id = KPT_reach_to_other_countries
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_reach_to_other_countries
+		}
+		available = {
+			has_government = communism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FLO = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_spalding
+		icon = GFX_goal_molotov_ribbentrop_pact
+		relative_position_id = KPT_reach_to_other_countries
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_reach_to_other_countries
+		}
+		available = {
+			OR = {
+				AND = {
+					has_government = communism
+					SLD = {
+						has_government = communism
+					}
+				}
+				AND = {
+					has_government = fascism
+					SLD = {
+						has_government = fascism
+					}
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				is_in_faction_with = SLD
+				AND = {
+					SLD = {
+						NOT = {
+							has_government = communism
+							has_government = fascism
+						}
+					}
+					NOT = {
+						is_in_faction_with = FLO
+						is_in_faction_with = DES
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			SLD = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_humsin
+		icon = GFX_goal_support_fascism
+		relative_position_id = KPT_reach_to_other_countries
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_reach_to_other_countries
+		}
+		available = {
+			has_government = fascism
+			DES = {
+				NOT = {
+					is_in_faction_with = SKO
+				}
+			}
+		}
+		bypass = {
+			has_government = fascism
+			DES = {
+				is_in_faction_with = SKO
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			DES = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_open_more_factories
+		icon = GFX_goal_generic_production
+		relative_position_id = KPT_unleash_our_potential
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_unleash_our_potential
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			848 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_prepare_for_border_fight
+		icon = GFX_focus_generic_provoke_border_clashes
+		relative_position_id = KPT_open_more_factories
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_open_more_factories
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = KPT_open_land_attack
+		icon = GFX_goal_generic_major_war
+		relative_position_id = KPT_flower_hill
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_shut_down_the_border
+		}
+		prerequisite = {
+			focus = KPT_flower_hill
+			focus = KPT_spalding
+			focus = KPT_humsin
+		}
+		prerequisite = {
+			focus = KPT_prepare_for_border_fight
+		}
+		mutually_exclusive = {
+			focus = KPT_priority_for_naval_landings
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				KPT_favour_land_attack
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_priority_for_naval_landings
+		icon = GFX_goal_generic_amphibious_assault
+		relative_position_id = KPT_humsin
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_shut_down_the_border
+		}
+		prerequisite = {
+			focus = KPT_flower_hill
+			focus = KPT_spalding
+			focus = KPT_humsin
+		}
+		prerequisite = {
+			focus = KPT_prepare_for_border_fight
+		}
+		mutually_exclusive = {
+			focus = KPT_open_land_attack
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				KPT_favour_naval_landings
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_divide_the_country
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = KPT_spalding
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_open_land_attack
+		}
+		prerequisite = {
+			focus = KPT_priority_for_naval_landings
+		}
+		available = {
+			SKO = {
+				exists = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SKO_will_enable_occupation_decisions
+		} 
+	}
+
+	focus = { 
+		id = KPT_attack_friedewalt
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_divide_the_country
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_divide_the_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = FRI
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_attack_the_northern_shores
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_divide_the_country
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_divide_the_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = MOO
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_land_in_the_prairie
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_divide_the_country
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_divide_the_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = SIO
+				type = annex_everything
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_limited_attacking
+		icon = GFX_goal_generic_military_sphere
+		x = 21
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_starfleet_is_most_important
+			focus = KPT_forging_the_bullets
+		}
+		mutually_exclusive = {
+			focus = KPT_unleash_our_potential
+			focus = KPT_preparing_for_the_unavoidable
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_limit_attacks
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_embargo_sancti_magistri
+		icon = GFX_goal_generic_trade
+		relative_position_id = KPT_limited_attacking
+		x = -3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_limited_attacking
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		} 
+		completion_reward = {
+			add_political_power = -50
+			SKO = {
+				add_ideas = {
+					TCWmod_isolation
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_limit_the_movement_on_the_border
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		relative_position_id = KPT_embargo_sancti_magistri
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_embargo_sancti_magistri
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_stability = -0.05
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_we_must_improve_the_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = KPT_limited_attacking
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_limited_attacking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -50
+		} 
+	}
+
+	focus = { 
+		id = KPT_use_the_friendly_aliens
+		icon = GFX_goal_generic_dangerous_deal
+		relative_position_id = KPT_we_must_improve_the_roads
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_we_must_improve_the_roads
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			SKO = {
+				add_political_power = -50
+				add_stability = -0.05
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_prepare_our_operation
+		icon = GFX_goal_generic_army_doctrines
+		relative_position_id = KPT_we_must_improve_the_roads
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_we_must_improve_the_roads
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = KPT_hunt_down_the_spies
+		icon = GFX_focus_generic_military_mission
+		relative_position_id = KPT_we_must_improve_the_roads
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_we_must_improve_the_roads
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				KPT_hunting_down_the_spies
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_improve_the_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = KPT_limited_attacking
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_limited_attacking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_evacuate_the_border
+		icon = GFX_focus_generic_provoke_border_clashes
+		relative_position_id = KPT_improve_the_roads
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_improve_the_roads
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			908 = {
+				add_manpower = -100000
+			}
+			898 = {
+				add_manpower = -100000
+			}
+			902 = {
+				add_manpower = -100000
+			}
+			874 = {
+				add_manpower = 300000
+			}
+			add_political_power = -50
+			add_stability = -0.1
+		} 
+	}
+
+	focus = { 
+		id = KPT_attack_before_sancti_magistri
+		icon = GFX_goal_generic_major_war
+		relative_position_id = KPT_use_the_friendly_aliens
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_limit_the_movement_on_the_border
+		}
+		prerequisite = {
+			focus = KPT_use_the_friendly_aliens
+		}
+		prerequisite = {
+			focus = KPT_prepare_our_operation
+		}
+		prerequisite = {
+			focus = KPT_hunt_down_the_spies
+		}
+		prerequisite = {
+			focus = KPT_evacuate_the_border
+		}
+		mutually_exclusive = {
+			focus = KPT_wait_for_his_attack
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = SKO
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_wait_for_his_attack
+		icon = GFX_goal_generic_defence
+		relative_position_id = KPT_hunt_down_the_spies
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_limit_the_movement_on_the_border
+		}
+		prerequisite = {
+			focus = KPT_use_the_friendly_aliens
+		}
+		prerequisite = {
+			focus = KPT_prepare_our_operation
+		}
+		prerequisite = {
+			focus = KPT_hunt_down_the_spies
+		}
+		prerequisite = {
+			focus = KPT_evacuate_the_border
+		}
+		mutually_exclusive = {
+			focus = KPT_attack_before_sancti_magistri
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_ideas = {
+				KPT_waiting_for_sancti_magistri_attack
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_occupation_duties
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = KPT_prepare_our_operation
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_attack_before_sancti_magistri
+		}
+		prerequisite = {
+			focus = KPT_wait_for_his_attack
+		}
+		available = {
+			SKO = {
+				exists = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SKO_will_enable_occupation_decisions
+		} 
+	}
+
+	focus = { 
+		id = KPT_take_southern_canal
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_occupation_duties
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_occupation_duties
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_state_claim = 911
+			add_state_claim = 905
+			create_wargoal = {
+				target = FRI
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_take_luvlandia
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_occupation_duties
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_occupation_duties
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_state_claim = 888
+			add_state_claim = 901
+			if = {
+				limit = {
+					38 = {
+						NOT = {
+							is_owned_by = UNC
+						}
+					}
+				}
+				create_wargoal = {
+					target = 888.owner
+					type = annex_everything
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_control_over_central_islands
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		relative_position_id = KPT_occupation_duties
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_occupation_duties
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = islands_are_colonized
+				38 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_state_claim = 38
+			add_state_claim = 840
+			add_state_claim = 40
+			add_state_claim = 35
+			add_state_claim = 37
+			if = {
+				limit = {
+					38 = {
+						NOT = {
+							is_owned_by = UNC
+						}
+					}
+				}
+				create_wargoal = {
+					target = 38.owner
+					type = annex_everything
+				}
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = { 
+		id = KPT_preparing_for_the_unavoidable
+		icon = GFX_focus_generic_tank_production
+		x = 33
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_starfleet_is_most_important
+			focus = KPT_the_new_starfleet
+		}
+		mutually_exclusive = {
+			focus = KPT_unleash_our_potential
+			focus = KPT_limited_attacking
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_preparing_for_unavoidable
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_isolation_of_sancti_magistri
+		icon = GFX_goal_rhineland
+		relative_position_id = KPT_preparing_for_the_unavoidable
+		x = -3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_preparing_for_the_unavoidable
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			SKO = {
+				add_ideas = {
+					TCWmod_isolation
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_close_the_border
+		icon = GFX_goal_generic_demand_territory
+		relative_position_id = KPT_isolation_of_sancti_magistri
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_isolation_of_sancti_magistri
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		bypass = {
+			OR = {
+				has_war_with = SKO
+				SKO = {
+					exists = no
+				}
+			}
+		}
+		completion_reward = {
+			add_stability = -0.1
+			add_political_power = -100
+		} 
+	}
+
+	focus = { 
+		id = KPT_search_for_allies
+		icon = GFX_goal_generic_major_alliance
+		relative_position_id = KPT_preparing_for_the_unavoidable
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_preparing_for_the_unavoidable
+		}
+		available = {
+			NOT = {
+				has_completed_focus = KPT_fight_alone
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = KPT_ally_with_japanifornia
+		icon = GFX_goal_tripartite_pact
+		relative_position_id = KPT_search_for_allies
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_search_for_allies
+		}
+		available = {
+			is_in_faction = no
+			JPN = {
+				has_government = democratic
+			}
+			NOT = {
+				is_guaranteed_by = TSA
+				is_guaranteed_by = MOO
+			}
+		}
+		bypass = {
+			is_guaranteed_by = JPN
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			JPN = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_ally_with_danville
+		icon = GFX_goal_tripartite_pact
+		relative_position_id = KPT_search_for_allies
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_search_for_allies
+		}
+		available = {
+			is_in_faction = no
+			TSA = {
+				has_government = democratic
+			}
+			NOT = {
+				is_guaranteed_by = MOO
+				is_guaranteed_by = JPN
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			TSA = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_ally_with_moomins
+		icon = GFX_goal_tripartite_pact
+		relative_position_id = KPT_search_for_allies
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_search_for_allies
+		}
+		available = {
+			is_in_faction = no
+			NOT = {
+				is_guaranteed_by = TSA
+				is_guaranteed_by = JPN
+			}
+		}
+		bypass = {
+			MOO = {
+				exists = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			MOO = {
+				country_event = {
+					id = starfleet.7
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_fight_alone
+		icon = GFX_goal_generic_attack_allies
+		relative_position_id = KPT_preparing_for_the_unavoidable
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_preparing_for_the_unavoidable
+		}
+		available = {
+			is_in_faction = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = KPT_join_the_spalding_friedewalt_deal
+		icon = GFX_goal_generic_national_unity
+		relative_position_id = KPT_fight_alone
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_fight_alone
+		}
+		available = {
+			is_in_faction = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FRI = {
+				country_event = {
+					id = starfleet.10
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_prepare_naval_invasions
+		icon = GFX_goal_generic_amphibious_assault
+		relative_position_id = KPT_ally_with_japanifornia
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_close_the_border
+		}
+		prerequisite = {
+			focus = KPT_ally_with_japanifornia
+			focus = KPT_ally_with_danville
+			focus = KPT_ally_with_moomins
+			focus = KPT_join_the_spalding_friedewalt_deal
+		}
+		available = {
+			OR = {
+				AND = {
+					is_in_faction = no
+					has_completed_focus = KPT_join_the_spalding_friedewalt_deal
+				}
+				AND = {
+					OR = {
+						is_in_faction = yes
+						NOT = {
+							is_in_faction = yes
+						}
+					}
+					OR = {
+						has_completed_focus = KPT_ally_with_japanifornia
+						has_completed_focus = KPT_ally_with_danville
+						has_completed_focus = KPT_ally_with_moomins
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				KPT_favour_naval_landings
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_prepare_occupation_zones
+		icon = GFX_goal_generic_position_armies
+		relative_position_id = KPT_ally_with_moomins
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_close_the_border
+		}
+		prerequisite = {
+			focus = KPT_ally_with_japanifornia
+			focus = KPT_ally_with_danville
+			focus = KPT_ally_with_moomins
+			focus = KPT_join_the_spalding_friedewalt_deal
+		}
+		available = {
+			OR = {
+				AND = {
+					is_in_faction = no
+					has_completed_focus = KPT_join_the_spalding_friedewalt_deal
+				}
+				AND = {
+					OR = {
+						is_in_faction = yes
+						NOT = {
+							is_in_faction = yes
+						}
+					}
+					OR = {
+						has_completed_focus = KPT_ally_with_japanifornia
+						has_completed_focus = KPT_ally_with_danville
+						has_completed_focus = KPT_ally_with_moomins
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SKO_will_enable_occupation_decisions
+		} 
+	}
+
+	focus = { 
+		id = KPT_colonization_campaign
+		icon = GFX_goal_generic_more_territorial_claims
+		relative_position_id = KPT_ally_with_danville
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_prepare_naval_invasions
+		}
+		prerequisite = {
+			focus = KPT_prepare_occupation_zones
+		}
+		available = {
+			SKO = {
+				OR = {
+					exists = no
+					is_puppet_of = KPT
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = KPT_will_enable_colonization
+		} 
+	}
+
+	focus = { 
+		id = KPT_luvland_sea
+		icon = GFX_goal_generic_build_navy
+		relative_position_id = KPT_colonization_campaign
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_colonization_campaign
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 71
+			transfer_state = 72
+			71 = {
+				add_manpower = 50000
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 1640
+					instant_build = yes
+				}
+				set_state_category = town
+			}
+			72 = {
+				add_manpower = 50000
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 1917
+					instant_build = yes
+				}
+				set_state_category = town
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_northern_luvlandia
+		icon = GFX_goal_generic_build_navy
+		relative_position_id = KPT_colonization_campaign
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_colonization_campaign
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 699
+			699 = {
+				add_manpower = 50000
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 3394
+					instant_build = yes
+				}
+				set_state_category = town
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_windy_peninsula
+		icon = GFX_goal_generic_build_navy
+		relative_position_id = KPT_colonization_campaign
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_colonization_campaign
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			transfer_state = 625
+			625 = {
+				add_manpower = 50000
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					province = 8972
+					instant_build = yes
+				}
+				set_state_category = town
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_intervention_in_hartmut_expansion
+		icon = GFX_goal_generic_political_pressure
+		relative_position_id = KPT_colonization_campaign
+		x = -1
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_luvland_sea
+		}
+		prerequisite = {
+			focus = KPT_northern_luvlandia
+		}
+		prerequisite = {
+			focus = KPT_windy_peninsula
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			FRI = {
+				has_government = fascism
+			}
+		}
+		completion_reward = {
+			add_to_war = { 
+    			targeted_alliance = MAI 
+    			enemy = FRI 
+    			hostility_reason = intervention
+			}
+		} 
+	}
+
+	focus = { 
+		id = KPT_intervention_in_humsin_empire
+		icon = GFX_goal_generic_military_deal
+		relative_position_id = KPT_colonization_campaign
+		x = 1
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = KPT_luvland_sea
+		}
+		prerequisite = {
+			focus = KPT_northern_luvlandia
+		}
+		prerequisite = {
+			focus = KPT_windy_peninsula
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			DES = {
+				has_war = yes
+				exists = yes
+			}
+		}
+		completion_reward = {
+			add_to_war = { 
+    			targeted_alliance = GRN 
+    			enemy = DES 
+    			hostility_reason = intervention
+			}
+		} 
+	}
+
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+	###################################################################
+
+	focus = {
+		id = KPT_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 15
+		y = 13
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = KPT_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = KPT_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = KPT_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = KPT_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = KPT_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = KPT_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = KPT_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = KPT_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = KPT_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = KPT_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = KPT_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = KPT_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = KPT_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = KPT_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = KPT_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = KPT_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = KPT_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = KPT_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = KPT_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = KPT_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = KPT_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = KPT_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = KPT_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = KPT_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = KPT_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = KPT_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = KPT_weapon_development_3 }
+		prerequisite = { focus = KPT_military_academy }
+		prerequisite = { focus = KPT_armor_effort }
+		prerequisite = { focus = KPT_new_officer_corps }
+		prerequisite = { focus = KPT_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = KPT_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = KPT_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 27
+		y = 13
+		cost = 7.25
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = KPT_naval_effort }
+		mutually_exclusive = { focus = KPT_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = KPT_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = KPT_naval_effort }
+		mutually_exclusive = { focus = KPT_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = KPT_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = KPT_flexible_navy focus = KPT_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = KPT_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = KPT_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = KPT_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = KPT_flexible_navy focus = KPT_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = KPT_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = KPT_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = KPT_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = KPT_large_navy focus = KPT_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = KPT_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = KPT_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = KPT_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = KPT_large_navy focus = KPT_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = KPT_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = KPT_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = KPT_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = KPT_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 39
+		y = 13
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = KPT_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = KPT_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = KPT_fighter_focus }
+		prerequisite = { focus = KPT_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = KPT_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = KPT_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = KPT_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = KPT_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = KPT_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = KPT_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = KPT_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = KPT_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = KPT_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = KPT_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = KPT_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = KPT_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = KPT_heavy_fighter_focus }
+		prerequisite = { focus = KPT_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = KPT_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = KPT_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = KPT_heavy_fighter_focus }
+		prerequisite = { focus = KPT_CAS_effort }
+		prerequisite = { focus = KPT_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = KPT_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = KPT_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = KPT_aviation_effort_2 }
+		prerequisite = { focus = KPT_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = KPT_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

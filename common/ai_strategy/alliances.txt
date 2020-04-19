@@ -1,0 +1,267 @@
+ally_flower_hill = {
+	enable = {
+		has_government = communism
+		date > 1941.06.01
+		NOT = {
+			tag = EN4
+			has_completed_focus = EN4_together_with_flower_hill
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FLO"			
+		value = 7000
+	}
+}
+
+if_not_commie_dont_ally_flower_hill = {
+	enable = {
+		NOT = {
+			has_government = communism
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FLO"			
+		value = -7000
+	}
+}
+
+ally_spalding_if_commie = {
+	enable = {
+		has_government = communism
+		SLD = {
+			has_government = communism
+		}
+		date > 1941.06.01
+		NOT = {
+			tag = EN4
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "SLD"			
+		value = 7000
+	}
+}
+
+if_not_commie_dont_ally_commie_spalding = {
+	enable = {
+		NOT = {
+			has_government = communism
+		}
+		SLD = {
+			has_government = communism
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "SLD"			
+		value = -7000
+	}
+}
+
+central_peninsula_alliance = {
+	enable = {
+		OR = {
+			tag = UND
+			tag = MUS
+			tag = VIS
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "UND"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "MUS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "VIS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SKO"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "MAI"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "FRI"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JPN"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "ENC"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "EN1"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "EN2"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "EN3"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "EN4"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "WOL"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "WEA"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GON"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GRN"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "DUL"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "DES"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "AVA"			
+		value = -7000
+	}
+}
+
+avalor_alliances = {
+	enable = {
+		tag = AVA
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "LEC"			
+		value = -7000
+	}
+}
+
+cedric_why_tf_you_ally_with_flower_hill = {
+	enable = {
+		tag = EN3
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FLO"			
+		value = -7000
+	}
+}
+
+guaranteeing_starfleet = {
+	enable = {
+		has_guaranteed = KPT
+		SKO = {
+			exists = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = befriend
+		id = "KPT"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = protect
+		id = "KPT"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SKO"			
+		value = 7000
+	}
+}
+
+everrealm_wont_ally_gongmen = {
+	enable = {
+		OR = {
+			tag = ISL
+			tag = MAR
+			tag = KHA
+			tag = ZUM
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GON"			
+		value = -7000
+	}
+}

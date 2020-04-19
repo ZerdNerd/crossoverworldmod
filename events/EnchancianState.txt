@@ -1,0 +1,252 @@
+﻿###########################
+# Enchancian Events
+###########################
+
+add_namespace = enchancianstate
+
+country_event = { #Fate of Winslow Family
+	id = enchancianstate.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.1"}
+	title = enchancianstate.1.t
+	desc = enchancianstate.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Exile them on one of the islands
+		name = enchancianstate.1.a
+		country_event = {
+			id = enchancianstate.2
+			days = 1
+		}
+	}
+
+	option = { #Exile them from the country
+		name = enchancianstate.1.b
+		country_event = {
+			id = enchancianstate.3
+			days = 1
+		}
+	}
+
+	option = { #Let them live, but as commoners
+		name = enchancianstate.1.c
+		add_political_power = -50
+		add_stability = 0.1
+		hidden_effect = {
+			set_country_flag = royal_family_not_royal
+			news_event = {
+				id = worldnews.12
+				hours = 6
+			}
+			random_list = {
+				34 = {
+					set_global_flag = winslows_stripped_james
+				}
+				33 = {
+					set_global_flag = winslows_stripped_amber
+				}
+				33 = {
+					set_global_flag = winslows_stripped_sofia
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Winslow Family - exile on one of the islands
+	id = enchancianstate.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.2"}
+	title = enchancianstate.2.t
+	desc = enchancianstate.2.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Exile them to northeastern island
+		name = enchancianstate.2.a
+		add_political_power = -150
+		add_stability = -0.15
+		ENC = {
+			transfer_state = 106
+			transfer_state = 12
+			set_capital = 12
+			set_cosmetic_tag = WIN
+		}
+		hidden_effect = {
+			set_country_flag = royal_family_exile_northeast
+			news_event = {
+				id = worldnews.13
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Exile them to southern island
+		name = enchancianstate.2.b
+		add_political_power = -150
+		add_stability = -0.15
+		ENC = {
+			transfer_state = 19
+			transfer_state = 319
+			set_capital = 319
+			set_cosmetic_tag = WIN
+		}
+		hidden_effect = {
+			set_country_flag = royal_family_exile_south
+			news_event = {
+				id = worldnews.13
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Winslow Family - exile from country
+	id = enchancianstate.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.3"}
+	title = enchancianstate.3.t
+	desc = enchancianstate.3.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Exile them to Avalor
+		name = enchancianstate.3.a
+		AVA = {
+			country_event = {
+				id = winslowonexile.1
+				days = 1
+			}
+		}
+	}
+
+	option = { #Exile them to Central Kingdom
+		name = enchancianstate.3.b
+		MAI = {
+			country_event = {
+				id = winslowonexile.1
+				days = 1
+			}
+		}
+	}
+
+	option = { #Exile them to Greenland
+		name = enchancianstate.3.b
+		GRN = {
+			country_event = {
+				id = winslowonexile.1
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Winslow Family - country agrees
+	id = enchancianstate.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.4"}
+	title = enchancianstate.4.t
+	desc = enchancianstate.4.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = enchancianstate.4.a
+		FROM = {
+			hidden_effect = {
+				set_country_flag = winslow_on_exile
+				add_political_power = 50
+				news_event = {
+					id = worldnews.14
+					hours = 6
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Enchancian State wants to join Sorcerer League
+	id = enchancianstate.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.5"}
+	title = enchancianstate.5.t
+	desc = enchancianstate.5.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #As we said in 1936 pal
+		name = enchancianstate.5.a
+		EN3 = {
+			country_event = {
+				id = enchancianstate.6
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Enchancian State joins Sorcerers League
+	id = enchancianstate.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.6"}
+	title = enchancianstate.6.t
+	desc = enchancianstate.6.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = enchancianstate.6.a
+		trigger = {
+			RUD = {
+				is_in_faction = yes
+			}
+		}
+		RUD = {
+			add_to_faction = EN3
+		}
+	}
+
+	option = { #Great
+		name = enchancianstate.6.a
+		trigger = {
+			RUD = {
+				is_in_faction = no
+			}
+		}
+		RUD = {
+			create_faction = sorcerers_league
+			add_to_faction = EN3
+		}
+	}
+}
+
+country_event = { #Isleworth denies Enchancian Gate
+	id = enchancianstate.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancianstate.7"}
+	title = enchancianstate.7.t
+	desc = enchancianstate.7.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #They will pay!
+		name = enchancianstate.7.a
+		add_political_power = -100
+		add_war_support = 0.1
+	}
+}

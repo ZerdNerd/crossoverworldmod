@@ -1,0 +1,147 @@
+﻿capital = 439
+
+oob = "GRN_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+}
+
+add_ideas = {
+	middleage_tech
+	GRN_limited_staff
+}
+
+set_convoys = 50
+
+set_popularities = {
+	democratic = 0
+
+	fascism = 0
+		
+	communism = 0
+		
+	neutrality = 20
+		
+	monarchism = 80
+}
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.85
+
+create_country_leader = {
+	name = "Prinz Tabaluga"
+	desc = "POLITICS_PTABALUGA_DESC"
+	picture = "tabaluga.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Council of Elders"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_3.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Tabaluga"
+	portrait_path = "gfx/leaders/GRN/tabaluga.dds"
+	traits = { greenlander }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Happy the Rabbit"
+	portrait_path = "gfx/leaders/GRN/happy.dds"
+	desc = "POLITICS_HAPPY_DESC"
+	traits = { greenlander }
+	skill = 2
+    attack_skill = 2
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 2
+}
+
+create_corps_commander = {
+	name = "Shouhu"
+	portrait_path = "gfx/leaders/GRN/shouhu.dds"
+	traits = { greenlander }
+	desc = "POLITICS_SHOUHU_DESC"
+	skill = 4
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 4
+    logistics_skill = 4
+}
+
+
+create_navy_leader = {
+	name = "Tabaluga"
+	portrait_path = "gfx/leaders/GRN/tabaluga.dds"
+	traits = { superior_tactician greenlander }
+	skill = 3
+}
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Digby the Mole"
+		GFX = GFX_portrait_digby
+		traits = { mole_trait }
+		bypass_recruitment = no
+		available_to_spy_master = yes
+		nationalities = { GRN }
+	}
+}

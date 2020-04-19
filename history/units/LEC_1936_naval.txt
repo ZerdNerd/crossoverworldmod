@@ -1,0 +1,35 @@
+﻿units= {
+	##### NLECL UNITS #####
+	fleet = {
+		name = "Marynarka Wojenna Imperium Lechitów"			
+		naval_base = 9123
+		task_force = {				
+			name = "Flota Północna"
+			location = 9123
+			ship = { name = "Lech I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Karlino" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Opatów" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Zakliczyn" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Bisztynek" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Orneta" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+		}
+		task_force = {				
+			name = "Flota Zachodnia"
+			location = 9768
+			ship = { name = "Wadowice" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Daleszyce" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Zduny" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Oleszyce" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Ozimek" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+		}
+		task_force = {				
+			name = "Flota Południowa"
+			location = 9768
+			ship = { name = "Tuliszków" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Korsze" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Ełk" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+			ship = { name = "Olecko" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } } #Jamal, Korsze-Ełk-Olecko route when?
+			ship = { name = "Pniewy" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = LEC } } }
+		}
+	}
+}

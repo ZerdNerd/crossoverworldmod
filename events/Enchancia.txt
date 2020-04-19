@@ -1,0 +1,3712 @@
+﻿###########################
+# Enchancian Events
+###########################
+
+add_namespace = enchancia
+
+country_event = {
+	id = enchancia.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.1"}
+	title = enchancia.1.t
+	desc = enchancia.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.6.2
+		has_global_flag = stephen_is_dead
+	}
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	option = {
+		name = enchancia.1.a
+		custom_effect_tooltip = ENC_holy_cow
+		add_stability = -0.5
+		hidden_effect = { 
+		kill_country_leader = yes
+
+		set_global_flag = roland_is_dead
+
+		create_country_leader = {
+			name = "Miranda"
+			desc = "POLITICS_MIRANDA_DESC"
+			picture = "miranda.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "Miranda"
+			desc = "POLITICS_MIRANDA_DESC"
+			picture = "miranda.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		
+		create_country_leader = {
+			name = "Miranda"
+			desc = "POLITICS_MIRANDA_DESC"
+			picture = "miranda.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		
+			news_event = { 
+				id = worldnews.2 days = 5
+			} 
+		}
+	}
+}
+
+country_event = {
+	id = enchancia.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.2"}
+	title = enchancia.2.t
+	desc = enchancia.2.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = enchancia.2.a
+		custom_effect_tooltip = ENC_queen_amber
+		hidden_effect = { 
+		retire_country_leader = yes
+		
+		set_country_flag = queen_amber
+
+		create_country_leader = {
+			name = "Amber I"
+			desc = "POLITICS_AMBER_DESC"
+			picture = "amber.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		
+		create_country_leader = {
+			name = "Amber I"
+			desc = "POLITICS_AMBER_DESC"
+			picture = "amber.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "Amber I"
+			desc = "POLITICS_AMBER_DESC"
+			picture = "amber.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+			news_event = { 
+				id = worldnews.3 days = 4
+			} 
+		}
+		
+	}
+	
+	option = {
+		name = enchancia.2.b
+		custom_effect_tooltip = ENC_king_james
+		hidden_effect = { 
+		retire_country_leader = yes
+		
+		set_country_flag = king_james
+
+		create_country_leader = {
+			name = "James I"
+			desc = "POLITICS_JAMES_DESC"
+			picture = "james.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "James I"
+			desc = "POLITICS_JAMES_DESC"
+			picture = "james.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		
+		create_country_leader = {
+			name = "James I"
+			desc = "POLITICS_JAMES_DESC"
+			picture = "james.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+			news_event = { 
+				id = worldnews.4 days = 4
+			} 
+		}
+	}
+	
+	option = {
+		name = enchancia.2.c
+		custom_effect_tooltip = ENC_queen_sofia
+		hidden_effect = { 
+		retire_country_leader = yes
+		
+		set_country_flag = queen_sofia
+
+		create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		
+		create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+			news_event = { 
+				id = worldnews.5 days = 4
+			} 
+		}
+	}
+	
+	option = {
+		name = enchancia.2.e
+		hidden_effect = {
+			set_country_flag = miranda_regency
+		}
+	}
+}
+
+country_event = { 
+	id = enchancia.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.3"}
+	title = enchancia.3.t
+	desc = enchancia.3.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.7.10
+		has_country_flag = queen_amber
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Do not give in
+		name = enchancia.3.a
+		add_political_power = -50
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = amber_doesnt_give_in
+		}
+	}
+}
+
+country_event = { 
+	id = enchancia.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.4"}
+	title = enchancia.4.t
+	desc = enchancia.4.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.7.10
+		has_country_flag = queen_sofia
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Do not give in
+		name = enchancia.4.a
+		add_political_power = -50
+		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = sofia_doesnt_give_in
+		}
+	}
+}
+
+country_event = { #Foreign visitors
+	id = enchancia.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.5"}
+	title = enchancia.5.t
+	desc = enchancia.5.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.9.11
+		has_country_flag = queen_amber
+		has_country_flag = amber_doesnt_give_in
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { 
+		name = enchancia.5.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.6
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors fail
+	id = enchancia.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.6"}
+	title = enchancia.6.t
+	desc = enchancia.6.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Amber, wtf you did just now
+		name = enchancia.6.a
+		add_stability = -0.25
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.10
+		}
+		hidden_effect = {
+			country_event = {
+				id = enchancia.7
+				days = 160
+			}
+		}
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance meeting
+	id = enchancia.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.7"}
+	title = enchancia.7.t
+	desc = enchancia.7.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Organize it
+		name = enchancia.7.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.8
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance won't meet
+	id = enchancia.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.8"}
+	title = enchancia.8.t
+	desc = enchancia.8.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great job, great job.
+		name = enchancia.8.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.05
+		}
+		hidden_effect = {
+			ENC = {
+				dismantle_faction = yes
+				add_stability = -0.3
+			}
+			country_event = {
+				id = enchancia.9
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { #James is taken by his supporters to other part of country
+	id = enchancia.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.9"}
+	title = enchancia.9.t
+	desc = enchancia.9.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	immediate = {
+		ENC_release_EN1 = yes
+	}
+
+	is_triggered_only = yes
+
+	option = { #Miranda do something oh fuck oh no she has airpods on she can't hear us
+		name = enchancia.9.a #stay with James
+		hidden_effect = {
+			EN1 = {
+				change_tag_from = ENC
+				add_to_array = {
+					PB_achievement_array = 1
+				}
+				add_to_array = {
+					PB_achievement_array = 2
+				}
+				add_to_array = {
+					PB_achievement_array = 3
+				}
+				add_to_array = {
+					PB_achievement_array = 4
+				}
+				add_to_array = {
+					PB_achievement_array = 5
+				}
+				add_to_array = {
+					PB_achievement_array = 6
+				}
+				add_to_array = {
+					PB_achievement_array = 7
+				}
+				add_to_array = {
+					PB_achievement_array = 8
+				}
+				add_to_array = {
+					PB_achievement_array = 9
+				}
+				add_to_array = {
+					PB_achievement_array = 10
+				}
+				add_to_array = {
+					PB_achievement_array = 11
+				}
+				add_to_array = {
+					PB_achievement_array = 12
+				}
+				add_to_array = {
+					PB_achievement_array = 13
+				}
+				add_to_array = {
+					PB_achievement_array = 14
+				}
+				add_to_array = {
+					PB_achievement_array = 15
+				}
+				add_to_array = {
+					PB_achievement_array = 16
+				}
+				add_to_array = {
+					PB_achievement_array = 17
+				}
+				add_to_array = {
+					PB_achievement_array = 18
+				}
+				add_to_array = {
+					PB_achievement_array = 19
+				}
+				add_to_array = {
+					PB_achievement_array = 20
+				}
+				add_to_array = {
+					PB_achievement_array = 21
+				}
+				add_to_array = {
+					PB_achievement_array = 22
+				}
+				add_to_array = {
+					PB_achievement_array = 23
+				}
+				add_to_array = {
+					PB_achievement_array = 24
+				}
+				add_to_array = {
+					PB_achievement_array = 25
+				}
+				add_to_array = {
+					PB_achievement_array = 26
+				}
+				add_to_array = {
+					PB_achievement_array = 27
+				}
+				add_to_array = {
+					PB_achievement_array = 28
+				}
+				add_to_array = {
+					PB_achievement_array = 29
+				}
+				add_to_array = {
+					PB_achievement_array = 30
+				}
+			}
+			country_event = {
+				id = enchancia.10
+				days = 3
+			}
+		}
+	}
+	
+	option = { #Miranda do something oh fuck oh no she has airpods on she can't hear us
+		name = enchancia.9.b #stay with true monarchy
+		hidden_effect = {
+			country_event = {
+				id = enchancia.10
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Miranda takes the leadership of country, Amber is taken by her supporters to other part of country
+	id = enchancia.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.10"}
+	title = enchancia.10.t
+	desc = enchancia.10.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	immediate = {
+		ENC_release_EN2 = yes
+	}
+
+	is_triggered_only = yes
+
+	option = { #oh fuck no
+		name = enchancia.10.a #stay with Amber
+		hidden_effect = {
+			EN2 = {
+				change_tag_from = ENC
+				add_to_array = { #Burgundian Inheritance
+					PB_achievement_array = 1
+				}
+				add_to_array = {
+					PB_achievement_array = 2
+				}
+				add_to_array = {
+					PB_achievement_array = 3
+				}
+				add_to_array = {
+					PB_achievement_array = 4
+				}
+				add_to_array = {
+					PB_achievement_array = 5
+				}
+				add_to_array = {
+					PB_achievement_array = 6
+				}
+				add_to_array = {
+					PB_achievement_array = 7
+				}
+				add_to_array = {
+					PB_achievement_array = 8
+				}
+				add_to_array = {
+					PB_achievement_array = 9
+				}
+				add_to_array = {
+					PB_achievement_array = 10
+				}
+				add_to_array = {
+					PB_achievement_array = 11
+				}
+				add_to_array = {
+					PB_achievement_array = 12
+				}
+				add_to_array = {
+					PB_achievement_array = 13
+				}
+				add_to_array = {
+					PB_achievement_array = 14
+				}
+				add_to_array = {
+					PB_achievement_array = 15
+				}
+				add_to_array = {
+					PB_achievement_array = 16
+				}
+				add_to_array = {
+					PB_achievement_array = 17
+				}
+				add_to_array = {
+					PB_achievement_array = 18
+				}
+				add_to_array = {
+					PB_achievement_array = 19
+				}
+				add_to_array = {
+					PB_achievement_array = 20
+				}
+				add_to_array = {
+					PB_achievement_array = 21
+				}
+				add_to_array = {
+					PB_achievement_array = 22
+				}
+				add_to_array = {
+					PB_achievement_array = 23
+				}
+				add_to_array = {
+					PB_achievement_array = 24
+				}
+				add_to_array = {
+					PB_achievement_array = 25
+				}
+				add_to_array = {
+					PB_achievement_array = 26
+				}
+				add_to_array = {
+					PB_achievement_array = 27
+				}
+				add_to_array = {
+					PB_achievement_array = 28
+				}
+				add_to_array = {
+					PB_achievement_array = 29
+				}
+				add_to_array = {
+					PB_achievement_array = 30
+				}
+			}
+			country_event = {
+				id = enchancia.11
+				days = 3
+			}
+		}
+	}
+	
+	option = { #oh fuck no
+		name = enchancia.10.b #stay with true monarchy
+		hidden_effect = {
+			country_event = {
+				id = enchancia.11
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Cedric becomes Great
+	id = enchancia.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.11"}
+	title = enchancia.11.t
+	desc = enchancia.11.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	immediate = {
+		ENC_release_EN3 = yes
+	}
+
+	is_triggered_only = yes
+
+	option = { #oh fuck no
+		name = enchancia.11.a #stay with Cedric
+		hidden_effect = {
+			EN3 = {
+				change_tag_from = ENC
+				add_to_array = { #Burgundian Inheritance
+					PB_achievement_array = 1
+				}
+				add_to_array = {
+					PB_achievement_array = 2
+				}
+				add_to_array = {
+					PB_achievement_array = 3
+				}
+				add_to_array = {
+					PB_achievement_array = 4
+				}
+				add_to_array = {
+					PB_achievement_array = 5
+				}
+				add_to_array = {
+					PB_achievement_array = 6
+				}
+				add_to_array = {
+					PB_achievement_array = 7
+				}
+				add_to_array = {
+					PB_achievement_array = 8
+				}
+				add_to_array = {
+					PB_achievement_array = 9
+				}
+				add_to_array = {
+					PB_achievement_array = 10
+				}
+				add_to_array = {
+					PB_achievement_array = 11
+				}
+				add_to_array = {
+					PB_achievement_array = 12
+				}
+				add_to_array = {
+					PB_achievement_array = 13
+				}
+				add_to_array = {
+					PB_achievement_array = 14
+				}
+				add_to_array = {
+					PB_achievement_array = 15
+				}
+				add_to_array = {
+					PB_achievement_array = 16
+				}
+				add_to_array = {
+					PB_achievement_array = 17
+				}
+				add_to_array = {
+					PB_achievement_array = 18
+				}
+				add_to_array = {
+					PB_achievement_array = 19
+				}
+				add_to_array = {
+					PB_achievement_array = 20
+				}
+				add_to_array = {
+					PB_achievement_array = 21
+				}
+				add_to_array = {
+					PB_achievement_array = 22
+				}
+				add_to_array = {
+					PB_achievement_array = 23
+				}
+				add_to_array = {
+					PB_achievement_array = 24
+				}
+				add_to_array = {
+					PB_achievement_array = 25
+				}
+				add_to_array = {
+					PB_achievement_array = 26
+				}
+				add_to_array = {
+					PB_achievement_array = 27
+				}
+				add_to_array = {
+					PB_achievement_array = 28
+				}
+				add_to_array = {
+					PB_achievement_array = 29
+				}
+				add_to_array = {
+					PB_achievement_array = 30
+				}
+			}
+			ENC = {
+				load_oob = ENC_civil_war
+			}
+			ENC = {
+				if = {
+					limit = {
+						has_country_flag = ENC_artisans_unhappy
+					}
+					country_event = {
+						id = enchancia.41
+						days = 7
+					}
+				}
+			}
+			ENC = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = ENC_artisans_unhappy
+						}
+					}
+					country_event = {
+						id = enchancia.12
+						days = 21
+					}
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						is_faction_leader = yes
+					}
+				}
+				ENC = {
+					dismantle_faction = yes
+				}
+			}
+		}
+	}
+	
+	option = { #oh fuck no
+		name = enchancia.11.b #stay with true monarchy
+		hidden_effect = {
+			ENC = {
+				load_oob = ENC_civil_war
+			}
+			ENC = {
+				if = {
+					limit = {
+						has_country_flag = ENC_artisans_unhappy
+					}
+					country_event = {
+						id = enchancia.41
+						days = 7
+					}
+				}
+			}
+			ENC = {
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = ENC_artisans_unhappy
+						}
+					}
+					country_event = {
+						id = enchancia.12
+						days = 21
+					}
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						is_faction_leader = yes
+					}
+				}
+				ENC = {
+					dismantle_faction = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Enchancian Civil War begins
+	id = enchancia.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.12"}
+	title = enchancia.12.t
+	desc = enchancia.12.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #oh fuck why
+		name = enchancia.12.a
+		remove_ideas = {
+			ENC_golden_age
+		}
+		custom_effect_tooltip = ENC_civil_war_tooltip
+		hidden_effect = {
+			EN1 = { 
+				declare_war_on = { 
+					target = ENC 
+					type = annex_everything	
+				} 
+				declare_war_on = { 
+					target = EN2 
+					type = annex_everything	
+				}
+				declare_war_on = { 
+					target = EN3 
+					type = annex_everything	
+				}
+			}
+			EN2 = { 
+				declare_war_on = { 
+					target = ENC 
+					type = annex_everything	
+				}
+				declare_war_on = { 
+					target = EN3 
+					type = annex_everything
+				}
+				country_event = {
+					id = enchancia.75
+					days = 30
+				}
+			}
+			EN3 = { 
+				declare_war_on = { 
+					target = ENC 
+					type = annex_everything
+				} 
+			}
+			if = {
+				limit = {
+					country_exists = EN4
+				}
+				EN4 = { declare_war_on = { target = ENC type = annex_everything	} }
+				EN1 = { declare_war_on = { target = EN4 type = annex_everything	} }
+				EN2 = { declare_war_on = { target = EN4 type = annex_everything	} }
+				EN3 = { declare_war_on = { target = EN4 type = annex_everything	} }
+			}
+			ISL = {
+				transfer_state = 330
+				add_state_core = 330
+			}
+			news_event = {
+				id = worldnews.6
+				hours = 7
+			}
+			ENC = {
+				set_popularities = {
+					democratic = 15
+					neutrality = 0
+					fascism = 17
+					communism = 17
+					monarchism = 51
+				}
+			}
+			set_global_flag = enchancian_civil_war
+			WEI = {
+				country_event = {
+					id = everrealm.10
+					days = 600
+				}
+			}
+			add_named_threat = { 
+    			threat = 15 
+    			name = enchancian_cw_breakout
+			}
+		}
+	}
+}
+
+country_event = { #1937 New Year Speech
+	id = enchancia.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.14"}
+	title = enchancia.13.t
+	desc = enchancia.13.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.12.31
+	}
+	mean_time_to_happen = { days = 1 }
+
+	option = { #Happy New Year
+		name = enchancia.13.a
+			add_stability = 0.05
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance meeting 1936
+	id = enchancia.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.14"}
+	title = enchancia.14.t
+	desc = enchancia.14.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENC
+		date > 1936.3.1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Attend
+		name = enchancia.14.a
+		hidden_effect = {
+			set_country_flag = trikingdom_meeting_1936
+		}
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance meeting 1936 finished
+	id = enchancia.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.15"}
+	title = enchancia.15.t
+	desc = enchancia.15.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENC
+		date > 1936.3.8
+		has_country_flag = trikingdom_meeting_1936
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = { #Good job Roland
+		name = enchancia.15.a
+		
+	}
+}
+
+country_event = { #End of Enchancian Civil War
+	id = enchancia.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.16"}
+	title = enchancia.16.t
+	desc = enchancia.16.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	trigger = {
+		OR = {
+			tag = ENC
+			tag = EN1
+			tag = EN2
+			tag = EN3
+			tag = EN4
+		}
+		NOT = {
+			has_war_with = ENC
+			has_war_with = EN1
+			has_war_with = EN2
+			has_war_with = EN3
+			has_war_with = EN4
+			is_puppet = yes
+		}
+		OR = {
+			NOT = {
+				country_exists = ENC
+			}
+			NOT = {
+				country_exists = EN1
+			}
+			NOT = {
+				country_exists = EN2
+			}
+			NOT = {
+				country_exists = EN3
+			}
+			NOT = {
+				country_exists = EN4
+			}
+		}
+		has_global_flag = enchancian_civil_war
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = { #Let's get to the business
+		name = enchancia.16.a
+		hidden_effect = {
+			set_global_flag = enchancian_civil_war_over
+			add_ideas = {
+				ENC_aftermath_of_civil_war
+			}
+			ROOT = {
+				ECW_end_capital = yes
+				every_owned_state = {
+					ECW_add_winner_cores = yes
+				}
+				every_owned_state = {
+					ECW_remove_other_cores = yes
+				}
+			}
+			ISL = {
+				every_owned_state = {
+					ECW_gate_to_everrealm_core_switch = yes
+				}
+			}
+			ROOT = {
+				if = {
+					limit = {
+						NOT = {
+							tag = ENC
+						}
+					}
+					set_cosmetic_tag = ENC
+				}
+				if = {
+					limit = {
+						tag = ENC
+					}
+					delete_unit_template_and_units = {
+    					division_template = "Loyalist Militia"
+					}
+				}
+				if = {
+					limit = {
+						tag = EN1
+					}
+					delete_unit_template_and_units = {
+    					division_template = "Eastern Militia"
+					}
+				}
+				if = {
+					limit = {
+						tag = EN2
+					}
+					delete_unit_template_and_units = {
+    					division_template = "Northern Militia"
+					}
+				}
+			}
+			news_event = {
+				id = worldnews.7
+				hours = 4
+			}
+		}
+	}
+}
+
+country_event = { #Dukes and counts oppose King James (only if Amber or Sofia were not crowned!)
+	id = enchancia.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.17"}
+	title = enchancia.17.t
+	desc = enchancia.17.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.7.10
+		has_country_flag = king_james
+		NOT = {
+			AND = {
+				has_country_flag = amber_gave_in
+				has_country_flag = sofia_gave_in
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Well, ok
+		name = enchancia.17.a
+		add_political_power = -75
+		add_stability = -0.1
+	}
+}
+
+country_event = { #Artisans want to meet with James
+	id = enchancia.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.18"}
+	title = enchancia.18.t
+	desc = enchancia.18.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.8.12
+		has_country_flag = king_james
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Let's see if he has time
+		name = enchancia.18.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.19
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Artisans did not meet with James
+	id = enchancia.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.19"}
+	title = enchancia.19.t
+	desc = enchancia.19.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #So they are enraged
+		name = enchancia.19.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.10
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.10
+		}
+		hidden_effect = {
+			country_event = {
+				id = enchancia.20
+				days = 42
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors
+	id = enchancia.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.20"}
+	title = enchancia.20.t
+	desc = enchancia.20.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = enchancia.20.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.21
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors fail
+	id = enchancia.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.21"}
+	title = enchancia.21.t
+	desc = enchancia.21.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #James, wtf you did just now
+		name = enchancia.21.a
+		add_stability = -0.25
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.10
+		}
+		hidden_effect = {
+			country_event = {
+				id = enchancia.22
+				days = 142
+			}
+		}
+	}
+}
+
+country_event = { #Artisans organize riots
+	id = enchancia.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.22"}
+	title = enchancia.22.t
+	desc = enchancia.22.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Let's talk with them
+		name = enchancia.22.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.23
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Artisans are not happy
+	id = enchancia.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.23"}
+	title = enchancia.23.t
+	desc = enchancia.23.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #So we take more stab hits
+		name = enchancia.23.a
+		add_stability = -0.15
+		add_political_power = -50
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.05
+		}
+		hidden_effect = {
+			set_country_flag = ENC_artisans_unhappy
+			country_event = {
+				id = enchancia.24
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance meeting
+	id = enchancia.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.24"}
+	title = enchancia.24.t
+	desc = enchancia.24.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Organize it
+		name = enchancia.24.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.25
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Tri-Kingdom Alliance won't meet
+	id = enchancia.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.25"}
+	title = enchancia.25.t
+	desc = enchancia.25.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great job, great job.
+		name = enchancia.25.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.05
+		}
+		hidden_effect = {
+			ENC = {
+				dismantle_faction = yes
+				add_stability = -0.3
+			}
+			country_event = {
+				id = enchancia.9
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { #Army leaders oppose Queen Sofia
+	id = enchancia.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.26"}
+	title = enchancia.26.t
+	desc = enchancia.26.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.8.10
+		has_country_flag = queen_sofia
+		has_country_flag = sofia_doesnt_give_in
+	}
+
+	option = { #Make a speech to them
+		name = enchancia.26.a
+		add_stability = -0.15
+		add_war_support = -0.15
+		hidden_effect = {
+			country_event = {
+				id = enchancia.27
+				days = 6
+			}
+		}
+	}
+}
+
+country_event = { #Army leaders are less unhappy
+	id = enchancia.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.27"}
+	title = enchancia.27.t
+	desc = enchancia.27.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #At least this counts as a partial success
+		name = enchancia.27.a
+		add_stability = 0.05
+		add_war_support = 0.05
+		hidden_effect = {
+			country_event = {
+				id = enchancia.28
+				days = 26
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors
+	id = enchancia.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.28"}
+	title = enchancia.28.t
+	desc = enchancia.28.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = enchancia.28.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.29
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors fail
+	id = enchancia.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.29"}
+	title = enchancia.29.t
+	desc = enchancia.29.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #GG Sofia, GG
+		name = enchancia.29.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.10
+		}
+		add_stability = -0.25
+		hidden_effect = {
+			country_event = {
+				id = enchancia.30
+				days = 160
+			}
+		}
+	}
+}
+
+country_event = { #Artisans organize riots
+	id = enchancia.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.30"}
+	title = enchancia.30.t
+	desc = enchancia.30.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Let's talk with them
+		name = enchancia.30.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.31
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Artisans are not happy
+	id = enchancia.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.31"}
+	title = enchancia.31.t
+	desc = enchancia.31.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #So we take more stab hits
+		name = enchancia.31.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.05
+		}
+		add_stability = -0.15
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = ENC_artisans_unhappy
+			country_event = {
+				id = enchancia.24
+				days = 30
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visitors
+	id = enchancia.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.32"}
+	title = enchancia.32.t
+	desc = enchancia.32.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENC
+		date > 1936.9.11
+		has_country_flag = miranda_regency
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { 
+		name = enchancia.32.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.33
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visit - Artisans want to take part in talks
+	id = enchancia.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.33"}
+	title = enchancia.33.t
+	desc = enchancia.33.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Allow them
+		name = enchancia.33.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.05
+		}
+		add_stability = 0.1
+		hidden_effect = {
+			country_event = {
+				id = enchancia.40
+				days = 4
+			}
+		}
+	}
+	
+	option = { #Deny them
+		name = enchancia.33.b
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.10
+		}
+		add_stability = -0.3
+		hidden_effect = {
+			country_event = {
+				id = enchancia.34
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #Foreign visit - talks are successful
+	id = enchancia.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.34"}
+	title = enchancia.34.t
+	desc = enchancia.34.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = enchancia.34.a
+		add_stability = 0.1
+		hidden_effect = {
+			country_event = {
+				id = enchancia.35
+				days = 150
+			}
+		}
+	}
+}
+
+country_event = { #1937 Tri-Kingdom Alliance meeting
+	id = enchancia.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.35"}
+	title = enchancia.35.t
+	desc = enchancia.35.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Organize it
+		name = enchancia.35.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.36
+				days = 10
+			}
+		}
+	}
+}
+
+country_event = { #1937 Tri-Kingdom Alliance meeting successful
+	id = enchancia.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.36"}
+	title = enchancia.36.t
+	desc = enchancia.36.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = enchancia.36.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.37
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { #Artisans organize riots
+	id = enchancia.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.37"}
+	title = enchancia.37.t
+	desc = enchancia.37.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Let's talk with them
+		name = enchancia.37.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.38
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Talks with artisans under way, but one day their delegation isn't there. Wat do?
+	id = enchancia.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.38"}
+	title = enchancia.38.t
+	desc = enchancia.38.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Wait for them
+		name = enchancia.38.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.39
+				days = 2
+			}
+		}
+	}
+	
+	option = { #Don't waste our time
+		name = enchancia.38.b
+		hidden_effect = {
+			country_event = {
+				id = enchancia.9
+				days = 20
+			}
+			set_country_flag = ENC_artisans_unhappy
+		}
+	}
+}
+
+country_event = { #Talks with artisans are finished, and they are happy!
+	id = enchancia.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.39"}
+	title = enchancia.39.t
+	desc = enchancia.39.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Seems the worst option has been avoided guys
+		name = enchancia.39.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = -0.10
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.10
+		}
+		add_stability = 0.25
+		hidden_effect = {
+			set_country_flag = civil_war_avoided
+			news_event = {
+				id = worldnews.20
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Artisans fuck up the visit
+	id = enchancia.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.40"}
+	title = enchancia.40.t
+	desc = enchancia.40.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #oops
+		name = enchancia.40.a
+		add_stability = -0.25
+		hidden_effect = {
+			country_event = {
+				id = enchancia.30
+				days = 140
+			}
+		}
+	}
+}
+
+country_event = { #Artisans Rise Up
+	id = enchancia.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.41"}
+	title = enchancia.41.t
+	desc = enchancia.41.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+	
+	immediate = {
+		ENC_release_EN4 = yes
+		ENC = {
+			set_country_flag = artisans_rise_up
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { #oh fuck no
+		name = enchancia.41.a #stay with Artisans
+		hidden_effect = {
+			EN4 = {
+				change_tag_from = ENC
+				add_to_array = { #Burgundian Inheritance
+					PB_achievement_array = 1
+				}
+				add_to_array = {
+					PB_achievement_array = 2
+				}
+				add_to_array = {
+					PB_achievement_array = 3
+				}
+				add_to_array = {
+					PB_achievement_array = 4
+				}
+				add_to_array = {
+					PB_achievement_array = 5
+				}
+				add_to_array = {
+					PB_achievement_array = 6
+				}
+				add_to_array = {
+					PB_achievement_array = 7
+				}
+				add_to_array = {
+					PB_achievement_array = 8
+				}
+				add_to_array = {
+					PB_achievement_array = 9
+				}
+				add_to_array = {
+					PB_achievement_array = 10
+				}
+				add_to_array = {
+					PB_achievement_array = 11
+				}
+				add_to_array = {
+					PB_achievement_array = 12
+				}
+				add_to_array = {
+					PB_achievement_array = 13
+				}
+				add_to_array = {
+					PB_achievement_array = 14
+				}
+				add_to_array = {
+					PB_achievement_array = 15
+				}
+				add_to_array = {
+					PB_achievement_array = 16
+				}
+				add_to_array = {
+					PB_achievement_array = 17
+				}
+				add_to_array = {
+					PB_achievement_array = 18
+				}
+				add_to_array = {
+					PB_achievement_array = 19
+				}
+				add_to_array = {
+					PB_achievement_array = 20
+				}
+				add_to_array = {
+					PB_achievement_array = 21
+				}
+				add_to_array = {
+					PB_achievement_array = 22
+				}
+				add_to_array = {
+					PB_achievement_array = 23
+				}
+				add_to_array = {
+					PB_achievement_array = 24
+				}
+				add_to_array = {
+					PB_achievement_array = 25
+				}
+				add_to_array = {
+					PB_achievement_array = 26
+				}
+				add_to_array = {
+					PB_achievement_array = 27
+				}
+				add_to_array = {
+					PB_achievement_array = 28
+				}
+				add_to_array = {
+					PB_achievement_array = 29
+				}
+				add_to_array = {
+					PB_achievement_array = 30
+				}
+			}
+			country_event = {
+				id = enchancia.12
+				days = 21
+			}
+		}
+	}
+	
+	option = { #oh fuck no
+		name = enchancia.41.b #stay with true monarchy
+		hidden_effect = {
+			country_event = {
+				id = enchancia.12
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { #Central Kingdom offers us sharing train designs
+	id = enchancia.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.42"}
+	title = enchancia.42.t
+	desc = enchancia.42.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #oh yes is designs
+		name = enchancia.42.a 
+		MAI = {
+			country_event = {
+				id = centralkingdom.8
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Central Kingdom offers us alliance
+	id = enchancia.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.43"}
+	title = enchancia.43.t
+	desc = enchancia.43.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.43.a 
+		MAI = {
+			country_event = {
+				id = centralkingdom.9
+				days = 1
+			}
+		}
+	}
+
+	option = { #disagree
+		name = enchancia.43.b 
+		MAI = {
+			country_event = {
+				id = centralkingdom.10
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Central Kingdom offers us help with rebuilding
+	id = enchancia.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.44"}
+	title = enchancia.44.t
+	desc = enchancia.44.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.44.a 
+		MAI = {
+			country_event = {
+				id = centralkingdom.11
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Central Kingdom wants to exchange embassies
+	id = enchancia.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.45"}
+	title = enchancia.45.t
+	desc = enchancia.45.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.45.a 
+		MAI = {
+			country_event = {
+				id = centralkingdom.12
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Central Kingdom offers us alliance (after ECW)
+	id = enchancia.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.46"}
+	title = enchancia.46.t
+	desc = enchancia.46.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.46.a 
+		MAI = {
+			country_event = {
+				id = centralkingdom.13
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				tag = EN2
+				add = -50
+			}
+			modifier = {
+				tag = EN1
+				add = 50
+			}
+			modifier = {
+				tag = ENC
+				add = 50
+			}
+		}
+	}
+
+	option = { #disagree
+		name = enchancia.46.b 
+		MAI = {
+			country_event = {
+				id = centralkingdom.14
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				tag = EN2
+				add = 50
+			}
+			modifier = {
+				tag = EN1
+				add = -50
+			}
+			modifier = {
+				tag = ENC
+				add = -50
+			}
+		}
+	}
+}
+
+country_event = { #Tech leap
+	id = enchancia.47
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.47"}
+	title = enchancia.47.t
+	desc = enchancia.47.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #finally, we are modern
+		name = enchancia.47.a 
+		swap_ideas = {
+			remove_idea = pre-modern_tech
+			add_idea = modern_tech_idea
+		}
+		add_research_slot = 1
+	}
+}
+
+country_event = { #Flower Hill offers us help with rebuilding
+	id = enchancia.48
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.48"}
+	title = enchancia.48.t
+	desc = enchancia.48.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.44.a 
+		FLO = {
+			country_event = {
+				id = flowerhill.4
+				days = 1
+			}
+		}
+		add_ideas = {
+			FLO_helps_rebuild
+		}
+	}
+}
+
+country_event = { #Trial of Cedric
+	id = enchancia.49
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.49"}
+	title = enchancia.49.t
+	desc = enchancia.49.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Believe Sofia and aquit him
+		name = enchancia.49.a 
+		add_stability = -0.01
+		add_political_power = 10
+	}
+
+	option = { #Life inprisonment
+		name = enchancia.49.b 
+		add_stability = 0.05
+		add_political_power = 10
+	}
+
+	option = { #Death penalty
+		name = enchancia.49.c 
+		add_stability = 0.1
+		add_political_power = 50
+		custom_effect_tooltip = sofia_will_remember_that
+		hidden_effect = {
+			set_country_flag = sofia_will_rememeber_that_flag
+		}
+	}
+}
+
+country_event = { #Trial of Artisans
+	id = enchancia.50
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.50"}
+	title = enchancia.50.t
+	desc = enchancia.50.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Life inprisonment
+		name = enchancia.50.a 
+		add_stability = 0.05
+		add_political_power = 10
+	}
+
+	option = { #Death penalty
+		name = enchancia.50.b 
+		add_stability = 0.1
+		add_political_power = 50
+	}
+}
+
+country_event = { #Enchancia wants to revive Tri-Kingdom alliance
+	id = enchancia.51
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.51"}
+	title = enchancia.51.t
+	desc = enchancia.51.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = enchancia.51.a 
+		ENC = {
+			give_guarantee = ROOT
+			give_military_access = ROOT
+		}
+		give_guarantee = ENC
+		give_military_access = ENC
+	}
+
+	option = { #no
+		name = enchancia.51.b 
+		add_stability = -0.1
+		add_political_power = -100
+	}
+}
+
+country_event = { #Enchancia asks about Everrealm Gate
+	id = enchancia.52
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.52"}
+	title = enchancia.52.t
+	desc = enchancia.52.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.52.a 
+		trigger = {
+			EN3 = {
+				exists = no
+			}
+		}
+		ENC = {
+			country_event = {
+				id = enchancia.53
+				days = 1
+			}
+		}
+	}
+
+	option = { #agree
+		name = enchancia.52.a 
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		EN1 = {
+			country_event = {
+				id = enchancia.53
+				days = 1
+			}
+		}
+	}
+
+	option = { #agree
+		name = enchancia.52.a 
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		EN2 = {
+			country_event = {
+				id = enchancia.53
+				days = 1
+			}
+		}
+	}
+
+	option = { #agree but only if they add us to the three kingdoms
+		name = enchancia.52.b 
+		trigger = {
+			EN3 = {
+				exists = no
+			}
+		}
+		ENC = {
+			country_event = {
+				id = enchancia.54
+				days = 1
+			}
+		}
+	}
+
+	option = { #nope (Enchancian State)
+		name = enchancia.52.c
+		trigger = {
+			EN3 = {
+				exists = yes
+			}
+		}
+		EN3 = {
+			country_event = {
+				id = enchancianstate.7
+				days = 1
+			}
+		}
+	}
+
+	option = { #nope (Enchancian State)
+		name = enchancia.52.c
+		trigger = {
+			EN4 = {
+				exists = yes
+			}
+		}
+		EN4 = {
+			country_event = {
+				id = enchancianstate.7
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = enchancia.53
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.53"}
+	title = enchancia.53.t
+	desc = enchancia.53.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.53.a 
+		transfer_state = 330
+	}
+}
+
+country_event = { #They agree, but only if we add them to alliance
+	id = enchancia.54
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.54"}
+	title = enchancia.54.t
+	desc = enchancia.54.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #agree
+		name = enchancia.54.a 
+		transfer_state = 330
+		give_guarantee = ISL
+		give_military_access = ISL
+		ISL = {
+			give_guarantee = ENC
+			give_military_access = ENC
+		}
+	}
+}
+
+country_event = { #Enchancia wants to add us (Avalor) to TriKingdom Alliance [finalization of process]
+	id = enchancia.55
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.55"}
+	title = enchancia.55.t
+	desc = enchancia.55.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #finally you do it!
+		name = enchancia.55.a 
+		ENC = {
+			country_event = {
+				id = enchancia.56
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = enchancia.56
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.56"}
+	title = enchancia.56.t
+	desc = enchancia.56.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #it's time to transform this into pan-everrealm alliance
+		name = enchancia.56.a 
+		custom_effect_tooltip = ENC_pan-everrealm_alliance
+		hidden_effect = {
+			dismantle_faction = yes
+			create_faction = pan-everrealm
+			add_to_faction = WEI
+			add_to_faction = AVA
+			if = {
+				limit = {
+					KHA = {
+						has_government = monarchism
+					}
+				}
+				add_to_faction = KHA
+			}
+		}
+	}
+}
+
+country_event = { #Enchancia invites us to Pan-EverRealm Alliance
+	id = enchancia.57
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.57"}
+	title = enchancia.57.t
+	desc = enchancia.57.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #finally you do it!
+		name = enchancia.57.a 
+		ENC = {
+			country_event = {
+				id = enchancia.58
+				days = 1
+			}
+		}
+	}
+
+	option = { #nope.
+		name = enchancia.57.b 
+		ENC = {
+			country_event = {
+				id = enchancia.59
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = enchancia.58
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.58"}
+	title = enchancia.58.t
+	desc = enchancia.58.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #good
+		name = enchancia.58.a 
+		add_to_faction = FROM
+	}
+}
+
+country_event = { #They reject
+	id = enchancia.59
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.59"}
+	title = enchancia.59.t
+	desc = enchancia.59.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = enchancia.59.a
+	}
+}
+
+country_event = { #Bandits
+	id = enchancia.60
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.60"}
+	title = enchancia.60.t
+	desc = enchancia.60.d
+	picture = GFX_report_enchancia_palace
+
+	trigger = {
+		tag = ENC
+		date > 1937.1.28
+	}
+
+	fire_only_once = yes
+
+	option = { #damnit, it's getting worse
+		name = enchancia.60.a
+		add_political_power = -50
+		add_ideas = {
+			ENC_bandits
+		}
+	}
+}
+
+country_event = { #Enchancian Fleet flees as Dunwiddie is taken
+	id = enchancia.61
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.61"}
+	title = enchancia.61.t
+	desc = enchancia.61.d
+	picture = GFX_report_enchancia_palace
+
+	trigger = {
+		tag = ENC
+		187 = {
+			NOT = {
+				is_controlled_by = ENC
+			}
+		}
+		OR = {
+			EN1 = {
+				exists = yes
+			}
+			EN2 = {
+				exists = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	fire_only_once = yes
+
+	option = { #Fleet goes to James
+		ai_chance = {
+			base = 0
+			modifier = {
+				187 = {
+					is_controlled_by = EN1
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		name = enchancia.61.a
+		EN1 = {
+			country_event = {
+				id = enchancia.62
+				days = 1
+			}
+		}
+	}
+
+	option = { #Fleet goes to Amber
+		ai_chance = {
+			base = 0
+			modifier = {
+				187 = {
+					is_controlled_by = EN2
+				}
+				factor = 100
+			}
+		}
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		name = enchancia.61.a
+		EN2 = {
+			country_event = {
+				id = enchancia.63
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Enchancian Fleet joins James
+	id = enchancia.62
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.62"}
+	title = enchancia.62.t
+	desc = enchancia.62.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #OK!
+		name = enchancia.62.a
+		hidden_effect = {
+			EN1 = {
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Man the Guns"
+						}
+					}
+					load_oob = enchancian_fleet_to_james
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					load_oob = enchancian_fleet_to_james_mtg
+				}
+			}
+			ENC = {
+				destroy_ships = {
+    				type = destroyer
+    				count = all
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Enchancian Fleet joins Amber
+	id = enchancia.63
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.63"}
+	title = enchancia.62.t
+	desc = enchancia.62.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #OK!
+		name = enchancia.62.a
+		hidden_effect = {
+			EN2 = {
+				if = {
+					limit = {
+						NOT = {
+							has_dlc = "Man the Guns"
+						}
+					}
+					load_oob = enchancian_fleet_to_amber
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					load_oob = enchancian_fleet_to_amber_mtg
+				}
+			}
+			ENC = {
+				destroy_ships = {
+    				type = destroyer
+    				count = all
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Solving the bandit problem
+	id = enchancia.64
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.64"}
+	title = enchancia.64.t
+	desc = enchancia.64.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Allow Sofia to go
+		name = enchancia.64.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.65
+				days = 7
+			}
+		}
+	}
+
+	option = { #Send the army
+		name = enchancia.64.b
+		hidden_effect = {
+			set_country_flag = sent_the_army_to_bandits
+			country_event = {
+				id = enchancia.67
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Solving the bandit problem - Sofia finally returns
+	id = enchancia.65
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.65"}
+	title = enchancia.65.t
+	desc = enchancia.65.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Allow Sofia to carry on with her mission
+		name = enchancia.65.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.66
+				days = 14
+			}
+		}
+	}
+
+	option = { #Send the army
+		name = enchancia.64.b
+		hidden_effect = {
+			set_country_flag = sent_the_army_to_bandits_sof_gone
+			country_event = {
+				id = enchancia.67
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Solving the bandit problem - Sofia returns, accomplishing her mission
+	id = enchancia.66
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.66"}
+	title = enchancia.66.t
+	desc = enchancia.66.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Good work!
+		name = enchancia.66.a
+		add_political_power = 100
+		remove_ideas = {
+			ENC_bandits
+		}
+		create_corps_commander = {
+			name = "Mattis"
+			portrait_path = "gfx/leaders/EN1/mattis.dds"
+			traits = { guerilla_fighter commando }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 3
+    		planning_skill = 3
+    		logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "Borka"
+			portrait_path = "gfx/leaders/EN1/borka.dds"
+			traits = { guerilla_fighter commando }
+			skill = 3
+    		attack_skill = 3
+    		defense_skill = 4
+    		planning_skill = 2
+    		logistics_skill = 3
+		}
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = leader_ronja
+					set_variable = { en1_chp_leader_icon_party_3_temp_number = 6 }
+					recalc_en1_children_parliament_leader_icon_party_3 = yes
+				}
+				50 = {
+					set_country_flag = leader_birk
+					set_variable = { en1_chp_leader_icon_party_3_temp_number = 7 }
+					recalc_en1_children_parliament_leader_icon_party_3 = yes
+				}
+			}
+			if = {
+				limit = {
+					tag = EN1
+				}
+				country_event = {
+					id = enchancia.68
+					days = 80
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Bandits pacified
+	id = enchancia.67
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.67"}
+	title = enchancia.67.t
+	desc = enchancia.67.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Wulp. Good work.
+		trigger = {
+			has_country_flag = sent_the_army_to_bandits
+		}
+		name = enchancia.67.a
+		add_manpower = -37
+		add_political_power = 50
+		remove_ideas = {
+			ENC_bandits
+		}
+		hidden_effect = {
+			set_country_flag = bandits_army_sent
+		}
+	}
+
+	option = { #You fool! Sofia will remember that!
+		trigger = {
+			has_country_flag = sent_the_army_to_bandits_sof_gone
+		}
+		name = enchancia.67.b
+		add_manpower = -50
+		remove_ideas = {
+			ENC_bandits
+		}
+		hidden_effect = {
+			set_country_flag = bandits_army_sent
+		}
+	}
+}
+
+country_event = { #Sofia meets Heidi and Peter
+	id = enchancia.68
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.68"}
+	title = enchancia.68.t
+	desc = enchancia.68.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Good
+		name = enchancia.68.a
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = leader_heidi
+					set_variable = { en1_chp_leader_icon_party_2_temp_number = 3 }
+					recalc_en1_children_parliament_leader_icon_party_2 = yes
+				}
+				50 = {
+					set_country_flag = leader_peter
+					set_variable = { en1_chp_leader_icon_party_2_temp_number = 2 }
+					recalc_en1_children_parliament_leader_icon_party_2 = yes
+				}
+			}
+			country_event = {
+				id = enchancia.69
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Princess Nella appears
+	id = enchancia.69
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.69"}
+	title = enchancia.69.t
+	desc = enchancia.69.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #wut
+		name = enchancia.69.a
+		hidden_effect = {
+			random_list = {
+				50 = {
+					set_country_flag = leader_nella
+					set_variable = { en1_chp_leader_icon_party_4_temp_number = 8 }
+					recalc_en1_children_parliament_leader_icon_party_4 = yes
+				}
+				50 = {
+					set_country_flag = leader_garrett
+					set_variable = { en1_chp_leader_icon_party_4_temp_number = 9 }
+					recalc_en1_children_parliament_leader_icon_party_4 = yes
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Solving the Two Dynasties Problem
+	id = enchancia.70
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.70"}
+	title = enchancia.70.t
+	desc = enchancia.70.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Dynasty will remain royal, but won't rule Enchancia, and King Dad will serve in the army
+		name = enchancia.70.a
+		add_political_power = -200
+		create_corps_commander = {
+			name = "(ex)King Dad"
+			portrait_path = "gfx/leaders/EN1/king_dad.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 3
+    		defense_skill = 3
+    		planning_skill = 3
+    		logistics_skill = 3
+		}
+		remove_ideas = {
+			EN1_two_dynasties
+		}
+	}
+
+	option = { #Dynasty will remain royal, and if Winslow dynasty will end, Nella's dynasty will take over, King Dad will be available as advisor
+		name = enchancia.70.b
+		add_political_power = -300
+		hidden_effect = {
+			set_country_flag = agree_to_king_dad_advisor
+		}
+		remove_ideas = {
+			EN1_two_dynasties
+		}
+	}
+}
+
+country_event = { #Central Kingdom agrees to create ECP
+	id = enchancia.71
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.71"}
+	title = enchancia.71.t
+	desc = enchancia.71.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Great
+		name = enchancia.71.a
+		hidden_effect = {
+			set_global_flag = EN1_can_create_children_parliament
+		}
+	}
+}
+
+country_event = { #Enchancia invites us to EverRealm Defence Alliance
+	id = enchancia.72
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.72"}
+	title = enchancia.72.t
+	desc = enchancia.72.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #OK
+		name = enchancia.72.a 
+		ai_chance = {
+			factor = 85
+		}
+		EN2 = {
+			country_event = {
+				id = enchancia.73
+				days = 1
+			}
+		}
+	}
+
+	option = { #nope.
+		name = enchancia.72.b 
+		ai_chance = {
+			factor = 15
+		}
+		EN2 = {
+			country_event = {
+				id = enchancia.74
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = enchancia.73
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.73"}
+	title = enchancia.73.t
+	desc = enchancia.73.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #good
+		name = enchancia.73.a 
+		add_to_faction = FROM
+	}
+}
+
+country_event = { #They reject
+	id = enchancia.74
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.74"}
+	title = enchancia.74.t
+	desc = enchancia.74.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #bad
+		name = enchancia.74.a
+	}
+}
+
+country_event = { #Dukes and counts demand emergency powers from Amber
+	id = enchancia.75
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.75"}
+	title = enchancia.75.t
+	desc = enchancia.75.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #OK
+		name = enchancia.75.a
+		add_ideas = {
+			EN2_emergency_powers
+		}
+	}
+
+	option = { #Deny
+		name = enchancia.75.b
+		add_political_power = -250
+	}
+}
+
+country_event = { #Ask dukes and counts to relinquish emergency powers
+	id = enchancia.76
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.76"}
+	title = enchancia.76.t
+	desc = enchancia.76.d
+	picture = GFX_report_enchancia_palace
+
+	trigger = {
+		tag = EN2
+		has_global_flag = enchancian_civil_war_over
+		has_idea = EN2_emergency_powers
+	}
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	option = { #OK
+		name = enchancia.76.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.77
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Dukes and counts refuse to relinquish emergency powers from Amber and threaten her to be quiet
+	id = enchancia.77
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.77"}
+	title = enchancia.77.t
+	desc = enchancia.77.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #what
+		name = enchancia.77.a
+		add_political_power = -50
+		hidden_effect = {
+			country_event = {
+				id = enchancia.78
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Sofia sees her sister being blackmailed
+	id = enchancia.78
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.78"}
+	title = enchancia.78.t
+	desc = enchancia.78.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #I won't leave my sister alone!
+		name = enchancia.78.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.79
+				days = 50
+			}
+		}
+	}
+}
+
+country_event = { #Sofia calls Royal Guard reinforcements and arrests the dirty shitheads
+	id = enchancia.79
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.79"}
+	title = enchancia.79.t
+	desc = enchancia.79.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #good work Sof
+		name = enchancia.79.a
+		hidden_effect = {
+			country_event = {
+				id = enchancia.80
+				days = 31
+			}
+		}
+	}
+}
+
+country_event = { #Amber wants to resign due to what happened
+	id = enchancia.80
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.80"}
+	title = enchancia.80.t
+	desc = enchancia.80.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #Sofia refuses
+		name = enchancia.80.a
+		add_political_power = 50
+		remove_ideas = {
+			EN2_emergency_powers
+		}
+	}
+
+	option = { #Sofia accepts
+		name = enchancia.80.b
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		
+		create_country_leader = {
+			name = "Sofia I"
+			desc = "POLITICS_SOFIA_DESC"
+			picture = "sofia.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+
+country_event = { #Sofia's 17th birthday
+	id = enchancia.81
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.81"}
+	title = enchancia.81.t
+	desc = {
+		text = enchancia.81.d.sofia
+		trigger = {
+			has_country_leader = {
+    			name = "Sofia I"
+    			ruling_only = yes
+			}
+		}
+	}
+	desc = {
+		text = enchancia.81.d.amber
+		trigger = {
+			has_country_leader = {
+    			name = "Amber I"
+    			ruling_only = yes
+			}
+		}
+	}
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #Happy birthday!
+		trigger = {
+			has_country_leader = {
+    			name = "Sofia I"
+    			ruling_only = yes
+			}
+		}
+		name = enchancia.81.a
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				#
+				}
+			}
+		
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}	
+		}
+	}
+
+	option = { #Happy birthday!
+		trigger = {
+			has_country_leader = {
+    			name = "Amber I"
+    			ruling_only = yes
+			}
+		}
+		name = enchancia.81.a
+	}
+}
+
+country_event = { #Amber's 17th birthday
+	id = enchancia.82
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.82"}
+	title = enchancia.82.t
+	desc = {
+		text = enchancia.82.d.enc
+		trigger = {
+			tag = ENC
+		}
+	}
+	desc = {
+		text = enchancia.82.d.en2.amber
+		trigger = {
+			tag = EN2
+			has_country_leader = {
+    			name = "Amber I"
+    			ruling_only = yes
+			}
+		}
+	}
+	desc = {
+		text = enchancia.82.d.en2.sofia
+		trigger = {
+			tag = EN2
+			has_country_leader = {
+    			name = "Sofia I"
+    			ruling_only = yes
+			}
+		}
+	}
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #Happy birthday!
+		trigger = {
+			has_country_leader = {
+    			name = "Amber I"
+    			ruling_only = yes
+			}
+		}
+		name = enchancia.81.a
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				#
+				}
+			}
+		
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}	
+		}
+	}
+
+	option = { #Happy birthday!
+		trigger = {
+			has_country_leader = {
+    			name = "Sofia I"
+    			ruling_only = yes
+			}
+		}
+		name = enchancia.81.a
+	}
+}
+
+country_event = { #James' 17th birthday
+	id = enchancia.83
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.83"}
+	title = enchancia.83.t
+	desc = enchancia.83.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #Happy birthday!
+		name = enchancia.81.a
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+		
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}	
+		}
+	}
+}
+
+country_event = { #Winslows are found!
+	id = enchancia.84
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.84"}
+	title = enchancia.84.t
+	desc = {
+		text = enchancia.84.d.james
+		trigger = {
+			has_global_flag = winslows_stripped_james
+		}
+	}
+	desc = {
+		text = enchancia.84.d.amber
+		trigger = {
+			has_global_flag = winslows_stripped_amber
+		}
+	}
+	desc = {
+		text = enchancia.84.d.sofia
+		trigger = {
+			has_global_flag = winslows_stripped_sofia
+		}
+	}
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #Finally!
+		name = enchancia.84.a
+		trigger = {
+			has_global_flag = winslows_stripped_james
+		}
+		release = ENC
+		hidden_effect = {
+			ENC = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+		
+			create_country_leader = {
+				name = "James I"
+				desc = "POLITICS_JAMES_DESC"
+				picture = "james_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			}	
+		}
+	}
+
+	option = { #Finally!
+		name = enchancia.84.a
+		trigger = {
+			has_global_flag = winslows_stripped_amber
+		}
+		release = ENC
+		hidden_effect = {
+			ENC = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				#
+				}
+			}
+		
+			create_country_leader = {
+				name = "Amber I"
+				desc = "POLITICS_AMBER_DESC"
+				picture = "amber_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			}	
+		}
+	}
+
+	option = { #Finally!
+		name = enchancia.84.a
+		trigger = {
+			has_global_flag = winslows_stripped_sofia
+		}
+		release = ENC
+		hidden_effect = {
+			ENC = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				#
+				}
+			}
+		
+			create_country_leader = {
+				name = "Sofia I"
+				desc = "POLITICS_SOFIA_DESC"
+				picture = "sofia_older.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			}	
+		}
+	}
+}
+
+
+##################################
+# ENCHANCIAN CHILDREN PARLIAMENT #
+##################################
+
+country_event = { #test event!
+	id = enchancia.999
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.999"}
+	title = enchancia.999.t
+	desc = enchancia.999.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = enchancia.999.a
+		hidden_effect = {
+			set_country_flag = leader_sofia
+			clr_country_flag = leader_amber
+			clr_country_flag = leader_peter
+			set_country_flag = leader_heidi
+			set_country_flag = leader_ronja
+			clr_country_flag = leader_birk
+			set_country_flag = leader_nella
+			clr_country_flag = leader_garrett
+			set_variable = { en1_chp_leader_icon_party_1_temp_number = 1 }
+			set_variable = { en1_chp_leader_icon_party_2_temp_number = 3 }
+			set_variable = { en1_chp_leader_icon_party_3_temp_number = 6 }
+			set_variable = { en1_chp_leader_icon_party_4_temp_number = 8 }
+			recalc_en1_children_parliament_leader_icon_party_1 = yes
+			recalc_en1_children_parliament_leader_icon_party_2 = yes
+			recalc_en1_children_parliament_leader_icon_party_3 = yes
+			recalc_en1_children_parliament_leader_icon_party_4 = yes
+			set_variable = { EN1_royalist_party_pop = random }
+			multiply_variable = { EN1_royalist_party_pop = 100 }
+			round_variable = EN1_royalist_party_pop
+			EN1_royalist_party_win = yes
+		}
+	}
+
+	option = {
+		name = enchancia.999.b
+		hidden_effect = {
+			set_country_flag = leader_sofia
+			clr_country_flag = leader_amber
+			set_country_flag = leader_peter
+			clr_country_flag = leader_heidi
+			set_country_flag = leader_ronja
+			clr_country_flag = leader_birk
+			clr_country_flag = leader_nella
+			set_country_flag = leader_garrett
+			set_variable = { en1_chp_leader_icon_party_1_temp_number = 1 }
+			set_variable = { en1_chp_leader_icon_party_2_temp_number = 2 }
+			set_variable = { en1_chp_leader_icon_party_3_temp_number = 6 }
+			set_variable = { en1_chp_leader_icon_party_4_temp_number = 9 }
+			recalc_en1_children_parliament_leader_icon_party_1 = yes
+			recalc_en1_children_parliament_leader_icon_party_2 = yes
+			recalc_en1_children_parliament_leader_icon_party_3 = yes
+			recalc_en1_children_parliament_leader_icon_party_4 = yes
+			set_variable = { EN1_rural_party_pop = random }
+			multiply_variable = { EN1_rural_party_pop = 100 }
+			round_variable = EN1_rural_party_pop
+			EN1_rural_party_win = yes
+		}
+	}
+
+	option = {
+		name = enchancia.999.c
+		hidden_effect = {
+			set_country_flag = leader_amber
+			clr_country_flag = leader_sofia
+			set_country_flag = leader_peter
+			clr_country_flag = leader_heidi
+			set_country_flag = leader_birk
+			clr_country_flag = leader_ronja
+			set_country_flag = leader_garrett
+			clr_country_flag = leader_nella
+			set_variable = { en1_chp_leader_icon_party_1_temp_number = 10 }
+			set_variable = { en1_chp_leader_icon_party_2_temp_number = 2 }
+			set_variable = { en1_chp_leader_icon_party_3_temp_number = 7 }
+			set_variable = { en1_chp_leader_icon_party_4_temp_number = 9 }
+			recalc_en1_children_parliament_leader_icon_party_1 = yes
+			recalc_en1_children_parliament_leader_icon_party_2 = yes
+			recalc_en1_children_parliament_leader_icon_party_3 = yes
+			recalc_en1_children_parliament_leader_icon_party_4 = yes
+			set_variable = { EN1_justice_party_pop = random }
+			multiply_variable = { EN1_justice_party_pop = 100 }
+			round_variable = EN1_justice_party_pop
+			EN1_justice_party_win = yes
+		}
+	}
+
+	option = {
+		name = enchancia.999.d
+		hidden_effect = {
+			set_country_flag = leader_amber
+			clr_country_flag = leader_sofia
+			clr_country_flag = leader_peter
+			set_country_flag = leader_heidi
+			set_country_flag = leader_birk
+			clr_country_flag = leader_ronja
+			set_country_flag = leader_nella
+			clr_country_flag = leader_garrett
+			set_variable = { en1_chp_leader_icon_party_1_temp_number = 10 }
+			set_variable = { en1_chp_leader_icon_party_2_temp_number = 3 }
+			set_variable = { en1_chp_leader_icon_party_3_temp_number = 7 }
+			set_variable = { en1_chp_leader_icon_party_4_temp_number = 8 }
+			recalc_en1_children_parliament_leader_icon_party_1 = yes
+			recalc_en1_children_parliament_leader_icon_party_2 = yes
+			recalc_en1_children_parliament_leader_icon_party_3 = yes
+			recalc_en1_children_parliament_leader_icon_party_4 = yes
+			set_variable = { EN1_future_party_pop = random }
+			multiply_variable = { EN1_future_party_pop = 100 }
+			round_variable = EN1_future_party_pop
+			EN1_future_party_win = yes
+		}
+	}
+}

@@ -1,0 +1,1931 @@
+colonization_ICW_dec_category = {
+	colonization_iceworld_decision_891 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			888 = {
+				is_owned_by = ICW
+			}
+		}
+		visible = {
+			888 = {
+				is_owned_by = ICW
+			}
+			891 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 891
+				hidden_effect = {
+					891 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				891 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_894 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			888 = {
+				is_owned_by = ICW
+			}
+		}
+		visible = {
+			888 = {
+				is_owned_by = ICW
+			}
+			894 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 894
+				hidden_effect = {
+					894 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				894 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_900 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			894 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			894 = {
+				is_owned_by = ICW
+			}
+			900 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 900
+				hidden_effect = {
+					900 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				900 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_906 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			894 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			894 = {
+				is_owned_by = ICW
+			}
+			906 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 906
+				hidden_effect = {
+					906 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				906 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_871 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			891 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			891 = {
+				is_owned_by = ICW
+			}
+			871 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 871
+				hidden_effect = {
+					871 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				871 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_889 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			891 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			891 = {
+				is_owned_by = ICW
+			}
+			889 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 889
+				hidden_effect = {
+					889 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				889 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_51 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			891 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			891 = {
+				is_owned_by = ICW
+			}
+			51 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 51
+				hidden_effect = {
+					51 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				51 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_870 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			889 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			889 = {
+				is_owned_by = ICW
+			}
+			870 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 870
+				hidden_effect = {
+					870 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				870 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_876 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			889 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			889 = {
+				is_owned_by = ICW
+			}
+			876 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 876
+				hidden_effect = {
+					876 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				876 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+
+colonization_iceworld_decision_890 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = ICW
+		}
+		available = {
+			889 = {
+				is_owned_by = ICW
+				state_population > 99999
+			}
+		}
+		visible = {
+			889 = {
+				is_owned_by = ICW
+			}
+			890 = {
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			ICW = {
+				transfer_state = 890
+				hidden_effect = {
+					890 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			ICW = {
+				890 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+		days_re_enable = 14
+	}
+}
+
+colonization_FRI_dec_category = {
+	colonization_FRI_decision_918 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			901 = {
+				is_owned_by = FRI
+			}
+		}
+		visible = {
+			901 = {
+				is_owned_by = FRI
+			}
+			918 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 918
+				hidden_effect = {
+					918 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				918 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_913 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			901 = {
+				is_owned_by = FRI
+			}
+		}
+		visible = {
+			901 = {
+				is_owned_by = FRI
+			}
+			913 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 913
+				hidden_effect = {
+					913 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				913 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_934 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			918 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			918 = {
+				is_owned_by = FRI
+			}
+			934 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 934
+				hidden_effect = {
+					934 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				934 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_926 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			918 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			918 = {
+				is_owned_by = FRI
+			}
+			926 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 926
+				hidden_effect = {
+					926 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				926 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_920 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			913 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			913 = {
+				is_owned_by = FRI
+			}
+			920 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 920
+				hidden_effect = {
+					920 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				920 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_893 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			913 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			913 = {
+				is_owned_by = FRI
+			}
+			893 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 893
+				hidden_effect = {
+					893 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				893 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_923 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			920 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			920 = {
+				is_owned_by = FRI
+			}
+			923 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 923
+				hidden_effect = {
+					923 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				923 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_900 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			920 = {
+				is_owned_by = FRI
+				state_population > 99999
+			}
+		}
+		visible = {
+			920 = {
+				is_owned_by = FRI
+			}
+			900 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+				NOT = {
+					is_owned_by = ICW
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 900
+				hidden_effect = {
+					900 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				900 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_842 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			36 = {
+				is_owned_by = FRI
+			}
+		}
+		visible = {
+			36 = {
+				is_owned_by = FRI
+			}
+			842 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 842
+				hidden_effect = {
+					842 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				842 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_41 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			36 = {
+				is_owned_by = FRI
+			}
+		}
+		visible = {
+			36 = {
+				is_owned_by = FRI
+			}
+			41 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 41
+				hidden_effect = {
+					41 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				41 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_FRI_decision_827 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = FRI
+		}
+		available = {
+			36 = {
+				is_owned_by = FRI
+			}
+		}
+		visible = {
+			36 = {
+				is_owned_by = FRI
+			}
+			827 = {
+				NOT = {
+					is_owned_by = FRI
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			FRI = {
+				transfer_state = 827
+				hidden_effect = {
+					827 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			FRI = {
+				827 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+colonization_DUL_dec_category = {
+	colonization_DUL_decision_116 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			109 = {
+				is_owned_by = DUL
+			}
+		}
+		visible = {
+			109 = {
+				is_owned_by = DUL
+			}
+			116 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 116
+				hidden_effect = {
+					116 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				116 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_107 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			109 = {
+				is_owned_by = DUL
+			}
+		}
+		visible = {
+			109 = {
+				is_owned_by = DUL
+			}
+			107 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 107
+				hidden_effect = {
+					107 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				107 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_103 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			109 = {
+				is_owned_by = DUL
+			}
+		}
+		visible = {
+			109 = {
+				is_owned_by = DUL
+			}
+			103 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 103
+				hidden_effect = {
+					103 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				103 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_121 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			109 = {
+				is_owned_by = DUL
+			}
+		}
+		visible = {
+			109 = {
+				is_owned_by = DUL
+			}
+			121 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 121
+				hidden_effect = {
+					121 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				121 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_139 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			109 = {
+				is_owned_by = DUL
+			}
+		}
+		visible = {
+			109 = {
+				is_owned_by = DUL
+			}
+			139 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 139
+				hidden_effect = {
+					139 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				139 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_138 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			OR = {
+				116 = {
+					is_owned_by = DUL
+				}
+				139 = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		visible = {
+			OR = {
+				116 = {
+					is_owned_by = DUL
+				}
+				139 = {
+					is_owned_by = DUL
+				}
+			}
+			138 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 138
+				hidden_effect = {
+					138 = {
+						add_manpower = 170000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				138 = {
+					set_state_category = town
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 6112
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_132 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			OR = {
+				116 = {
+					is_owned_by = DUL
+				}
+				138 = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		visible = {
+			OR = {
+				116 = {
+					is_owned_by = DUL
+				}
+				138 = {
+					is_owned_by = DUL
+				}
+			}
+			132 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 132
+				hidden_effect = {
+					132 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				132 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_DUL_decision_157 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = DUL
+		}
+		available = {
+			OR = {
+				121 = {
+					is_owned_by = DUL
+				}
+				139 = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		visible = {
+			OR = {
+				121 = {
+					is_owned_by = DUL
+				}
+				139 = {
+					is_owned_by = DUL
+				}
+			}
+			157 = {
+				NOT = {
+					is_owned_by = DUL
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			DUL = {
+				transfer_state = 157
+				hidden_effect = {
+					157 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			DUL = {
+				157 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+colonization_SKO_dec_category = {
+	colonization_SKO_decision_49 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			856 = {
+				is_owned_by = SKO
+			}
+		}
+		visible = {
+			856 = {
+				is_owned_by = SKO
+			}
+			49 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 49
+				hidden_effect = {
+					49 = {
+						add_manpower = 80000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				49 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_802 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			797 = {
+				is_owned_by = SKO
+			}
+		}
+		visible = {
+			797 = {
+				is_owned_by = SKO
+			}
+			802 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 802
+				hidden_effect = {
+					802 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				802 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_795 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			797 = {
+				is_owned_by = SKO
+			}
+		}
+		visible = {
+			797 = {
+				is_owned_by = SKO
+			}
+			795 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 795
+				hidden_effect = {
+					795 = {
+						add_manpower = 100000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				795 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_791 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			797 = {
+				is_owned_by = SKO
+			}
+		}
+		visible = {
+			797 = {
+				is_owned_by = SKO
+			}
+			791 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 791
+				hidden_effect = {
+					791 = {
+						add_manpower = 80000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				791 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_928 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			797 = {
+				is_owned_by = SKO
+			}
+		}
+		visible = {
+			797 = {
+				is_owned_by = SKO
+			}
+			928 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 928
+				hidden_effect = {
+					928 = {
+						add_manpower = 120000
+					}
+				}
+				928 = {
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 29
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				928 = {
+					set_state_category = town
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_940 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			928 = {
+				is_owned_by = SKO
+				state_population > 1
+			}
+		}
+		visible = {
+			928 = {
+				is_owned_by = SKO
+			}
+			940 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 940
+				hidden_effect = {
+					940 = {
+						add_manpower = 80000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				940 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_945 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			940 = {
+				is_owned_by = SKO
+				state_population > 1
+			}
+		}
+		visible = {
+			940 = {
+				is_owned_by = SKO
+			}
+			945 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 945
+				hidden_effect = {
+					945 = {
+						add_manpower = 80000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				945 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	colonization_SKO_decision_68 = {
+		icon = ger_mefo_bills
+		allowed = {
+			original_tag = SKO
+		}
+		available = {
+			940 = {
+				is_owned_by = SKO
+				state_population > 1
+			}
+		}
+		visible = {
+			940 = {
+				is_owned_by = SKO
+			}
+			68 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+		}
+		cost = 100
+		ai_will_do = {
+			factor = 1
+		}
+		
+		complete_effect = {
+			SKO = {
+				transfer_state = 68
+				hidden_effect = {
+					68 = {
+						add_manpower = 80000
+					}
+				}
+			}
+		}
+		days_remove = 140
+		remove_effect = {
+			SKO = {
+				68 = {
+					set_state_category = rural
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}

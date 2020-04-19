@@ -1,0 +1,78 @@
+﻿division_template = {
+	name = "Dywizja Kuców z Bronksu"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Dywizja Pancerna"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Dywizja Kuców z Bronksu"
+		location = 9237
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Dywizja Kuców z Bronksu"
+		location = 9237
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "3. Dywizja Kuców z Bronksu"
+		location = 9237
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "4. Dywizja Kuców z Bronksu"
+		location = 9237
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "5. Dywizja Kuców z Bronksu"
+		location = 3617
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "6. Dywizja Kuców z Bronksu"
+		location = 3617
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "7. Dywizja Kuców z Bronksu"
+		location = 3617
+		division_template = "Dywizja Kuców z Bronksu"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "1.Dywizja Pancerna"
+		location = 9237
+		division_template = "Dywizja Pancerna"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Dywizja Pancerna"
+		location = 3617
+		division_template = "Dywizja Pancerna"
+		start_experience_factor = 0.2
+	}
+}

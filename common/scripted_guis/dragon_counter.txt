@@ -1,0 +1,14 @@
+scripted_gui = {
+   dragon_counter = {
+       window_name = "dragon_counter_container"
+ 
+       context_type = player_context
+ 
+       visible = {
+            AND = {
+            	tag = GRN
+            	has_country_flag = dragon_immigration
+            }
+        }
+    }
+}

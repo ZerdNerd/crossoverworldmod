@@ -1,0 +1,721 @@
+﻿###########################
+# Spalding
+###########################
+
+add_namespace = spalding
+
+country_event = { #Elections 1936
+	id = spalding.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.1"}
+	title = spalding.1.t
+	desc = spalding.1.d
+	picture = GFX_report_event_generic_rally2
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = spalding.1.a
+		trigger = {
+			democratic > 0.24
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.15
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.42
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = spalding.1.b
+		trigger = {
+			fascism > 0.24
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.15
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.42
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = spalding.1.c
+		trigger = {
+			communism > 0.24
+		}
+		set_politics = {
+			ruling_party = communism
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.15
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.42
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = spalding.1.e
+		trigger = {
+			monarchism > 0.24
+		}
+		set_politics = {
+			ruling_party = monarchism
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.15
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.42
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Pazdzioch opens his first shop
+	id = spalding.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.2"}
+	title = spalding.2.t
+	desc = spalding.2.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLD
+		focus_progress = {
+			focus = SLD_the_great_elections
+			progress > 0.05
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = spalding.2.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.3
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { #Tracz wants to buy Pazdzioch's shop
+	id = spalding.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.3"}
+	title = spalding.3.t
+	desc = spalding.3.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Ask Kiepski for help
+		name = spalding.3.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.4
+				days = 20
+			}
+		}
+	}
+
+	option = { #Give in and sell the shop
+		name = spalding.3.b
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.5
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = { #Pazdzioch asks Kiepski for help
+	id = spalding.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.4"}
+	title = spalding.4.t
+	desc = spalding.4.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Kiepski refuses
+		name = spalding.4.a
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.5
+				days = 20
+			}
+		}
+	}
+
+	option = { #Kiepski agrees
+		name = spalding.4.b
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -0.15
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.7
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = { #Pazdzioch creates his own radio station to tell truth about Kiepski and Tracz
+	id = spalding.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.5"}
+	title = spalding.5.t
+	desc = spalding.5.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Ohhhhh that's not gonna end good
+		name = spalding.5.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.6
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = { #Tracz and Kiepski raid Pazdzioch's radio station
+	id = spalding.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.6"}
+	title = spalding.6.t
+	desc = spalding.6.d
+	picture = GFX_report_event_iww_demonstration
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Tracz and Pazdzioch Arrested
+		name = spalding.6.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -1.0
+		}
+	}
+
+	option = { #Tracz and Kiepski Arrested
+		name = spalding.6.b
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -1.0
+		}
+	}
+
+	option = { #Pazdzioch and Kiepski Arrested
+		name = spalding.6.c
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -1.0
+		}
+	}
+}
+
+country_event = { #Wojtyla proposes mediations
+	id = spalding.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.7"}
+	title = spalding.7.t
+	desc = spalding.7.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Shut up
+		name = spalding.7.a
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.12
+				days = 10
+			}
+		}
+	}
+
+	option = { #Let him do it
+		name = spalding.7.b
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = spalding.8
+				days = 20
+			}
+		}
+	}
+}
+
+country_event = { #Mediations begin, and rumour is heard behind another door
+	id = spalding.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.8"}
+	title = spalding.8.t
+	desc = spalding.8.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Hear their demands, don't mind doors
+		name = spalding.8.a
+		hidden_effect = {
+			country_event = {
+				id = spalding.9
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Tracz and Pazdzioch both want Pazdzioch's shop
+	id = spalding.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.9"}
+	title = spalding.9.t
+	desc = spalding.9.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Wojtyla sides with Pazdzioch
+		name = spalding.9.a
+		hidden_effect = {
+			country_event = {
+				id = spalding.10
+				days = 0
+			}
+		}	
+	}
+
+	option = { #Propose compromise - Tracz gets the shop and Pazdzioch gets the money
+		name = spalding.9.b
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -0.35
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.1
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.1
+		}
+	}
+
+	option = { #Military comes in, uninvited!
+		name = spalding.9.c
+		hidden_effect = {
+			country_event = {
+				id = spalding.11
+				days = 0
+			}
+		}	
+	}
+}
+
+country_event = { #Tracz tries to rebel, but is overpowered
+	id = spalding.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.10"}
+	title = spalding.10.t
+	desc = spalding.10.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Good
+		name = spalding.10.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.05
+		}
+	}
+}
+
+country_event = { #Door are opened, military arrests Tracz and Pazdzioch
+	id = spalding.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.11"}
+	title = spalding.11.t
+	desc = spalding.11.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #It was Kiepski!
+		name = spalding.11.a
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -1.0
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.15
+		}
+	}
+}
+
+country_event = { #Tracz and Pazdzioch men begin fighting, police rushes in to avert civil war
+	id = spalding.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.12"}
+	title = spalding.12.t
+	desc = spalding.12.d
+	picture = GFX_report_event_generic_rally
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Good they did it
+		name = spalding.12.a
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.1
+		}
+	}
+
+	option = { #Awwww, why?
+		name = spalding.12.b
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.05
+		}
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.05
+		}
+	}
+}
+
+country_event = { #Neland Republic declares independence!
+	id = spalding.13
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event spalding.13"
+		hidden_effect = {
+		NRL = {
+			transfer_state = 734
+			transfer_state = 774
+			transfer_state = 786
+			transfer_state = 768
+			transfer_state = 777
+			set_capital = 734
+			if = {
+				limit = {
+					SLD = {
+						has_government = democratic
+					}
+				}
+				create_country_leader = {
+					name = "Marian Paździoch"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SLD/marian.dds"
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+						#
+					}
+				}
+				set_politics = {
+					ruling_party = communism
+					last_election = "1930.7.1"
+					election_frequency = 72
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 8
+					fascism = 6
+					communism = 80		
+					neutrality = 6		
+					monarchism = 0
+				}
+				hidden_effect = {
+					load_oob = NRL_communist_ind
+				}
+			}
+			if = {
+				limit = {
+					SLD = {
+						OR = {
+							has_government = communism
+							has_government = fascism
+						}
+					}
+				}
+				create_country_leader = {
+					name = "Ferdynand Kiepski"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SLD/ferdek.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						#
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+					last_election = "1930.7.1"
+					election_frequency = 72
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 80
+					fascism = 6
+					communism = 8		
+					neutrality = 6		
+					monarchism = 0
+				}
+				hidden_effect = {
+					load_oob = NRL_democratic_ind
+				}
+			}
+		}
+		}
+	}
+	title = spalding.13.t
+	desc = {
+		text = spalding.13.d.nrl.communist
+		trigger = {
+			SLD = {
+				has_government = democratic
+			}
+		}
+	}
+	desc = {
+		text = spalding.13.d.nrl.democratic
+		trigger = {
+			SLD = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+	}
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLD
+		OR = {
+			has_government = democratic
+			has_government = communism
+			has_government = fascism
+		}
+		has_country_flag = gave_macius_shore
+		MAI = {
+			owns_state = 736
+			owns_state = 773
+			owns_state = 767
+			owns_state = 776
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = { #We cannot declare on them yet, let them be
+		name = spalding.13.a
+		hidden_effect = {
+			news_event = {
+				id = worldnews.52
+				hours = 6
+			}
+		}
+	}
+
+	option = { #We must regain our territories!
+		name = spalding.13.b
+		declare_war_on = {
+			target = NRL
+			type = annex_everything
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.53
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Spalding wants to join our faction
+	id = spalding.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.14"}
+	title = spalding.14.t
+	desc = spalding.14.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Let them join
+		name = spalding.14.a
+		SLD = {
+			country_event = {
+				id = spalding.15
+				days = 1
+			}
+		}
+	}
+
+	option = { #Nope
+		name = spalding.14.a
+		SLD = {
+			country_event = {
+				id = spalding.16
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree!
+	id = spalding.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.15"}
+	title = spalding.15.t
+	desc = spalding.15.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = spalding.15.a
+		add_political_power = 50
+		FROM = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = SLD
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				give_guarantee = SLD
+				SLD = {
+					give_guarantee = FROM
+				}
+			}
+		}
+	}
+}
+
+country_event = { #They reject
+	id = spalding.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.16"}
+	title = spalding.16.t
+	desc = spalding.16.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Damn!
+		name = spalding.16.a
+		add_political_power = -50
+	}
+}

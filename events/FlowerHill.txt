@@ -1,0 +1,375 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = flowerhill
+
+country_event = {
+	id = flowerhill.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.1"}
+	title = flowerhill.1.t
+	desc = flowerhill.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = flowerhill.1.a
+		EN4 = {
+			add_manpower = 20000
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment_0
+    			amount = 7500
+    			producer = FLO
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flowerhill.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.2"}
+	title = flowerhill.2.t
+	desc = flowerhill.2.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = flowerhill.2.a
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = want_revenge_on_macius_part_1
+		}
+	}
+}
+
+country_event = {
+	id = flowerhill.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.3"}
+	title = flowerhill.3.t
+	desc = flowerhill.3.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = flowerhill.3.a
+		hidden_effect = {
+			retire_country_leader = yes
+			set_country_flag = goseumdochi_elected
+		}
+		create_country_leader = {
+			name = "Goseumdochi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "goseumdochi.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.31
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = flowerhill.3.b
+		hidden_effect = {
+			retire_country_leader = yes
+			set_country_flag = darami_elected
+		}
+		create_country_leader = {
+			name = "Darami"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "darami.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.31
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = flowerhill.3.c
+		hidden_effect = {
+			retire_country_leader = yes
+			set_country_flag = geumsaegi_elected
+		}
+		create_country_leader = {
+			name = "Geumsaegi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "geumsaegi.dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+				great_war_hero
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.30
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flowerhill.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.4"}
+	title = flowerhill.4.t
+	desc = flowerhill.4.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = flowerhill.4.a
+	}
+}
+
+country_event = { #Flower Hill demands 
+	id = flowerhill.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.5"}
+	title = flowerhill.5.t
+	desc = flowerhill.5.d
+	picture = GFX_report_flower_hill
+
+	is_triggered_only = yes
+
+	option = { #Give in
+		name = flowerhill.5.a
+		FLO = {
+			annex_country = {
+    			target = ROOT
+    			transfer_troops = yes
+			}
+			add_political_power = 25
+		}
+		ai_chance = {
+			factor = 85
+		}
+	}
+
+	option = { #Refuse
+		name = flowerhill.5.b
+		FLO = {
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+		ai_chance = {
+			factor = 15
+		}
+	}
+}
+
+country_event = { #Flower Hill demands, Greenland event
+	id = flowerhill.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.6"}
+	title = flowerhill.6.t
+	desc = flowerhill.6.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Transfer the country
+		name = flowerhill.6.a
+		FLO = {
+			annex_country = {
+				target = FROM
+    			transfer_troops = yes
+			}
+		}
+		ai_chance = {
+			factor = 33
+		}
+	}
+
+	option = { #Refuse to transfer the country
+		name = flowerhill.6.b
+		FLO = {
+			declare_war_on = {
+				target = FROM
+				type = annex_everything
+			}
+		}
+		FROM = {
+			give_military_access = GRN
+		}
+		ai_chance = {
+			factor = 33
+		}
+	}
+
+	#option = { #Call for a conference meeting
+	#	name = flowerhill.6.a
+	#	set_global_flag = flower_hill_crisis
+	#	ai_chance = {
+	#		factor = 33
+	#	}
+	#}
+}
+
+country_event = { #Flower Hill demands 
+	id = flowerhill.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.7"}
+	title = flowerhill.7.t
+	desc = flowerhill.7.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Give in
+		name = flowerhill.7.a
+		FLO = {
+			transfer_state = 295
+		}
+		add_political_power = -200
+		add_stability = -0.4
+	}
+
+	option = { #Give in
+		name = flowerhill.7.b
+		FLO = {
+			declare_war_on = {
+				target = WOL
+				type = annex_everything
+			}
+		}
+		add_political_power = 100
+	}
+}
+
+country_event = {
+	id = flowerhill.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.8"}
+	title = flowerhill.8.t
+	desc = flowerhill.8.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FLO
+		has_tech = nuclear_reactor
+		has_completed_focus = FLO_atom
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = flowerhill.8.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = chose_vver
+		}
+	}
+
+	option = {
+		name = flowerhill.8.b
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = chose_rbmk
+		}
+	}
+}
+
+country_event = {
+	id = flowerhill.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.9"}
+	title = flowerhill.9.t
+	desc = flowerhill.9.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		trigger = {
+			has_country_flag = goseumdochi_elected
+		}
+		name = flowerhill.9.a
+		add_political_power = -50
+	}
+
+	option = {
+		trigger = {
+			has_country_flag = darami_elected
+		}
+		name = flowerhill.9.b
+		hidden_effect = {
+			retire_country_leader = yes
+			clr_country_flag = darami_elected
+			set_country_flag = goseumdochi_elected
+		}
+		create_country_leader = {
+			name = "Goseumdochi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "goseumdochi.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				#
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_country_flag = goseumdochi_elected
+		}
+		name = flowerhill.9.c
+		hidden_effect = {
+			retire_country_leader = yes
+			clr_country_flag = goseumdochi_elected
+			set_country_flag = darami_elected
+		}
+		create_country_leader = {
+			name = "Darami"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "darami.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				#
+			}
+		}
+	}
+
+	option = {
+		trigger = {
+			has_country_flag = darami_elected
+		}
+		name = flowerhill.9.e
+		add_political_power = -50
+	}
+}

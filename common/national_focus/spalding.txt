@@ -1,0 +1,4314 @@
+focus_tree = {
+	id = spalding_tree
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = SLD
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = SLD_the_great_elections
+		icon = GFX_focus_generic_elections
+		x = 12
+		y = 0
+		cost = 15.72
+		available_if_capitulated = no
+		available = {
+			is_puppet = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			country_event = {
+				id = spalding.1
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_communism_returns
+		icon = GFX_goal_support_communism
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_great_elections
+		}
+		available = {
+			has_government = communism
+		}
+		bypass = {
+			has_government = communism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SLD_two_year_plan
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_communism_returns
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			770 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			713 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			719 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			748 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			780 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_central_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_two_year_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			732 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_expansion_of_narrow_gauge_railways
+		icon = GFX_focus_lxd2
+		x = 0
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_central_industrial_complex
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			773 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			777 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			768 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			786 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			734 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			695 = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_factories_in_the_west
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_expansion_of_narrow_gauge_railways
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			734 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_eliminating_the_opposition
+		icon = GFX_focus_rom_parties_end
+		x = 2
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_communism_returns
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = communism
+    			popularity = 0.1
+			}
+			custom_effect_tooltip = new_generals_and_ideas_will_become_available
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Marian Paździoch"
+					portrait_path = "gfx/leaders/SLD/marian.dds"
+					skill = 2
+   					attack_skill = 3
+    				defense_skill = 2
+    				planning_skill = 2
+    				logistics_skill = 2
+				}
+				create_corps_commander = {
+					name = "Helena Paździoch"
+					portrait_path = "gfx/leaders/SLD/helena.dds"
+					skill = 2
+   					attack_skill = 4
+    				defense_skill = 2
+    				planning_skill = 2
+    				logistics_skill = 2
+    				female = yes
+				}
+				create_corps_commander = {
+					name = "Arnold Boczek"
+					portrait_path = "gfx/leaders/SLD/boczek.dds"
+					skill = 1
+   					attack_skill = 1
+    				defense_skill = 1
+    				planning_skill = 1
+    				logistics_skill = 4
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_the_southern_threat
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_eliminating_the_opposition
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = SLD_public_works
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_southern_threat
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 100
+			add_ideas = {
+				SLD_public_works_idea
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_new_port_in_the_shores
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_public_works
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			695 = {
+				add_building_construction = {
+    				type = naval_base
+    				level = 3
+    				instant_build = yes
+    				province = 9419
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_new_airfields
+		icon = GFX_goal_generic_air_fighter
+		x = 4
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_communism_returns
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			748 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			770 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			777 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			719 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_open_new_university
+		icon = GFX_focus_generic_socialist_science
+		x = 4
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_new_airfields
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_ideas = {
+				SLD_spalding_socialist_university
+			}
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = SLD_fortify_southwestern_border
+		icon = GFX_goal_generic_construct_military
+		x = 4
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_open_new_university
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			786 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 5526
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 4097
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 5177
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 10046
+				}
+			}
+			777 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 10027
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 1541
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 10009
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_fortify_eastern_border
+		icon = GFX_goal_generic_construct_military
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_fortify_southwestern_border
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			780 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 10074
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 5436
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9971
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 1062
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 403
+				}
+			}
+			748 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9895
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9899
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 5620
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 5686
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9764
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_help_comrades_in_enchancia
+		icon = GFX_focus_enchancia
+		x = -2
+		y = 6
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = FLO_ecw_artisans
+				EN4 = {
+					exists = yes
+					OR = {
+						has_war_with = ENC
+						has_war_with = EN1
+						has_war_with = EN2
+						has_war_with = EN3
+					}
+				}
+			}
+			has_government = communism
+		} 
+		bypass = {
+			OR = {
+				AND = {
+					EN4 = {
+						exists = no
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAI_ecw_broke
+						has_global_flag = enchancian_civil_war
+					}
+				}
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_ecw_didnt_broke
+						ENC = {
+							has_country_flag = civil_war_avoided
+						}
+					}
+				}
+			}
+			has_government = communism
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_manpower = -20000
+			EN4 = {
+				add_manpower = 20000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 15500
+    				producer = SLD
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ECW_support_artisans
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_spalding_way_to_communism
+		icon = GFX_goal_anschluss
+		x = 1
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_factories_in_the_west
+		}
+		prerequisite = {
+			focus = SLD_new_port_in_the_shores
+		}
+		prerequisite = {
+			focus = SLD_fortify_eastern_border
+		}
+		available = {
+			NOT = {
+				is_in_faction = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_faction = the_first_internationale
+		} 
+	}
+
+	focus = { 
+		id = SLD_ally_with_flower_hill
+		icon = GFX_focus_por_workers_of_iberia
+		x = 3
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_factories_in_the_west
+		}
+		prerequisite = {
+			focus = SLD_new_port_in_the_shores
+		}
+		prerequisite = {
+			focus = SLD_fortify_eastern_border
+		}
+		available = {
+			NOT = {
+				is_in_faction = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FLO = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+
+	focus = { 
+		id = SLD_papal_monarchy
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 8
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_great_elections
+		}
+		available = {
+			has_government = monarchism
+		}
+		bypass = {
+			has_government = monarchism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SLD_economy_reforms
+		icon = GFX_focus_generic_tank_production
+		x = 6
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_papal_monarchy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			770 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					has_state_category = city
+					NOT = {
+						state = 770
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_overseas_industrial_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 6
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_economy_reforms
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			695 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+				set_state_category = town
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_fill_the_railway_gaps
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 6
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_overseas_industrial_complex
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					infrastructure < 3
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_foundations_of_strong_military
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 6
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_fill_the_railway_gaps
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			719 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			713 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			695 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_empower_cardinals
+		icon = GFX_focus_por_concordat
+		x = 8
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_papal_monarchy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = monarchism
+    			popularity = 0.1
+			}
+			custom_effect_tooltip = new_generals_and_ideas_will_become_available
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Jan Paweł II"
+					portrait_path = "gfx/leaders/SLD/pope.dds"
+					skill = 3
+   					attack_skill = 3
+    				defense_skill = 3
+    				planning_skill = 4
+    				logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "Stefan Wyszyński"
+					portrait_path = "gfx/leaders/SLD/wyszynski.dds"
+					skill = 3
+   					attack_skill = 2
+    				defense_skill = 3
+    				planning_skill = 4
+    				logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "Stanisław Dziwisz"
+					portrait_path = "gfx/leaders/SLD/dziwisz.dds"
+					skill = 2
+   					attack_skill = 2
+    				defense_skill = 2
+    				planning_skill = 2
+    				logistics_skill = 3
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_the_power_of_faith
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_empower_cardinals
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = SLD_restore_the_crusades
+		icon = GFX_focus_generic_little_entente
+		x = 8
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_power_of_faith
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 100
+			add_ideas = {
+				SLD_crusades
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_yes_was
+		icon = GFX_focus_yellow_face
+		x = 8
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_restore_the_crusades
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = SLD_kremowka_air_projects
+		icon = GFX_goal_generic_air_fighter
+		x = 10
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_papal_monarchy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			air_experience = 10
+			770 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			777 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			add_ideas = {
+				SLD_kremowka_air_offices
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_papal_university
+		icon = GFX_focus_research
+		x = 10
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_kremowka_air_projects
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_research_slot = 1
+			add_ideas = {
+				SLD_spalding_papal_university
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_northeastern_fortifications
+		icon = GFX_goal_generic_construct_military
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_papal_university
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			748 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5686
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 3568
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 9759
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 3930
+				}
+			}
+			719 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9629
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9587
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 9563
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 3241
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 3
+    				instant_build = yes
+    				province = 3816
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_wojtyla_otto_pact
+		icon = GFX_goal_generic_improve_relations
+		x = 10
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_northeastern_fortifications
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			diplomatic_relation = {
+    			country = WEK
+    			relation = non_aggression_pact
+    			active = no
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_ally_with_lechists
+		icon = GFX_goal_generic_major_alliance
+		x = 6
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_foundations_of_strong_military
+		}
+		prerequisite = {
+			focus = SLD_yes_was
+		}
+		prerequisite = {
+			focus = SLD_wojtyla_otto_pact
+		}
+		available = {
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = FRI
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			LEC = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_the_papal_faction
+		icon = GFX_focus_generic_support_the_left_right
+		x = 8
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_foundations_of_strong_military
+		}
+		prerequisite = {
+			focus = SLD_yes_was
+		}
+		prerequisite = {
+			focus = SLD_wojtyla_otto_pact
+		}
+		available = {
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = FRI
+					is_guaranteed_by = LEC
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_faction = papal_alliance
+		} 
+	}
+
+	focus = { 
+		id = SLD_ally_with_friedewalt
+		icon = GFX_goal_generic_major_alliance
+		x = 10
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_foundations_of_strong_military
+		}
+		prerequisite = {
+			focus = SLD_yes_was
+		}
+		prerequisite = {
+			focus = SLD_wojtyla_otto_pact
+		}
+		available = {
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = LEC
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FRI = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_help_dunwiddie_gov
+		icon = GFX_focus_enchancia
+		x = 12
+		y = 6
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+			OR = {
+				has_government = monarchism
+				has_government = democratic
+			}
+		} 
+		bypass = {
+			OR = {
+				ENC = {
+					exists = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = MAI_ecw_didnt_broke
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+				}
+			}
+			OR = {
+				has_government = monarchism
+				has_government = democratic
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_manpower = -10000
+			ENC = {
+				add_manpower = 10000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 6000
+    				producer = SLD
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ECW_support_dunwiddie
+			}
+		} 
+	}
+
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+
+	focus = { 
+		id = SLD_we_wanted_democracy
+		icon = GFX_goal_support_democracy
+		x = 16
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_great_elections
+		}
+		available = {
+			has_government = democratic
+		}
+		bypass = {
+			has_government = democratic
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SLD_liberalisation_of_economy
+		icon = GFX_goal_generic_production
+		x = 14
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_we_wanted_democracy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			770 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			695 = {
+				if = {
+					limit = {
+						has_state_category = rural
+					}
+					set_state_category = city
+				}
+				if = {
+					limit = {
+						has_state_category = metropolis
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						has_state_category = city
+						has_state_category = town
+					}
+					NOT = {
+						state = 770
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_expansion_of_railways
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 14
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_liberalisation_of_economy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_expansion_of_mines
+		icon = GFX_goal_generic_construct_civilian
+		x = 14
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_expansion_of_railways
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			777 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			768 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_every_man_a_weapon
+		icon = GFX_focus_focus_fra_maquis
+		x = 14
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_expansion_of_mines
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			689 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			780 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			695 = {
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				instant_build = yes
+    				province = 9384
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_restoration_of_democratic_order
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 16
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_we_wanted_democracy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+			custom_effect_tooltip = new_generals_and_ideas_will_become_available
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Ferdynand Kiepski"
+					portrait_path = "gfx/leaders/SLD/ferdek.dds"
+					skill = 3
+   					attack_skill = 4
+    				defense_skill = 4
+    				planning_skill = 4
+    				logistics_skill = 2
+				}
+				create_corps_commander = {
+					name = "Halina Kiepska"
+					portrait_path = "gfx/leaders/SLD/halina.dds"
+					skill = 3
+   					attack_skill = 4
+    				defense_skill = 4
+    				planning_skill = 3
+    				logistics_skill = 4
+    				female = yes
+				}
+				create_corps_commander = {
+					name = "Waldemar Kiepski"
+					portrait_path = "gfx/leaders/SLD/waldek.dds"
+					skill = 2
+   					attack_skill = 1
+    				defense_skill = 1
+    				planning_skill = 1
+    				logistics_skill = 3
+				}
+				create_corps_commander = {
+					name = "Arnold Boczek"
+					portrait_path = "gfx/leaders/SLD/boczek.dds"
+					skill = 1
+   					attack_skill = 1
+    				defense_skill = 1
+    				planning_skill = 1
+    				logistics_skill = 4
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_power_to_the_people
+		icon = GFX_goal_generic_improve_relations
+		x = 16
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_restoration_of_democratic_order
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SLD_new_breweries
+		icon = GFX_goal_generic_consumer_goods
+		x = 16
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_power_to_the_people
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_stability = 0.05
+			732 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_extend_social_benefits
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 16
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_new_breweries
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = -50
+			add_ideas = {
+				SLD_expanded_social_benefits
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_quick_response_air_force
+		icon = GFX_goal_generic_air_fighter
+		x = 18
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_we_wanted_democracy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			air_experience = 10
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 776
+						state = 786
+						state = 774
+						state = 748
+						state = 719
+						state = 689
+						state = 770
+					}
+				}
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_kiepski_research_center
+		icon = GFX_focus_research
+		x = 18
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_quick_response_air_force
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = SLD_spalding_fortress
+		icon = GFX_goal_generic_fortify_city
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_kiepski_research_center
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			770 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 9885
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 1847
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 3470
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 4181
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 5361
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 4
+    				instant_build = yes
+    				province = 9849
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_a_true_kurakao_drink
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_spalding_fortress
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			695 = {
+				if = {
+					limit = {
+						has_state_category = rural
+					}
+					set_state_category = metropolis
+				}
+				if = {
+					limit = {
+						has_state_category = city
+					}
+					set_state_category = metropolis
+				}
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_ally_with_japanifornia
+		icon = GFX_goal_generic_major_alliance
+		x = 14
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_every_man_a_weapon
+		}
+		prerequisite = {
+			focus = SLD_extend_social_benefits
+		}
+		prerequisite = {
+			focus = SLD_a_true_kurakao_drink
+		}
+		available = {
+			JPN = {
+				has_government = democratic
+			}
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = TSA
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			JPN = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_spalding_bay_treaty_organization
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 16
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_every_man_a_weapon
+		}
+		prerequisite = {
+			focus = SLD_extend_social_benefits
+		}
+		prerequisite = {
+			focus = SLD_a_true_kurakao_drink
+		}
+		available = {
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = TSA
+					is_guaranteed_by = JPN
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_faction = sbto
+		} 
+	}
+
+	focus = { 
+		id = SLD_ally_with_danville
+		icon = GFX_goal_generic_major_alliance
+		x = 18
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_every_man_a_weapon
+		}
+		prerequisite = {
+			focus = SLD_extend_social_benefits
+		}
+		prerequisite = {
+			focus = SLD_a_true_kurakao_drink
+		}
+		available = {
+			TSA = {
+				has_government = democratic
+			}
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = JPN
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			TSA = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+	###############################################################################################
+
+	focus = { 
+		id = SLD_tracz_regime
+		icon = GFX_goal_support_fascism
+		x = 22
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_great_elections
+		}
+		available = {
+			has_government = fascism
+		}
+		bypass = {
+			has_government = fascism
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SLD_change_of_the_economical_course
+		icon = GFX_focus_generic_tank_production
+		x = 20
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tracz_regime
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			770 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = arms_factory
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					has_state_category = city
+					NOT = {
+						state = 770
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_equalize_the_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 20
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_change_of_the_economical_course
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_kurakao_industrial_complex
+		icon = GFX_goal_generic_construct_civilian
+		x = 20
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_equalize_the_infrastructure
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			695 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = arms_factory
+    				level = 3
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 3
+    				instant_build = yes
+    				province = 5251
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_give_peasants_what_they_need
+		icon = GFX_goal_generic_consumer_goods
+		x = 20
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_kurakao_industrial_complex
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			732 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			757 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_new_order_in_the_army
+		icon = GFX_goal_generic_political_pressure
+		x = 22
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tracz_regime
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_popularity = {
+    			ideology = fascism
+    			popularity = 0.1
+			}
+			custom_effect_tooltip = new_generals_and_ideas_will_become_available
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Janusz Tracz"
+					portrait_path = "gfx/leaders/SLD/tracz.dds"
+					skill = 4
+   					attack_skill = 4
+    				defense_skill = 4
+    				planning_skill = 4
+    				logistics_skill = 4
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_the_power_of_will
+		icon = GFX_focus_secret_rearmament
+		x = 22
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_new_order_in_the_army
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = SLD_ojcowizna
+		icon = GFX_goal_generic_propaganda
+		x = 22
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_the_power_of_will
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = SLD_forceful_draft
+		icon = GFX_focus_generic_manpower
+		x = 22
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_ojcowizna
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 10
+			add_manpower = 75000
+		} 
+	}
+
+	focus = { 
+		id = SLD_tracz_air_force
+		icon = GFX_goal_generic_air_fighter
+		x = 24
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tracz_regime
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			air_experience = 10
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 776
+						state = 786
+						state = 770
+					}
+				}
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			add_ideas = {
+				SLD_tracz_air_force
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_research_center_ojcowizna
+		icon = GFX_focus_research
+		x = 24
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tracz_air_force
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = SLD_fortifying_borders_with_monarchies
+		icon = GFX_goal_generic_construct_military
+		x = 24
+		y = 4
+		cost = 14.3
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_research_center_ojcowizna
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			780 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 10074
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5436
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 9971
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 1062
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 403
+				}
+			}
+			748 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 9895
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 9899
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5620
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5686
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 9764
+				}
+			}
+			786 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5526
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 4097
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 5177
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 10046
+				}
+			}
+			777 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 10027
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 1541
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 2
+    				instant_build = yes
+    				province = 10009
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_palazzo_della_tracz
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 24
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_fortifying_borders_with_monarchies
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			695 = {
+				if = {
+					limit = {
+						has_state_category = rural
+					}
+					set_state_category = metropolis
+				}
+				if = {
+					limit = {
+						has_state_category = city
+					}
+					set_state_category = metropolis
+				}
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_side_with_von_karma
+		icon = GFX_goal_generic_major_alliance
+		x = 20
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_give_peasants_what_they_need
+		}
+		prerequisite = {
+			focus = SLD_forceful_draft
+		}
+		prerequisite = {
+			focus = SLD_palazzo_della_tracz
+		}
+		available = {
+			JPN = {
+				has_government = fascism
+			}
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = TSA
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			JPN = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_tracz_paves_his_own_path
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_give_peasants_what_they_need
+		}
+		prerequisite = {
+			focus = SLD_forceful_draft
+		}
+		prerequisite = {
+			focus = SLD_palazzo_della_tracz
+		}
+		available = {
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = TSA
+					is_guaranteed_by = JPN
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_faction = kurakao_treaty
+		} 
+	}
+
+	focus = { 
+		id = SLD_side_with_doofenshmirtz
+		icon = GFX_goal_generic_major_alliance
+		x = 24
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_give_peasants_what_they_need
+		}
+		prerequisite = {
+			focus = SLD_forceful_draft
+		}
+		prerequisite = {
+			focus = SLD_palazzo_della_tracz
+		}
+		available = {
+			TSA = {
+				has_government = fascism
+			}
+			NOT = {
+				OR = {
+					is_in_faction = yes
+					is_guaranteed_by = JPN
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			TSA = {
+				country_event = {
+					id = spalding.14
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_help_cedric
+		icon = GFX_focus_enchancia
+		x = 26
+		y = 6
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+			has_government = fascism
+		} 
+		bypass = {
+			OR = {
+				EN3 = {
+					exists = no
+				}
+				custom_trigger_tooltip = {
+					tooltip = MAI_ecw_didnt_broke
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+				}
+			}
+			has_government = fascism
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_manpower = -5000
+			EN3 = {
+				add_manpower = 5000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 5000
+    				producer = SLD
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ECW_support_cedric
+			}
+		} 
+	}
+
+#############################################################################################################################################
+#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+############################################################################################################################################# 
+
+	focus = { 
+		id = SLD_destroy_another_rebel_group
+		icon = GFX_goal_generic_major_war
+		x = 8
+		y = 7
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			NRL = {
+				exists = yes
+			}
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_flower_hill
+			focus = SLD_spalding_way_to_communism
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_ally_with_japanifornia
+			focus = SLD_spalding_bay_treaty_organization
+			focus = SLD_ally_with_danville
+			focus = SLD_side_with_von_karma
+			focus = SLD_tracz_paves_his_own_path
+			focus = SLD_side_with_doofenshmirtz
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = NRL
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_operation_major_ear
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 7
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			SAN = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_flower_hill
+			focus = SLD_spalding_way_to_communism
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_ally_with_japanifornia
+			focus = SLD_spalding_bay_treaty_organization
+			focus = SLD_ally_with_danville
+			focus = SLD_side_with_von_karma
+			focus = SLD_tracz_paves_his_own_path
+			focus = SLD_side_with_doofenshmirtz
+		}
+		mutually_exclusive = {
+			focus = SLD_peaceful_negotiations
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SAN
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_peaceful_negotiations
+		icon = GFX_goal_generic_improve_relations
+		x = 13
+		y = 7
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			has_government = democratic
+			SAN = {
+				has_government = democratic
+			}
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_flower_hill
+			focus = SLD_spalding_way_to_communism
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_ally_with_japanifornia
+			focus = SLD_spalding_bay_treaty_organization
+			focus = SLD_ally_with_danville
+			focus = SLD_side_with_von_karma
+			focus = SLD_tracz_paves_his_own_path
+			focus = SLD_side_with_doofenshmirtz
+		}
+		mutually_exclusive = {
+			focus = SLD_operation_major_ear
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			#event
+		} 
+	}
+
+	focus = { 
+		id = SLD_intervention_prospects
+		icon = GFX_goal_generic_military_sphere
+		x = 12
+		y = 8
+		cost = 2
+		available_if_capitulated = no
+		available = { 
+			OR = {
+				has_government = democratic
+				has_government = monarchism
+			}
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_ally_with_japanifornia
+			focus = SLD_spalding_bay_treaty_organization
+			focus = SLD_ally_with_danville
+		}
+		mutually_exclusive = {
+			focus = SLD_westward_expansion
+			focus = SLD_eastward_expansion
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_ideas = {
+				SLD_prospects_of_intervention
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_protect_macius
+		icon = GFX_goal_generic_improve_relations
+		x = 10
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_intervention_prospects
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SLD_not_chose_to_intervene_in_central_kingdom
+				NOT = {
+					has_country_flag = chose_to_intervene
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SLD_clean_the_chaos_in_central_kingdom
+			focus = SLD_abstain_from_the_partitions
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SLD_wont_take_part_in_partitions
+			give_guarantee = MAI
+			hidden_effect = {
+				set_country_flag = wont_take_part_in_partitions
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_abstain_from_the_partitions
+		icon = GFX_goal_generic_neutrality_focus
+		x = 12
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_intervention_prospects
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SLD_not_chose_to_intervene_in_central_kingdom
+				NOT = {
+					has_country_flag = chose_to_not_intervene
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SLD_clean_the_chaos_in_central_kingdom
+			focus = SLD_protect_macius
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SLD_wont_take_part_in_partitions_at_all
+			hidden_effect = {
+				set_country_flag = wont_take_part_in_partitions
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_clean_the_chaos_in_central_kingdom
+		icon = GFX_goal_generic_forceful_treaty
+		x = 14
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SLD_chose_to_intervene_in_central_kingdom
+				NOT = {
+					has_country_flag = chose_to_not_intervene
+				}
+			}
+		}
+		prerequisite = {
+			focus = SLD_intervention_prospects
+		}
+		mutually_exclusive = {
+			focus = SLD_protect_macius
+			focus = SLD_abstain_from_the_partitions
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			custom_effect_tooltip = SLD_will_take_part_in_partitions
+			hidden_effect = {
+				set_country_flag = will_take_part_in_partitions
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_tackle_hartmut_empire
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 10
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_clean_the_chaos_in_central_kingdom
+			focus = SLD_protect_macius
+			focus = SLD_abstain_from_the_partitions
+		}
+		available = {
+			FRI = {
+				has_government = fascism
+			}
+			NOT = {
+				is_in_faction_with = FRI
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FRI
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_tackle_doofania
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 12
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_clean_the_chaos_in_central_kingdom
+			focus = SLD_protect_macius
+			focus = SLD_abstain_from_the_partitions
+		}
+		available = {
+			TSA = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TSA
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_tackle_japanifornia
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 14
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_clean_the_chaos_in_central_kingdom
+			focus = SLD_protect_macius
+			focus = SLD_abstain_from_the_partitions
+		}
+		available = {
+			JPN = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JPN
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_alien_threat
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 10
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tackle_hartmut_empire
+		}
+		prerequisite = {
+			focus = SLD_tackle_doofania
+		}
+		available = {
+			SKO = {
+				has_war = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SKO
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_stop_farquaad
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 12
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tackle_hartmut_empire
+		}
+		prerequisite = {
+			focus = SLD_tackle_doofania
+		}
+		available = {
+			DUL = {
+				has_war = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = DUL
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_the_case_of_flower_hill
+		icon = GFX_goal_anti_comintern_pact
+		x = 14
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_tackle_japanifornia
+		}
+		prerequisite = {
+			focus = SLD_tackle_doofania
+		}
+		available = {
+			FLO = {
+				has_war = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 0
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FLO
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_westward_expansion
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 5
+		y = 8
+		cost = 2
+		available_if_capitulated = no
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+				has_government = monarchism
+			}
+			owns_state = 734
+			owns_state = 774
+			owns_state = 786
+		}
+		mutually_exclusive = {
+			focus = SLD_intervention_prospects
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_flower_hill
+			focus = SLD_spalding_way_to_communism
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_side_with_von_karma
+			focus = SLD_tracz_paves_his_own_path
+			focus = SLD_side_with_doofenshmirtz
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_state_claim = 784
+			add_state_claim = 804
+			add_state_claim = 785
+			add_state_claim = 759
+			add_state_claim = 741
+			add_state_claim = 710
+			add_state_claim = 704
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_down_a_je_to
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_westward_expansion
+		}
+		available = {
+			owns_state = 734
+			owns_state = 774
+			owns_state = 786
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = PAT
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_down_smurfs
+		icon = GFX_goal_generic_major_war
+		x = 5
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_westward_expansion
+		}
+		available = {
+			owns_state = 734
+			owns_state = 774
+			owns_state = 786
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = SMU
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_back_our_lands
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_westward_expansion
+		}
+		bypass = {
+			has_war_with = WEK
+		}
+		available = {
+			owns_state = 734
+			owns_state = 774
+			owns_state = 786
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = WEK
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_aim_on_lechists
+		icon = GFX_goal_generic_major_war
+		x = 4
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_take_down_a_je_to
+		}
+		prerequisite = {
+			focus = SLD_take_down_smurfs
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = LEC
+			}
+		}
+		bypass = {
+			has_war_with = LEC
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = LEC
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_aim_on_japanifornia
+		icon = GFX_goal_generic_major_war
+		x = 6
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_take_down_a_je_to
+		}
+		prerequisite = {
+			focus = SLD_take_back_our_lands
+		}
+		bypass = {
+			has_war_with = JPN
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = JPN
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = JPN
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_eastward_expansion
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 19
+		y = 8
+		cost = 2
+		available_if_capitulated = no
+		available = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+				has_government = monarchism
+			}
+		}
+		mutually_exclusive = {
+			focus = SLD_intervention_prospects
+		}
+		prerequisite = {
+			focus = SLD_help_comrades_in_enchancia
+			focus = SLD_help_dunwiddie_gov
+			focus = SLD_help_cedric
+		}
+		prerequisite = {
+			focus = SLD_ally_with_flower_hill
+			focus = SLD_spalding_way_to_communism
+			focus = SLD_ally_with_friedewalt
+			focus = SLD_the_papal_faction
+			focus = SLD_ally_with_lechists
+			focus = SLD_side_with_von_karma
+			focus = SLD_tracz_paves_his_own_path
+			focus = SLD_side_with_doofenshmirtz
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_state_claim = 790
+			add_state_claim = 763
+			add_state_claim = 711
+			add_state_claim = 758
+			add_state_claim = 683
+			add_state_claim = 681
+			add_state_claim = 672
+		} 
+	}
+
+	focus = { 
+		id = SLD_attack_vineshroom_lands
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_eastward_expansion
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = VIS
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_attack_duckburg
+		icon = GFX_goal_generic_major_war
+		x = 19
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_eastward_expansion
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = DCB
+			}
+		}
+		bypass = {
+			has_war_with = DCB
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = DCB
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_take_down_friedewalt
+		icon = GFX_goal_generic_major_war
+		x = 21
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_eastward_expansion
+		}
+		bypass = {
+			has_war_with = FRI
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = FRI
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = FRI
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_attack_king_macius
+		icon = GFX_goal_generic_major_war
+		x = 18
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_attack_vineshroom_lands
+		}
+		prerequisite = {
+			focus = SLD_attack_duckburg
+		}
+		bypass = {
+			has_war_with = MAI
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MAI
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_attack_tri_state_area
+		icon = GFX_goal_generic_major_war
+		x = 20
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_take_down_friedewalt
+		}
+		prerequisite = {
+			focus = SLD_attack_duckburg
+		}
+		bypass = {
+			has_war_with = TSA
+		}
+		available = {
+			NOT = {
+				is_in_faction_with = TSA
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = TSA
+			}
+		} 
+	}
+
+	focus = { 
+		id = SLD_final_showdown
+		icon = GFX_goal_generic_major_war
+		x = 12
+		y = 12
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SLD_attack_king_macius
+			focus = SLD_attack_tri_state_area
+			focus = SLD_take_aim_on_lechists
+			focus = SLD_take_aim_on_japanifornia
+		}
+		available = {
+			is_neighbor_of = UND
+		}
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = no
+				add = 5
+			}
+		} 
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = UND
+			}
+		} 
+	}
+
+	####################################################################################################
+	#
+	#	  
+	#	     
+	#	 
+	#	  
+	#	 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = SLD_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 32
+		y = 0
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			NOT = {
+				has_government = neutrality
+			}
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SLD_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = SLD_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SLD_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = SLD_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = SLD_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = SLD_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SLD_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = SLD_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SLD_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = SLD_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SLD_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = SLD_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SLD_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = SLD_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SLD_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = SLD_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = SLD_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = SLD_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SLD_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = SLD_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = SLD_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = SLD_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SLD_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = SLD_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SLD_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = SLD_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SLD_weapon_development_3 }
+		prerequisite = { focus = SLD_military_academy }
+		prerequisite = { focus = SLD_armor_effort }
+		prerequisite = { focus = SLD_new_officer_corps }
+		prerequisite = { focus = SLD_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = SLD_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = SLD_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 32
+		y = 5
+		cost = 7.25
+
+		available = {
+			NOT = {
+				has_government = neutrality
+			}
+		}
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = SLD_naval_effort }
+		mutually_exclusive = { focus = SLD_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = SLD_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = SLD_naval_effort }
+		mutually_exclusive = { focus = SLD_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = SLD_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = SLD_flexible_navy focus = SLD_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = SLD_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = SLD_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = SLD_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = SLD_flexible_navy focus = SLD_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = SLD_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = SLD_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = SLD_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = SLD_large_navy focus = SLD_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = SLD_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = SLD_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = SLD_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = SLD_large_navy focus = SLD_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = SLD_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = SLD_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = SLD_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = SLD_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 32
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+			NOT = {
+				has_government = neutrality
+			}
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SLD_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = SLD_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SLD_fighter_focus }
+		prerequisite = { focus = SLD_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = SLD_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = SLD_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = SLD_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = SLD_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = SLD_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SLD_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = SLD_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = SLD_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = SLD_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SLD_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SLD_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = SLD_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SLD_heavy_fighter_focus }
+		prerequisite = { focus = SLD_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = SLD_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = SLD_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = SLD_heavy_fighter_focus }
+		prerequisite = { focus = SLD_CAS_effort }
+		prerequisite = { focus = SLD_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = SLD_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SLD_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = SLD_aviation_effort_2 }
+		prerequisite = { focus = SLD_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = SLD_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

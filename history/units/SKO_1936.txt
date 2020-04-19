@@ -1,0 +1,161 @@
+﻿division_template = {
+	name = "Dywizja Piechoty Kosmitów"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Dywizja Pancerna Kosmitów"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+		light_armor = { x = 0 y = 2 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+		light_armor = { x = 1 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Oddział Motokomando"
+	regiments = {
+		motorized = { x = 0 y = 0 }
+	    motorized = { x = 0 y = 1 }
+		motorized = { x = 0 y = 2 }
+		motorized = { x = 1 y = 0 }
+		motorized = { x = 1 y = 1 }
+		motorized = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Dywizja Piechoty Kosmitów"
+		location = 1533
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "2. Dywizja Piechoty Kosmitów"
+		location = 1533
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "3. Dywizja Piechoty Kosmitów"
+		location = 1533
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "4. Dywizja Piechoty Kosmitów"
+		location = 1533
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "5. Dywizja Piechoty Kosmitów"
+		location = 1650
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "6. Dywizja Piechoty Kosmitów"
+		location = 1650
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "7. Dywizja Piechoty Kosmitów"
+		location = 1650
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "8. Dywizja Piechoty Kosmitów"
+		location = 1650
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "9. Dywizja Piechoty Kosmitów"
+		location = 2125
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "10. Dywizja Piechoty Kosmitów"
+		location = 2125
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "11. Dywizja Piechoty Kosmitów"
+		location = 2125
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "12. Dywizja Piechoty Kosmitów"
+		location = 2125
+		division_template = "Dywizja Piechoty Kosmitów"
+		
+	}
+	division = {
+		name = "1. Dywizja Pancerna Kosmitów"
+		location = 1533
+		division_template = "Dywizja Pancerna Kosmitów"
+		
+	}
+	division = {
+		name = "2. Dywizja Pancerna Kosmitów"
+		location = 1533
+		division_template = "Dywizja Pancerna Kosmitów"
+		
+	}
+	division = {
+		name = "3. Dywizja Pancerna Kosmitów"
+		location = 1533
+		division_template = "Dywizja Pancerna Kosmitów"
+		
+	}
+	division = {
+		name = "4. Dywizja Pancerna Kosmitów"
+		location = 1533
+		division_template = "Dywizja Pancerna Kosmitów"
+		
+	}
+	division = {
+		name = "5. Dywizja Pancerna Kosmitów"
+		location = 2125
+		division_template = "Dywizja Pancerna Kosmitów"
+		
+	}
+	division = {
+		name = "1. Oddział Motokomando"
+		location = 1533
+		division_template = "Oddział Motokomando"
+		start_experience_factor = 0.5
+	}
+	division = {
+		name = "2. Oddział Motokomando"
+		location = 1533
+		division_template = "Oddział Motokomando"
+		start_experience_factor = 0.5
+	}
+}
+
+air_wings = {
+	936 = {
+		fighter_equipment_0 =  {
+			owner = SKO
+			amount = 100
+		}
+	}
+}

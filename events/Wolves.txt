@@ -1,0 +1,106 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = wolves
+
+country_event = {
+	id = wolves.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event wolves.1"}
+	title = wolves.1.t
+	desc = wolves.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WOL
+		has_global_flag = enchancian_civil_war
+		EN3 = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 4
+	}
+
+	option = {
+		name = wolves.1.a
+		EN3 = {
+			add_manpower = 15000
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment_0
+    			amount = 7500
+    			producer = WOL
+			}
+		}
+	}
+}
+
+country_event = { #Gongmen Empire wants to join us
+	id = wolves.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event wolves.2"}
+	title = wolves.2.t
+	desc = wolves.2.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Let them join
+		name = wolves.2.a
+		GON = {
+			country_event = {
+				id = wolves.3
+				days = 1
+			}
+		}
+	}
+
+	option = { #No way
+		name = wolves.2.a
+		GON = {
+			country_event = {
+				id = wolves.4
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #allowed to join AFHA
+	id = wolves.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event wolves.3"}
+	title = wolves.3.t
+	desc = wolves.3.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = wolves.3.a
+		WOL = {
+			add_to_faction = GON
+		}
+	}
+}
+
+country_event = { #not allowed to join AFHA
+	id = wolves.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event wolves.4"}
+	title = wolves.4.t
+	desc = wolves.4.d
+	picture = GFX_report_flower_hill
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #damn
+		name = wolves.4.a
+	}
+}

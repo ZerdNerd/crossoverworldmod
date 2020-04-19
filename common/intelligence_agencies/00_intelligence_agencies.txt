@@ -1,0 +1,262 @@
+# List of names and logos for intelligence agencies
+# available trigger will determine if the logo is in the list of available logos or not
+# names is a list of names. Can be a localization entry, or the name directly. A random name will be picked from them.
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_ger
+	names = { "Abwehr" }
+	
+	default = { tag = FRI }
+	available = { original_tag = FRI }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_grn
+	names = { "Grune Abwehr" }
+	
+	default = { tag = GRN }
+	available = { original_tag = GRN }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_pol
+	names = { "Krolewskie Biuro Wywiadowcze" }
+	
+	default = { tag = MAI }
+	available = { original_tag = MAI }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_pol
+	names = { "Sluzba Wywiadu Wojskowego" }
+	
+	default = { tag = SLD }
+	available = { original_tag = SLD }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_2
+	names = { "Dumbarton Intel" }
+	
+	default = { tag = WEK }
+	available = { original_tag = WEK }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_5
+	names = { "Desert Network" }
+	
+	default = { tag = DES }
+	available = { original_tag = DES }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_2
+	names = { "Glasstown Intelligence Bureau" }
+	
+	default = { tag = ICW }
+	available = { original_tag = ICW }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_9
+	names = { "Jeongchal Chongguk" }
+	
+	default = { tag = FLO }
+	available = { original_tag = FLO }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Enchancian Intelligence Agency" }
+	
+	default = { tag = ENC }
+	available = { original_tag = ENC }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Enchancian Intelligence Agency" }
+	
+	default = { tag = EN1 }
+	available = { original_tag = EN1 }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Enchancian Intelligence Agency" }
+	
+	default = { tag = EN2 }
+	available = { original_tag = EN2 }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Enchancian Intelligence Agency" }
+	
+	default = { tag = EN3 }
+	available = { original_tag = EN3 }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_9
+	names = { "Enchancian Intelligence Agency" }
+	
+	default = { tag = EN4 }
+	available = { original_tag = EN4 }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_6
+	names = { "Organization Without a Cool Acronym" }
+	
+	default = { tag = TSA }
+	available = { original_tag = TSA NOT = { has_government = fascism } }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_5
+	names = { "Doofania Intel Bureau" }
+	
+	default = { tag = TSA }
+	available = { original_tag = TSA has_government = fascism }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Gongmen Intelligence Agency" }
+	
+	default = { tag = GON }
+	available = { original_tag = GON }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_pol
+	names = { "Wydzial Wywiadowczy Imperium Lechitow" }
+	
+	default = { tag = LEC }
+	available = { original_tag = LEC }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_jap
+	names = { "G-2 Department" "Section 3" }
+	
+	default = { tag = JPN }
+	available = { original_tag = JPN }
+}
+
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_spa
+	names = { "AIM" }
+	
+	default = { tag = AVA }
+	available = { original_tag = AVA }
+}
+
+
+########################
+####	GENERICS    ####
+########################
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_1
+	names = { "Rooke" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_2
+	names = { "Tower" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_3
+	names = { "Snake" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_4
+	names = { "Stag" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_5
+	names = { "Golden Lion" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_6
+	names = { "Arrow" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_7
+	names = { "Lion Head" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_8
+	names = { "Golden Eagle" }
+	
+	available = { always = yes }
+	
+	default = { always = yes } 
+}
+intelligence_agency = {
+	
+	picture = GFX_intelligence_agency_logo_generic_9
+	names = { "Hammer and Sickle" }
+	
+	available = { 
+		has_government = communism
+	}
+	
+	default = { always = yes } 
+}

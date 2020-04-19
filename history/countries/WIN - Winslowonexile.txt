@@ -1,0 +1,119 @@
+﻿capital = 187
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+
+}
+
+add_ideas = {
+	middleage_tech
+}
+
+
+set_convoys = 0
+
+set_popularities = {
+	democratic = 0
+
+	fascism = 0
+		
+	communism = 0
+		
+	neutrality = 0
+		
+	monarchism = 100
+}
+
+set_politics = {
+	ruling_party = monarchism
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.85
+
+create_country_leader = {
+	name = "Miranda"
+	desc = "POLITICS_MIRANDA_DESC"
+	picture = "miranda.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Miranda"
+	desc = "POLITICS_MIRANDA_DESC"
+	picture = "miranda.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+	#
+	}
+}
+		
+create_country_leader = {
+	name = "Miranda"
+	desc = "POLITICS_MIRANDA_DESC"
+	picture = "miranda.dds"
+	expire = "1965.1.1"
+	ideology = conservatism
+	traits = {
+	#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Placeholder"
+	desc = "POLITICS_TBD_DESC"
+	picture = "Placeholder.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Placeholder"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_2.dds"
+	traits = { }
+	skill = 3
+    attack_skill = 4
+    defense_skill = 1
+    planning_skill = 2
+    logistics_skill = 3
+}
+
+create_corps_commander = {
+	name = "Placeholder"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_land_4.dds"
+	traits = { desert_fox }
+	skill = 3
+    attack_skill = 2
+    defense_skill = 2
+    planning_skill = 3
+    logistics_skill = 3
+}
+
+create_navy_leader = {
+	name = "Placeholder"
+	portrait_path = "gfx/leaders/South America/Portrait_South_America_Generic_navy_2.dds"
+	traits = { superior_tactician }
+	skill = 3
+}

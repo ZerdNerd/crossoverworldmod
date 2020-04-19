@@ -1,0 +1,65 @@
+﻿division_template = {
+	name = "Squirrels Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Squirrels Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Squirrels Division"
+		location = 8081
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "2. Squirrels Division"
+		location = 8081
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "3. Squirrels Division"
+		location = 4993
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "4. Squirrels Division"
+		location = 4993
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "5. Squirrels Division"
+		location = 4993
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "6. Squirrels Division"
+		location = 1964
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+	division = {
+		name = "7. Squirrels Division"
+		location = 1964
+		division_template = "Squirrels Division"
+		start_experience_factor = 0.1
+	}
+}
+

@@ -1,0 +1,47 @@
+﻿###########################
+# Enchancian Events
+###########################
+
+add_namespace = winslowonexile
+
+country_event = { #Winslow Family wants to be on exile here
+	id = winslowonexile.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event winslowonexile.1"}
+	title = winslowonexile.1.t
+	desc = winslowonexile.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree (Enchancian State)
+		name = winslowonexile.1.a
+		trigger = {
+			EN3 = {
+				exists = yes
+			}
+		}
+		EN3 = {
+			country_event = {
+				id = enchancianstate.4
+				days = 1
+			}
+		}
+	}
+
+	option = { #Agree (EPR)
+		name = winslowonexile.1.a
+		trigger = {
+			EN4 = {
+				exists = yes
+			}
+		}
+		EN4 = {
+			country_event = {
+				id = eprep.4
+				days = 1
+			}
+		}
+	}
+}

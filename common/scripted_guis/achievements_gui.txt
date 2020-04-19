@@ -1,0 +1,594 @@
+scripted_gui = { #yes, its from pax custom achievements shit
+
+	Custom_Achievements_Window = {
+		context_type = player_context
+		window_name = "Custom_Achievements_Window"
+
+		visible = {
+			has_country_flag  = Custom_Achievements_Window_Open
+		}
+
+		effects = {
+			Custom_Achievements_Window_Disabler_click = {
+			if = {
+				limit = {	
+					has_country_flag = Custom_Achievements_Window_Open
+				}
+				clr_country_flag  = Custom_Achievements_Window_Open
+				}
+			}
+		}
+
+
+		dynamic_lists = {
+			list = {
+				array = PB_achievement_array
+				entry_container = PB_achievement_entry
+			}
+		}
+
+ 		properties = {
+            achievement_icon = { image = "[get_achievement_image]" }
+        }
+
+ 		triggers = {
+            Achievement_Completed_visible = {
+				OR = {
+					AND = {
+						check_variable = { v = 1 }
+						ROOT = {
+							tag = GRN
+							is_ai = no
+							532 = {
+								is_owned_by = GRN
+							}
+							535 = {
+								is_owned_by = GRN
+							}
+							507 = {
+								is_owned_by = GRN
+							}
+							524 = {
+								is_owned_by = GRN
+							}
+							555 = {
+								is_owned_by = GRN
+							}
+							508 = {
+								is_owned_by = GRN
+							}
+							557 = {
+								is_owned_by = GRN
+							}
+							591 = {
+								is_owned_by = GRN
+							}
+							550 = {
+								is_owned_by = GRN
+							}
+							562 = {
+								is_owned_by = GRN
+							}
+							613 = {
+								is_owned_by = GRN
+							}
+							588 = {
+								is_owned_by = GRN
+							}
+							589 = {
+								is_owned_by = GRN
+							}
+							599 = {
+								is_owned_by = GRN
+							}
+							622 = {
+								is_owned_by = GRN
+							}
+							637 = {
+								is_owned_by = GRN
+							}
+							651 = {
+								is_owned_by = GRN
+							}
+							610 = {
+								is_owned_by = GRN
+							}
+							653 = {
+								is_owned_by = GRN
+							}
+						}
+					}
+					
+					AND = {
+						check_variable = { v = 2 }
+						ROOT = {
+							is_ai = no
+							NOT = {
+								tag = GRN
+							}
+							has_country_flag = GRN_dragon_frozen
+						}
+					}
+
+					AND = {
+						check_variable = { v = 3 }
+						ROOT = {
+							tag = DES
+							is_ai = no
+							518 = {
+								is_owned_by = DES
+							}
+							474 = {
+								is_owned_by = DES
+							}
+							467 = {
+								is_owned_by = DES
+							}
+							432 = {
+								is_owned_by = DES
+							}
+							439 = {
+								is_owned_by = DES
+							}
+							366 = {
+								is_owned_by = DES
+							}
+							359 = {
+								is_owned_by = DES
+							}
+							355 = {
+								is_owned_by = DES
+							}
+							370 = {
+								is_owned_by = DES
+							}
+							21 = {
+								is_owned_by = DES
+							}
+							674 = {
+								is_owned_by = DES
+							}
+							675 = {
+								is_owned_by = DES
+							}
+							705 = {
+								is_owned_by = DES
+							}
+							688 = {
+								is_owned_by = DES
+							}
+							726 = {
+								is_owned_by = DES
+							}
+							697 = {
+								is_owned_by = DES
+							}
+							752 = {
+								is_owned_by = DES
+							}
+							744 = {
+								is_owned_by = DES
+							}
+							if = {
+								limit = {
+									GRN = {
+										has_completed_focus = GRN_colonize_midlands
+									}
+								}
+								414 = {
+									is_owned_by = DES
+								}
+								434 = {
+									is_owned_by = DES
+								}
+								389 = {
+									is_owned_by = DES
+								}
+								373 = {
+									is_owned_by = DES
+								}
+								425 = {
+									is_owned_by = DES
+								}
+								342 = {
+									is_owned_by = DES
+								}
+								318 = {
+									is_owned_by = DES
+								}
+								322 = {
+									is_owned_by = DES
+								}
+								293 = {
+									is_owned_by = DES
+								}
+								262 = {
+									is_owned_by = DES
+								}
+							}
+							any_owned_state = {
+								area = 2
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 4 }
+						ROOT = {
+							tag = SIO
+							is_ai = no
+							DES = {
+								has_completed_focus = DES_take_care_of_sioux_tribe
+							}
+							653 = {
+								is_owned_by = SIO
+							}
+							643 = {
+								is_owned_by = SIO
+							}
+							675 = {
+								is_owned_by = SIO
+							}
+							688 = {
+								is_owned_by = SIO
+							}
+							726 = {
+								is_owned_by = SIO
+							}
+							697 = {
+								is_owned_by = SIO
+							}
+							752 = {
+								is_owned_by = SIO
+							}
+							744 = {
+								is_owned_by = SIO
+							}
+							705 = {
+								is_owned_by = SIO
+							}
+							674 = {
+								is_owned_by = SIO
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 5 }
+						ROOT = {
+							tag = TSA
+							has_government = fascism
+							is_ai = no
+							652 = {
+								is_owned_by = TSA
+							}
+							679 = {
+								is_owned_by = TSA
+							}
+							711 = {
+								is_owned_by = TSA
+							}
+							683 = {
+								is_owned_by = TSA
+							}
+							670 = {
+								is_owned_by = TSA
+							}
+							654 = {
+								is_owned_by = TSA
+							}
+							636 = {
+								is_owned_by = TSA
+							}
+							626 = {
+								is_owned_by = TSA
+							}
+							605 = {
+								is_owned_by = TSA
+							}
+							586 = {
+								is_owned_by = TSA
+							}
+							565 = {
+								is_owned_by = TSA
+							}
+							576 = {
+								is_owned_by = TSA
+							}
+							566 = {
+								is_owned_by = TSA
+							}
+							612 = {
+								is_owned_by = TSA
+							}
+							656 = {
+								is_owned_by = TSA
+							}
+							681 = {
+								is_owned_by = TSA
+							}
+							719 = {
+								is_owned_by = TSA
+							}
+							748 = {
+								is_owned_by = TSA
+							}
+							763 = {
+								is_owned_by = TSA
+							}
+							758 = {
+								is_owned_by = TSA
+							}
+							735 = {
+								is_owned_by = TSA
+							}
+							753 = {
+								is_owned_by = TSA
+							}
+							701 = {
+								is_owned_by = TSA
+							}
+							743 = {
+								is_owned_by = TSA
+							}
+							765 = {
+								is_owned_by = TSA
+							}
+							747 = {
+								is_owned_by = TSA
+							}
+							787 = {
+								is_owned_by = TSA
+							}
+							647 = {
+								is_owned_by = TSA
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 6 }
+						ROOT = {
+							tag = MAI
+							is_ai = no
+							FRI = {
+								OR = {
+									exists = no
+									has_completed_focus = FRI_prepare_to_destroy_macius
+								}
+							}
+							any_owned_state = {
+								is_core_of = FRI
+								NOT = {
+									state = 872
+								}
+							}
+							if = {
+								limit = {
+									FRI = {
+										has_country_flag = wek_accepted
+									}
+								}
+								any_owned_state = {
+									is_core_of = WEK
+									NOT = {
+										state = 877
+										state = 897
+									}
+								}
+							}
+							if = {
+								limit = {
+									FRI = {
+										has_country_flag = sld_accepted
+									}
+								}
+								any_owned_state = {
+									is_core_of = SLD
+									NOT = {
+										state = 773
+										state = 736
+									}
+								}
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 7 }
+						ROOT = {
+							tag = SLD
+							is_ai = no
+							has_government = monarchism
+							FRI = {
+								all_state = {
+									is_core_of = FRI
+    								is_owned_by = SLD
+								}
+							}
+							MAI = {
+								all_state = {
+									is_core_of = MAI
+    								is_owned_by = SLD
+								}
+							}
+							WEK = {
+								all_state = {
+									is_core_of = WEK
+    								is_owned_by = SLD
+								}
+							}
+							PAT = {
+								all_state = {
+									is_core_of = PAT
+    								is_owned_by = SLD
+								}
+							}
+							SMU = {
+								all_state = {
+									is_core_of = SMU
+    								is_owned_by = SLD
+								}
+							}
+							DCB = {
+								all_state = {
+									is_core_of = DCB
+    								is_owned_by = SLD
+								}
+							}
+							VIS = {
+								all_state = {
+									is_core_of = VIS
+    								is_owned_by = SLD
+								}
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 8 }
+						ROOT = {
+							tag = SAN
+							is_ai = no
+							SLD = {
+								all_state = {
+									is_core_of = SLD
+    								is_owned_by = SLD
+								}
+							}
+							JPN = {
+								is_puppet_of = SAN
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 9 }
+						ROOT = {
+							is_ai = no
+							UND = {
+								all_state = {
+									is_core_of = UND
+    								is_owned_by = ROOT
+								}
+							}
+							NOT = {
+								has_country_flag = nuked_underground
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 10 }
+						ROOT = {
+							tag = ENC
+							is_ai = no
+							has_global_flag = enchancian_civil_war_over
+							KHA = {
+								has_government = monarchism
+							}
+							WLC = {
+								exists = no
+							}
+							WEI = {
+								exists = yes
+							}
+							RUD = {
+								has_government = monarchism
+							}
+							TRU = {
+								has_government = monarchism
+							}
+							ZUM = {
+								has_government = monarchism
+							}
+							COR = {
+								has_government = monarchism
+							}
+							ISL = {
+								has_government = monarchism
+							}
+							MAR = {
+								has_government = monarchism
+							}
+							AVA = {
+								has_government = monarchism
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 11 }
+						ROOT = {
+							tag = SWA
+							is_ai = no
+							is_in_faction_with = FFA
+							DUL = {
+								all_state = {
+									is_core_of = DUL
+    								is_owned_by = SWA
+								}
+							}
+							AND = {
+								436 = {
+									is_owned_by = SWA
+								}
+								390 = {
+									is_owned_by = SWA
+								}
+								392 = {
+									is_owned_by = SWA
+								}
+								456 = {
+									is_owned_by = SWA
+								}
+								483 = {
+									is_owned_by = SWA
+								}
+								date > 1943.12.31
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 12 }
+						ROOT = {
+							is_ai = no
+							AND = {
+								has_idea = GUP_saunders
+								has_idea = GUP_stgloriana
+								has_idea = GUP_pravda
+								has_idea = GUP_kuromorimine
+								has_idea = GUP_jatkosota
+								has_idea = GUP_ooarai
+							}
+						}
+					}
+				}
+			}
+        }
+	}
+
+	Custom_Achievements_Topbar_Icon = {
+		context_type = player_context
+		window_name = "Custom_Achievements_Topbar_Window"
+		parent_window_token = top_bar
+
+		visible = {
+			always = yes
+		}
+
+		effects = {
+			Custom_Achievements_Window_Enabler_click = {
+			if = {
+				limit = {	
+					NOT = {
+						has_country_flag = Custom_Achievements_Window_Open
+					}
+				}
+				set_country_flag  = Custom_Achievements_Window_Open
+				}
+			}
+		}
+	}
+}

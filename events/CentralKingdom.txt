@@ -1,0 +1,1371 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = centralkingdom
+
+country_event = {
+	id = centralkingdom.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.1"}
+	title = centralkingdom.1.t
+	desc = centralkingdom.1.d
+	picture = GFX_report_death_of_stephen
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAI
+		date > 1936.2.1
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = centralkingdom.1.a
+		custom_effect_tooltip = MAC_stephen_death_tooltip
+		hidden_effect = { 
+		kill_country_leader = yes
+
+		set_global_flag = stephen_is_dead
+
+		create_country_leader = {
+			name = "Macius I"
+			desc = "POLITICS_MACIUS_I_DESC"
+			picture = "macius.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "Macius I"
+			desc = "POLITICS_MACIUS_I_DESC"
+			picture = "macius.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+
+		create_country_leader = {
+			name = "General"
+			desc = "POLITICS_GENERAL_DESC"
+			picture = "general.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+			news_event = { 
+				id = worldnews.1 days = 4
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.6"}
+	title = centralkingdom.6.t
+	desc = centralkingdom.6.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.6.a
+		custom_effect_tooltip = MAI_helps_enc
+		trigger = {
+			ENC = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 15
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+					AVA = {
+						has_country_flag = ECW_support_dunwiddie
+					}
+				}
+				add = -15
+			}
+		}
+		hidden_effect = {
+			ENC = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				producer = MAI
+				}
+			}
+			set_country_flag = ECW_support_dunwiddie
+		}
+	}
+
+	option = {
+		name = centralkingdom.6.b
+		custom_effect_tooltip = MAI_helps_en1
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 70
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_james
+					}
+					AVA = {
+						has_country_flag = ECW_support_james
+					}
+				}
+				add = -70
+			}
+		}
+		hidden_effect = {
+			EN1 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				producer = MAI
+				}
+			}
+			set_country_flag = ECW_support_james
+		}
+	}
+
+	option = {
+		name = centralkingdom.6.c
+		custom_effect_tooltip = MAI_helps_en2
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		ai_chance = {
+			base = 15
+			modifier = {
+				OR = {
+					FRI = {
+						has_country_flag = ECW_support_amber
+					}
+					MAI = {
+						has_country_flag = ECW_support_amber
+					}
+					AVA = {
+						has_country_flag = ECW_support_amber
+					}
+				}
+				add = -15
+			}
+		}
+		hidden_effect = {
+			EN2 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 7500
+    				producer = MAI
+				}
+			}
+			set_country_flag = ECW_support_amber
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.7"}
+	title = centralkingdom.7.t
+	desc = centralkingdom.7.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.7.a
+		custom_effect_tooltip = MAI_helps_enc_jump
+		hidden_effect = {
+			ENC = {
+				country_event = {
+					id = enchancia.47
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = centralkingdom.8.t
+	desc = centralkingdom.8.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.8.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.9"}
+	title = centralkingdom.9.t
+	desc = centralkingdom.9.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.9.a
+		custom_effect_tooltip = MAI_faction_with_enc
+		hidden_effect = {
+			ENC = {
+				dismantle_faction = yes
+			}
+			MAI = {
+				create_faction = great_kingdom_alliance
+				add_to_faction = ENC
+				add_to_faction = WEI
+				add_to_faction = KHA
+				set_country_flag = greatest_alliance_formed
+			}
+			if = {
+				limit = {
+					MAI = {
+						has_country_flag = alliance_with_greenland
+					}
+				}
+				MAI = {
+					add_to_faction = GRN
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.10"}
+	title = centralkingdom.10.t
+	desc = centralkingdom.10.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.10.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.11"}
+	title = centralkingdom.11.t
+	desc = centralkingdom.11.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.11.a
+		trigger = {
+			ENC = {
+				exists = yes
+			}
+		}
+		ENC = {
+			add_ideas = {
+				MAC_helps_rebuild
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.11.a
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		EN1 = {
+			add_ideas = {
+				MAC_helps_rebuild
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.11.a
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		EN2 = {
+			add_ideas = {
+				MAC_helps_rebuild
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.12"}
+	title = centralkingdom.12.t
+	desc = centralkingdom.12.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.12.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.13"}
+	title = centralkingdom.13.t
+	desc = centralkingdom.13.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.13.a
+		trigger = {
+			ENC = {
+				exists = yes
+			}
+		}
+		custom_effect_tooltip = MAI_faction_with_enc_ecw
+		hidden_effect = {
+			MAI = {
+				create_faction = great_kingdom_alliance
+				add_to_faction = ENC
+				set_country_flag = greatest_alliance_formed
+			}
+			if = {
+				limit = {
+					MAI = {
+						has_country_flag = alliance_with_greenland
+					}
+				}
+				MAI = {
+					add_to_faction = GRN
+				}
+			}
+			if = {
+				limit = {
+					TUG = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = TUG
+				}
+			}
+			if = {
+				limit = {
+					SIO = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = SIO
+				}
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.13.a
+		trigger = {
+			EN1 = {
+				exists = yes
+			}
+		}
+		custom_effect_tooltip = MAI_faction_with_enc_ecw
+		hidden_effect = {
+			MAI = {
+				create_faction = great_kingdom_alliance
+				add_to_faction = EN1
+				set_country_flag = greatest_alliance_formed
+			}
+			if = {
+				limit = {
+					MAI = {
+						has_country_flag = alliance_with_greenland
+					}
+				}
+				MAI = {
+					add_to_faction = GRN
+				}
+			}
+			if = {
+				limit = {
+					TUG = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = TUG
+				}
+			}
+			if = {
+				limit = {
+					SIO = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = SIO
+				}
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.13.a
+		trigger = {
+			EN2 = {
+				exists = yes
+			}
+		}
+		custom_effect_tooltip = MAI_faction_with_enc_ecw
+		hidden_effect = {
+			MAI = {
+				create_faction = great_kingdom_alliance
+				add_to_faction = EN2
+				set_country_flag = greatest_alliance_formed
+			}
+			if = {
+				limit = {
+					MAI = {
+						has_country_flag = alliance_with_greenland
+					}
+				}
+				MAI = {
+					add_to_faction = GRN
+				}
+			}
+			if = {
+				limit = {
+					TUG = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = TUG
+				}
+			}
+			if = {
+				limit = {
+					SIO = {
+						OR = {
+							is_in_faction_with = MAI
+							is_in_faction_with = GRN
+						}
+					}
+				}
+				MAI = {
+					add_to_faction = SIO
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.14"}
+	title = centralkingdom.14.t
+	desc = centralkingdom.14.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.14.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.15"}
+	title = centralkingdom.15.t
+	desc = centralkingdom.15.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.15.a
+		hidden_effect = {
+			country_event = {
+				id = centralkingdom.16
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.16"}
+	title = centralkingdom.16.t
+	desc = centralkingdom.16.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.16.a
+		hidden_effect = {
+			set_country_flag = visited_grn
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.17"}
+	title = centralkingdom.17.t
+	desc = centralkingdom.17.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.17.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.18"}
+	title = centralkingdom.18.t
+	desc = centralkingdom.18.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.18.a
+	}
+}
+
+country_event = {
+	id = centralkingdom.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.19"}
+	title = centralkingdom.19.t
+	desc = centralkingdom.19.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.1
+		}
+	}
+
+	option = {
+		name = centralkingdom.19.a
+		add_political_power = -60
+	}
+
+	option = {
+		name = centralkingdom.19.b
+	}
+}
+
+country_event = {
+	id = centralkingdom.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.20"}
+	title = centralkingdom.20.t
+	desc = centralkingdom.20.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.22
+		}
+	}
+
+	option = {
+		name = centralkingdom.20.a
+		add_political_power = -40
+		add_stability = -0.1
+	}
+}
+
+country_event = {
+	id = centralkingdom.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.21"}
+	title = centralkingdom.21.t
+	desc = centralkingdom.21.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.35
+		}
+	}
+
+	option = {
+		name = centralkingdom.21.a
+		add_political_power = -100
+		add_stability = -0.15
+	}
+}
+
+country_event = {
+	id = centralkingdom.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.22"}
+	title = centralkingdom.22.t
+	desc = centralkingdom.22.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.46
+		}
+	}
+
+	option = {
+		name = centralkingdom.22.a
+		add_political_power = -20
+	}
+}
+
+country_event = {
+	id = centralkingdom.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.23"}
+	title = centralkingdom.23.t
+	desc = centralkingdom.23.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.6
+		}
+	}
+
+	option = {
+		name = centralkingdom.23.a
+		add_political_power = -75
+	}
+}
+
+country_event = {
+	id = centralkingdom.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.24"}
+	title = centralkingdom.24.t
+	desc = centralkingdom.24.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.66
+		}
+	}
+
+	option = {
+		name = centralkingdom.20.a
+		add_political_power = -60
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	id = centralkingdom.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.25"}
+	title = centralkingdom.25.t
+	desc = centralkingdom.25.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.8
+		}
+	}
+
+	option = {
+		name = centralkingdom.25.a
+		trigger = {
+			ENC = {
+					exists = yes
+			}
+		}	
+		ENC = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		FRI = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		WEK = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		SLD = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		GRN = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+    			royal_convention_count = 0
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.25.a
+		trigger = {
+			EN1 = {
+					exists = yes
+			}
+			has_global_flag = enchancian_civil_war_over
+		}
+		EN1 = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		FRI = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		WEK = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		SLD = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		GRN = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+    			var = royal_convention_count
+    			value = 0
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.25.a
+		trigger = {
+			EN2 = {
+					exists = yes
+			}
+			has_global_flag = enchancian_civil_war_over
+		}
+		EN2 = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		FRI = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		WEK = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		SLD = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		GRN = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+    			var = royal_convention_count
+    			value = 0
+			}
+		}
+	}
+
+	option = {
+		name = centralkingdom.25.a
+		trigger = {
+			OR = {
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+				AND = {
+					EN1 = {
+							exists = no
+					}
+					EN2 = {
+							exists = no
+					}
+					ENC = {
+							exists = no
+					}
+				}
+			}
+		}
+		FRI = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		WEK = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		SLD = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		GRN = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		hidden_effect = {
+			set_variable = {
+    			var = royal_convention_count
+    			value = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.26"}
+	title = centralkingdom.26.t
+	desc = centralkingdom.26.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.85
+		}
+	}
+
+	option = {
+		name = centralkingdom.26.a
+		TUG = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		AVA = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		WEI = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		if = {
+			limit = {
+				KHA = {
+					has_government = monarchism
+				}
+			}
+			KHA = {
+				country_event = {
+					id = royalconvention.1
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				TRU = {
+					has_government = monarchism
+				}
+			}
+			TRU = {
+				country_event = {
+					id = royalconvention.1
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.27"}
+	title = centralkingdom.27.t
+	desc = centralkingdom.27.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = MAI_royal_convention
+    		progress > 0.9
+		}
+	}
+
+	option = {
+		name = centralkingdom.27.a
+		ICW = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		DES = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+
+	option = {
+		name = centralkingdom.27.b
+		ICW = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+
+	option = {
+		trigger = {
+			DES = {
+				NOT = {
+					has_war_with = GRN
+				}
+			}
+		}
+		name = centralkingdom.27.c
+		DES = {
+			country_event = {
+				id = royalconvention.1
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+}
+
+country_event = {
+	id = centralkingdom.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.28"}
+	title = centralkingdom.28.t
+	desc = centralkingdom.28.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.28.a
+		add_political_power = 50
+		add_stability = 0.15
+		hidden_effect = {
+			set_country_flag = GRN_dragon_here
+			news_event = {
+				id = worldnews.17
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Hartmut is crowned
+	id = centralkingdom.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.29"}
+	title = centralkingdom.29.t
+	desc = centralkingdom.29.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.29.a
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Hartmut II"
+			desc = "POLITICS_HARTMUT_DESC"
+			picture = "hartmut.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				warmonger
+				inexperienced_imperialist
+			}
+		}
+		set_cosmetic_tag = HAR
+		hidden_effect = {
+			news_event = {
+				id = worldnews.24
+				hours = 6
+			}
+			country_event = {
+				id = centralkingdom.30
+				days = 80
+			}
+			add_named_threat = {
+				threat = 5
+				name = hartmut_crowned
+			}
+		}
+	}
+}
+
+country_event = { #Start of Hartmut Crisis
+	id = centralkingdom.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.30"}
+	title = centralkingdom.30.t
+	desc = centralkingdom.30.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.30.a
+		trigger = {
+			has_war = no
+		}
+		if = {
+			limit = {
+				is_in_faction_with = MAI
+			}
+			leave_faction = yes
+		}
+		MAI = {
+			country_event = {
+				id = centralkingdom.31
+				days = 1
+			}
+		}
+		add_named_threat = { 
+    		threat = 15 
+    		name = hartmut_crisis
+		}
+		hidden_effect = {
+			set_country_flag = hartmut_crisis_started
+		}
+	}
+
+	option = {
+		name = centralkingdom.30.b
+		trigger = {
+			has_war = yes
+		}
+		custom_effect_tooltip = FRI_not_yet_hartmut
+		hidden_effect = {
+			country_event = {
+				id = centralkingdom.30
+				days = 60
+			}
+		}
+	}
+}
+
+country_event = { #Macius receives ultimatum
+	id = centralkingdom.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.31"}
+	title = centralkingdom.31.t
+	desc = centralkingdom.31.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.31.a
+		hidden_effect = {
+			set_country_flag = hartmut_demands
+			set_country_flag = agreed_to_reform_parliament
+		}
+	}
+
+	option = {
+		name = centralkingdom.31.b
+		hidden_effect = {
+			set_country_flag = hartmut_demands
+			set_country_flag = denied_reforming_parliament
+		}
+	}
+}
+
+country_event = { #Macius rejects ultimatum
+	id = centralkingdom.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.32"}
+	title = centralkingdom.32.t
+	desc = centralkingdom.32.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #It's war, then!
+		name = centralkingdom.32.a
+		add_political_power = 100
+		declare_war_on = { 
+			target = MAI
+			type = annex_everything	
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+
+	option = { #It's his playground, we won't interfere with this crap
+		name = centralkingdom.32.a
+		add_political_power = -50
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = { #Macius agrees to the ultimatum
+	id = centralkingdom.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.33"}
+	title = centralkingdom.33.t
+	desc = centralkingdom.33.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Perfect
+		name = centralkingdom.33.a
+		add_political_power = 50
+		ai_chance = {
+			factor = 30
+		}
+	}
+
+	option = { #I don't care if he agrees or not, I hate this kid.
+		name = centralkingdom.33.a
+		add_political_power = -150
+		add_stability = -0.15
+		declare_war_on = { 
+			target = MAI
+			type = annex_everything	
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+}
+
+country_event = { #Tungupungu pact
+	id = centralkingdom.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.34"}
+	title = centralkingdom.34.t
+	desc = centralkingdom.34.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Okay
+		name = centralkingdom.34.a
+		MAI = {
+			country_event = {
+				id = centralkingdom.35
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = { #Nah
+		name = centralkingdom.34.a
+		MAI = {
+			country_event = {
+				id = centralkingdom.36
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+country_event = { #Tungupungu pact - agreed
+	id = centralkingdom.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.35"}
+	title = centralkingdom.35.t
+	desc = centralkingdom.35.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = centralkingdom.35.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = tungupungu_pact
+		}
+	}
+}
+
+country_event = { #Tungupungu pact - denied
+	id = centralkingdom.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.36"}
+	title = centralkingdom.36.t
+	desc = centralkingdom.36.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = centralkingdom.36.a
+		add_political_power = -50
+	}
+}
+

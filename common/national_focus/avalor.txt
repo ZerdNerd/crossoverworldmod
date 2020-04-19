@@ -1,0 +1,2507 @@
+focus_tree = {
+	id = kingdom_of_avalor
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = AVA
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+	id = AVA_economic_legacy_of_maru
+	icon = GFX_goal_generic_production
+	x = 3
+	y = 0
+	cost = 5
+	available_if_capitulated = no
+	available = {
+		is_puppet = no
+	}
+	ai_will_do = { 
+		factor = 2
+	} 
+
+	completion_reward = {
+		add_tech_bonus = {
+			name = industrial_bonus
+			bonus = 0.5
+			uses = 1
+			category = industry
+		}
+	} 
+}
+
+focus = {
+	id = AVA_expansion_of_industry
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = AVA_economic_legacy_of_maru }
+	x = 5
+	y = 1
+	cost = 5
+
+	available_if_capitulated = no
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		815 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		50 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		690 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+focus = {
+	id = AVA_give_farmers_additional_materials
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = AVA_expansion_of_industry }
+	x = 5
+	y = 2
+	cost = 5
+
+	available_if_capitulated = no
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		855 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		880 = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+focus = {
+	id = AVA_import_projects_from_continent
+	icon = GFX_goal_generic_consumer_goods
+	prerequisite = { focus = AVA_give_farmers_additional_materials }
+	x = 5
+	y = 3
+	cost = 5
+
+	available_if_capitulated = no
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	completion_reward = {
+		32 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_political_power = -100
+	}
+}
+
+	focus = {
+		id = AVA_roads_on_islands
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = AVA_economic_legacy_of_maru }
+		x = 3
+		y = 1
+		cost = 8
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_expand_the_ferries
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = AVA_roads_on_islands }
+		x = 3
+		y = 2
+		cost = 5
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			815 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			857 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			53 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			729 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 9781
+				}
+			}
+			700 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 9489
+				}
+			}
+			32 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10041
+				}
+			}
+			885 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 5693
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_expand_the_port_in_avalor
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = AVA_expand_the_ferries }
+		x = 3
+		y = 3
+		cost = 5
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			815 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 3776
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_thinking_out_of_the_box
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = AVA_expand_the_port_in_avalor }
+		prerequisite = { focus = AVA_import_projects_from_continent }
+		x = 4
+		y = 4
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_resurrect_naval_industry
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = AVA_expand_the_port_in_avalor }
+		prerequisite = { focus = AVA_expand_industry_in_central_avalor }
+		x = 2
+		y = 4
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 10
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = dd_tech
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_finish_industrialization
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = AVA_resurrect_naval_industry }
+		prerequisite = { focus = AVA_thinking_out_of_the_box }
+		x = 3
+		y = 5
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 2
+				category = industry
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_southern_military_area
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = AVA_economic_legacy_of_maru }
+		x = 1
+		y = 1
+		cost = 5
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			53 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			58 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_new_production_lines
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = AVA_southern_military_area }
+		x = 1
+		y = 2
+		cost = 5
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			62 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			70 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_expand_industry_in_central_avalor
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = AVA_new_production_lines }
+		x = 1
+		y = 3
+		cost = 5
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			841 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			42 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			857 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	##########################################################################################################################################################
+
+	focus = { 
+		id = AVA_shuriki_dark_legacy
+		icon = GFX_focus_shuriki_legacy
+		x = 15
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = AVA_enchancian_civil_war
+		icon = GFX_focus_enchancia
+		x = 15
+		y = 1
+		cost = 1
+		prerequisite = { focus = AVA_shuriki_dark_legacy }
+		available_if_capitulated = no
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				has_global_flag = enchancian_civil_war
+				factor = 5
+			}
+		} 
+		completion_reward = { 
+			country_event = {
+				id = everrealm.5
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_repair_society_and_domestic_affairs
+		icon = GFX_goal_generic_national_unity
+		x = 12
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_shuriki_dark_legacy
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = AVA_lift_the_ban_on_tradition
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 10
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_repair_society_and_domestic_affairs
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.03
+			swap_ideas = {
+				remove_idea = AVA_shuriki_dark_legacy_idea_1
+				add_idea = AVA_shuriki_dark_legacy_idea_2
+			}
+		} 
+	}
+
+	focus = { 
+		id = AVA_reestablish_embassies
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_repair_society_and_domestic_affairs
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.03
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = AVA_restore_communication_with_outside_world
+		icon = GFX_goal_generic_propaganda
+		x = 11
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_lift_the_ban_on_tradition
+		}
+		prerequisite = {
+			focus = AVA_reestablish_embassies
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = AVA_return_the_liberties
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 14
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_repair_society_and_domestic_affairs
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = AVA_restore_public_education
+		icon = GFX_focus_generic_military_academy
+		x = 13
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_return_the_liberties
+		}
+		prerequisite = {
+			focus = AVA_reestablish_embassies
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = AVA_shuriki_dark_legacy_idea_2
+				add_idea = AVA_shuriki_dark_legacy_idea_3
+			}
+		} 
+	}
+
+	focus = { 
+		id = AVA_restore_royal_advisors
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 12
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_restore_communication_with_outside_world
+		}
+		prerequisite = {
+			focus = AVA_restore_public_education
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 50
+			custom_effect_tooltip = AVA_will_reestablish_advisors
+		} 
+	}
+
+	focus = { 
+		id = AVA_corrupted_military_sphere
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 18
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_shuriki_dark_legacy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = AVA_revise_the_high_command
+		icon = GFX_focus_generic_military_mission
+		x = 16
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_corrupted_military_sphere
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = {
+				AVA_revised_high_command
+			}
+		} 
+	}
+
+	focus = { 
+		id = AVA_new_school_of_thought
+		icon = GFX_focus_generic_military_academy
+		x = 18
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_corrupted_military_sphere
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = AVA_new_uniforms_for_army
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 20
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_corrupted_military_sphere
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = AVA_deal_with_shuriki_supporters
+		icon = GFX_focus_generic_little_entente
+		x = 17
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_revise_the_high_command
+		}
+		prerequisite = {
+			focus = AVA_new_school_of_thought
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = -3500
+		} 
+	}
+
+	focus = { 
+		id = AVA_keep_the_navy_together
+		icon = GFX_focus_generic_navy_battleship2
+		x = 19
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_new_uniforms_for_army
+		}
+		prerequisite = {
+			focus = AVA_new_school_of_thought
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 50
+			navy_experience = 15
+		} 
+	}
+
+	focus = { 
+		id = AVA_lift_the_ban_on_magic
+		icon = GFX_goal_generic_improve_relations
+		x = 18
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_deal_with_shuriki_supporters
+		}
+		prerequisite = {
+			focus = AVA_keep_the_navy_together
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 100
+			remove_ideas = {
+				AVA_shuriki_ban_on_magic
+			}
+		} 
+	}
+
+	focus = { 
+		id = AVA_clear_the_remnants_of_shuriki_rule
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = AVA_restore_royal_advisors
+		}
+		prerequisite = {
+			focus = AVA_lift_the_ban_on_magic
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			remove_ideas = {
+				AVA_shuriki_dark_legacy_idea_3
+			}
+		} 
+	}
+
+	focus = { 
+		id = AVA_into_the_modern_times
+		icon = GFX_focus_narrow_gauge
+		x = 5
+		y = 6
+		cost = 30
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = AVA_finish_industrialization
+		}
+		prerequisite = {
+			focus = AVA_clear_the_remnants_of_shuriki_rule
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 3
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		} 
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = AVA_our_international_image
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 9
+		y = 6
+		cost = 5
+		prerequisite = { focus = AVA_clear_the_remnants_of_shuriki_rule }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			add_political_power = 100
+		}		
+	}
+
+	focus = { 
+		id = AVA_befriend_corinthia
+		icon = GFX_goal_generic_improve_relations
+		x = 5
+		y = 7
+		cost = 5
+		prerequisite = { focus = AVA_our_international_image }
+		available_if_capitulated = yes
+		bypass = {
+			COR = {
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			COR = {
+				add_opinion_modifier = {
+    				target = AVA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_befriend_khaldoun
+		icon = GFX_goal_generic_improve_relations
+		x = 5
+		y = 8
+		cost = 5
+		prerequisite = { focus = AVA_befriend_corinthia }
+		available_if_capitulated = yes
+		bypass = {
+			KHA = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			KHA = {
+				add_opinion_modifier = {
+    				target = AVA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_prepare_for_the_worst
+		icon = GFX_goal_generic_fortify_city
+		x = 11
+		y = 7
+		cost = 5
+		prerequisite = { focus = AVA_our_international_image }
+		mutually_exclusive = {
+			focus = AVA_get_closer_to_enchancia
+		}
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended_badder
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						EN3 = {
+							exists = yes
+						}
+						EN4 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			army_experience = 10
+			navy_experience = 10
+		}		
+	}
+
+	focus = { 
+		id = AVA_mount_the_defence
+		icon = GFX_goal_generic_defence
+		x = 11
+		y = 8
+		cost = 5
+		prerequisite = { focus = AVA_prepare_for_the_worst }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				AVA_preparing_for_enchancian_invasion
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_get_closer_to_enchancia
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 7
+		cost = 5
+		prerequisite = { focus = AVA_our_international_image }
+		mutually_exclusive = {
+			focus = AVA_prepare_for_the_worst
+		}
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECW_ended_or_avoided
+				OR = {
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+					AND = {
+						has_global_flag = enchancian_civil_war_over
+						OR = {
+							ENC = {
+								exists = yes
+								NOT = {
+									has_cosmetic_tag = WIN
+								}
+							}
+							EN1 = {
+								exists = yes
+							}
+							EN2 = {
+								exists = yes
+							}
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				ENC = {
+					add_opinion_modifier = {
+    					target = AVA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				EN1 = {
+					add_opinion_modifier = {
+    					target = AVA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				EN2 = {
+					add_opinion_modifier = {
+    					target = AVA
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_befriend_maarswik
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 8
+		cost = 5
+		prerequisite = { focus = AVA_get_closer_to_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			MAR = {
+				add_opinion_modifier = {
+    				target = AVA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_for_the_everrealm
+		icon = GFX_goal_generic_military_sphere
+		x = 6
+		y = 9
+		cost = 5
+		prerequisite = { focus = AVA_befriend_khaldoun }
+		prerequisite = { focus = AVA_befriend_maarswik }
+		available_if_capitulated = yes
+		available = {
+			OR = {
+				is_in_faction_with = ENC
+				ENC = {
+					is_in_faction_with = MAI
+				}
+				EN1 = {
+					is_in_faction_with = MAI
+				}
+				EN2 = {
+					is_in_faction_with = MAI
+				}
+			}
+		}
+		bypass = {
+			MAI = {
+				AND = {
+					has_completed_focus = MAI_alliance_enc_ecw
+					NOT = {
+						has_country_flag = greatest_alliance_formed
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			if = {
+				limit = {
+					OR = {
+						ENC = {
+							exists = yes
+							is_in_faction_with = MAI
+						}
+					}
+				}
+				MAI = {
+					country_event = {
+						id = everrealm.24
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						EN1 = {
+							exists = yes
+							is_in_faction_with = MAI
+						}
+					}
+				}
+				MAI = {
+					country_event = {
+						id = everrealm.24
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						EN2 = {
+							exists = yes
+							is_in_faction_with = MAI
+						}
+					}
+				}
+				MAI = {
+					country_event = {
+						id = everrealm.24
+						days = 1
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_get_closer_to_japanifornia
+		icon = GFX_goal_generic_improve_relations
+		x = 14
+		y = 7
+		cost = 5
+		prerequisite = { focus = AVA_our_international_image }
+		available_if_capitulated = yes
+		bypass = {
+			JPN = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			JPN = {
+				add_opinion_modifier = {
+    				target = AVA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_trade_deal_with_khurain
+		icon = GFX_goal_generic_improve_relations
+		x = 14
+		y = 8
+		cost = 5
+		prerequisite = { focus = AVA_get_closer_to_japanifornia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			KHU = {
+				add_opinion_modifier = {
+    				target = AVA
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_apply_to_join_western_alliance
+		icon = GFX_goal_generic_major_alliance
+		x = 14
+		y = 9
+		cost = 5
+		prerequisite = { focus = AVA_mount_the_defence focus = AVA_trade_deal_with_khurain }
+		available_if_capitulated = yes
+		available = {
+			JPN = {
+				NOT = {
+					has_government = fascism
+				}
+				is_faction_leader = yes
+			}
+			is_in_faction = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			JPN = {
+				country_event = {
+					id = everrealm.24
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_help_from_the_east
+		icon = GFX_goal_generic_major_alliance
+		x = 12
+		y = 9
+		cost = 5
+		prerequisite = { focus = AVA_trade_deal_with_khurain focus = AVA_mount_the_defence }
+		available_if_capitulated = yes
+		available = {
+			OR = {
+				MAI = {
+					is_faction_leader = yes
+				}
+				GRN = {
+					is_faction_leader = yes
+				}
+			}
+			is_in_faction = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					MAI = {
+						is_faction_leader = yes
+					}
+				}
+				MAI = {
+					country_event = {
+						id = everrealm.24
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					GRN = {
+						is_faction_leader = yes
+					}
+				}
+				GRN = {
+					country_event = {
+						id = everrealm.24
+						days = 1
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_liberate_everrealm_alone
+		icon = GFX_goal_anschluss
+		x = 10
+		y = 9
+		cost = 5
+		prerequisite = { focus = AVA_mount_the_defence }
+		available_if_capitulated = yes
+		available = {
+			is_in_faction = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			create_faction = avalor_pact
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_neptune
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 7
+		y = 10
+		cost = 5
+		prerequisite = { focus = AVA_liberate_everrealm_alone focus = AVA_help_from_the_east focus = AVA_apply_to_join_western_alliance focus = AVA_for_the_everrealm }
+		available_if_capitulated = yes
+		bypass = {
+			COR = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		available = {
+			COR = {
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = COR
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_rosario
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 10
+		cost = 5
+		prerequisite = { focus = AVA_liberate_everrealm_alone focus = AVA_help_from_the_east focus = AVA_apply_to_join_western_alliance focus = AVA_for_the_everrealm }
+		available_if_capitulated = yes
+		bypass = {
+			TRU = {
+				NOT = {
+					has_government = communism
+				}
+			}
+		}
+		available = {
+			TRU = {
+				has_government = communism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = TRU
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_downfall
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 11
+		cost = 5
+		prerequisite = { focus = AVA_operation_neptune }
+		prerequisite = { focus = AVA_liberate_everrealm_alone }
+		prerequisite = { focus = AVA_operation_coronet }
+		available_if_capitulated = yes
+		bypass = {
+			OR = {
+				has_war_with = EN3
+				has_war_with = EN4
+				EN3 = {
+					exists = no
+				}
+				EN4 = {
+					exists = no
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN3
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN4
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_coronet
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 11
+		y = 10
+		cost = 5
+		prerequisite = { focus = AVA_liberate_everrealm_alone focus = AVA_help_from_the_east focus = AVA_apply_to_join_western_alliance focus = AVA_for_the_everrealm }
+		available_if_capitulated = yes
+		bypass = {
+			KHA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		available = {
+			KHA = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = KHA
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_rainbow
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 13
+		y = 10
+		cost = 5
+		prerequisite = { focus = AVA_liberate_everrealm_alone focus = AVA_help_from_the_east focus = AVA_apply_to_join_western_alliance focus = AVA_for_the_everrealm }
+		available_if_capitulated = yes
+		available = {
+			DUL = {
+				exists = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = DUL
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = AVA_operation_magneto
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 15
+		y = 10
+		cost = 5
+		prerequisite = { focus = AVA_apply_to_join_western_alliance }
+		available_if_capitulated = yes
+		bypass = {
+			has_war_with = LEC
+		}
+		available = {
+			LEC = {
+				has_government = monarchism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			declare_war_on = {
+				target = LEC
+				type = annex_everything
+			}
+		}		
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = AVA_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 23
+		y = 5
+		cost = 7.25
+
+		prerequisite = {
+			focus = AVA_lift_the_ban_on_magic
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_avalor_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = AVA_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = AVA_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = AVA_avalor_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = AVA_avalor_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = AVA_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = AVA_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = AVA_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = AVA_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = AVA_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = AVA_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_coaraci_weapons_corporation
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = AVA_avalor_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = AVA_avalor_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = AVA_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = AVA_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = AVA_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = AVA_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = AVA_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = AVA_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = AVA_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = AVA_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_avalor_war_studies_university
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = AVA_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = AVA_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				AVA_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_avalor_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = AVA_coaraci_weapons_corporation }
+		x = 0
+		y = 1
+		relative_position_id = AVA_coaraci_weapons_corporation
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = AVA_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = AVA_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = AVA_avalor_weapon_development_3 }
+		prerequisite = { focus = AVA_avalor_war_studies_university }
+		prerequisite = { focus = AVA_armor_effort }
+		prerequisite = { focus = AVA_new_officer_corps }
+		prerequisite = { focus = AVA_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = AVA_avalor_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = AVA_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 32
+		y = 5
+		cost = 7.25
+
+		prerequisite = {
+			focus = AVA_lift_the_ban_on_magic
+		}
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = AVA_naval_effort }
+		mutually_exclusive = { focus = AVA_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = AVA_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = AVA_naval_effort }
+		mutually_exclusive = { focus = AVA_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = AVA_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_encruzilhada_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = AVA_flexible_navy focus = AVA_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = AVA_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = AVA_encruzilhada_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = AVA_encruzilhada_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = AVA_flexible_navy focus = AVA_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = AVA_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = AVA_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = AVA_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = AVA_large_navy focus = AVA_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = AVA_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = AVA_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = AVA_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = AVA_large_navy focus = AVA_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = AVA_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = AVA_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = AVA_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = AVA_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 28
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = AVA_lift_the_ban_on_magic
+		}
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = AVA_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = AVA_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = AVA_fighter_focus }
+		prerequisite = { focus = AVA_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = AVA_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = AVA_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = AVA_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_avalor_air_force_university
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = AVA_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = AVA_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = AVA_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = AVA_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = AVA_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = AVA_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = AVA_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = AVA_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = AVA_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = AVA_heavy_fighter_focus }
+		prerequisite = { focus = AVA_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = AVA_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = AVA_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = AVA_heavy_fighter_focus }
+		prerequisite = { focus = AVA_CAS_effort }
+		prerequisite = { focus = AVA_avalor_air_force_university }
+		x = 0
+		y = 1
+		relative_position_id = AVA_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = AVA_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = AVA_aviation_effort_2 }
+		prerequisite = { focus = AVA_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = AVA_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

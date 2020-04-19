@@ -1,0 +1,25 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Japanifornian Navy"			
+		naval_base = 5419
+		task_force = {				
+			name = "Nunohira Fleet"
+			location = 1567		
+			ship = { name = "Nunohira City" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = JPN } } }			
+			ship = { name = "Snowbush" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Roselake" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Glanchester" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Nantgarw" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+		}
+		task_force = {				
+			name = "Central Fleet"
+			location = 5419		
+			ship = { name = "Loso-Angoleso" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = JPN } } }			
+			ship = { name = "Folkingham" definition = light_cruiser equipment = { light_cruiser_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Hillfar" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Morooka" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+			ship = { name = "Kitano" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = JPN } } }
+		}
+	}
+}

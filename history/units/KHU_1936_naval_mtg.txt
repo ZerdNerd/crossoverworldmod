@@ -1,0 +1,16 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Royal Navy of Khura'in"			
+		naval_base = 4639
+		task_force = {				
+			name = "Main Fleet"
+			location = 4639		
+			ship = { name = "Khura'in" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = KHU } } }			
+			ship = { name = "Meditation" definition = light_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = KHU } } }
+			ship = { name = "Monarchy" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = KHU } } }
+			ship = { name = "Royal Family of Khura'in" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = KHU } } }
+			ship = { name = "Justice" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = KHU } } }
+		}
+	}
+}

@@ -1,0 +1,2407 @@
+focus_tree = { 
+	id = sanctimagistri
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = SKO
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = SKO_preparations_for_next_offensive
+		icon = GFX_goal_generic_production2
+		x = 8
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			add_political_power = 100
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}		
+	}
+
+	focus = {
+	id = SKO_expansion_of_industry
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = SKO_preparations_for_next_offensive }
+	x = 5
+	y = 1
+	cost = 7.25
+
+	available_if_capitulated = no
+
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 2
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		936 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		939 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		914 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+focus = {
+	id = SKO_new_factories_for_aliens
+	icon = GFX_goal_generic_construct_civ_factory
+	prerequisite = { focus = SKO_expansion_of_industry }
+	x = 5
+	y = 2
+	cost = 7.25
+
+	available_if_capitulated = no
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	complete_tooltip = {
+		add_extra_state_shared_building_slots = 1
+		add_building_construction = {
+			type = industrial_complex
+			level = 2
+			instant_build = yes
+		}			
+	}
+
+	completion_reward = {
+		912 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+focus = {
+	id = SKO_import_projects_from_kurvix
+	icon = GFX_goal_generic_consumer_goods
+	prerequisite = { focus = SKO_new_factories_for_aliens }
+	x = 5
+	y = 3
+	cost = 7.25
+
+	available_if_capitulated = no
+
+
+		
+	ai_will_do = {
+		factor = 2
+	}
+
+	completion_reward = {
+		948 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+	}
+}
+
+	focus = {
+		id = SKO_alien_road_network
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SKO_preparations_for_next_offensive }
+		x = 3
+		y = 1
+		cost = 8
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_rural_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = SKO_alien_road_network }
+		x = 3
+		y = 2
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_expansion_of_ports
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = SKO_rural_roads }
+		x = 3
+		y = 3
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			936 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1533
+				}
+			}
+			939 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1533
+				}
+			}
+			912 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1533
+				}
+			}
+			948 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1533
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_finish_industrialization
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = SKO_import_projects_from_kurvix }
+		prerequisite = { focus = SKO_expansion_of_ports }
+		prerequisite = { focus = SKO_factories_in_walaszkowo }
+		x = 3
+		y = 4
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 1
+				uses = 2
+				category = industry
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_las_dzid_export
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SKO_preparations_for_next_offensive }
+		x = 1
+		y = 1
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			951 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_new_production_lines
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SKO_las_dzid_export }
+		x = 1
+		y = 2
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			948 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			939 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_factories_in_walaszkowo
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = SKO_new_production_lines }
+		x = 1
+		y = 3
+		cost = 7.25
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			912 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = SKO_warmup_paradoxawka
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 14
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_preparations_for_next_offensive
+		}
+
+		available = {
+			date > 1937.7.1
+		}
+
+		ai_will_do = { 
+			factor = 10
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = PDX
+				type = annex_everything
+			}
+			PDX = {
+				every_owned_state = {
+					add_claim_by = SKO
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_who_to_ally
+		icon = GFX_goal_anschluss
+		x = 17
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_warmup_paradoxawka
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			add_political_power = 100
+			set_rule = {
+				can_create_factions = yes
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_west
+		icon = GFX_goal_anschluss
+		x = 15
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_who_to_ally
+		}
+
+		available = {
+			is_in_faction = no
+			JPN = {
+				has_government = fascism
+				is_faction_leader = yes
+			}
+			has_idea = JPN_alien_japanifornian_exchange
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			JPN = {
+				country_event = {
+					id = walaszek.1
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_send_them_weapons
+		icon = GFX_goal_generic_military_sphere
+		x = 15
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_west
+		}
+
+		available = {
+			is_in_faction_with = JPN
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			JPN = {
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment
+    				amount = 1500
+    				producer = SKO
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_our_own_faction
+		icon = GFX_goal_anschluss
+		x = 17
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_who_to_ally
+		}
+
+		available = {
+			is_in_faction = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = { 
+			create_faction = sancti_magistri_alliance
+		}		
+	}
+
+	focus = { 
+		id = SKO_east
+		icon = GFX_goal_anschluss
+		x = 19
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_who_to_ally
+		}
+
+		available = {
+			is_in_faction = no
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			DES = {
+				country_event = {
+					id = walaszek.1
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_send_them_planes
+		icon = GFX_goal_generic_air_fighter
+		x = 19
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_east
+		}
+
+		available = {
+			is_in_faction_with = DES
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			DES = {
+				add_equipment_to_stockpile = {
+    				type = fighter_equipment_1
+    				amount = 100
+    				producer = SKO
+				}
+				add_equipment_to_stockpile = {
+    				type = CAS_equipment_1
+    				amount = 100
+    				producer = SKO
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_safeguard_the_north
+		icon = GFX_goal_tripartite_pact
+		x = 9
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_warmup_paradoxawka
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			FRI = {
+				add_opinion_modifier = {
+    				target = SKO
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			diplomatic_relation = {
+    			country = FRI
+    			relation = non_aggression_pact
+    			active = yes
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_preparations_for_the_blockade
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 9
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_safeguard_the_north
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = dd_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = ss_tech
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_modernization_of_roads_in_the_west
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 11
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_warmup_paradoxawka
+		}
+
+		bypass = {
+			has_country_flag = SKO_withdrawn_from_pdx
+		}
+
+		available = {
+			921 = {
+				is_owned_by = SKO
+			}
+			935 = {
+				is_owned_by = SKO
+			}
+			953 = {
+				is_owned_by = SKO
+			}
+			915 = {
+				is_owned_by = SKO
+			}
+			929 = {
+				is_owned_by = SKO
+			}
+			946 = {
+				is_owned_by = SKO
+			}
+			941 = {
+				is_owned_by = SKO
+			}
+			930 = {
+				is_owned_by = SKO
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					is_core_of = PDX
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_incorporation_of_western_lands
+		icon = GFX_goal_generic_propaganda
+		x = 11
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_modernization_of_roads_in_the_west
+		}
+
+		bypass = {
+			has_country_flag = SKO_withdrawn_from_pdx
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			921 = {
+				set_state_name = "Zach. Walaszkowo"
+			}
+			935 = {
+				set_state_name = "Putasowo"
+			}
+			953 = {
+				set_state_name = "Pola Rdestowe"
+			}
+			915 = {
+				set_state_name = "Pln. Przylądek"
+			}
+			929 = {
+				set_state_name = "Hawajskowo"
+			}
+			946 = {
+				set_state_name = "Citta del Michal Parchas"
+			}
+			941 = {
+				set_state_name = "Dolina Sancti Magistri"
+			}
+			930 = {
+				set_state_name = "Zawałowo"
+			}
+			custom_effect_tooltip = "integration_decisions_available"
+			add_political_power = 100
+		}		
+	}
+
+	focus = { 
+		id = SKO_parchas_line
+		icon = GFX_goal_generic_construct_military
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_warmup_paradoxawka
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			924 = {
+				add_building_construction = {
+					type = bunker
+					province = 10624
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10662
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 2193
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10620
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 574
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 10632
+					level = 2
+					instant_build = yes
+				}
+			}
+			938 = {
+				add_building_construction = {
+					type = bunker
+					province = 3100
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_sancti_magistri_line
+		icon = GFX_goal_generic_fortify_city
+		x = 13
+		y = 3
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_parchas_line
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			952 = {
+				add_building_construction = {
+					type = bunker
+					province = 4702
+					level = 4
+					instant_build = yes
+				}
+			}
+			938 = {
+				add_building_construction = {
+					type = bunker
+					province = 4079
+					level = 4
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = bunker
+					province = 496
+					level = 4
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_final_preparations
+		icon = GFX_goal_generic_cavalry
+		x = 11
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_preparations_for_the_blockade
+		}
+		prerequisite = {
+			focus = SKO_incorporation_of_western_lands
+		}
+		prerequisite = {
+			focus = SKO_sancti_magistri_line
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			transfer_state = 59
+			59 = {
+				set_state_category = town
+				add_manpower = 50000
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 10606
+				}
+				add_building_construction = {
+					type = air_base
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_operation_mortadela
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_final_preparations
+		}
+		prerequisite = {
+			focus = SKO_send_them_weapons
+			focus = SKO_our_own_faction
+			focus = SKO_send_them_planes
+		}
+
+		bypass = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = KPT
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_integration_of_northern_lands
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 12
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_operation_mortadela
+		}
+
+		available = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					is_core_of = KPT
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			remove_ideas = {
+				SKO_severed_communication_with_kurvix
+			}
+			custom_effect_tooltip = "integration_decisions_available"
+		}		
+	}
+
+	focus = { 
+		id = SKO_controlling_the_central_seas
+		icon = GFX_focus_generic_destroyer
+		x = 11
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_integration_of_northern_lands
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			transfer_state = 856
+			856 = {
+				add_manpower = 40000
+				set_state_category = town
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 10468
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_first_colony_in_the_east
+		icon = GFX_goal_generic_navy_battleship
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_integration_of_northern_lands
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			transfer_state = 797
+			797 = {
+				add_manpower = 350000
+				set_state_category = city
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 2861
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_northern_naval_base
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 16
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_operation_mortadela
+		}
+
+		available = {
+			KPT = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			828 = {
+				add_building_construction = {
+					type = naval_base
+					level = 3
+					instant_build = yes
+					province = 3416
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_invade_moomins
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 15
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_northern_naval_base
+		}
+
+		available = {
+			NOT = {
+				is_in_faction_with = TSA
+			}
+			MOO = {
+				OR = {
+					exists = yes
+					is_puppet = no
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			transfer_state = 33
+			33 = {
+				add_manpower = 30000
+				set_state_category = town
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5820
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			transfer_state = 34
+			34 = {
+				add_manpower = 50000
+				set_state_category = town
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10172
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			create_wargoal = {
+				target = MOO
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_just_take_the_islands
+		icon = GFX_goal_generic_improve_relations
+		x = 17
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_northern_naval_base
+		}
+
+		available = {
+			OR = {
+				is_in_faction_with = TSA
+				MOO = {
+					OR = {
+						exists = no
+						is_puppet = yes
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			transfer_state = 33
+			33 = {
+				add_manpower = 30000
+				set_state_category = town
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5820
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			transfer_state = 34
+			34 = {
+				add_manpower = 50000
+				set_state_category = town
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 10172
+				}
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_open_war_with_friedewalt
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_first_colony_in_the_east
+		}
+		prerequisite = {
+			focus = SKO_controlling_the_central_seas
+		}
+		prerequisite = {
+			focus = SKO_invade_moomins
+			focus = SKO_just_take_the_islands
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = FRI
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 38
+					}
+				}
+				38 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 35
+					}
+				}
+				35 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 40
+					}
+				}
+				40 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 840
+					}
+				}
+				840 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 901
+					}
+				}
+				901 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 918
+					}
+				}
+				918 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 913
+					}
+				}
+				913 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 934
+					}
+				}
+				934 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 926
+					}
+				}
+				926 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 920
+					}
+				}
+				920 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 893
+					}
+				}
+				893 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 923
+					}
+				}
+				923 = {
+					add_claim_by = SKO
+				}
+			}
+			if = {
+				limit = {
+					FRI = {
+						controls_state = 900
+					}
+				}
+				900 = {
+					add_claim_by = SKO
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SKO_attack_western_kingdom
+		icon = GFX_goal_generic_major_war
+		x = 12
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_open_war_with_friedewalt
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = WEK
+				type = annex_everything
+			}
+		}	
+	}
+
+	focus = { 
+		id = SKO_attack_khurain
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_open_war_with_friedewalt
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = KHU
+				type = annex_everything
+			}
+		}	
+	}
+
+	focus = { 
+		id = SKO_attack_central_kingdom
+		icon = GFX_goal_generic_major_war
+		x = 16
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = SKO_open_war_with_friedewalt
+		}
+
+		available = {
+			is_neighbor_of = MAI
+		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			create_wargoal = {
+				target = MAI
+				type = annex_everything
+			}
+		}	
+	}
+
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+
+	focus = {
+		id = SKO_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 26
+		y = 0
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = SKO_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = SKO_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SKO_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = SKO_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = SKO_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = SKO_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = SKO_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = SKO_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SKO_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = SKO_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = SKO_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = SKO_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = SKO_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = SKO_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SKO_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = SKO_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = SKO_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = SKO_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SKO_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = SKO_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = SKO_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = SKO_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SKO_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = SKO_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = SKO_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = SKO_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = SKO_weapon_development_3 }
+		prerequisite = { focus = SKO_military_academy }
+		prerequisite = { focus = SKO_armor_effort }
+		prerequisite = { focus = SKO_new_officer_corps }
+		prerequisite = { focus = SKO_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = SKO_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = SKO_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 26
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = SKO_naval_effort }
+		mutually_exclusive = { focus = SKO_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = SKO_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = SKO_naval_effort }
+		mutually_exclusive = { focus = SKO_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = SKO_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = SKO_flexible_navy focus = SKO_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = SKO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = SKO_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = SKO_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = SKO_flexible_navy focus = SKO_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = SKO_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = SKO_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = SKO_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = SKO_large_navy focus = SKO_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = SKO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = SKO_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = SKO_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = SKO_large_navy focus = SKO_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = SKO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = SKO_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = SKO_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = SKO_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 26
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SKO_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = SKO_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = SKO_fighter_focus }
+		prerequisite = { focus = SKO_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = SKO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = SKO_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = SKO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = SKO_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = SKO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SKO_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = SKO_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = SKO_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = SKO_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = SKO_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SKO_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = SKO_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = SKO_heavy_fighter_focus }
+		prerequisite = { focus = SKO_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = SKO_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = SKO_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = SKO_heavy_fighter_focus }
+		prerequisite = { focus = SKO_CAS_effort }
+		prerequisite = { focus = SKO_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = SKO_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = SKO_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = SKO_aviation_effort_2 }
+		prerequisite = { focus = SKO_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = SKO_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

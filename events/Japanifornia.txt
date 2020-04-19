@@ -1,0 +1,366 @@
+﻿###########################
+# Japanifornian Events
+###########################
+
+add_namespace = japanifornia
+
+country_event = { #elections
+	id = japanifornia.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.1"}
+	title = japanifornia.1.t
+	desc = japanifornia.1.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JPN
+		date > 1936.2.20
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = japanifornia.1.a
+		custom_effect_tooltip = JPN_wright_will_be_president
+		hidden_effect = { 
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Phoenix Wright"
+				desc = "POLITICS_WRIGHT_DESC"
+				picture = "wright.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			create_country_leader = {
+				name = "...von Karma"
+				desc = "POLITICS_VONKARMA_PRE_DESC"
+				picture = "vacant.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					#
+				}
+			}
+			news_event = {
+				id = worldnews.43
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = japanifornia.1.b
+		custom_effect_tooltip = JPN_edgeworth_will_be_president
+		hidden_effect = { 
+			kill_country_leader = yes
+			create_country_leader = {
+				name = "Miles Edgeworth"
+				desc = "POLITICS_EDGEWORTH_DESC"
+				picture = "edgey.dds"
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+					#
+				}
+			}
+			create_country_leader = {
+				name = "...von Karma"
+				desc = "POLITICS_VONKARMA_PRE_DESC"
+				picture = "vacant.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					#
+				}
+			}
+			add_ideas = {
+				JPN_something_lurks_in_the_shadows
+			}
+			news_event = {
+				id = worldnews.44
+				hours = 6
+			}
+		}
+	}
+
+}
+
+country_event = { #von Karma wants to sign exchange treaty
+	id = japanifornia.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.2"}
+	title = japanifornia.2.t
+	desc = japanifornia.2.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #yes
+		name = japanifornia.2.a
+		JPN = {
+			country_event = {
+				id = japanifornia.3
+				days = 1
+			}
+		}
+		SKO = {
+			add_ideas = {
+				JPN_alien_japanifornian_exchange
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = { #no
+		name = japanifornia.2.b
+		JPN = {
+			country_event = {
+				id = japanifornia.4
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+}
+
+country_event = { #Sancti Magistri agrees
+	id = japanifornia.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.3"}
+	title = japanifornia.3.t
+	desc = japanifornia.3.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Genau wie geplant.
+		name = japanifornia.3.a
+		add_ideas = {
+			JPN_alien_japanifornian_exchange
+		}
+	}
+}
+
+country_event = { #Sancti Magistri rejects
+	id = japanifornia.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.4"}
+	title = japanifornia.4.t
+	desc = japanifornia.4.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #This wasn't planned.
+		name = japanifornia.4.a
+		add_political_power = -100
+	}
+}
+
+country_event = { #Japanifornia wants to create defence cordon
+	id = japanifornia.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.5"}
+	title = japanifornia.5.t
+	desc = japanifornia.5.d
+	picture = GFX_report_courtroom
+
+	is_triggered_only = yes
+
+	option = { #deal
+		name = japanifornia.5.a
+		JPN = {
+			country_event = {
+				id = japanifornia.6
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 95
+		}
+	}
+
+	option = { #no
+		name = japanifornia.5.b
+		JPN = {
+			country_event = {
+				id = japanifornia.7
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+country_event = { #they agree
+	id = japanifornia.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.6"}
+	title = japanifornia.6.t
+	desc = japanifornia.6.d
+	picture = GFX_report_courtroom
+
+	is_triggered_only = yes
+
+	option = { #great
+		name = japanifornia.6.a
+		FROM = {
+			give_guarantee = JPN
+		}
+		give_guarantee = FROM
+	}
+}
+
+country_event = { #they reject
+	id = japanifornia.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.7"}
+	title = japanifornia.7.t
+	desc = japanifornia.7.d
+	picture = GFX_report_courtroom
+
+	is_triggered_only = yes
+
+	option = { #well, they're on their own
+		name = japanifornia.7.a
+		add_political_power = -100
+	}
+}
+
+country_event = { #Edgeworth receives anonymous note about suspicious meeting
+	id = japanifornia.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.8"}
+	title = japanifornia.8.t
+	desc = japanifornia.8.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = JPN
+		has_country_leader = {
+    		name = "Miles Edgeworth"
+    		ruling_only = yes
+		}
+		fascism > 0.5
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = japanifornia.8.a #investigate
+		hidden_effect = {
+			country_event = {
+				id = japanifornia.9
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = japanifornia.8.b #do not investigate
+		add_political_power = 50
+		hidden_effect = {
+			remove_ideas = {
+				JPN_something_lurks_in_the_shadows
+			}
+			create_country_leader = {
+				name = "Franziska von Karma"
+				desc = "POLITICS_FRANZISKA_DESC"
+				picture = "franziska.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					#
+				}
+			}
+		}
+	}
+
+}
+
+country_event = { #Edgeworth investigates meeting
+	id = japanifornia.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.9"}
+	title = japanifornia.9.t
+	desc = japanifornia.9.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = japanifornia.9.a #he sees von Karma back from dead but is found out
+		hidden_effect = {
+			country_event = {
+				id = japanifornia.10
+				days = 0
+			}
+		}
+	}
+
+}
+
+country_event = { #Edgeworth is killed
+	id = japanifornia.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event japanifornia.10"}
+	title = japanifornia.10.t
+	desc = japanifornia.10.d
+	picture = GFX_report_courtroom
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = japanifornia.10.a 
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Phoenix Wright"
+			desc = "POLITICS_WRIGHT_DESC"
+			picture = "wright.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		create_country_leader = {
+			name = "Manfred von Karma"
+			desc = "POLITICS_VONKARMA_DESC"
+			picture = "manfred.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		news_event = {
+			id = worldnews.45
+			hours = 6
+		}
+		remove_ideas = {
+			JPN_something_lurks_in_the_shadows
+		}
+	}
+
+}
+

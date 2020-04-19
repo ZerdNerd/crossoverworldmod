@@ -1,0 +1,37 @@
+spriteTypes = {	
+	frameAnimatedSpriteType = {
+		name = "GFX_sans_leader_pic"
+		texturefile = "gfx/leaders/UND/sans.dds"
+		noOfFrames = 13
+		loadType = "INGAME"
+		alwaystransparent = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_undyne_leader_pic"
+		texturefile = "gfx/leaders/UND/undyne.dds"
+		noOfFrames = 33
+		loadType = "INGAME"
+		alwaystransparent = no
+		animation_rate_fps = 10
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
+
+	spriteType = {
+		name = "GFX_steamworkshop"
+		texturefile = "gfx//interface//icon_steamworkshop.dds"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_reddit"
+		texturefile = "gfx//interface//icon_reddit.dds"
+		noOfFrames = 1
+	}
+}

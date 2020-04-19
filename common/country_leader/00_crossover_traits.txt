@@ -1,0 +1,160 @@
+leader_traits = {
+	
+	cannons_fanatic = {
+		random = no
+		political_power_factor = -0.1
+		stability_factor = -0.05
+		army_artillery_attack_factor = 0.1
+		army_artillery_defence_factor = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	friend_of_the_king = {
+		random = no
+		stability_factor = -0.05
+		political_power_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	leader_of_spies = {
+		random = no
+		decryption_factor = 0.05
+		encryption_factor = 0.05
+		political_power_factor = -0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_engineer = {
+		random = no
+		production_speed_buildings_factor = 0.05
+		production_factory_max_efficiency_factor = 0.05
+		stability_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	greenlander_from_iceworld = {
+		random = no
+		army_speed_factor = 0.05
+		targeted_modifier = { tag = ICW attack_bonus_against = 0.1 }
+		targeted_modifier = { tag = ICW defense_bonus_against = 0.1 }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	the_thinker = {
+		random = no
+		research_speed_factor = 0.05
+		political_power_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	human_greenlander = {
+		random = no
+		research_speed_factor = 0.15
+		stability_factor = -0.15
+		political_power_factor = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	member_of_avalor_royal_family = {
+		random = no
+		political_power_gain = 0.1
+		stability_factor = 0.025
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	representative_of_commoners = {
+		random = no
+		consumer_goods_factor = -0.05
+		war_support_factor = 0.05
+		industrial_capacity_dockyard = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	member_of_royal_guard_of_avalor = {
+		random = no
+		training_time_factor = -0.05
+		recon_factor = 0.05
+		land_reinforce_rate = 0.05
+		attrition = -0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	member_of_grand_council_of_avalor = {
+		random = no
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	royal_wizard_of_avalor = {
+		random = no
+		foreign_subversive_activites = -0.25
+		opinion_gain_monthly_factor = 0.05
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	royal_sorcerer_of_enchancia = {
+		random = no
+		foreign_subversive_activites = -0.25
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	chancellor_of_avalor = {
+		random = no
+		military_leader_cost_factor = -0.1
+		opinion_gain_monthly_same_ideology_factor = 0.15
+		production_speed_buildings_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	youregoingtohaveabadtime = {
+		random = no
+		offence = 100
+		defence = 100
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

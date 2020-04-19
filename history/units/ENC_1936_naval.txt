@@ -1,0 +1,35 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Enchancian Royal Navy"			
+		naval_base = 579
+		task_force = {				
+			name = "Southern Fleet"
+			location = 579
+			ship = { name = "King Roland I" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "King Roland II" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Queen Miranda" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Prince James" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Princess Amber" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Princess Sofia" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Princess Tilly" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+		}
+		task_force = {
+			name = "Western Fleet"
+			location = 6269
+			ship = { name = "Port Ludlow" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Enchancia" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Bacliff" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Sardinnoza" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Floville" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+		}
+		task_force = {
+			name = "Eastern Fleet"
+			location = 6280
+			ship = { name = "Ridott" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Slaton City" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Palmhurst" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+			ship = { name = "Millry" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = ENC } } }
+		}
+	}
+}

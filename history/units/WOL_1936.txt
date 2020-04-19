@@ -1,0 +1,77 @@
+﻿division_template = {
+	name = "Wolves Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Wolves Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+		light_armor = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Wolves Division"
+		location = 707
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Wolves Division"
+		location = 707
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "3. Wolves Division"
+		location = 707
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "4. Wolves Division"
+		location = 623
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "5. Wolves Division"
+		location = 623
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "6. Wolves Division"
+		location = 623
+		division_template = "Wolves Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "1. Wolves Tank Division"
+		location = 707
+		division_template = "Wolves Tank Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "2. Wolves Tank Division"
+		location = 707
+		division_template = "Wolves Tank Division"
+		start_experience_factor = 0.4
+	}
+	division = {
+		name = "3. Wolves Tank Division"
+		location = 707
+		division_template = "Wolves Tank Division"
+		start_experience_factor = 0.4
+	}
+}
+

@@ -1,0 +1,33 @@
+war_measures = {
+
+	grant_access_to_MAI = {
+		icon = generic_prepare_civil_war
+		
+		available = {
+			OR = {
+				has_war_with = DES
+				has_war_with = ICW
+			}
+			always = no
+		}
+
+		visible = {
+			tag = GRN
+			is_guaranteed_by = MAI
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			replace_civ_with_arms_factories = yes
+			add_war_support = -0.05
+			add_stability = -0.03
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+}

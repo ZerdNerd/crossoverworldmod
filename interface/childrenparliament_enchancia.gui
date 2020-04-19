@@ -1,0 +1,320 @@
+@SENATE_TEXT_X = 3
+@HOUSE_TEXT_X = 212
+@HEADERS_Y = 0
+@STATUS_Y = 52
+guiTypes = {
+
+	containerWindowType = {
+		name = "en1_children_parliament_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 470 }
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_parties_support_header"
+			position = { x = 100 y = @HEADERS_Y }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_parties_support_header"
+			format = center
+			maxWidth = 300
+			maxHeight = 24
+		}
+
+		#PARTY 1
+
+		iconType = {
+			name = "en1_children_parliament_current_leader_icon_party_1"
+			position = {x=15 y=34}	
+			spriteType ="GFX_decision_en1_ch_par_leaders"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "leader_frame2_party_1"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 11 y = 30 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "children_parliament_current_leader_name_party_1"
+			position = { x = 15 y = 187 }
+			font = "hoi_18mbs"
+			text = "EN1_children_parliament_current_leader_name_party_1"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_1_name"
+			position = { x = 16 y = 220 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_1"
+			format = center
+			maxWidth = 110
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_1_pop"
+			position = { x = 16 y = 265 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_1_popularity"
+			format = center
+			maxWidth = 110
+			maxHeight = 24
+		}
+
+		#PARTY 2
+
+		iconType = {
+			name = "en1_children_parliament_current_leader_icon_party_2"
+			position = {x=135 y=34}	
+			spriteType ="GFX_decision_en1_ch_par_leaders"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "leader_frame2_party_2"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 131 y = 30 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "children_parliament_current_leader_name_party_2"
+			position = { x = 135 y = 187 }
+			font = "hoi_18mbs"
+			text = "EN1_children_parliament_current_leader_name_party_2"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_2_name"
+			position = { x = 135 y = 220 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_2"
+			format = center
+			maxWidth = 112
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_2_pop"
+			position = { x = 135 y = 265 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_2_popularity"
+			format = center
+			maxWidth = 112
+			maxHeight = 24
+		}
+
+		#PARTY 3
+
+		iconType = {
+			name = "en1_children_parliament_current_leader_icon_party_3"
+			position = {x=255 y=34}	
+			spriteType ="GFX_decision_en1_ch_par_leaders"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "leader_frame2_party_3"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 251 y = 30 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "children_parliament_current_leader_name_party_3"
+			position = { x = 255 y = 187 }
+			font = "hoi_18mbs"
+			text = "EN1_children_parliament_current_leader_name_party_3"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_3_name"
+			position = { x = 257 y = 220 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_3"
+			format = center
+			maxWidth = 110
+			maxHeight = 24
+
+#			pdx_tooltip = "CHILDREN_PARLIAMENT_PARTY_3_TOOLTIP"	
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_3_pop"
+			position = { x = 257 y = 265 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_3_popularity"
+			format = center
+			maxWidth = 110
+			maxHeight = 24	
+		}
+
+		#PARTY 4
+
+		iconType = {
+			name = "en1_children_parliament_current_leader_icon_party_4"
+			position = {x=375 y=34}	
+			spriteType ="GFX_decision_en1_ch_par_leaders"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "leader_frame2_party_4"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 371 y = 30 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "children_parliament_current_leader_name_party_4"
+			position = { x = 375 y = 187 }
+			font = "hoi_18mbs"
+			text = "EN1_children_parliament_current_leader_name_party_4"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_4_name"
+			position = { x = 377 y = 220 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_4"
+			format = center
+			maxWidth = 110
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="EN1_children_parliament_party_list_party_4_pop"
+			position = { x = 377 y = 265 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_party_list_party_4_popularity"
+			format = center
+			maxWidth = 110
+			maxHeight = 24
+		}
+
+		####END OF PARTIES
+
+		instantTextBoxType = {
+			name = "EN1_children_parliament_next_session_header"
+			position = { x = 0 y = 300}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_header"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "EN1_children_parliament_next_session_date"
+			position = { x = 0 y = 335 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_next_session_date_date"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "EN1_children_parliament_next_session_topics_header"
+			position = { x = 0 y = 370}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_topics_header_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "EN1_children_parliament_next_session_topic_1"
+			position = { x = 0 y = 425 }
+			font = "hoi_20bs"
+			text = "EN1_children_parliament_next_session_topic_1_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+	}
+
+	containerWindowType = {
+		name = "en1_children_parliament_leader_select_entry"
+		size = { width = 231 height = 74 }
+		clipping = no
+			
+		background = {
+			name = "idea_entry_bg"
+			position = { x = 3 y = 0 }
+			spriteType = "GFX_idea_entry_bg_2"
+		}
+			
+		iconType = {
+			name = "icon"
+			position = { x = 42 y = 38 }
+			spriteType = "GFX_placeholder_bordered"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "idea_traits"
+			position = { x = 53 y = 51 }
+			spriteType = "GFX_idea_traits_strip"
+			centerposition = yes
+			alwaystransparent = yes
+			frame = 1
+		}
+		
+		instantTextboxType = {
+			name = "name"
+			position = { x = 66 y = 10 }
+			font = "hoi_18mbs"
+			fixedsize = yes			
+			text = "name"
+			maxWidth = 160
+			maxHeight = 18
+			format = center	
+			alwaystransparent = yes			
+		}
+		
+		gridboxtype = {
+			name = "traits_grid"
+			position = { x = 90 y = 28 }
+			size = { width = 231 height = 100%% }
+			slotsize = { width = 200 height = 15 }
+			add_horizontal = no
+			format = "UPPER_LEFT"
+		}
+		
+		instantTextboxType = {
+			name = "cost"
+			position = { x = 80 y = 47 }
+			font = "hoi_16mbs"
+			text = ""
+			maxWidth = 142
+			maxHeight = 10
+			format = right
+			alwaystransparent = yes
+		}
+	}
+}

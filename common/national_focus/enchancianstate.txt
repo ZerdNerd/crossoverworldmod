@@ -1,0 +1,1339 @@
+focus_tree = { 
+	id = enchancian_state
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = EN3
+		} 
+	} 
+
+	focus = { 
+		id = EN3_victory_in_civil_war
+		icon = GFX_goal_support_fascism
+		x = 3
+		y = 0
+		cost = 7
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_ecw_ended
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = EN3_educate_people
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN3_but_keep_their_mouths_shut
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 2
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_educate_people
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN3_new_connections
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 3
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_but_keep_their_mouths_shut
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = infrastructure
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_rally_support_for_cedric
+		icon = GFX_goal_generic_defence
+		x = 2
+		y = 1
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = EN3_promote_greater_enchancia
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 2
+		y = 2
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_rally_support_for_cedric
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_war_support = 0.05
+			add_manpower = 10000
+		} 
+	}
+
+	focus = { 
+		id = EN3_rebuild_the_cities
+		icon = GFX_goal_generic_construction
+		x = 2
+		y = 3
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_promote_greater_enchancia
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			166 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			187 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			242 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			156 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			114 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			104 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_fate_of_royal_family
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 4
+		y = 1
+		cost = 7
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = enchancianstate.1
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_put_artisans_on_trial
+		icon = GFX_goal_anti_comintern_pact
+		x = 6
+		y = 1
+		cost = 7
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ENC_artisans_risen_up
+				ENC = {
+					has_country_flag = artisans_rise_up
+				}
+			}
+		}
+		prerequisite = {
+			focus = EN3_victory_in_civil_war
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_stability = 0.02
+			country_event = {
+				id = enchancia.50
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_root_out_opposition
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 2
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN3_fate_of_royal_family
+			focus = EN3_put_artisans_on_trial
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			add_ideas = {
+				EN3_rooting_out_opposition
+			}
+			if = {
+				limit = {
+					has_idea = ENC_monarchist_guerillas
+				}
+				remove_ideas = {
+					ENC_monarchist_guerillas
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_apply_to_join_sorcerer_league
+		icon = GFX_goal_anschluss
+		x = 4
+		y = 3
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN3_root_out_opposition
+		}
+		bypass = {
+			RUD = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			RUD = {
+				country_event = {
+					id = enchancianstate.5
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_demand_gate
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 3
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN3_root_out_opposition
+		}
+		bypass = {
+			ISL = {
+				NOT = {
+					has_full_control_of_state = 330
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			ISL = {
+				country_event = {
+					id = enchancia.52
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_one_nation_one_state_one_leader
+		icon = GFX_goal_generic_demand_territory
+		x = 3
+		y = 4
+		cost = 7
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = EN3_rebuild_the_cities
+		}
+		prerequisite = {
+			focus = EN3_new_connections
+		}
+		prerequisite = {
+			focus = EN3_apply_to_join_sorcerer_league
+		}
+		prerequisite = {
+			focus = EN3_demand_gate
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = {
+			remove_ideas = {
+				ENC_aftermath_of_civil_war
+			}
+		} 
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = EN3_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 12
+		y = 0
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = EN3_army_effort }
+		x = -1
+		y = 1
+		relative_position_id = EN3_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = EN3_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 1
+		y = 1
+		relative_position_id = EN3_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN3_army_effort }
+		x = 0
+		y = 2
+		relative_position_id = EN3_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = EN3_equipment_effort }
+		x = -1
+		y = 1
+		relative_position_id = EN3_equipment_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = EN3_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = EN3_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = EN3_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN3_doctrine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = EN3_equipment_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = EN3_equipment_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = EN3_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = EN3_mechanization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = EN3_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = EN3_equipment_effort_3 }
+		prerequisite = { focus = EN3_doctrine_effort_2 }
+		prerequisite = { focus = EN3_armor_effort }
+		x = 2
+		y = 1
+		relative_position_id = EN3_equipment_effort_3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = EN3_bring_peace_freedom_justice_and_security_to_everrealm
+		icon = GFX_focus_ger_reichskommisariats
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		available = {
+			has_completed_focus = EN3_one_nation_one_state_one_leader
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = EN3_partition_wei_ling
+		icon = GFX_goal_demand_sudetenland
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_bring_peace_freedom_justice_and_security_to_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			if = {
+				limit = {
+					is_in_faction_with = KHA
+				}
+				198 = {
+					add_core_of = EN3
+				}
+				221 = {
+					add_core_of = EN3
+				}
+				210 = {
+					add_core_of = EN3
+				}
+				248 = {
+					add_core_of = EN3
+				}
+				250 = {
+					add_core_of = EN3
+				}
+				255 = {
+					add_core_of = KHA
+				}
+				269 = {
+					add_core_of = KHA
+				}
+				329 = {
+					add_core_of = KHA
+				}
+				320 = {
+					add_core_of = KHA
+				}
+				386 = {
+					add_core_of = KHA
+				}
+				394 = {
+					add_core_of = KHA
+				}
+				326 = {
+					add_core_of = KHA
+				}
+				420 = {
+					add_core_of = KHA
+				}
+				363 = {
+					add_core_of = KHA
+				}
+				335 = {
+					add_core_of = RUD
+				}
+				352 = {
+					add_core_of = RUD
+				}
+				303 = {
+					add_core_of = RUD
+				}
+				278 = {
+					add_core_of = RUD
+				}
+				287 = {
+					add_core_of = RUD
+				}
+				349 = {
+					add_core_of = RUD
+				}
+				339 = {
+					add_core_of = RUD
+				}
+				350 = {
+					add_core_of = RUD
+				}
+				290 = {
+					add_core_of = RUD
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_in_faction_with = KHA
+					}
+				}
+				198 = {
+					add_core_of = EN3
+				}
+				221 = {
+					add_core_of = EN3
+				}
+				210 = {
+					add_core_of = EN3
+				}
+				248 = {
+					add_core_of = EN3
+				}
+				250 = {
+					add_core_of = EN3
+				}
+				255 = {
+					add_core_of = EN3
+				}
+				269 = {
+					add_core_of = EN3
+				}
+				329 = {
+					add_core_of = EN3
+				}
+				320 = {
+					add_core_of = EN3
+				}
+				386 = {
+					add_core_of = RUD
+				}
+				394 = {
+					add_core_of = RUD
+				}
+				326 = {
+					add_core_of = RUD
+				}
+				420 = {
+					add_core_of = RUD
+				}
+				363 = {
+					add_core_of = RUD
+				}
+				335 = {
+					add_core_of = RUD
+				}
+				352 = {
+					add_core_of = RUD
+				}
+				303 = {
+					add_core_of = RUD
+				}
+				278 = {
+					add_core_of = RUD
+				}
+				287 = {
+					add_core_of = RUD
+				}
+				349 = {
+					add_core_of = RUD
+				}
+				339 = {
+					add_core_of = RUD
+				}
+				350 = {
+					add_core_of = RUD
+				}
+				290 = {
+					add_core_of = RUD
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_operation_western_dragon
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 7
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_partition_wei_ling
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					WEI = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WEI
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					WLC = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WLC
+					type = annex_everything
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_operation_eastern_sun
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_bring_peace_freedom_justice_and_security_to_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			ISL = {
+				every_owned_state = {
+					add_claim_by = EN3
+				}
+			}
+			create_wargoal = {
+				target = ISL
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_operation_eastern_sun_south
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 9
+		y = 7
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_eastern_sun
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			MAR = {
+				every_owned_state = {
+					add_claim_by = EN3
+				}
+			}
+			create_wargoal = {
+				target = MAR
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_unite_the_everrealm
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_western_dragon
+		}
+		prerequisite = {
+			focus = EN3_operation_eastern_sun_south
+		}
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				EN3 = {
+					num_divisions > 29
+				}
+				factor = 1
+			}
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			leave_faction = yes
+			if = {
+				limit = {
+					KHA = {
+						has_government = fascism
+					}
+				}
+				create_wargoal = {
+					target = KHA
+					type = annex_everything
+				}
+			}
+			create_wargoal = {
+				target = RUD
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_invade_khaldoun
+		icon = GFX_goal_generic_major_war
+		x = 5
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_western_dragon
+		}
+		prerequisite = {
+			focus = EN3_operation_eastern_sun_south
+		}
+		available = {
+			KHA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = KHA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_liberate_corinthia_and_trufflandia
+		icon = GFX_goal_generic_major_war
+		x = 6
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_invade_khaldoun
+			focus = EN3_unite_the_everrealm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = COR
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = TRF
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_operation_southern_lights
+		icon = GFX_goal_generic_major_war
+		x = 9
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_western_dragon
+		}
+		prerequisite = {
+			focus = EN3_operation_eastern_sun_south
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = AVA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_no_more_lechists
+		icon = GFX_goal_generic_major_war
+		x = 9
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_southern_lights
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = LEC
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_operation_eastern_dawn
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_western_dragon
+		}
+		prerequisite = {
+			focus = EN3_operation_eastern_sun_south
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = DUL
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					FRK = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = FRK
+					type = annex_everything
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_erase_far_far_away_from_maps
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 9
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_operation_eastern_dawn
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = FFA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_finish_unification_of_everrealm
+		icon = GFX_goal_generic_major_war
+		x = 8
+		y = 10
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_liberate_corinthia_and_trufflandia
+		}
+		prerequisite = {
+			focus = EN3_no_more_lechists
+		}
+		prerequisite = {
+			focus = EN3_erase_far_far_away_from_maps
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			create_wargoal = {
+				target = ZUM
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_steal_technology
+		icon = GFX_focus_research2
+		x = 8
+		y = 11
+		cost = 30
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_finish_unification_of_everrealm
+		}
+		available = {
+			has_war = no
+			any_neighbor_country = {
+				has_idea = modern_tech_idea
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 3
+			hidden_effect = {
+				set_technology = {
+					gw_artillery = 1
+					early_fighter = 1
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_light_cruiser = 1
+						basic_light_cruiser = 1
+						early_heavy_cruiser = 1
+						basic_heavy_cruiser = 1
+						early_battleship = 1
+						basic_battleship = 1
+						early_battlecruiser = 1
+						transport = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						basic_naval_mines = 1
+						submarine_mine_laying = 1
+						early_ship_hull_light = 1
+						basic_ship_hull_light = 1
+						early_ship_hull_cruiser = 1
+						basic_ship_hull_cruiser = 1
+						early_ship_hull_heavy = 1
+						basic_ship_hull_heavy = 1
+						panzerschiffe = 1
+						pre_dreadnoughts = 1
+						early_ship_hull_submarine = 1
+						basic_ship_hull_submarine = 1
+						mtg_transport = 1
+						basic_torpedo = 1
+						improved_ship_torpedo_launcher = 1
+						basic_battery = 1
+						basic_light_battery = 1
+						basic_medium_battery = 1
+						basic_heavy_battery = 1
+						basic_secondary_battery = 1
+						improved_secondary_battery = 1
+						basic_depth_charges = 1
+						sonar = 1
+						basic_cruiser_armor_scheme = 1
+					}	
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_connect_the_enclaves
+		icon = GFX_goal_generic_military_sphere
+		x = 8
+		y = 12
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_steal_technology
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = SWA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = ICK
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = CDK
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_go_all_out
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 8
+		y = 13
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_connect_the_enclaves
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = SMU
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = PAT
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = JPN
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_invade_gummi_bears
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 10
+		y = 13
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_connect_the_enclaves
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = GUM
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = EN3_foothold_on_eastern_continent
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 6
+		y = 13
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = EN3_connect_the_enclaves
+		}
+		available = {
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			declare_war_on = {
+				target = WOL
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = WEA
+				type = annex_everything
+			}
+		} 
+	}
+}

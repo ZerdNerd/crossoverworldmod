@@ -1,0 +1,147 @@
+﻿###########################
+# BAD TIME AHEAD.
+###########################
+
+add_namespace = badtime
+
+country_event = { #BAD TIME AHEAD PT 1
+	id = badtime.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event badtime.1"}
+	title = badtime.1.t
+	desc = badtime.1.d
+	picture = GFX_report_enchancia_palace
+
+	trigger = {
+		tag = UND
+		is_ai = yes
+		any_country = {
+            AND = {
+            	is_ai = no
+            	is_justifying_wargoal_against = UND
+            }
+        }
+        NOT = {
+        	has_global_flag = i_warned_you
+        }
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = { #
+		name = badtime.1.a
+		set_global_flag = show_sans_warning_1
+		set_global_flag = i_warned_you
+	}
+}
+
+country_event = { #BAD TIME AHEAD PT 2
+	id = badtime.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event badtime.2"}
+	title = badtime.2.t
+	desc = badtime.2.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = UND
+		is_ai = yes
+        OR = {
+        	FRI = {
+            	focus_progress = {
+    				focus = FRI_someone_gonna_have_bad_time
+   					progress > 0.1
+				}
+       		}
+       		DUL = {
+            	focus_progress = {
+    				focus = DUL_attack_underground
+   					progress > 0.1
+				}
+       		}
+       		SLD = {
+       			focus_progress = {
+       				focus = SLD_final_showdown
+       				progress > 0.1
+       			}
+       		}
+       		JPN = {
+       			focus_progress = {
+       				focus = SLD_operation_nordubung
+       				progress > 0.1
+       			}
+       		}
+        }
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = { #
+		name = badtime.2.a
+		set_global_flag = show_sans_warning_2
+		set_global_flag = i_warned_you
+	}
+}
+
+country_event = { #BAD TIME AHEAD PT 3 (AFTER PREVIOUS WARNING)
+	id = badtime.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event badtime.3"}
+	title = badtime.3.t
+	desc = badtime.3.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = UND
+		has_global_flag = i_warned_you
+		is_ai = yes
+		any_country = {
+            OR = {
+            	AND = {
+            		tag = FRI
+            		FRI = {
+            			focus_progress = {
+    						focus = FRI_someone_gonna_have_bad_time
+   							progress > 0.65
+						}
+            		}
+            	}
+            	AND = {
+            		tag = DUL
+            		DUL = {
+            			focus_progress = {
+    						focus = DUL_attack_underground
+   							progress > 0.65
+						}
+            		}
+            	}
+            	AND = {
+            		tag = SLD
+            		SLD = {
+       					focus_progress = {
+       						focus = SLD_final_showdown
+       						progress > 0.65
+       					}
+       				}
+            	}
+            	AND = {
+            		tag = JPN
+            		JPN = {
+       					focus_progress = {
+       						focus = SLD_operation_nordubung
+       						progress > 0.65
+       					}
+       				}
+            	}
+            }
+        }
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = { #
+		name = badtime.3.a
+		set_global_flag = show_sans_warning_2_final
+	}
+}

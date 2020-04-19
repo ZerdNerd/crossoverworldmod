@@ -1,0 +1,5554 @@
+occupation_dec_category = {
+	ks_dumbarton = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			NOT = {
+				has_war_with = WEK
+			}
+			any_owned_state = {
+				NOT = {
+					state = 877
+					state = 897
+				}
+				is_core_of = WEK
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			WEK = {
+				exists = no
+			}
+			any_owned_state = {
+				NOT = {
+					state = 877
+					state = 897
+				}
+				is_core_of = WEK
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = WEK
+				}
+				add_core_of = SKD
+			}
+			SKD = {
+				if = {
+					limit = {
+						892 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 892
+				}
+				if = {
+					limit = {
+						883 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 883
+				}
+				if = {
+					limit = {
+						860 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 860
+				}
+				if = {
+					limit = {
+						850 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 850
+				}
+				if = {
+					limit = {
+						879 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 879
+				}
+				if = {
+					limit = {
+						865 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 865
+				}
+				if = {
+					limit = {
+						845 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 845
+				}
+				if = {
+					limit = {
+						852 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 852
+				}
+				if = {
+					limit = {
+						832 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 832
+				}
+				if = {
+					limit = {
+						816 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 816
+				}
+				if = {
+					limit = {
+						809 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 809
+				}
+				if = {
+					limit = {
+						820 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 820
+				}
+				if = {
+					limit = {
+						818 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 818
+				}
+				if = {
+					limit = {
+						847 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 847
+				}
+				if = {
+					limit = {
+						907 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 907
+				}
+				if = {
+					limit = {
+						881 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 881
+				}
+				if = {
+					limit = {
+						851 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 851
+				}
+				if = {
+					limit = {
+						850 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 850
+				}
+				if = {
+					limit = {
+						826 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 826
+				}
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Duszan"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_pyrzyce = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			858 = {
+				is_owned_by = SKO
+			}
+			811 = {
+				NOT = {
+					is_owned_by = SKO
+				}
+			}
+			any_owned_state = {
+				NOT = {
+					state = 905
+					state = 911
+				}
+				is_core_of = FRI
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			FRI = {
+				exists = no
+			}
+			any_owned_state = {
+				is_core_of = FRI
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = FRI
+						is_core_of = MAI
+					}
+				}
+				add_core_of = SKP
+			}
+			SKP = {
+				if = {
+					limit = {
+						858 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 858
+				}
+				if = {
+					limit = {
+						884 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 884
+				}
+				if = {
+					limit = {
+						872 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 872
+				}
+				if = {
+					limit = {
+						843 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 843
+				}
+				if = {
+					limit = {
+						853 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 853
+				}
+				if = {
+					limit = {
+						869 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 869
+				}
+				if = {
+					limit = {
+						835 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 835
+				}
+				set_capital = 858
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Kamil Zdun"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_pantmawr = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			811 = {
+				is_owned_by = SKO
+			}
+			any_owned_state = {
+				NOT = {
+					state = 905
+					state = 911
+				}
+				is_core_of = FRI
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			FRI = {
+				exists = no
+			}
+			any_owned_state = {
+				is_core_of = FRI
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = FRI
+				}
+				add_core_of = SKA
+			}
+			SKA = {
+				if = {
+					limit = {
+						858 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 858
+				}
+				if = {
+					limit = {
+						858 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 843
+				}
+				if = {
+					limit = {
+						811 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 811
+				}
+				if = {
+					limit = {
+						884 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 884
+				}
+				if = {
+					limit = {
+						872 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 872
+				}
+				if = {
+					limit = {
+						853 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 853
+				}
+				if = {
+					limit = {
+						869 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 869
+				}
+				if = {
+					limit = {
+						835 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 835
+				}
+				if = {
+					limit = {
+						838 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 838
+				}
+				if = {
+					limit = {
+						830 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 830
+				}
+				if = {
+					limit = {
+						819 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 819
+				}
+				if = {
+					limit = {
+						805 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 805
+				}
+				if = {
+					limit = {
+						790 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 790
+				}
+				if = {
+					limit = {
+						794 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 794
+				}
+				if = {
+					limit = {
+						763 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 763
+				}
+				if = {
+					limit = {
+						758 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 758
+				}
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Krzysztof"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_lubniewice = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			812 = {
+				is_owned_by = SKO
+			}
+			any_owned_state = {
+				is_core_of = MAI
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			MAI = {
+				exists = no
+			}
+			any_owned_state = {
+				is_core_of = MAI
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MAI
+				}
+				add_core_of = SKL
+			}
+			SKL = {
+				if = {
+					limit = {
+						858 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 858
+				}
+				if = {
+					limit = {
+						853 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 843
+				}
+				if = {
+					limit = {
+						831 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 831
+				}
+				if = {
+					limit = {
+						808 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 808
+				}
+				if = {
+					limit = {
+						817 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 817
+				}
+				if = {
+					limit = {
+						812 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 812
+				}
+				if = {
+					limit = {
+						824 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 824
+				}
+				if = {
+					limit = {
+						822 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 822
+				}
+				if = {
+					limit = {
+						814 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 814
+				}
+				if = {
+					limit = {
+						803 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 803
+				}
+				if = {
+					limit = {
+						879 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 879
+				}
+				if = {
+					limit = {
+						798 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 798
+				}
+				if = {
+					limit = {
+						796 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 796
+				}
+				if = {
+					limit = {
+						792 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 792
+				}
+				if = {
+					limit = {
+						799 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 799
+				}
+				if = {
+					limit = {
+						789 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 789
+				}
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Damian Wąsik"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_japanifornia = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			859 = {
+				is_owned_by = SKO
+			}
+			any_owned_state = {
+				is_core_of = JPN
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			JPN = {
+				exists = no
+			}
+			any_owned_state = {
+				is_core_of = JPN
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = JPN
+				}
+				add_core_of = SKJ
+			}
+			SKJ = {
+				if = {
+					limit = {
+						825 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 825
+				}
+				if = {
+					limit = {
+						813 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 813
+				}
+				if = {
+					limit = {
+						821 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 821
+				}
+				if = {
+					limit = {
+						859 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 859
+				}
+				if = {
+					limit = {
+						864 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 864
+				}
+				if = {
+					limit = {
+						886 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 886
+				}
+				if = {
+					limit = {
+						909 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 909
+				}
+				if = {
+					limit = {
+						907 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 907
+				}
+				if = {
+					limit = {
+						881 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 881
+				}
+				if = {
+					limit = {
+						851 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 851
+				}
+				if = {
+					limit = {
+						850 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 850
+				}
+				if = {
+					limit = {
+						826 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 826
+				}
+				if = {
+					limit = {
+						846 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 846
+				}
+				if = {
+					limit = {
+						849 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 849
+				}
+				if = {
+					limit = {
+						829 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 829
+				}
+				if = {
+					limit = {
+						837 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 837
+				}
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Karol"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_khurain = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			916 = {
+				is_owned_by = SKO
+			}
+			919 = {
+				is_owned_by = SKO
+			}
+			933 = {
+				is_owned_by = SKO
+			}
+			927 = {
+				is_owned_by = SKO
+			}
+			925 = {
+				is_owned_by = SKO
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			any_owned_state = {
+				is_core_of = KHU
+			}
+			KHU = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = KHU
+				}
+				add_core_of = SKK
+			}
+			SKK = {
+				if = {
+					limit = {
+						916 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 916
+				}
+				if = {
+					limit = {
+						919 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 919
+				}
+				if = {
+					limit = {
+						933 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 933
+				}
+				if = {
+					limit = {
+						927 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 927
+				}
+				if = {
+					limit = {
+						925 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 925
+				}
+				if = {
+					limit = {
+						910 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 910
+				}
+				if = {
+					limit = {
+						895 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 895
+				}
+				if = {
+					limit = {
+						903 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 903
+				}
+				if = {
+					limit = {
+						899 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 899
+				}
+				if = {
+					limit = {
+						875 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 875
+				}
+				if = {
+					limit = {
+						863 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 863
+				}
+				if = {
+					limit = {
+						887 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 887
+				}
+				if = {
+					limit = {
+						873 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 873
+				}
+				if = {
+					limit = {
+						867 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 867
+				}
+				if = {
+					limit = {
+						878 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 878
+				}
+				if = {
+					limit = {
+						854 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 854
+				}
+				if = {
+					limit = {
+						862 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 862
+				}
+				if = {
+					limit = {
+						43 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 43
+				}
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Bartek"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	ks_moomins = {
+
+		icon = ger_reichskommissariats
+
+		available = {
+			any_owned_state = {
+				is_core_of = MOO
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = SKO
+			any_owned_state = {
+				is_core_of = MOO
+			}
+			MOO = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MOO
+				}
+				add_core_of = SKM
+			}
+			SKM = {
+				if = {
+					limit = {
+						747 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 747
+				}
+				if = {
+					limit = {
+						751 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 751
+				}
+				if = {
+					limit = {
+						727 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 727
+				}
+				if = {
+					limit = {
+						765 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 765
+				}
+				if = {
+					limit = {
+						787 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 787
+				}
+				if = {
+					limit = {
+						743 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 743
+				}
+				if = {
+					limit = {
+						701 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 701
+				}
+				if = {
+					limit = {
+						753 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 753
+				}
+				if = {
+					limit = {
+						735 = {
+							is_owned_by = SKO
+						}
+					}
+					transfer_state = 735
+				}
+				set_capital = 751
+				SKO = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
+				}
+				create_country_leader = {
+					name = "Piotrek"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SKO/kurvinox.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+					}
+				}
+				
+			}
+		}
+	}
+
+	establish_east_gongmen = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			268 = {
+				is_owned_by = GRN
+			}
+			251 = {
+				is_owned_by = GRN
+			}
+			249 = {
+				is_owned_by = GRN
+			}
+			231 = {
+				is_owned_by = GRN
+			}
+			194 = {
+				is_owned_by = GRN
+			}
+			177 = {
+				is_owned_by = GRN
+			}
+			GON = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = GRN
+			any_owned_state = {
+				is_core_of = GON
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GON
+					is_controlled_by = GRN
+				}
+				add_core_of = EGO
+			}
+			EGO = {
+				transfer_state = 268
+				transfer_state = 251
+				transfer_state = 249
+				transfer_state = 231
+				transfer_state = 194
+				transfer_state = 177
+				GRN = {
+					puppet = PREV
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+					}
+					create_country_leader = {
+						name = "Prinz Tabaluga"
+						desc = "POLITICS_PTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+							#
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+						}
+					}
+					create_country_leader = {
+						name = "Tabaluga I"
+						desc = "POLITICS_KTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga_king.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = democratic
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+						}
+					}
+					create_country_leader = {
+						name = "Prinz Tabaluga"
+						desc = "POLITICS_PTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+							#
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+						}
+						has_completed_focus = GRN_reopen_the_portal
+					}
+					create_country_leader = {
+						name = "Royal Governor Robert"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/GRN/GRN_dragon_2.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = democratic
+						}
+						has_completed_focus = GRN_reopen_the_portal
+					}
+					create_country_leader = {
+						name = "Governor Robert"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/GRN/GRN_dragon_2.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+		}
+	}
+
+	establish_west_gongmen = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			190 = {
+				is_owned_by = FLO
+			}
+			167 = {
+				is_owned_by = FLO
+			}
+			181 = {
+				is_owned_by = FLO
+			}
+			192 = {
+				is_owned_by = FLO
+			}
+			163 = {
+				is_owned_by = FLO
+			}
+			213 = {
+				is_owned_by = FLO
+			}
+			199 = {
+				is_owned_by = FLO
+			}
+			236 = {
+				is_owned_by = FLO
+			}
+			177 = {
+				is_owned_by = GRN
+			}
+			GON = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = FLO
+			GON = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GON
+					is_controlled_by = FLO
+				}
+				add_core_of = WGO
+			}
+			WGO = {
+				transfer_state = 190
+				transfer_state = 167
+				transfer_state = 181
+				transfer_state = 192
+				transfer_state = 163
+				transfer_state = 213
+				transfer_state = 199
+				transfer_state = 236
+				FLO = {
+					puppet = PREV
+				}
+				create_country_leader = {
+					name = "Governor Undochi"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/FLO/Undochi.dds"
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+
+	establish_gongmen_socialist_republic = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			190 = {
+				is_owned_by = FLO
+			}
+			167 = {
+				is_owned_by = FLO
+			}
+			181 = {
+				is_owned_by = FLO
+			}
+			192 = {
+				is_owned_by = FLO
+			}
+			163 = {
+				is_owned_by = FLO
+			}
+			213 = {
+				is_owned_by = FLO
+			}
+			199 = {
+				is_owned_by = FLO
+			}
+			236 = {
+				is_owned_by = FLO
+			}
+			268 = {
+				is_owned_by = FLO
+			}
+			251 = {
+				is_owned_by = FLO
+			}
+			249 = {
+				is_owned_by = FLO
+			}
+			231 = {
+				is_owned_by = FLO
+			}
+			194 = {
+				is_owned_by = FLO
+			}
+			177 = {
+				is_owned_by = FLO
+			}
+			GON = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = FLO
+			GON = {
+				exists = no
+			}
+			EGO = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GON
+					is_controlled_by = FLO
+				}
+				add_core_of = WGO
+			}
+			WGO = {
+				set_cosmetic_tag = GongmenSocialist
+				transfer_state = 190
+				transfer_state = 167
+				transfer_state = 181
+				transfer_state = 192
+				transfer_state = 163
+				transfer_state = 213
+				transfer_state = 199
+				transfer_state = 236
+				transfer_state = 268
+				transfer_state = 251
+				transfer_state = 249
+				transfer_state = 231
+				transfer_state = 194
+				transfer_state = 177
+				FLO = {
+					puppet = PREV
+				}
+				create_country_leader = {
+					name = "Governor Undochi"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/FLO/Undochi.dds"
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+
+	establish_gongmen_republic = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			190 = {
+				is_owned_by = GRN
+			}
+			167 = {
+				is_owned_by = GRN
+			}
+			181 = {
+				is_owned_by = GRN
+			}
+			192 = {
+				is_owned_by = GRN
+			}
+			163 = {
+				is_owned_by = GRN
+			}
+			213 = {
+				is_owned_by = GRN
+			}
+			199 = {
+				is_owned_by = GRN
+			}
+			236 = {
+				is_owned_by = GRN
+			}
+			268 = {
+				is_owned_by = GRN
+			}
+			251 = {
+				is_owned_by = GRN
+			}
+			249 = {
+				is_owned_by = GRN
+			}
+			231 = {
+				is_owned_by = GRN
+			}
+			194 = {
+				is_owned_by = GRN
+			}
+			177 = {
+				is_owned_by = GRN
+			}
+			GON = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = GRN
+			GON = {
+				exists = no
+			}
+			WGO = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GON
+					is_controlled_by = GRN
+				}
+				add_core_of = EGO
+			}
+			EGO = {
+				set_cosmetic_tag = GongmenRepublic
+				transfer_state = 190
+				transfer_state = 167
+				transfer_state = 181
+				transfer_state = 192
+				transfer_state = 163
+				transfer_state = 213
+				transfer_state = 199
+				transfer_state = 236
+				transfer_state = 268
+				transfer_state = 251
+				transfer_state = 249
+				transfer_state = 231
+				transfer_state = 194
+				transfer_state = 177
+				GRN = {
+					puppet = PREV
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+					}
+					create_country_leader = {
+						name = "Prinz Tabaluga"
+						desc = "POLITICS_PTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+							#
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+						}
+					}
+					create_country_leader = {
+						name = "Tabaluga I"
+						desc = "POLITICS_KTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga_king.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = democratic
+							OR = {
+								has_completed_focus = GRN_coronation_of_tabaluga
+								has_completed_focus = GRN_majority_rules
+							}
+						}
+						NOT = {
+							has_completed_focus = GRN_reopen_the_portal
+						}
+					}
+					create_country_leader = {
+						name = "Prinz Tabaluga"
+						desc = "POLITICS_PTABALUGA_DESC"
+						picture = "gfx/leaders/GRN/tabaluga.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+							#
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = monarchism
+						}
+						has_completed_focus = GRN_reopen_the_portal
+					}
+					create_country_leader = {
+						name = "Royal Governor Robert"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/GRN/GRN_dragon_2.dds"
+						expire = "1965.1.1"
+						ideology = administrative_monarchy
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						GRN = {
+							has_government = democratic
+						}
+						has_completed_focus = GRN_reopen_the_portal
+					}
+					create_country_leader = {
+						name = "Governor Robert"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/GRN/GRN_dragon_2.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+		}
+	}
+
+	starfleet_western_sector = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			SKO = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = KPT
+			OR = {
+				has_completed_focus = KPT_prepare_occupation_zones
+				has_completed_focus = KPT_occupation_duties
+				has_completed_focus = KPT_divide_the_country
+			}
+			any_owned_state = {
+				is_core_of = SKO
+			}
+		}
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					state = 921
+					state = 932
+					state = 912
+					state = 914
+					state = 917
+					state = 942
+					state = 943
+					state = 947
+					state = 954
+				}
+				add_core_of = STW
+			}
+			STW = {
+				transfer_state = 921
+				transfer_state = 932
+				transfer_state = 912
+				transfer_state = 914
+				transfer_state = 917
+				transfer_state = 942
+				transfer_state = 943
+				transfer_state = 947
+				transfer_state = 954
+				KPT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = communism
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = marxism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = fascism
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = neutrality
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = democratic
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+			release = PDX
+		}
+	}
+
+	starfleet_central_sector = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			SKO = {
+				exists = no
+			}
+		}
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			tag = KPT
+			OR = {
+				has_completed_focus = KPT_prepare_occupation_zones
+				has_completed_focus = KPT_occupation_duties
+				has_completed_focus = KPT_divide_the_country
+			}
+			any_owned_state = {
+				is_core_of = SKO
+			}
+		}
+
+		complete_effect = {
+			SKO = {
+				transfer_state = 952
+				transfer_state = 951
+				transfer_state = 936
+				transfer_state = 931
+				transfer_state = 922
+				transfer_state = 944
+				transfer_state = 952
+				transfer_state = 939
+				load_focus_tree = generic_focus
+				set_cosmetic_tag = StarfleetCentralSector
+				KPT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = communism
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = marxism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = fascism
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = neutrality
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = democratic
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+			938 = {
+				add_core_of = KPT
+			}
+			948 = {
+				add_core_of = KPT
+			}
+			937 = {
+				add_core_of = KPT
+			}
+			924 = {
+				add_core_of = KPT
+			}
+		}
+	}
+
+	establish_mushroom_prot = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			476 = {
+				is_owned_by = ROOT
+			}
+			449 = {
+				is_owned_by = ROOT
+			}
+			443 = {
+				is_owned_by = ROOT
+			}
+			441 = {
+				is_owned_by = ROOT
+			}
+			377 = {
+				is_owned_by = ROOT
+			}
+			MUS = {
+				exists = no
+			}
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 476
+				owns_state = 449
+				owns_state = 443
+				owns_state = 441
+				owns_state = 377
+				is_puppet = no
+			}
+			MUS = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			MUS = {
+				set_cosmetic_tag = MushroomProt
+				transfer_state = 476
+				transfer_state = 449
+				transfer_state = 443
+				transfer_state = 441
+				transfer_state = 377
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_trebbio_prot = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			470 = {
+				is_owned_by = ROOT
+			}
+			448 = {
+				is_owned_by = ROOT
+			}
+			466 = {
+				is_owned_by = ROOT
+			}
+			396 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 470
+				owns_state = 448
+				owns_state = 466
+				owns_state = 396
+				is_puppet = no
+			}
+			NOT = {
+				tag = MUS
+			}
+		}
+
+		complete_effect = {
+			TPR = {
+				add_state_core = 470
+				add_state_core = 448
+				add_state_core = 466
+				add_state_core = 396
+				transfer_state = 470
+				transfer_state = 448
+				transfer_state = 466
+				transfer_state = 396
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_maranza_prot = {
+
+		icon = ger_mefo_bills
+
+		available = {
+			452 = {
+				is_owned_by = ROOT
+			}
+			463 = {
+				is_owned_by = ROOT
+			}
+			500 = {
+				is_owned_by = ROOT
+			}
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 452
+				owns_state = 463
+				owns_state = 500
+				is_puppet = no
+			}
+			NOT = {
+				tag = MUS
+			}
+		}
+
+		complete_effect = {
+			MPR = {
+				add_state_core = 452
+				add_state_core = 463
+				add_state_core = 500
+				transfer_state = 452
+				transfer_state = 463
+				transfer_state = 500
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_southern_mushroom_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 569
+				owns_state = 526
+				owns_state = 505
+				owns_state = 542
+				owns_state = 514
+				is_puppet = no
+			}
+			NOT = {
+				tag = MUS
+			}
+		}
+
+		complete_effect = {
+			SMP = {
+				add_state_core = 569
+				add_state_core = 526
+				add_state_core = 505
+				add_state_core = 542
+				add_state_core = 514
+				transfer_state = 569
+				transfer_state = 526
+				transfer_state = 505
+				transfer_state = 542
+				transfer_state = 514
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_southern_vinesauce_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 658
+				owns_state = 659
+				owns_state = 656
+				owns_state = 615
+				owns_state = 608
+				owns_state = 646
+				owns_state = 672
+				owns_state = 681
+				is_puppet = no
+			}
+			NOT = {
+				tag = VIS
+			}
+		}
+
+		complete_effect = {
+			JOE = {
+				add_state_core = 658
+				add_state_core = 659
+				add_state_core = 656
+				add_state_core = 615
+				add_state_core = 608
+				add_state_core = 646
+				transfer_state = 658
+				transfer_state = 659
+				transfer_state = 656
+				transfer_state = 615
+				transfer_state = 608
+				transfer_state = 646
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = SLD
+								has_completed_focus = SLD_eastward_expansion
+							}
+						}
+					}
+					transfer_state = 672
+					transfer_state = 681
+				}
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_vinesauce_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 566
+				owns_state = 513
+				owns_state = 545
+				owns_state = 612
+				owns_state = 596
+				owns_state = 559
+				is_puppet = no
+			}
+			VIS = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			VIS = {
+				set_cosmetic_tag = VinesauceProt
+				transfer_state = 566
+				transfer_state = 513
+				transfer_state = 545
+				transfer_state = 612
+				transfer_state = 596
+				transfer_state = 559
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_duckburg_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 647
+				owns_state = 652
+				owns_state = 605
+				owns_state = 586
+				owns_state = 565
+				owns_state = 576
+				owns_state = 626
+				owns_state = 636
+				owns_state = 670
+				owns_state = 679
+				owns_state = 654
+				is_puppet = no
+			}
+			DCB = {
+				exists = no
+			}
+			NOT = {
+				tag = TSA
+			}
+		}
+
+		complete_effect = {
+			DCB = {
+				set_cosmetic_tag = DuckburgProt
+				transfer_state = 647
+				transfer_state = 652
+				transfer_state = 605
+				transfer_state = 586
+				transfer_state = 565
+				transfer_state = 576
+				transfer_state = 626
+				transfer_state = 636
+				transfer_state = 670
+				transfer_state = 679
+				transfer_state = 654
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = SLD
+								has_completed_focus = SLD_eastward_expansion
+							}
+						}
+					}
+					transfer_state = 711
+					transfer_state = 683
+				}
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_danville_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 698
+				owns_state = 678
+				owns_state = 662
+				owns_state = 680
+				owns_state = 715
+				owns_state = 677
+				owns_state = 708
+				owns_state = 709
+				owns_state = 737
+				owns_state = 761
+				owns_state = 742
+				owns_state = 724
+				is_puppet = no
+			}
+			TSA = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			TSA = {
+				set_cosmetic_tag = DanvilleProt
+				transfer_state = 698
+				transfer_state = 678
+				transfer_state = 662
+				transfer_state = 680
+				transfer_state = 715
+				transfer_state = 677
+				transfer_state = 708
+				transfer_state = 709
+				transfer_state = 737
+				transfer_state = 761
+				transfer_state = 742
+				transfer_state = 724
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				hidden_effect = {
+					load_focus_tree = generic_focus
+				}
+			}
+		}
+	}
+
+	establish_mauno_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 753
+				owns_state = 735
+				owns_state = 743
+				owns_state = 701
+				is_puppet = no
+			}
+			NOT = {
+				tag = MOO
+			}
+			NOT = {
+				tag = TSA
+			}
+		}
+
+		complete_effect = {
+			MAU = {
+				add_state_core = 753
+				add_state_core = 735
+				add_state_core = 743
+				add_state_core = 701
+				transfer_state = 753
+				transfer_state = 735
+				transfer_state = 743
+				transfer_state = 701
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_moomin_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 747
+				owns_state = 765
+				owns_state = 787
+				is_puppet = no
+			}
+			NOT = {
+				tag = MOO
+			}
+			NOT = {
+				tag = TSA
+			}
+			NOT = {
+				tag = SKO
+			}
+		}
+
+		complete_effect = {
+			MOO = {
+				set_cosmetic_tag = MoominProt
+				transfer_state = 747
+				if = {
+					limit = {
+						NOT = {
+							tag = BRO
+						}
+						owns_state = 727
+					}
+					transfer_state = 727
+				}
+				if = {
+					limit = {
+						NOT = {
+							tag = BRO
+						}
+						owns_state = 751
+					}
+					transfer_state = 751
+				}
+				transfer_state = 765
+				transfer_state = 787
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_smurf_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 687
+				owns_state = 671
+				owns_state = 664
+				owns_state = 686
+				owns_state = 714
+				owns_state = 718
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+			NOT = {
+				tag = SMU
+			}
+		}
+
+		complete_effect = {
+			SMU = {
+				set_cosmetic_tag = SmurfProt
+				transfer_state = 687
+				transfer_state = 671
+				transfer_state = 664
+				transfer_state = 686
+				transfer_state = 714
+				transfer_state = 718
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_nearon_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 819
+				owns_state = 805
+				owns_state = 794
+				owns_state = 811
+				owns_state = 838
+				owns_state = 830
+				owns_state = 835
+				owns_state = 853
+				owns_state = 869
+				is_puppet = no
+			}
+			NOT = {
+				tag = FRI
+			}
+			NOT = {
+				tag = SKO
+			}
+			NOT = {
+				tag = MAI
+			}
+		}
+
+		complete_effect = {
+			SKA = {
+				set_cosmetic_tag = NearonProt
+				transfer_state = 819
+				transfer_state = 805
+				transfer_state = 794
+				transfer_state = 811
+				transfer_state = 838
+				transfer_state = 830
+				transfer_state = 835
+				transfer_state = 853
+				transfer_state = 869
+				add_state_core = 819
+				add_state_core = 805
+				add_state_core = 794
+				add_state_core = 811
+				add_state_core = 838
+				add_state_core = 830
+				add_state_core = 835
+				add_state_core = 853
+				add_state_core = 869
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = SLD
+								has_completed_focus = SLD_eastward_expansion
+							}
+						}
+					}
+					add_state_core = 790
+					transfer_state = 790
+				}
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = SLD
+								has_completed_focus = SLD_eastward_expansion
+							}
+							NOT = {
+								tag = TSA
+								has_government = fascism
+							}
+						}
+					}
+					add_state_core = 763
+					transfer_state = 763
+					add_state_core = 758
+					transfer_state = 758
+				}
+				set_capital = 811
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_pyrzyce_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			FRI = {
+				exists = no
+			}
+			any_owned_state = {
+				OR = {
+					is_core_of = FRI
+					is_core_of = MAI
+				}
+			}
+			NOT = {
+				tag = FRI
+			}
+			NOT = {
+				tag = MAI
+			}
+			NOT = {
+				tag = SKO
+			}
+		}
+
+		complete_effect = {
+			SKP = {
+				set_cosmetic_tag = PyrzyceProt
+				if = {
+					limit = {
+						858 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 858
+				}
+				if = {
+					limit = {
+						884 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 884
+				}
+				if = {
+					limit = {
+						872 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 872
+				}
+				if = {
+					limit = {
+						843 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 843
+				}
+				if = {
+					limit = {
+						853 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 905
+				}
+				if = {
+					limit = {
+						869 = {
+							is_owned_by = ROOT
+						}
+					}
+					transfer_state = 911
+				}
+				set_capital = 858
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_egremount_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 907
+				owns_state = 892
+				owns_state = 897
+				owns_state = 881
+				owns_state = 879
+				owns_state = 883
+				owns_state = 877
+				is_puppet = no
+			}
+			NOT = {
+				tag = WEK
+			}
+			NOT = {
+				tag = SKO
+			}
+		}
+
+		complete_effect = {
+			SKD = {
+				set_cosmetic_tag = EgremountProt
+				if = {
+					limit = {
+						NOT = {
+							tag = JPN
+							has_government = fascism
+						}
+					}
+					transfer_state = 907
+				}
+				transfer_state = 892
+				transfer_state = 897
+				if = {
+					limit = {
+						NOT = {
+							tag = JPN
+							has_government = fascism
+						}
+					}
+					transfer_state = 881
+				}
+				transfer_state = 879
+				transfer_state = 883
+				transfer_state = 877
+				if = {
+					limit = {
+						NOT = {
+							tag = JPN
+							has_government = fascism
+						}
+					}
+					add_state_core = 907
+				}
+				add_state_core = 892
+				add_state_core = 897
+				if = {
+					limit = {
+						NOT = {
+							tag = JPN
+							has_government = fascism
+						}
+					}
+					add_state_core = 881
+				}
+				add_state_core = 879
+				add_state_core = 883
+				add_state_core = 877
+				set_capital = 907
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_dumbarton_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 845
+				owns_state = 820
+				owns_state = 847
+				owns_state = 816
+				owns_state = 832
+				owns_state = 860
+				owns_state = 826
+				is_puppet = no
+			}
+			NOT = {
+				tag = WEK
+			}
+			NOT = {
+				tag = SKO
+			}
+			WEK = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			DUM = {
+				transfer_state = 845
+				transfer_state = 820
+				transfer_state = 847
+				transfer_state = 816
+				transfer_state = 832
+				transfer_state = 860
+				add_state_core = 845
+				add_state_core = 820
+				add_state_core = 847
+				add_state_core = 816
+				add_state_core = 832
+				add_state_core = 860
+				if = {
+					limit = {
+						NOT = {
+							ROOT = {
+								tag = JPN
+							}
+							has_government = fascism
+						}
+					}
+					transfer_state = 850
+					add_state_core = 850 
+				}
+				if = {
+					limit = {
+						NOT = {
+							ROOT = {
+								tag = JPN
+							}
+							has_government = fascism
+						}
+					}
+					transfer_state = 826
+					add_state_core = 826
+				}
+				if = {
+					limit = {
+						NOT = {
+							ROOT = {
+								tag = JPN
+							}
+							has_government = fascism
+						}
+					}
+					transfer_state = 851
+					add_state_core = 851
+				}
+				set_capital = 845
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = SLD
+					}
+				}
+				SLD = {
+					transfer_state = 809
+					transfer_state = 818
+				}
+			}
+		}
+	}
+
+	establish_vizovice_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 740
+				owns_state = 760
+				owns_state = 775
+				owns_state = 762
+				owns_state = 793
+				owns_state = 807
+				owns_state = 762
+				is_puppet = no
+			}
+			NOT = {
+				tag = PAT
+			}
+			PAT = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			PAT = {
+				set_cosmetic_tag = VizoviceProt
+				transfer_state = 740
+				transfer_state = 760
+				transfer_state = 775
+				transfer_state = 762
+				transfer_state = 793
+				transfer_state = 807
+				transfer_state = 762
+				set_capital = 762
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_senderos_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 621
+				owns_state = 645
+				owns_state = 661
+				owns_state = 614
+				owns_state = 611
+				owns_state = 584
+				owns_state = 585
+				owns_state = 667
+				owns_state = 644
+				is_puppet = no
+			}
+			NOT = {
+				tag = SAN
+			}
+			SAN = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			SAN = {
+				set_cosmetic_tag = SenderosProt
+				load_focus_tree = generic_focus
+				transfer_state = 621
+				transfer_state = 645
+				transfer_state = 661
+				transfer_state = 614
+				transfer_state = 611
+				transfer_state = 584
+				transfer_state = 585
+				transfer_state = 667
+				transfer_state = 644
+				set_capital = 621
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_karlino_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 655
+				owns_state = 685
+				owns_state = 650
+				owns_state = 682
+				owns_state = 673
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+		}
+
+		complete_effect = {
+			KAR = {
+				transfer_state = 655
+				transfer_state = 685
+				transfer_state = 650
+				transfer_state = 682
+				transfer_state = 673
+				add_state_core = 655
+				add_state_core = 685
+				add_state_core = 650
+				add_state_core = 682
+				add_state_core = 673
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_wadowice_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 746
+				owns_state = 716
+				owns_state = 725
+				owns_state = 766
+				owns_state = 730
+				owns_state = 754
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+		}
+
+		complete_effect = {
+			WAR = {
+				transfer_state = 746
+				transfer_state = 716
+				transfer_state = 725
+				transfer_state = 766
+				transfer_state = 730
+				transfer_state = 754
+				add_state_core = 746
+				add_state_core = 716
+				add_state_core = 725
+				add_state_core = 766
+				add_state_core = 730
+				add_state_core = 754
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_southern_lechina_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 764
+				owns_state = 781
+				owns_state = 738
+				owns_state = 778
+				owns_state = 771
+				owns_state = 772
+				owns_state = 779
+				owns_state = 800
+				owns_state = 810
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+		}
+
+		complete_effect = {
+			SLR = {
+				transfer_state = 764
+				transfer_state = 781
+				transfer_state = 738
+				transfer_state = 778
+				transfer_state = 771
+				transfer_state = 772
+				transfer_state = 779
+				transfer_state = 800
+				transfer_state = 810
+				add_state_core = 764
+				add_state_core = 781
+				add_state_core = 738
+				add_state_core = 778
+				add_state_core = 771
+				add_state_core = 772
+				add_state_core = 779
+				add_state_core = 800
+				add_state_core = 810
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_myszyniec_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 702
+				owns_state = 720
+				owns_state = 721
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+		}
+
+		complete_effect = {
+			MYS = {
+				transfer_state = 702
+				transfer_state = 720
+				transfer_state = 721
+				add_state_core = 702
+				add_state_core = 720
+				add_state_core = 721
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_gg_of_greenland = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 439
+				owns_state = 550
+				owns_state = 487
+				is_puppet = no
+			}
+			NOT = {
+				tag = GRN
+			}
+			NOT = {
+				tag = ICW
+			}
+			NOT = {
+				tag = DES
+			}
+			NOT = {
+				tag = OUT
+			}
+			NOT = {
+				tag = SIO
+			}
+		}
+
+		complete_effect = {
+			GR2 = {
+				if = {
+					limit = {
+						owns_state = 439
+					}
+					transfer_state = 439
+					add_state_core = 439
+				}
+				if = {
+					limit = {
+						owns_state = 518
+					}
+					transfer_state = 518
+					add_state_core = 518
+				}
+				if = {
+					limit = {
+						owns_state = 474
+					}
+					transfer_state = 474
+					add_state_core = 474
+				}
+				if = {
+					limit = {
+						owns_state = 467
+					}
+					transfer_state = 467
+					add_state_core = 467
+				}
+				if = {
+					limit = {
+						owns_state = 432
+					}
+					transfer_state = 432
+					add_state_core = 432
+				}
+				if = {
+					limit = {
+						owns_state = 366
+					}
+					transfer_state = 366
+					add_state_core = 366
+				}
+				if = {
+					limit = {
+						owns_state = 355
+					}
+					transfer_state = 355
+					add_state_core = 355
+				}
+				if = {
+					limit = {
+						owns_state = 359
+					}
+					transfer_state = 359
+					add_state_core = 359
+				}
+				if = {
+					limit = {
+						owns_state = 468
+					}
+					transfer_state = 468
+					add_state_core = 468
+				}
+				if = {
+					limit = {
+						owns_state = 487
+					}
+					transfer_state = 487
+					add_state_core = 487
+				}
+				if = {
+					limit = {
+						owns_state = 445
+					}
+					transfer_state = 445
+					add_state_core = 445
+				}
+				if = {
+					limit = {
+						owns_state = 414
+					}
+					transfer_state = 414
+					add_state_core = 414
+				}
+				if = {
+					limit = {
+						owns_state = 434
+					}
+					transfer_state = 434
+					add_state_core = 434
+				}
+				if = {
+					limit = {
+						owns_state = 389
+					}
+					transfer_state = 389
+					add_state_core = 389
+				}
+				if = {
+					limit = {
+						owns_state = 342
+					}
+					transfer_state = 342
+					add_state_core = 342
+				}
+				if = {
+					limit = {
+						owns_state = 318
+					}
+					transfer_state = 318
+					add_state_core = 318
+				}
+				if = {
+					limit = {
+						owns_state = 293
+					}
+					transfer_state = 293
+					add_state_core = 293
+				}
+				if = {
+					limit = {
+						owns_state = 322
+					}
+					transfer_state = 322
+					add_state_core = 322
+				}
+				if = {
+					limit = {
+						owns_state = 262
+					}
+					transfer_state = 262
+					add_state_core = 262
+				}
+				if = {
+					limit = {
+						owns_state = 532
+					}
+					transfer_state = 532
+					add_state_core = 532
+				}
+				if = {
+					limit = {
+						owns_state = 535
+					}
+					transfer_state = 535
+					add_state_core = 535
+				}
+				if = {
+					limit = {
+						owns_state = 507
+					}
+					transfer_state = 507
+					add_state_core = 507
+				}
+				if = {
+					limit = {
+						owns_state = 524
+					}
+					transfer_state = 524
+					add_state_core = 524
+				}
+				if = {
+					limit = {
+						owns_state = 555
+					}
+					transfer_state = 555
+					add_state_core = 555
+				}
+				if = {
+					limit = {
+						owns_state = 508
+					}
+					transfer_state = 508
+					add_state_core = 508
+				}
+				if = {
+					limit = {
+						owns_state = 557
+					}
+					transfer_state = 557
+					add_state_core = 557
+				}
+				if = {
+					limit = {
+						owns_state = 591
+					}
+					transfer_state = 591
+					add_state_core = 591
+				}
+				if = {
+					limit = {
+						owns_state = 550
+					}
+					transfer_state = 550
+					add_state_core = 550
+				}
+				if = {
+					limit = {
+						owns_state = 562
+					}
+					transfer_state = 562
+					add_state_core = 562
+				}
+				if = {
+					limit = {
+						owns_state = 588
+					}
+					transfer_state = 588
+					add_state_core = 588
+				}
+				if = {
+					limit = {
+						owns_state = 613
+					}
+					transfer_state = 613
+					add_state_core = 613
+				}
+				if = {
+					limit = {
+						owns_state = 589
+					}
+					transfer_state = 589
+					add_state_core = 589
+				}
+				if = {
+					limit = {
+						owns_state = 599
+					}
+					transfer_state = 599
+					add_state_core = 599
+				}
+				if = {
+					limit = {
+						owns_state = 622
+					}
+					transfer_state = 622
+					add_state_core = 622
+				}
+				if = {
+					limit = {
+						owns_state = 637
+					}
+					transfer_state = 637
+					add_state_core = 637
+				}
+				if = {
+					limit = {
+						owns_state = 610
+					}
+					transfer_state = 610
+					add_state_core = 610
+				}
+				if = {
+					limit = {
+						owns_state = 651
+					}
+					transfer_state = 651
+					add_state_core = 651
+				}
+				if = {
+					limit = {
+						owns_state = 653
+					}
+					transfer_state = 653
+					add_state_core = 653
+				}
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_gg_sioux = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 705
+				owns_state = 752
+				is_puppet = no
+			}
+			SIO = {
+				exists = no
+			}
+			NOT = {
+				tag = DES
+			}
+			NOT = {
+				tag = ICW
+			}
+			NOT = {
+				tag = GRN
+			}
+		}
+
+		complete_effect = {
+			GR3 = {
+				transfer_state = 705
+				transfer_state = 675
+				transfer_state = 674
+				transfer_state = 643
+				transfer_state = 688
+				transfer_state = 697
+				transfer_state = 726
+				transfer_state = 752
+				transfer_state = 744
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 634
+						}
+					}
+					transfer_state = 634
+					add_state_core = 634
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 638
+						}
+					}
+					transfer_state = 638
+					add_state_core = 638
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 632
+						}
+					}
+					transfer_state = 632
+					add_state_core = 632
+				}
+				add_state_core = 705
+				add_state_core = 675
+				add_state_core = 674
+				add_state_core = 643
+				add_state_core = 688
+				add_state_core = 697
+				add_state_core = 726
+				add_state_core = 752
+				add_state_core = 744
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	bring_back_starfleet = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			any_country = {
+				OR = {
+					tag = ROOT
+					is_in_faction_with = ROOT
+				}
+				any_owned_state = {
+					is_core_of = SKO
+				}
+			}
+			any_country = {
+				OR = {
+					tag = ROOT
+					is_in_faction_with = ROOT
+				}
+				any_owned_state = {
+					is_core_of = PDX
+				}
+			}
+			any_country = {
+				OR = {
+					tag = ROOT
+					is_in_faction_with = ROOT
+				}
+				any_owned_state = {
+					is_core_of = KPT
+				}
+			}
+			KPT = {
+				exists = no
+			}
+			SKO = {
+				exists = no
+			}
+			PDX = {
+				exists = no
+			}
+			NOT = {
+				tag = SKO
+			}
+			NOT = {
+				tag = KPT
+			}
+			NOT = {
+				tag = PDX
+			}
+		}
+
+		complete_effect = {
+			release = PDX
+			release = KPT
+			KPT = {
+				load_focus_tree = generic_focus
+				transfer_state = 924
+				transfer_state = 938
+				transfer_state = 948
+				transfer_state = 937
+				add_state_core = 924
+				add_state_core = 938
+				add_state_core = 948
+				add_state_core = 937
+			}
+			STW = {
+				transfer_state = 921
+				transfer_state = 932
+				transfer_state = 912
+				transfer_state = 914
+				transfer_state = 917
+				transfer_state = 942
+				transfer_state = 943
+				transfer_state = 947
+				transfer_state = 954
+				add_state_core = 921
+				add_state_core = 932
+				add_state_core = 912
+				add_state_core = 914
+				add_state_core = 917
+				add_state_core = 942
+				add_state_core = 943
+				add_state_core = 947
+				add_state_core = 954
+				KPT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = communism
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = marxism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = fascism
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = neutrality
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = democratic
+						}
+					}
+					create_country_leader = {
+						name = "Kamil"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+			SKO = {
+				transfer_state = 952
+				transfer_state = 951
+				transfer_state = 936
+				transfer_state = 931
+				transfer_state = 922
+				transfer_state = 944
+				transfer_state = 952
+				transfer_state = 939
+				load_focus_tree = generic_focus
+				set_cosmetic_tag = StarfleetCentralSector
+				KPT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = communism
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = marxism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = fascism
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = neutrality
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+						}
+					}
+				}
+				if = {
+					limit = {
+						KPT = {
+							has_government = democratic
+						}
+					}
+					create_country_leader = {
+						name = "Krzysztof"
+						desc = "POLITICS_TBD_DESC"
+						picture = "gfx/leaders/SKO/kurvinox.dds"
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+		}
+	}
+
+	establish_west_enc_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 166
+				owns_state = 176
+				owns_state = 179
+				owns_state = 134
+				owns_state = 174
+				owns_state = 182
+				owns_state = 150
+				owns_state = 128
+				is_puppet = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			WEN = {
+				add_state_core = 166
+				add_state_core = 176
+				add_state_core = 179
+				add_state_core = 134
+				add_state_core = 174
+				add_state_core = 182
+				add_state_core = 150
+				add_state_core = 128
+				transfer_state = 166
+				transfer_state = 176
+				transfer_state = 179
+				transfer_state = 134
+				transfer_state = 174
+				transfer_state = 182
+				transfer_state = 150
+				transfer_state = 128
+				set_capital = 166
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_east_enc_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 242
+				owns_state = 230
+				owns_state = 225
+				owns_state = 203
+				owns_state = 156
+				owns_state = 183
+				owns_state = 151
+				owns_state = 141
+				owns_state = 165
+				is_puppet = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			EEN = {
+				transfer_state = 242
+				transfer_state = 230
+				transfer_state = 225
+				transfer_state = 203
+				transfer_state = 156
+				transfer_state = 183
+				transfer_state = 151
+				transfer_state = 141
+				transfer_state = 165
+				add_state_core = 242
+				add_state_core = 230
+				add_state_core = 225
+				add_state_core = 203
+				add_state_core = 156
+				add_state_core = 183
+				add_state_core = 151
+				add_state_core = 141
+				add_state_core = 165
+				set_capital = 242
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_dunwiddie_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 187
+				owns_state = 212
+				owns_state = 201
+				owns_state = 180
+				owns_state = 162
+				owns_state = 170
+				owns_state = 197
+				owns_state = 234
+				owns_state = 259
+				is_puppet = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			DUN = {
+				add_state_core = 187
+				add_state_core = 212
+				add_state_core = 201
+				add_state_core = 180
+				add_state_core = 162
+				add_state_core = 170
+				add_state_core = 197
+				add_state_core = 234
+				add_state_core = 259
+				transfer_state = 187
+				transfer_state = 212
+				transfer_state = 201
+				transfer_state = 180
+				transfer_state = 162
+				transfer_state = 170
+				transfer_state = 197
+				transfer_state = 234
+				transfer_state = 259
+				set_capital = 187
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_summerset_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 131
+				owns_state = 146
+				owns_state = 112
+				owns_state = 104
+				owns_state = 124
+				is_puppet = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			SMM = {
+				transfer_state = 131
+				transfer_state = 146
+				transfer_state = 112
+				transfer_state = 104
+				transfer_state = 124
+				add_state_core = 131
+				add_state_core = 146
+				add_state_core = 112
+				add_state_core = 104
+				add_state_core = 124
+				set_capital = 131
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_sardinnoza_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 114
+				owns_state = 115
+				owns_state = 111
+				owns_state = 98
+				owns_state = 95
+				owns_state = 8
+				owns_state = 80
+				is_puppet = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			SRD = {
+				add_state_core = 114
+				add_state_core = 115
+				add_state_core = 111
+				add_state_core = 98
+				add_state_core = 95
+				add_state_core = 8
+				add_state_core = 80
+				transfer_state = 114
+				transfer_state = 115
+				transfer_state = 111
+				transfer_state = 98
+				transfer_state = 95
+				transfer_state = 8
+				transfer_state = 80
+				set_capital = 114
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	return_of_winslow_family_exile = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 187
+				owns_state = 259
+				owns_state = 182
+				owns_state = 166
+				owns_state = 242
+				owns_state = 156
+				owns_state = 124
+				owns_state = 131
+				owns_state = 114
+				owns_state = 98
+				owns_state = 8
+				is_puppet = no
+				has_government = monarchism
+			}
+			ENC = {
+				exists = no
+			}
+			EN3 = {
+				exists = no
+			}
+			EN4 = {
+				exists = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			release = ENC
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ENC
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+					}
+					add_to_faction = ENC
+				}
+			}
+		}
+	}
+
+	return_of_winslow_family_island = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				OR = {
+					has_war_with = EN3
+					has_war_with = EN4
+				}
+				is_puppet = no
+				has_government = monarchism
+			}
+			ENC = {
+				exists = yes
+				has_cosmetic_tag = WIN
+			}
+			OR = {
+				EN3 = {
+					exists = yes
+				}
+				EN4 = {
+					exists = yes
+				}
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = ENC
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				every_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						is_faction_leader = yes
+					}
+					add_to_faction = ENC
+				}
+			}
+		}
+	}
+
+	return_of_winslow_family_stripped = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 187
+				owns_state = 259
+				owns_state = 182
+				owns_state = 166
+				owns_state = 242
+				owns_state = 156
+				owns_state = 124
+				owns_state = 131
+				owns_state = 114
+				owns_state = 98
+				owns_state = 8
+				is_puppet = no
+				has_government = monarchism
+			}
+			OR = {
+				has_global_flag = winslows_stripped_james
+				has_global_flag = winslows_stripped_amber
+				has_global_flag = winslows_stripped_sofia
+			}
+			ENC = {
+				exists = no
+			}
+			EN3 = {
+				exists = no
+			}
+			EN4 = {
+				exists = no
+			}
+			NOT = {
+				tag = ENC
+			}
+			NOT = {
+				tag = EN1
+			}
+			NOT = {
+				tag = EN2
+			}
+			NOT = {
+				tag = EN3
+			}
+			NOT = {
+				tag = EN4
+			}
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			custom_effect_tooltip = lets_hope_we_find_them
+			hidden_effect = {
+				country_event = {
+					id = enchancia.84
+					days = 0
+				}
+			}
+		}
+	}
+
+	establish_flower_hill_occupation_zone = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 325
+				owns_state = 341
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+		}
+
+		complete_effect = {
+			OFL = {
+				add_state_core = 325
+				add_state_core = 341
+				transfer_state = 325
+				transfer_state = 325
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 357
+						}
+					}
+					add_state_core = 357
+					transfer_state = 357
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 324
+						}
+					}
+					add_state_core = 324
+					transfer_state = 324
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 345
+						}
+					}
+					add_state_core = 345
+					transfer_state = 345
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 337
+						}
+					}
+					add_state_core = 337
+					transfer_state = 337
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 315
+						}
+					}
+					add_state_core = 315
+					transfer_state = 315
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 306
+						}
+					}
+					add_state_core = 306
+					transfer_state = 306
+				}
+				if = {
+					limit = {
+						TRL = {
+							exists = yes
+							is_puppet_of = ROOT
+						}
+					}
+					TRL = {
+						add_state_core = 280
+						transfer_state = 280
+					}
+				}
+				if = {
+					limit = {
+						TRL = {
+							exists = yes
+							is_puppet_of = ROOT
+						}
+					}
+					TRL = {
+						add_state_core = 258
+						transfer_state = 258
+					}
+				}
+				set_capital = 325
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_northern_flower_hill_occupation_zone = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 164
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = GON
+			}
+			WOL = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			WOL = {
+				set_cosmetic_tag = NorthernFlowerHill
+				transfer_state = 164
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 168
+						}
+					}
+					transfer_state = 168
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 205
+						}
+					}
+					transfer_state = 205
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 204
+						}
+					}
+					transfer_state = 204
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 184
+						}
+					}
+					transfer_state = 184
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 238
+						}
+					}
+					transfer_state = 238
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 222
+						}
+					}
+					transfer_state = 222
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 261
+						}
+					}
+					transfer_state = 261
+				}
+				set_capital = 164
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				hidden_effect = {
+					retire_country_leader = yes
+					every_unit_leader = {
+						retire = yes
+					}
+				}
+			}
+		}
+	}
+
+	establish_western_flower_hill_occupation_zone = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 309
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = GON
+			}
+			WEA = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			WEA = {
+				set_cosmetic_tag = WesternFlowerHill
+				transfer_state = 309
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 317
+						}
+					}
+					transfer_state = 317
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 284
+						}
+					}
+					transfer_state = 284
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 270
+						}
+					}
+					transfer_state = 270
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 295
+						}
+					}
+					transfer_state = 295
+					add_state_core = 295
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 275
+						}
+					}
+					transfer_state = 275
+					add_state_core = 275
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 257
+						}
+					}
+					transfer_state = 257
+					add_state_core = 257
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 246
+						}
+					}
+					transfer_state = 246
+					add_state_core = 246
+				}
+				set_capital = 309
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+				hidden_effect = {
+					retire_country_leader = yes
+					every_unit_leader = {
+						retire = yes
+					}
+				}
+			}
+		}
+	}
+
+	liberate_turtles = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 227
+				owns_state = 211
+				owns_state = 218
+				owns_state = 271
+				owns_state = 282
+				owns_state = 272
+				owns_state = 333
+				owns_state = 311
+				owns_state = 298
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = TRL
+			}
+			NOT = {
+				tag = GON
+			}
+			TRL = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = TRL
+			TRL = {
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 280
+						}
+					}
+					add_state_core = 280
+					transfer_state = 280
+				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 280
+						}
+					}
+					add_state_core = 258
+					transfer_state = 258
+				}
+				ROOT = {
+					puppet = PREV
+				}
+				hidden_effect = {
+					retire_country_leader = yes
+				}
+			}
+		}
+	}
+
+	establish_northern_squirrels_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 424
+				owns_state = 368
+				owns_state = 364
+				owns_state = 381
+				owns_state = 457
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = SQU
+			}
+			SQU = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			SQU = {
+				set_cosmetic_tag = NorthernSquirrels
+				transfer_state = 424
+				transfer_state = 368
+				transfer_state = 364
+				transfer_state = 381
+				transfer_state = 457
+				ROOT = {
+					puppet = PREV
+				}
+				hidden_effect = {
+					retire_country_leader = yes
+					every_unit_leader = {
+						retire = yes
+					}
+				}
+			}
+		}
+	}
+
+	establish_southern_squirrels_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 537
+				owns_state = 509
+				owns_state = 551
+				owns_state = 538
+				owns_state = 491
+				owns_state = 472
+				owns_state = 498
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = SQU
+			}
+		}
+
+		complete_effect = {
+			EAP = {
+				transfer_state = 537
+				transfer_state = 509
+				transfer_state = 551
+				transfer_state = 538
+				transfer_state = 491
+				transfer_state = 472
+				transfer_state = 498
+				add_state_core = 537
+				add_state_core = 509
+				add_state_core = 551
+				add_state_core = 538
+				add_state_core = 491
+				add_state_core = 472
+				add_state_core = 498
+				set_capital = 537
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_ducks = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 402
+				owns_state = 488
+				owns_state = 410
+				owns_state = 393
+				owns_state = 400
+				owns_state = 427
+				owns_state = 405
+				owns_state = 464
+				owns_state = 473
+				owns_state = 485
+				is_puppet = no
+			}
+			NOT = {
+				tag = FLO
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = WEA
+			}
+			NOT = {
+				tag = DUC
+			}
+		}
+
+		complete_effect = {
+			release = DUC
+			DUC = {
+				transfer_state = 473
+				transfer_state = 485
+				add_state_core = 473
+				add_state_core = 485
+				ROOT = {
+					puppet = PREV
+				}
+				hidden_effect = {
+					retire_country_leader = yes
+				}
+			}
+		}
+	}
+
+	liberate_northern_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 143
+				owns_state = 147
+				owns_state = 152
+				is_puppet = no
+			}
+			NOT = {
+				tag = WOL
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				NOT = {
+					tag = NOT
+				}
+			}
+		}
+
+		complete_effect = {
+			NOT = {
+				transfer_state = 143
+				transfer_state = 147
+				transfer_state = 152
+				add_state_core = 143
+				add_state_core = 147
+				add_state_core = 152
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_japanifornia = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 859
+				owns_state = 825
+				owns_state = 846
+				is_puppet = no
+			}
+			NOT = {
+				tag = LEC
+			}
+			NOT = {
+				tag = JPN
+			}
+			JPN = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = JPN
+			JPN = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_far_far_away = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 142
+				owns_state = 195
+				owns_state = 216
+				is_puppet = no
+			}
+			NOT = {
+				tag = DUL
+			}
+			NOT = {
+				tag = FFA
+			}
+			FFA = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = FFA
+			FFA = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_fire_kingdom = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 469
+				owns_state = 552
+				is_puppet = no
+			}
+			NOT = {
+				tag = DUL
+			}
+			NOT = {
+				tag = FRK
+			}
+			FRK = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = FRK
+			FRK = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_ice_kingdom = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 595
+				is_puppet = no
+			}
+			NOT = {
+				tag = DUL
+			}
+			NOT = {
+				tag = ICK
+			}
+			ICK = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = LEC
+					}
+				}
+				ICK = {
+					transfer_state = 595
+					transfer_state = 590
+					transfer_state = 543
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = {
+							tag = LEC
+						}
+					}
+				}
+				release = ICK
+			}
+			ICK = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_maarswik = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 365
+				owns_state = 418
+				owns_state = 316
+				is_puppet = no
+			}
+			MAR = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			release = MAR
+			MAR = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_isleworth = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 171
+				owns_state = 175
+				owns_state = 193
+				owns_state = 288
+				is_puppet = no
+			}
+			ISL = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			ISL = {
+				remove_state_core = 330
+			}
+			release = ISL
+			ISL = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_corinthia = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 560
+				owns_state = 570
+				owns_state = 568
+				is_puppet = no
+			}
+			COR = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			release = COR
+			COR = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_trufflandia = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 592
+				owns_state = 587
+				owns_state = 603
+				is_puppet = no
+			}
+			TRU = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			release = TRU
+			TRU = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_rudistan = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 351
+				owns_state = 426
+				is_puppet = no
+			}
+			RUD = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			release = RUD
+			RUD = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_khaldoun = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 451
+				owns_state = 525
+				owns_state = 475
+				owns_state = 340
+				is_puppet = no
+			}
+			KHA = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			release = KHA
+			KHA = {
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_wei_ling = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 250
+				owns_state = 287
+				owns_state = 329
+				owns_state = 420
+				is_puppet = no
+			}
+			WEI = {
+				exists = no
+			}
+			WLC = {
+				exists = no
+			}
+			NOT = {
+				tag = EN3
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					ROOT = {
+						has_government = communism
+					}
+				}
+				release = WLC
+				WLC = {
+					ROOT = {
+						puppet = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						NOT = {
+							has_government = communism
+						}
+					}
+				}
+				release = WEI
+				WEI = {
+					ROOT = {
+						puppet = PREV
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,3368 @@
+focus_tree = { 
+	id = japanifornia
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = JPN
+		} 
+	} 
+
+	focus = { 
+		id = JPN_president_wright
+		icon = GFX_focus_JPN_wright
+		x = 3
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JPN_wright_won
+				has_country_leader = {
+    				name = "Phoenix Wright"
+    				ruling_only = yes
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = JPN_wright_won
+				has_country_leader = {
+    				name = "Phoenix Wright"
+    				ruling_only = yes
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = JPN_nunohira_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_wright
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			825 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_factories_in_the_south
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_nunohira_complex
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			886 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+			909 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { 
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_relations_with_neighbours
+		icon = GFX_goal_generic_improve_relations
+		x = 3
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_wright
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			PAT = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			WEK = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			add_ideas = {
+				JPN_wright_doctrine
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_establish_relations_with_enchancia
+		icon = GFX_goal_tripartite_pact
+		x = 2
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_relations_with_neighbours
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = ENC
+    			modifier = TCWMod_generic_relations
+			}
+			ENC = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			hidden_effect = {
+				set_country_flag = ECW_support_dunwiddie
+				set_rule = { can_send_volunteers = yes }
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_set_up_relations_with_khurain
+		icon = GFX_goal_generic_improve_relations
+		x = 4
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_relations_with_neighbours
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = KHU
+    			modifier = TCWMod_generic_relations
+			}
+			KHU = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_expand_slightly_the_military
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_wright
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			846 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { 
+					type = arms_factory
+					level = 3
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_build_new_docks
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 6
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_expand_slightly_the_military
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			825 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_expressway_through_the_country
+		icon = GFX_goal_generic_construct_civilian
+		x = 1
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_factories_in_the_south
+		}
+		prerequisite = {
+			focus = JPN_establish_relations_with_enchancia
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			909 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			886 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			864 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			849 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			837 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			825 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			823 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_road_programme_in_cities
+		icon = GFX_goal_generic_construct_civilian
+		x = 3
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_establish_relations_with_enchancia
+		}
+		prerequisite = {
+			focus = JPN_set_up_relations_with_khurain
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = { 
+					type = naval_base
+					level = 1
+					instant_build = yes 
+					province = 10263
+				}
+			}
+			825 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = { 
+					type = naval_base
+					level = 1
+					instant_build = yes 
+					province = 5419
+				}
+			}
+			846 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_dockyards_in_capital
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 5
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = JPN_set_up_relations_with_khurain
+		}
+		prerequisite = {
+			focus = JPN_build_new_docks
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_golden_age_of_the_law
+		icon = GFX_goal_generic_neutrality_focus
+		x = 3
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_expressway_through_the_country
+		}
+		prerequisite = {
+			focus = JPN_road_programme_in_cities
+		}
+		prerequisite = {
+			focus = JPN_dockyards_in_capital
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				JPN_golden_age_of_the_law_idea
+			}
+		} 
+	}
+
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+
+	focus = { 
+		id = JPN_president_edgeworth
+		icon = GFX_focus_JPN_edgey
+		x = 11
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = JPN_edgeworth_won
+				has_country_leader = {
+    				name = "Miles Edgeworth"
+    				ruling_only = yes
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = JPN_edgeworth_won
+				has_country_leader = {
+    				name = "Miles Edgeworth"
+    				ruling_only = yes
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = JPN_southern_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 9
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_edgeworth
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			909 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+			886 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_factories_in_the_central_jpn
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 8
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_southern_complex
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			864 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+			846 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { 
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_relations_with_pat_and_mat
+		icon = GFX_goal_generic_improve_relations
+		x = 11
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_edgeworth
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			PAT = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_exchange_embassies_with_smurfs
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 10
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_relations_with_pat_and_mat
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			SMU = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = SMU
+    			modifier = TCWMod_generic_relations
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_plz_no_backstab_otto
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_relations_with_pat_and_mat
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+    			target = WEK
+    			modifier = TCWMod_generic_relations
+			}
+			WEK = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+			diplomatic_relation = {
+    			country = WEK
+    			relation = non_aggression_pact
+    			active = yes
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_buff_the_military
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 13
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_president_edgeworth
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+			}
+			886 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = arms_factory
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_buff_the_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 14
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_buff_the_military
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			886 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes 
+				}
+			}
+			909 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = { 
+					type = dockyard
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_modernization_of_roads
+		icon = GFX_goal_generic_construct_civilian
+		x = 9
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_factories_in_the_central_jpn
+		}
+		prerequisite = {
+			focus = JPN_exchange_embassies_with_smurfs
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_link_the_cities
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 11
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_exchange_embassies_with_smurfs
+		}
+		prerequisite = {
+			focus = JPN_plz_no_backstab_otto
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			825 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			846 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			849 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+			837 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_new_base_in_the_south
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 13
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = JPN_plz_no_backstab_otto
+		}
+		prerequisite = {
+			focus = JPN_buff_the_navy
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			909 = {
+				add_building_construction = { 
+					type = naval_base
+					level = 3
+					instant_build = yes 
+					province = 3279
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_finish_reform_of_juidical_system
+		icon = GFX_goal_generic_neutrality_focus
+		x = 11
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_modernization_of_roads
+		}
+		prerequisite = {
+			focus = JPN_link_the_cities
+		}
+		prerequisite = {
+			focus = JPN_new_base_in_the_south
+		}
+
+		available = {
+			has_country_leader = {
+    			name = "Miles Edgeworth"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				JPN_reformed_juidical_system
+			}
+		} 
+	}
+
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+
+	focus = { 
+		id = JPN_the_dead_speak
+		icon = GFX_focus_JPN_karma
+		x = 20
+		y = 0
+		cost = 5
+
+		available_if_capitulated = yes
+
+		available = {
+			has_country_leader = {
+    			name = "Manfred von Karma"
+    			ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+    			name = "Manfred von Karma"
+    			ruling_only = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = JPN_close_the_economy
+		icon = GFX_focus_generic_treaty
+		x = 16
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_the_dead_speak
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			859 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { 
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = { 
+					type = dockyard
+					level = 1
+					instant_build = yes 
+				}
+			}
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 859
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			if = {
+				limit = {
+					has_idea = export_focus
+				}
+				swap_ideas = {
+					remove_idea = export_focus
+					add_idea = limited_exports
+				}
+			}
+			if = {
+				limit = {
+					has_idea = free_trade
+				}
+				swap_ideas = {
+					remove_idea = free_trade
+					add_idea = limited_exports
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_ensure_loyalty
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 16
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_close_the_economy
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_manpower = 20000
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = JPN_erase_remnants_of_democracy
+		icon = GFX_focus_generic_strike_at_democracy3
+		x = 18
+		y = 1
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_the_dead_speak
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				JPN_erasing_democracy
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_survey_japanifornians_abroad
+		icon = GFX_focus_generic_treaty
+		x = 20
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_the_dead_speak
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				JPN_spies_abroad
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_ajeto_japanifornians
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 18
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_survey_japanifornians_abroad
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			807 = {
+				add_core_of = JPN
+			}
+			793 = {
+				add_core_of = JPN
+			}
+			775 = {
+				add_core_of = JPN
+			}
+			756 = {
+				add_core_of = JPN
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_lechian_japanifornians
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 20
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_survey_japanifornians_abroad
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			810 = {
+				add_core_of = JPN
+			}
+			800 = {
+				add_core_of = JPN
+			}
+			779 = {
+				add_core_of = JPN
+			}
+			772 = {
+				add_core_of = JPN
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_sever_ties_with_western_kingdom
+		icon = GFX_goal_generic_political_pressure
+		x = 22
+		y = 2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_survey_japanifornians_abroad
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			826 = {
+				add_core_of = JPN
+			}
+			850 = {
+				add_core_of = JPN
+			}
+			851 = {
+				add_core_of = JPN
+			}
+			907 = {
+				add_claim_by = JPN
+			}
+			add_opinion_modifier = {
+				target = WEK
+    			modifier = TCWMod_severed_ties
+			}
+			WEK = {
+				add_opinion_modifier = {
+					target = JPN
+    				modifier = TCWMod_severed_ties
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_resurrect_von_karma_ties
+		icon = GFX_goal_generic_improve_relations
+		x = 24
+		y = 1
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_the_dead_speak
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = FRI
+    			modifier = TCWmod_generic_relations
+			}
+			FRI = {
+				add_opinion_modifier = {
+					target = JPN
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_set_up_embassy_in_alien_colony
+		icon = GFX_goal_generic_improve_relations
+		x = 24
+		y = 2
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_resurrect_von_karma_ties
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = SKO
+    			modifier = TCWmod_generic_relations
+			}
+			SKO = {
+				add_opinion_modifier = {
+					target = JPN
+    				modifier = TCWmod_generic_relations
+				}
+				country_event = {
+					id = japanifornia.2
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_commence_draft
+		icon = GFX_focus_generic_military_mission
+		x = 18
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = JPN_ensure_loyalty
+		}
+		prerequisite = {
+			focus = JPN_ajeto_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_lechian_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_sever_ties_with_western_kingdom
+		}
+		prerequisite = {
+			focus = JPN_set_up_embassy_in_alien_colony
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_manpower = 25000
+			add_ideas = { JPN_additional_draft }
+		} 
+	}
+
+	focus = { 
+		id = JPN_new_might_of_the_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 20
+		y = 3
+		cost = 10
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = JPN_ensure_loyalty
+		}
+		prerequisite = {
+			focus = JPN_ajeto_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_lechian_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_sever_ties_with_western_kingdom
+		}
+		prerequisite = {
+			focus = JPN_set_up_embassy_in_alien_colony
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			886 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = { 
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+			864 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = { 
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_construct_franziska_line
+		icon = GFX_goal_generic_construct_military
+		x = 22
+		y = 3
+		cost = 15
+
+		available_if_capitulated = yes
+		
+		prerequisite = {
+			focus = JPN_ensure_loyalty
+		}
+		prerequisite = {
+			focus = JPN_ajeto_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_lechian_japanifornians
+		}
+		prerequisite = {
+			focus = JPN_sever_ties_with_western_kingdom
+		}
+		prerequisite = {
+			focus = JPN_set_up_embassy_in_alien_colony
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			836 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10262
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10245
+				}
+			}
+			823 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3071
+				}
+			}
+			806 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 5635
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 1195
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10084
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3671
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10085
+				}
+			}
+			783 = {
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10049
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 10013
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4376
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4404
+				}
+				add_building_construction = { 
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 3854
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_the_true_power_of_japanifornian_reich
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 20
+		y = 4
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_commence_draft
+		}
+		prerequisite = {
+			focus = JPN_new_might_of_the_navy
+		}
+		prerequisite = {
+			focus = JPN_construct_franziska_line
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_ideas = {
+				JPN_the_might_of_japanifornian_reich_idea
+			}
+		} 
+	}
+
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+	##############################################################################################################################
+
+	focus = { 
+		id = JPN_defence_plan_H
+		icon = GFX_focus_generic_coastal_fort
+		x = 4
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_golden_age_of_the_law
+			focus = JPN_finish_reform_of_juidical_system
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			give_guarantee = KHU
+		} 
+	}
+
+	focus = { 
+		id = JPN_establish_contacts_with_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 4
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_defence_plan_H
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_opinion_modifier = {
+    			target = AVA
+    			modifier = TCWMod_generic_relations
+			}
+			AVA = {
+				add_opinion_modifier = {
+    				target = JPN
+    				modifier = TCWMod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_manifest_freedom
+		icon = GFX_goal_support_democracy
+		x = 4
+		y = 7
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_establish_contacts_with_avalor
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_faction = western_alliance
+		} 
+	}
+
+	focus = { 
+		id = JPN_liberation_of_everrealm
+		icon = GFX_focus_everrealm_focus
+		x = 2
+		y = 8
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_manifest_freedom
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					COR = {
+						has_government = communism
+					}
+				}
+				COR = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					TRU = {
+						has_government = communism
+					}
+				}
+				TRU = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					KHA = {
+						has_government = fascism
+					}
+				}
+				KHA = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					RUD = {
+						has_government = fascism
+					}
+				}
+				RUD = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				EN3 = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				EN4 = {
+					add_opinion_modifier = {
+						target = JPN
+    					modifier = TCWmod_generic_isolation
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_c
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 9
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_liberation_of_everrealm
+		}
+
+		available = {
+			COR = {
+				has_government = communism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = topple_government
+    			target = COR
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_k
+		icon = GFX_goal_generic_major_war
+		x = 3
+		y = 10
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_war_plan_c
+		}
+
+		available = {
+			KHA = {
+				has_government = fascism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = topple_government
+    			target = KHA
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_t
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 9
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_liberation_of_everrealm
+		}
+
+		available = {
+			TRU = {
+				has_government = communism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = topple_government
+    			target = TRU
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_r
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 10
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_war_plan_t
+		}
+
+		available = {
+			RUD = {
+				has_government = fascism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = topple_government
+    			target = RUD
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_focus_on_northeast
+		icon = GFX_focus_centralcontinent_focus
+		x = 6
+		y = 8
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_manifest_freedom
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_manpower = 15000
+		} 
+	}
+
+	focus = { 
+		id = JPN_end_farquaad_regime
+		icon = GFX_focus_rom_handle_king
+		x = 5
+		y = 9
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_focus_on_northeast
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = liberate_wargoal
+    			target = DUL
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_s
+		icon = GFX_goal_generic_major_war
+		x = 5
+		y = 10
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_end_farquaad_regime
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = topple_government
+    			target = SAN
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_intervene_in_ck_partitions
+		icon = GFX_goal_generic_military_deal
+		x = 7
+		y = 9
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_focus_on_northeast
+		}
+
+		available = {
+			WEK = {
+				has_war_with = MAI
+			}
+			FRI = {
+				has_war_with = MAI
+			}
+			is_puppet = no
+		}
+
+		bypass = {
+			MAI = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_to_war = { 
+    			targeted_alliance = MAI 
+    			enemy = FRI
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_stop_that_madman
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 10
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_intervene_in_ck_partitions
+		}
+
+		available = {
+			FRI = {
+				has_government = fascism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+    			target = FRI
+    			type = topple_government
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_stopping_lechina_empire
+		icon = GFX_goal_generic_defence
+		x = 8
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_golden_age_of_the_law
+			focus = JPN_finish_reform_of_juidical_system
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			add_manpower = 15000
+		} 
+	}
+
+	focus = { 
+		id = JPN_strike_first
+		icon = GFX_goal_generic_major_war
+		x = 7
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = JPN_form_defence_cordon
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		prerequisite = {
+			focus = JPN_stopping_lechina_empire
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+				target = LEC
+				type = annex_everything
+			}
+			custom_effect_tooltip = JPN_declare_first_LEC
+		} 
+	}
+
+	focus = { 
+		id = JPN_form_defence_cordon
+		icon = GFX_goal_generic_national_unity
+		x = 9
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = JPN_strike_first
+		}
+
+		prerequisite = {
+			focus = JPN_stopping_lechina_empire
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			SMU = {
+				country_event = {
+					id = japanifornia.5
+					days = 1
+				}
+			}
+			if = {
+				limit = {
+					PAT = {
+						has_government = democratic
+					}
+				}
+				PAT = {
+					country_event = {
+						id = japanifornia.5
+						days = 1
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_prepare_intervention_in_alien_colony
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 12
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_golden_age_of_the_law
+			focus = JPN_finish_reform_of_juidical_system
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = SKO
+			}
+			give_guarantee = KPT
+		} 
+	}
+
+	focus = { 
+		id = JPN_prepare_operation_buurman
+		icon = GFX_goal_anti_comintern_pact
+		x = 14
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_golden_age_of_the_law
+			focus = JPN_finish_reform_of_juidical_system
+			focus = JPN_the_true_power_of_japanifornian_reich
+		}
+
+		available = {
+			OR = {
+				PAT = {
+					has_government = communism
+				}
+				has_government = fascism
+			}
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = PAT
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_strike_smurfs
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_prepare_operation_buurman
+		}
+
+		available = {
+			has_government = fascism
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = SMU
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_fall_weiss
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 7
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_strike_smurfs
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = SAN
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_operation_nordubung
+		icon = GFX_goal_generic_major_war
+		x = 14
+		y = 8
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_fall_weiss
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+    			type = annex_everything
+    			target = UND
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_westpakt
+		icon = GFX_goal_anschluss
+		x = 18
+		y = 5
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_the_true_power_of_japanifornian_reich
+		}
+
+		available = {
+			is_puppet = no
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = { 
+			create_faction = westpakt
+		} 
+	}
+
+	focus = { 
+		id = JPN_operation_zitadelle
+		icon = GFX_focus_rom_abdicate
+		x = 19
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_westpakt
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+    			type = annex_everything
+    			target = WEK
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_fall_grun
+		icon = GFX_focus_rom_abdicate
+		x = 19
+		y = 7
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_operation_zitadelle
+		}
+
+		available = {
+			MAI = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+			MAI = {
+				exists = no
+			}
+		}
+
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = MAI
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_H
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 6
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_westpakt
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+    			type = annex_everything
+    			target = KHU
+			}
+		} 
+	}
+
+	focus = { 
+		id = JPN_war_plan_A
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 7
+		cost = 5
+
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = JPN_war_plan_H
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
+		}
+
+		completion_reward = { 
+			declare_war_on = {
+    			type = annex_everything
+    			target = AVA
+			}
+		} 
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+
+	focus = {
+		id = JPN_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 25
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_completed_focus = JPN_president_wright
+				has_completed_focus = JPN_president_edgeworth
+			}
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_equipment_effort
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = JPN_army_effort }
+		x = -1
+		y = 1
+		relative_position_id = JPN_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = JPN_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 1
+		y = 1
+		relative_position_id = JPN_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = JPN_army_effort }
+		x = 0
+		y = 2
+		relative_position_id = JPN_army_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_equipment_effort_2
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = JPN_equipment_effort }
+		x = -1
+		y = 1
+		relative_position_id = JPN_equipment_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = JPN_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = JPN_motorization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = JPN_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = JPN_doctrine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_equipment_effort_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = JPN_equipment_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = JPN_equipment_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = JPN_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = JPN_mechanization_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = JPN_equipment_effort_3 }
+		prerequisite = { focus = JPN_doctrine_effort_2 }
+		prerequisite = { focus = JPN_armor_effort }
+		x = 2
+		y = 1
+		relative_position_id = JPN_equipment_effort_3
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = marines
+				technology = marines2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = JPN_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 30
+		y = 4
+		cost = 10
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_completed_focus = JPN_president_wright
+				has_completed_focus = JPN_president_edgeworth
+			}
+		}
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}			
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}			
+		}
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = JPN_aviation_effort }
+		mutually_exclusive = { focus = JPN_bomber_focus }
+		x = -1
+		y = 1
+		relative_position_id = JPN_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = JPN_aviation_effort }
+		mutually_exclusive = { focus = JPN_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = JPN_aviation_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = JPN_bomber_focus focus = JPN_fighter_focus }
+		x = -1
+		y = 1
+		relative_position_id = JPN_bomber_focus
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		complete_tooltip = {
+			air_experience = 25
+			if = { limit = { has_country_flag = aviation_effort_2_AB }
+				add_building_construction = {
+					type = air_base
+					level = 2
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+		completion_reward = {
+			air_experience = 25
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							NOT = { is_controlled_by = ROOT }
+							NOT = {
+								free_building_slots = {
+									building = air_base
+									size > 1
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = JPN_aviation_effort_2 }
+		x = -1
+		y = 1
+		relative_position_id = JPN_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = JPN_aviation_effort_2 }
+		x = 0
+		y = 2
+		relative_position_id = JPN_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+				always = yes
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_NAV_effort
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = JPN_aviation_effort_2 }
+		x = 1
+		y = 1
+		relative_position_id = JPN_aviation_effort_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = nav_bomber_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = naval_bomber
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = JPN_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 25
+		y = 9
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		available = {
+			OR = {
+				has_completed_focus = JPN_president_wright
+				has_completed_focus = JPN_president_edgeworth
+			}
+		}
+
+		complete_tooltip = {
+			navy_experience = 25
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = dockyard
+				level = 2
+				instant_build = yes
+			}
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}			
+		}
+	}
+
+	focus = {
+		id = JPN_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = JPN_naval_effort }
+		mutually_exclusive = { focus = JPN_large_navy }
+		x = -1
+		y = 1
+		relative_position_id = JPN_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 2
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = JPN_naval_effort }
+		mutually_exclusive = { focus = JPN_flexible_navy }
+		x = 1
+		y = 1
+		relative_position_id = JPN_naval_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 2
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = JPN_flexible_navy focus = JPN_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = JPN_flexible_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = JPN_large_navy focus = JPN_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = JPN_large_navy
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_destroyer_effort
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = JPN_submarine_effort }
+		x = 0
+		y = 1
+		relative_position_id = JPN_submarine_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = JPN_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = JPN_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = JPN_cruiser_effort
+		cost = 10
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				all_owned_state = {
+					OR = {
+						is_coastal = no
+						dockyard < 1
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				name = capital_ships_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+				category = cv_tech
+			}
+		}
+	}
+	
+}

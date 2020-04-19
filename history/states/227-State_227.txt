@@ -1,0 +1,32 @@
+state={
+	id=227
+	name="STATE_227"
+	state_category = city
+	provinces={
+		96 1314 2562 2669 3129 3184 3916 4707 5055 5145 5415 5426 5641 6605 6651 6679 
+	}
+	resources = {
+		tungsten = 7
+		steel = 8
+		rubber = 3
+	}
+	manpower=150000
+	buildings_max_level_factor=1.000
+	history = {
+		owner = TRL
+		add_core_of = TRL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 3
+			dockyard = 2
+			air_base = 2
+			5641 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			5641 20
+		}
+	}
+}

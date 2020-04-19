@@ -1,0 +1,45 @@
+﻿division_template = {
+	name = "Royal Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Royal Infantry Division"
+		location = 579
+		division_template = "Royal Infantry Division"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "2. Royal Infantry Division"
+		location = 579
+		division_template = "Royal Infantry Division"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "3. Royal Infantry Division"
+		location = 579
+		division_template = "Royal Infantry Division"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "4. Royal Infantry Division"
+		location = 6269
+		division_template = "Royal Infantry Division"
+		start_experience_factor = 0.6
+	}
+	division = {
+		name = "5. Royal Infantry Division"
+		location = 6269
+		division_template = "Royal Infantry Division"
+		start_experience_factor = 0.6
+	}
+}
+}
