@@ -528,7 +528,7 @@ focus_tree = {
     focus = { 
 		id = SAN_the_promised_elections
 		icon = GFX_focus_generic_elections
-		x = 30
+		x = 26
 		y = 0
 		cost = 5
 		available_if_capitulated = no
@@ -576,11 +576,105 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = SAN_liberalization_of_industry
+		icon = GFX_goal_generic_construction
+		x = 20
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_the_one_and_only
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			585 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_our_defensive_sector
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 20
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_liberalization_of_industry
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			621 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			645 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_self_sustaining_economy
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 20
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_our_defensive_sector
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			621 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			667 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
 		id = SAN_democratization_of_public_life
 		icon = GFX_goal_generic_improve_relations
 		x = 22
 		y = 2
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_the_one_and_only
@@ -603,7 +697,7 @@ focus_tree = {
 		icon = GFX_goal_generic_scientific_exchange
 		x = 22
 		y = 3
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_democratization_of_public_life
@@ -623,9 +717,111 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = SAN_power_of_knowledge
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_technocratic_university
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+    			ideology = democratic
+    			popularity = 0.05
+			}
+			add_ideas = { 
+				SAN_power_of_knowledge_idea
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_becoming_local_naval_power
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 24
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_the_one_and_only
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			navy_experience = 5
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				instant_build = yes
+					province = 8927
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_harbor_of_peace_and_justice
+		icon = GFX_goal_generic_improve_relations
+		x = 24
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_becoming_local_naval_power
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = 100
+			add_ideas = {
+				SAN_peace_and_justice
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_sznukwave
+		icon = GFX_goal_generic_radar
+		x = 24
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_harbor_of_peace_and_justice
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				SAN_sznukwave_radio
+			}
+		} 
+	}
+
+	focus = { 
 		id = SAN_ppu_takes_the_reign
 		icon = GFX_goal_support_communism
-		x = 38
+		x = 30
 		y = 1
 		cost = 5
 		available_if_capitulated = no
@@ -650,6 +846,293 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SAN_fulfilling_people_needs
+		icon = GFX_goal_generic_construction
+		x = 28
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_ppu_takes_the_reign
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			614 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 3
+    				instant_build = yes
+				}
+			}
+			645 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_improving_military_sector
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 28
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_fulfilling_people_needs
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			611 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			584 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_dangerous_waters_of_spalding_bay
+		icon = GFX_goal_generic_navy_battleship
+		x = 28
+		y = 4
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_improving_military_sector
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			585 = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 3
+    				instant_build = yes
+					province = 8759
+				}
+			}
+			621 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = arms_factory
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				instant_build = yes
+					province = 8934
+				}
+			}
+			614 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+				add_building_construction = {
+    				type = naval_base
+    				level = 2
+    				instant_build = yes
+					province = 8927
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_retain_some_liberties
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 30
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_ppu_takes_the_reign
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.1
+			add_popularity = {
+    			ideology = communism
+    			popularity = 0.1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_network_of_local_univerities
+		icon = GFX_focus_research2
+		x = 30
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_retain_some_liberties
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_research_slot = 1
+			add_ideas = {
+				SAN_local_universities
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_foreign_contacts
+		icon = GFX_focus_por_workers_of_iberia
+		x = 30
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_network_of_local_univerities
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_government = communism
+				}
+				add_opinion_modifier = {
+    				target = SAN
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_bracing_for_impact
+		icon = GFX_goal_generic_construct_military
+		x = 32
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_ppu_takes_the_reign
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			614 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			611 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			621 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 2
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SAN_bring_more_men
+		icon = GFX_focus_generic_military_mission
+		x = 32
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_bracing_for_impact
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_political_power = -100
+			add_manpower = 25000
+		} 
+	}
+
+	focus = { 
+		id = SAN_maintain_the_defensive_spirit
+		icon = GFX_focus_generic_support_the_left_right
+		x = 32
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = {
+			focus = SAN_bring_more_men
+		}
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_war_support = 0.05
+			add_ideas = {
+				SAN_defensive_spirit
+			}
 		} 
 	}
 }

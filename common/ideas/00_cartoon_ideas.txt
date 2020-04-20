@@ -2030,6 +2030,68 @@ ideas = {
 				conscription = -0.01
 			}
 		}
+
+		SAN_power_of_knowledge_idea = {
+			picture = jap_duplicate_research
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				defence = 0.05
+			}
+		}
+
+		SAN_peace_and_justice = {
+			picture = trumpet
+			allowed = {
+				always = no
+			}
+			modifier = {
+				trade_opinion_factor = 0.1
+				opinion_gain_monthly_factor = 0.1
+				political_power_factor = 0.15
+			}
+		}
+
+		SAN_sznukwave_radio = {
+			picture = generic_local_self_management
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_radar_station_factor = 0.1
+			}
+		}
+
+		SAN_local_universities = {
+			
+			picture = generic_research_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+
+		SAN_defensive_spirit = {
+			
+			picture = generic_wall_line
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				surrender_limit = 0.05
+				defence = 0.05
+			}
+		}
 	}
 
 	##############################################################################################################################
