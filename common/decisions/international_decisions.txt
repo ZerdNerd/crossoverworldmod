@@ -1057,4 +1057,230 @@ integration_of_lands_dec_category = {
 			factor = 100
 		}
 	}
+
+	integration_of_vinesauce_territories = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_slow_integration
+			owns_state = 658
+		}
+
+		fire_only_once = yes
+
+		cost = 250
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = VIS
+				}
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = 0.5
+   					}
+				}
+			}
+		}
+
+		days_remove = 365
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = VIS
+				}
+				add_core_of = SAN
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = -0.5
+   					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_mushroom_territories = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_slow_integration
+			owns_state = 569
+		}
+
+		fire_only_once = yes
+
+		cost = 250
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MUS
+				}
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = 0.5
+   					}
+				}
+			}
+		}
+
+		days_remove = 365
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = MUS
+				}
+				add_core_of = SAN
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = -0.5
+   					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_spalding_territories = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_slow_integration
+			owns_state = 689
+			owns_state = 736
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SLD
+				}
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = 0.5
+   					}
+				}
+			}
+		}
+
+		cost = 350
+
+		days_remove = 365
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SLD
+				}
+				add_core_of = SAN
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = -0.5
+   					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_smurf_territories = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_slow_integration
+			owns_state = 687
+		}
+
+		fire_only_once = yes
+
+		cost = 300
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SMU
+				}
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = 0.5
+   					}
+				}
+			}
+		}
+
+		days_remove = 365
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SMU
+				}
+				add_core_of = SAN
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = -0.5
+   					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	integration_of_candy_territories = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_slow_integration
+			owns_state = 577
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = CDK
+				}
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = 0.5
+   					}
+				}
+			}
+		}
+
+		cost = 300
+
+		days_remove = 365
+		remove_effect = {
+			every_owned_state = {
+				limit = {
+					is_core_of = CDK
+				}
+				add_core_of = SAN
+				add_state_modifier = {
+    				modifier = {
+        				resistance_target = -0.5
+   					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+	}
 }

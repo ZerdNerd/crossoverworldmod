@@ -2239,6 +2239,17 @@ occupation_dec_category = {
 			NOT = {
 				tag = MUS
 			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
+			}
 		}
 
 		complete_effect = {
@@ -2285,6 +2296,17 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = VIS
+			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
 			}
 		}
 
@@ -2618,17 +2640,45 @@ occupation_dec_category = {
 			NOT = {
 				tag = SMU
 			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
+			}
 		}
 
 		complete_effect = {
+			if = {
+				limit = {
+					NOT = {
+						tag = LEC
+						tag = SLD
+					}
+				}
+				release = SMU
+			}
 			SMU = {
 				set_cosmetic_tag = SmurfProt
-				transfer_state = 687
-				transfer_state = 671
-				transfer_state = 664
-				transfer_state = 686
-				transfer_state = 714
-				transfer_state = 718
+				if = {
+					limit = {
+						OR = {
+							tag = LEC
+							tag = SLD
+						}
+					}
+					transfer_state = 687
+					transfer_state = 671
+					transfer_state = 664
+					transfer_state = 686
+					transfer_state = 714
+					transfer_state = 718
+				}
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3685,6 +3735,177 @@ occupation_dec_category = {
 				add_state_core = 726
 				add_state_core = 752
 				add_state_core = 744
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_candy_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 2
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 577
+				is_puppet = no
+			}
+			CDK = {
+				exists = no
+			}
+			NOT = {
+				tag = CDK
+			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
+			}
+		}
+
+		complete_effect = {
+			release = CDK
+			CDK = {
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	liberate_neland_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 734
+				is_puppet = no
+			}
+			NRL = {
+				exists = no
+			}
+			NOT = {
+				tag = NRL
+			}
+			NOT = {
+				tag = SLD
+			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
+			}
+		}
+
+		complete_effect = {
+			release = NRL
+			NRL = {
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_spalding_protectorate = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 770
+				is_puppet = no
+			}
+			SLD = {
+				exists = no
+			}
+			NOT = {
+				tag = SLD
+			}
+			OR = {
+				AND = {
+					tag = SAN
+					SAN = {
+						has_completed_focus = SAN_bay_federation
+					}
+				}
+				NOT = {
+					tag = SAN
+				}
+			}
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							tag = TSA
+						}
+						AND = {
+							tag = TSA
+							NOT = {
+								has_government = fascism
+							}
+						}
+					}
+				}
+				release = SLD
+			}
+			if = {
+				limit = {
+					tag = TSA
+					has_government = fascism
+				}
+				SLD = {
+					transfer_state = 770
+					transfer_state = 780
+					transfer_state = 757
+					transfer_state = 732
+					transfer_state = 695
+					transfer_state = 689
+					transfer_state = 767
+					transfer_state = 776
+					transfer_state = 773
+					transfer_state = 736
+				}
+			}
+			SLD = {
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
