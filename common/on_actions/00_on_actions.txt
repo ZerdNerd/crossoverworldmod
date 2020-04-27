@@ -254,6 +254,7 @@ on_actions = {
 	#FROM is the one that joins the faction
 	on_create_faction = {
 		effect = {
+			news_event = { id = news.159 }
 			# Sunset invasion check
 			if = {
 				limit = {

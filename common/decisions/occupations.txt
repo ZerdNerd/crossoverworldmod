@@ -1271,6 +1271,11 @@ occupation_dec_category = {
 			any_owned_state = {
 				is_core_of = GON
 			}
+			FLO = {
+				any_owned_state = {
+					is_core_of = GON
+				}
+			}
 		}
 
 		complete_effect = {
@@ -1921,7 +1926,14 @@ occupation_dec_category = {
 					}
 				}
 			}
-			release = PDX
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = PDX
+					}
+				}
+				release = PDX
+			}
 		}
 	}
 
@@ -2716,9 +2728,6 @@ occupation_dec_category = {
 			NOT = {
 				tag = SKO
 			}
-			NOT = {
-				tag = MAI
-			}
 		}
 
 		complete_effect = {
@@ -3101,6 +3110,19 @@ occupation_dec_category = {
 				transfer_state = 793
 				transfer_state = 807
 				transfer_state = 762
+				if = {
+					limit = {
+						NOT = {
+							tag = SLD
+						}
+						owns_state = 785
+						owns_state = 804
+						owns_state = 784
+					}
+					transfer_state = 785
+					transfer_state = 804
+					transfer_state = 784
+				}
 				set_capital = 762
 				ROOT = {
 					puppet = PREV
@@ -3340,6 +3362,21 @@ occupation_dec_category = {
 				add_state_core = 702
 				add_state_core = 720
 				add_state_core = 721
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 739
+							owns_state = 693
+							owns_state = 694
+						}
+					}
+					transfer_state = 739
+					transfer_state = 693
+					transfer_state = 694
+					add_state_core = 739
+					add_state_core = 693
+					add_state_core = 694
+				}
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3940,15 +3977,6 @@ occupation_dec_category = {
 					is_in_faction_with = ROOT
 				}
 				any_owned_state = {
-					is_core_of = PDX
-				}
-			}
-			any_country = {
-				OR = {
-					tag = ROOT
-					is_in_faction_with = ROOT
-				}
-				any_owned_state = {
 					is_core_of = KPT
 				}
 			}
@@ -3956,9 +3984,6 @@ occupation_dec_category = {
 				exists = no
 			}
 			SKO = {
-				exists = no
-			}
-			PDX = {
 				exists = no
 			}
 			NOT = {
@@ -3973,7 +3998,14 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
-			release = PDX
+			if = {
+				limit = {
+					any_owned_state = {
+						is_core_of = PDX
+					}
+				}
+				release = PDX
+			}
 			release = KPT
 			KPT = {
 				load_focus_tree = generic_focus
@@ -5361,6 +5393,58 @@ occupation_dec_category = {
 			JPN = {
 				ROOT = {
 					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberate_duloc = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				FFA = {
+					exists = yes
+				}
+				FRK = {
+					exists = yes
+				}
+				add = 1
+			}
+		}
+
+		visible = {
+			ROOT = {
+				any_owned_state = {
+					is_core_of = DUL
+					NOT = {
+						is_core_of = FRK
+						is_core_of = FFA
+					}
+				}
+				is_puppet = no
+			}
+			NOT = {
+				tag = DUL
+			}
+			DUL = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = DUL
+			DUL = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+				hidden_effect = {
+					retire_country_leader = yes
 				}
 			}
 		}

@@ -790,10 +790,16 @@ country_event = { #Humsin demands return of Reclaimed Fields
 		}
 		add_political_power = -200
 		add_stability = -0.35
+		ai_chance = {
+			factor = 0
+		}
 	}
 
 	option = { #Reject
 		name = desert.22.b
+		ai_chance = {
+			factor = 100
+		}
 		DES = {
 			country_event = {
 				id = desert.23

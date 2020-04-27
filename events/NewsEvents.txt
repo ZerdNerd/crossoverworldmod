@@ -2046,3 +2046,59 @@ news_event = { #Fall of Pantmawr
 		}
 	}
 }
+
+news_event = { #Black Monday
+	id = worldnews.58
+	title = worldnews.58.t
+	desc = worldnews.58.d
+	picture = GFX_news_event_generic_rally2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.58.a
+		trigger = {
+			tag = FRI
+		}
+	}
+
+	option = {
+		name = worldnews.58.b
+		trigger = {
+			NOT = {
+				tag = FRI
+			}
+			OR = {
+				AND = {
+					tag = SAN
+					NOT = {
+						has_government = fascism
+						has_government = communism
+					}
+				}
+				AND = {
+					NOT = {
+						tag = SAN
+						has_government = fascism
+						has_government = communism
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.58.c
+		trigger = {
+			NOT = {
+				tag = SAN
+			}
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}

@@ -2593,9 +2593,32 @@ focus_tree = {
 		cost = 2
 		available_if_capitulated = no
 		available = { 
-			SAN = {
-				NOT = {
+			OR = {
+				AND = {
+					SAN = {
+						NOT = {
+							has_government = democratic
+						}
+					}
 					has_government = democratic
+				}
+				AND = {
+					SAN = {
+						has_government = democratic
+					}
+					NOT = {
+						has_government = democratic
+					}
+				}
+				AND = {
+					SAN = {
+						NOT = {
+							has_government = democratic
+						}
+					}
+					NOT = {
+						has_government = democratic
+					}
 				}
 			}
 		}
@@ -2669,7 +2692,12 @@ focus_tree = {
 			factor = 5
 		} 
 		completion_reward = {
-			#event
+			SAN = {
+				country_event = {
+					id = sanescobar.16
+					days = 1
+				}
+			}
 		} 
 	}
 

@@ -38,7 +38,7 @@ default_peace = {
 	take_states = {
 		factor = 50
 		modifier = {
-			factor = 10000
+			factor = 50
 			has_government = democratic #FOR GOD SAKE, ANNEX THESE STATES, THEY'RE COMING FOR US! OH MY GOD, THEY'RE DOOMED!
 		}
 
@@ -55,9 +55,18 @@ default_peace = {
 			}
 		}
 		modifier = {
-			factor = 0
+			factor = 5
 			FROM = {
 				is_claim_or_core_of_ROOT = no
+				is_ambition_area_of_ROOT = yes
+			}
+		}
+
+		# Take colonies
+		modifier = {
+			factor = 5.0
+			FROM = {
+				is_colony_region = yes
 			}
 		}
 
@@ -537,11 +546,30 @@ default_peace = {
 			}
 		}
 
+		modifier = { # Liberation of Enchancia
+			factor = 1000
+			has_government = monarchism
+			FROM = {
+				OR = {
+					region = 22
+					region = 23
+					region = 24
+					region = 25
+					region = 26
+					region = 27
+					region = 28
+				}
+			}
+		}
+
 		modifier = { # A je to takes Eastern Lechia
 			factor = 1000
 			tag = PAT
 			FROM = {
 				OR = {
+					state = 720
+					state = 721
+					state = 702
 					state = 739
 					state = 693
 					state = 694
@@ -568,6 +596,65 @@ default_peace = {
 					state = 655
 					state = 685
 					state = 650
+				}
+			}
+		}
+
+		modifier = { # These lands should be taken by Ice Kingdom if there's no one around
+			factor = 1000
+			tag = ICK
+			JPN = {
+				NOT = {
+					has_war_with = LEC
+				}
+			}
+			AVA = {
+				NOT = {
+					has_war_with = LEC
+				}
+			}	
+			FROM = {
+				OR = {
+					state = 746
+					state = 766
+					state = 730
+					state = 754
+					state = 725
+					state = 716
+					state = 682
+					state = 673
+					state = 655
+					state = 685
+					state = 650
+					state = 810
+					state = 800
+					state = 779
+					state = 772
+					state = 781
+					state = 778
+					state = 771
+					state = 764
+					state = 738
+				}
+			}
+		}
+
+		modifier = { # Smurfs take lands for Myszyniec Protectorate if A je to is not around
+			factor = 1000
+			tag = SMU
+			PAT = {
+				NOT = {
+					has_war_with = LEC
+				}
+			}
+			FROM = {
+				OR = {
+					state = 720
+					state = 721
+					state = 702
+					state = 739
+					state = 693
+					state = 694
 				}
 			}
 		}

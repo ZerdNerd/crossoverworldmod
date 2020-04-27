@@ -1,0 +1,15 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "1. Flota"			
+		naval_base = 8927
+		task_force = {				
+			name = "1. Dywizjon"
+			location = 8927
+			ship = { name = "Republika" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = SLD } } }
+			ship = { name = "Demokracja" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = SLD } } }
+			ship = { name = "Smoczyca" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = SLD } } }
+			ship = { name = "Biały Orzeł" definition = destroyer equipment = { destroyer_2 = { amount = 1 owner = SLD } } }
+		}
+	}
+}

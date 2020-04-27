@@ -603,12 +603,18 @@ country_event = { #Neland Republic declares independence!
 			has_government = communism
 			has_government = fascism
 		}
-		has_country_flag = gave_macius_shore
-		MAI = {
-			owns_state = 736
-			owns_state = 773
-			owns_state = 767
-			owns_state = 776
+		OR = {
+			AND = {
+				has_country_flag = gave_macius_shore
+				MAI = {
+					owns_state = 736
+					owns_state = 773
+					owns_state = 767
+					owns_state = 776
+				}
+			}
+			has_war = yes
+			surrender_progress > 0.5
 		}
 	}
 
@@ -624,6 +630,13 @@ country_event = { #Neland Republic declares independence!
 				hours = 6
 			}
 		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_war = yes
+				add = -50
+			}
+		}
 	}
 
 	option = { #We must regain our territories!
@@ -636,6 +649,13 @@ country_event = { #Neland Republic declares independence!
 			news_event = {
 				id = worldnews.53
 				hours = 6
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_war = yes
+				add = 50
 			}
 		}
 	}

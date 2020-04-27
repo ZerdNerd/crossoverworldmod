@@ -1504,7 +1504,7 @@ focus_tree = {
 		id = FLO_invade_iceworld
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		x = 21
-		y = 2
+		y = 3
 		cost = 7.25
 		available_if_capitulated = yes 
 
@@ -1513,7 +1513,7 @@ focus_tree = {
 		} 
 
 		prerequisite = {
-			focus = FLO_exporting_revolution
+			focus = FLO_destroy_shen
 		}
 
 		completion_reward = {
@@ -1564,7 +1564,7 @@ focus_tree = {
 		id = FLO_destroy_shen
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		x = 21
-		y = 3
+		y = 2
 		cost = 7.25
 		available_if_capitulated = yes 
 
@@ -1586,11 +1586,11 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_invade_iceworld
+			focus = FLO_exporting_revolution
 		}
 
 		completion_reward = {
-			declare_war_on = {
+			create_wargoal = {
     			type = annex_everything
     			target = GON
 			}
@@ -1619,7 +1619,7 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_invade_iceworld
+			focus = FLO_destroy_shen
 		}
 		prerequisite = {
 			focus = FLO_crush_danville
@@ -1684,15 +1684,15 @@ focus_tree = {
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = ISL
 			}
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = MAR
 			}
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = DUL
 			}
 		}
@@ -1728,7 +1728,7 @@ focus_tree = {
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = FRI
 			}
 		} 
@@ -1761,7 +1761,7 @@ focus_tree = {
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = MAI
 			}
 		} 

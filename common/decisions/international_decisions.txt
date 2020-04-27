@@ -363,6 +363,394 @@ international_policy_dec_category = {
 			}
 		}
 	}
+
+	join_karlino_axis = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_help_from_powerhouse
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+			NOT = {
+				is_in_faction = yes 
+			}
+			LEC = {
+				exists = yes 
+				is_faction_leader = yes
+			}
+			NOT = {
+				has_country_flag = decided_who_to_ally
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			LEC = {
+				country_event = {
+					id = sanescobar.11
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_country_flag = decided_who_to_ally
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	join_flower_hill = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_help_from_powerhouse
+			NOT = {
+				is_in_faction = yes 
+			}
+			has_government = communism
+			FLO = {
+				exists = yes 
+			}
+			NOT = {
+				has_country_flag = decided_who_to_ally
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			FLO = {
+				country_event = {
+					id = sanescobar.11
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_country_flag = decided_who_to_ally
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	join_danville_alliance = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			has_completed_focus = SAN_help_from_powerhouse
+			NOT = {
+				is_in_faction = yes 
+			}
+			has_government = democratic
+			TSA = {
+				exists = yes 
+				has_government = democratic
+				is_faction_leader = yes
+			}
+			NOT = {
+				has_country_flag = decided_who_to_ally
+			}
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			TSA = {
+				country_event = {
+					id = sanescobar.11
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_country_flag = decided_who_to_ally
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_mushroom = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			MUS = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_eastern_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = MUS
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_vine = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			VIS = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_eastern_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = VIS
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_south = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			SLD = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_eastern_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = SLD
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_southwest = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			NRL = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_eastern_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = NRL
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_im_blue = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			SMU = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_western_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = SMU
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	prepare_operation_candy = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			CDK = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_western_shores
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			create_wargoal = {
+				target = CDK
+				type = annex_everything
+			}
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	protect_candy_kingdom = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			CDK = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_status_quo_in_spalding_bay
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			give_guarantee = CDK
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	protect_smurfs = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			SMU = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_status_quo_in_spalding_bay
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			give_guarantee = SMU
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	protect_vineshrooms = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			VIS = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_status_quo_in_spalding_bay
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			give_guarantee = VIS
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	protect_mushroom = {
+		icon = generic_operation
+
+		visible = {
+			tag = SAN
+			MUS = {
+				exists = yes 
+				is_puppet = no 
+			}
+			has_completed_focus = SAN_status_quo_in_spalding_bay
+		}
+
+		fire_only_once = yes
+
+		days_remove = 30
+		remove_effect = {
+			give_guarantee = MUS
+		}
+
+		cost = 50
+		ai_will_do = {
+			factor = 100
+		}
+	}
 }
 
 integration_of_lands_dec_category = {

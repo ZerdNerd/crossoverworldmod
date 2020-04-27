@@ -1,0 +1,279 @@
+﻿###########################
+# Black Monday events. 
+# You expected Black Tuesday, BUT IT WAS ME, DIO!
+###########################
+
+add_namespace = blackmonday
+
+country_event = { #Black Monday on Pantmawr Stock Exchange
+	id = blackmonday.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event blackmonday.1"}
+	title = blackmonday.1.t
+	desc = blackmonday.1.d
+	picture = GFX_report_event_american_hunger_march
+ 
+	is_triggered_only = yes
+
+	option = { #Gottverdammt!
+		name = blackmonday.1.a
+        add_ideas = {
+            TCWMod_black_monday
+        }
+        hidden_effect = {
+		MAI = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        TSA = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        WEK = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        DCB = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        SLD = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        JPN = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        PAT = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        VIS = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        MUS = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        UND = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        SAN = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        MOO = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        BRO = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        GRY = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        DUC = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        SQU = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        TRL = {
+            country_event = {
+			    id = blackmonday.2
+		    	hours = 10
+		    }
+        }
+        GRN = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        SIO = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        AVA = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        ENC = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        DUL = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        ISL = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        MAR = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        WEI = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        KHA = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        ZUM = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        TRU = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        RUD = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        FFA = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        GUM = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        FRK = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        CDK = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        ICK = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        SMU = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        LEC = {
+            country_event = {
+			    id = blackmonday.3
+		    	hours = 10
+		    }
+        }
+        news_event = {
+            id = worldnews.58
+            hours = 12
+        }
+        }
+	}
+}
+
+country_event = { #Black Monday hits!
+	id = blackmonday.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event blackmonday.2"}
+	title = blackmonday.2.t
+	desc = blackmonday.2.d
+	picture = GFX_report_event_crowd_in_prague
+
+	is_triggered_only = yes
+
+	option = { #Oh no!
+		name = blackmonday.2.a
+		add_ideas = {
+            TCWMod_black_monday
+        }
+	}
+}
+
+country_event = { #Black Monday hits modern countries and we're hurt too!
+	id = blackmonday.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event blackmonday.3"}
+	title = blackmonday.3.t
+	desc = blackmonday.3.d
+	picture = GFX_report_event_crowd_in_prague
+
+	is_triggered_only = yes
+
+	option = { #Oh no!
+		name = blackmonday.3.a
+		add_ideas = {
+            TCWMod_black_monday_nondev
+        }
+	}
+}

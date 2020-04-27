@@ -1,0 +1,412 @@
+black_monday_dec_category = {
+
+	########## PART ONE OF FIXING THE STOCK CRASH
+	currency_denomination = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday }
+		fire_only_once = yes
+		cost = 100
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 100
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_political_power = 50
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_1
+			}
+		}
+	}
+
+	close_unnessecary_factories = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday }
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 70
+		modifier = { consumer_goods_factor = 0.05 }
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_stability = -0.1
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_2
+			}
+		}
+	}
+
+	tax_break = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday }
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 70
+		modifier = { consumer_goods_factor = 0.1 }
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_3
+			}
+		}
+	}
+
+	freeze_currency_exchange_rate = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 90
+		modifier = { consumer_goods_factor = 0.15 }
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_4
+			}
+		}
+	}
+
+	regulate_the_banks = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = bm_has_completed_all_previous_reforms
+				has_country_flag = bm_reform_1
+				has_country_flag = bm_reform_2
+				has_country_flag = bm_reform_3
+				has_country_flag = bm_reform_4
+			}
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		visible = { has_idea = TCWMod_black_monday }
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		days_remove = 100
+		modifier = { consumer_goods_factor = 0.15 }
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday
+				add_idea = TCWMod_black_monday_2
+			}
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+			}
+		}
+	}
+
+	########## PART TWO OF FIXING THE STOCK CRASH
+	cut_the_spendings = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_2 }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 100
+		modifier = { 
+			consumer_goods_factor = 0.05 
+			political_power_factor = -0.15
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_political_power = 50
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_5
+			}
+		}
+	}
+
+	establish_relief_agencies = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_2 }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 80
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_6
+			}
+		}
+	}
+
+	help_national_businesses = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_2 }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 80
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_7
+			}
+		}
+	}
+
+	finish_the_recovery = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = bm_has_completed_all_previous_reforms
+				has_country_flag = bm_reform_5
+				has_country_flag = bm_reform_6
+				has_country_flag = bm_reform_7
+			}
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		visible = { has_idea = TCWMod_black_monday_2 }
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 120
+		remove_effect = {
+			remove_ideas = {
+				TCWMod_black_monday_2
+			}
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+			}
+		}
+	}
+
+	########## PART OF FIXING THE STOCK CRASH DEDICATED FOR UNDEVELOPED COUNTRIES
+	expand_magazines_for_trade = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_nondev }
+		cost = 50
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 70
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		remove_effect = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_8
+			}
+		}
+	}
+
+	regroup_the_resources = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_nondev }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		modifier = { 
+			consumer_goods_factor = 0.05 
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 70
+		remove_effect = {
+			add_stability = -0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_9
+			}
+		}
+	}
+
+	sign_new_cooperation_deals = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_nondev }
+		cost = 100
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		modifier = { 
+			political_power_factor = -0.1
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		days_remove = 90
+		remove_effect = {
+			add_stability = 0.05
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+				set_country_flag = bm_reform_10
+			}
+		}
+	}
+
+	the_crisis_is_over = {
+		icon = ger_mefo_bills
+		visible = { has_idea = TCWMod_black_monday_nondev }
+		cost = 150
+		fire_only_once = yes
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = bm_has_completed_all_previous_reforms
+				has_country_flag = bm_reform_8
+				has_country_flag = bm_reform_9
+				has_country_flag = bm_reform_10
+			}
+			NOT = {
+				has_country_flag = can_only_one_bm_reform
+			}
+		}
+		complete_effect = {
+			hidden_effect = {
+				set_country_flag = can_only_one_bm_reform
+			}
+		}
+		modifier = { 
+			political_power_factor = -0.15
+		}
+		days_remove = 100
+		remove_effect = {
+			remove_ideas = {
+				TCWMod_black_monday_nondev
+			}
+			hidden_effect = {
+				clr_country_flag = can_only_one_bm_reform
+			}
+		}
+	}
+}

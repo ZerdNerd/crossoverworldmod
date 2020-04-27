@@ -45,6 +45,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SAN_cool_down_situation
 		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
+		}
 		ai_will_do = { 
 			factor = 2
 		} 
@@ -63,6 +68,11 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_eliminate_the_opposition
+		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
 		}
 		ai_will_do = { 
 			factor = 2
@@ -86,12 +96,20 @@ focus_tree = {
 		prerequisite = {
 			focus = SAN_never_another_spalding
 		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
+		}
 		ai_will_do = { 
 			factor = 2
 		} 
 		completion_reward = {
 			add_political_power = 50
-			custom_effect_tooltip = SAN_this_can_initiate_downfall_of_stonoga
+			add_popularity = {
+    			ideology = communism
+    			popularity = -1
+			}
 		} 
 	}
 
@@ -104,6 +122,11 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_eliminate_the_opposition
+		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
 		}
 		ai_will_do = { 
 			factor = 2
@@ -122,6 +145,11 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_order_persecutions
+		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
 		}
 		ai_will_do = { 
 			factor = 2
@@ -167,6 +195,12 @@ focus_tree = {
 		} 
 		completion_reward = {
 			custom_effect_tooltip = SAN_this_will_be_very_unpopular_decision
+			hidden_effect = {
+				country_event = {
+					id = sanescobar.7
+					days = 1
+				}
+			}
 		} 
 	}
 
@@ -175,7 +209,7 @@ focus_tree = {
 		icon = GFX_goal_generic_demand_territory
 		x = 2
 		y = 4
-		cost = 7.25
+		cost = 10
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_eradicate_ppu
@@ -186,12 +220,20 @@ focus_tree = {
 		prerequisite = {
 			focus = SAN_arrest_sznuk
 		}
+		available = {
+			NOT = {
+				has_country_flag = SAN_stonoga_allowed_elections
+			}
+		}
 		ai_will_do = { 
 			factor = 2
 		} 
 		completion_reward = {
 			add_political_power = 100
-			#idea
+			add_stability = 0.1
+			remove_ideas = {
+				SAN_industry_strike
+			}
 		} 
 	}
 
@@ -359,7 +401,9 @@ focus_tree = {
 		} 
 		completion_reward = {
 			add_political_power = 50
-			#idea
+			add_ideas = {
+				SAN_the_senderos_agreement
+			}
 		} 
 	}
 
@@ -540,7 +584,10 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			#event
+			country_event = {
+				id = sanescobar.1
+				days = 0
+			}
 		} 
 	}
 
@@ -1181,6 +1228,11 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SAN_on_our_own
 		}
+		available = {
+			NOT = {
+				has_government = democratic
+			}
+		}
 		prerequisite = {
 			focus = SAN_arena_of_spalding_bay
 		}
@@ -1227,6 +1279,9 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = SAN_on_our_own
 		}
+		available = {
+			has_country_flag = SAN_agreed_for_military_coop
+		}
 		prerequisite = {
 			focus = SAN_kurakao_treaty
 		}
@@ -1235,7 +1290,12 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			#event to Spalding
+			SLD = {
+				country_event = {
+					id = sanescobar.11
+					days = 1
+				}
+			}
 		} 
 	}   
 
@@ -1248,6 +1308,10 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_kurakao_treaty
+			focus = SAN_arena_of_spalding_bay
+		}
+		available = {
+			has_government = democratic
 		}
 		ai_will_do = { 
 			factor = 2
@@ -1276,7 +1340,9 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			#idea
+			add_ideas = {
+				SAN_pac_with_vol
+			}
 		} 
 	}
 
@@ -1295,7 +1361,12 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			#event about state 616
+			CDK = {
+				country_event = {
+					id = sanescobar.14
+					days = 1
+				}
+			}
 		} 
 	}
 
@@ -1317,7 +1388,9 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			#idea
+			add_ideas = {
+				SAN_act_dut
+			}
 		} 
 	}
 
@@ -1414,6 +1487,12 @@ focus_tree = {
 		available_if_capitulated = no
 		prerequisite = {
 			focus = SAN_arena_of_spalding_bay
+		}
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
 		}
 		ai_will_do = { 
 			factor = 2
@@ -1547,6 +1626,15 @@ focus_tree = {
 		x = 5
 		y = 6
 		cost = 7.25
+
+		available = {
+			OR = {
+				has_completed_focus = SAN_the_one_and_only
+				has_completed_focus = SAN_ppu_takes_the_reign
+				has_completed_focus = SAN_stonoga_rules_alone
+				has_completed_focus = SAN_senderos_agreement
+			}
+		}
 
 		available_if_capitulated = yes
 
@@ -1889,6 +1977,15 @@ focus_tree = {
 		cost = 7.25
 
 		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_completed_focus = SAN_the_one_and_only
+				has_completed_focus = SAN_ppu_takes_the_reign
+				has_completed_focus = SAN_stonoga_rules_alone
+				has_completed_focus = SAN_senderos_agreement
+			}
+		}
 		
 		completion_reward = {
 			navy_experience = 25
@@ -2188,6 +2285,15 @@ focus_tree = {
 		x = 20
 		y = 10
 		cost = 7.25
+
+		available = {
+			OR = {
+				has_completed_focus = SAN_the_one_and_only
+				has_completed_focus = SAN_ppu_takes_the_reign
+				has_completed_focus = SAN_stonoga_rules_alone
+				has_completed_focus = SAN_senderos_agreement
+			}
+		}
 
 		available_if_capitulated = yes
 

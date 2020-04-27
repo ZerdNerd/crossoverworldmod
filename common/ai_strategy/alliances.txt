@@ -16,6 +16,21 @@ ally_flower_hill = {
 	}
 }
 
+if_not_fascist_dont_ally_gongmen = {
+	enable = {
+		NOT = {
+			has_government = fascism
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GON"			
+		value = -7000
+	}
+}
+
 if_not_commie_dont_ally_flower_hill = {
 	enable = {
 		NOT = {
@@ -27,6 +42,72 @@ if_not_commie_dont_ally_flower_hill = {
 	ai_strategy = {
 		type = alliance
 		id = "FLO"			
+		value = -7000
+	}
+}
+
+dont_let_duloc_into_pact = {
+	enable = {
+		tag = FLO
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "DUL"			
+		value = -7000
+	}
+}
+
+nobody_cares_about_unity_peninsula_until_its_too_late = {
+	enable = {
+		OR = {
+			tag = DUC
+			tag = SQU
+			tag = TRL
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "TSA"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SAN"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SLD"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GRN"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "GON"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SKO"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "JPN"			
 		value = -7000
 	}
 }

@@ -1,15 +1,15 @@
 ﻿###########################
-# Spalding
+# San Escobar
 ###########################
 
 add_namespace = sanescobar
 
-country_event = { #Elections 1936, coming soon
+country_event = { #Elections 1936
 	id = sanescobar.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.1"}
 	title = sanescobar.1.t
 	desc = sanescobar.1.d
-	picture = GFX_report_flower_hill
+	picture = GFX_report_event_usa_election_generic
 
 	fire_only_once = yes
 
@@ -21,50 +21,543 @@ country_event = { #Elections 1936, coming soon
 			ruling_party = democratic
 		}
 		add_popularity = {
-    		ideology = neutrality
-    		popularity = -0.05
-		}
-		add_popularity = {
-    		ideology = communism
-    		popularity = 0.05
+    		ideology = democratic
+    		popularity = 0.1
 		}
 	}
 
 	option = {
 		name = sanescobar.1.b
 		set_politics = {
-			ruling_party = fascism
-		}
-		add_popularity = {
-    		ideology = democratic
-    		popularity = -0.1
-		}
-		add_popularity = {
-    		ideology = neutrality
-    		popularity = -0.05
-		}
-		add_popularity = {
-    		ideology = fascism
-    		popularity = 0.15
-		}
-	}
-
-	option = {
-		name = sanescobar.1.c
-		set_politics = {
 			ruling_party = communism
 		}
 		add_popularity = {
-    		ideology = democratic
-    		popularity = -0.12
+    		ideology = communism
+    		popularity = 0.2
 		}
+	}
+}
+
+country_event = { #Public reminds about elections
+	id = sanescobar.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.2"}
+	title = sanescobar.2.t
+	desc = sanescobar.2.d
+	picture = GFX_report_event_long_march
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SAN
+		date > 1936.1.21
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = {
+		name = sanescobar.2.a
 		add_popularity = {
-    		ideology = neutrality
-    		popularity = -0.05
+    		ideology = democratic
+    		popularity = 0.1
 		}
 		add_popularity = {
     		ideology = communism
-    		popularity = 0.17
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.3
+				days = 21
+			}
+		}
+	}
+}
+
+country_event = { #EPU Rally
+	id = sanescobar.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.3"}
+	title = sanescobar.3.t
+	desc = sanescobar.3.d
+	picture = GFX_report_event_hungary_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sanescobar.3.a
+		add_popularity = {
+    		ideology = communism
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.4
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { #Democrats send a petition
+	id = sanescobar.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.4"}
+	title = sanescobar.4.t
+	desc = sanescobar.4.d
+	picture = GFX_report_event_german_inspect_troops
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We will consider it...
+		name = sanescobar.4.a
+		add_political_power = -100
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.05
+		}
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.5
+				days = 18
+			}
+		}
+	}
+
+	option = { #...but we have many other options.
+		name = sanescobar.4.b
+		add_political_power = 50
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.1
+		}
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.5
+				days = 18
+			}
+		}
+	}
+}
+
+country_event = { #People gather near the National Assembly to hear the decision
+	id = sanescobar.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.5"}
+	title = sanescobar.5.t
+	desc = sanescobar.5.d
+	picture = GFX_report_event_german_reichstag_gathering
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree to organize the elections
+		name = sanescobar.5.a
+		add_political_power = -50
+		add_stability = 0.1
+		add_popularity = {
+    		ideology = fascism
+    		popularity = -0.35
+		}
+		hidden_effect = {
+			set_country_flag = SAN_stonoga_allowed_elections
+		}
+	}
+
+	option = { #Refuse to announce the decision
+		name = sanescobar.5.b
+		add_political_power = 50
+		add_stability = -0.25
+		hidden_effect = {
+			set_country_flag = SAN_stonoga_rejected_elections
+		}
+	}
+}
+
+country_event = { #Industries begin strike!
+	id = sanescobar.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.6"}
+	title = sanescobar.6.t
+	desc = sanescobar.6.d
+	picture = GFX_report_event_generic_rally2
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SAN
+		focus_progress = {
+			focus = SAN_order_persecutions
+			progress > 0.3
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 2
+	}
+
+	option = { #Guess they really want elections, huh?
+		name = sanescobar.6.a
+		add_political_power = -150
+		add_ideas = {
+			SAN_industry_strike
+		}
+	}
+}
+
+country_event = { #Democrats march on Santo Subito!
+	id = sanescobar.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.7"}
+	title = sanescobar.7.t
+	desc = sanescobar.7.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Deploy the army!
+		name = sanescobar.7.a
+		add_political_power = -100
+		add_stability = -0.25
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.8
+				days = 5
+			}
+		}
+	}
+
+	option = { #Negotiate with them
+		name = sanescobar.7.b
+		add_political_power = -100
+		add_stability = -0.25
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.10
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Senderos declares support for Democrats
+	id = sanescobar.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.8"}
+	title = sanescobar.8.t
+	desc = sanescobar.8.d
+	picture = GFX_report_event_generic_peaceful_annexation
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Replace the city council!
+		name = sanescobar.8.a
+		add_political_power = -100
+		add_stability = -0.1
+		hidden_effect = {
+			country_event = {
+				id = sanescobar.9
+				days = 5
+			}
+		}
+	}
+}
+
+country_event = { #Democrats' march is smashed
+	id = sanescobar.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.9"}
+	title = sanescobar.9.t
+	desc = sanescobar.9.d
+	picture = GFX_report_event_generic_military_parade
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sanescobar.9.a
+		add_stability = -0.05
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -1
+		}
+	}
+}
+
+country_event = { #Democrats demand to free Sznuk and organize elections
+	id = sanescobar.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.10"}
+	title = sanescobar.10.t
+	desc = sanescobar.10.d
+	picture = GFX_report_event_generic_military_parade
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We can free him...
+		name = sanescobar.10.a
+		add_stability = 0.1
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.35
+		}
+		remove_ideas = {
+			SAN_industry_strike
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_completed_focus = SAN_eradicate_ppu
+				}
+				set_country_flag = SAN_stonoga_allowed_elections
+				unlock_national_focus = SAN_the_promised_elections
+				unlock_national_focus = SAN_the_one_and_only
+				set_politics = {
+					ruling_party = democratic
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_completed_focus = SAN_eradicate_ppu
+					}
+				}
+				set_country_flag = SAN_stonoga_allowed_elections
+			}
+		}
+	}
+
+	option = { #...but in exchange there won't be any elections organized.
+		name = sanescobar.10.b
+		add_political_power = 50
+		add_stability = 0.05
+		add_popularity = {
+    		ideology = democratic
+    		popularity = 0.1
+		}
+	}
+}
+
+country_event = { #San Escobar wants to ally with us
+	id = sanescobar.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.11"}
+	title = sanescobar.11.t
+	desc = sanescobar.11.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Let them join
+		name = sanescobar.11.a
+		SAN = {
+			country_event = {
+				id = sanescobar.12
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Nope
+		name = sanescobar.11.b
+		SAN = {
+			country_event = {
+				id = sanescobar.13
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #They agree!
+	id = sanescobar.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.12"}
+	title = sanescobar.12.t
+	desc = sanescobar.12.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sanescobar.12.a
+		add_political_power = 50
+		FROM = {
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				add_to_faction = SAN
+			}
+			if = {
+				limit = {
+					NOT = {
+						is_faction_leader = yes
+					}
+				}
+				give_guarantee = SAN
+				SAN = {
+					give_guarantee = FROM
+				}
+			}
+		}
+	}
+}
+
+country_event = { #They reject
+	id = sanescobar.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.13"}
+	title = sanescobar.13.t
+	desc = sanescobar.13.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Damn!
+		name = sanescobar.13.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #San Escobar wants to buy a state from us
+	id = sanescobar.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.14"}
+	title = sanescobar.14.t
+	desc = sanescobar.14.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = sanescobar.14.a
+		SAN = {
+			country_event = {
+				id = sanescobar.15
+				days = 1
+			}
+		}
+	}
+
+	option = { #Nope
+		name = sanescobar.14.b
+		SAN = {
+			country_event = {
+				id = sanescobar.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree!
+	id = sanescobar.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.15"}
+	title = sanescobar.15.t
+	desc = sanescobar.15.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sanescobar.15.a
+		add_political_power = 50
+		transfer_state = 616
+		616 = {
+			add_building_construction = {
+    			type = infrastructure
+    			level = 2
+    			instant_build = yes
+			}
+			add_building_construction = {
+    			type = naval_base
+    			level = 2
+    			instant_build = yes
+				province = 4166
+			}
+			add_building_construction = {
+    			type = naval_base
+    			level = 1
+    			instant_build = yes
+				province = 8767
+			}
+		}
+	}
+}
+
+country_event = { #Spalding wants to end hostilities between our countries
+	id = sanescobar.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.16"}
+	title = sanescobar.16.t
+	desc = sanescobar.16.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Agree only to recognize us
+		name = sanescobar.16.a
+		SLD = {
+			country_event = {
+				id = sanescobar.17
+				days = 1
+			}
+		}
+	}
+
+	option = { #Agree also to military pact
+		name = sanescobar.16.a
+		SLD = {
+			country_event = {
+				id = sanescobar.18
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #San Escobar agrees only for recognizement part
+	id = sanescobar.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.17"}
+	title = sanescobar.17.t
+	desc = sanescobar.17.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sanescobar.17.a
+		add_political_power = 50
+		hidden_effect = {
+			set_global_flag = kurakao_treaty_signed
+		}
+	}
+}
+
+country_event = { #San Escobar agrees for military coop
+	id = sanescobar.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sanescobar.18"}
+	title = sanescobar.18.t
+	desc = sanescobar.18.d
+	picture = GFX_report_event_generic_rally
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sanescobar.18.a
+		add_political_power = 50
+		hidden_effect = {
+			SAN = {
+				set_country_flag = SAN_agreed_for_military_coop
+			}
+			set_global_flag = kurakao_treaty_signed
 		}
 	}
 }

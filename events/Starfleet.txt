@@ -882,3 +882,64 @@ country_event = { #Manpower from the Starfleet HQ
 		}
 	}
 }
+
+country_event = { #Separate peace with Humsin if allied
+	id = starfleet.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.20"}
+	title = starfleet.20.t
+	desc = starfleet.20.d
+	picture = GFX_report_KPT_kuj
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KPT
+		has_war_with = SKO
+		SKO = {
+			is_in_faction_with = DES
+			has_capitulated = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+	}
+
+	option = { #Let's propose them
+		name = starfleet.20.a
+		DES = {
+			country_event = {
+				id = starfleet.21
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Starfleet wants peace if Sancti Magistri capitulates
+	id = starfleet.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event starfleet.21"}
+	title = starfleet.21.t
+	desc = starfleet.21.d
+	picture = GFX_report_KPT_kuj
+
+	is_triggered_only = yes
+
+	option = { #Okay
+		name = starfleet.21.a
+		SKO = {
+			leave_faction = yes
+		}
+		white_peace = KPT
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Never!
+		name = starfleet.21.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}

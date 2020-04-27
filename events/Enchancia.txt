@@ -879,6 +879,14 @@ country_event = { #Enchancian Civil War begins
 		remove_ideas = {
 			ENC_golden_age
 		}
+		if = {
+			limit = {
+				has_idea = TCWMod_black_monday_nondev
+			}
+			remove_ideas = {
+				TCWMod_black_monday_nondev
+			}
+		}
 		custom_effect_tooltip = ENC_civil_war_tooltip
 		hidden_effect = {
 			EN1 = { 
@@ -949,7 +957,7 @@ country_event = { #Enchancian Civil War begins
 				}
 			}
 			add_named_threat = { 
-    			threat = 15 
+    			threat = 20 
     			name = enchancian_cw_breakout
 			}
 		}

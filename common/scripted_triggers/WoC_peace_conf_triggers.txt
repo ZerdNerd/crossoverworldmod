@@ -28,6 +28,25 @@ is_actual_major = {
 	}
 }
 
+is_colony_region = {
+	OR = {	
+		state = 29
+		region = 53
+		region = 70
+		region = 75
+		region = 76
+		region = 77
+		region = 82
+		region = 91
+		region = 92
+		region = 113
+		region = 117
+		region = 118
+		region = 119
+		region = 120
+	}
+}
+
 is_island_region = {
 	OR = {
 		is_actual_island_state = yes
@@ -37,6 +56,54 @@ is_island_region = {
 is_actual_island_state = {
 	OR = {
 		is_island_state = yes
+	}
+}
+
+is_ambition_area_of_ROOT = {
+	OR = {
+		has_variable = ambition_area_@ROOT
+		AND = {
+			ROOT = {
+				is_actual_major = yes
+				OR = {
+					tag = MAI
+					tag = FRI
+					tag = GRN
+					tag = FLO
+					tag = ENC
+					tag = EN1
+					tag = EN2
+					tag = EN3
+					tag = EN4
+					tag = DES
+				}
+			}
+		#	is_important_state = yes #for the future
+		}
+	}
+}
+
+is_ambition_area_of_PREV = {
+	OR = {
+		has_variable = ambition_area_@PREV
+		AND = {
+			PREV = {
+				is_actual_major = yes
+				OR = {
+					tag = MAI
+					tag = FRI
+					tag = GRN
+					tag = FLO
+					tag = ENC
+					tag = EN1
+					tag = EN2
+					tag = EN3
+					tag = EN4
+					tag = DES
+				}
+			}
+		#	is_important_state = yes
+		}
 	}
 }
 

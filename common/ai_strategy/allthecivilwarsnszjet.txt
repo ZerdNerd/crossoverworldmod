@@ -251,8 +251,23 @@ enchancian_cw_artisans_support = {
 		has_war = no
 		is_subject = no
 		country_exists = EN4
-		has_government = communism
-		has_completed_focus = FLO_artisans_enchancia
+		OR = {
+			AND = {
+				tag = FLO
+				has_completed_focus = FLO_artisans_enchancia
+			}
+			AND = {
+				tag = SLD
+				has_completed_focus = SLD_help_comrades_in_enchancia
+			}
+			AND = {
+				NOT = {
+					tag = FLO
+					tag = SLD
+				}
+				has_government = communism
+			}
+		}
 		NOT = { has_global_flag = enchancian_civil_war_ended }
 	}
 	abort = {

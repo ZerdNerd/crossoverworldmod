@@ -1919,6 +1919,15 @@ focus_tree = {
 			focus = JPN_focus_on_northeast
 		}
 
+		bypass = {
+			DUL = {
+				OR = {
+					is_puppet = yes
+					exists = no
+				}
+			}
+		}
+
 		available = {
 			is_puppet = no
 		}
@@ -2083,6 +2092,9 @@ focus_tree = {
 
 		available = {
 			is_puppet = no
+			LEC = {
+				exists = yes
+			}
 		}
 
 		prerequisite = {

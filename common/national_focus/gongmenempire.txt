@@ -926,6 +926,15 @@ focus_tree = {
 			has_war = no
 		}
 
+		bypass = {
+			OR = {
+				has_war_with = WOL
+				WOL = {
+					exists = no
+				}
+			}
+		}
+
 		ai_will_do = { 
 			factor = 1
 		} 
@@ -958,7 +967,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 5
 		} 
 
 		completion_reward = { 
@@ -983,7 +992,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 5
 		} 
 
 		completion_reward = { 
