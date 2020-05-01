@@ -90,7 +90,7 @@ guiTypes = {
 		## facebook etc.
 		ButtonType = {
 			name = "reddit_button"
-			position = { x = 120 y = 355 }
+			position = { x = 100 y = 349 }
 			quadTextureSprite ="GFX_reddit"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_REDDIT"
@@ -99,11 +99,20 @@ guiTypes = {
 
 		ButtonType = {
 			name = "steamworkshop_button"
-			position = { x = 160 y = 355 }
+			position = { x = 140 y = 349 }
 			quadTextureSprite ="GFX_steamworkshop"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_STEAMWORKSHOP"
 			web_link = "https://steamcommunity.com/sharedfiles/filedetails/?id=1946994311"
+		}
+
+		ButtonType = {
+			name = "discord_button"
+			position = { x = 180 y = 349 }
+			quadTextureSprite ="GFX_discord"
+			#clicksound = click_default
+			pdx_tooltip = "MENU_DISCORD"
+			web_link = "https://discord.gg/pSGp2FP"
 		}
 
 		ButtonType = {

@@ -57,34 +57,18 @@ country_event = { #Elections - spots
 
 	option = {
 		name = starfleet.2.a
-		trigger = {
-			OR = {
-				is_ai = yes
-				has_global_flag = no_sound
-			}
-		}
 		hidden_effect = {
 			country_event = {
 				id = starfleet.3
 				days = 0
 			}
-		}
-	}
-
-	option = {
-		name = starfleet.2.a
-		trigger = {
-			is_ai = no
-			NOT = {
-				has_global_flag = no_sound
+			if = {
+				limit = {
+					is_ai = no
+					has_variable = cr_custom_sounds_status
+				}
+				sound_effect = jachas_vote
 			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = starfleet.3
-				days = 0
-			}
-			sound_effect = jachas_vote
 		}
 	}
 }
@@ -102,34 +86,18 @@ country_event = { #Jachas spot
 
 	option = {
 		name = starfleet.3.a
-		trigger = {
-			OR = {
-				is_ai = yes
-				has_global_flag = no_sound
-			}
-		}
 		hidden_effect = {
 			country_event = {
 				id = starfleet.4
 				days = 0
 			}
-		}
-	}
-
-	option = {
-		name = starfleet.3.a
-		trigger = {
-			is_ai = no
-			NOT = {
-				has_global_flag = no_sound
+			if = {
+				limit = {
+					is_ai = no
+					has_variable = cr_custom_sounds_status
+				}
+				sound_effect = kuj_vote
 			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = starfleet.4
-				days = 0
-			}
-			sound_effect = kuj_vote
 		}
 	}
 }
@@ -147,34 +115,18 @@ country_event = { #Kuj spot
 
 	option = {
 		name = starfleet.4.a
-		trigger = {
-			OR = {
-				is_ai = yes
-				has_global_flag = no_sound
-			}
-		}
 		hidden_effect = {
 			country_event = {
 				id = starfleet.5
 				days = 0
 			}
-		}
-	}
-
-	option = {
-		name = starfleet.4.a
-		trigger = {
-			is_ai = no
-			NOT = {
-				has_global_flag = no_sound
+			if = {
+				limit = {
+					is_ai = no
+					has_variable = cr_custom_sounds_status
+				}
+				sound_effect = brother_vote
 			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = starfleet.5
-				days = 0
-			}
-			sound_effect = brother_vote
 		}
 	}
 }

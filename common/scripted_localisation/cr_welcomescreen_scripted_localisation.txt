@@ -1,0 +1,229 @@
+# Allows you to create your own dynamic keys
+# to be called in localization.
+# defined_text -> this is it, we're defining the text
+# text -> a discrete entry that can be picked to display in loc.
+# trigger -> determines if a text entry will be picked or not.
+# (The triggers need to be valid for the scope the key is called in
+# (eg Root or From.From).)
+# localization_key -> points to the localization key
+# that'll be used if trigger passes
+
+defined_text = { # Country
+	name = GetNiceCountryName
+	text = {
+		trigger = { original_tag = GRN }
+		localization_key = CR_WS_GRN
+	}
+	text = {
+		trigger = { original_tag = MAI }
+		localization_key = CR_WS_MAI
+	}
+	text = {
+		trigger = { original_tag = FRI }
+		localization_key = CR_WS_FRI
+	}
+	text = {
+		trigger = { original_tag = DES }
+		localization_key = CR_WS_DES
+	}
+	text = {
+		trigger = { original_tag = TSA }
+		localization_key = CR_WS_TSA
+	}
+	text = {
+		trigger = { original_tag = SLD }
+		localization_key = CR_WS_SLD
+	}
+	text = {
+		trigger = { original_tag = JPN }
+		localization_key = CR_WS_JPN
+	}
+	text = {
+		trigger = { original_tag = LEC }
+		localization_key = CR_WS_LEC
+	}
+	text = {
+		trigger = { original_tag = SAN }
+		localization_key = CR_WS_SAN
+	}
+	text = {
+		trigger = { original_tag = ICW }
+		localization_key = CR_WS_ICW
+	}
+	text = {
+		trigger = { original_tag = GON }
+		localization_key = CR_WS_GON
+	}
+	text = {
+		trigger = { original_tag = FLO }
+		localization_key = CR_WS_FLO
+	}
+	text = {
+		trigger = { original_tag = DUL }
+		localization_key = CR_WS_DUL
+	}
+	text = {
+		trigger = { original_tag = ENC }
+		localization_key = CR_WS_ENC
+	}
+	text = {
+		trigger = { original_tag = AVA }
+		localization_key = CR_WS_AVA
+	}
+	text = {
+		trigger = { original_tag = SKO }
+		localization_key = CR_WS_SKO
+	}
+	text = {
+		trigger = { original_tag = KPT }
+		localization_key = CR_WS_KPT
+	}
+	text = {
+		localization_key = "[Root.GetNameDef]"
+	}
+}
+
+defined_text = {
+	name = GetCountryIntro
+	text = {
+		trigger = { original_tag = GRN }
+		localization_key = CR_WS_GRN_desc
+	}
+	text = {
+		trigger = { original_tag = MAI }
+		localization_key = CR_WS_MAI_desc
+	}
+	text = {
+		trigger = { original_tag = FRI }
+		localization_key = CR_WS_FRI_desc
+	}
+	text = {
+		trigger = { original_tag = DES }
+		localization_key = CR_WS_DES_desc
+	}
+	text = {
+		trigger = { original_tag = TSA }
+		localization_key = CR_WS_TSA_desc
+	}
+	text = {
+		trigger = { original_tag = SLD }
+		localization_key = CR_WS_SLD_desc
+	}
+	text = {
+		trigger = { original_tag = JPN }
+		localization_key = CR_WS_JPN_desc
+	}
+	text = {
+		trigger = { original_tag = LEC }
+		localization_key = CR_WS_LEC_desc
+	}
+	text = {
+		trigger = { original_tag = SAN }
+		localization_key = CR_WS_SAN_desc
+	}
+	text = {
+		trigger = { original_tag = ICW }
+		localization_key = CR_WS_ICW_desc
+	}
+	text = {
+		trigger = { original_tag = GON }
+		localization_key = CR_WS_GON_desc
+	}
+	text = {
+		trigger = { original_tag = FLO }
+		localization_key = CR_WS_FLO_desc
+	}
+	text = {
+		trigger = { original_tag = DUL }
+		localization_key = CR_WS_DUL_desc
+	}
+	text = {
+		trigger = { original_tag = ENC }
+		localization_key = CR_WS_ENC_desc
+	}
+	text = {
+		trigger = { original_tag = AVA }
+		localization_key = CR_WS_AVA_desc
+	}
+	text = {
+		trigger = { original_tag = SKO }
+		localization_key = CR_WS_SKO_desc
+	}
+	text = {
+		trigger = { original_tag = KPT }
+		localization_key = CR_WS_KPT_desc
+	}
+	text = {
+		localization_key = "[Root.GetNameDef]"
+	}
+}
+
+defined_text = { # Country
+	name = GetRegionName
+	text = {
+		trigger = { capital_scope = { is_on_continent = europe } }
+		localization_key = CR_WS_Central_Continent
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = south_america } }
+		localization_key = CR_WS_Everrealm
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = north_america } }
+		localization_key = CR_WS_Eastern_Continent
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = africa } }
+		localization_key = CR_WS_Central_Continent
+	}
+	text = {
+		localization_key = "[Root.GetNameDef]"
+	}
+}
+
+defined_text = { # Country
+	name = GetRegionDesc
+	text = {
+		trigger = { capital_scope = { is_on_continent = europe } }
+		localization_key = CR_WS_Central_Continent_desc
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = south_america } }
+		localization_key = CR_WS_Everrealm_desc
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = north_america } }
+		localization_key = CR_WS_Eastern_Continent_desc
+	}
+	text = {
+		trigger = { capital_scope = { is_on_continent = asia } }
+		localization_key = CR_WS_Central_Continent_desc
+	}
+	text = {
+		localization_key = "[Root.GetNameDef]"
+	}
+}
+
+
+defined_text = {
+	name = GetHeaderText
+#	text = {
+#		trigger = { original_tag = MAN }
+#		localization_key = CR_WS_header_text_MAN
+#	}
+	text = {
+		localization_key = CR_WS_standard_header_text
+	}
+}
+
+defined_text = {
+	name = custom_sounds_status
+	text = {
+		trigger = { has_variable = cr_custom_sounds_status }
+		localization_key = CR_WS_custom_sounds_status_on
+	}
+	text = {
+		trigger = { NOT = { has_variable = cr_custom_sounds_status } }
+		localization_key = CR_WS_custom_sounds_status_off
+	}
+}

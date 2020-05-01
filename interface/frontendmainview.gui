@@ -112,38 +112,6 @@ guiTypes = {
 			oversound = ui_menu_over
 		}
 		
-		iconType = {
-			name = "sp_continue_flag_left"
-			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 35 y = 22 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-		
-		iconType = {
-			name = "sp_continue_flag_left_overlay"
-			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 35 y = 22 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-		
-		iconType = {
-			name = "sp_continue_flag_right"
-			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 245 y = 22 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-		
-		iconType = {
-			name = "sp_continue_flag_right_overlay"
-			quadTextureSprite ="GFX_flag_small2_not_masked"
-			position = { x= 245 y = 22 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-		
 		ButtonType = {
 			name = "sp_new_button"
 			position = { x = 16 y = 58 }
@@ -173,6 +141,13 @@ guiTypes = {
 			clicksound = click_close
 			oversound = ui_menu_over
 			shortcut = "ESCAPE"
+		}
+
+		background = {
+			name = "easteregg"		
+			quadTextureSprite ="GFX_easteregg"
+			pdx_tooltip = "MAINMENU_ZE_EYES_TAT"
+			position = { x = 120 y = -190 }
 		}
 	}
 
@@ -279,7 +254,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "reddit_button"
-			position = { x = 120 y = 305 }
+			position = { x = 100 y = 305 }
 			quadTextureSprite ="GFX_reddit"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_REDDIT"
@@ -288,11 +263,20 @@ guiTypes = {
 
 		ButtonType = {
 			name = "steamworkshop_button"
-			position = { x = 160 y = 305 }
+			position = { x = 140 y = 305 }
 			quadTextureSprite ="GFX_steamworkshop"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_STEAMWORKSHOP"
 			web_link = "https://steamcommunity.com/sharedfiles/filedetails/?id=1946994311"
+		}
+
+		ButtonType = {
+			name = "discord_button"
+			position = { x = 180 y = 305 }
+			quadTextureSprite ="GFX_discord"
+			#clicksound = click_default
+			pdx_tooltip = "MENU_DISCORD"
+			web_link = "https://discord.gg/pSGp2FP"
 		}
 
 		background = {
