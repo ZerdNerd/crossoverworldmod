@@ -3386,9 +3386,15 @@ country_event = { #Amber's 17th birthday
 
 	option = { #Happy birthday!
 		trigger = {
-			has_country_leader = {
-    			name = "Amber I"
-    			ruling_only = yes
+			OR = {
+				has_country_leader = {
+    				name = "Amber I"
+    				ruling_only = yes
+				}
+				has_country_leader = {
+    				name = "Miranda"
+    				ruling_only = yes
+				}
 			}
 		}
 		name = enchancia.81.a
