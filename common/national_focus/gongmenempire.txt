@@ -508,7 +508,7 @@ focus_tree = {
 	focus = { 
 		id = GON_invite_tri_state_area
 		icon = GFX_goal_anschluss
-		x = 9
+		x = 8
 		y = 2
 		cost = 10
 		available_if_capitulated = yes 
@@ -537,46 +537,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = GON_invite_spalding
-		icon = GFX_goal_anschluss
-		x = 7
-		y = 2
-		cost = 10
-		available_if_capitulated = yes 
-		prerequisite = { focus = GON_go_solo }
-		available = {
-			SLD = {
-				has_government = fascism
-				is_in_faction = no
-			}
-		}
-
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			SLD = {
-				country_event = {
-					id = gongmenempire.1
-					days = 1
-				}
-			} 
-		}		
-	}
-
-	focus = { 
 		id = GON_better_technology
 		icon = GFX_goal_generic_intelligence_exchange
 		x = 8
 		y = 3
 		cost = 36
 		available_if_capitulated = yes 
-		prerequisite = { focus = GON_invite_tri_state_area focus = GON_invite_spalding }
+		prerequisite = { focus = GON_invite_tri_state_area }
 		available = {
-			OR = {
-				is_in_faction_with = TSA
-				is_in_faction_with = SLD
-			}
+			is_in_faction_with = TSA
 		}
 
 		ai_will_do = { 
@@ -936,7 +905,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 5
 		} 
 		completion_reward = { 
 			create_wargoal = {

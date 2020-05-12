@@ -1467,7 +1467,7 @@ focus = {
 		y = 11
 		cost = 5
 		prerequisite = { focus = AVA_operation_neptune }
-		prerequisite = { focus = AVA_liberate_everrealm_alone }
+		prerequisite = { focus = AVA_operation_rosario }
 		prerequisite = { focus = AVA_operation_coronet }
 		available_if_capitulated = yes
 		bypass = {
@@ -1553,6 +1553,7 @@ focus = {
 		available = {
 			DUL = {
 				exists = yes
+				is_puppet = no
 			}
 		}
 		ai_will_do = { 
@@ -1572,7 +1573,7 @@ focus = {
 		x = 15
 		y = 10
 		cost = 5
-		prerequisite = { focus = AVA_apply_to_join_western_alliance }
+		prerequisite = { focus = AVA_liberate_everrealm_alone focus = AVA_help_from_the_east focus = AVA_apply_to_join_western_alliance }
 		available_if_capitulated = yes
 		bypass = {
 			has_war_with = LEC
@@ -1580,6 +1581,7 @@ focus = {
 		available = {
 			LEC = {
 				has_government = monarchism
+				exists = yes
 			}
 		}
 		ai_will_do = { 

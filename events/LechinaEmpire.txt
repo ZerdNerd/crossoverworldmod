@@ -414,8 +414,11 @@ country_event = { #Lechina Empire demands return of northern states
 			transfer_state = 731
 			transfer_state = 703
 		}
+		hidden_effect = {
+			set_country_flag = faded_to_lechists
+		}
 		ai_chance = {
-			factor = 75
+			factor = 85
 		}
 	}
 
@@ -428,7 +431,7 @@ country_event = { #Lechina Empire demands return of northern states
 			}
 		}
 		ai_chance = {
-			factor = 25
+			factor = 15
 		}
 	}
 
@@ -487,8 +490,11 @@ country_event = { #Lechina Empire demands return of northern states
 			transfer_state = 607
 			transfer_state = 617
 		}
+		hidden_effect = {
+			set_country_flag = faded_to_lechists
+		}
 		ai_chance = {
-			factor = 75
+			factor = 85
 		}
 	}
 
@@ -501,7 +507,7 @@ country_event = { #Lechina Empire demands return of northern states
 			}
 		}
 		ai_chance = {
-			factor = 25
+			factor = 15
 		}
 	}
 
@@ -592,7 +598,7 @@ country_event = { #Japanifornia rejects!
 
 	option = { #This means war!
 		name = lechina.16.b
-		declare_war_on = {
+		create_wargoal = {
 			target = JPN
 			type = annex_everything
 		}

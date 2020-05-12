@@ -2027,7 +2027,7 @@ ideas = {
 			modifier = {
 				stability_factor = -0.15
 				war_support_factor = -0.1
-				conscription = -0.01
+				conscription_factor = -0.5
 			}
 		}
 
@@ -2205,6 +2205,37 @@ ideas = {
 				consumer_goods_factor = 0.05
 				min_export = -0.15
 			}
+		}
+
+		test_idea_for_KPT_and_SKO = {
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				min_export = -1
+				trade_opinion_factor = -1
+				foreign_subversive_activites = -1
+				subversive_activites_upkeep = 1
+				ai_get_ally_desire_factor = -1000
+				improve_relations_maintain_cost_factor = 1
+				license_purchase_cost = 1
+				send_volunteers_tension = 1
+			}
+		}
+
+		fighting_for_enchancia = {
+			allowed = { always = no }
+			modifier = {
+				war_support_factor = 0.20
+				training_time_army_factor = -0.10
+				conscription_factor = 0.25
+				out_of_supply_factor = -0.50
+				no_supply_grace = 168
+				resistance_target = -1
+			}
+			picture = generic_morale_bonus
 		}
 	}
 
@@ -2472,9 +2503,11 @@ ideas = {
 		ENC_gwen = {
 
 			allowed = {
-				original_tag = ENC
-				original_tag = EN1
-				original_tag = EN2
+				OR = {
+					original_tag = ENC
+					original_tag = EN1
+					original_tag = EN2
+				}
 			}
 
 			available = {
@@ -2698,6 +2731,227 @@ ideas = {
 			}
 		
 			traits = { war_industrialist }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_michalowa = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				has_completed_focus = SAN_the_one_and_only
+			}
+		
+			traits = { thats_my_role_to_know }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_czerepach = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+		
+			traits = { compassionate_gentleman financial_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_jedrzej = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = SAN_ppu_takes_the_reign
+					has_completed_focus = SAN_senderos_agreement
+				}
+			}
+		
+			traits = { baron_of_terror }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_solejuk = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+		
+			traits = { war_industrialist ideological_crusader }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_polakowski = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+		
+			traits = { economist reluctant_interventionist }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SAN_fabian = {
+
+			allowed = {
+				original_tag = SAN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = SAN_the_one_and_only
+					has_completed_focus = SAN_senderos_agreement
+				}
+			}
+		
+			traits = { silent_mule fortification_armchair_general }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JPN_franziska = {
+
+			allowed = {
+				original_tag = JPN
+			}
+
+			available = {
+				has_completed_focus = JPN_the_dead_speak
+			}
+		
+			traits = { financial_expert baron_of_terror }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JPN_apollo = {
+
+			allowed = {
+				original_tag = JPN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+		
+			traits = { captain_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JPN_maya = {
+
+			allowed = {
+				original_tag = JPN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+		
+			traits = { princess_of_terror }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JPN_trucy = {
+
+			allowed = {
+				original_tag = JPN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+		
+			traits = { army_regrouping_2 head_of_intelligence }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JPN_gumshoe = {
+
+			allowed = {
+				original_tag = JPN
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					has_completed_focus = JPN_president_edgeworth
+					has_completed_focus = JPN_the_dead_speak
+				}
+			}
+		
+			traits = { connected_citizen resistance_banker }
 
 			ai_will_do = {
 				factor = 1

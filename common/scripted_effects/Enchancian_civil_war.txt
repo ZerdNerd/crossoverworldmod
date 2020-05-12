@@ -318,6 +318,19 @@ ECW_remove_other_cores = {
 	hidden_effect = {
 		if = {
 			limit = {
+				is_core_of = ENC
+				ROOT = { 
+					NOT = { 
+						tag = ENC 
+						tag = EN1
+						tag = EN2
+					} 
+				}
+			}
+			remove_core_of = ENC
+		}
+		if = {
+			limit = {
 				is_core_of = EN1
 				ROOT = { NOT = { tag = EN1 } }
 			}

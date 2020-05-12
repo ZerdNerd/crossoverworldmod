@@ -154,8 +154,18 @@ central_peninsula_alliance = {
 	enable = {
 		OR = {
 			tag = UND
-			tag = MUS
-			tag = VIS
+			AND = {
+				tag = MUS
+				SAN = {
+					has_government = democratic
+				}
+			}
+			AND = {
+				tag = VIS
+				SAN = {
+					has_government = democratic
+				}
+			}
 		}
 	}
 	abort_when_not_enabled = yes
@@ -344,5 +354,147 @@ everrealm_wont_ally_gongmen = {
 		type = alliance
 		id = "GON"			
 		value = -7000
+	}
+}
+
+do_not_ally_humsin = {
+	enable = {
+		NOT = {
+			tag = DES
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "DES"			
+		value = -7000
+	}
+}
+
+do_not_ally_san_escobar_cc = {
+	enable = {
+		NOT = {
+			tag = CDK
+			tag = SMU
+			tag = NRL
+			tag = VIS
+			tag = MUS
+			AND = {
+				tag = LEC
+				NOT = {
+					has_completed_focus = LEC_barton-truro_for_protection
+				}
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "SAN"			
+		value = -7000
+	}
+}
+
+ally_san_escobar_if_lechia_is_alone = {
+	enable = {
+		tag = LEC
+		has_completed_focus = LEC_barton-truro_for_protection
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "SAN"			
+		value = 7000
+	}
+}
+
+cannot_ally_underground_guys = {
+	enable = {
+		NOT = {
+			tag = UND
+			tag = MUS
+			tag = VIS
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "UND"			
+		value = -7000
+	}
+}
+
+karlino_axis_failsafe = {
+	enable = {
+		NOT = {
+			tag = LEC
+			tag = DUL
+			tag = SAN
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "LEC"			
+		value = -7000
+	}
+}
+
+ally_greenland_if_outcasts_attacked = {
+	enable = {
+		OR = {
+			tag = MAI
+			tag = FRI
+		}
+		has_guaranteed = GRN
+		OUT = {
+			has_war_with = DES
+			exists = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GRN"			
+		value = 7000
+	}
+}
+
+greenland_macius_and_sioux_please_form_faction = {
+	enable = {
+		OR = {
+			tag = MAI
+			AND = {
+				tag = SIO
+				has_global_flag = sioux_are_returning
+			}
+			tag = GRN
+		}
+		has_war_with = DES
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "GRN"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "MAI"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = alliance
+		id = "SIO"			
+		value = 7000
 	}
 }

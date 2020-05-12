@@ -1,0 +1,519 @@
+international_policy_dec_category = {
+    #Santo Subito Pact - San Escobar is faction leader
+    join_santo_subito_pact = {
+        icon = generic_operation
+		visible = {
+			has_war_together_with = SAN
+            SAN = {
+                is_faction_leader = yes
+                has_guaranteed = ROOT
+                has_government = democratic
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            OR = {
+                tag = CDK
+                tag = SMU
+                tag = NRL
+                tag = VIS
+                tag = MUS
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            SAN = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Mount Ebott Treaty - Underground is the leader
+    join_mount_ebott_treaty = {
+        icon = generic_operation
+        visible = {
+            NOT = {
+                is_in_faction = yes
+            }
+            AND = {
+                OR = {
+                    tag = CDK
+                    tag = SMU
+                    tag = VIS
+                    tag = MUS
+                }
+                SAN = {
+                    OR = {
+                        has_government = fascism
+                        has_government = communism
+                    }
+                }
+                date > 1940.9.1
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+        }
+
+        fire_only_once = yes
+
+        cost = 0
+
+        ai_will_do = {
+            factor = 1
+        }
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            UND = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Danville Alliance - Tri-State Area is faction leader
+    join_danville_alliance_pact = {
+        icon = generic_operation
+		visible = {
+            TSA = {
+                is_faction_leader = yes
+                has_government = democratic
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            AND = {
+                OR = {
+                    tag = CDK
+                    tag = SMU
+                    tag = NRL
+                    tag = VIS
+                    tag = MUS
+                }
+                SAN = {
+                    is_in_faction_with = TSA
+                }
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            TSA = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Avalor Pact - Avalor is the leader
+    join_avalor_pact = {
+        icon = generic_operation
+		visible = {
+            AVA = {
+                is_faction_leader = yes
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            OR = {
+                tag = ICK
+                tag = FRK
+                tag = KHU
+                tag = ZUM
+                tag = ISL
+                AND = {
+                    tag = KHA
+                    AND = {
+                        EN2 = {
+                            exists = no
+                        }
+                        OR = {
+                            EN3 = {
+                                exists = yes
+                            }
+                            EN4 = {
+                                exists = yes
+                            }
+                        }
+                    }
+                }
+                AND = {
+                    tag = MAR
+                    AND = {
+                        EN2 = {
+                            exists = no
+                        }
+                        OR = {
+                            EN3 = {
+                                exists = yes
+                            }
+                            EN4 = {
+                                exists = yes
+                            }
+                        }
+                    }
+                }
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            AVA = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Western Alliance - Dem. Japanifornia is faction leader
+    join_western_alliance = {
+        icon = generic_operation
+		visible = {
+            JPN = {
+                is_faction_leader = yes
+                has_government = democratic
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            OR = {
+                tag = PAT
+                tag = SMU
+                tag = KHU
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            JPN = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #United Front of Free Nations/Great Alliance of Kingdoms - Central Kingdom/Greenland is the leader
+    join_united_front_of_free_nations = {
+        icon = generic_operation
+		visible = {
+            OR = {
+                tag = GRN
+                AND = {
+                    tag = FRI
+                    has_guaranteed = GRN
+                }
+                AND = {
+                    tag = KHU
+                    AVA = {
+                        is_in_faction_with = MAI
+                    }
+                }
+                AND = {
+                    tag = DCB
+                    OR = {
+                        has_idea = TSA_danville_economic_pact_centralized
+                        has_idea = TSA_danville_economic_pact
+                        has_idea = TSA_danville_economic_pact_decentralized
+                    }
+                    TSA = {
+                        has_completed_focus = TSA_defence_pact
+                    }
+                }
+                AND = {
+                    tag = MOO
+                    OR = {
+                        has_idea = TSA_danville_economic_pact_centralized
+                        has_idea = TSA_danville_economic_pact
+                        has_idea = TSA_danville_economic_pact_decentralized
+                    }
+                    TSA = {
+                        has_completed_focus = TSA_defence_pact
+                    }
+                }
+                AND = {
+                    tag = BRO
+                    OR = {
+                        has_idea = TSA_danville_economic_pact_centralized
+                        has_idea = TSA_danville_economic_pact
+                        has_idea = TSA_danville_economic_pact_decentralized
+                    }
+                    TSA = {
+                        has_completed_focus = TSA_defence_pact
+                    }
+                }
+            }
+            OR = {
+                MAI = {
+                    is_faction_leader = yes
+                }
+                GRN = {
+                    is_faction_leader = yes
+                }
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            if = {
+                limit = {
+                    MAI = {
+                        is_faction_leader = yes
+                    }
+                }
+                MAI = {
+                    country_event = {
+                        id = factionjoin.1
+                        days = 0
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    GRN = {
+                        is_faction_leader = yes
+                    }
+                }
+                GRN = {
+                    country_event = {
+                        id = factionjoin.1
+                        days = 0
+                    }
+                }
+            }
+        }
+    }
+
+    #Central Alliance - Hartmut Kingdom is the leader
+    join_central_alliance = {
+        icon = generic_operation
+		visible = {
+			has_war_together_with = FRI
+            FRI = {
+                is_faction_leader = yes
+            }
+            OR = {
+                tag = WEK
+                tag = SLD
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            FRI = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Karlino Axis/Western Sphere - Lechina Empire is the leader
+    join_lechina_empire = {
+        icon = generic_operation
+		visible = {
+            OR = {
+                tag = DUL
+                AND = {
+                    tag = ICK
+                    is_guaranteed_by = LEC
+                }
+                AND = {
+                    tag = SMU
+                    has_country_flag = faded_to_lechists
+                }
+                AND = {
+                    tag = PAT
+                    has_country_flag = faded_to_lechists
+                }
+            }
+            LEC = {
+                is_faction_leader = yes
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            LEC = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+
+    #Flower Hill Pact - Flower Hill is the leader
+    join_flower_hill_pact = {
+        icon = generic_operation
+		visible = {
+			EN4 = {
+                OR = {
+                    exists = no
+                    is_in_faction_with = FLO
+                }
+            }
+            OR = {
+                AND = {
+                    tag = COR
+                    has_government = communism
+                    date > 1940.1.1
+                }
+                AND = {
+                    tag = WLC
+                    has_government = communism
+                    date > 1940.1.1
+                    WEI = {
+                        exists = no
+                    }
+                }
+                AND = {
+                    tag = TRU
+                    has_government = communism
+                    date > 1940.1.1
+                }
+            }
+            NOT = {
+                is_in_faction = yes
+            }
+            NOT = {
+                has_country_flag = sent_request_to_join_faction
+            }
+		}
+
+        fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = sent_request_to_join_faction
+            }
+            FLO = {
+                country_event = {
+                    id = factionjoin.1
+                    days = 0
+                }
+            }
+        }
+    }
+}
