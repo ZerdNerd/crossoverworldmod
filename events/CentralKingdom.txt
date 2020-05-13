@@ -249,21 +249,11 @@ country_event = {
 				dismantle_faction = yes
 			}
 			MAI = {
-				create_faction = great_kingdom_alliance
+				set_faction_name = great_kingdom_alliance
 				add_to_faction = ENC
 				add_to_faction = WEI
 				add_to_faction = KHA
 				set_country_flag = greatest_alliance_formed
-			}
-			if = {
-				limit = {
-					MAI = {
-						has_country_flag = alliance_with_greenland
-					}
-				}
-				MAI = {
-					add_to_faction = GRN
-				}
 			}
 		}
 	}
@@ -376,45 +366,9 @@ country_event = {
 		custom_effect_tooltip = MAI_faction_with_enc_ecw
 		hidden_effect = {
 			MAI = {
-				create_faction = great_kingdom_alliance
+				set_faction_name = great_kingdom_alliance
 				add_to_faction = ENC
 				set_country_flag = greatest_alliance_formed
-			}
-			if = {
-				limit = {
-					MAI = {
-						has_country_flag = alliance_with_greenland
-					}
-				}
-				MAI = {
-					add_to_faction = GRN
-				}
-			}
-			if = {
-				limit = {
-					TUG = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = TUG
-				}
-			}
-			if = {
-				limit = {
-					SIO = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = SIO
-				}
 			}
 		}
 	}
@@ -429,45 +383,9 @@ country_event = {
 		custom_effect_tooltip = MAI_faction_with_enc_ecw
 		hidden_effect = {
 			MAI = {
-				create_faction = great_kingdom_alliance
+				set_faction_name = great_kingdom_alliance
 				add_to_faction = EN1
 				set_country_flag = greatest_alliance_formed
-			}
-			if = {
-				limit = {
-					MAI = {
-						has_country_flag = alliance_with_greenland
-					}
-				}
-				MAI = {
-					add_to_faction = GRN
-				}
-			}
-			if = {
-				limit = {
-					TUG = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = TUG
-				}
-			}
-			if = {
-				limit = {
-					SIO = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = SIO
-				}
 			}
 		}
 	}
@@ -485,42 +403,6 @@ country_event = {
 				create_faction = great_kingdom_alliance
 				add_to_faction = EN2
 				set_country_flag = greatest_alliance_formed
-			}
-			if = {
-				limit = {
-					MAI = {
-						has_country_flag = alliance_with_greenland
-					}
-				}
-				MAI = {
-					add_to_faction = GRN
-				}
-			}
-			if = {
-				limit = {
-					TUG = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = TUG
-				}
-			}
-			if = {
-				limit = {
-					SIO = {
-						OR = {
-							is_in_faction_with = MAI
-							is_in_faction_with = GRN
-						}
-					}
-				}
-				MAI = {
-					add_to_faction = SIO
-				}
 			}
 		}
 	}

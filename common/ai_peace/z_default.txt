@@ -44,18 +44,18 @@ default_peace = {
 
 		# prioritize cores, claims, and ambition areas
 		modifier = {
-			factor = 20
+			factor = 50
 			FROM = { is_core_of = ROOT }
 		}
 		modifier = {
-			factor = 10
+			factor = 50
 			FROM = {
 				NOT = { is_core_of = ROOT }
 				is_claimed_by = ROOT
 			}
 		}
 		modifier = {
-			factor = 5
+			factor = 50
 			FROM = {
 				is_claim_or_core_of_ROOT = no
 				is_ambition_area_of_ROOT = yes
@@ -65,6 +65,15 @@ default_peace = {
 		# Take colonies
 		modifier = {
 			factor = 5.0
+			ROOT = {
+				NOT = {
+					tag = FLO
+					tag = AVA
+					tag = ENC
+					tag = EN1
+					tag = EN2
+				}
+			}
 			FROM = {
 				is_colony_region = yes
 			}
@@ -546,6 +555,16 @@ default_peace = {
 			}
 		}
 
+		modifier = { # please annex Japanifornia guys
+			factor = 1000
+			JPN = {
+				has_government = fascism
+			}
+			FROM = {
+				is_core_of = JPN
+			}
+		}
+
 		modifier = { # Liberation of Enchancia
 			factor = 1000
 			has_government = monarchism
@@ -596,6 +615,26 @@ default_peace = {
 					state = 655
 					state = 685
 					state = 650
+				}
+			}
+		}
+
+		modifier = { # Paradoxawka CANNOT take anything from Alien Colony
+			factor = 0
+			tag = PDX
+			FROM = {
+				OR = {
+					is_core_of = SKO
+				}
+			}
+		}
+
+		modifier = { # Avalor takes FRI western colony
+			factor = 1000
+			tag = AVA
+			FROM = {
+				OR = {
+					state = 29
 				}
 			}
 		}

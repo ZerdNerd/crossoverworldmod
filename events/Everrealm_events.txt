@@ -900,7 +900,7 @@ country_event = { #Avalor wants to join our faction
 	option = { #OK
 		name = everrealm.24.a 
 		ai_chance = {
-			factor = 85
+			factor = 100
 		}
 		add_to_faction = AVA
 		AVA = {
@@ -914,7 +914,7 @@ country_event = { #Avalor wants to join our faction
 	option = { #nope.
 		name = everrealm.24.b 
 		ai_chance = {
-			factor = 15
+			factor = 0
 		}
 		AVA = {
 			country_event = {
@@ -1071,6 +1071,11 @@ country_event = { #Duloc demands EverRealm Gate, but not given
 			}
 		}
 		hidden_effect = {
+			FROM = {
+				every_owned_state = {
+					add_claim_by = DUL
+				}
+			}
 			if = {
 				limit = {
 					330 = {

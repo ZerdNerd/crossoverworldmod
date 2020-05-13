@@ -2490,6 +2490,21 @@ focus_tree = {
 		prerequisite = {
 			focus = KPT_occupation_duties
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = islands_are_colonized
+				888 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+				901 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+			}
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
@@ -2498,7 +2513,7 @@ focus_tree = {
 			add_state_claim = 901
 			if = {
 				limit = {
-					38 = {
+					888 = {
 						NOT = {
 							is_owned_by = UNC
 						}
@@ -2527,6 +2542,26 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = islands_are_colonized
 				38 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+				840 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+				40 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+				35 = {
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+				37 = {
 					NOT = {
 						is_owned_by = UNC
 					}

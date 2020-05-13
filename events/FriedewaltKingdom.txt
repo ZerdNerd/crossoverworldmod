@@ -594,12 +594,206 @@ country_event = { #Case of Spalding
 	}
 }
 
+country_event = { #Hartmut proposes us Peace with Honor
+	id = friedewalt.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.18"}
+	title = friedewalt.18.t
+	desc = friedewalt.18.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = friedewalt.18.a
+		every_country = {
+			limit = {
+				is_in_faction_with = MAI
+			}
+			set_country_flag = was_allied_with_MAI
+		}
+		MAI = {
+			leave_faction = yes
+		}
+		FRI = {
+			country_event = {
+				id = friedewalt.19
+				days = 0
+			}
+		}
+		ai_chance = {
+			base = 50
+		}
+	}
+
+	option = { #Agree, but they have to cede island near Lechina Empire and Sioux territories
+		name = friedewalt.18.b
+		trigger = {
+			FRI = {
+				NOT = {
+					controls_state = 632
+					controls_state = 29
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = MAI
+			}
+			set_country_flag = was_allied_with_MAI
+		}
+		MAI = {
+			leave_faction = yes
+		}
+		FRI = {
+			country_event = {
+				id = friedewalt.20
+				days = 0
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+
+	option = { #We will fight till death!
+		name = friedewalt.18.c
+		FRI = {
+			country_event = {
+				id = friedewalt.21
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				any_country = {
+					is_in_faction_with = ROOT
+					is_ai = no
+				}
+				add = 50
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = friedewalt.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.19"}
+	title = friedewalt.19.t
+	desc = friedewalt.19.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = friedewalt.19.a
+		every_country = {
+			limit = {
+				has_country_flag = was_allied_with_MAI
+				NOT = {
+					tag = MAI
+				}
+			}
+			white_peace = FRI
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.94
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #They agree, but we have to give them territories
+	id = friedewalt.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.20"}
+	title = friedewalt.19.t
+	desc = friedewalt.20.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Okay
+		name = friedewalt.20.a
+		if = {
+			limit = {
+				any_country = {
+					is_in_faction_with = MAI
+					has_war_with = FRI
+					controls_state = 29
+				}
+			}
+			every_country = {
+				limit = {
+					controls_state = 29
+					has_war_with = FRI
+				}
+				transfer_state = 29
+			}
+		}
+		if = {
+			limit = {
+				SIO = {
+					is_in_faction_with = MAI
+					has_war_with = FRI
+				}
+			}
+			SIO = {
+				transfer_state = 632
+				transfer_state = 638
+				transfer_state = 634
+			}
+		}
+		every_country = {
+			limit = {
+				has_country_flag = was_allied_with_MAI
+				NOT = {
+					tag = MAI
+				}
+			}
+			white_peace = FRI
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.94
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #They will fight till death
+	id = friedewalt.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.21"}
+	title = friedewalt.21.t
+	desc = friedewalt.21.d
+	picture = GFX_report_macius_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #If they say so
+		name = friedewalt.21.a
+		add_war_support = 0.05
+		add_political_power = 50
+	}
+}
+
 ##############################################################################################################################################################################################
-#EEEEEEE XX    XX PPPPPP  EEEEEEE DDDDD   IIIII TTTTTTT IIIII  OOOOO  NN   NN  SSSSS     FFFFFFF  OOOOO  RRRRRR     RRRRRR  EEEEEEE  SSSSS   OOOOO  UU   UU RRRRRR   CCCCC  EEEEEEE  SSSSS  
-#EE       XX  XX  PP   PP EE      DD  DD   III    TTT    III  OO   OO NNN  NN SS         FF      OO   OO RR   RR    RR   RR EE      SS      OO   OO UU   UU RR   RR CC    C EE      SS      
-#EEEEE     XXXX   PPPPPP  EEEEE   DD   DD  III    TTT    III  OO   OO NN N NN  SSSSS     FFFF    OO   OO RRRRRR     RRRRRR  EEEEE    SSSSS  OO   OO UU   UU RRRRRR  CC      EEEEE    SSSSS  
-#EE       XX  XX  PP      EE      DD   DD  III    TTT    III  OO   OO NN  NNN      SS    FF      OO   OO RR  RR     RR  RR  EE           SS OO   OO UU   UU RR  RR  CC    C EE           SS 
-#EEEEEEE XX    XX PP      EEEEEEE DDDDDD  IIIII   TTT   IIIII  OOOO0  NN   NN  SSSSS     FF       OOOO0  RR   RR    RR   RR EEEEEEE  SSSSS   OOOO0   UUUUU  RR   RR  CCCCC  EEEEEEE  SSSSS  
+#
+# EEEEEEE XX    XX PPPPPP  EEEEEEE DDDDD   IIIII TTTTTTT IIIII  OOOOO  NN   NN  SSSSS     FFFFFFF  OOOOO  RRRRRR     RRRRRR  EEEEEEE  SSSSS   OOOOO  UU   UU RRRRRR   CCCCC  EEEEEEE  SSSSS  
+# EE       XX  XX  PP   PP EE      DD  DD   III    TTT    III  OO   OO NNN  NN SS         FF      OO   OO RR   RR    RR   RR EE      SS      OO   OO UU   UU RR   RR CC    C EE      SS      
+# EEEEE     XXXX   PPPPPP  EEEEE   DD   DD  III    TTT    III  OO   OO NN N NN  SSSSS     FFFF    OO   OO RRRRRR     RRRRRR  EEEEE    SSSSS  OO   OO UU   UU RRRRRR  CC      EEEEE    SSSSS  
+# EE       XX  XX  PP      EE      DD   DD  III    TTT    III  OO   OO NN  NNN      SS    FF      OO   OO RR  RR     RR  RR  EE           SS OO   OO UU   UU RR  RR  CC    C EE           SS 
+# EEEEEEE XX    XX PP      EEEEEEE DDDDDD  IIIII   TTT   IIIII  OOOO0  NN   NN  SSSSS     FF       OOOO0  RR   RR    RR   RR EEEEEEE  SSSSS   OOOO0   UUUUU  RR   RR  CCCCC  EEEEEEE  SSSSS  
 #
 #############################################################################################################################################################################################
                                                                                                                                                                                            

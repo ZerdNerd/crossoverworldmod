@@ -404,6 +404,28 @@ focus_tree = {
 			add_ideas = {
 				SAN_the_senderos_agreement
 			}
+			hidden_effect = {
+				create_corps_commander = {
+					name = "Jędrzej Kowalski"
+					portrait_path = "gfx/leaders/SAN/jedrzej_kowalski.dds"
+					traits = { }
+					skill = 3
+    				attack_skill = 2
+    				defense_skill = 2
+    				planning_skill = 3
+    				logistics_skill = 4
+				}
+				create_corps_commander = {
+					name = "Fabian Duda"
+					portrait_path = "gfx/leaders/SAN/fabian_duda.dds"
+					traits = { adaptable }
+					skill = 4
+    				attack_skill = 3
+    				defense_skill = 3
+    				planning_skill = 4
+    				logistics_skill = 5
+				}
+			}
 		} 
 	}
 
@@ -1229,8 +1251,16 @@ focus_tree = {
 			focus = SAN_on_our_own
 		}
 		available = {
-			NOT = {
-				has_government = democratic
+			OR = {
+				NOT = {
+					has_government = democratic
+				}
+				AND = {
+					has_government = democratic
+					TSA = {
+						has_government = democratic
+					}
+				}
 			}
 		}
 		prerequisite = {

@@ -51,6 +51,63 @@ country_event = { #elections
 				id = worldnews.43
 				hours = 6
 			}
+			create_corps_commander = {
+				name = "Phoenix Wright"
+				portrait_path = "gfx/leaders/JPN/wright.dds"
+				traits = {
+				}
+				skill = 4
+    			attack_skill = 4
+    			defense_skill = 6
+    			planning_skill = 2
+  				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "Miles Edgeworth"
+				portrait_path = "gfx/leaders/JPN/edgey.dds"
+				traits = {
+				}
+				skill = 4
+    			attack_skill = 6
+    			defense_skill = 4
+    			planning_skill = 4
+  				logistics_skill = 4
+			}
+			create_corps_commander = {
+				name = "Apollo Justice"
+				portrait_path = "gfx/leaders/JPN/apollo.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 5
+    			planning_skill = 3
+  				logistics_skill = 3
+			}
+			create_corps_commander = {
+				name = "Maya Fey"
+				portrait_path = "gfx/leaders/JPN/maya.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 3
+    			planning_skill = 5
+  				logistics_skill = 3
+				female = yes
+			}
+			create_corps_commander = {
+				name = "Trucy Wright"
+				portrait_path = "gfx/leaders/JPN/trucy.dds"
+				traits = {
+				}
+				skill = 2
+    			attack_skill = 2
+    			defense_skill = 2
+    			planning_skill = 4
+  				logistics_skill = 4
+				female = yes
+			}
 		}
 	}
 
@@ -78,6 +135,42 @@ country_event = { #elections
 				traits = {
 					#
 				}
+			}
+			create_corps_commander = {
+				name = "Phoenix Wright"
+				portrait_path = "gfx/leaders/JPN/wright.dds"
+				traits = {
+				}
+				skill = 4
+    			attack_skill = 4
+    			defense_skill = 6
+    			planning_skill = 2
+  				logistics_skill = 4
+				id = 4500
+			}
+			create_corps_commander = {
+				name = "Miles Edgeworth"
+				portrait_path = "gfx/leaders/JPN/edgey.dds"
+				traits = {
+				}
+				skill = 4
+    			attack_skill = 6
+    			defense_skill = 4
+    			planning_skill = 4
+  				logistics_skill = 4
+				id = 4501
+			}
+			create_corps_commander = {
+				name = "Apollo Justice"
+				portrait_path = "gfx/leaders/JPN/apollo.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 5
+    			planning_skill = 3
+  				logistics_skill = 3
+				id = 4502
 			}
 			add_ideas = {
 				JPN_something_lurks_in_the_shadows
@@ -350,6 +443,31 @@ country_event = { #Edgeworth is killed
 				#
 			}
 		}
+		create_corps_commander = {
+			name = "Manfred von Karma"
+			portrait_path = "gfx/leaders/JPN/manfred.dds"
+			traits = {
+			}
+			skill = 4
+    		attack_skill = 7
+    		defense_skill = 2
+    		planning_skill = 4
+  			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "Franziska von Karma"
+			portrait_path = "gfx/leaders/JPN/franziska.dds"
+			traits = {
+			}
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 3
+    		planning_skill = 3
+  			logistics_skill = 3
+		}
+		remove_unit_leader = 4500
+		remove_unit_leader = 4501
+		remove_unit_leader = 4502
 		set_politics = {
 			ruling_party = fascism
 		}

@@ -1,0 +1,75 @@
+﻿###########################
+# Faction Join Events
+###########################
+
+add_namespace = factionjoin
+
+country_event = {
+	id = factionjoin.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event factionjoin.1"}
+	title = factionjoin.1.t
+	desc = factionjoin.1.d
+	picture = GFX_report_event_radar_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = factionjoin.1.a
+		FROM = {
+            country_event = {
+                id = factionjoin.2
+                days = 1
+            }
+        }
+        ai_chance = {
+            factor = 100
+        }
+	}
+
+    option = {
+		name = factionjoin.1.a
+		FROM = {
+            country_event = {
+                id = factionjoin.3
+                days = 1
+            }
+        }
+        ai_chance = {
+            factor = 0
+        }
+	}
+}
+
+country_event = {
+	id = factionjoin.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event factionjoin.2"}
+	title = factionjoin.2.t
+	desc = factionjoin.2.d
+	picture = GFX_report_event_radar_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = factionjoin.2.a
+		FROM = {
+            add_to_faction = ROOT
+        }
+	}
+}
+
+country_event = {
+	id = factionjoin.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event factionjoin.3"}
+	title = factionjoin.3.t
+	desc = factionjoin.3.d
+	picture = GFX_report_event_radar_01
+
+	is_triggered_only = yes
+
+	option = {
+		name = factionjoin.3.a
+        hidden_effect = {
+            clr_country_flag = sent_request_to_join_faction
+        }
+	}
+}

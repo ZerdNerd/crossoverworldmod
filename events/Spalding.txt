@@ -613,8 +613,10 @@ country_event = { #Neland Republic declares independence!
 					owns_state = 776
 				}
 			}
-			has_war = yes
-			surrender_progress > 0.5
+			AND = {
+				has_war = yes
+				surrender_progress > 0.5
+			}
 		}
 	}
 

@@ -54,6 +54,28 @@ country_event = { #Fate of Winslow Family
 			}
 		}
 	}
+
+	option = { #Execute them all
+		name = enchancianstate.1.e
+		hidden_effect = {
+			set_global_flag = winslows_are_dead
+			news_event = {
+				id = worldnews.97
+				hours = 6
+			}
+			every_owned_state = {
+				remove_core_of = ENC
+			}
+			every_country = {
+				limit = {
+					owns_state = 330
+				}
+				every_owned_state = {
+					remove_core_of = ENC
+				}
+			}
+		}
+	}
 }
 
 country_event = { #Fate of Winslow Family - exile on one of the islands

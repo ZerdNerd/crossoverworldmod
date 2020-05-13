@@ -876,7 +876,23 @@ focus = {
 		factor = 1
 	} 
 	available = { 
-
+		OR = {
+			ENC = {
+				NOT = {
+					has_idea = ENC_aftermath_of_civil_war
+				}
+			}
+			EN1 = {
+				NOT = {
+					has_idea = ENC_aftermath_of_civil_war
+				}
+			}
+			EN2 = {
+				NOT = {
+					has_idea = ENC_aftermath_of_civil_war
+				}
+			}
+		}
 	}
 
 	completion_reward = {
@@ -1143,6 +1159,7 @@ focus = {
 	}
 
 	completion_reward = {
+		create_faction = united_front_of_free_nations
 		GRN = {
 			country_event = {
 				id = greenland.2

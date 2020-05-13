@@ -94,6 +94,7 @@ international_policy_dec_category = {
 
 		complete_effect = {
 			hidden_effect = {
+				set_global_flag = sioux_are_returning
 				SIO = {
 					every_unit_leader = {
 						retire = yes
@@ -330,6 +331,58 @@ international_policy_dec_category = {
 				country_event = {
 					id = truce_proposal.1
 					days = 1
+				}
+			}
+		}
+	}
+
+	propose_peace_with_honor_macius_faction = {
+		icon = generic_operation
+
+		visible = {
+			tag = FRI
+			MAI = {
+				is_in_faction = yes
+				has_war_with = FRI
+				has_capitulated = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					ENC = {
+						is_in_faction_with = MAI
+						exists = yes
+					}
+				}
+				ENC = {
+					country_event = {
+						id = friedewalt.18
+						days = 0
+					}
+				}
+				else_if = {
+					limit = {
+						GRN = {
+							is_in_faction_with = MAI
+							exists = yes
+						}
+					}
+					GRN = {
+						country_event = {
+							id = friedewalt.18
+							days = 0
+						}
+					}
 				}
 			}
 		}

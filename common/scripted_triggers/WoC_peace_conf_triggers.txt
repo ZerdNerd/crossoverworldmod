@@ -59,6 +59,12 @@ is_actual_island_state = {
 	}
 }
 
+is_occupation_area_of_FROM = {
+	OR = {
+		has_variable = occupation_area_@FROM
+	}
+}
+
 is_ambition_area_of_ROOT = {
 	OR = {
 		has_variable = ambition_area_@ROOT
@@ -76,6 +82,13 @@ is_ambition_area_of_ROOT = {
 					tag = EN3
 					tag = EN4
 					tag = DES
+					tag = DUL
+					tag = AVA
+					tag = JPN
+					tag = TSA
+					tag = KPT
+					tag = SLD
+					tag = LEC
 				}
 			}
 		#	is_important_state = yes #for the future
@@ -100,6 +113,13 @@ is_ambition_area_of_PREV = {
 					tag = EN3
 					tag = EN4
 					tag = DES
+					tag = DUL
+					tag = AVA
+					tag = JPN
+					tag = TSA
+					tag = KPT
+					tag = SLD
+					tag = LEC
 				}
 			}
 		#	is_important_state = yes

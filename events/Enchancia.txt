@@ -804,6 +804,10 @@ country_event = { #Cedric becomes Great
 						id = enchancia.12
 						days = 21
 					}
+					news_event = {
+						id = worldnews.95
+						hours = 2
+					}
 				}
 			}
 			if = {
@@ -846,6 +850,10 @@ country_event = { #Cedric becomes Great
 					country_event = {
 						id = enchancia.12
 						days = 21
+					}
+					news_event = {
+						id = worldnews.95
+						hours = 2
 					}
 				}
 			}
@@ -902,6 +910,9 @@ country_event = { #Enchancian Civil War begins
 					target = EN3 
 					type = annex_everything	
 				}
+				add_ideas = {
+					fighting_for_enchancia
+				}
 			}
 			EN2 = { 
 				declare_war_on = { 
@@ -916,18 +927,29 @@ country_event = { #Enchancian Civil War begins
 					id = enchancia.75
 					days = 30
 				}
+				add_ideas = {
+					fighting_for_enchancia
+				}
 			}
 			EN3 = { 
 				declare_war_on = { 
 					target = ENC 
 					type = annex_everything
 				} 
+				add_ideas = {
+					fighting_for_enchancia
+				}
 			}
 			if = {
 				limit = {
 					country_exists = EN4
 				}
-				EN4 = { declare_war_on = { target = ENC type = annex_everything	} }
+				EN4 = { 
+					declare_war_on = { target = ENC type = annex_everything	} 
+					add_ideas = {
+						fighting_for_enchancia
+					}
+				}
 				EN1 = { declare_war_on = { target = EN4 type = annex_everything	} }
 				EN2 = { declare_war_on = { target = EN4 type = annex_everything	} }
 				EN3 = { declare_war_on = { target = EN4 type = annex_everything	} }
@@ -947,6 +969,9 @@ country_event = { #Enchancian Civil War begins
 					fascism = 17
 					communism = 17
 					monarchism = 51
+				}
+				add_ideas = {
+					fighting_for_enchancia
 				}
 			}
 			set_global_flag = enchancian_civil_war
@@ -1082,7 +1107,7 @@ country_event = { #End of Enchancian Civil War
 	}
 	
 	mean_time_to_happen = {
-		days = 7
+		days = 1
 	}
 
 	option = { #Let's get to the business
@@ -1100,10 +1125,32 @@ country_event = { #End of Enchancian Civil War
 				every_owned_state = {
 					ECW_remove_other_cores = yes
 				}
+				remove_ideas = {
+					fighting_for_enchancia
+				}
 			}
-			ISL = {
-				every_owned_state = {
-					ECW_gate_to_everrealm_core_switch = yes
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = ISL
+					}
+				}
+				ISL = {
+					330 = {
+						ECW_gate_to_everrealm_core_switch = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = DUL
+					}
+				}
+				DUL = {
+					330 = {
+						ECW_gate_to_everrealm_core_switch = yes
+					}
 				}
 			}
 			ROOT = {
@@ -1128,7 +1175,7 @@ country_event = { #End of Enchancian Civil War
 						tag = EN1
 					}
 					delete_unit_template_and_units = {
-    					division_template = "Eastern Militia"
+    					division_template = "Eastern Regiment"
 					}
 				}
 				if = {
@@ -1136,7 +1183,7 @@ country_event = { #End of Enchancian Civil War
 						tag = EN2
 					}
 					delete_unit_template_and_units = {
-    					division_template = "Northern Militia"
+    					division_template = "Northern Regiment"
 					}
 				}
 			}
@@ -1956,6 +2003,10 @@ country_event = { #Artisans Rise Up
 				id = enchancia.12
 				days = 21
 			}
+			news_event = {
+				id = worldnews.95
+				hours = 2
+			}
 		}
 	}
 	
@@ -1965,6 +2016,10 @@ country_event = { #Artisans Rise Up
 			country_event = {
 				id = enchancia.12
 				days = 21
+			}
+			news_event = {
+				id = worldnews.95
+				hours = 2
 			}
 		}
 	}
@@ -2429,18 +2484,8 @@ country_event = { #They agree
 		name = enchancia.56.a 
 		custom_effect_tooltip = ENC_pan-everrealm_alliance
 		hidden_effect = {
-			dismantle_faction = yes
-			create_faction = pan-everrealm
-			add_to_faction = WEI
+			set_faction_name = pan-everrealm
 			add_to_faction = AVA
-			if = {
-				limit = {
-					KHA = {
-						has_government = monarchism
-					}
-				}
-				add_to_faction = KHA
-			}
 		}
 	}
 }
@@ -2462,6 +2507,9 @@ country_event = { #Enchancia invites us to Pan-EverRealm Alliance
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 
 	option = { #nope.
@@ -2471,6 +2519,9 @@ country_event = { #Enchancia invites us to Pan-EverRealm Alliance
 				id = enchancia.59
 				days = 1
 			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }
@@ -2992,7 +3043,7 @@ country_event = { #Enchancia invites us to EverRealm Defence Alliance
 	option = { #OK
 		name = enchancia.72.a 
 		ai_chance = {
-			factor = 85
+			factor = 100
 		}
 		EN2 = {
 			country_event = {
@@ -3005,7 +3056,7 @@ country_event = { #Enchancia invites us to EverRealm Defence Alliance
 	option = { #nope.
 		name = enchancia.72.b 
 		ai_chance = {
-			factor = 15
+			factor = 0
 		}
 		EN2 = {
 			country_event = {
@@ -3335,9 +3386,15 @@ country_event = { #Amber's 17th birthday
 
 	option = { #Happy birthday!
 		trigger = {
-			has_country_leader = {
-    			name = "Amber I"
-    			ruling_only = yes
+			OR = {
+				has_country_leader = {
+    				name = "Amber I"
+    				ruling_only = yes
+				}
+				has_country_leader = {
+    				name = "Miranda"
+    				ruling_only = yes
+				}
 			}
 		}
 		name = enchancia.81.a
@@ -3375,6 +3432,18 @@ country_event = { #Amber's 17th birthday
 					#
 				}
 			}	
+
+			create_corps_commander = {
+				name = "First Knight James Winslow"
+				portrait_path = "gfx/leaders/EN1/james_older.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 3
+    			planning_skill = 3
+  				logistics_skill = 3
+			}
 		}
 	}
 
@@ -3386,6 +3455,19 @@ country_event = { #Amber's 17th birthday
 			}
 		}
 		name = enchancia.81.a
+		hidden_effect = {
+			create_corps_commander = {
+				name = "First Knight James Winslow"
+				portrait_path = "gfx/leaders/EN1/james_older.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 3
+    			planning_skill = 3
+  				logistics_skill = 3
+			}
+		}
 	}
 }
 
@@ -3434,6 +3516,18 @@ country_event = { #James' 17th birthday
 					#
 				}
 			}	
+
+			create_corps_commander = {
+				name = "James I"
+				portrait_path = "gfx/leaders/EN1/james_older.dds"
+				traits = {
+				}
+				skill = 3
+    			attack_skill = 3
+    			defense_skill = 3
+    			planning_skill = 3
+  				logistics_skill = 3
+			}
 		}
 	}
 }

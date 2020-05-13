@@ -115,29 +115,7 @@ set_politics = {
 set_stability = 0.85
 
 create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Vacant"
+	name = "???"
 	desc = "POLITICS_TBD_DESC"
 	picture = "Placeholder.dds"
 	expire = "1965.1.1"
@@ -158,13 +136,14 @@ create_country_leader = {
 	}
 }
 
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
+create_corps_commander = {
+	name = "Dick Gumshoe"
+	portrait_path = "gfx/leaders/JPN/gumshoe.dds"
 	traits = {
-		#
 	}
+	skill = 2
+    attack_skill = 2
+    defense_skill = 2
+    planning_skill = 3
+    logistics_skill = 2
 }

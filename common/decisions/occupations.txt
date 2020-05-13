@@ -1271,9 +1271,14 @@ occupation_dec_category = {
 			any_owned_state = {
 				is_core_of = GON
 			}
-			FLO = {
-				any_owned_state = {
-					is_core_of = GON
+			OR = {
+				FLO = {
+					any_owned_state = {
+						is_core_of = GON
+					}
+				}
+				WGO = {
+					exists = yes
 				}
 			}
 		}
@@ -1593,6 +1598,57 @@ occupation_dec_category = {
 					ideology = marxism
 					traits = {
 					}
+				}
+			}
+		}
+	}
+
+	occupation_of_gongmen = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			EGO = {
+				exists = no
+			}
+			GON = {
+				exists = no
+			}
+			WGO = {
+				exists = no
+			}
+			NOT = {
+				tag = EGO
+			}
+			NOT = {
+				tag = WGO
+			}
+			NOT = {
+				tag = GON
+			}
+			NOT = {
+				tag = GRN
+			}
+			NOT = {
+				tag = FLP
+			}
+		}
+
+		complete_effect = {
+			GON = {
+				hidden_effect = {
+					retire_country_leader = yes
+				}
+				set_cosmetic_tag = GongmenRepublic
+				ROOT = {
+					puppet = PREV
 				}
 			}
 		}
@@ -2432,31 +2488,89 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			release = DCB
+			if = {
+				limit = {
+					tag = SLD
+					has_completed_focus = SLD_eastward_expansion
+				}
+				transfer_state = 711
+				transfer_state = 683
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = VIS
+					}
+					owns_state = 566
+				}
+				DCB = {
+					transfer_state = 566
+					add_state_core = 566
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = VIS
+					}
+					owns_state = 612
+				}
+				DCB = {
+					transfer_state = 612
+					add_state_core = 612
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = VIS
+					}
+					owns_state = 656
+				}
+				DCB = {
+					transfer_state = 656
+					add_state_core = 656
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = VIS
+					}
+					owns_state = 681
+				}
+				DCB = {
+					transfer_state = 681
+					add_state_core = 681
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = SLD
+					}
+					owns_state = 719
+				}
+				DCB = {
+					transfer_state = 719
+					add_state_core = 719
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = SLD
+					}
+					owns_state = 748
+				}
+				DCB = {
+					transfer_state = 748
+					add_state_core = 748
+				}
+			}
 			DCB = {
 				set_cosmetic_tag = DuckburgProt
-				transfer_state = 647
-				transfer_state = 652
-				transfer_state = 605
-				transfer_state = 586
-				transfer_state = 565
-				transfer_state = 576
-				transfer_state = 626
-				transfer_state = 636
-				transfer_state = 670
-				transfer_state = 679
-				transfer_state = 654
-				if = {
-					limit = {
-						ROOT = {
-							NOT = {
-								tag = SLD
-								has_completed_focus = SLD_eastward_expansion
-							}
-						}
-					}
-					transfer_state = 711
-					transfer_state = 683
-				}
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -2511,6 +2625,21 @@ occupation_dec_category = {
 				transfer_state = 761
 				transfer_state = 742
 				transfer_state = 724
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 735
+							owns_state = 753
+							owns_state = 701
+							NOT = {
+								owns_state = 743
+							}
+						}
+					}
+					transfer_state = 735
+					transfer_state = 753
+					transfer_state = 701
+				}
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -2598,29 +2727,33 @@ occupation_dec_category = {
 			MOO = {
 				set_cosmetic_tag = MoominProt
 				transfer_state = 747
-				if = {
-					limit = {
-						NOT = {
-							tag = BRO
-						}
-						owns_state = 727
-					}
-					transfer_state = 727
-				}
-				if = {
-					limit = {
-						NOT = {
-							tag = BRO
-						}
-						owns_state = 751
-					}
-					transfer_state = 751
-				}
 				transfer_state = 765
 				transfer_state = 787
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = BRO
+					}
+					owns_state = 727
+				}
+				MOO = {
+					transfer_state = 727
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						tag = BRO
+					}
+					owns_state = 751
+				}
+				MOO = {
+					transfer_state = 751
 				}
 			}
 		}
@@ -2758,6 +2891,7 @@ occupation_dec_category = {
 								tag = SLD
 								has_completed_focus = SLD_eastward_expansion
 							}
+							owns_state = 790
 						}
 					}
 					add_state_core = 790
@@ -2774,6 +2908,8 @@ occupation_dec_category = {
 								tag = TSA
 								has_government = fascism
 							}
+							owns_state = 763
+							owns_state = 758
 						}
 					}
 					add_state_core = 763
@@ -3398,8 +3534,6 @@ occupation_dec_category = {
 		visible = {
 			ROOT = {
 				owns_state = 439
-				owns_state = 550
-				owns_state = 487
 				is_puppet = no
 			}
 			NOT = {
@@ -3943,6 +4077,7 @@ occupation_dec_category = {
 				}
 			}
 			SLD = {
+				load_focus_tree = generic_focus
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4004,11 +4139,30 @@ occupation_dec_category = {
 						is_core_of = PDX
 					}
 				}
-				release = PDX
+				PDX = {
+					transfer_state = 930
+					transfer_state = 941
+					transfer_state = 946
+					transfer_state = 953
+					transfer_state = 929
+					transfer_state = 935
+					transfer_state = 915
+				}
 			}
-			release = KPT
 			KPT = {
 				load_focus_tree = generic_focus
+				transfer_state = 908
+				transfer_state = 898
+				transfer_state = 896
+				transfer_state = 902
+				transfer_state = 904
+				transfer_state = 882
+				transfer_state = 874
+				transfer_state = 848
+				transfer_state = 833
+				transfer_state = 839
+				transfer_state = 834
+				transfer_state = 828
 				transfer_state = 924
 				transfer_state = 938
 				transfer_state = 948
@@ -4210,6 +4364,15 @@ occupation_dec_category = {
 				owns_state = 150
 				owns_state = 128
 				is_puppet = no
+				OR = {
+					NOT = {
+						has_government = monarchism
+					}
+					AND = {
+						has_government = monarchism
+						has_global_flag = winslows_are_dead
+					}
+				}
 			}
 			NOT = {
 				tag = ENC
@@ -4277,6 +4440,15 @@ occupation_dec_category = {
 				owns_state = 141
 				owns_state = 165
 				is_puppet = no
+				OR = {
+					NOT = {
+						has_government = monarchism
+					}
+					AND = {
+						has_government = monarchism
+						has_global_flag = winslows_are_dead
+					}
+				}
 			}
 			NOT = {
 				tag = ENC
@@ -4346,6 +4518,15 @@ occupation_dec_category = {
 				owns_state = 234
 				owns_state = 259
 				is_puppet = no
+				OR = {
+					NOT = {
+						has_government = monarchism
+					}
+					AND = {
+						has_government = monarchism
+						has_global_flag = winslows_are_dead
+					}
+				}
 			}
 			NOT = {
 				tag = ENC
@@ -4411,6 +4592,15 @@ occupation_dec_category = {
 				owns_state = 104
 				owns_state = 124
 				is_puppet = no
+				OR = {
+					NOT = {
+						has_government = monarchism
+					}
+					AND = {
+						has_government = monarchism
+						has_global_flag = winslows_are_dead
+					}
+				}
 			}
 			NOT = {
 				tag = ENC
@@ -4470,6 +4660,15 @@ occupation_dec_category = {
 				owns_state = 8
 				owns_state = 80
 				is_puppet = no
+				OR = {
+					NOT = {
+						has_government = monarchism
+					}
+					AND = {
+						has_government = monarchism
+						has_global_flag = winslows_are_dead
+					}
+				}
 			}
 			NOT = {
 				tag = ENC
@@ -4549,6 +4748,9 @@ occupation_dec_category = {
 				exists = no
 			}
 			NOT = {
+				has_global_flag = winslows_are_dead
+			}
+			NOT = {
 				tag = ENC
 			}
 			NOT = {
@@ -4606,8 +4808,12 @@ occupation_dec_category = {
 					has_war_with = EN3
 					has_war_with = EN4
 				}
+				is_faction_leader = yes
 				is_puppet = no
 				has_government = monarchism
+				any_controlled_state = {
+					is_core_of = ENC
+				}
 			}
 			ENC = {
 				exists = yes
@@ -4620,6 +4826,9 @@ occupation_dec_category = {
 				EN4 = {
 					exists = yes
 				}
+			}
+			NOT = {
+				has_global_flag = winslows_are_dead
 			}
 			NOT = {
 				tag = ENC
@@ -4635,6 +4844,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = EN4
+			}
+			NOT = {
+				tag = LEC
 			}
 		}
 
@@ -4692,6 +4904,9 @@ occupation_dec_category = {
 				has_global_flag = winslows_stripped_james
 				has_global_flag = winslows_stripped_amber
 				has_global_flag = winslows_stripped_sofia
+			}
+			NOT = {
+				has_global_flag = winslows_are_dead
 			}
 			ENC = {
 				exists = no
@@ -5280,8 +5495,6 @@ occupation_dec_category = {
 				owns_state = 427
 				owns_state = 405
 				owns_state = 464
-				owns_state = 473
-				owns_state = 485
 				is_puppet = no
 			}
 			NOT = {
@@ -5424,6 +5637,7 @@ occupation_dec_category = {
 					NOT = {
 						is_core_of = FRK
 						is_core_of = FFA
+						is_core_of = SWA
 					}
 				}
 				is_puppet = no
@@ -5792,6 +6006,56 @@ occupation_dec_category = {
 				ROOT = {
 					puppet = PREV
 				}
+			}
+		}
+	}
+
+	liberate_central_kingdom = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			ROOT = {
+				owns_state = 812
+				is_puppet = no
+			}
+			MAI = {
+				exists = no
+			}
+			OR = {
+				tag = FRI
+				SKP = {
+					exists = yes
+				}
+			}
+			NOT = {
+				tag = MAI
+			}
+		}
+
+		complete_effect = {
+			release = MAI
+			MAI = {
+				retire_country_leader = yes
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+			}
+			if = {
+				limit = {
+					tag = FRI
+					872 = {
+						is_core_of = MAI
+					}
+				}
+				transfer_state = 872
 			}
 		}
 	}

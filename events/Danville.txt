@@ -1341,10 +1341,16 @@ country_event = { #Doofania wants to join our alliance
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 
 	option = { #no way
 		name = danville.35.b
+		ai_chance = {
+			factor = 0
+		}
 		TSA = {
 			country_event = {
 				id = danville.37
@@ -1405,6 +1411,9 @@ country_event = { #Tri-State Area invites us to economic pact
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 95
+		}
 	}
 
 	option = { #no way
@@ -1414,6 +1423,9 @@ country_event = { #Tri-State Area invites us to economic pact
 				id = danville.40
 				days = 1
 			}
+		}
+		ai_chance = {
+			factor = 5
 		}
 	}
 }
@@ -1470,6 +1482,9 @@ country_event = { #Tri-State Area wants to evolve the economic pact into defence
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 95
+		}
 	}
 
 	option = { #no way
@@ -1479,6 +1494,9 @@ country_event = { #Tri-State Area wants to evolve the economic pact into defence
 				id = danville.43
 				days = 1
 			}
+		}
+		ai_chance = {
+			factor = 5
 		}
 	}
 }
@@ -1545,6 +1563,9 @@ country_event = { #Tri-State Area wants to evolve the economic pact into allianc
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 
 	option = { #no way
@@ -1554,6 +1575,9 @@ country_event = { #Tri-State Area wants to evolve the economic pact into allianc
 				id = danville.46
 				days = 1
 			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }
@@ -1607,6 +1631,9 @@ country_event = { #TSA wants to join our alliance
 				days = 1
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 	}
 
 	option = { #no way
@@ -1616,6 +1643,9 @@ country_event = { #TSA wants to join our alliance
 				id = danville.49
 				days = 1
 			}
+		}
+		ai_chance = {
+			factor = 0
 		}
 	}
 }

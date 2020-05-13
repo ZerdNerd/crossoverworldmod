@@ -10,6 +10,30 @@
 ### If a country is NOT in this list, then it only takes cores/claims.
 ###
 
+create_occupation_zones = {
+	every_state = {
+		#Lechina Empire
+		if = {
+			limit = {
+				is_core_of = LEC
+			}
+			set_variable = { occupation_area_@LEC = 1 }
+		}
+		if = {
+			limit = {
+				is_core_of = JPN
+			}
+			set_variable = { occupation_area_@JPN = 1 }
+		}
+		if = {
+			limit = {
+				is_core_of = DUL
+			}
+			set_variable = { occupation_area_@DUL = 1 }
+		}
+	}
+}
+
 create_ambition_areas = {
 	every_state = {
 		# MAI - King Macius
@@ -76,27 +100,14 @@ create_ambition_areas = {
 			}
 			set_variable = { ambition_area_@FRI = 1 }
 		}
-		# KPT - Starfleet
-		if = {
-			limit = {
-				OR = {
-					is_core_of = KPT
-					is_claimed_by = KPT
-					region = 45
-					region = 46
-					region = 47
-					region = 48
-					region = 113
-				}
-			}
-			set_variable = { ambition_area_@KPT = 1 }
-		}
 		# SKO - Sancti Magistri
 		if = {
 			limit = {
 				OR = {
 					is_core_of = SKO
 					is_claimed_by = SKO
+					is_core_of = KPT
+					is_core_of = PDX
 					region = 42
 					region = 44
 					region = 46
@@ -162,6 +173,32 @@ create_ambition_areas = {
 				}
 			}
 			set_variable = { ambition_area_@LEC = 1 }
+		}
+		# PAT - A je to
+		if = {
+			limit = {
+				OR = {
+					is_core_of = PAT
+					is_claimed_by = PAT
+					is_core_of = JPN
+					state = 720
+					state = 721
+					state = 702
+					state = 739
+					state = 693
+					state = 694
+					state = 810
+					state = 800
+					state = 779
+					state = 772
+					state = 781
+					state = 778
+					state = 771
+					state = 764
+					state = 738
+				}
+			}
+			set_variable = { ambition_area_@PAT = 1 }
 		}
 		# AVA - Avalor
 		if = {
@@ -327,7 +364,17 @@ create_ambition_areas = {
 				OR = {
 					is_core_of = DUL
 					is_claimed_by = DUL
-					region = 39
+					is_core_of = ISL
+					is_core_of = MAR
+					is_core_of = ENC
+					is_core_of = KHA
+					is_core_of = WEI
+					is_core_of = COR
+					is_core_of = TRU
+					is_core_of = ZUM
+					is_core_of = RUD
+					is_core_of = AVA
+					state = 330
 					region = 13
 					region = 14
 					region = 15
@@ -349,6 +396,8 @@ create_ambition_areas = {
 					region = 33
 					region = 34
 					region = 35
+					region = 39
+					region = 90
 					region = 92
 					region = 101
 					region = 102
@@ -531,6 +580,23 @@ create_ambition_areas = {
 				}
 			}
 			set_variable = { ambition_area_@WLC = 1 }
+		}
+		# Starfleet
+		if = {
+			limit = {
+				OR = {
+					is_core_of = KPT
+					is_claimed_by = KPT
+					is_core_of = SKO
+					is_core_of = FRI
+					state = 59
+					region = 45
+					region = 46
+					region = 47
+					region = 113
+				}
+			}
+			set_variable = { ambition_area_@KPT = 1 }
 		}
 	}
 }

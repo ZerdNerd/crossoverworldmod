@@ -24,6 +24,42 @@ country_event = { #Elections 1936
     		ideology = democratic
     		popularity = 0.1
 		}
+		create_corps_commander = {
+			name = "Fabian Duda"
+			portrait_path = "gfx/leaders/SAN/fabian_duda.dds"
+			traits = { adaptable }
+			skill = 4
+    		attack_skill = 3
+    		defense_skill = 3
+    		planning_skill = 4
+    		logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "Michałowa"
+			portrait_path = "gfx/leaders/SAN/michalowa.dds"
+			traits = { }
+			skill = 4
+    		attack_skill = 5
+    		defense_skill = 3
+    		planning_skill = 4
+    		logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "Stanisław Japycz"
+			portrait_path = "gfx/leaders/SAN/stach.dds"
+			traits = { war_hero }
+			skill = 5
+    		attack_skill = 3
+    		defense_skill = 3
+    		planning_skill = 5
+    		logistics_skill = 2
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.91
+				hours = 6
+			}
+		}
 	}
 
 	option = {
@@ -34,6 +70,32 @@ country_event = { #Elections 1936
 		add_popularity = {
     		ideology = communism
     		popularity = 0.2
+		}
+		create_corps_commander = {
+			name = "Arkadiusz Czerepach"
+			portrait_path = "gfx/leaders/SAN/czerepach.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 4
+    		logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "Jędrzej Kowalski"
+			portrait_path = "gfx/leaders/SAN/jedrzej_kowalski.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 2
+    		defense_skill = 2
+    		planning_skill = 3
+    		logistics_skill = 4
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.92
+				hours = 6
+			}
 		}
 	}
 }
@@ -537,6 +599,10 @@ country_event = { #San Escobar agrees only for recognizement part
 		add_political_power = 50
 		hidden_effect = {
 			set_global_flag = kurakao_treaty_signed
+			news_event = {
+				id = worldnews.93
+				hours = 6
+			}
 		}
 	}
 }
@@ -558,6 +624,10 @@ country_event = { #San Escobar agrees for military coop
 				set_country_flag = SAN_agreed_for_military_coop
 			}
 			set_global_flag = kurakao_treaty_signed
+			news_event = {
+				id = worldnews.93
+				hours = 6
+			} 
 		}
 	}
 }
