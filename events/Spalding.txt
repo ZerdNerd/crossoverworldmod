@@ -27,7 +27,19 @@ country_event = { #Elections 1936
     		ideology = democratic
     		popularity = 0.15
 		}
+		retire_country_leader = yes
+		create_country_leader = {
+			name = "Ferdynand Kiepski"
+			desc = "POLITICS_TBD_DESC"
+			picture = "ferdek.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
 		hidden_effect = {
+			set_country_flag = SLD_elections_done
 			news_event = {
 				id = worldnews.42
 				hours = 6
@@ -48,6 +60,7 @@ country_event = { #Elections 1936
     		popularity = 0.15
 		}
 		hidden_effect = {
+			set_country_flag = SLD_elections_done
 			news_event = {
 				id = worldnews.42
 				hours = 6
@@ -68,6 +81,7 @@ country_event = { #Elections 1936
     		popularity = 0.15
 		}
 		hidden_effect = {
+			set_country_flag = SLD_elections_done
 			news_event = {
 				id = worldnews.42
 				hours = 6
@@ -88,6 +102,7 @@ country_event = { #Elections 1936
     		popularity = 0.15
 		}
 		hidden_effect = {
+			set_country_flag = SLD_elections_done
 			news_event = {
 				id = worldnews.42
 				hours = 6
@@ -523,10 +538,9 @@ country_event = { #Neland Republic declares independence!
 					elections_allowed = no
 				}
 				set_popularities = {
-					democratic = 8
+					democratic = 14
 					fascism = 6
 					communism = 80		
-					neutrality = 6		
 					monarchism = 0
 				}
 				hidden_effect = {
@@ -559,10 +573,9 @@ country_event = { #Neland Republic declares independence!
 					elections_allowed = no
 				}
 				set_popularities = {
-					democratic = 80
+					democratic = 86
 					fascism = 6
 					communism = 8		
-					neutrality = 6		
 					monarchism = 0
 				}
 				hidden_effect = {

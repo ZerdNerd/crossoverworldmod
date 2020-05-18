@@ -1,0 +1,41 @@
+guiTypes = {
+    containerWindowType = {
+		name = "colonization_button_grey_container"
+		position = { x=-416 y=-549}
+		show_position = { x=-6 y =-549 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		orientation = lower_left
+		size = { width=436 height=496 }
+
+		buttonType = {
+			name = "colonization_button_grey"
+			spriteType = "GFX_button_94x31_grey"
+			position = { x = 59 y = 245 }
+			font = "hoi_18mbs"
+			text = "Colonize"
+			pdx_tooltip = "COLONIZATION_BUTTON_TOOLTIP_CANNOT"
+		}
+	}
+
+	containerWindowType = {
+		name = "colonization_button_container"
+		position = { x=-416 y=-549}
+		show_position = { x=-6 y =-549 }
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		animation_time = 300
+		orientation = lower_left
+		size = { width=436 height=496 }
+
+		buttonType = {
+			name = "colonization_button"
+			spriteType = "GFX_button_94x31"
+			position = { x = 59 y = 245 }
+			font = "hoi_18mbs"
+			text = "Colonize"
+			pdx_tooltip = "COLONIZATION_BUTTON_TOOLTIP"
+		}
+    }
+}

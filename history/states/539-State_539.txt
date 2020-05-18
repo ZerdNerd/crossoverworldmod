@@ -4,9 +4,14 @@ state={
 	provinces={
 		2818 4841 5057 5097 8367 8520 8580 
 	}
-	manpower=0
+	state_category = rural
+	manpower=450000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = HOR
+		add_core_of = HOR
+		buildings = {
+			infrastructure = 2
+		}
 	}
 }

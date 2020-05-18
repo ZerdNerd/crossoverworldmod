@@ -91,25 +91,23 @@ add_ideas = {
 set_convoys = 50
 
 set_popularities = {
-	democratic = 24
+	democratic = 25
 
-	fascism = 24
+	fascism = 25
 		
-	communism = 24
+	communism = 25
 		
-	neutrality = 4
-		
-	monarchism = 24
+	monarchism = 25
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	last_election = "1930.7.1"
 	election_frequency = 72
 	elections_allowed = no
 }
 
-set_stability = 0.75
+set_stability = 0.5
 
 create_country_leader = {
 	name = "Jan Paweł II"
@@ -139,17 +137,6 @@ create_country_leader = {
 	picture = "tracz.dds"
 	expire = "1965.1.1"
 	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Ferdynand Kiepski"
-	desc = "POLITICS_TBD_DESC"
-	picture = "ferdek.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
 	traits = {
 		#
 	}

@@ -2,11 +2,16 @@ state={
 	id=504
 	name="STATE_504"
 	provinces={
-		482 738 1459 2727 4479 5384 8124 8140 8164 8182 8218 8238 8311 
+		482 738 1459 2727 4479 5384 8124 8140 8164 8182 8218 8238 
 	}
-	manpower=0
+	state_category = rural
+	manpower=450000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = TIG
+		add_core_of = TIG
+		buildings = {
+			infrastructure = 2
+		}
 	}
 }

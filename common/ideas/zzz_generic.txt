@@ -221,7 +221,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = neutrality
+				has_government = paidocracy
 			}
 
 			removal_cost = -1
@@ -229,8 +229,8 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				neutrality_drift = 0.1
-				neutrality_acceptance = 85
+				paidocracy_drift = 0.1
+				paidocracy_acceptance = 85
 			}
 		}
 		
@@ -322,7 +322,7 @@ ideas = {
 			}
 
 			allowed_civil_war = {
-				has_government = neutrality
+				has_government = paidocracy
 			}
 
 			removal_cost = -1
@@ -330,7 +330,7 @@ ideas = {
 			picture = generic_pp_unity_bonus
 			
 			modifier = {
-				neutrality_drift = 0.1
+				paidocracy_drift = 0.1
 				mobilization_speed = 0.15
 			}
 		}
@@ -535,10 +535,6 @@ ideas = {
 			
 			allowed = {
 				always = no
-			}
-
-			allowed_civil_war = {
-				has_government = neutrality
 			}
 
 			cancel = {

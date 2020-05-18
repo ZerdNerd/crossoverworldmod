@@ -5,9 +5,16 @@ state={
 		2664 9912 9942 9988 
 	}
 	state_category = rural
-	manpower=0
+	manpower=120000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = FLE
+		add_core_of = FLE
+		buildings = {
+			infrastructure = 2
+			2664 = {
+				naval_base = 2
+			}
+		}
 	}
 }

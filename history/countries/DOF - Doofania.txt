@@ -83,13 +83,11 @@ set_research_slots = 5
 set_convoys = 50
 
 set_popularities = {
-	democratic = 0
+	democratic = 5
 
 	fascism = 95
 		
 	communism = 0
-		
-	neutrality = 5
 		
 	monarchism = 0
 }
@@ -109,17 +107,6 @@ create_country_leader = {
 	picture = "Placeholder.dds"
 	expire = "1965.1.1"
 	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Francis Monogram"
-	desc = "POLITICS_TBD_DESC"
-	picture = "monobrew.dds"
-	expire = "1965.1.1"
-	ideology = centrism
 	traits = {
 		#
 	}

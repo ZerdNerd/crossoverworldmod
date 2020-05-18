@@ -77,6 +77,8 @@ if = {
 	set_naval_oob = FRI_1936_naval_mtg
 }
 
+set_country_flag = colonies_enabled
+
 set_research_slots = 5
 
 add_ideas = {
@@ -85,6 +87,10 @@ add_ideas = {
 	GUP_kuromorimine
 }
 
+set_autonomy = {
+	target = FLE
+	autonomy_state = cr_colonial_government
+}
 
 set_convoys = 50
 
@@ -95,7 +101,7 @@ set_popularities = {
 		
 	communism = 0
 		
-	neutrality = 0
+	
 		
 	monarchism = 100
 }
@@ -147,17 +153,6 @@ create_country_leader = {
 	desc = "POLITICS_FRIEDEWALT_I_DESC"
 	picture = "friedewalt.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Friedewalt III"
-	desc = "POLITICS_FRIEDEWALT_I_DESC"
-	picture = "friedewalt.dds"
-	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
 		#
@@ -175,6 +170,32 @@ create_corps_commander = {
     planning_skill = 1
     logistics_skill = 3
     id = 9999
+}
+
+create_corps_commander = {
+	name = "Hanz Speidel"
+	portrait_path = "gfx/leaders/FRI/speidel.dds"
+	desc = "POLITICS_SPEIDEL_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 3
+    id = 9998
+}
+
+create_corps_commander = {
+	name = "Adolf Heusinger"
+	portrait_path = "gfx/leaders/FRI/heusinger.dds"
+	desc = "POLITICS_HEUSINGER_DESC"
+	traits = { }
+	skill = 4
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 3
+    logistics_skill = 3
+    id = 9997
 }
 
 country_event = {

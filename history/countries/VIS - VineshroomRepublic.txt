@@ -84,19 +84,17 @@ add_ideas = {
 set_convoys = 50
 
 set_popularities = {
-	democratic = 50
+	democratic = 100
 
 	fascism = 0
 		
 	communism = 0
 		
-	neutrality = 50
-		
 	monarchism = 0
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	last_election = "1930.7.1"
 	election_frequency = 72
 	elections_allowed = no
@@ -132,17 +130,6 @@ create_country_leader = {
 	picture = "Placeholder.dds"
 	expire = "1965.1.1"
 	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
 	traits = {
 		#
 	}

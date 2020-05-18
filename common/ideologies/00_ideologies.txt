@@ -13,20 +13,22 @@ ideologies = {
 			socialism = {
 			}
 
-			paidocracy = {
-				surrender_limit = -0.6
-				economy_cost_factor = -0.2
-				foreign_subversive_activites = 0.3
-				enemy_justify_war_goal_time = -0.25
-				trade_opinion_factor = -0.5
-				opinion_gain_monthly_factor = -0.25
-				can_be_randomly_selected = no
-			}
-
 			technocracy = {
 				research_speed_factor = 0.1
 				line_change_production_efficiency_factor = 0.1
 				can_be_randomly_selected = no
+			}
+
+			despotism  = {
+			}
+			
+			oligarchism  = {
+			}
+			
+			moderatism = {
+			}
+			
+			centrism = {
 			}
 		}
 		
@@ -91,6 +93,10 @@ ideologies = {
 			
 			anarchist_communism = {
 			}
+
+			anarchism = {
+				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
+			}
 		}
 		
 		dynamic_faction_names = {
@@ -101,7 +107,7 @@ ideologies = {
 			"FACTION_NAME_COMMUNIST_5"
 		}
 		
-		color = { 255 0 0 }
+		color = { 255 255 255 }
 		
 		war_impact_on_world_tension = 1		#Commie is NOT less threatening, learn that Paradox!
 		faction_impact_on_world_tension = 1
@@ -154,7 +160,7 @@ ideologies = {
 			"FACTION_NAME_FASCIST_5"
 		}
 		
-		color = { 150 75 0 }
+		color = { 109 0 0 }
 		
 		war_impact_on_world_tension = 1.0			#evil!
 		faction_impact_on_world_tension = 1.0
@@ -174,69 +180,6 @@ ideologies = {
 			hidden_modifier = { join_faction_tension = -0.1 }
 		}
 
-		ai_neutral = yes
-	}
-	
-	neutrality = {
-	
-		types = {
-		
-			despotism  = {
-			}
-			
-			oligarchism  = {
-			}
-			
-			moderatism = {
-			}
-			
-			centrism = {
-			}
-
-			anarchism = {
-				can_be_randomly_selected = no # won't be assigned to randomly generated country leaders
-			}
-		}
-
-		dynamic_faction_names = {
-			"FACTION_NAME_NONALIGNED_1"
-			"FACTION_NAME_NONALIGNED_2"
-			"FACTION_NAME_NONALIGNED_3"
-			"FACTION_NAME_NONALIGNED_4"
-			"FACTION_NAME_NONALIGNED_5"
-		}
-		
-		color = { 124 124 124 }
-		
-		
-		war_impact_on_world_tension = 1		#no major danger
-		faction_impact_on_world_tension = 1
-		
-		rules = {
-			can_force_government = no
-			can_puppet = no
-			can_send_volunteers = yes
-		}
-		
-		modifiers = {
-			#increased_influence_factor = 0.3 #30% easier to influence
-			generate_wargoal_tension = 0.5
-			join_faction_tension = 0.4
-			lend_lease_tension = 0.4
-			send_volunteers_tension = 0.4
-			guarantee_tension = 0.4
-			drift_defence_factor = -0.3	
-			civilian_intel_to_others = 20.0
-			army_intel_to_others = 10.0
-			navy_intel_to_others = 20.0
-			airforce_intel_to_others = 10.0
-		}
-		
-		faction_modifiers = {
-		}
-
-		can_be_boosted = no
-		can_collaborate = yes
 		ai_neutral = yes
 	}
 	
@@ -289,6 +232,61 @@ ideologies = {
 			lend_lease_tension = 0.2
 			send_volunteers_tension = 0.1
 			guarantee_tension = 0.25
+			drift_defence_factor = -0.3	
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 10.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 10.0
+		}
+		
+		faction_modifiers = {
+		}
+
+		can_be_boosted = no
+		can_collaborate = yes
+		ai_neutral = yes
+	}
+	
+	paidocracy = {
+	
+		types = {
+			paidocracy_sub = {
+				surrender_limit = -0.6
+				economy_cost_factor = -0.2
+				foreign_subversive_activites = 0.3
+				enemy_justify_war_goal_time = -0.25
+				trade_opinion_factor = -0.5
+				opinion_gain_monthly_factor = -0.25
+			}
+		}
+
+		dynamic_faction_names = {
+			"FACTION_NAME_NONALIGNED_1"
+			"FACTION_NAME_NONALIGNED_2"
+			"FACTION_NAME_NONALIGNED_3"
+			"FACTION_NAME_NONALIGNED_4"
+			"FACTION_NAME_NONALIGNED_5"
+		}
+		
+		color = { 0 195 0 }
+		
+		
+		war_impact_on_world_tension = 1		#no major danger
+		faction_impact_on_world_tension = 1
+		
+		rules = {
+			can_force_government = no
+			can_puppet = no
+			can_send_volunteers = yes
+		}
+		
+		modifiers = {
+			#increased_influence_factor = 0.3 #30% easier to influence
+			generate_wargoal_tension = 0.5
+			join_faction_tension = 0.4
+			lend_lease_tension = 0.4
+			send_volunteers_tension = 0.4
+			guarantee_tension = 0.4
 			drift_defence_factor = -0.3	
 			civilian_intel_to_others = 20.0
 			army_intel_to_others = 10.0

@@ -3449,9 +3449,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		available = {
-			NOT = {
-				has_government = neutrality
-			}
+			has_country_flag = SLD_elections_done
 		}
 
 		completion_reward = {
@@ -3793,9 +3791,7 @@ focus_tree = {
 		cost = 7.25
 
 		available = {
-			NOT = {
-				has_government = neutrality
-			}
+			has_country_flag = SLD_elections_done
 		}
 
 		available_if_capitulated = yes
@@ -4103,9 +4099,7 @@ focus_tree = {
 
 		available = {
 			has_idea = modern_tech_idea
-			NOT = {
-				has_government = neutrality
-			}
+			has_country_flag = SLD_elections_done
 		}
 
 		completion_reward = {

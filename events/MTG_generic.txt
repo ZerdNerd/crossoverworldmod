@@ -162,7 +162,7 @@ country_event = {
 		if = {
 			limit = {
 				FROM = {
-					has_government = neutrality
+					has_government = paidocracy
 				}
 			}
 			effect_tooltip = {
@@ -171,7 +171,7 @@ country_event = {
 					days = 365
 				}
 				set_politics = {
-					ruling_party = neutrality
+					ruling_party = paidocracy
 					elections_allowed = no
 				}
 			}

@@ -1,0 +1,155 @@
+scripted_gui = {
+
+    colonization_button_grey = {
+        context_type = selected_state_context
+		parent_window_name = "countrystateview"
+		window_name = "colonization_button_grey_container"
+ 
+        visible = {
+            AND = {
+            THIS = {
+                AND = {
+                    is_owned_by = UNC
+            	    OR = {
+                        is_coastal = yes
+                        any_neighbor_state = { 
+                            is_owned_by = ROOT 
+                            NOT = {
+                                has_state_flag = state_is_being_colonized
+                            }
+                        }
+                    }
+                }
+            }
+            ROOT = {
+                is_ai = no #for testing
+                NOT = {
+                    tag = UNC
+                }
+            }
+            }
+        }
+
+        triggers = {
+            colonization_button_grey_click_enabled = {
+                ROOT = {
+                    has_political_power > 50
+                }
+            }
+        }
+
+        effects = {
+            colonization_button_grey_click = {
+
+            }
+        }
+    }
+
+    colonization_button = {
+        context_type = selected_state_context
+		parent_window_name = "countrystateview"
+		window_name = "colonization_button_container"
+ 
+        visible = {
+            AND = {
+            THIS = {
+                AND = {
+                    is_owned_by = UNC
+            	    OR = {
+                        is_coastal = yes
+                        any_neighbor_state = { 
+                            is_owned_by = ROOT 
+                            NOT = {
+                                has_state_flag = state_is_being_colonized
+                            }
+                        }
+                    }
+                }
+            }
+            ROOT = {
+                is_ai = no #for testing
+                NOT = {
+                    tag = UNC
+                }
+            }
+            }
+        }
+
+        triggers = {
+            colonization_button_visible = {
+                ROOT = {
+                    has_political_power > 50
+                }
+            }
+        }
+
+        effects = {
+            colonization_button_click = {
+                THIS = {
+                    set_variable = { colonization_enabled_for_state = 1 }
+                }
+                every_state = {
+                    limit = {
+                        has_variable = colonization_enabled_for_state
+                    }
+                    ROOT = {
+                        transfer_state = PREV
+                    }
+                #    transfer_state = var:colonization_enabled_for_state
+                }
+                THIS = {
+                    clear_variable = colonization_enabled_for_state
+                    set_state_flag = state_is_being_colonized
+                    add_manpower = 100
+                    if = {
+                        limit = {
+                            is_coastal = yes
+                            any_neighbor_state = {
+                                is_owned_by = ROOT
+                                OR = {
+                                    check_variable = { distance_from_colony_port > 2 }
+                                    NOT = {
+                                        has_variable = distance_from_colony_port
+                                    }
+                                }
+                            }
+                        }
+                        set_variable = {
+                            var = distance_from_colony_port
+                            value = 0
+                        }
+                    }
+                    if = {
+                        limit = {
+                            is_coastal = yes
+                            any_neighbor_state = {
+                                is_owned_by = ROOT
+                                check_variable = { distance_from_colony_port = 0 }
+                            }
+                        }
+                        set_variable = {
+                            var = distance_from_colony_port
+                            value = 1
+                        }
+                    }
+                    if = {
+                        limit = {
+                            is_coastal = yes
+                            any_neighbor_state = {
+                                is_owned_by = ROOT
+                                check_variable = { distance_from_colony_port = 1 }
+                            }
+                        }
+                        set_variable = {
+                            var = distance_from_colony_port
+                            value = 2
+                        }
+                    }
+                }
+                ROOT = {
+                    add_political_power = -50
+                }
+            }
+        }
+    }
+}

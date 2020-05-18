@@ -30,6 +30,92 @@ on_actions = {
                 	FLO_the_purge
                 }
 			}
+			if = {
+				limit = {
+					ROOT = {
+						any_owned_state = {
+							has_state_flag = state_is_being_colonized
+							state_population > 2000
+						}
+					}
+				}
+				ROOT = {
+					country_event = {
+						id = colonization.1
+						days = 0
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = state_is_being_colonized
+					check_variable = { distance_from_colony_port = 0 }
+				}
+				random_list = {
+					10 = {
+						add_manpower = 1
+					}
+					25 = {
+						add_manpower = 0.75
+					}
+					65 = {
+						add_manpower = 0.25
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = state_is_being_colonized
+					check_variable = { distance_from_colony_port = 1 }
+				}
+				random_list = {
+					10 = {
+						add_manpower = 0.95
+					}
+					25 = {
+						add_manpower = 0.7
+					}
+					65 = {
+						add_manpower = 0.2
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = state_is_being_colonized
+					check_variable = { distance_from_colony_port = 2 }
+				}
+				random_list = {
+					10 = {
+						add_manpower = 0.90
+					}
+					25 = {
+						add_manpower = 0.65
+					}
+					65 = {
+						add_manpower = 0.15
+					}
+				}
+			}
+			every_state = {
+				limit = {
+					has_state_flag = state_is_being_colonized
+					NOT = {
+                        has_variable = distance_from_colony_port
+                    }
+				}
+				random_list = {
+					10 = {
+						add_manpower = 0.8
+					}
+					25 = {
+						add_manpower = 0.6
+					}
+					65 = {
+						add_manpower = 0.1
+					}
+				}
+			}
 		}
 	}
 
@@ -557,6 +643,13 @@ on_actions = {
 			UNC = {
 				create_ambition_areas = yes
 				create_occupation_zones = yes
+				every_owned_state = {
+					add_state_modifier = {
+						modifier = {
+							MONTHLY_POPULATION = -0.12
+						}
+					}
+				}
 			}
 			every_country = {
 				if = {

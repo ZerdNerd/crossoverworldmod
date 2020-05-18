@@ -133,7 +133,6 @@ country_event = {
 					}
 					
 					# booleans that will be allowed to change ideology
-					set_temp_variable = { allowed_party_neutrality = 1 }
 					set_temp_variable = { allowed_party_democratic = 1 }
 					set_temp_variable = { allowed_party_fascism = 1 }
 					set_temp_variable = { allowed_party_communism = 1 }
@@ -170,10 +169,6 @@ country_event = {
 										has_government = communism
 										check_variable = { allowed_party_communism = 0 }
 									}
-									AND = { 
-										has_government = neutrality
-										check_variable = { allowed_party_neutrality = 0 }
-									}
 								}
 							}
 							
@@ -195,12 +190,6 @@ country_event = {
 										communism = 100
 									}
 									set_politics = { ruling_party = communism elections_allowed = no }
-								}
-								allowed_party_neutrality = {
-									set_popularities = {
-										neutrality = 100
-									}
-									set_politics = { ruling_party = neutrality elections_allowed = no }
 								}
 							}
 						}

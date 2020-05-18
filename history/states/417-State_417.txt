@@ -4,9 +4,14 @@ state={
 	provinces={
 		1131 2319 2695 3588 3879 4142 4219 4278 4352 4621 5479 7454 7465 7521 7599 7625 7655 7660 7680 7690 7705 7724 7755 7760 7802 7848 7895 
 	}
-	manpower=0
+	state_category = rural
+	manpower=450000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = MIC
+		add_core_of = MIC
+		buildings = {
+			infrastructure = 2
+		}
 	}
 }

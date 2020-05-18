@@ -413,6 +413,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+		bypass = {
+			always = yes
+		}
 		completion_reward = {
 			transfer_state = 38
 			38 = {
@@ -445,6 +448,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+		bypass = {
+			always = yes
+		}
 		completion_reward = {
 			transfer_state = 35
 			transfer_state = 40
@@ -1585,7 +1591,7 @@ focus_tree = {
 				}
 				set_popularities = {
 					democratic = 0
-					neutrality = 0
+					
 					fascism = 51
 					communism = 0
 					monarchism = 49

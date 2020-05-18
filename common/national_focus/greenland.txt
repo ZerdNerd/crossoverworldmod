@@ -1175,6 +1175,9 @@ focus = {
 	cost = 20
 	prerequisite = { focus = GRN_outcasts_or_incasts }
 	available_if_capitulated = no
+	bypass = {
+		always = yes
+	}
 	available = {
 		is_puppet = no
 	}
@@ -2041,7 +2044,7 @@ focus = {
 		
 				communism = 0
 		
-				neutrality = 0
+				
 		
 				monarchism = 20
 			}

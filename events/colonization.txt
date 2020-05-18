@@ -1,0 +1,24 @@
+﻿
+add_namespace = colonization
+
+country_event = {
+	id = colonization.1
+	title = colonization.1.t
+	desc = colonization.1.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = colonization.1.a
+		random_owned_state = {
+			limit = {
+				has_state_flag = state_is_being_colonized
+				state_population > 2000
+			}
+			clr_state_flag = state_is_being_colonized
+			set_state_category = rural
+		}
+	}
+}

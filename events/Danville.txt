@@ -112,7 +112,7 @@ country_event = { #OWCA opens fire!
 		hidden_effect = {
 			start_civil_war = {
     			ruling_party = fascism
-    			ideology = neutrality
+    			ideology = democratic
     			capital = 737
     			states = { 
       	  			737 761 742 724 708 677
@@ -122,7 +122,7 @@ country_event = { #OWCA opens fire!
 				democratic = 10
 				fascism = 90
 				communism = 0
-				neutrality = 0
+				
 				monarchism = 0
 			}
 			create_corps_commander = {
@@ -158,14 +158,13 @@ country_event = { #OWCA opens fire!
 			random_other_country = {
 			limit = {
 				original_tag = TSA
-				has_government = neutrality
+				has_government = democratic
 			}
 			set_equipment_fraction = 0.5
 			set_popularities = {
-				democratic = 50
+				democratic = 100
 				fascism = 0
 				communism = 0
-				neutrality = 50
 				monarchism = 0
 			}
 			load_oob = TSA_OWCA_units
@@ -281,7 +280,7 @@ country_event = { #OWCA march on Danville
 		hidden_effect = {
 			start_civil_war = {
     			ruling_party = fascism
-    			ideology = neutrality
+    			ideology = democratic
     			capital = 737
     			states = { 
       	  			737 761 742 724 708 677
@@ -311,7 +310,7 @@ country_event = { #OWCA march on Danville
 				democratic = 10
 				fascism = 90
 				communism = 0
-				neutrality = 0
+				
 				monarchism = 0
 			}
 			if = {
@@ -327,14 +326,13 @@ country_event = { #OWCA march on Danville
 			random_other_country = {
 			limit = {
 				original_tag = TSA
-				has_government = neutrality
+				has_government = democratic
 			}
 			set_equipment_fraction = 0.5
 			set_popularities = {
-				democratic = 50
+				democratic = 100
 				fascism = 0
 				communism = 0
-				neutrality = 50
 				monarchism = 0
 			}
 			load_oob = TSA_OWCA_units

@@ -14,19 +14,17 @@ add_ideas = {
 set_convoys = 0
 
 set_popularities = {
-	democratic = 0
+	democratic = 100
 
 	fascism = 0
 		
 	communism = 0
 		
-	neutrality = 100
-		
 	monarchism = 0
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	last_election = "1930.7.1"
 	election_frequency = 72
 	elections_allowed = no
@@ -35,55 +33,11 @@ set_politics = {
 set_stability = 0.85
 
 create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
 	name = "Papa Smurf"
 	desc = "POLITICS_TBD_DESC"
 	picture = "papa_smurf.dds"
 	expire = "1965.1.1"
 	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "commie_council.dds"
-	expire = "1965.1.1"
-	ideology = marxism
 	traits = {
 		#
 	}
