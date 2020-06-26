@@ -1,0 +1,4585 @@
+focus_tree = {
+	id = sioux
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = SIO
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = SIO_first_steps_into_the_industrialization
+		icon = GFX_focus_generic_industry_2
+		x = 6
+		y = 0
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			697 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_expanding_the_capital
+		icon = GFX_focus_generic_industry_3
+		x = 6
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_first_steps_into_the_industrialization
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_expansion_of_sea_ports
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 6
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_expanding_the_capital
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9422
+				}
+			}
+			752 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9779
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9095
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_council_meets
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_expansion_of_sea_ports
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_the_united_council_will_meet
+			hidden_effect = {
+				country_event = {
+					id = sioux.1
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_maintain_operation_sandstorm
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 2
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_the_council_meets
+		}
+
+		mutually_exclusive = {
+			focus = SIO_get_lost_humsin
+		}
+
+		available = {
+			has_country_flag = SIO_council_not_rejected_sandstorm
+		}
+
+		bypass = {
+			has_country_flag = SIO_council_not_rejected_sandstorm
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_operation_sandstorm_will_be_maintained
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_proper_sioux_fleet
+		icon = GFX_focus_generic_destroyer
+		x = 2
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_maintain_operation_sandstorm
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			navy_experience = 10
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_new_getaway_points
+		icon = GFX_goal_generic_position_armies
+		x = 2
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_proper_sioux_fleet
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			688 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 3311
+				}
+			}
+			674 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9282
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_more_weapons
+		icon = GFX_focus_focus_fra_maquis
+		x = 0
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_maintain_operation_sandstorm
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_greet_your_loved_ones
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_more_weapons
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				SIO_greeting_loved_ones
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_further_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_maintain_operation_sandstorm
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_construct_vital_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 4
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_further_industrialization
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_delay_their_march
+		icon = GFX_goal_generic_defence
+		x = 3
+		y = 7
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_new_getaway_points
+		}
+
+		prerequisite = {
+			focus = SIO_construct_vital_roads
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				SIO_delaying_their_march
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_mobilize_additional_warriors
+		icon = GFX_goal_generic_forceful_treaty
+		x = 1
+		y = 7
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_new_getaway_points
+		}
+
+		prerequisite = {
+			focus = SIO_greet_your_loved_ones
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_manpower = 10000
+		} 
+	}
+
+	focus = { 
+		id = SIO_prepared_for_sandstorm
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 8
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_mobilize_additional_warriors
+		}
+
+		prerequisite = {
+			focus = SIO_delay_their_march
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_get_lost_humsin
+		icon = GFX_goal_generic_political_pressure
+		x = 10
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		mutually_exclusive = {
+			focus = SIO_maintain_operation_sandstorm
+		}
+
+		prerequisite = {
+			focus = SIO_the_council_meets
+		}
+
+		available = {
+			has_country_flag = SIO_council_rejected_sandstorm
+		}
+
+		bypass = {
+			has_country_flag = SIO_council_rejected_sandstorm
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_efforts_against_humsin
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_factories_in_the_rear
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_get_lost_humsin
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+			674 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_factories_in_the_west
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_factories_in_the_rear
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_mass_mobilization
+		icon = GFX_focus_generic_manpower
+		x = 10
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_get_lost_humsin
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				SIO_mass_mobilization_of_sioux
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_prairie_defense_line
+		icon = GFX_goal_generic_construct_military
+		x = 10
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_mass_mobilization
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			675 = {
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9297
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9308
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9265
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9240
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9244
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9207
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9161
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9111
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9127
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9095
+				}
+			}
+			688 = {
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9279
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 1997
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 1
+					instant_build = yes
+					province = 9323
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_continuing_industrialization
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 12
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_get_lost_humsin
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			674 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_startup_the_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 12
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_continuing_industrialization
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			674 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+	
+	focus = { 
+		id = SIO_prayers_to_the_gods
+		icon = GFX_goal_generic_cavalry
+		x = 11
+		y = 7
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_startup_the_navy
+		}
+
+		prerequisite = {
+			focus = SIO_prairie_defense_line
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				SIO_favour_of_sungmanito
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_bridge_the_technological_gap
+		icon = GFX_goal_generic_air_fighter
+		x = 9
+		y = 7
+		cost = 14.28
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_factories_in_the_west
+		}
+
+		prerequisite = {
+			focus = SIO_prairie_defense_line
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			752 = {
+				add_building_construction = {
+					type = air_base
+    				level = 1
+					instant_build = yes
+				}
+			}
+			705 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+			add_research_slot = 1
+			hidden_effect = {
+				middleage_to_preindustrial = yes
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_introduction_to_infantry
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 10
+		y = 8
+		cost = 7.25
+		available_if_capitulated = no
+
+		prerequisite = {
+			focus = SIO_bridge_the_technological_gap
+		}
+
+		prerequisite = {
+			focus = SIO_prayers_to_the_gods
+		}
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_infantry_will_be_introduced
+			add_manpower = 15000
+			hidden_effect = {
+				load_oob = SIO_infantry_introduction
+			}
+		} 
+	}
+
+	########################################################################################################################################################################
+	########################################################################################################################################################################
+	########################################################################################################################################################################
+	########################################################################################################################################################################
+	########################################################################################################################################################################
+	########################################################################################################################################################################
+	####### RETURN TREE
+
+	focus = { 
+		id = SIO_were_back_sandman
+		icon = GFX_goal_generic_demand_territory
+		x = 27
+		y = 0
+		cost = 1
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_global_flag = sioux_are_returning
+		}
+
+		completion_reward = {
+			add_manpower = 25000
+		} 
+	}
+
+	focus = { 
+		id = SIO_alliance_of_interspecies
+		icon = GFX_goal_generic_improve_relations
+		x = 25
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_were_back_sandman
+		}
+
+		available = {
+			has_war_with = DES
+		}
+
+		completion_reward = {
+			add_manpower = 40000
+			custom_effect_tooltip = SIO_animals_living_in_sioux_territories
+			hidden_effect = {
+				#new animal generals go here
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_future_of_the_tribes
+		icon = GFX_goal_generic_national_unity
+		x = 27
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_were_back_sandman
+		}
+
+		available = {
+			DES = {
+				exists = no
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_new_council_will_gather_first
+			hidden_effect = {
+				country_event = {
+					id = sioux_vote.8
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_liberator_stays
+		icon = GFX_focus_yakari_f
+		x = 17
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Yakari"
+				ruling_only = yes
+			}
+			has_country_flag = SIO_council_voted_for_yakari
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Yakari"
+				ruling_only = yes
+			}
+			has_country_flag = SIO_council_voted_for_yakari
+		}
+
+		prerequisite = {
+			focus = SIO_future_of_the_tribes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_yakari_will_stay_as_the_leader
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_we_will_rebuild
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 17
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_the_liberator_stays
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_we_will_modernize_our_transportation
+		icon = GFX_focus_narrow_gauge
+		x = 18
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_we_will_rebuild
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+			705 = {
+				add_building_construction = {
+					type = air_base
+    				level = 3
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_our_homes
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 16
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_we_will_rebuild
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_our_army
+		icon = GFX_goal_rhineland
+		x = 15
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_our_homes
+		}
+
+		prerequisite = {
+			focus = SIO_we_will_modernize_our_transportation
+		}
+
+		completion_reward = {
+			army_experience = 10
+			add_ideas = {
+				SIO_modernized_army
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_our_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 19
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_our_homes
+		}
+
+		prerequisite = {
+			focus = SIO_we_will_modernize_our_transportation
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9442
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9779
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9095
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_our_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 17
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_our_homes
+		}
+
+		prerequisite = {
+			focus = SIO_we_will_modernize_our_transportation
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_and_our_society
+		icon = GFX_goal_generic_consumer_goods
+		x = 17
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_our_army
+		}
+
+		prerequisite = {
+			focus = SIO_our_navy
+		}
+
+		prerequisite = {
+			focus = SIO_our_industry
+		}
+
+		completion_reward = {
+			705 = {
+				add_manpower = 260000
+			}
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 705
+					}
+				}
+				add_manpower = 100000
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_decisive_rule
+		icon = GFX_focus_buffaloseed
+		x = 23
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Buffalo Seed"
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Buffalo Seed"
+				ruling_only = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_future_of_the_tribes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_buffalo_will_rule
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_bring_on_the_reforms
+		icon = GFX_goal_demand_sudetenland
+		x = 23
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_decisive_rule
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.1
+			add_manpower = 30000
+		} 
+	}
+
+	focus = { 
+		id = SIO_fast_industrialization
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 22
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_bring_on_the_reforms
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_advanced_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 24
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_bring_on_the_reforms
+		}
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 705
+						state = 752
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_tippecanoe_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 21
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_fast_industrialization
+		}
+
+		prerequisite = {
+			focus = SIO_advanced_infrastructure
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+    				level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 3
+					instant_build = yes
+					province = 9488
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_push_on_airforce
+		icon = GFX_goal_generic_air_bomber
+		x = 23
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_fast_industrialization
+		}
+
+		prerequisite = {
+			focus = SIO_advanced_infrastructure
+		}
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = air_base
+    				level = 3
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = air_base
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_industry_for_citizens
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 25
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_fast_industrialization
+		}
+
+		prerequisite = {
+			focus = SIO_advanced_infrastructure
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_into_the_glorious_future
+		icon = GFX_goal_generic_demand_territory
+		x = 23
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_tippecanoe_dockyards
+		}
+
+		prerequisite = {
+			focus = SIO_push_on_airforce
+		}
+
+		prerequisite = {
+			focus = SIO_industry_for_citizens
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_manpower = 60000
+			}
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_remnants_of_old_order
+		icon = GFX_goal_generic_improve_relations
+		x = 29
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_flag = SIO_council_voted_to_stay
+		}
+
+		bypass = {
+			has_country_flag = SIO_council_voted_to_stay
+		}
+
+		prerequisite = {
+			focus = SIO_future_of_the_tribes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_the_council_will_stay
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_fix_their_errors
+		icon = GFX_goal_generic_construction
+		x = 29
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_the_remnants_of_old_order
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+			add_ideas = {
+				SIO_never_another_sandstorm
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_sioux_railway_system
+		icon = GFX_focus_generic_railroad
+		x = 28
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_fix_their_errors
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+			add_ideas = {
+				SIO_railways
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_great_resource_plan
+		icon = GFX_goal_generic_construction2
+		x = 30
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_fix_their_errors
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_missions_to_get_resources
+		} 
+	}
+
+	focus = { 
+		id = SIO_next_step_in_westernization
+		icon = GFX_focus_generic_industry_3
+		x = 27
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_sioux_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_the_great_resource_plan
+		}
+
+		completion_reward = {
+			697 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_away_with_illiteracy
+		icon = GFX_focus_generic_military_academy
+		x = 29
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_sioux_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_the_great_resource_plan
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = SIO_naval_investments
+		icon = GFX_focus_generic_destroyer
+		x = 31
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_sioux_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_the_great_resource_plan
+		}
+
+		completion_reward = {
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9442
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9779
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9095
+				}
+			}
+			705 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_sioux_deal
+		icon = GFX_focus_generic_concessions
+		x = 29
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_next_step_in_westernization
+		}
+
+		prerequisite = {
+			focus = SIO_away_with_illiteracy
+		}
+
+		prerequisite = {
+			focus = SIO_naval_investments
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_deal
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_its_girls_turn
+		icon = GFX_focus_rainbow
+		x = 35
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Rainbow"
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Rainbow"
+				ruling_only = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_future_of_the_tribes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_rainbow_will_become_leader
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_a_safe_heaven_for_the_oppressed
+		icon = GFX_focus_generic_coastal_fort
+		x = 35
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_its_girls_turn
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_asylum
+			}
+			697 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9442
+				}
+			}
+			752 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9779
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_promote_new_means_of_transportation #BIKES!
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 34
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_a_safe_heaven_for_the_oppressed
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_eco_means_of_transport
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_bill_for_the_future
+		icon = GFX_goal_generic_improve_relations
+		x = 36
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_a_safe_heaven_for_the_oppressed
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = SIO_focus_on_basic_needs
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 33
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_new_means_of_transportation
+		}
+
+		prerequisite = {
+			focus = SIO_the_bill_for_the_future
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_basic_needs_of_society
+			}
+			705 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_establish_relations_with_king_macius
+		icon = GFX_goal_generic_major_alliance
+		x = 35
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_new_means_of_transportation
+		}
+
+		prerequisite = {
+			focus = SIO_the_bill_for_the_future
+		}
+
+		completion_reward = {
+			add_opinion_modifier = {
+    			target = MAI
+    			modifier = MAI_true_relations
+			}
+			MAI = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_establish_relations_with_tungu_pungu
+		icon = GFX_goal_generic_major_alliance
+		x = 37
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_new_means_of_transportation
+		}
+
+		prerequisite = {
+			focus = SIO_the_bill_for_the_future
+		}
+
+		completion_reward = {
+			add_opinion_modifier = {
+    			target = TUG
+    			modifier = MAI_true_relations
+			}
+			TUG = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_sioux_paidocracy
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 35
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_focus_on_basic_needs
+		}
+
+		prerequisite = {
+			focus = SIO_establish_relations_with_king_macius
+		}
+
+		prerequisite = {
+			focus = SIO_establish_relations_with_tungu_pungu
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_paidocracy_by_sioux
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_pro_family_reforms
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 38
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_its_girls_turn
+			focus = SIO_the_rule_of_women
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_manpower = 60000
+			}
+			add_ideas = {
+				SIO_pro_family_law
+			}
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_rule_of_women
+		icon = GFX_focus_braidnight
+		x = 41
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Braid Night"
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Braid Night"
+				ruling_only = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_future_of_the_tribes
+			focus = SIO_new_political_landscape
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_braid_night_will_become_leader
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_protect_faith_and_traditions
+		icon = GFX_goal_generic_defence
+		x = 41
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_the_rule_of_women
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_faith_and_traditions_bill
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_improve_sioux_lives
+		icon = GFX_focus_generic_industry_3
+		x = 40
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_protect_faith_and_traditions
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_gather_the_exiles
+		icon = GFX_focus_generic_self_management
+		x = 42
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_protect_faith_and_traditions
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_gathering_the_exiles
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_expansion_of_cities
+		icon = GFX_goal_generic_consumer_goods
+		x = 39
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_improve_sioux_lives
+		}
+
+		prerequisite = {
+			focus = SIO_gather_the_exiles
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_state_category = town
+				}
+				set_state_category = city
+				add_manpower = 250000
+				add_extra_state_shared_building_slots = 2
+			}
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 697
+						state = 643
+					}
+				}
+				set_state_category = town
+				add_manpower = 80000
+				add_extra_state_shared_building_slots = 1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_maintain_good_relations_with_non_sioux
+		icon = GFX_goal_generic_national_unity
+		x = 41
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_improve_sioux_lives
+		}
+
+		prerequisite = {
+			focus = SIO_gather_the_exiles
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = SIO_maintaining_peaceful_relations_with_non_natives
+				days = 200
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_set_new_trade_rules
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 43
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_improve_sioux_lives
+		}
+
+		prerequisite = {
+			focus = SIO_gather_the_exiles
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_new_trade
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_peaceful_times
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 41
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_expansion_of_cities
+		}
+
+		prerequisite = {
+			focus = SIO_maintain_good_relations_with_non_sioux
+		}
+
+		prerequisite = {
+			focus = SIO_set_new_trade_rules
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_into_peaceful_times
+			}
+		} 
+	}
+
+	####### SURVIVED TREE
+
+	focus = { 
+		id = SIO_our_finest_hour
+		icon = GFX_goal_generic_national_unity
+		x = 54
+		y = 0
+		cost = 1
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_completed_focus = SIO_get_lost_humsin
+			has_war_with = DES
+			custom_trigger_tooltip = {
+				tooltip = SIO_eastern_prairie_not_fallen
+				643 = {
+					is_controlled_by = SIO
+				}
+			}
+		}
+
+		completion_reward = {
+			add_manpower = 20000
+			army_experience = 10
+		} 
+	}
+
+	focus = { 
+		id = SIO_new_political_landscape
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 54
+		y = 1
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_our_finest_hour
+		}
+
+		available = {
+			DES = {
+				exists = no
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_new_council_will_gather_first
+			hidden_effect = {
+				country_event = {
+					id = sioux_vote.11
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_let_the_council_work
+		icon = GFX_goal_generic_improve_relations
+		x = 47
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_flag = SIO_council_voted_to_stay
+		}
+
+		bypass = {
+			has_country_flag = SIO_council_voted_to_stay
+		}
+
+		prerequisite = {
+			focus = SIO_new_political_landscape
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_council_will_remain_in_power
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_begin_westernization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 47
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_let_the_council_work
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_develop_tippecanoe
+		icon = GFX_goal_generic_construction
+		x = 46
+		y = 4
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_begin_westernization
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+				add_manpower = 85000
+				set_state_category = city
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_introduce_airports
+		icon = GFX_goal_generic_air_fighter2
+		x = 48
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_begin_westernization
+		}
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = air_base
+    				level = 3
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_reinstate_the_festivities
+		icon = GFX_focus_generic_treaty
+		x = 45
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_develop_tippecanoe
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_airports
+		}
+
+		completion_reward = {
+			#remove idea
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_reward_all_soldiers
+		icon = GFX_focus_secret_rearmament
+		x = 47
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_develop_tippecanoe
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_airports
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_war_support = 0.1
+		} 
+	}
+
+	focus = { 
+		id = SIO_repopulate_the_desert
+		icon = GFX_focus_generic_little_entente
+		x = 49
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_develop_tippecanoe
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_airports
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			every_owned_state = {
+				limit = {
+					is_core_of = DES
+				}
+				add_manpower = 45000
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_connect_with_the_western_world
+		icon = GFX_focus_generic_license_production
+		x = 47
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_reinstate_the_festivities
+		}
+
+		prerequisite = {
+			focus = SIO_reward_all_soldiers
+		}
+
+		prerequisite = {
+			focus = SIO_repopulate_the_desert
+		}
+
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = SIO_turn_into_monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 53
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Bold Gaze"
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Bold Gaze"
+				ruling_only = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_new_political_landscape
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_government_will_turn_into_monarchy
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_a_new_dynasty
+		icon = GFX_focus_generic_monarchy_2
+		x = 53
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_turn_into_monarchy
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			custom_effect_tooltip = SIO_every_monarchist_country_will_increase_their_opinion
+			hidden_effect = {
+				every_country = {
+					limit = {
+						exists = yes
+						has_government = monarchism
+						NOT = {
+							tag = FRI
+							tag = FLE
+						}
+					}
+					add_opinion_modifier = {
+    					target = SIO
+    					modifier = TCWmod_generic_relations
+					}
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_build_proper_palace
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 52
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_a_new_dynasty
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_introduce_royal_guard
+		icon = GFX_focus_generic_military_mission
+		x = 54
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_a_new_dynasty
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_manpower = 15000
+			hidden_effect = {
+				load_oob = SIO_royal_guard
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_royal_air_force
+		icon = GFX_goal_generic_air_bomber
+		x = 51
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_build_proper_palace
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_royal_guard
+		}
+
+		completion_reward = {
+			air_experience = 5
+			705 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_our_monarchist_friends
+		icon = GFX_goal_generic_improve_relations
+		x = 53
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_build_proper_palace
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_royal_guard
+		}
+
+		completion_reward = {
+			add_opinion_modifier = {
+    			target = GRN
+    			modifier = MAI_true_relations
+			}
+			GRN = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_royal_navy
+		icon = GFX_goal_generic_navy_battleship
+		x = 55
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_build_proper_palace
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_royal_guard
+		}
+
+		completion_reward = {
+			air_experience = 5
+			705 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9095
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+			}
+			697 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9442
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9779
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_first_year_of_monarchy
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 53
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_royal_air_force
+		}
+
+		prerequisite = {
+			focus = SIO_our_monarchist_friends
+		}
+
+		prerequisite = {
+			focus = SIO_royal_navy
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = SIO_the_rising_monarchy
+				days = 200
+			}
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_establish_republic
+		icon = GFX_focus_generic_elections
+		x = 59
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_flag = SIO_council_voted_for_republic
+		}
+
+		bypass = {
+			has_country_flag = SIO_council_voted_for_republic
+		}
+
+		prerequisite = {
+			focus = SIO_new_political_landscape
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_first_elections_will_be_organized
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_proper_building_for_council
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 59
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_establish_republic
+		}
+
+		completion_reward = {
+			705 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_small_railway_system
+		icon = GFX_focus_lxd2
+		x = 58
+		y = 4
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		mutually_exclusive = {
+			focus = SIO_big_railway_system
+		}
+
+		available = {
+			has_country_flag = SIO_council_agreed_for_small_railways
+		}
+
+		prerequisite = {
+			focus = SIO_proper_building_for_council
+		}
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 2
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 705
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_big_railway_system
+		icon = GFX_focus_generic_railroad
+		x = 60
+		y = 4
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+		
+		mutually_exclusive = {
+			focus = SIO_small_railway_system
+		}
+
+		available = {
+			has_country_flag = SIO_council_agreed_for_big_railways
+		}
+
+		prerequisite = {
+			focus = SIO_proper_building_for_council
+		}
+
+		completion_reward = {
+			705 = {
+				add_building_construction = {
+					type = infrastructure
+    				level = 3
+					instant_build = yes
+				}
+			}
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 705
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+    				level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_living_with_the_nature
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 57
+		y = 5
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_small_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_big_railway_system
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_together_with_nature
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_introduce_market_economy
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 59
+		y = 5
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_small_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_big_railway_system
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_market_economy
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_exploitation_agreement_with_tungu_pungu
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 61
+		y = 5
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_small_railway_system
+		}
+
+		prerequisite = {
+			focus = SIO_big_railway_system
+		}
+
+		completion_reward = {
+			TUG = {
+				country_event = {
+					id = sioux.2
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_eastern_beacon_of_freedom
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 59
+		y = 6
+		cost = 8.7
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_living_with_the_nature
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_market_economy
+		}
+
+		prerequisite = {
+			focus = SIO_exploitation_agreement_with_tungu_pungu
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_manpower = 10000
+		} 
+	}
+
+	focus = { 
+		id = SIO_the_true_power_of_sioux
+		icon = GFX_goal_generic_political_pressure
+		x = 65
+		y = 2
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_country_leader = {
+				name = "Proudest Cloud"
+				ruling_only = yes
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				name = "Proudest Cloud"
+				ruling_only = yes
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_new_political_landscape
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = SIO_proudest_cloud_takes_the_reigns
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = SIO_surrounded_by
+		icon = GFX_focus_generic_support_the_left_right
+		x = 65
+		y = 3
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_the_true_power_of_sioux
+		}
+
+		completion_reward = {
+			add_war_support = 0.1
+			army_experience = 10
+			add_manpower = 15000
+		} 
+	}
+
+	focus = { 
+		id = SIO_promote_the_faith
+		icon = GFX_focus_generic_concessions
+		x = 64
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_surrounded_by
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_promotion_of_faith
+			}
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_fight_for_traditions
+		icon = GFX_goal_generic_demand_territory
+		x = 66
+		y = 4
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_surrounded_by
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_fighting_for_traditions
+			}
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = SIO_introduce_farming
+		icon = GFX_focus_generic_agriculture
+		x = 63
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_the_faith
+		}
+
+		prerequisite = {
+			focus = SIO_fight_for_traditions
+		}
+
+		completion_reward = {
+			688 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			675 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+    				level = 2
+					instant_build = yes
+				}
+			}
+			744 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_expand_weapons_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 65
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_the_faith
+		}
+
+		prerequisite = {
+			focus = SIO_fight_for_traditions
+		}
+
+		completion_reward = {
+			697 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+    				level = 2
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+			726 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_rule_the_seas
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 67
+		y = 5
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_promote_the_faith
+		}
+
+		prerequisite = {
+			focus = SIO_fight_for_traditions
+		}
+
+		completion_reward = {
+			726 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			674 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			643 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+    				level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+    				level = 1
+					instant_build = yes
+					province = 9095
+				}
+			}
+			705 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 9488
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_through_the_fires_of_war
+		icon = GFX_goal_generic_small_arms
+		x = 65
+		y = 6
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_introduce_farming
+		}
+
+		prerequisite = {
+			focus = SIO_expand_weapons_industry
+		}
+
+		prerequisite = {
+			focus = SIO_rule_the_seas
+		}
+
+		completion_reward = {
+			#cosmetic tag
+			add_ideas = {
+				SIO_fires_of_war
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_finish_the_modernization
+		icon = GFX_goal_generic_construction
+		x = 54
+		y = 7
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		}
+
+		prerequisite = {
+			focus = SIO_through_the_fires_of_war
+			focus = SIO_eastern_beacon_of_freedom
+			focus = SIO_first_year_of_monarchy
+			focus = SIO_connect_with_the_western_world
+			focus = SIO_the_peaceful_times
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 2
+			hidden_effect = {
+				premodern_to_modern = yes
+			}
+		} 
+	}
+
+	##################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	##################################################################################################################################################################################
+
+	focus = { 
+		id = SIO_negotiate_the_return_of_neu_flensburg
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 27
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		mutually_exclusive = {
+			focus = SIO_prepare_to_retake_neu_flensburg_by_force
+		}
+
+		available = {
+			DES = {
+				exists = no
+			}
+			OR = {
+				has_country_flag = SIO_council_voted_for_yakari
+				has_country_flag = SIO_council_voted_to_stay
+				has_country_flag = SIO_council_voted_for_republic
+				has_country_leader = {
+					name = "Braid Night"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Rainbow"
+					ruling_only = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			FLE = {
+				country_event = {
+					id = sioux.5
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_prepare_to_retake_neu_flensburg_by_force
+		icon = GFX_goal_generic_demand_territory
+		x = 31
+		y = 9
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		mutually_exclusive = {
+			focus = SIO_negotiate_the_return_of_neu_flensburg
+		}
+
+		available = {
+			DES = {
+				exists = no
+			}
+			OR = {
+				has_country_flag = SIO_council_voted_for_yakari
+				has_country_leader = {
+					name = "Proudest Cloud"
+					ruling_only = yes
+				}
+				has_country_flag = SIO_council_voted_to_stay
+				has_country_flag = SIO_council_voted_for_republic
+				has_country_leader = {
+					name = "Bold Gaze"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Buffalo Seed"
+					ruling_only = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			add_war_support = 0.1
+			add_manpower = 5000
+		} 
+	}
+
+	focus = { 
+		id = SIO_coastal_flotilla
+		icon = GFX_goal_generic_navy_cruiser
+		x = 33
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_prepare_to_retake_neu_flensburg_by_force
+		}
+
+		completion_reward = {
+			643 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+    				level = 2
+					instant_build = yes
+				}
+			}
+			navy_experience = 10
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 1
+   				category = dd_tech
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_prepare_the_blockade
+		icon = GFX_goal_generic_navy_submarine
+		x = 33
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_coastal_flotilla
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+    			bonus = 0.5
+    			uses = 1
+   				category = ss_tech
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_sungmanito_line
+		icon = GFX_goal_generic_construct_military
+		x = 31
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_prepare_to_retake_neu_flensburg_by_force
+		}
+
+		completion_reward = {
+			643 = {
+				add_building_construction = {
+					type = bunker
+    				level = 3
+					instant_build = yes
+					province = 9156
+				}
+				add_building_construction = {
+					type = bunker
+    				level = 3
+					instant_build = yes
+					province = 9121
+				}
+			}
+			674 = {
+				add_building_construction = {
+					type = bunker
+    				level = 3
+					instant_build = yes
+					province = 9187
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_eastern_airfield
+		icon = GFX_goal_generic_air_fighter2
+		x = 31
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_sungmanito_line
+		}
+
+		completion_reward = {
+			674 = {
+				add_building_construction = {
+					type = air_base
+    				level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+    				level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_neu_flensburg_or_war
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 32
+		y = 12
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_prepare_the_blockade
+		}
+
+		prerequisite = {
+			focus = SIO_eastern_airfield
+		}
+
+		completion_reward = {
+			FLE = {
+				country_event = {
+					id = sioux.9
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_influence_tungu_pungu
+		icon = GFX_goal_generic_national_unity
+		x = 29
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_negotiate_the_return_of_neu_flensburg
+			focus = SIO_prepare_to_retake_neu_flensburg_by_force
+		}
+
+		completion_reward = {
+			add_political_power = -50
+			TUG = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_turn_desert_into_prairie
+		icon = GFX_focus_generic_agriculture
+		x = 29
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		bypass = {
+			NOT = {
+				any_owned_state = {
+					is_core_of = DES
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_influence_tungu_pungu
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = DES
+				}
+				remove_core_of = DES
+				add_extra_state_shared_building_slots = 1
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_new_port_in_the_east
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 30
+		y = 12
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_turn_desert_into_prairie
+		}
+
+		prerequisite = {
+			focus = SIO_eastern_airfield
+		}
+
+		completion_reward = {
+			674 = {
+				add_building_construction = {
+					type = naval_base
+    				level = 2
+					instant_build = yes
+					province = 635
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_invade_tungu_pungu
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 31
+		y = 13
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			owns_state = 632
+			owns_state = 638
+			owns_state = 634
+		}
+
+		prerequisite = {
+			focus = SIO_new_port_in_the_east
+		}
+
+		prerequisite = {
+			focus = SIO_neu_flensburg_or_war
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = TUG
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_dominate_the_south
+		icon = GFX_goal_generic_major_war
+		x = 31
+		y = 14
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			owns_state = 24
+		}
+
+		prerequisite = {
+			focus = SIO_invade_tungu_pungu
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = FLE
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_settle_on_the_islands
+		icon = GFX_focus_generic_military_academy
+		x = 31
+		y = 15
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			any_owned_state = {
+				AND = {
+					NOT = {
+						state = 632
+						state = 634
+						state = 638
+					}
+					is_core_of = FLE
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_dominate_the_south
+		}
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = SIO
+					}
+					is_core_of = FLE
+				}
+				add_core_of = SIO
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_sioux_will_rise
+		icon = GFX_focus_generic_manpower
+		x = 33
+		y = 15
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_war = no
+		}
+
+		prerequisite = {
+			focus = SIO_dominate_the_south
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					is_on_continent = north_america
+					NOT = {
+						is_owned_by = UNC
+						is_owned_by = GLO
+						is_owned_by = SIO
+					}
+				}
+				add_claim_by = SIO
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_against_former_ally
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 33
+		y = 16
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			has_war = no
+		}
+
+		prerequisite = {
+			focus = SIO_sioux_will_rise
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = GRN
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_visit_to_greenland
+		icon = GFX_focus_greenland
+		x = 27
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_negotiate_the_return_of_neu_flensburg
+		}
+
+		completion_reward = {
+			GRN = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_invest_in_steel_industry
+		icon = GFX_focus_generic_steel
+		x = 27
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_visit_to_greenland
+		}
+
+		completion_reward = {
+			add_resource = {
+    			type = steel
+    			amount = 6
+    			state = 697
+			}
+			add_resource = {
+    			type = steel
+    			amount = 8
+    			state = 752
+			}
+			add_resource = {
+    			type = steel
+    			amount = 11
+    			state = 643
+			}
+			add_resource = {
+    			type = steel
+    			amount = 14
+    			state = 705
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_across_the_sand_sea
+		icon = GFX_goal_generic_improve_relations
+		x = 25
+		y = 10
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_negotiate_the_return_of_neu_flensburg
+		}
+
+		completion_reward = {
+			GRY = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			BRO = {
+				add_opinion_modifier = {
+    				target = SIO
+    				modifier = TCWmod_generic_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_investments_in_bronks
+		icon = GFX_focus_generic_industry_3
+		x = 25
+		y = 11
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_across_the_sand_sea
+		}
+
+		completion_reward = {
+			BRO = {
+				add_resource = {
+    				type = steel
+    				amount = 10
+    				state = 692
+				}
+				add_resource = {
+    				type = aluminium
+    				amount = 6
+    				state = 692
+				}
+				add_resource = {
+    				type = steel
+    				amount = 9
+    				state = 707
+				}
+				give_resource_rights = { receiver = SIO state = 692 }
+				give_resource_rights = { receiver = SIO state = 707 }
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_southern_alliance
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 26
+		y = 12
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		mutually_exclusive = {
+			focus = SIO_join_eastern_continent_treaty
+		}
+
+		prerequisite = {
+			focus = SIO_investments_in_bronks
+		}
+
+		prerequisite = {
+			focus = SIO_invest_in_steel_industry
+		}
+
+		completion_reward = {
+			create_faction = southern_alliance
+		} 
+	}
+
+	focus = { 
+		id = SIO_join_eastern_continent_treaty
+		icon = GFX_goal_generic_national_unity
+		x = 28
+		y = 12
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		bypass = {
+			is_in_faction_with = GRN
+		}
+
+		mutually_exclusive = {
+			focus = SIO_southern_alliance
+		}
+
+		prerequisite = {
+			focus = SIO_invest_in_steel_industry
+		}
+
+		prerequisite = {
+			focus = SIO_turn_desert_into_prairie
+		}
+
+		completion_reward = {
+			#event
+		} 
+	}
+
+	focus = { 
+		id = SIO_activate_war_commitee
+		icon = GFX_goal_generic_military_sphere
+		x = 27
+		y = 13
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		prerequisite = {
+			focus = SIO_join_eastern_continent_treaty
+			focus = SIO_southern_alliance
+		}
+
+		completion_reward = {
+			add_ideas = {
+				SIO_war_commitee
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_war_plan_g
+		icon = GFX_goal_generic_major_war
+		x = 25
+		y = 14
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			TSA = {
+				has_government = fascism
+				exists = yes 
+				is_puppet = no
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_activate_war_commitee
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = TSA
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_war_plan_w
+		icon = GFX_goal_generic_major_war
+		x = 27
+		y = 14
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		available = {
+			FRI = {
+				has_government = fascism
+				exists = yes 
+				is_puppet = no
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_activate_war_commitee
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = FRI
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = SIO_war_plan_e
+		icon = GFX_goal_generic_major_war
+		x = 29
+		y = 14
+		cost = 7.25
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 2
+		} 
+
+		bypass = {
+			has_war_with = FLO
+		}
+
+		available = {
+			FLO = {
+				has_government = communism
+				exists = yes 
+				is_puppet = no
+				NOT = {
+					has_war_with = SIO
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = SIO_activate_war_commitee
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = FLO
+				type = annex_everything
+			}
+		} 
+	}
+}

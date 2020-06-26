@@ -1,0 +1,455 @@
+defined_text = { #COUNCIL MEMBERS PICS YEAH
+    name = sioux_council_decision_ui_leader_1_scripted
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = yakari_in_the_council
+            }
+        }
+        localization_key = "GFX_SIO_shaman"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = yakari_in_the_council
+        }
+        localization_key = "GFX_SIO_yakari"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS PICS YEAH
+    name = sioux_council_decision_ui_leader_2_scripted
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = buffalo_in_the_council
+            }
+        }
+        localization_key = "GFX_SIO_bold_gaze"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = buffalo_in_the_council
+        }
+        localization_key = "GFX_SIO_buffalo"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS PICS YEAH
+    name = sioux_council_decision_ui_leader_3_scripted
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = wild_wind_in_the_council
+            }
+        }
+        localization_key = "GFX_SIO_restful_rock"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = wild_wind_in_the_council
+        }
+        localization_key = "GFX_SIO_wild_wind"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS PICS YEAH
+    name = sioux_council_decision_ui_leader_4_scripted
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = rainbow_in_the_council
+            }
+        }
+        localization_key = "GFX_SIO_proudest_cloud"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = rainbow_in_the_council
+        }
+        localization_key = "GFX_SIO_rainbow"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS NAMES YEAH
+    name = SIO_sioux_council_decision_ui_leader_1_name
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = yakari_in_the_council
+            }
+        }
+        localization_key = "The Shaman"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = yakari_in_the_council
+        }
+        localization_key = "Yakari"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS NAMES YEAH
+    name = SIO_sioux_council_decision_ui_leader_2_name
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = buffalo_in_the_council
+            }
+        }
+        localization_key = "Bold Gaze"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = buffalo_in_the_council
+        }
+        localization_key = "Buffalo Seed"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS NAMES YEAH
+    name = SIO_sioux_council_decision_ui_leader_3_name
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = wild_wind_in_the_council
+            }
+        }
+        localization_key = "Restful Rock"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = wild_wind_in_the_council
+        }
+        localization_key = "Wild Wind"
+    }
+}
+
+defined_text = { #COUNCIL MEMBERS NAMES YEAH
+    name = SIO_sioux_council_decision_ui_leader_4_name
+    
+    text = { 
+        trigger = {
+            NOT = {
+                has_country_flag = rainbow_in_the_council
+            }
+        }
+        localization_key = "Proudest Cloud"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = rainbow_in_the_council
+        }
+        localization_key = "Rainbow"
+    }
+}
+
+#Status scripts
+
+defined_text = {
+    name = SIO_CD1_VOTE
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_1_vote_status = 0
+            }
+        }
+        localization_key = SIO_CD1_VOTE.1
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_1_vote_status = 1
+            }
+        }
+        localization_key = SIO_CD1_VOTE.2
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_1_vote_status = 2
+            }
+        }
+        localization_key = SIO_CD1_VOTE.3
+    }
+}
+
+defined_text = {
+    name = SIO_CD2_VOTE
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_2_vote_status = 0
+            }
+        }
+        localization_key = SIO_CD1_VOTE.1
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_2_vote_status = 1
+            }
+        }
+        localization_key = SIO_CD1_VOTE.2
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_2_vote_status = 2
+            }
+        }
+        localization_key = SIO_CD1_VOTE.3
+    }
+}
+
+defined_text = {
+    name = SIO_CD3_VOTE
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_3_vote_status = 0
+            }
+        }
+        localization_key = SIO_CD1_VOTE.1
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_3_vote_status = 1
+            }
+        }
+        localization_key = SIO_CD1_VOTE.2
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_3_vote_status = 2
+            }
+        }
+        localization_key = SIO_CD1_VOTE.3
+    }
+}
+
+defined_text = {
+    name = SIO_CD4_VOTE
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_4_vote_status = 0
+            }
+        }
+        localization_key = SIO_CD1_VOTE.1
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_4_vote_status = 1
+            }
+        }
+        localization_key = SIO_CD1_VOTE.2
+    }
+    text = {
+        trigger = {
+            check_variable = {
+                sioux_council_member_4_vote_status = 2
+            }
+        }
+        localization_key = SIO_CD1_VOTE.3
+    }
+}
+
+#RESULTS
+
+defined_text = {
+    name = SIO_C_1
+    text = {
+        trigger = {
+            has_country_flag = bison_hunt_west
+        }
+        localization_key = "western"
+    }
+    text = {
+        trigger = {
+            has_country_flag = bison_hunt_east
+        }
+        localization_key = "eastern"
+    }
+}
+
+defined_text = {
+    name = SIO_C_2
+    text = {
+        trigger = {
+            has_country_flag = development_in_west_rural
+        }
+        localization_key = "rural areas"
+    }
+    text = {
+        trigger = {
+            has_country_flag = development_in_west_towns
+        }
+        localization_key = "cities"
+    }
+}
+
+defined_text = {
+    name = SIO_C_3
+    text = {
+        trigger = {
+            has_country_flag = operation_sandstorm_rejected
+        }
+        localization_key = "rejected"
+    }
+    text = {
+        trigger = {
+            has_country_flag = operation_sandstorm_not_rejected
+        }
+        localization_key = "not rejected"
+    }
+}
+
+defined_text = {
+    name = SIO_C_4
+    text = {
+        trigger = {
+            OR = {
+				has_country_flag = yakari_branch_vote_lost
+				has_country_flag = buffalo_branch_vote_lost
+				has_country_flag = rainbow_branch_vote_lost
+				has_country_flag = braid_night_branch_vote_lost
+			}
+            NOT = {
+				has_country_flag = yakari_branch_vote_accepted
+				has_country_flag = buffalo_branch_vote_accepted
+				has_country_flag = rainbow_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+			}
+        }
+        localization_key = "rejected"
+    }
+    text = {
+        trigger = {
+            OR = {
+				has_country_flag = yakari_branch_vote_lost
+				has_country_flag = buffalo_branch_vote_lost
+				has_country_flag = rainbow_branch_vote_lost
+				has_country_flag = braid_night_branch_vote_lost
+                NOT = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+				    has_country_flag = rainbow_branch_vote_lost
+				    has_country_flag = braid_night_branch_vote_lost
+                }
+			}
+            OR = {
+				has_country_flag = yakari_branch_vote_accepted
+				has_country_flag = buffalo_branch_vote_accepted
+				has_country_flag = rainbow_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+			}
+        }
+        localization_key = "passed"
+    }
+}
+
+defined_text = {
+    name = SIO_C_5
+    text = {
+        trigger = {
+            OR = {
+				has_country_flag = republic_branch_vote_lost
+				has_country_flag = monarchy_branch_vote_lost
+				has_country_flag = fascist_branch_vote_lost
+				has_country_flag = braid_night_branch_vote_lost
+			}
+            NOT = {
+				has_country_flag = monarchy_branch_vote_accepted
+				has_country_flag = fascist_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+                has_country_flag = republic_branch_vote_accepted
+			}
+        }
+        localization_key = "rejected"
+    }
+    text = {
+        trigger = {
+            OR = {
+				has_country_flag = republic_branch_vote_lost
+				has_country_flag = monarchy_branch_vote_lost
+				has_country_flag = fascist_branch_vote_lost
+				has_country_flag = braid_night_branch_vote_lost
+                NOT = {
+                    has_country_flag = republic_branch_vote_lost
+					has_country_flag = monarchy_branch_vote_lost
+					has_country_flag = fascist_branch_vote_lost
+					has_country_flag = braid_night_branch_vote_lost
+                }
+			}
+            OR = {
+				has_country_flag = monarchy_branch_vote_accepted
+				has_country_flag = fascist_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+                has_country_flag = republic_branch_vote_accepted
+			}
+        }
+        localization_key = "passed"
+    }
+}
+
+defined_text = {
+    name = SIO_C_6
+    text = {
+        trigger = {
+            has_country_flag = railway_project_vote_narrow_gauge
+        }
+        localization_key = "narrow"
+    }
+    text = {
+        trigger = {
+            has_country_flag = railway_project_vote_normal_gauge
+        }
+        localization_key = "normal"
+    }
+}
+
+defined_text = {
+    name = SIO_sioux_council_decision_ui_leader_name_check
+    text = {
+        trigger = {
+            check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+        }
+        localization_key = [SIO_sioux_council_decision_ui_leader_1_name]
+    }
+    text = {
+        trigger = {
+            check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+        }
+        localization_key = [SIO_sioux_council_decision_ui_leader_2_name]
+    }
+    text = {
+        trigger = {
+            check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+        }
+        localization_key = [SIO_sioux_council_decision_ui_leader_3_name]
+    }
+    text = {
+        trigger = {
+            check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+        }
+        localization_key = [SIO_sioux_council_decision_ui_leader_4_name]
+    }
+}

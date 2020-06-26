@@ -1,0 +1,18 @@
+scripted_gui = {
+    sioux_council_decisions = {
+        window_name = "sioux_council_decision_ui_window"
+ 
+        context_type = decision_category
+ 
+        visible = {
+            tag = SIO
+        }
+
+        properties = {
+           sioux_council_decision_ui_leader_1 = { image = "[sioux_council_decision_ui_leader_1_scripted]" }
+           sioux_council_decision_ui_leader_2 = { image = "[sioux_council_decision_ui_leader_2_scripted]" }
+           sioux_council_decision_ui_leader_3 = { image = "[sioux_council_decision_ui_leader_3_scripted]" }
+           sioux_council_decision_ui_leader_4 = { image = "[sioux_council_decision_ui_leader_4_scripted]" }
+        }
+    }
+}

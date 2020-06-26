@@ -603,6 +603,20 @@ country_event = { #Evacuation of Sioux women and children
 		tag = SIO
 		has_war_with = DES
 		surrender_progress > 0.3
+		SIO = {
+			has_country_flag = SIO_council_not_rejected_sandstorm
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+			}
+			hidden_effect = {
+				set_country_flag = SIO_was_ai
+			}
+		}
 	}
 
 	fire_only_once = yes
@@ -617,6 +631,9 @@ country_event = { #Evacuation of Sioux women and children
 				id = desert.18
 				days = 60
 			}
+			hidden_effect = {
+				change_tag_from = SIO
+			}
 		}
 	}
 
@@ -630,6 +647,9 @@ country_event = { #Evacuation of Sioux women and children
 				country_event = {
 					id = desert.19
 					days = 60
+				}
+				hidden_effect = {
+					change_tag_from = SIO
 				}
 			}
 		}
@@ -673,19 +693,6 @@ country_event = { #Sioux refugees arrive to Greenland
 		}
 		hidden_effect = {
 			load_oob = GRN_sioux_arrive
-			SIO = {
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Yakari"
-					desc = "POLITICS_STEPHEN_I_DESC"
-					picture = "yakari_feathers.dds"
-					expire = "1965.1.1"
-					ideology = centrism
-					traits = {
-						#
-					}
-				}
-			}
 		}
 	}
 }

@@ -14,23 +14,12 @@ country_event = { #Main event (new)
 
 	is_triggered_only = yes
 
-	option = { #With sound
-		name = game_start_event.0.a
-		country_event = {
-			id = game_start_event.1
-			days = 0
-		}
+	immediate = {
+		create_ambition_areas = yes
 	}
 
-	option = { #No sound
-		name = game_start_event.0.b
-		hidden_effect = {
-			set_global_flag = no_sound
-		}
-		country_event = {
-			id = game_start_event.1
-			days = 0
-		}
+	option = {
+		name = game_start_event.0.a
 	}
 }
 
@@ -43,211 +32,13 @@ country_event = {
 	fire_only_once = yes
 
 	immediate = {
-		hidden_effect = {
-			create_ambition_areas = yes
-		}
+		create_ambition_areas = yes
 	}
 
 	is_triggered_only = yes
 
 	option = {
 		name = game_start_event.1.a
-		trigger = {
-			ROOT = {
-				OR = {
-					is_ai = yes
-					NOT = {
-						tag = MAI
-						tag = FRI
-						tag = GRN
-						tag = ICW
-						tag = ENC
-						tag = FLO
-						tag = TSA
-						tag = GON
-						tag = JPN
-						tag = LEC
-						tag = AVA
-					}
-				}
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = FLO
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.2
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = MAI
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.3
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = FRI
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.4
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = GRN
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.5
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = ICW
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.6
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = ENC
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.7
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = TSA
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.8
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = GON
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.9
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = JPN
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.10
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = LEC
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.11
-				days = 0
-			}
-		}
-	}
-
-	option = {
-		name = game_start_event.1.b
-		trigger = {
-			ROOT = {
-				tag = AVA
-				is_ai = no
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = game_start_event.12
-				days = 0
-			}
-		}
 	}
 }
 

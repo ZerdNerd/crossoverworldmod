@@ -1441,6 +1441,7 @@ ideas = {
 		generic_captain_of_industry = {
 
 			allowed = {
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				always = yes
 			}
 			
@@ -1450,6 +1451,7 @@ ideas = {
 		generic_fortification_engineer = {
 
 			allowed = {
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				always = yes
 			}
 			
@@ -1459,6 +1461,7 @@ ideas = {
 		generic_war_industrialist = {
 
 			allowed = {
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				always = yes
 			}
 			

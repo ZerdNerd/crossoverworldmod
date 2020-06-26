@@ -700,6 +700,19 @@ country_event = { #They agree
 			}
 			white_peace = FRI
 		}
+		every_country = {
+			limit = {
+				NOT = {
+					has_country_flag = was_allied_with_MAI
+				}
+				NOT = {
+					tag = FRI
+					tag = FLE
+				}
+				has_war_with = MAI
+			}
+			white_peace = MAI
+		}
 		hidden_effect = {
 			news_event = {
 				id = worldnews.94
@@ -759,6 +772,19 @@ country_event = { #They agree, but we have to give them territories
 				}
 			}
 			white_peace = FRI
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					has_country_flag = was_allied_with_MAI
+				}
+				NOT = {
+					tag = FRI
+					tag = FLE
+				}
+				has_war_with = MAI
+			}
+			white_peace = MAI
 		}
 		hidden_effect = {
 			news_event = {

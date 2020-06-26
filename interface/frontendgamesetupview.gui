@@ -1555,14 +1555,14 @@ guiTypes = {
 		}
 	}
 	
-	containerWindowType = {
+	containerWindowType = { #This comes from Kaiserreich.
 		name ="gamesetup_gameplay_settings_window"
 		position = { x=0 y=196}	
 		show_position = { x=5 y =-85}
 		animation_type = decelerated
 		animation_time = 1000
 		
-		size = {width=598 height=196}
+		size = {width=598 height=151}							### DUNNO WHAT FOR BUT IT WAS IN HERE
 		orientation = lower_right
 		origo = lower_right
 	
@@ -1643,7 +1643,7 @@ guiTypes = {
 			position = { x=473 y=47}
 			quadTextureSprite ="GFX_difficulty_button_elite"
 			buttonText = "FE_DIFFICULTY_VERY_HARD"
-			buttonFont = "comicsans"
+			buttonFont = "hoi_20b"
 			clicksound = click_checkbox
 		}
 
@@ -1698,7 +1698,7 @@ guiTypes = {
 		instantTextBoxType={
 			position = {x=480 y=53 }
 			name = "very_hard_text"
-			font = "comicsans"
+			font = "hoi_20b"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 115
 			maxHeight = 16
@@ -1726,23 +1726,22 @@ guiTypes = {
 			clicksound = click_checkbox
 		}
 		
-		instantTextBoxType={
-			position = {x = 30 y = 148 }
-			name = "historical_text"
-			font = "hoi_24header"
-			maxWidth = 370
-			maxHeight = 16
-			text = "FE_HISTORICAL"
-			pdx_tooltip = "FE_HISTORICAL_TOOLTIP"
-			format = left
-			fixedsize = yes			
-		}
+#		instantTextBoxType={										### DUNNO WHAT FOR BUT WAS COMMENTED OUT
+#			position = {x = 30 y = 148 }
+#			name = "historical_text"
+#			font = "hoi_24header"
+#			maxWidth = 370
+#			maxHeight = 16
+#			text = "FE_HISTORICAL"
+#			pdx_tooltip = "FE_HISTORICAL_TOOLTIP"
+#			format = left
+#			fixedsize = yes			
+#		}
 		
-		checkboxType = {
+		checkboxType = {											### JANK SOLUTION?
 			name = "historical_cb"
-			position = { x=530 y =145}
-			quadTextureSprite ="GFX_generic_checkbox"
-			clicksound = click_checkbox
+			position = { x=10000 y =10000}
+			quadTextureSprite ="GFX_exiled_unit_icon"
 		}
 	}
 	
@@ -2018,9 +2017,17 @@ guiTypes = {
 
 			iconType = {
 				name = "enabled_achievement_icons"
-				position = { x = -382 y = -115 }
+				position = { x = 3000 y = 3000 }
 				quadTextureSprite ="GFX_enabled_achievement_icons"
 				Orientation = "LOWER_RIGHT"
+			}
+
+			iconType = {
+				name = "cr_achievement_status"
+				position = { x = -382 y = -115 }
+				quadTextureSprite ="GFX_cr_achievement_status"
+				Orientation = "LOWER_RIGHT"
+				pdx_tooltip = "cr_achievement_status_tooltip"
 			}
 			
 			ButtonType = {

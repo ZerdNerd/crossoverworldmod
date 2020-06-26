@@ -1,0 +1,766 @@
+sioux_council_dec_category = {
+
+	convince_member_1 = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_1_is_voting_against
+				check_variable = {
+					sioux_council_member_1_vote_status = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_1_already_convinced
+				check_variable = {
+					sioux_council_member_1_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 1 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_2 = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_2_is_voting_against
+				check_variable = {
+					sioux_council_member_2_vote_status = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_2_already_convinced
+				check_variable = {
+					sioux_council_member_2_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 2 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_3 = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_3_is_voting_against
+				check_variable = {
+					sioux_council_member_3_vote_status = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_3_already_convinced
+				check_variable = {
+					sioux_council_member_3_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 3 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_4 = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_4_is_voting_against
+				check_variable = {
+					sioux_council_member_4_vote_status = 2
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_4_already_convinced
+				check_variable = {
+					sioux_council_member_4_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 4 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_1_a = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_1_is_voting_for
+				check_variable = {
+					sioux_council_member_1_vote_status = 1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_1_already_convinced
+				check_variable = {
+					sioux_council_member_1_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 1 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_2_a = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_2_is_voting_for
+				check_variable = {
+					sioux_council_member_2_vote_status = 1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_2_already_convinced
+				check_variable = {
+					sioux_council_member_2_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 2 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_3_a = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_3_is_voting_for
+				check_variable = {
+					sioux_council_member_3_vote_status = 1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_3_already_convinced
+				check_variable = {
+					sioux_council_member_3_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 3 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	convince_member_4_a = {
+		icon = generic_political_discourse
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_member_4_is_voting_for
+				check_variable = {
+					sioux_council_member_4_vote_status = 1
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_leader_4_already_convinced
+				check_variable = {
+					sioux_council_member_4_convinced = 0
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = SIO_you_are_not_convincing_a_member
+				check_variable = {
+					sioux_council_convincing_member = 0
+				}
+			}
+		}
+		complete_effect = {
+			custom_effect_tooltip = SIO_leader_will_say_his_demands
+			hidden_effect = {
+				set_variable = { sioux_council_which_member_is_being_convinced = 4 }
+				set_variable = { sioux_council_convincing_member = 1 }
+				random_list = {
+					34 = {
+						country_event = {
+							id = sioux_convince.1
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.2
+							days = 0
+						}
+					}
+					33 = {
+						country_event = {
+							id = sioux_convince.3
+							days = 0
+						}
+					}
+				}
+			}
+		}
+	}
+
+	tic_toc_runs_the_clock = {
+		icon = generic_political_discourse
+		available = {
+			always = no
+		}
+		activation = { always = no }
+		selectable_mission = no
+		days_mission_timeout = 7
+		timeout_effect = {
+			hidden_effect = { #1936 Bison hunt vote
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = bison_hunt_vote
+					}
+					clr_country_flag = bison_hunt_vote
+					set_country_flag = bison_hunt_west
+					country_event = {
+						id = sioux_vote.2
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = bison_hunt_vote
+					}
+					clr_country_flag = bison_hunt_vote
+					set_country_flag = bison_hunt_east
+					country_event = {
+						id = sioux_vote.2
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Development in the West vote
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = development_in_west_vote
+					}
+					clr_country_flag = development_in_west_vote
+					set_country_flag = development_in_west_rural
+					country_event = {
+						id = sioux_vote.4
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = development_in_west_vote
+					}
+					clr_country_flag = development_in_west_vote
+					set_country_flag = development_in_west_towns
+					country_event = {
+						id = sioux_vote.4
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Operation Sandstorm rejection vote
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = operation_sandstorm_vote
+					}
+					clr_country_flag = operation_sandstorm_vote
+					set_country_flag = operation_sandstorm_rejected
+					country_event = {
+						id = sioux_vote.6
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = operation_sandstorm_vote
+					}
+					clr_country_flag = operation_sandstorm_vote
+					set_country_flag = operation_sandstorm_not_rejected
+					country_event = {
+						id = sioux_vote.6
+						days = 0
+					}
+					
+				}
+			}
+
+			##### Post-Humsin War
+			hidden_effect = { #Republic vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = republic_branch_vote
+					}
+					clr_country_flag = republic_branch_vote
+					set_country_flag = republic_branch_vote_lost
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = republic_branch_vote
+					}
+					clr_country_flag = republic_branch_vote
+					set_country_flag = republic_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Monarchy vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = monarchy_branch_vote
+					}
+					clr_country_flag = monarchy_branch_vote
+					set_country_flag = monarchy_branch_vote_lost
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = monarchy_branch_vote
+					}
+					clr_country_flag = monarchy_branch_vote
+					set_country_flag = monarchy_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Fascist vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = fascist_branch_vote
+					}
+					clr_country_flag = fascist_branch_vote
+					set_country_flag = fascist_branch_vote_lost
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = fascist_branch_vote
+					}
+					clr_country_flag = fascist_branch_vote
+					set_country_flag = fascist_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.13
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Railway Project vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = railway_project_vote
+					}
+					clr_country_flag = railway_project_vote
+					set_country_flag = railway_project_vote_narrow_gauge
+					country_event = {
+						id = sioux_vote.15
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = railway_project_vote
+					}
+					clr_country_flag = railway_project_vote
+					set_country_flag = railway_project_vote_normal_gauge
+					country_event = {
+						id = sioux_vote.15
+						days = 0
+					}
+					
+				}
+			}
+
+			##### Post-Sandstorm
+			hidden_effect = { #Yakari rule vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = yakari_branch_vote
+					}
+					clr_country_flag = yakari_branch_vote
+					set_country_flag = yakari_branch_vote_lost
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = yakari_branch_vote
+					}
+					clr_country_flag = yakari_branch_vote
+					set_country_flag = yakari_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Buffalo rule vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = buffalo_branch_vote
+					}
+					clr_country_flag = buffalo_branch_vote
+					set_country_flag = buffalo_branch_vote_lost
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = buffalo_branch_vote
+					}
+					clr_country_flag = buffalo_branch_vote
+					set_country_flag = buffalo_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Rainbow rule vote
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = rainbow_branch_vote
+					}
+					clr_country_flag = rainbow_branch_vote
+					set_country_flag = rainbow_branch_vote_lost
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = rainbow_branch_vote
+					}
+					clr_country_flag = rainbow_branch_vote
+					set_country_flag = rainbow_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+			}
+			hidden_effect = { #Braid Night rule vote #also used if Sandstorm did not occur
+				if = {
+					limit = {
+						more_against_than_for = yes
+						has_country_flag = braid_night_branch_vote
+					}
+					clr_country_flag = braid_night_branch_vote
+					set_country_flag = braid_night_branch_vote_lost
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+				if = {
+					limit = {
+						more_for_than_against = yes
+						has_country_flag = braid_night_branch_vote
+					}
+					clr_country_flag = braid_night_branch_vote
+					set_country_flag = braid_night_branch_vote_accepted
+					country_event = {
+						id = sioux_vote.10
+						days = 0
+					}
+					
+				}
+			}
+		}
+	}
+}

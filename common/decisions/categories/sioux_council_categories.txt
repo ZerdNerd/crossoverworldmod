@@ -1,0 +1,16 @@
+sioux_council_dec_category = {
+	icon = usa_congress
+	allowed = {
+		tag = SIO
+	}
+
+	visible = {
+		NOT = {
+			has_country_flag = SIO_council_abolished
+		}
+	}
+
+	scripted_gui = sioux_council_decisions
+
+	priority = 85
+}

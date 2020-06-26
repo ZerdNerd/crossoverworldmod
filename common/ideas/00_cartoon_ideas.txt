@@ -2237,6 +2237,240 @@ ideas = {
 			}
 			picture = generic_morale_bonus
 		}
+
+		SIO_delaying_their_march = {
+			allowed = { always = no }
+			targeted_modifier = { tag = DES defense_bonus_against = 0.05 }
+			picture = generic_manpower_bonus
+		}
+
+		SIO_greeting_loved_ones = {
+			allowed = { always = no }
+			modifier = {
+				MONTHLY_POPULATION = 0.15
+				army_morale_factor = -0.05
+			}
+			picture = chi_army_corruption
+		}
+
+		SIO_mass_mobilization_of_sioux = {
+			allowed = { always = no }
+			modifier = {
+				MONTHLY_POPULATION = 0.025
+				conscription = 0.05
+				consumer_goods_factor = -0.1
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_favour_of_sungmanito = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.1
+				defence = 0.1
+			}
+			picture = generic_victors_of_ww1
+		}
+
+		SIO_modernized_army = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.05
+				weekly_manpower = 100
+				army_org = 2
+				army_core_defence_factor = 0.05
+				experience_gain_army = 0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_never_another_sandstorm = {
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+				consumer_goods_factor = 0.05
+			}
+			picture = trumpet
+		}
+
+		SIO_railways = {
+			allowed = { always = no }
+			modifier = {
+				line_change_production_efficiency_factor = 0.15
+				army_speed_factor = 0.05
+			}
+			picture = generic_political_support
+		}
+
+		SIO_deal = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.1
+				stability_factor = 0.10
+			}
+			picture = new_deal
+		}
+
+		SIO_asylum = {
+			allowed = { always = no }
+			modifier = {
+				MONTHLY_POPULATION = 0.05
+				consumer_goods_factor = 0.05
+			}
+			picture = chi_army_corruption
+		}
+
+		SIO_eco_means_of_transport = {
+			allowed = { always = no }
+			modifier = {
+				army_speed_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+			picture = trumpet
+		}
+
+		SIO_basic_needs_of_society = {
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.025
+			}
+			picture = generic_local_self_management
+		}
+
+		SIO_paidocracy_by_sioux = {
+			allowed = { always = no }
+			modifier = {
+				surrender_limit = 0.3
+				economy_cost_factor = -0.15
+				stability_factor = 0.05
+			}
+			picture = generic_local_self_management
+		}
+
+		SIO_pro_family_law = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.075
+				stability_factor = 0.05
+			}
+			picture = HUN_treaty_of_triannon
+		}
+
+		SIO_faith_and_traditions_bill = {
+			allowed = { always = no }
+			modifier = {
+				army_core_defence_factor = 0.05
+				stability_factor = 0.05
+			}
+			picture = HUN_treaty_of_triannon
+		}
+
+		SIO_gathering_the_exiles = {
+			allowed = { always = no }
+			modifier = {
+				MONTHLY_POPULATION = 0.15
+			}
+			picture = chi_army_corruption
+		}
+
+		SIO_maintaining_peaceful_relations_with_non_natives = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				conscription_factor = 0.2
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_new_trade = {
+			allowed = { always = no }
+			modifier = {
+				local_resources_factor = 0.1
+				min_export = -0.05
+			}
+			picture = new_deal
+		}
+
+		SIO_into_peaceful_times = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+			picture = new_deal
+		}
+
+		SIO_the_rising_monarchy = {
+			allowed = { always = no }
+			modifier = {
+				monarchism_drift = 0.1
+				opinion_gain_monthly_same_ideology_factor = 0.25
+			}
+			picture = generic_local_self_management
+		}
+
+		SIO_together_with_nature = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
+				conscription_factor = 0.2
+				local_resources_factor = -0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_market_economy = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.1
+			}
+			picture = generic_local_self_management
+		}
+
+		SIO_promotion_of_faith = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				army_core_defence_factor = 0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_fighting_for_traditions = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.05
+				conscription_factor = 0.5
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_fires_of_war = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.05
+				conscription_factor = 0.05
+				MONTHLY_POPULATION = 0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		SIO_war_commitee = {
+			allowed = { always = no }
+			modifier = {
+				conscription_factor = 0.1
+				send_volunteer_size = 5
+				send_volunteer_divisions_required = -0.5
+				send_volunteers_tension = -0.15
+			}
+			picture = generic_manpower_bonus
+		}
 	}
 
 	##############################################################################################################################

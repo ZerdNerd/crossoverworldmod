@@ -171,6 +171,20 @@ is_claim_or_core_of_PREV = {
 	}
 }
 
+is_claim_or_core_of_FROM = {
+	OR = {
+		is_claimed_by = FROM
+		is_core_of = FROM
+	}
+}
+
+is_not_claim_or_core_of_FROM = {
+	NOT = {
+		is_claimed_by = FROM
+		is_core_of = FROM
+	}
+}
+
 is_not_claim_or_core_of_PREV = {
 	NOT = {
 		is_claimed_by = PREV
@@ -182,6 +196,7 @@ is_claim_or_core_or_ambition_of_ROOT = {
 	OR = {
 		is_claimed_by = ROOT
 		is_core_of = ROOT
+		is_ambition_area_of_ROOT = yes
 	}
 }
 
@@ -189,6 +204,7 @@ is_claim_or_core_or_ambition_of_PREV = {
 	OR = {
 		is_claimed_by = PREV
 		is_core_of = PREV
+		is_ambition_area_of_PREV = yes
 	}
 }
 
@@ -310,6 +326,83 @@ state_same_continent_as_state_FROM = {
 	}
 }
 
+capital_on_same_continent_as_state_FROM = {
+	OR = {
+		AND = {
+			capital_scope = {
+				is_on_continent = india
+			}
+			FROM = {
+				is_on_continent = india
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = asia
+			}
+			FROM = {
+				is_on_continent = asia
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = europe
+			}
+			FROM = {
+				is_on_continent = europe
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = africa
+			}
+			FROM = {
+				is_on_continent = africa
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = central_america
+			}
+			FROM = {
+				is_on_continent = central_america
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = north_america
+			}
+			FROM = {
+				is_on_continent = north_america
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = south_america
+			}
+			FROM = {
+				is_on_continent = south_america
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = middle_east
+			}
+			FROM = {
+				is_on_continent = middle_east
+			}
+		}
+		AND = {
+			capital_scope = {
+				is_on_continent = australia
+			}
+			FROM = {
+				is_on_continent = australia
+			}
+		}
+	}
+}
+
 
 ### in country scope
 at_conference_has_war_with_owner = {
@@ -386,16 +479,28 @@ restrict_territorial_ambitions_PREV = {
 				is_subject = no
 				at_conference_no_war_with_PREV = yes
 				at_conference_has_war_with_owner = yes
+				#PREV_is_restriction_exception = no
 
 				# country has more than 1.5 total number of factories/battalions
-				set_temp_variable = { power_score = PREV.num_of_factories }
-				add_to_temp_variable = { power_score = PREV.num_divisions }
-				multiply_temp_variable = { power_score = 1.5 }
-				subtract_from_temp_variable = { power_score = num_of_factories }
-				subtract_from_temp_variable = { power_score = num_divisions }
-				check_variable = { power_score < 0 }
+				set_temp_variable = { global.power_score = 0 }
+				all_of_scopes = {
+					array = PREV.owned_states
+					add_to_temp_variable = { global.power_score = THIS.arms_factory_level }
+					add_to_temp_variable = { global.power_score = THIS.industrial_complex_level }
+				}
+				add_to_temp_variable = { global.power_score = PREV.num_divisions }
+				multiply_temp_variable = { global.power_score = 1.5 }
+				all_of_scopes = {
+					array = owned_states
+					subtract_from_temp_variable = { global.power_score = THIS.arms_factory_level }
+					subtract_from_temp_variable = { global.power_score = THIS.industrial_complex_level }
+				}
+				subtract_from_temp_variable = { global.power_score = num_divisions }
+				check_variable = { global.power_score < 0 }
 			}
 		}
+		# is an exception to the restriction rules
+		#PREV_is_restriction_exception = yes
 	}
 }
 
@@ -439,16 +544,28 @@ restrict_territorial_ambitions_ROOT = {
 				is_subject = no
 				at_conference_no_war_with_ROOT = yes
 				at_conference_has_war_with_owner = yes
+				#PREV_is_restriction_exception = no
 
 				# country has more than 1.5 total number of factories/battalions
-				set_temp_variable = { power_score = ROOT.num_of_factories }
-				add_to_temp_variable = { power_score = ROOT.num_divisions }
-				multiply_temp_variable = { power_score = 1.5 }
-				subtract_from_temp_variable = { power_score = num_of_factories }
-				subtract_from_temp_variable = { power_score = num_divisions }
-				check_variable = { power_score < 0 }
+				set_temp_variable = { global.power_score = 0 }
+				all_of_scopes = {
+					array = ROOT.owned_states
+					add_to_temp_variable = { global.power_score = THIS.arms_factory_level }
+					add_to_temp_variable = { global.power_score = THIS.industrial_complex_level }
+				}
+				add_to_temp_variable = { global.power_score = ROOT.num_divisions }
+				multiply_temp_variable = { global.power_score = 1.5 }
+				all_of_scopes = {
+					array = owned_states
+					subtract_from_temp_variable = { global.power_score = THIS.arms_factory_level }
+					subtract_from_temp_variable = { global.power_score = THIS.industrial_complex_level }
+				}
+				subtract_from_temp_variable = { global.power_score = num_divisions }
+				check_variable = { global.power_score < 0 }
 			}
 		}
+		# is an exception to the restriction rules
+		#ROOT_is_restriction_exception = yes
 	}
 }
 
@@ -705,6 +822,7 @@ can_reach_state_direct = {
 	}
 }
 
+
 ### conference rules
 is_willing_to_take_state_ROOT = {
 	# general ruless
@@ -732,49 +850,27 @@ is_willing_to_take_state_PREV = {
 # general rules
 rule_take_bordering_first = {
 	FROM = {
-		
+		#is_important_state = no
 		NOT = {
 			num_owned_neighbour_states = { count > 0 owner = ROOT }
 			num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 		}
 		owner = {
-			any_of_scopes = {
-				array = current_states@THIS
+			any_owned_state = {
 				OR = {
 					num_owned_neighbour_states = { count > 0 owner = ROOT }
 					num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 				}
 				set_temp_variable = { global.eval_state = THIS.id }
-				ROOT = { is_willing_to_take_state_ROOT = yes }
-			}
-		}
-	}
-}
-
-rule_take_double_bordering_first = {
-	FROM = {
-		
-		NOT = {
-			num_owned_neighbour_states = { count > 1 owner = ROOT }
-			num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
-			AND = {
-				num_owned_neighbour_states = { count > 0 owner = ROOT }
-				num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
-			}
-		}
-		owner = {
-			any_of_scopes = {
-				array = current_states@THIS
-				# has two neighboring states
-				OR = {
-					num_owned_neighbour_states = { count > 1 owner = ROOT }
-					num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
-					AND = {
-						num_owned_neighbour_states = { count > 0 owner = ROOT }
-						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+				NOT = {
+					owner = {
+						any_enemy_country = {
+							var:global.eval_state = {
+								has_claimed_state_in_peace_conference = PREV
+							}
+						}
 					}
 				}
-				set_temp_variable = { global.eval_state = THIS.id }
 				ROOT = { is_willing_to_take_state_ROOT = yes }
 			}
 		}
@@ -834,7 +930,7 @@ rule_dont_take_ally_ambitions_ROOT = {
 	is_in_faction = yes
 	var:global.eval_state = {
 		is_claim_or_core_or_ambition_of_ROOT = no
-		
+		#is_important_state = no
 	}
 	any_other_country = {
 		is_ai = yes
@@ -843,7 +939,7 @@ rule_dont_take_ally_ambitions_ROOT = {
 		NOT = { has_war_with = ROOT }
 		var:global.eval_state = {
 			is_claim_or_core_of_PREV = no
-			
+			is_ambition_area_of_PREV = yes
 		}
 		is_willing_to_take_state_PREV = yes
 		if = {
@@ -862,7 +958,7 @@ rule_dont_take_ally_ambitions_PREV = {
 	is_in_faction = yes
 	var:global.eval_state = {
 		is_claim_or_core_or_ambition_of_PREV = no
-		
+		#is_important_state = no
 	}
 	any_other_country = {
 		is_ai = yes
@@ -870,7 +966,7 @@ rule_dont_take_ally_ambitions_PREV = {
 		at_conference_has_war_with_owner = yes
 		var:global.eval_state = {
 			is_claim_or_core_of_PREV = no
-			
+			is_ambition_area_of_PREV = yes
 		}
 	}
 }
@@ -878,7 +974,7 @@ rule_dont_take_ally_ambitions_PREV = {
 rule_dont_take_friend_claims_ROOT = {
 	var:global.eval_state = {
 		is_claim_or_core_or_ambition_of_ROOT = no
-		
+		#is_important_state = no
 	}
 	any_other_country = {
 		at_conference_has_war_with_owner = yes
@@ -906,7 +1002,7 @@ rule_dont_take_friend_claims_ROOT = {
 rule_dont_take_friend_claims_PREV = {
 	var:global.eval_state = {
 		is_claim_or_core_or_ambition_of_PREV = no
-		
+		#is_important_state = no
 	}
 	any_other_country = {
 		at_conference_has_war_with_owner = yes
@@ -919,7 +1015,7 @@ rule_dont_take_friend_claims_PREV = {
 rule_is_restricted_ROOT = {
 	restrict_territorial_ambitions_ROOT = yes
 	var:global.eval_state = {
-		
+		#impassable = no
 		is_claim_or_core_or_ambition_of_ROOT = no
 	}
 }
@@ -927,7 +1023,7 @@ rule_is_restricted_ROOT = {
 rule_is_restricted_PREV = {
 	restrict_territorial_ambitions_PREV = yes
 	var:global.eval_state = {
-		
+		#impassable = no
 		is_claim_or_core_or_ambition_of_PREV = no
 	}
 }
@@ -961,7 +1057,7 @@ rule_needs_connection_ROOT = {
 rule_claims_needs_connection_ROOT = {
 	var:global.eval_state = {
 		is_claim_or_core_or_ambition_of_ROOT = yes
-		
+		#is_important_state = no
 	}
 	can_reach_state = no
 	any_other_country = {
@@ -984,6 +1080,7 @@ rule_look_for_direct_connection_ROOT = {
 			num_owned_neighbour_states = { count > 0 owner = ROOT }
 			num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 			# unless it's an important state, an island, or a coastal state in an island region (like Britain)
+			#is_important_state = yes
 			AND = {
 				is_island_region = yes
 				is_coastal = yes
@@ -1005,12 +1102,12 @@ rule_look_for_direct_connection_ROOT = {
 rule_dont_take_land_other_continents_ROOT = {
 	same_continent_as_state_FROM = no
 	var:global.eval_state = { is_claim_or_core_or_ambition_of_ROOT = no }
-	
+	#is_exception_to_taking_states_on_other_continents = no
 	any_other_country = {
 		at_conference_has_war_with_owner = yes
 		OR = {
 			same_continent_as_state_FROM = yes
-			
+			#is_exception_to_taking_states_on_other_continents = yes
 		}
 		OR = {
 			restrict_territorial_ambitions_PREV = no
@@ -1027,12 +1124,12 @@ rule_dont_take_land_other_continents_ROOT = {
 rule_dont_take_land_other_continents_PREV = {
 	same_continent_as_state_FROM = no
 	var:global.eval_state = { is_claim_or_core_or_ambition_of_PREV = no }
-	
+	#is_exception_to_taking_states_on_other_continents = no
 	any_other_country = {
 		at_conference_has_war_with_owner = yes
 		OR = {
 			same_continent_as_state_FROM = yes
-			
+			#is_exception_to_taking_states_on_other_continents = yes
 		}
 		OR = {
 			restrict_territorial_ambitions_PREV = no

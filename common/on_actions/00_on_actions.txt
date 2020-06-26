@@ -402,6 +402,39 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					ROOT = {
+						tag = SIO
+						has_country_flag = SIO_council_not_rejected_sandstorm
+						NOT = {
+							has_global_flag = sioux_are_returning
+						}
+					}
+				}
+				ROOT = {
+					retire_country_leader = yes
+					create_country_leader = {
+						name = "Yakari"
+						desc = "POLITICS_STEPHEN_I_DESC"
+						picture = "yakari_feathers.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+							#
+						}
+					}
+					set_country_flag = yakari_in_the_council
+					set_country_flag = buffalo_in_the_council
+					set_country_flag = wild_wind_in_the_council
+					set_country_flag = rainbow_in_the_council
+					remove_ideas = {
+						SIO_greeting_loved_ones
+						SIO_delaying_their_march
+						
+					}
+				}
+			}
+			if = {
+				limit = {
 					has_idea = GUP_saunders
 				}
 				ROOT = {
@@ -640,17 +673,6 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
-			UNC = {
-				create_ambition_areas = yes
-				create_occupation_zones = yes
-				every_owned_state = {
-					add_state_modifier = {
-						modifier = {
-							MONTHLY_POPULATION = -0.12
-						}
-					}
-				}
-			}
 			every_country = {
 				if = {
 					limit = {
@@ -658,6 +680,10 @@ on_actions = {
 						is_ai = no
 					}
 					set_variable = { cr_welcome_screen = 1 }
+					country_event = {
+						id = game_start_event.1
+						days = 0
+					}
 				}
 			}
 			KPT = {

@@ -71,6 +71,8 @@ ideologies = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
 
+		can_be_boosted = no
+		can_collaborate = yes
 		ai_neutral = yes
 	}
 
@@ -130,7 +132,8 @@ ideologies = {
 		faction_modifiers = {
 			
 		}
-
+		can_be_boosted = no
+		can_collaborate = yes
 		ai_neutral = yes
 
 	}
@@ -179,7 +182,8 @@ ideologies = {
 			airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
 		}
-
+		can_be_boosted = no
+		can_collaborate = yes
 		ai_neutral = yes
 	}
 	
@@ -252,7 +256,7 @@ ideologies = {
 		types = {
 			paidocracy_sub = {
 				surrender_limit = -0.6
-				economy_cost_factor = -0.2
+				economy_cost_factor = 0.2
 				foreign_subversive_activites = 0.3
 				enemy_justify_war_goal_time = -0.25
 				trade_opinion_factor = -0.5

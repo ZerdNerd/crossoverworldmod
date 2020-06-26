@@ -1,0 +1,110 @@
+more_for_than_against = {
+	OR = {
+		#all for
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		#one against
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+	}
+}
+
+more_against_than_for = {
+	OR = {
+		#two against
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		#three against
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 1 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 1 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 1 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+		#all against
+		AND = {
+			check_variable = { sioux_council_member_1_vote_status = 2 }
+			check_variable = { sioux_council_member_2_vote_status = 2 }
+			check_variable = { sioux_council_member_3_vote_status = 2 }
+			check_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+	}
+}

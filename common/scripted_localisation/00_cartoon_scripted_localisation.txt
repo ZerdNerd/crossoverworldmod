@@ -944,6 +944,120 @@ defined_text = { #Freezing of Tabaluga
     }
 }
 
+defined_text = { #test for sioux_vote.10
+    name = sioux_vote_10_gfx
+    
+    text = { 
+        trigger = {
+            OR = {
+                has_country_flag = yakari_branch_vote_lost
+				has_country_flag = buffalo_branch_vote_lost
+				has_country_flag = rainbow_branch_vote_lost
+				has_country_flag = braid_night_branch_vote_lost
+            }
+            NOT = {
+                has_country_flag = yakari_branch_vote_accepted
+				has_country_flag = buffalo_branch_vote_accepted
+				has_country_flag = rainbow_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+            }
+            NOT = {
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = rainbow_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = braid_night_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = rainbow_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = braid_night_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = braid_night_branch_vote_lost
+				    has_country_flag = rainbow_branch_vote_lost
+                }
+            }
+        }
+        localization_key = "GFX_report_yakari_2"
+    }
+
+    text = { 
+        trigger = {
+            OR = {
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = rainbow_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = yakari_branch_vote_lost
+				    has_country_flag = braid_night_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = rainbow_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = braid_night_branch_vote_lost
+				    has_country_flag = buffalo_branch_vote_lost
+                }
+                AND = {
+                    has_country_flag = braid_night_branch_vote_lost
+				    has_country_flag = rainbow_branch_vote_lost
+                }
+            }
+            NOT = {
+                has_country_flag = yakari_branch_vote_accepted
+				has_country_flag = buffalo_branch_vote_accepted
+				has_country_flag = rainbow_branch_vote_accepted
+				has_country_flag = braid_night_branch_vote_accepted
+            }
+        }
+        localization_key = "GFX_report_yakari_3"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = yakari_branch_vote_accepted
+        }
+        localization_key = "GFX_report_yakari"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = rainbow_branch_vote_accepted
+        }
+        localization_key = "GFX_report_rainbow"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = buffalo_branch_vote_accepted
+        }
+        localization_key = "GFX_report_buffaloseed"
+    }
+
+    text = { 
+        trigger = {
+            has_country_flag = braid_night_branch_vote_accepted
+        }
+        localization_key = "GFX_report_braid_night"
+    }
+}
+
 #############################################################
 #############################################################
 #############################################################

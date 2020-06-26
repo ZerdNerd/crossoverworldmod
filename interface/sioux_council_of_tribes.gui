@@ -1,0 +1,174 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "sioux_council_decision_ui_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 470 }
+
+		#Member 1
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_1"
+			position = {x=190 y=25}	
+			spriteType ="GFX_idea_unknown"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_1_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 186 y = 21 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_1_name"
+			position = { x = 190 y = 178 }
+			font = "hoi_18mbs"
+			text = "[SIO_sioux_council_decision_ui_leader_1_name]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_1_voting"
+			position = { x = 190 y = 205 }
+			font = "hoi_18mbs"
+			text = "Vote: [SIO_CD1_VOTE]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		#Member 2
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_2"
+			position = {x=45 y=110}	
+			spriteType ="GFX_idea_unknown"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_2_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 41 y = 106 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_2_name"
+			position = { x = 45 y = 263 }
+			font = "hoi_18mbs"
+			text = "[SIO_sioux_council_decision_ui_leader_2_name]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_2_voting"
+			position = { x = 45 y = 290 }
+			font = "hoi_18mbs"
+			text = "Vote: [SIO_CD2_VOTE]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		#Member 3
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_3"
+			position = {x=340 y=110}	
+			spriteType ="GFX_idea_unknown"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_3_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 336 y = 106 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_3_name"
+			position = { x = 340 y = 263 }
+			font = "hoi_18mbs"
+			text = "[SIO_sioux_council_decision_ui_leader_3_name]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_3_voting"
+			position = { x = 340 y = 290 }
+			font = "hoi_18mbs"
+			text = "Vote: [SIO_CD3_VOTE]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		#Member 4
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_4"
+			position = {x=190 y=250}	
+			spriteType ="GFX_idea_unknown"
+			scale = 0.71
+		}
+
+		iconType = {
+			name = "sioux_council_decision_ui_leader_4_frame"
+			spriteType = "GFX_pol_leader_frame"
+			position = { x = 186 y = 246 }		
+			allwaystransparent = yes
+			scale = 0.71
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_4_name"
+			position = { x = 190 y = 403 }
+			font = "hoi_18mbs"
+			text = "[SIO_sioux_council_decision_ui_leader_4_name]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextboxType = {
+			name = "sioux_council_decision_ui_leader_4_voting"
+			position = { x = 190 y = 430 }
+			font = "hoi_18mbs"
+			text = "Vote: [SIO_CD4_VOTE]"
+			maxWidth = 110
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextBoxType = {
+			name = "SIO_sioux_council_members"
+			position = { x = 50 y = -10 }
+			font = "hoi_24header"
+			text = "SIO_sioux_council_members_header_text"
+			format = center
+			maxWidth = 400
+			maxHeight = 24
+		}
+	}
+}

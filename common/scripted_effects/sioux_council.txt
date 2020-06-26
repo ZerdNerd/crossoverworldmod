@@ -1,0 +1,45 @@
+calculate_the_council_votes = {
+	random_list = {
+		50 = {
+			set_variable = { sioux_council_member_1_vote_status = 1 }
+		}
+		50 = {
+			set_variable = { sioux_council_member_1_vote_status = 2 }
+		}
+	}
+	random_list = {
+		50 = {
+			set_variable = { sioux_council_member_2_vote_status = 1 }
+		}
+		50 = {
+			set_variable = { sioux_council_member_2_vote_status = 2 }
+		}
+	}
+	random_list = {
+		50 = {
+			set_variable = { sioux_council_member_3_vote_status = 1 }
+		}
+		50 = {
+			set_variable = { sioux_council_member_3_vote_status = 2 }
+		}
+	}
+	random_list = {
+		50 = {
+			set_variable = { sioux_council_member_4_vote_status = 1 }
+		}
+		50 = {
+			set_variable = { sioux_council_member_4_vote_status = 2 }
+		}
+	}
+}
+
+reset_the_council_votes = {
+	clear_variable = sioux_council_member_1_vote_status
+	clear_variable = sioux_council_member_2_vote_status
+	clear_variable = sioux_council_member_3_vote_status
+	clear_variable = sioux_council_member_4_vote_status
+	clear_variable = sioux_council_member_1_convinced
+	clear_variable = sioux_council_member_2_convinced
+	clear_variable = sioux_council_member_3_convinced
+	clear_variable = sioux_council_member_4_convinced
+}

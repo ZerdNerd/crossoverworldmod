@@ -1,0 +1,1412 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = sioux
+add_namespace = sioux_vote
+add_namespace = sioux_convince
+
+country_event = { #The Council gathers
+	id = sioux.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.1"}
+	title = sioux.1.t
+	desc = sioux.1.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux.1.a
+		hidden_effect = {
+			country_event = {
+				id = sioux_vote.1
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Sioux propose us economic agreement
+	id = sioux.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.2"}
+	title = sioux.2.t
+	desc = sioux.2.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = sioux.2.a
+		SIO = {
+			country_event = {
+				id = sioux.3
+				days = 1
+			}
+		}
+	}
+
+	option = { #Decline
+		name = sioux.2.b
+		SIO = {
+			country_event = {
+				id = sioux.4
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Tungu-Pungu agrees
+	id = sioux.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.3"}
+	title = sioux.3.t
+	desc = sioux.3.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sioux.3.a
+		TUG = {
+			add_resource = {
+    			type = rubber
+    			amount = 6
+    			state = 24
+			}
+			add_resource = {
+    			type = oil
+    			amount = 6
+    			state = 24
+			}
+			give_resource_rights = { receiver = SIO state = 24 }
+		}
+	}
+}
+
+country_event = { #Tungu-Pungu declines
+	id = sioux.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.4"}
+	title = sioux.4.t
+	desc = sioux.4.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = sioux.4.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Sioux want to negotiate the return of Neu Flensburg
+	id = sioux.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.5"}
+	title = sioux.5.t
+	desc = sioux.5.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #We won't return anything!
+		name = sioux.5.a
+		SIO = {
+			country_event = {
+				id = sioux.6
+				days = 1
+			}
+		}
+	}
+
+	option = { #Okay, but in exchange for Tungu-Pungu
+		name = sioux.5.b
+		SIO = {
+			country_event = {
+				id = sioux.7
+				days = 1
+			}
+		}
+	}
+
+	option = { #Okay, but in exchange for Central and Western Luvlandia
+		name = sioux.5.c
+		SIO = {
+			country_event = {
+				id = sioux.8
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #The Colony rejects our proposal
+	id = sioux.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.6"}
+	title = sioux.6.t
+	desc = sioux.6.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #THIS MEANS WAR!
+		name = sioux.6.a
+		create_wargoal = {
+			target = FLE
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Flensburgians demand Tungu-Pungu in exchange for our lands
+	id = sioux.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.7"}
+	title = sioux.7.t
+	desc = sioux.7.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = sioux.7.a
+		FLE = {
+			set_capital = 782
+		}
+		transfer_state = 634
+		transfer_state = 638
+		transfer_state = 632
+		24 = {
+			add_claim_by = FLE
+		}
+	}
+
+	option = { #We cannot agree to this.
+		name = sioux.7.b
+		create_wargoal = {
+			target = FLE
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Flensburgians demand the rest of Luvlandia in exchange for our lands
+	id = sioux.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.8"}
+	title = sioux.8.t
+	desc = sioux.8.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = sioux.8.a
+		FLE = {
+			set_capital = 782
+		}
+		transfer_state = 634
+		transfer_state = 638
+		transfer_state = 632
+	}
+
+	option = { #We cannot agree to this.
+		name = sioux.8.b
+		create_wargoal = {
+			target = FLE
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Neu Flensburg or War
+	id = sioux.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.9"}
+	title = sioux.9.t
+	desc = sioux.9.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Fold
+		name = sioux.9.a
+		FLE = {
+			set_capital = 782
+		}
+		add_stability = -0.25
+		add_political_power = -150
+		SIO = {
+			country_event = {
+				id = sioux.11
+				days = 1
+			}
+		}
+	}
+
+	option = { #We will fight for our capital!
+		name = sioux.9.b
+		add_stability = 0.1
+		add_political_power = 100
+		SIO = {
+			country_event = {
+				id = sioux.10
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #The Colony rejects our demands
+	id = sioux.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.10"}
+	title = sioux.10.t
+	desc = sioux.10.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #THIS MEANS WAR!
+		name = sioux.6.a
+		create_wargoal = {
+			target = FLE
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #The Colony accepts our demands
+	id = sioux.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.11"}
+	title = sioux.11.t
+	desc = sioux.11.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Fantastic!
+		name = sioux.11.a
+		transfer_state = 634
+		transfer_state = 638
+		transfer_state = 632
+	}
+}
+
+country_event = { #1936 Bison hunt
+	id = sioux_vote.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.1"}
+	title = sioux_vote.1.t
+	desc = sioux_vote.1.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.1.a
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = bison_hunt_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+}
+
+country_event = { #1936 Bison hunt vote results
+	id = sioux_vote.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.2"}
+	title = sioux_vote.2.t
+	desc = sioux_vote.2.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.2.a
+		if = {
+			limit = {
+				has_country_flag = bison_hunt_west
+			}
+			add_political_power = 50
+			hidden_effect = {
+				clr_country_flag = bison_hunt_west
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.3
+					days = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = bison_hunt_east
+			}
+			add_political_power = -50
+			hidden_effect = {
+				clr_country_flag = bison_hunt_east
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.3
+					days = 0
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Development in the West
+	id = sioux_vote.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.3"}
+	title = sioux_vote.3.t
+	desc = sioux_vote.3.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.3.a
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = development_in_west_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+}
+
+country_event = { #Development in the West vote results
+	id = sioux_vote.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.4"}
+	title = sioux_vote.4.t
+	desc = sioux_vote.4.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.4.a
+		if = {
+			limit = {
+				has_country_flag = development_in_west_rural
+			}
+			726 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			744 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = development_in_west_rural
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.5
+					days = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = development_in_west_towns
+			}
+			697 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			752 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+    				level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				clr_country_flag = development_in_west_towns
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.5
+					days = 0
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Operation Sandstorm rejection vote
+	id = sioux_vote.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.5"}
+	title = sioux_vote.5.t
+	desc = sioux_vote.5.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.5.a
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = operation_sandstorm_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+}
+
+country_event = { #Operation Sandstorm rejection vote results
+	id = sioux_vote.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.6"}
+	title = sioux_vote.6.t
+	desc = sioux_vote.6.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.6.a
+		if = {
+			limit = {
+				has_country_flag = operation_sandstorm_rejected
+			}
+			add_political_power = 50
+			add_war_support = 0.15
+			hidden_effect = {
+				set_country_flag = SIO_council_rejected_sandstorm
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.7
+					days = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = operation_sandstorm_not_rejected
+			}
+			add_political_power = 50
+			add_stability = -0.1
+			hidden_effect = {
+				set_country_flag = SIO_council_not_rejected_sandstorm
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.7
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #United Council meeting comes to an end
+	id = sioux_vote.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.7"}
+	title = sioux_vote.7.t
+	desc = sioux_vote.7.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.7.a
+	}
+}
+
+country_event = { #First United Council seating after the Sandstorm and war
+	id = sioux_vote.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.8"}
+	title = sioux_vote.8.t
+	desc = sioux_vote.8.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.8.a
+		hidden_effect = {
+			country_event = {
+				id = sioux_vote.9
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Which way to go
+	id = sioux_vote.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.9"}
+	title = sioux_vote.9.t
+	desc = sioux_vote.9.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Yakari branch #the only sane option
+		name = sioux_vote.9.a
+		trigger = {
+			NOT = {
+				has_country_flag = yakari_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = yakari_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Buffalo branch #cursed
+		name = sioux_vote.9.b
+		trigger = {
+			NOT = {
+				has_country_flag = buffalo_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = buffalo_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Rainbow branch #Sioux paidocracy best paidocracy Macius we war you
+		name = sioux_vote.9.c
+		trigger = {
+			NOT = {
+				has_country_flag = rainbow_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = rainbow_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Braid Night branch #fun fact Sioux women had bigger influence in their tribes long before women could vote in elections
+		name = sioux_vote.9.e
+		trigger = {
+			NOT = {
+				has_country_flag = braid_night_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = braid_night_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Council stays
+		name = sioux_vote.9.f
+		custom_effect_tooltip = SIO_united_council_will_prevail
+		hidden_effect = {
+			set_country_flag = SIO_council_voted_to_stay
+		}
+	}
+}
+
+country_event = { #Post-Sandstorm politics vote result
+	id = sioux_vote.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.10"}
+	title = sioux_vote.10.t
+	desc = sioux_vote.10.d
+	picture = [sioux_vote_10_gfx] #GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.10.a
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = yakari_branch_vote_lost
+					has_country_flag = buffalo_branch_vote_lost
+					has_country_flag = rainbow_branch_vote_lost
+					has_country_flag = braid_night_branch_vote_lost
+				}
+			}
+			add_stability = -0.05
+			hidden_effect = {
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.9
+					days = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = yakari_branch_vote_accepted
+					has_country_flag = buffalo_branch_vote_accepted
+					has_country_flag = rainbow_branch_vote_accepted
+					has_country_flag = braid_night_branch_vote_accepted
+				}
+			}
+			add_political_power = 50
+			add_stability = 0.1
+			hidden_effect = {
+				reset_the_council_votes = yes
+				set_country_flag = SIO_council_abolished
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = yakari_branch_vote_accepted
+			}
+			set_country_flag = SIO_council_voted_for_yakari
+		}
+		if = {
+			limit = {
+				has_country_flag = buffalo_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Buffalo Seed"
+				desc = "POLITICS_BUFFALO_DESC"
+				picture = "buffalo_seed.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					#
+				}
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			add_popularity = {
+    			ideology = fascism
+    			popularity = 0.6
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = rainbow_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Rainbow"
+				desc = "POLITICS_RAINBOW_DESC"
+				picture = "rainbow.dds"
+				expire = "1965.1.1"
+				ideology = paidocracy_sub
+				traits = {
+					#
+				}
+			}
+			set_politics = {
+				ruling_party = paidocracy
+			}
+			add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.6
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = braid_night_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Braid Night"
+				desc = "POLITICS_BRAID_NIGHT_DESC"
+				picture = "braid_night.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+		}
+	}
+}
+
+country_event = { #First United Council seating after the war (no Sandstorm)
+	id = sioux_vote.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.11"}
+	title = sioux_vote.11.t
+	desc = sioux_vote.11.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.11.a
+		hidden_effect = {
+			country_event = {
+				id = sioux_vote.12
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Which way to go
+	id = sioux_vote.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.12"}
+	title = sioux_vote.12.t
+	desc = sioux_vote.12.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Establish Republic
+		name = sioux_vote.12.a
+		trigger = {
+			NOT = {
+				has_country_flag = republic_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = republic_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Establish monarchy
+		name = sioux_vote.12.b
+		trigger = {
+			NOT = {
+				has_country_flag = monarchy_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = monarchy_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Proudest Cloud branch
+		name = sioux_vote.12.c
+		trigger = {
+			NOT = {
+				has_country_flag = fascist_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = fascist_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Braid Night branch #fun fact Sioux women had bigger influence in their tribes long before women could vote in elections
+		name = sioux_vote.12.e
+		trigger = {
+			NOT = {
+				has_country_flag = braid_night_branch_vote_lost
+			}
+		}
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = braid_night_branch_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+
+	option = { #Council stays
+		name = sioux_vote.12.f
+		custom_effect_tooltip = SIO_united_council_will_prevail
+		hidden_effect = {
+			set_country_flag = SIO_council_voted_to_stay
+		}
+	}
+}
+
+country_event = { #Post-war-not-Sandstorm politics vote result
+	id = sioux_vote.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.13"}
+	title = sioux_vote.13.t
+	desc = sioux_vote.13.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.13.a
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = republic_branch_vote_lost
+					has_country_flag = monarchy_branch_vote_lost
+					has_country_flag = fascist_branch_vote_lost
+					has_country_flag = braid_night_branch_vote_lost
+				}
+			}
+			add_stability = -0.05
+			hidden_effect = {
+				reset_the_council_votes = yes
+				country_event = {
+					id = sioux_vote.12
+					days = 0
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_flag = monarchy_branch_vote_accepted
+					has_country_flag = fascist_branch_vote_accepted
+					has_country_flag = braid_night_branch_vote_accepted
+				}
+			}
+			add_political_power = 50
+			add_stability = 0.1
+			hidden_effect = {
+				reset_the_council_votes = yes
+				set_country_flag = SIO_council_abolished
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = republic_branch_vote_accepted
+			}
+			set_country_flag = SIO_council_voted_for_republic
+			hidden_effect = {
+				reset_the_council_votes = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = monarchy_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Bold Gaze"
+				desc = "POLITICS_BOLD_GAZE_DESC"
+				picture = "bold_gaze.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					#
+				}
+			}
+			set_politics = {
+				ruling_party = monarchism
+			}
+			add_popularity = {
+    			ideology = monarchism
+    			popularity = 0.6
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = fascist_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Proudest Cloud"
+				desc = "POLITICS_PROUDEST_CLOUD_DESC"
+				picture = "proudest_cloud.dds"
+				expire = "1965.1.1"
+				ideology = rexism
+				traits = {
+					#
+				}
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+			add_popularity = {
+    			ideology = fascism
+    			popularity = 0.6
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = braid_night_branch_vote_accepted
+			}
+			create_country_leader = {
+				name = "Braid Night"
+				desc = "POLITICS_BRAID_NIGHT_DESC"
+				picture = "braid_night.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+		}
+	}
+}
+
+country_event = { #United Council vote on Railway Project
+	id = sioux_vote.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.14"}
+	title = sioux_vote.14.t
+	desc = sioux_vote.14.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.14.a
+		custom_effect_tooltip = SIO_chceck_the_decisions_tab
+		hidden_effect = {
+			calculate_the_council_votes = yes
+			set_country_flag = railway_project_vote
+			activate_mission = tic_toc_runs_the_clock
+		}
+	}
+}
+
+country_event = { #Railway Project vote results
+	id = sioux_vote.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.15"}
+	title = sioux_vote.15.t
+	desc = sioux_vote.15.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = sioux_vote.15.a
+		if = {
+			limit = {
+				has_country_flag = railway_project_vote_narrow_gauge
+			}
+			hidden_effect = {
+				clr_country_flag = railway_project_vote_narrow_gauge
+				set_country_flag = SIO_council_agreed_for_small_railways
+				reset_the_council_votes = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = railway_project_vote_normal_gauge
+			}
+			hidden_effect = {
+				clr_country_flag = railway_project_vote_normal_gauge
+				set_country_flag = SIO_council_agreed_for_big_railways
+				reset_the_council_votes = yes
+			}
+		}
+	}
+}
+
+country_event = { #Convince council member - demands option 1
+	id = sioux_convince.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_convince.1"}
+	title = sioux_convince.1.t
+	desc = sioux_convince.1.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+				}
+				set_variable = { sioux_council_member_1_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+				}
+				set_variable = { sioux_council_member_2_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+				}
+				set_variable = { sioux_council_member_3_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+				}
+				set_variable = { sioux_council_member_4_convinced = 1 }
+			}
+		}
+	}
+
+	option = { #Accept
+		name = sioux_convince.1.a
+		add_stability = -0.05
+		add_political_power = -10
+		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			#
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+
+	option = { #Refuse
+		name = sioux_convince.1.b
+		add_political_power = 10
+		hidden_effect = {
+			clear_variable = sioux_council_which_member_is_being_convinced
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+}
+
+country_event = { #Convince council member - demands option 2
+	id = sioux_convince.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_convince.2"}
+	title = sioux_convince.2.t
+	desc = sioux_convince.2.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+				}
+				set_variable = { sioux_council_member_1_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+				}
+				set_variable = { sioux_council_member_2_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+				}
+				set_variable = { sioux_council_member_3_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+				}
+				set_variable = { sioux_council_member_4_convinced = 1 }
+			}
+		}
+	}
+
+	option = { #Accept
+		name = sioux_convince.1.a
+		add_political_power = -25
+		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			#
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+
+	option = { #Refuse
+		name = sioux_convince.1.b
+		add_political_power = 25
+		hidden_effect = {
+			clear_variable = sioux_council_which_member_is_being_convinced
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+}
+
+country_event = { #Convince council member - demands option 3
+	id = sioux_convince.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_convince.3"}
+	title = sioux_convince.3.t
+	desc = sioux_convince.3.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+				}
+				set_variable = { sioux_council_member_1_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+				}
+				set_variable = { sioux_council_member_2_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+				}
+				set_variable = { sioux_council_member_3_convinced = 1 }
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+				}
+				set_variable = { sioux_council_member_4_convinced = 1 }
+			}
+		}
+	}
+
+	option = { #Accept
+		name = sioux_convince.1.a
+		add_war_support = -0.05
+		add_manpower = 1000
+		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 1 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			#
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 1 }
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_1_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_2_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 3 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_3_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			if = {
+				limit = {
+					check_variable = { sioux_council_which_member_is_being_convinced = 4 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				set_variable = { sioux_council_member_4_vote_status = 2 }
+				clear_variable = sioux_council_which_member_is_being_convinced
+			}
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+
+	option = { #Refuse
+		name = sioux_convince.1.b
+		add_political_power = 10
+		hidden_effect = {
+			clear_variable = sioux_council_which_member_is_being_convinced
+			clear_variable = sioux_council_convincing_member
+		}
+	}
+}

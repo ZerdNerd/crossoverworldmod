@@ -1,0 +1,34 @@
+scripted_gui = {
+    za_warudo_toki_yo_tomare = {
+        window_name = top_bar
+ 
+        context_type = player_context
+ 
+        visible = {
+            always = yes
+        }
+
+        effects = {
+            pause_button_date_click = {
+                if = {
+                    limit = {
+                        has_variable = cr_custom_sounds_status
+                        NOT = { has_variable = time_has_stopped }
+                    }
+                    sound_effect = time_stops
+                    set_variable = { time_has_stopped = 1 }
+                }
+            }
+            pause_button_date_paused_click = {
+                if = {
+                    limit = {
+                        has_variable = cr_custom_sounds_status
+                        has_variable = time_has_stopped 
+                    }
+                    sound_effect = time_resumes
+                    clear_variable = cr_custom_sounds_status
+                }
+            }
+        }
+    }
+}

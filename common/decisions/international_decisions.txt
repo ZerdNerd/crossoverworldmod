@@ -197,6 +197,10 @@ international_policy_dec_category = {
 					delete_unit_template_and_units = {
     					division_template = "Sioux Calvary Division"
 					}
+					swap_ideas = {
+						remove_idea = middleage_tech
+						add_idea = modern_tech_idea
+					}
 					add_manpower = 50000
 					add_equipment_to_stockpile = {
     					type = infantry_equipment_1
@@ -236,6 +240,10 @@ international_policy_dec_category = {
 						target = DES
 						type = annex_everything	
 					}
+					hidden_effect = {
+						middleage_to_modern = yes
+						add_research_slot = 3
+					}
 				}
 				#SIO = {
 				#	country_event = {
@@ -245,7 +253,10 @@ international_policy_dec_category = {
 				#}
 				if = {
 					limit = {
-						original_tag = SIO
+						SIO = {
+							has_country_flag = SIO_council_not_rejected_sandstorm
+							has_country_flag = SIO_was_ai
+						}
 					}
 					SIO = {
 						change_tag_from = ROOT

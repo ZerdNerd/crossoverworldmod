@@ -495,7 +495,7 @@ focus_tree = {
 		prerequisite = { focus = GON_crush_remaining_monarchists }
 
 		ai_will_do = { 
-			factor = 1
+			factor = 5
 		} 
 		completion_reward = { 
 			set_rule = {
@@ -678,7 +678,7 @@ focus_tree = {
 		prerequisite = { focus = GON_go_solo }
 
 		ai_will_do = { 
-			factor = 1
+			factor = 5
 		} 
 		completion_reward = { 
 			add_timed_idea = {
@@ -1028,17 +1028,8 @@ focus_tree = {
 		available_if_capitulated = yes 
 		prerequisite = { focus = GON_begin_year_of_peacock }
 
-		available = {
-			293 = {
-				is_owned_by = GRN
-			}
-			262 = {
-				is_owned_by = GRN
-			}
-		}
-
 		ai_will_do = { 
-			factor = 5
+			factor = 4
 		} 
 
 		completion_reward = { 

@@ -1300,10 +1300,16 @@ focus_tree = {
 			focus = SLD_the_great_elections
 		}
 		available = {
-			has_government = democratic
+			has_country_leader = {
+				name = "Ferdynand Kiepski"
+				ruling_only = yes
+			}
 		}
 		bypass = {
-			has_government = democratic
+			has_country_leader = {
+				name = "Ferdynand Kiepski"
+				ruling_only = yes
+			}
 		}
 		ai_will_do = { 
 			factor = 1
