@@ -1063,7 +1063,7 @@ ideas = {
 		generic_communist_revolutionary = {
 			
 			allowed = {
-				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN } }
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				NOT = {
 					has_available_idea_with_traits = { idea = communist_revolutionary limit = 1 }
 				}
@@ -1097,7 +1097,7 @@ ideas = {
 		generic_democratic_reformer = {
 			
 			allowed = {
-				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN } }
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				NOT = {
 					has_available_idea_with_traits = { idea = democratic_reformer limit = 1 }
 				}
@@ -1132,7 +1132,7 @@ ideas = {
 		generic_fascist_demagogue = {
 			
 			allowed = {
-				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN } }
+				NOT = { OR = { tag = MAI tag = GRN tag = ICW tag = AVA tag = ENC tag = EN1 tag = EN2 tag = KPT tag = SLD tag = SAN tag = JPN tag = SIO } }
 				NOT = {
 					has_available_idea_with_traits = { idea = fascist_demagogue limit = 1 }
 				}
@@ -1474,6 +1474,7 @@ ideas = {
 		generic_army_chief_off = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1483,6 +1484,7 @@ ideas = {
 		generic_army_chief_def = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1495,6 +1497,7 @@ ideas = {
 		generic_navy_chief_decisive_bat = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1504,6 +1507,7 @@ ideas = {
 		generic_navy_anti_submarine = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1516,6 +1520,7 @@ ideas = {
 		generic_air_close_air_sup = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1525,6 +1530,7 @@ ideas = {
 		generic_air_chief_all_weather = {
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1538,6 +1544,7 @@ ideas = {
 			ledger = army
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1548,6 +1555,7 @@ ideas = {
 			ledger = army
 
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1558,6 +1566,7 @@ ideas = {
 			ledger = navy
 
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1568,6 +1577,7 @@ ideas = {
 			ledger = air
 
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1581,6 +1591,7 @@ ideas = {
 			ledger = army
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1595,6 +1606,7 @@ ideas = {
 			ledger = navy
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			
@@ -1609,6 +1621,7 @@ ideas = {
 			ledger = air
 			
 			allowed = {
+				NOT = { tag = SIO }
 				always = yes
 			}
 			

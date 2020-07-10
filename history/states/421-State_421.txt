@@ -4,9 +4,22 @@ state={
 	provinces={
 		856 5103 7633 7697 7761 
 	}
-	manpower=0
+	manpower=750000
+	state_category = city
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = DIO
+		add_core_of = DIO
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 3
+			7633 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			7633 20
+		}
 	}
 }

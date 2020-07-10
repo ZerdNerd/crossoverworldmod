@@ -75,13 +75,8 @@ international_policy_dec_category = {
 	sioux_return = {
 		icon = generic_operation
 		visible = {
-			has_idea = SIO_refugees
+			tag = SIX
 			has_war_with = DES
-		}
-		available = {
-			has_equipment = {
-    			convoy > 10
-			}
 		}
 
 		fire_only_once = yes
@@ -101,28 +96,14 @@ international_policy_dec_category = {
 					}
 				}
 			}
-			add_equipment_to_stockpile = {
-    			type = var:convoys
-    			amount = -10
-			}
-			if = {
-				limit = {
-					any_unit_leader = {
-						OR = {
-							has_id = 9000
-							has_id = 9001
-						}
+			SIO = {
+				if = {
+					limit = {
+						has_template = "Sioux Cavalry Division"
 					}
-				}
-				remove_unit_leader = 9000
-				remove_unit_leader = 9001
-			}
-			if = {
-				limit = {
-					has_template = "Sioux Calvary Division"
-				}
-				delete_unit_template_and_units = {
-    				division_template = "Sioux Calvary Division"
+					delete_unit_template_and_units = {
+    					division_template = "Sioux Cavalry Division"
+					}
 				}
 			}
 		}
@@ -193,48 +174,17 @@ international_policy_dec_category = {
 					}
 				}
 				SIO = {
+					inherit_technology = SIX
 					load_oob = SIO_the_return
-					delete_unit_template_and_units = {
-    					division_template = "Sioux Calvary Division"
-					}
 					swap_ideas = {
 						remove_idea = middleage_tech
 						add_idea = modern_tech_idea
 					}
+					transfer_technology = yes
 					add_manpower = 50000
 					add_equipment_to_stockpile = {
     					type = infantry_equipment_1
     					amount = 10000
-					}
-					create_corps_commander = {
-						name = "Yakari"
-						portrait_path = "gfx/leaders/SIO/yakari_feathers.dds"
-						skill = 4
-   						attack_skill = 4
-    					defense_skill = 3
-    					planning_skill = 3
-   	 					logistics_skill = 3
-    					id = 9002
-					}
-					create_corps_commander = {
-						name = "Buffalo Seed"
-						portrait_path = "gfx/leaders/SIO/buffalo_seed.dds"
-						skill = 3
-   						attack_skill = 3
-    					defense_skill = 3
-    					planning_skill = 3
-    					logistics_skill = 2
-    					id = 9003
-					}
-					create_corps_commander = {
-						name = "Wild Wind"
-						portrait_path = "gfx/leaders/SIO/wild_wind.dds"
-						skill = 3
-   						attack_skill = 2
-    					defense_skill = 3
-    					planning_skill = 4
-    					logistics_skill = 2
-    					id = 9100
 					}
 					declare_war_on = { 
 						target = DES
@@ -251,25 +201,34 @@ international_policy_dec_category = {
 				#		days = 1
 				#	}
 				#}
-				if = {
+				every_unit_leader = {
 					limit = {
-						SIO = {
-							has_country_flag = SIO_council_not_rejected_sandstorm
-							has_country_flag = SIO_was_ai
+						OR = {
+							has_id = 9000
+							has_id = 9001
+							has_id = 9100
 						}
 					}
-					SIO = {
-						change_tag_from = ROOT
-					}
+					set_nationality = SIO
+				}
+				transfer_navy = {
+    				target = SIO
 				}
 				news_event = {
 					id = worldnews.41
-					hours = 6
+					hours = 16
 				}
-			}
-			add_equipment_to_stockpile = {
-    			type = var:convoys
-    			amount = 10
+				SIO = {
+					change_tag_from = SIX
+				}
+				SIX = {
+					remove_state_core = 22
+					remove_state_core = 23
+				}
+				SIO = {
+					transfer_state = 22
+					transfer_state = 23
+				}
 			}
 		}
 	}

@@ -2471,6 +2471,25 @@ ideas = {
 			}
 			picture = generic_manpower_bonus
 		}
+
+		SIO_successful_bison_hunt = {
+			allowed = { always = no }
+			modifier = {
+				industrial_capacity_factory = 0.05
+				MONTHLY_POPULATION = 0.05
+			}
+			picture = trumpet
+		}
+
+		SIO_sun_dance = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+			picture = chi_army_corruption
+		}
 	}
 
 	##############################################################################################################################
@@ -3191,6 +3210,165 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		SIO_rainbow = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { our_right_to_survive compassionate_commoner }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_buffaloseed = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { the_director empire_builder }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_yakari = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { army_chief_morale_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_littleleaf = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { great_survivor }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_shaman = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { popular_figurehead2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_restfulrock = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { great_war_hero }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_boldgaze = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { lieutenant_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	high_command = {
@@ -3240,6 +3418,83 @@ ideas = {
 			}
 		
 			traits = { generallissimo military_theorist }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_proudestcloud = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { army_cavalry_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		SIO_impatientsquirrel = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { army_concealment_1 army_logistics_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	theorist = {
+		SIO_restfulwolf = {
+
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { council_of_theorists }
 
 			ai_will_do = {
 				factor = 1

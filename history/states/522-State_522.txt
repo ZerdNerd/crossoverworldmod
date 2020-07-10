@@ -4,9 +4,22 @@ state={
 	provinces={
 		1388 1598 1657 1717 3489 5339 8158 8201 8267 8268 8416 
 	}
-	manpower=0
+	state_category = town
+	manpower=550000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = JOJ
+		add_core_of = JOJ
+	buildings = {
+		infrastructure = 2
+		indsutrial_complex = 2
+		arms_factory = 2
+		8267 = {
+			naval_base = 3
+		}
+	}
+		victory_points = {
+			8267 30
+		}
 	}
 }

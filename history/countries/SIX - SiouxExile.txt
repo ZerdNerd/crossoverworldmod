@@ -1,0 +1,106 @@
+﻿capital = 705
+
+set_popularities = {
+	democratic = 100
+
+	fascism = 0
+		
+	communism = 0
+		
+	monarchism = 0
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+create_country_leader = {
+	name = "Yakari"
+	desc = "POLITICS_YAKARI_DESC"
+	picture = "gfx/leaders/SIO/yakari_feathers.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Yakari"
+	desc = "POLITICS_YAKARI_DESC"
+	picture = "gfx/leaders/SIO/yakari_feathers.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Yakari"
+	desc = "POLITICS_YAKARI_DESC"
+	picture = "gfx/leaders/SIO/yakari_feathers.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Did you really think Yakari would be a commie?"
+	desc = "POLITICS_TBD_DESC"
+	picture = "vacant.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Yakari"
+	desc = "POLITICS_YAKARI_DESC"
+	picture = "gfx/leaders/SIO/yakari.dds"
+	expire = "1965.1.1"
+	ideology = paidocracy_sub
+	traits = {
+		#
+	}
+}
+
+create_corps_commander = {
+	name = "Yakari"
+	portrait_path = "gfx/leaders/SIO/yakari_feathers.dds"
+	skill = 3
+   	attack_skill = 3
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 3
+    id = 9000
+}
+		
+create_corps_commander = {
+	name = "Buffalo Seed"
+	portrait_path = "gfx/leaders/SIO/buffalo_seed.dds"
+	skill = 2
+   	attack_skill = 2
+    defense_skill = 2
+    planning_skill = 3
+    logistics_skill = 2
+    id = 9001
+}
+
+create_corps_commander = {
+	name = "Wild Wind"
+	portrait_path = "gfx/leaders/SIO/wild_wind.dds"
+	skill = 3
+   	attack_skill = 2
+    defense_skill = 3
+	planning_skill = 4
+    logistics_skill = 2
+    id = 9100
+}

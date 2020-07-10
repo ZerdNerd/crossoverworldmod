@@ -1,0 +1,336 @@
+﻿capital = 633
+
+oob = "JOJ_1936"
+
+# Starting tech
+set_technology = {
+	infantry_weapons_med = 1
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	tech_recon = 1
+	tech_support = 1		
+	tech_engineers = 1
+	tech_mountaineers = 1
+	gwtank = 1
+	gw_artillery = 1
+	basic_light_tank = 1
+	improved_light_tank = 1
+	basic_heavy_tank = 1
+	early_fighter = 1
+	fighter1 = 1
+	early_bomber = 1
+	tactical_bomber1 = 1
+	strategic_bomber1 = 1
+	CAS1 = 1
+}
+
+if = {
+	limit = {
+		not = { has_dlc = "Man the Guns" }
+	}
+	set_technology = {
+		early_submarine = 1
+		basic_submarine = 1
+		early_destroyer = 1
+		basic_destroyer = 1
+		early_light_cruiser = 1
+		basic_light_cruiser = 1
+		early_heavy_cruiser = 1
+		basic_heavy_cruiser = 1
+		early_battleship = 1
+		basic_battleship = 1
+		early_battlecruiser = 1
+		transport = 1
+	}
+
+	set_naval_oob = JOJ_1936_naval
+}
+if = {
+	limit = {
+		has_dlc = "Man the Guns"
+	}
+	set_technology = {
+		basic_naval_mines = 1
+		submarine_mine_laying = 1
+		early_ship_hull_light = 1
+		basic_ship_hull_light = 1
+		early_ship_hull_cruiser = 1
+		basic_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_ship_hull_heavy = 1
+		panzerschiffe = 1
+		pre_dreadnoughts = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		mtg_transport = 1
+		basic_torpedo = 1
+		improved_ship_torpedo_launcher = 1
+		basic_battery = 1
+		basic_light_battery = 1
+		basic_medium_battery = 1
+		basic_heavy_battery = 1
+		basic_secondary_battery = 1
+		improved_secondary_battery = 1
+		basic_depth_charges = 1
+		sonar = 1
+		basic_cruiser_armor_scheme = 1
+	}
+	set_naval_oob = JOJ_1936_naval_mtg
+}
+
+set_research_slots = 5
+
+add_ideas = {
+	modern_tech_idea
+}
+
+set_convoys = 50
+
+set_popularities = {
+	democratic = 100
+
+	fascism = 0
+		
+	communism = 0
+		
+	
+		
+	monarchism = 0
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1930.7.1"
+	election_frequency = 72
+	elections_allowed = no
+}
+
+set_stability = 0.65
+
+create_country_leader = {
+	name = "Jonathan Joestar"
+	desc = "POLITICS_JONATHAN_DESC"
+	picture = "jonathan.dds"
+	expire = "1965.1.1"
+	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Jonathan Joestar"
+	desc = "POLITICS_JONATHAN_DESC"
+	picture = "jonathan.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Jonathan Joestar"
+	desc = "POLITICS_JONATHAN_DESC"
+	picture = "jonathan.dds"
+	expire = "1965.1.1"
+	ideology = nazism
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Jonathan Joestar"
+	desc = "POLITICS_JONATHAN_DESC"
+	picture = "jonathan.dds"
+	expire = "1965.1.1"
+	ideology = marxism
+	traits = {
+		#
+	}
+}
+
+create_field_marshal = {
+	name = "Jonathan Joestar"
+	portrait_path = "gfx/leaders/JOJ/jonathan.dds"
+	desc = "POLITICS_JONATHAN_DESC"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 3
+    planning_skill = 2
+    logistics_skill = 2
+    id = 8000
+}
+
+create_field_marshal = {
+	name = "Joseph Joestar"
+	portrait_path = "gfx/leaders/JOJ/joseph.dds"
+	desc = "POLITICS_JOSEPH_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 2
+    defense_skill = 3
+    planning_skill = 1
+    logistics_skill = 2
+    id = 8001
+}
+
+create_field_marshal = {
+	name = "Lisa Lisa"
+	portrait_path = "gfx/leaders/JOJ/lisalisa.dds"
+	desc = "POLITICS_LISALISA_DESC"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 3
+    planning_skill = 4
+    logistics_skill = 3
+    id = 8005
+	female = yes
+}
+
+create_corps_commander = {
+	name = "Jotaro Kujo"
+	portrait_path = "gfx/leaders/JOJ/jotaro.dds"
+	desc = "POLITICS_JOTARO_DESC"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 3
+    id = 8002
+}
+
+create_corps_commander = {
+	name = "Josuke Higashikata"
+	portrait_path = "gfx/leaders/JOJ/josuke.dds"
+	desc = "POLITICS_JOSUKE_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 1
+    planning_skill = 2
+    logistics_skill = 2
+    id = 8003
+}
+
+create_corps_commander = {
+	name = "Jolyne Cujoh"
+	portrait_path = "gfx/leaders/JOJ/jolyne.dds"
+	desc = "POLITICS_JOLYNE_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 2
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 2
+    id = 8004
+	female = yes
+}
+
+create_corps_commander = {
+	name = "Caesar Zeppeli"
+	portrait_path = "gfx/leaders/JOJ/caesar.dds"
+	desc = "POLITICS_CAESAR_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 3
+    logistics_skill = 2
+    id = 8006
+}
+
+create_field_marshal = {
+	name = "Will Zeppeli"
+	portrait_path = "gfx/leaders/JOJ/will_zeppeli.dds"
+	desc = "POLITICS_WILL_Z_DESC"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 4
+    logistics_skill = 3
+    id = 8007
+}
+
+create_corps_commander = {
+	name = "Noriaki Kakyoin"
+	portrait_path = "gfx/leaders/JOJ/kakyoin.dds"
+	desc = "POLITICS_KAKYOIN_DESC"
+	traits = { }
+	skill = 2
+    attack_skill = 2
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 3
+    id = 8008
+}
+
+create_corps_commander = {
+	name = "Koichi Hirose"
+	portrait_path = "gfx/leaders/JOJ/koichi.dds"
+	desc = "POLITICS_KOICHI_DESC"
+	traits = { }
+	skill = 2
+    attack_skill = 3
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 1
+    id = 8009
+}
+
+create_corps_commander = {
+	name = "Okuyasu Nijimura"
+	portrait_path = "gfx/leaders/JOJ/okuyasu.dds"
+	desc = "POLITICS_OKUYASU_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 2
+    logistics_skill = 2
+    id = 8010
+}
+
+create_corps_commander = {
+	name = "Jean Pierre Polnareff"
+	portrait_path = "gfx/leaders/JOJ/polnareff.dds"
+	desc = "POLITICS_POLNAREFF_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 3
+    id = 8011
+}
+
+create_corps_commander = {
+	name = "Rohan Kishibe"
+	portrait_path = "gfx/leaders/JOJ/rohan.dds"
+	desc = "POLITICS_ROHAN_DESC"
+	traits = { }
+	skill = 2
+    attack_skill = 3
+    defense_skill = 2
+    planning_skill = 2
+    logistics_skill = 2
+    id = 8012
+}
+
+create_corps_commander = {
+	name = "Robert E.O. Speedwagon"
+	portrait_path = "gfx/leaders/JOJ/speedwagon.dds"
+	desc = "POLITICS_SPEEDWAGON_DESC"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 3
+    logistics_skill = 3
+    id = 8013
+}

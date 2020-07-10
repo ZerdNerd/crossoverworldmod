@@ -4,9 +4,22 @@ state={
 	provinces={
 		577 984 1859 2054 2910 2924 3106 3289 4239 4983 7970 8035 8057 8062 8108 8125 8141 8194 8219 8232 8254 8291 8333 8378 
 	}
-	manpower=0
+	state_category = rural
+	manpower=350000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = PIL
+		add_core_of = PIL
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			arms_factory = 1
+			577 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			577 10
+		}
 	}
 }

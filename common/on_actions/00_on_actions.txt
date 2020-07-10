@@ -116,6 +116,50 @@ on_actions = {
 					}
 				}
 			}
+
+			if = {
+				limit = {
+					tag = SIO
+					AND = {
+						check_variable = { SIO_days_since_last_sun_dance > 0 }
+						check_variable = { SIO_days_since_last_sun_dance < 365 }
+					}
+				}
+				add_to_variable = { SIO_days_since_last_sun_dance = 1 }
+			}
+
+			if = {
+				limit = {
+					tag = SIO
+					AND = {
+						check_variable = { SIO_days_since_last_sun_dance = 365 }
+						has_country_flag = SIO_halted_all_festivities
+					}
+				}
+				set_variable = { SIO_days_since_last_sun_dance = 1 }
+			}
+
+			if = {
+				limit = {
+					tag = SIO
+					AND = {
+						check_variable = { SIO_days_since_last_sun_dance = 365 }
+						OR = {
+							NOT = {
+								has_country_flag = SIO_halted_all_festivities
+							}
+							has_country_flag = SIO_festivities_reinstated
+						}
+					}
+				}
+				SIO = {
+					set_variable = { SIO_days_since_last_sun_dance = 0 }
+					country_event = {
+						id = sioux.12
+						days = 0
+					}
+				}
+			}
 		}
 	}
 

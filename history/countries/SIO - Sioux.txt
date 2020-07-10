@@ -42,6 +42,7 @@ set_popularities = {
 		
 	monarchism = 0
 }
+
 set_politics = {
 	ruling_party = democratic
 	last_election = "1930.7.1"
@@ -49,7 +50,22 @@ set_politics = {
 	elections_allowed = no
 }
 
-set_stability = 0.85
+country_event = {
+	id = sioux.14
+	days = 195
+}
+
+country_event = {
+	id = sioux.12
+	days = 100
+}
+
+country_event = {
+	id = sioux.17
+	days = 580
+}
+
+set_stability = 0.55
 
 create_country_leader = {
 	name = "Vacant"
@@ -104,6 +120,7 @@ create_corps_commander = {
     defense_skill = 4
     planning_skill = 3
     logistics_skill = 3
+	id = 8750
 }
 
 create_corps_commander = {
@@ -137,6 +154,7 @@ create_corps_commander = {
     defense_skill = 3
     planning_skill = 4
     logistics_skill = 2
+	id = 8751
 }
 
 create_corps_commander = {

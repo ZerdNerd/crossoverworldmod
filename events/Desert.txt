@@ -617,6 +617,9 @@ country_event = { #Evacuation of Sioux women and children
 				set_country_flag = SIO_was_ai
 			}
 		}
+		hidden_effect = {
+			set_country_flag = SIO_sandstorm_fired
+		}
 	}
 
 	fire_only_once = yes
@@ -629,34 +632,13 @@ country_event = { #Evacuation of Sioux women and children
 		GRN = {
 			country_event = {
 				id = desert.18
-				days = 60
-			}
-			hidden_effect = {
-				change_tag_from = SIO
-			}
-		}
-	}
-
-	option = { #Western Continent
-		name = desert.17.b
-		ai_chance = {
-			factor = 5
-		}
-		hidden_effect = {
-			MAI = {
-				country_event = {
-					id = desert.19
-					days = 60
-				}
-				hidden_effect = {
-					change_tag_from = SIO
-				}
+				days = 1
 			}
 		}
 	}
 }
 
-country_event = { #Sioux refugees arrive to Greenland
+country_event = { #Sioux refugees exiled to Greenland
 	id = desert.18
 	immediate = {log = "[GetDateText]: [Root.GetName]: event desert.18"}
 	title = desert.18.t
@@ -667,32 +649,43 @@ country_event = { #Sioux refugees arrive to Greenland
 
 	option = { #We gladly welcome you!
 		name = desert.18.a
-		add_manpower = 10000
 		add_ideas = {
 			SIO_refugees
 		}
-		create_corps_commander = {
-			name = "Yakari"
-			portrait_path = "gfx/leaders/GRN/yakari.dds"
-			skill = 3
-   			attack_skill = 3
-    		defense_skill = 2
-    		planning_skill = 2
-    		logistics_skill = 3
-    		id = 9000
+		SIX = {
+			add_state_core = 22
+			add_state_core = 23
+			transfer_state = 22
+			transfer_state = 23
+			set_capital = 22
+			add_manpower = 15000
+			add_ideas = {
+				modern_tech_idea
+			}
+			GRN = {
+				puppet = PREV
+				set_autonomy = { target = PREV autonomy_state = autonomy_puppet }
+			}
+			set_politics = {
+				ruling_party = democratic
+			}
+			hidden_effect = {
+				load_oob = GRN_sioux_arrive
+				change_tag_from = SIO
+			}
+			inherit_technology = GRN
+			add_equipment_to_stockpile = {
+    			type = var:convoys
+    			amount = 40
+			}
 		}
-		create_corps_commander = {
-			name = "Buffalo Seed"
-			portrait_path = "gfx/leaders/GRN/buffalo_seed.dds"
-			skill = 2
-   			attack_skill = 2
-    		defense_skill = 2
-    		planning_skill = 3
-    		logistics_skill = 2
-    		id = 9001
-		}
-		hidden_effect = {
-			load_oob = GRN_sioux_arrive
+		SIO = {
+			delete_unit_template_and_units = {
+    			division_template = "Sioux Cavalry Division"
+			}
+			transfer_navy = {
+    			target = SIX
+			}
 		}
 	}
 }
@@ -965,16 +958,11 @@ country_event = { #Sioux refugees return to their country - Greenland
 
 	option = { #Have a good trip!
 		name = desert.27.a
-		add_manpower = -10000
 		remove_ideas = {
 			SIO_refugees
 		}
-		remove_unit_leader = 9000
-		remove_unit_leader = 9001
-		hidden_effect = {
-			remove_unit_leader = 9000
-			remove_unit_leader = 9001
-		}
+		transfer_state = 22
+		transfer_state = 23
 	}
 }
 

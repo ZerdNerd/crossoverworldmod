@@ -5,9 +5,16 @@ state={
 	provinces={
 		3948 5380 8180 8217 8245 
 	}
-	manpower=0
+	manpower=10000
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = GRN
+		add_core_of = GRN
+		buildings = {
+			infrastructure = 2
+			8217 = {
+				naval_base = 2
+			}
+		}
 	}
 }

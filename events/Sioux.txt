@@ -309,6 +309,267 @@ country_event = { #The Colony accepts our demands
 	}
 }
 
+country_event = { #Sun Dance
+	id = sioux.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.12"}
+	title = sioux.12.t
+	desc = sioux.12.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Bonuses, yay
+		name = sioux.12.a
+		add_timed_idea = {
+			idea = SIO_sun_dance
+			days = 60
+		}
+		hidden_effect = {
+			set_variable = { SIO_days_since_last_sun_dance = 1 }
+		}
+	}
+}
+
+country_event = { #1936 Bison Hunt successful
+	id = sioux.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.13"}
+	title = sioux.13.t
+	desc = sioux.13.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Bonuses, yay
+		name = sioux.13.a
+		add_timed_idea = {
+			idea = SIO_successful_bison_hunt
+			days = 200
+		}
+	}
+}
+
+country_event = { #1936 Cross-Prairie Race
+	id = sioux.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.14"}
+	title = sioux.14.t
+	desc = sioux.14.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Who will win?
+		name = sioux.14.a
+		hidden_effect = {
+			random_list = {
+				50 = {
+					country_event = {
+						id = sioux.15
+						days = 20
+					}
+				}
+				50 = {
+					country_event = {
+						id = sioux.16
+						days = 20
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Eastern Team wins the Race
+	id = sioux.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.15"}
+	title = sioux.15.t
+	desc = sioux.15.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.15.a
+	}
+}
+
+country_event = { #Western Team wins the Race
+	id = sioux.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.16"}
+	title = sioux.16.t
+	desc = sioux.16.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.15.a
+	}
+}
+
+country_event = { #1937 Red Ribbon Race
+	id = sioux.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.17"}
+	title = sioux.17.t
+	desc = sioux.17.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Yakari won't interfere, race goes as usual
+		name = sioux.17.a
+		custom_effect_tooltip = SIO_challenge_refused
+		hidden_effect = {
+			random_list = {
+				80 = {
+					country_event = {
+						id = sioux.18
+						days = 2
+					}
+				}
+				20 = {
+					country_event = {
+						id = sioux.19
+						days = 2
+					}
+				}
+			}
+		}
+	}
+
+	option = { #Yakari accepts Proudest Cloud's challenge
+		name = sioux.17.b
+		custom_effect_tooltip = SIO_challenge_accepted
+		hidden_effect = {
+			random_list = {
+				75 = {
+					country_event = {
+						id = sioux.20
+						days = 2
+					}
+				}
+				25 = {
+					country_event = {
+						id = sioux.21
+						days = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Proudest Cloud wins the Red Ribbon Race
+	id = sioux.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.18"}
+	title = sioux.18.t
+	desc = sioux.18.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.18.a
+		every_unit_leader = {
+			limit = {
+				has_id = 8751
+			}
+			add_logistics = 1
+			add_planning = 1
+		}
+	}
+}
+
+country_event = { #Bold Gaze wins the Red Ribbon Race
+	id = sioux.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.19"}
+	title = sioux.19.t
+	desc = sioux.19.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.19.a
+		every_unit_leader = {
+			limit = {
+				has_id = 8750
+			}
+			add_logistics = 1
+			add_planning = 1
+		}
+	}
+}
+
+country_event = { #Yakari wins the Red Ribbon Race, thus ending the tradition
+	id = sioux.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.20"}
+	title = sioux.20.t
+	desc = sioux.20.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.20.a
+		add_stability = -0.05
+		army_experience = 5
+	}
+}
+
+country_event = { #Proudest Cloud wins the Red Ribbon Race
+	id = sioux.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.21"}
+	title = sioux.21.t
+	desc = sioux.21.d
+	picture = GFX_report_sioux
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Congrats
+		name = sioux.21.a
+		every_unit_leader = {
+			limit = {
+				has_id = 8751
+			}
+			add_logistics = 1
+			add_planning = 1
+		}
+		hidden_effect = {
+			set_country_flag = SIO_yakari_lost_red_ribbon_race
+			#event for Humsin
+		}
+	}
+}
+
+
+#######################################################################################################################################################################################################
+#
+#	  AAA   LL      LL         VV     VV  OOOOO  TTTTTTT IIIII NN   NN   GGGG      SSSSS  TTTTTTT UU   UU FFFFFFF FFFFFFF      GGGG   OOOOO  EEEEEEE  SSSSS     HH   HH EEEEEEE RRRRRR  EEEEEEE 
+#	 AAAAA  LL      LL         VV     VV OO   OO   TTT    III  NNN  NN  GG  GG    SS        TTT   UU   UU FF      FF          GG  GG OO   OO EE      SS         HH   HH EE      RR   RR EE      
+#	AA   AA LL      LL          VV   VV  OO   OO   TTT    III  NN N NN GG          SSSSS    TTT   UU   UU FFFF    FFFF       GG      OO   OO EEEEE    SSSSS     HHHHHHH EEEEE   RRRRRR  EEEEE   
+#	AAAAAAA LL      LL           VV VV   OO   OO   TTT    III  NN  NNN GG   GG         SS   TTT   UU   UU FF      FF         GG   GG OO   OO EE           SS    HH   HH EE      RR  RR  EE      
+#	AA   AA LLLLLLL LLLLLLL       VVV     OOOO0    TTT   IIIII NN   NN  GGGGGG     SSSSS    TTT    UUUUU  FF      FF          GGGGGG  OOOO0  EEEEEEE  SSSSS     HH   HH EEEEEEE RR   RR EEEEEEE 
+#
+########################################################################################################################################################################################################                                                                                                                                                                                
+
 country_event = { #1936 Bison hunt
 	id = sioux_vote.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux_vote.1"}
@@ -350,11 +611,14 @@ country_event = { #1936 Bison hunt vote results
 			}
 			add_political_power = 50
 			hidden_effect = {
-				clr_country_flag = bison_hunt_west
 				reset_the_council_votes = yes
 				country_event = {
 					id = sioux_vote.3
 					days = 0
+				}
+				country_event = {
+					id = sioux.13
+					days = 28
 				}
 			}
 		}
@@ -364,7 +628,6 @@ country_event = { #1936 Bison hunt vote results
 			}
 			add_political_power = -50
 			hidden_effect = {
-				clr_country_flag = bison_hunt_east
 				reset_the_council_votes = yes
 				country_event = {
 					id = sioux_vote.3
