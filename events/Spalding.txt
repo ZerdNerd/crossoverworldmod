@@ -92,13 +92,13 @@ country_event = { #Elections 1936
 	option = {
 		name = spalding.1.e
 		trigger = {
-			monarchism > 0.24
+			neutrality > 0.24
 		}
 		set_politics = {
-			ruling_party = monarchism
+			ruling_party = neutrality
 		}
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = 0.15
 		}
 		hidden_effect = {
@@ -319,7 +319,7 @@ country_event = { #Wojtyla proposes mediations
 	option = { #Shut up
 		name = spalding.7.a
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = -0.1
 		}
 		hidden_effect = {
@@ -333,7 +333,7 @@ country_event = { #Wojtyla proposes mediations
 	option = { #Let him do it
 		name = spalding.7.b
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = 0.1
 		}
 		hidden_effect = {
@@ -399,7 +399,7 @@ country_event = { #Tracz and Pazdzioch both want Pazdzioch's shop
     		popularity = 0.1
 		}
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = 0.1
 		}
 	}
@@ -433,7 +433,7 @@ country_event = { #Tracz tries to rebel, but is overpowered
     		popularity = -1.0
 		}
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = 0.05
 		}
 	}
@@ -465,7 +465,7 @@ country_event = { #Door are opened, military arrests Tracz and Pazdzioch
     		popularity = -1.0
 		}
 		add_popularity = {
-    		ideology = monarchism
+    		ideology = neutrality
     		popularity = 0.15
 		}
 	}
@@ -541,7 +541,7 @@ country_event = { #Neland Republic declares independence!
 					democratic = 14
 					fascism = 6
 					communism = 80		
-					monarchism = 0
+					neutrality = 0
 				}
 				hidden_effect = {
 					load_oob = NRL_communist_ind
@@ -576,7 +576,7 @@ country_event = { #Neland Republic declares independence!
 					democratic = 86
 					fascism = 6
 					communism = 8		
-					monarchism = 0
+					neutrality = 0
 				}
 				hidden_effect = {
 					load_oob = NRL_democratic_ind

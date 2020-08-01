@@ -411,7 +411,7 @@ country_event = { #Friedewalt demands giving back the crown
 			FRI_disloyal_army
 		}
 		set_politics = {
-			ruling_party = monarchism
+			ruling_party = neutrality
 		}
 		remove_unit_leader = 9999
 		random_other_country = {
@@ -464,7 +464,7 @@ country_event = { #Friedewalt demands giving back the crown
 				FRI_disloyal_army
 			}
 			set_politics = {
-				ruling_party = monarchism
+				ruling_party = neutrality
 			}
 			remove_unit_leader = 9999
 		}
@@ -489,7 +489,7 @@ country_event = { #Friedewalt demands giving back the crown
 		}
 		start_civil_war = {
     		ruling_party = fascism
-    		ideology = monarchism
+    		ideology = neutrality
     		size = 0.5
     		capital = 763
     		states = { 
@@ -560,7 +560,7 @@ country_event = { #Case of Spalding
 		trigger = {
 			SLD = {
 				OR = {
-					has_government = monarchism
+					has_government = neutrality
 					has_government = democratic
 					has_government = paidocracy
 				}

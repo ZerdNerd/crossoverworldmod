@@ -1304,7 +1304,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 						}
 						NOT = {
 							has_completed_focus = GRN_reopen_the_portal
@@ -1328,7 +1328,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 							OR = {
 								has_completed_focus = GRN_coronation_of_tabaluga
 								has_completed_focus = GRN_majority_rules
@@ -1375,7 +1375,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 						}
 						has_completed_focus = GRN_reopen_the_portal
 					}
@@ -1753,7 +1753,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 						}
 						NOT = {
 							has_completed_focus = GRN_reopen_the_portal
@@ -1777,7 +1777,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 							OR = {
 								has_completed_focus = GRN_coronation_of_tabaluga
 								has_completed_focus = GRN_majority_rules
@@ -1824,7 +1824,7 @@ occupation_dec_category = {
 				if = {
 					limit = {
 						GRN = {
-							has_government = monarchism
+							has_government = neutrality
 						}
 						has_completed_focus = GRN_reopen_the_portal
 					}
@@ -4053,10 +4053,10 @@ occupation_dec_category = {
 				is_puppet = no
 				OR = {
 					NOT = {
-						has_government = monarchism
+						has_government = neutrality
 					}
 					AND = {
-						has_government = monarchism
+						has_government = neutrality
 						has_global_flag = winslows_are_dead
 					}
 				}
@@ -4129,10 +4129,10 @@ occupation_dec_category = {
 				is_puppet = no
 				OR = {
 					NOT = {
-						has_government = monarchism
+						has_government = neutrality
 					}
 					AND = {
-						has_government = monarchism
+						has_government = neutrality
 						has_global_flag = winslows_are_dead
 					}
 				}
@@ -4207,10 +4207,10 @@ occupation_dec_category = {
 				is_puppet = no
 				OR = {
 					NOT = {
-						has_government = monarchism
+						has_government = neutrality
 					}
 					AND = {
-						has_government = monarchism
+						has_government = neutrality
 						has_global_flag = winslows_are_dead
 					}
 				}
@@ -4281,10 +4281,10 @@ occupation_dec_category = {
 				is_puppet = no
 				OR = {
 					NOT = {
-						has_government = monarchism
+						has_government = neutrality
 					}
 					AND = {
-						has_government = monarchism
+						has_government = neutrality
 						has_global_flag = winslows_are_dead
 					}
 				}
@@ -4349,10 +4349,10 @@ occupation_dec_category = {
 				is_puppet = no
 				OR = {
 					NOT = {
-						has_government = monarchism
+						has_government = neutrality
 					}
 					AND = {
-						has_government = monarchism
+						has_government = neutrality
 						has_global_flag = winslows_are_dead
 					}
 				}
@@ -4423,7 +4423,7 @@ occupation_dec_category = {
 				owns_state = 98
 				owns_state = 8
 				is_puppet = no
-				has_government = monarchism
+				has_government = neutrality
 			}
 			ENC = {
 				exists = no
@@ -4497,7 +4497,7 @@ occupation_dec_category = {
 				}
 				is_faction_leader = yes
 				is_puppet = no
-				has_government = monarchism
+				has_government = neutrality
 				any_controlled_state = {
 					is_core_of = ENC
 				}
@@ -4585,7 +4585,7 @@ occupation_dec_category = {
 				owns_state = 98
 				owns_state = 8
 				is_puppet = no
-				has_government = monarchism
+				has_government = neutrality
 			}
 			OR = {
 				has_global_flag = winslows_stripped_james

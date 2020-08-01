@@ -704,10 +704,10 @@ focus_tree = {
 			focus = SLD_the_great_elections
 		}
 		available = {
-			has_government = monarchism
+			has_government = neutrality
 		}
 		bypass = {
-			has_government = monarchism
+			has_government = neutrality
 		}
 		ai_will_do = { 
 			factor = 1
@@ -875,7 +875,7 @@ focus_tree = {
 		} 
 		completion_reward = {
 			add_popularity = {
-    			ideology = monarchism
+    			ideology = neutrality
     			popularity = 0.1
 			}
 			custom_effect_tooltip = new_generals_and_ideas_will_become_available
@@ -1243,7 +1243,7 @@ focus_tree = {
 				has_global_flag = enchancian_civil_war
 			}
 			OR = {
-				has_government = monarchism
+				has_government = neutrality
 				has_government = democratic
 			}
 		} 
@@ -1260,7 +1260,7 @@ focus_tree = {
 				}
 			}
 			OR = {
-				has_government = monarchism
+				has_government = neutrality
 				has_government = democratic
 			}
 		}
@@ -2722,7 +2722,7 @@ focus_tree = {
 		available = { 
 			OR = {
 				has_government = democratic
-				has_government = monarchism
+				has_government = neutrality
 			}
 		}
 		prerequisite = {
@@ -3037,7 +3037,7 @@ focus_tree = {
 			OR = {
 				has_government = communism
 				has_government = fascism
-				has_government = monarchism
+				has_government = neutrality
 			}
 			owns_state = 734
 			owns_state = 774
@@ -3231,7 +3231,7 @@ focus_tree = {
 			OR = {
 				has_government = communism
 				has_government = fascism
-				has_government = monarchism
+				has_government = neutrality
 			}
 		}
 		mutually_exclusive = {
