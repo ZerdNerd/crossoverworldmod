@@ -62,3 +62,545 @@ country_event = { #They reject
 		name = gongmenempire.3.a
 	}
 }
+
+country_event = { #Monarchist Guerillas are defeated
+	id = gongmenempire.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.4"}
+	title = gongmenempire.4.t
+	desc = gongmenempire.4.d
+	picture = GFX_report_event_spr_carlists
+
+	is_triggered_only = yes
+
+	option = { #Finally!
+		name = gongmenempire.4.a
+		remove_ideas = {
+			GON_decreasing_monarchists
+			GON_monarchist_guerillas
+		}
+	}
+}
+
+country_event = { #Monarchist Guerillas attack!
+	id = gongmenempire.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.5"}
+	title = gongmenempire.5.t
+	desc = gongmenempire.5.d
+	picture = GFX_report_event_spr_anarchists2
+
+	is_triggered_only = yes
+
+	option = { #Send more men to fight them!
+		name = gongmenempire.5.a
+		add_political_power = -50
+		add_stability = -0.02
+		random_owned_state = {
+			damage_building = {
+    			type = infrastructure
+    			damage = 1
+			}	
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.02
+		}
+		hidden_effect = {
+			set_variable = {
+				time_since_monarchists_attack = 0
+			}
+		}
+	}
+}
+
+country_event = { #Monarchist Guerillas and Shikeng workers sabotage the industry!
+	id = gongmenempire.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.6"}
+	title = gongmenempire.6.t
+	desc = gongmenempire.6.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+
+	is_triggered_only = yes
+
+	option = { #Dang it!
+		name = gongmenempire.6.a
+		add_political_power = -75
+		add_stability = -0.05
+		163 = {
+			damage_building = {
+    			type = arms_factory
+    			damage = 2
+			}	
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = 0.02
+		}
+		hidden_effect = {
+			set_variable = {
+				time_since_monarchists_attack_shikeng = 0
+			}
+		}
+	}
+}
+
+country_event = { #Monarchist hideout discovered!
+	id = gongmenempire.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.7"}
+	title = gongmenempire.7.t
+	desc = gongmenempire.7.d
+	picture = GFX_report_event_spr_anarchist_uprising
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = gongmenempire.7.a
+		add_political_power = 50
+		add_stability = 0.02
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.02
+		}
+		add_popularity = {
+    		ideology = monarchism
+    		popularity = -0.02
+		}
+	}
+}
+
+country_event = { #Lord Shen proposes us a non-aggression pact and dividing territories around
+	id = gongmenempire.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.8"}
+	title = gongmenempire.8.t
+	desc = gongmenempire.8.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Interesting proposal, we'll sign it
+		name = gongmenempire.8.a
+		GON = {
+			country_event = {
+				id = gongmenempire.9
+				days = 1
+			}
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		hidden_effect = {
+			set_country_flag = GON_FLO_accepted_pact
+		}
+	}
+
+	option = { #We won't pact with fascists!
+		name = gongmenempire.8.b
+		GON = {
+			country_event = {
+				id = gongmenempire.10
+				days = 1
+			}
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = { #Flower Hill agrees
+	id = gongmenempire.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.9"}
+	title = gongmenempire.9.t
+	desc = gongmenempire.9.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = gongmenempire.9.a
+		diplomatic_relation = {
+    		country = FLO
+    		relation = non_aggression_pact
+    		active = yes
+		}
+		add_state_claim = 211
+		add_state_claim = 227
+		add_state_claim = 168
+		add_state_claim = 164
+		hidden_effect = {
+			set_country_flag = GON_FLO_accepted_pact
+			add_relation_modifier = {
+				target = FLO
+				modifier = shen_flower_pact
+			}
+			FLO = {
+				add_relation_modifier = {
+					target = GON
+					modifier = shen_flower_pact
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Flower Hill rejects
+	id = gongmenempire.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.10"}
+	title = gongmenempire.10.t
+	desc = gongmenempire.10.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Dang it!
+		name = gongmenempire.10.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Lord Shen proposes us a non-aggression pact and dividing Greenland
+	id = gongmenempire.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.11"}
+	title = gongmenempire.11.t
+	desc = gongmenempire.11.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Interesting proposal, we'll sign it
+		name = gongmenempire.11.a
+		GON = {
+			country_event = {
+				id = gongmenempire.12
+				days = 1
+			}
+		}
+		add_political_power = -100
+		add_stability = -0.15
+	}
+
+	option = { #Greenland is ours!
+		name = gongmenempire.11.b
+		GON = {
+			country_event = {
+				id = gongmenempire.13
+				days = 1
+			}
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = { #Humsin agrees
+	id = gongmenempire.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.12"}
+	title = gongmenempire.12.t
+	desc = gongmenempire.12.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = gongmenempire.12.a
+		diplomatic_relation = {
+    		country = DES
+    		relation = non_aggression_pact
+    		active = yes
+		}
+		add_state_claim = 245
+		add_state_claim = 262
+		add_state_claim = 252
+		add_state_claim = 293
+		add_state_claim = 318
+		add_state_claim = 322
+		add_state_claim = 342
+		add_state_claim = 297
+		add_state_claim = 373
+	}
+}
+
+country_event = { #Humsin rejects
+	id = gongmenempire.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.13"}
+	title = gongmenempire.13.t
+	desc = gongmenempire.13.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Dang it!
+		name = gongmenempire.13.a
+		add_political_power = -100
+	}
+}
+
+country_event = { #Lord Shen proposes us to divide Arendelle
+	id = gongmenempire.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.14"}
+	title = gongmenempire.14.t
+	desc = gongmenempire.14.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #An interesting proposal
+		name = gongmenempire.14.a
+		GON = {
+			country_event = {
+				id = gongmenempire.15
+				days = 1
+			}
+		}
+		add_political_power = 50
+	}
+
+	option = { #Sorry, but no.
+		name = gongmenempire.14.b
+		GON = {
+			country_event = {
+				id = gongmenempire.16
+				days = 1
+			}
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = { #Dio agrees
+	id = gongmenempire.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.15"}
+	title = gongmenempire.15.t
+	desc = gongmenempire.15.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = gongmenempire.15.a
+		add_state_claim = 169
+		add_state_claim = 149
+		add_state_claim = 154
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 196
+				}
+			}
+			add_state_claim = 196
+		}
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 173
+				}
+			}
+			add_state_claim = 173
+		}
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 137
+				}
+			}
+			add_state_claim = 137
+		}
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 126
+				}
+			}
+			add_state_claim = 126
+		}
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 127
+				}
+			}
+			add_state_claim = 127
+		}
+		if = {
+			limit = {
+				ARE = {
+					owns_state = 118
+				}
+			}
+			add_state_claim = 118
+		}
+		DIO = {
+			add_state_claim = 178
+			add_state_claim = 207
+			add_state_claim = 232
+			add_state_claim = 263
+			add_state_claim = 208
+			add_state_claim = 226
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 292
+					}
+				}
+				add_state_claim = 292
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 308
+					}
+				}
+				add_state_claim = 308
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 276
+					}
+				}
+				add_state_claim = 276
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 254
+					}
+				}
+				add_state_claim = 254
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 235
+					}
+				}
+				add_state_claim = 235
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 241
+					}
+				}
+				add_state_claim = 241
+			}
+			if = {
+				limit = {
+					ARE = {
+						owns_state = 285
+					}
+				}
+				add_state_claim = 285
+			}
+		}
+	}
+}
+
+country_event = { #Dio rejects
+	id = gongmenempire.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.16"}
+	title = gongmenempire.16.t
+	desc = gongmenempire.16.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Dang it!
+		name = gongmenempire.16.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Lord Shen attacks Arendelle
+	id = gongmenempire.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.17"}
+	title = gongmenempire.17.t
+	desc = gongmenempire.17.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #Join him
+		name = gongmenempire.17.a
+		declare_war_on = {
+			target = ARE
+			type = annex_everything
+		}
+	}
+
+	option = { #Sorry, but no.
+		name = gongmenempire.17.b
+		add_political_power = -50
+	}
+}
+
+country_event = { #Honouring Shen-FH pact
+	id = gongmenempire.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.18"}
+	title = gongmenempire.18.t
+	desc = gongmenempire.18.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	fire_only_once = yes
+
+	mean_time_to_happen = { days = 1 }
+	
+	trigger = {
+		tag = FLO
+		has_country_flag = GON_FLO_accepted_pact
+		owns_state = 227
+		owns_state = 211
+		TRL = {
+			exists = no
+		}
+	}
+
+	option = { #Of course, we will honour the pact.
+		name = gongmenempire.18.a
+		GON = {
+			transfer_state = 227
+			transfer_state = 211
+			country_event = {
+				id = gongmenempire.19
+				days = 0
+			}
+		}
+	}
+
+	option = { #No, we will not honour it.
+		name = gongmenempire.18.b
+		add_political_power = 50
+		GON = {
+			country_event = {
+				id = gongmenempire.20
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Flower Hill honours the pact
+	id = gongmenempire.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.19"}
+	title = gongmenempire.19.t
+	desc = gongmenempire.19.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #They are men of honor.
+		name = gongmenempire.19.a
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+}
+
+country_event = { #Flower Hill not honours the pact
+	id = gongmenempire.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event gongmenempire.20"}
+	title = gongmenempire.20.t
+	desc = gongmenempire.20.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+
+	is_triggered_only = yes
+
+	option = { #We were foolish!
+		name = gongmenempire.20.a
+		add_war_support = 0.15
+	}
+}

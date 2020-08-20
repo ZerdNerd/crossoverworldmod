@@ -592,8 +592,97 @@ ideas = {
 				always = no
 			}
 			modifier = {
-				fascism_drift = 0.10
-				monarchism_drift = -0.10
+				fascism_drift = 0.01
+				monarchism_drift = -0.01
+			}
+		}
+
+		GON_shikeng_is_working_harder = {
+			picture = boot_2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.1
+				line_change_production_efficiency_factor = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+
+		GON_shikeng_reforms_idea = {
+			picture = new_deal
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				line_change_production_efficiency_factor = 0.05
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.1
+			}
+		}
+
+		GON_naval_dreams = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy_factor = 0.15
+				naval_coordination = 0.05
+				production_speed_dockyard_factor = 0.15
+				industrial_capacity_dockyard = 0.15
+			}
+		}
+
+		GON_shores_programme = {
+			picture = liberty_ships_focus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_navy_factor = 0.05
+				production_speed_dockyard_factor = 0.10
+				industrial_capacity_dockyard = 0.10
+			}
+		}
+
+		GON_foreign_architects = {
+			picture = generic_build_infrastructure
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+
+		GON_closed_country = {
+			picture = generic_wall_line
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = 0.05
+				war_support_factor = 0.05
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.05
+				MONTHLY_POPULATION = -0.25
+			}
+		}
+
+		GON_closed_country_2 = {
+			picture = generic_wall_line
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.05
+				MONTHLY_POPULATION = -0.15
 			}
 		}
 
@@ -3426,6 +3515,8 @@ ideas = {
 
 		SIO_proudestcloud = {
 
+			ledger = army
+
 			allowed = {
 				original_tag = SIO
 			}
@@ -3450,6 +3541,8 @@ ideas = {
 		}
 
 		SIO_impatientsquirrel = {
+
+			ledger = army
 
 			allowed = {
 				original_tag = SIO
@@ -3477,6 +3570,8 @@ ideas = {
 
 	theorist = {
 		SIO_restfulwolf = {
+
+			ledger = army
 
 			allowed = {
 				original_tag = SIO

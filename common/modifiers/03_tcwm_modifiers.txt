@@ -1,0 +1,14 @@
+# TCWM modifiers are here. They are applied from certain game-features.
+# Effects are fully scriptable here.
+# Don't touch before deleting them from the rest of the code.
+
+shen_flower_pact = { #activates when Shen and Flower Hill sign a non-aggression pact
+	min_export = 0.15
+	consumer_goods_factor = -0.05
+	experience_gain_army = 0.05
+	experience_gain_navy = 0.05
+	license_purchase_cost = -0.25
+	license_tech_difference_speed = -0.25
+	research_speed_factor = 0.05
+	ai_license_acceptance = 50
+}

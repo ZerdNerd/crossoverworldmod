@@ -4,9 +4,34 @@ state={
 	provinces={
 		295 433 824 1550 1938 3038 3218 3500 3800 3826 4378 4387 6065 6078 6102 6106 6130 6134 6164 
 	}
-	manpower=0
+	manpower=750000
+	state_category = city
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = BER
+		add_core_of = BER
+		buildings = {
+			infrastructure = 2
+			arms_factory = 3
+			industrial_complex = 2
+			1550 = {
+				naval_base = 3
+			}
+			6106 = {
+				naval_base = 2
+			}
+			6102 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			1550 30
+		}
+		victory_points = {
+			6106 15
+		}
+		victory_points = {
+			6102 15
+		}
 	}
 }

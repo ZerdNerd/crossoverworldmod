@@ -31,7 +31,95 @@ preindustrial_to_premodern = {
 
 }
 
+preindustrial_to_modern = {
+	set_technology = {
+		infantry_weapons = 1
+	}
+	if = {
+		limit = {
+			not = { has_dlc = "Man the Guns" }
+		}
+		set_technology = {
+			basic_light_cruiser = 1
+			early_heavy_cruiser = 1
+			basic_heavy_cruiser = 1
+			early_battleship = 1
+			basic_battleship = 1
+			early_battlecruiser = 1
+		}
+	}
+	if = {
+		limit = {
+			has_dlc = "Man the Guns"
+		}
+		set_technology = {
+			basic_naval_mines = 1
+			submarine_mine_laying = 1
+			basic_ship_hull_light = 1
+			basic_ship_hull_cruiser = 1
+			early_ship_hull_heavy = 1
+			basic_ship_hull_heavy = 1
+			panzerschiffe = 1
+			pre_dreadnoughts = 1
+			early_ship_hull_submarine = 1
+			basic_ship_hull_submarine = 1
+			basic_torpedo = 1
+			improved_ship_torpedo_launcher = 1
+			basic_medium_battery = 1
+			basic_heavy_battery = 1
+			basic_secondary_battery = 1
+			improved_secondary_battery = 1
+			basic_depth_charges = 1
+			sonar = 1
+			basic_cruiser_armor_scheme = 1
+		}	
+	}
+	add_tech_bonus = {
+		bonus = 1.0
+		uses = 1
+		category = infantry_weapons
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 1
+   		category = dd_tech
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 1
+   		category = cl_tech
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 1
+   		category = ca_tech
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 1
+   		category = bc_tech
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 1
+   		category = bb_tech
+	}
+	add_tech_bonus = {
+    	bonus = 0.5
+    	uses = 2
+   		category = cv_tech
+	}
+	add_tech_bonus = {
+    	bonus = 1
+    	uses = 3
+   		category = air_equipment
+	}
+}
+
 premodern_to_modern = {
+	set_technology = {
+		infantry_weapons = 1
+	}
 	if = {
 		limit = {
 			not = { has_dlc = "Man the Guns" }
@@ -106,9 +194,17 @@ premodern_to_modern = {
     	uses = 3
    		category = air_equipment
 	}
+	add_tech_bonus = {
+		bonus = 1.0
+		uses = 1
+		category = infantry_weapons
+	}
 }
 
 middleage_to_modern = {
+	set_technology = {
+		infantry_weapons = 1
+	}
 	set_technology = {
 		gw_artillery = 1
 		early_fighter = 1
@@ -188,5 +284,10 @@ middleage_to_modern = {
     	bonus = 1
     	uses = 3
    		category = air_equipment
+	}
+	add_tech_bonus = {
+		bonus = 1.0
+		uses = 1
+		category = infantry_weapons
 	}
 }

@@ -24,7 +24,7 @@ country_event = { #Peace with Honor proposal for Avalor
 		hidden_effect = {
 			FROM = {
 				country_event = {
-					id = truce_proposal.1
+					id = truce_proposal.2
 					days = 1
 				}
 			}
@@ -40,7 +40,7 @@ country_event = { #Peace with Honor proposal for Avalor
 		hidden_effect = {
 			FROM = {
 				country_event = {
-					id = truce_proposal.2
+					id = truce_proposal.3
 					days = 1
 				}
 			}
@@ -76,6 +76,15 @@ country_event = { #Avalor accepts Peace with Honor
 		every_country = {
 			limit = {
 				is_in_faction_with = ROOT
+			}
+			white_peace = AVA
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = EN3
+					tag = EN4
+				}
 			}
 			white_peace = AVA
 		}

@@ -1,0 +1,36 @@
+﻿division_template = {
+	name = "Lalaloopsy Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Lalaloopsy Division"
+		location = 6101
+		division_template = "Lalaloopsy Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Lalaloopsy Division"
+		location = 6101
+		division_template = "Lalaloopsy Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "3. Lalaloopsy Division"
+		location = 6101
+		division_template = "Lalaloopsy Division"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "4. Lalaloopsy Division"
+		location = 6101
+		division_template = "Lalaloopsy Division"
+		start_experience_factor = 0.3
+	}
+}

@@ -183,23 +183,7 @@ enchancian_cw_cedric_support = {
 		is_subject = no
 		country_exists = EN3
 		NOT = { has_global_flag = enchancian_civil_war_ended }
-		OR = {
-			AND = {
-				tag = SLD
-				has_country_flag = ECW_support_cedric
-			}
-			AND = {
-				NOT = {
-					tag = SLD
-					tag = SKO
-					tag = KPT
-					tag = JPN
-					tag = DES
-					tag = SAN
-				}
-				has_government = fascism
-			}
-		}
+		has_country_flag = ECW_support_cedric
 	}
 	abort = {
 		OR = {
@@ -208,7 +192,7 @@ enchancian_cw_cedric_support = {
 			is_subject = yes
 			NOT = { country_exists = EN3 }
 			NOT = {
-				has_government = fascism
+				has_country_flag = ECW_support_cedric
 			}
 		}
 	}

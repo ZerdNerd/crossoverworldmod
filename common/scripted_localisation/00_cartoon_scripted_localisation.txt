@@ -1,3 +1,80 @@
+defined_text = { #Flo-Shen Pact loc
+    name = FLOPACT
+    text = {
+        trigger = {
+            FLO = {
+                has_country_leader = {
+                    name = "High Military Council"
+                    ruling_only = yes
+                }
+            }
+        }
+        localization_key = "Flower Hill"
+    }
+    text = {
+        trigger = {
+            FLO = {
+                has_country_leader = {
+                    name = "Darami"
+                    ruling_only = yes
+                }
+            }
+        }
+        localization_key = "Darami"
+    }
+    text = {
+        trigger = {
+            FLO = {
+                has_country_leader = {
+                    name = "Goseumdochi"
+                    ruling_only = yes
+                }
+            }
+        }
+        localization_key = "Goseumdochi"
+    }
+    text = {
+        trigger = {
+            FLO = {
+                has_country_leader = {
+                    name = "Geumsaegi"
+                    ruling_only = yes
+                }
+            }
+        }
+        localization_key = "Geumsaegi"
+    }
+}
+
+defined_text = { #Colonization not available cause loc
+    name = COLONIZATION_BUTTON_TOOLTIP_CANNOT_CAUSE
+    text = {
+        trigger = {
+            ROOT = {
+                NOT = {
+                    has_country_flag = limited_colonies_enabled
+                    has_country_flag = colonies_enabled
+                }
+            }
+        }
+        localization_key = COLONIZATION_BUTTON_TOOLTIP_CANNOT_CAUSE_1
+    }
+    text = {
+        trigger = {
+            AND = {
+                ROOT = {
+                    OR = {
+                        has_country_flag = limited_colonies_enabled
+                        has_country_flag = colonies_enabled
+                    }
+                    has_political_power < 50
+                }
+            }
+        }
+        localization_key = COLONIZATION_BUTTON_TOOLTIP_CANNOT_CAUSE_2
+    }
+}
+
 defined_text = { #James taken
     name = ENC_james_taken_script
     text = {

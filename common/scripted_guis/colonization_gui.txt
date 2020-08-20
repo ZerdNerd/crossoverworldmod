@@ -7,26 +7,69 @@ scripted_gui = {
  
         visible = {
             AND = {
-            THIS = {
-                AND = {
-                    is_owned_by = UNC
-            	    OR = {
-                        is_coastal = yes
-                        any_neighbor_state = { 
-                            is_owned_by = ROOT 
-                            NOT = {
-                                has_state_flag = state_is_being_colonized
+                THIS = {
+                    AND = {
+                        is_owned_by = UNC
+            	        OR = {
+                            is_coastal = yes
+                            any_neighbor_state = { 
+                                is_owned_by = ROOT 
+                                NOT = {
+                                    has_state_flag = state_is_being_colonized
+                                }
                             }
                         }
                     }
                 }
-            }
-            ROOT = {
-                is_ai = no #for testing
-                NOT = {
-                    tag = UNC
+                ROOT = {
+                    NOT = {
+                        tag = UNC
+                    }
                 }
-            }
+                OR = {
+                    ROOT = {
+                        NOT = {
+                            has_country_flag = limited_colonies_enabled
+                            has_country_flag = colonies_enabled
+                        }
+                    }
+                    AND = {
+                        ROOT = {
+                            has_country_flag = colonies_enabled
+                            has_political_power < 50
+                        }
+                    }
+                    AND = {
+                        ROOT = {
+                            tag = GON
+                            has_country_flag = limited_colonies_enabled
+                        }
+                        OR = {
+                            THIS = {
+                                NOT = {
+                                    state = 206
+                                    state = 173
+                                    state = 237
+                                    state = 196
+                                    state = 137
+                                    state = 120
+                                    state = 110
+                                    state = 117
+                                    state = 123
+                                    state = 130
+                                    state = 157
+                                    state = 121
+                                    state = 108
+                                    state = 101
+                                    state = 105
+                                }
+                            }
+                            ROOT = {
+                                has_political_power < 50
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -52,32 +95,67 @@ scripted_gui = {
  
         visible = {
             AND = {
-            THIS = {
-                AND = {
-                    is_owned_by = UNC
-            	    OR = {
-                        is_coastal = yes
-                        any_neighbor_state = { 
+                THIS = {
+                    AND = {
+                        is_owned_by = UNC
+            	        OR = {
+                            is_coastal = yes
+                            any_neighbor_state = { 
                             is_owned_by = ROOT 
-                            NOT = {
-                                has_state_flag = state_is_being_colonized
+                                NOT = {
+                                    has_state_flag = state_is_being_colonized
+                                }
                             }
                         }
                     }
                 }
-            }
-            ROOT = {
-                is_ai = no #for testing
-                NOT = {
-                    tag = UNC
+                ROOT = {
+                    NOT = {
+                        tag = UNC
+                    }
+                    has_political_power > 50
                 }
-            }
+                OR = {
+                    ROOT = {
+                        has_country_flag = colonies_enabled
+                    }
+                    AND = {
+                        ROOT = {
+                            tag = GON
+                            has_country_flag = limited_colonies_enabled
+                        }
+                        THIS = {
+                            is_owned_by = UNC
+                            OR = {
+                                state = 206
+                                state = 173
+                                state = 237
+                                state = 196
+                                state = 137
+                                state = 120
+                                state = 110
+                                state = 117
+                                state = 123
+                                state = 130
+                                state = 157
+                                state = 121
+                                state = 108
+                                state = 101
+                                state = 105
+                            }
+                        }
+                    }
+                }
             }
         }
 
         triggers = {
             colonization_button_visible = {
                 ROOT = {
+                    OR = {
+                        has_country_flag = limited_colonies_enabled
+                        has_country_flag = colonies_enabled
+                    }
                     has_political_power > 50
                 }
             }

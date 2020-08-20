@@ -1,0 +1,24 @@
+﻿division_template = {
+	name = "Tigers Unit"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Tigers Unit"
+		location = 7892
+		division_template = "Tigers Unit"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Tigers Unit"
+		location = 7892
+		division_template = "Tigers Unit"
+		start_experience_factor = 0.3
+	}
+}

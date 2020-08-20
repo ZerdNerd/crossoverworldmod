@@ -1,0 +1,24 @@
+﻿division_template = {
+	name = "Khorinis Unit"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Khorinis Unit"
+		location = 2405
+		division_template = "Khorinis Unit"
+		start_experience_factor = 0.3
+	}
+	division = {
+		name = "2. Khorinis Unit"
+		location = 2405
+		division_template = "Khorinis Unit"
+		start_experience_factor = 0.3
+	}
+}

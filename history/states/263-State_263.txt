@@ -4,9 +4,19 @@ state={
 	provinces={
 		540 566 1303 1860 3046 3187 3549 4434 4914 5321 5876 6840 6866 
 	}
-	manpower=0
+	manpower=275000
+	state_category = city
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = ARE
+		add_core_of = ARE
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 2
+		}
+		victory_points = {
+			566 15
+		}
 	}
 }

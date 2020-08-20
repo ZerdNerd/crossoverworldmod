@@ -1,0 +1,53 @@
+﻿division_template = {
+	name = "Vampire Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Tank Division"
+	regiments = {
+		light_armor = { x = 0 y = 0 }
+		light_armor = { x = 0 y = 1 }
+        light_armor = { x = 1 y = 0 }
+	}
+}
+
+units = {
+	division = {
+		name = "1. Vampire Division"
+		location = 7633
+		division_template = "Vampire Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Vampire Division"
+		location = 7633
+		division_template = "Vampire Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "3. Vampire Division"
+		location = 7633
+		division_template = "Vampire Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "4. Vampire Division"
+		location = 7633
+		division_template = "Vampire Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "1. Tank Division"
+		location = 7633
+		division_template = "Tank Division"
+		start_experience_factor = 0.2
+	}
+}
+

@@ -4,9 +4,21 @@ state={
 	provinces={
 		117 1789 4973 5991 
 	}
-	manpower=0
+	manpower=400000
+	state_category = rural
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = VIC
+		add_core_of = VIC
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			6001 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			6001 10
+		}
 	}
 }

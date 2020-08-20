@@ -1,0 +1,75 @@
+ability = {
+	ora_ora_ora = {
+		name = ABILITY_ORA_ORA_ORA
+		desc = ABILITY_ORA_ORA_ORA_DESC
+		
+		sound_effect = StarPlatinumOra
+		
+		type = army_leader
+		
+		allowed = {
+			is_leading_army_group = no
+			is_border_war = no
+			has_id = 8002
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 168
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.35
+				combat_breakthrough = 0.3
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	star_platinum_za_warudo = {
+		name = ABILITY_SPZW
+		desc = ABILITY_SPZW_DESC
+		
+		sound_effect = SPZW
+		
+		type = army_leader
+		
+		allowed = {
+			is_leading_army_group = no
+			is_border_war = no
+			has_id = 8002
+			has_trait = stand_user
+			skill > 4
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.75
+		duration = 120
+
+		unit_modifiers = {
+			army_speed_factor = 10
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				combat_breakthrough = 0.5
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+}

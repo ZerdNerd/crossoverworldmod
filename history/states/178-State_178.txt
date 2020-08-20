@@ -4,9 +4,22 @@ state={
 	provinces={
 		89 1955 2338 2468 2745 3079 4662 5119 6319 6340 6383 6395 6404 6414 6437 6459 
 	}
-	manpower=0
+	manpower=1465653
+	state_category = metropolis
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = ARE
+		add_core_of = ARE
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 4
+			arms_factory = 3
+			4662 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			4662 30
+		}
 	}
 }

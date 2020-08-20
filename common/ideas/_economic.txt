@@ -295,6 +295,15 @@ ideas = {
 					}
 #					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
 				}
+				if = {
+					limit = {
+						tag = GON
+					}
+					custom_trigger_tooltip = {
+						tooltip = GON_economical_laws_info
+						has_country_flag = GON_eco
+					}
+				}
 			}
 						
 			cost = 150
@@ -344,7 +353,15 @@ ideas = {
 		export_focus = {
 			
 			available = {
-
+				if = {
+					limit = {
+						tag = GON
+					}
+					custom_trigger_tooltip = {
+						tooltip = GON_economical_laws_info
+						has_country_flag = GON_eco
+					}
+				}
 			}
 			
 			
@@ -411,6 +428,15 @@ ideas = {
 						}
 					}
 				}
+				if = {
+					limit = {
+						tag = GON
+					}
+					custom_trigger_tooltip = {
+						tooltip = GON_economical_laws_info
+						has_country_flag = GON_eco
+					}
+				}
 			}
 		
 			cost = 150
@@ -461,6 +487,15 @@ ideas = {
 				OR = {
 					has_idea = war_economy
 					has_idea = tot_economic_mobilisation
+				}
+				if = {
+					limit = {
+						tag = GON
+					}
+					custom_trigger_tooltip = {
+						tooltip = GON_economical_laws_info
+						has_country_flag = GON_eco
+					}
 				}
 			}
 			

@@ -279,10 +279,16 @@ international_policy_dec_category = {
 			is_faction_leader = yes
 			has_war_with = AVA
 			AVA = {
-				NOT = {
-					is_faction_leader = yes
+				OR = {
+					is_in_faction_with = MAI
+					is_in_faction_with = JPN
+					is_in_faction_with = ENC
+					is_in_faction_with = EN1
+					is_in_faction_with = EN2
 				}
-				all_allied_country = {
+				any_other_country = {
+					is_major = yes
+					is_in_faction_with = AVA
 					has_capitulated = yes
 				}
 			}
