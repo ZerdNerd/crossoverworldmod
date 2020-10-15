@@ -1254,6 +1254,12 @@ occupation_dec_category = {
 			177 = {
 				is_owned_by = GRN
 			}
+			158 = {
+				is_owned_by = GRN
+			}
+			172 = {
+				is_owned_by = GRN
+			}
 			GON = {
 				exists = no
 			}
@@ -1298,6 +1304,8 @@ occupation_dec_category = {
 				transfer_state = 231
 				transfer_state = 194
 				transfer_state = 177
+				transfer_state = 158
+				transfer_state = 172
 				GRN = {
 					puppet = PREV
 				}
@@ -1313,6 +1321,12 @@ occupation_dec_category = {
 								has_completed_focus = GRN_majority_rules
 							}
 						}
+					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Prinz Tabaluga"
@@ -1337,6 +1351,12 @@ occupation_dec_category = {
 						NOT = {
 							has_completed_focus = GRN_reopen_the_portal
 						}
+					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Tabaluga I"
@@ -1361,6 +1381,11 @@ occupation_dec_category = {
 							has_completed_focus = GRN_reopen_the_portal
 						}
 					}
+					set_popularities = {
+						democratic = 60
+						fascism = 40
+						communism = 0
+					}
 					create_country_leader = {
 						name = "Prinz Tabaluga"
 						desc = "POLITICS_PTABALUGA_DESC"
@@ -1379,6 +1404,12 @@ occupation_dec_category = {
 						}
 						has_completed_focus = GRN_reopen_the_portal
 					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
+					}
 					create_country_leader = {
 						name = "Royal Governor Robert"
 						desc = "POLITICS_TBD_DESC"
@@ -1395,6 +1426,11 @@ occupation_dec_category = {
 							has_government = democratic
 						}
 						has_completed_focus = GRN_reopen_the_portal
+					}
+					set_popularities = {
+						democratic = 60
+						fascism = 40
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Governor Robert"
@@ -1642,6 +1678,7 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			release = GON
 			GON = {
 				hidden_effect = {
 					retire_country_leader = yes
@@ -1701,6 +1738,12 @@ occupation_dec_category = {
 			177 = {
 				is_owned_by = GRN
 			}
+			158 = {
+				is_owned_by = GRN
+			}
+			172 = {
+				is_owned_by = GRN
+			}
 			GON = {
 				exists = no
 			}
@@ -1747,6 +1790,8 @@ occupation_dec_category = {
 				transfer_state = 231
 				transfer_state = 194
 				transfer_state = 177
+				transfer_state = 158
+				transfer_state = 172
 				GRN = {
 					puppet = PREV
 				}
@@ -1762,6 +1807,12 @@ occupation_dec_category = {
 								has_completed_focus = GRN_majority_rules
 							}
 						}
+					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Prinz Tabaluga"
@@ -1786,6 +1837,12 @@ occupation_dec_category = {
 						NOT = {
 							has_completed_focus = GRN_reopen_the_portal
 						}
+					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Tabaluga I"
@@ -1810,6 +1867,11 @@ occupation_dec_category = {
 							has_completed_focus = GRN_reopen_the_portal
 						}
 					}
+					set_popularities = {
+						democratic = 60
+						fascism = 40
+						communism = 0
+					}
 					create_country_leader = {
 						name = "Prinz Tabaluga"
 						desc = "POLITICS_PTABALUGA_DESC"
@@ -1828,6 +1890,12 @@ occupation_dec_category = {
 						}
 						has_completed_focus = GRN_reopen_the_portal
 					}
+					set_popularities = {
+						democratic = 35
+						monarchism = 35
+						fascism = 30
+						communism = 0
+					}
 					create_country_leader = {
 						name = "Royal Governor Robert"
 						desc = "POLITICS_TBD_DESC"
@@ -1844,6 +1912,11 @@ occupation_dec_category = {
 							has_government = democratic
 						}
 						has_completed_focus = GRN_reopen_the_portal
+					}
+					set_popularities = {
+						democratic = 60
+						fascism = 40
+						communism = 0
 					}
 					create_country_leader = {
 						name = "Governor Robert"
@@ -3501,8 +3574,10 @@ occupation_dec_category = {
 
 		visible = {
 			ROOT = {
-				owns_state = 439
 				is_puppet = no
+				any_owned_state = {
+					is_core_of = GRN
+				}
 			}
 			NOT = {
 				tag = GRN
@@ -3518,6 +3593,11 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = SIO
+			}
+			NOT = {
+				GR2 = {
+					exists = yes
+				}
 			}
 		}
 
@@ -3575,6 +3655,11 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = GRN
+			}
+			NOT = {
+				GR3 = {
+					exists = yes
+				}
 			}
 		}
 

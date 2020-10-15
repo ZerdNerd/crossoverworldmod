@@ -8,7 +8,6 @@ ability = {
 		type = army_leader
 		
 		allowed = {
-			is_leading_army_group = no
 			is_border_war = no
 			has_id = 8002
 			has_trait = stand_user
@@ -43,7 +42,6 @@ ability = {
 		type = army_leader
 		
 		allowed = {
-			is_leading_army_group = no
 			is_border_war = no
 			has_id = 8002
 			has_trait = stand_user
@@ -65,6 +63,82 @@ ability = {
 			add_temporary_buff_to_units = {
 				combat_offense = 0.5
 				combat_breakthrough = 0.5
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	muda_muda_muda = {
+		name = ABILITY_MUDA_MUDA
+		desc = ABILITY_MUDA_MUDA_DESC
+		
+		sound_effect = TheWorldMuda
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8100
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.75
+		duration = 120
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.35
+				combat_breakthrough = 0.3
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0 #so it's the same type of stand as Star Platinum
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	za_warudo = {
+		name = ABILITY_ZAWARUDO
+		desc = ABILITY_ZAWARUDO_DESC
+		
+		sound_effect = ZaWarudoTimeStop
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8100
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.8
+		duration = 120
+
+		unit_modifiers = {
+			army_speed_factor = 10
+		}
+		
+		one_time_effect = {
+			DIO = {
+				add_to_variable = {
+					za_warudo_count = 1
+				}
+			}
+			add_temporary_buff_to_units = {
+				combat_offense = 0.75
+				combat_breakthrough = 0.75
 				cannot_retreat_while_attacking = 1.0
 				
 				days = 5

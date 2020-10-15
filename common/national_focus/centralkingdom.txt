@@ -1125,6 +1125,11 @@ focus = {
 	ai_will_do = { 
 		factor = 1
 	} 
+
+	bypass = {
+		always = yes
+	}
+
 	available = { 
 		custom_trigger_tooltip = {
 			tooltip = MAC_visited_grn
@@ -1154,6 +1159,11 @@ focus = {
 	ai_will_do = { 
 		factor = 1
 	} 
+
+	bypass = {
+		always = yes
+	}
+	
 	available = { 
 
 	}
@@ -1728,6 +1738,9 @@ focus = {
 			id = childrenparliament.1
 			days = 0
 		}
+		hidden_effect = {
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
 	}
 }
 
@@ -1928,6 +1941,7 @@ focus = {
 				id = childrenparliament.15
 				days = 5
 			}
+			remove_mission = MAI_next_seating_of_children_parliament
 		}
 	}
 }
@@ -1954,9 +1968,587 @@ focus = {
 	}
 
 	completion_reward = {
-		country_event = {
-			id = childrenparliament.18
-			days = 1
+		hidden_effect = {
+			812 = {
+				random_list = {
+					
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			858 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			808 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			803 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			789 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			814 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			822 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			824 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			817 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			798 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			796 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			792 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			799 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			831 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			852 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			843 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					MAI = {
+						owns_state = 773
+						owns_state = 776
+						owns_state = 767
+						owns_state = 736
+					}
+				}
+				773 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				776 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				767 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				736 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+			}
+			every_owned_state = {
+				execute_dhondt_method = yes
+			}
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = yes
+			election_frequency = 24
 		}
 	}
 }
@@ -1991,6 +2583,12 @@ focus = {
 	cost = 10
 	available_if_capitulated = yes 
 	prerequisite = { focus = MAI_national_children_party_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
 	ai_will_do = { 
 		factor = 1
 	}
@@ -2058,6 +2656,12 @@ focus = {
 	cost = 10
 	available_if_capitulated = yes 
 	prerequisite = { focus = MAI_free_future_party_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
 	ai_will_do = { 
 		factor = 1
 	}
@@ -2166,6 +2770,12 @@ focus = {
 	cost = 10
 	available_if_capitulated = yes 
 	prerequisite = { focus = MAI_time_for_kids_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
 	ai_will_do = { 
 		factor = 1
 	}
@@ -2224,6 +2834,12 @@ focus = {
 	cost = 10
 	available_if_capitulated = yes 
 	prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
 	ai_will_do = { 
 		factor = 1
 	}
@@ -2480,7 +3096,13 @@ focus = {
 	available = {
 		OR = {
 			has_completed_focus = MAI_we_wont_give_in
-			has_completed_focus = MAI_reform_the_parliament
+			AND = {
+				has_completed_focus = MAI_reform_the_parliament
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+			}
 		}
 	}
 

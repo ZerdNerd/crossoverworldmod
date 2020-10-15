@@ -669,6 +669,12 @@ country_event = { #Sioux refugees exiled to Greenland
 			set_politics = {
 				ruling_party = democratic
 			}
+			set_popularities = {
+				democratic = 100
+				monarchism = 0
+				fascism = 0
+				communism = 0
+			}
 			hidden_effect = {
 				load_oob = GRN_sioux_arrive
 				change_tag_from = SIO

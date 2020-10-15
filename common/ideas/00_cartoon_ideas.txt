@@ -217,6 +217,50 @@ ideas = {
 			}
 		}
 
+		GRN_volunteer_idea = {
+			
+			picture = generic_manpower_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				send_volunteer_size = 5
+			}
+		}
+
+		GRN_foreign_investors = {
+			
+			picture = new_deal
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				global_building_slots_factor = 0.10
+				production_factory_max_efficiency_factor = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+
+		GRN_democratize_gongmen = {
+			
+			picture = generic_fascism_banned
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				fascism_drift = -0.05
+				democratic_drift = 0.25
+				monarchism_drift = 0.25
+			}
+		}
+
 		GRN_new_alliances_idea = {
 			
 			picture = new_deal
@@ -2579,6 +2623,121 @@ ideas = {
 			}
 			picture = chi_army_corruption
 		}
+
+		DIO_one_man_stand = {
+			allowed = { always = no }
+			modifier = {
+				army_org_factor = 0.05
+				max_planning = 0.15
+				training_time_factor = 0.05
+			}
+			picture = chi_army_corruption
+		}
+
+		DIO_discs_in_circulation = {
+			allowed = { always = no }
+			modifier = {
+				attrition = -0.05
+				army_morale_factor = 0.05
+				training_time_factor = -0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		DIO_practical_trainings = {
+			allowed = { always = no }
+			modifier = {
+				defence = 0.1
+				offence = 0.1
+			}
+			picture = trumpet
+		}
+
+		DIO_increased_pay = {
+			allowed = { always = no }
+			modifier = {
+				army_morale_factor = 0.05
+				out_of_supply_factor = -0.15
+				experience_loss_factor = -0.1
+				political_power_factor = -0.1
+			}
+			picture = coins
+		}
+
+		DIO_proper_handling = {
+			allowed = { always = no }
+			modifier = {
+				supply_consumption_factor = -0.20
+				attrition = -0.15
+			}
+			picture = generic_manpower_bonus
+		}
+
+		DIO_show_no_mercy = {
+			allowed = { always = no }
+			modifier = {
+				resistance_target = -0.15
+				foreign_subversive_activites = -0.15
+			}
+			picture = chi_army_corruption
+		}
+
+		DIO_attempt_replicating_arrows = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.1
+			}
+			picture = generic_local_self_management
+		}
+
+		DIO_shoot_as_many_cmon = {
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				minimum_training_level = -0.025
+				experience_gain_army_factor = -0.05
+				training_time_factor = 0.1
+			}
+			picture = generic_manpower_bonus
+		}
+
+		DIO_improv_coordination = {
+			allowed = { always = no }
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_infantry_attack_factor = 0.05
+				army_org = 5
+			}
+			picture = trumpet
+		}
+
+		DIO_buy_loyalty = {
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.05
+				political_power_factor = -0.2
+			}
+			picture = coins
+		}
+
+		DIO_def_aspects = {
+			allowed = { always = no }
+			modifier = {
+				defence = 0.1
+				land_reinforce_rate = 0.05
+			}
+			picture = generic_infantry_bonus
+		}
+
+		UND_bad_time_idea = {
+			allowed = { always = no }
+			modifier = {
+				offence = 10000
+				defence = 10000
+			}
+			picture = generic_infantry_bonus
+		}
 	}
 
 	##############################################################################################################################
@@ -2715,7 +2874,7 @@ ideas = {
 			}
 
 			available = {
-				has_completed_focus = GRN_relations_with_friedewald
+				has_completed_focus = GRN_establish_relations_with_neu_flensburg
 			}
 		
 			traits = { human_greenlander }

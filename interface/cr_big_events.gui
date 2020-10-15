@@ -1,0 +1,361 @@
+guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
+    containerWindowType = {
+		name = "cr_big_event_jotaro_vs_dio"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = cr_bigevent_jotaro_vs_dio_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_JOTARO_VS_DIO"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_jotaro_vs_dio"
+			position = { x= -284 y = -18 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_jotaro_vs_dio_frame"
+		size = { width = 588 height = 465 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border"
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Come as close as you like."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 183 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -161 }
+			Orientation = lower_left
+			alwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text_bg"
+			position = {  x = 16 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_JOTARO_VS_DIO_D_bg"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_JOTARO_VS_DIO_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_stephen_death"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = cr_bigevent_stephen_death_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_STEPHEN_DEATH"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_stephen_death"
+			position = { x= -284 y = -18 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_stephen_death_frame"
+		size = { width = 588 height = 465 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border"
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "The end of an era."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 183 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -161 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text_bg"
+			position = {  x = 16 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_STEPHEN_DEATH_D_bg"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_STEPHEN_DEATH_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_sioux_liberation"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = cr_bigevent_sioux_liberation_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_SIOUX_LIBERATION"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_sioux_liberation"
+			position = { x= -284 y = -18 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_sioux_liberation_frame"
+		size = { width = 588 height = 465 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border"
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Un brave!"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 183 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -161 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text_bg"
+			position = {  x = 16 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_SIOUX_LIBERATION_D_bg"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_SIOUX_LIBERATION_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_arktos_triumphs"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		show_sound = cr_bigevent_arktos_triumphs_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_ARKTOS_TRIUMPHS"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_arktos_triumphs"
+			position = { x= -284 y = -18 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_arktos_triumphs_frame"
+		size = { width = 588 height = 465 }
+		position = { x=0 y=0 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border"
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Gulp."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 183 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -161 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text_bg"
+			position = {  x = 16 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ARKTOS_TRIUMPHS_D_bg"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -161 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ARKTOS_TRIUMPHS_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+	}
+}

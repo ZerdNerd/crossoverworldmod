@@ -4,14 +4,27 @@ state={
 	provinces={
 		731 1393 1661 2273 2491 3105 3943 4169 4186 4217 4295 5842 5855 7754 7808 7894 7903 7937 7992 8007 8008 8079 8171 
 	}
-	state_category = rural
-	manpower=450000
+	state_category = town
+	manpower=550000
 	buildings_max_level_factor=1.000
 	history = {
 		owner = MIC
 		add_core_of = MIC
 		buildings = {
 			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+			5855 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			5855 10
+		}
+}
+		resources = {
+			steel = 20
+			aluminium = 10
 		}
 	}
-}
+

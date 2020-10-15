@@ -34,6 +34,138 @@ guiTypes = {
 		}
 
 		containerWindowType = {
+			name = "stand_folder"
+			position = { x=0 y=47 }
+			size = { width = 100%% height = 100%% }
+			margin = { top = 13 left = 13 bottom = 24 right = 25}
+			drag_scroll = { left middle }
+			verticalScrollbar = "right_vertical_slider"
+			horizontalScrollbar = "bottom_horizontal_slider"
+
+			background = {
+				name = "Background"
+				quadTextureSprite ="GFX_tiled_window_2b_border"
+			}
+
+			containerWindowType = {
+				name = "techtree_stripes"
+				position = { x= 0 y= 0 }
+				size = { 
+					width = 1400 height = 1275
+					min = { width = 100%% height = 100%% }
+				}
+				clipping = no
+
+				iconType = {
+					name ="stand_techtree_bg"
+					spriteType = "GFX_stand_techtree_bg"
+					position = { x=0 y=0 }
+					alwaystransparent = yes
+				}
+			}
+
+			instantTextBoxType = {
+				name = "stands_sub_speed"
+				position = { x = 125 y = 120 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "STANDS_TITLE_SPEED"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+           		name = "improving_the_speed_tree"
+           		position = { x = 190 y = 225 }
+            	slotsize = { width = 70 height = 70 }
+            	format = "LEFT"
+        	}
+
+			instantTextBoxType = {
+				name = "stands_sub_dp"
+				position = { x = 475 y = 110 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "STANDS_TITLE_DESTRUCTIVE_POWER"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+           		name = "improving_destructive_power_tree"
+           		position = { x = 540 y = 225 }
+            	slotsize = { width = 70 height = 70 }
+            	format = "LEFT"
+        	}
+
+			instantTextBoxType = {
+				name = "stands_sub_range"
+				position = { x = 825 y = 120 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "STANDS_TITLE_RANGE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+           		name = "improving_range_tree"
+           		position = { x = 890 y = 225 }
+            	slotsize = { width = 70 height = 70 }
+            	format = "LEFT"
+        	}
+
+			instantTextBoxType = {
+				name = "stands_sub_pers"
+				position = { x = 1175 y = 120 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "STANDS_TITLE_PERSISTENCE"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+           		name = "improving_persistence_tree"
+           		position = { x = 1240 y = 225 }
+            	slotsize = { width = 70 height = 70 }
+            	format = "LEFT"
+        	}
+
+			instantTextBoxType = {
+				name = "stands_sub_prec"
+				position = { x = 1525 y = 120 }
+				textureFile = ""
+				font = "hoi_33"
+				borderSize = {x = 0 y = 4}
+				text = "STANDS_TITLE_PRECISION"
+				maxWidth = 200
+				maxHeight = 62
+				format = center
+				Orientation = "UPPER_LEFT"
+			}
+
+			gridboxtype = {
+           		name = "improving_precision_tree"
+           		position = { x = 1590 y = 225 }
+            	slotsize = { width = 70 height = 70 }
+            	format = "LEFT"
+        	}
+		}
+
+		containerWindowType = {
 			name = "infantry_folder"
 			position = { x=0 y=47 }
 			size = { width = 100%% height = 100%% }
@@ -3678,6 +3810,14 @@ guiTypes = {
 				alwaystransparent = yes
 			}
 
+			buttonType = {
+				position = { x = 1121 y = 0 }
+				name = "stand_folder_tab"
+				quadTextureSprite = "GFX_stand_folder_tab"
+				frame = 1
+				clicksound = click_default
+			}
+
 			
 
 		}
@@ -3862,6 +4002,43 @@ guiTypes = {
 		instantTextBoxType = {
 			name = "bonus"
 			position = { x = -1 y = -21 }
+			textureFile = ""
+			font = "hoi_16mbs"
+			borderSize = {x = 4 y = 4}
+			text = "lol boat"
+			maxWidth = 80
+			maxHeight = 20
+			format = center
+		}
+	}
+
+	containerWindowType = {
+		name = "techtree_stand_folder_small_item"
+		position = { x=0 y=5 }
+		size = { width = 72 height = 72 }
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_technology_unavailable_item_bg"
+		}
+
+		iconType = {
+			name = "Icon"
+			position = { x=34 y=35 }
+			spriteType = "GFX_technology_medium"
+			centerposition = yes
+			alwaystransparent = yes
+		}
+		iconType = {
+			name = "bonus_icon"
+			position = { x=-1 y=-22 }
+			spriteType = "GFX_tech_bonus"
+		}
+		
+		instantTextBoxType = {
+			name = "bonus"
+			position = { x = -1 y = -22 }
 			textureFile = ""
 			font = "hoi_16mbs"
 			borderSize = {x = 4 y = 4}

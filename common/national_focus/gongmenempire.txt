@@ -1452,6 +1452,12 @@ focus_tree = {
 				target = GRN
 				type = annex_everything
 			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.99
+					hours = 6
+				}
+			}
 		}
 	}
 
@@ -1771,6 +1777,40 @@ focus_tree = {
 					type = annex_everything
 				}
 			}
+			if = {
+				limit = {
+					WOL = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WOL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					WEA = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WEA
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					SQU = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = SQU
+					type = annex_everything
+				}
+			}
+			
 		}
 	}
 

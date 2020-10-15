@@ -4,6 +4,658 @@
 @STATUS_Y = 52
 guiTypes = {
 	containerWindowType = {
+		name = "children_parliament_seats_window"
+		position = { x = 0 y = 0 }
+		size = { width = 100% height= 300 }
+
+		instantTextBoxType = {
+			name ="mai_chp_seats_header"
+			position = { x = 0 y = 0 }
+			font = "hoi_24header"
+			text = "Seats in electoral districts - legend"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "mai_chp_seats_ncp_icon"
+			position = {x=45 y=30}	
+			spriteType ="GFX_decision_ncp_seat"
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_seats_ncp_text"
+			position = { x = 105 y = 35 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_ncp_name"
+			format = left
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "mai_chp_seats_ffp_icon"
+			position = {x=45 y=90}	
+			spriteType ="GFX_decision_ffp_seat"
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_seats_ffp_text"
+			position = { x = 105 y = 95 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_ffp_name"
+			format = left
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "mai_chp_seats_tfk_icon"
+			position = {x=45 y=150}	
+			spriteType ="GFX_decision_tfk_seat"
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_seats_tfk_text"
+			position = { x = 105 y = 155 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_tfk_name"
+			format = left
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "mai_chp_seats_ccfrok_icon"
+			position = {x=45 y=210}	
+			spriteType ="GFX_decision_ccfrok_seat"
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_seats_ccfrok_text"
+			position = { x = 105 y = 205 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_ccfrok_name"
+			format = left
+			maxWidth = 380
+			maxHeight = 24
+		}
+	}
+
+	containerWindowType = {
+		name = "central_kingdom_chp_window_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1200 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		orientation = UPPER_LEFT
+
+		background = {
+			quadTextureSprite = "GFX_tiled_window_1b_border"
+			name = "Background"
+		}
+
+		instantTextboxType = {
+			name = "mai_chp_headline"
+			position = {x=0 y=15}
+			font = "hoi_36header"
+			text = "The Children Parliament of Central Kingdom"
+			maxWidth = 1165
+			maxHeight = 23
+			format = center
+		}
+
+		buttonType = {
+			name = "mai_chp_exit"
+			position = { x = 1165 y = 5 }
+			spriteType = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+	#CURRENT TOPICS - used to hide when Parliament is undergoing reforms 
+
+	containerWindowType = {
+		name = "central_kingdom_chp_current_motion_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1200 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		clipping = yes
+		moveable = yes
+		orientation = UPPER_LEFT
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topics_header"
+			position = { x = -25 y = 130}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_topics_header_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topic"
+			position = { x = 25 y = 165 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_topic_1_text"
+			format = center
+			maxWidth = 400
+			maxHeight = 24
+		}
+	}
+
+	#UNDERGOING REFORMS 
+
+	containerWindowType = {
+		name = "central_kingdom_chp_under_reforms_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1165 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_under_reforms_info"
+			position = { x = 15 y = 350 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_under_reform"
+			format = center
+			maxWidth = 1165
+			maxHeight = 24
+		}
+	}
+
+	#NO REFORM
+
+	containerWindowType = {
+		name = "central_kingdom_chp_noreform_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1165 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		containerWindowType = {
+			name = "mai_chp_party_chart_united_container"
+			position = { x = 170 y = 450 }
+			size = { width = 379	height = 234 }
+
+			iconType = {
+				name = "mai_chp_chart_united"
+				spriteType = "GFX_cr_mai_chp_united"
+				position = { x = 0 y = 0 }		
+				allwaystransparent = yes
+				orientation = CENTER
+			}
+		}
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_united_info"
+			position = { x = 15 y = 450 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_united_info_text"
+			format = center
+			maxWidth = 1165
+			maxHeight = 24
+		}
+
+		containerWindowType = {
+			name = "mai_chp_noreform_leader_container"
+			position = { x = 50% y = 94 }
+			size = { width = 420	height = 260 }
+
+			instantTextBoxType = {
+				name ="MAI_children_parliament_current_leader_header"
+				position = { x = -90 y = -30 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_current_leader_header"
+				format = center
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_united_parliament_leader"
+				position = {x=0 y=0}	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.71
+			}
+
+			iconType = {
+				name = "mai_chp_united_parliament_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = -4 y = -4 }		
+				allwaystransparent = yes
+				scale = 0.71
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_united_parliament_leader_name"
+				position = { x = -21 y = 152 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_current_leader_name"
+				maxWidth = 155
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+	}
+
+	#REFORMED
+
+	#SUPPORT STATUS AND RULING PARTY/OPPOSITION
+
+	containerWindowType = {
+		name = "central_kingdom_chp_reform_support_status_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1165 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		instantTextboxType = {
+			name = "mai_chp_reformed_support_status_header"
+			position = { x = 100 y = 210 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_sup_stat_header"
+			maxWidth = 250
+			maxHeight = 20
+			format = center
+			vertical_alignment = center
+		}
+
+		instantTextboxType = {
+			name = "mai_chp_reformed_support_status_text"
+			position = { x = 75 y = 240 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_sup_stat_status"
+			maxWidth = 300
+			maxHeight = 20
+			format = center
+			vertical_alignment = top
+		}
+
+		instantTextboxType = {
+			name = "mai_chp_reformed_ruling_party_header"
+			position = { x = 600 y = 130 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_ruling_header"
+			maxWidth = 450
+			maxHeight = 20
+			format = center
+		}
+
+		instantTextboxType = {
+			name = "mai_chp_reformed_ruling_party_status"
+			position = { x = 633 y = 160 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_ruling_party_status"
+			maxWidth = 500
+			maxHeight = 20
+			format = left
+		}
+	}
+
+	#PARTIES
+
+	containerWindowType = {
+		name = "central_kingdom_chp_reform_parties_container"
+		position = { x = 539 y = 80 }
+		size = { width = 1165 height = 800 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		containerWindowType = {
+			name = "mai_chp_reform_party_ncp_container"
+			position = { x = 50 y = 590 }
+			size = { width = 420	height = 260 }
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ncp_header"
+				position = { x = 0 y = -30 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_ncp_name"
+				format = center
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ncp_information"
+				position = { x = 125 y = -4 }
+				font = "hoi_20bs"
+				text = "MAI_children_parliament_ncp_info"
+				format = LEFT
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_ncp_leader"
+				position = {x=0 y=0}	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.71
+			}
+
+			iconType = {
+				name = "mai_chp_ncp_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = -4 y = -4 }		
+				allwaystransparent = yes
+				scale = 0.71
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_ncp_leader_name"
+				position = { x = -21 y = 152 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_ncp_leader_name"
+				maxWidth = 155
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+
+		containerWindowType = {
+			name = "mai_chp_reform_party_ffp_container"
+			position = { x = 210 y = 350 }
+			size = { width = 420	height = 260 }
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ffp_header"
+				position = { x = 0 y = -30 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_ffp_name"
+				format = center
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ffp_information"
+				position = { x = 125 y = -4 }
+				font = "hoi_20bs"
+				text = "MAI_children_parliament_ffp_info"
+				format = LEFT
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_ffp_leader"
+				position = {x=0 y=0}	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.71
+			}
+
+			iconType = {
+				name = "mai_chp_ffp_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = -4 y = -4 }		
+				allwaystransparent = yes
+				scale = 0.71
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_ffp_leader_name"
+				position = { x = -21 y = 152 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_ffp_leader_name"
+				maxWidth = 155
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+
+		containerWindowType = {
+			name = "mai_chp_reform_party_ccfrok_container"
+			position = { x = 740 y = 350 }
+			size = { width = 420	height = 260 }
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ccfrok_header"
+				position = { x = 0 y = -55 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_ccfrok_name"
+				format = center
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_ccfrok_information"
+				position = { x = 125 y = -4 }
+				font = "hoi_20bs"
+				text = "MAI_children_parliament_ccfrok_info"
+				format = LEFT
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_ccfrok_leader"
+				position = {x=0 y=0}	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.71
+			}
+
+			iconType = {
+				name = "mai_chp_ccfrok_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = -4 y = -4 }		
+				allwaystransparent = yes
+				scale = 0.71
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_ccfrok_leader_name"
+				position = { x = -21 y = 152 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_ccfrok_leader_name"
+				maxWidth = 155
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+
+		containerWindowType = {
+			name = "mai_chp_reform_party_tfk_container"
+			position = { x = 890 y = 590 }
+			size = { width = 420	height = 260 }
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_tfk_header"
+				position = { x = 0 y = -30 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_tfk_name"
+				format = center
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			instantTextBoxType = {
+				name = "MAI_children_parliament_tfk_information"
+				position = { x = 125 y = -4 }
+				font = "hoi_20bs"
+				text = "MAI_children_parliament_tfk_info"
+				format = LEFT
+				maxWidth = 300
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_tfk_leader"
+				position = {x=0 y=0}	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.71
+			}
+
+			iconType = {
+				name = "mai_chp_tfk_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = -4 y = -4 }		
+				allwaystransparent = yes
+				scale = 0.71
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_tfk_leader_name"
+				position = { x = -21 y = 152 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_tfk_leader_name"
+				maxWidth = 155
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+	}
+
+	#CHART
+	#migrated to separate gui file
+
+	containerWindowType = {
+		name = "central_kingdom_chp_button_cont"
+		position = { x = 490 y = 250 }
+			
+		buttonType = {
+			name = "central_kingdom_chp_button_bg"
+			spriteType = "GFX_cr_icon_for_parliaments"
+			position = { x = 0 y = 0 }
+    		pdx_tooltip = "mai_chp_button_bg_tooltip"
+		}
+	}
+
+	containerWindowType = {
+		name = "central_kingdom_chp_state_parties_cont"
+		position = { x=436 y=-445}
+		orientation = lower_left
+		size = { width=436 height=496 }
+
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_window_1b_border"
+			position = { x = 0 y = 5 }
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_pop_header"
+			position = { x = -5 y = 30 }
+			font = "hoi_24header"
+			text = "mai_chp_state_pop_header"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_ncp_pop"
+			position = { x = -5 y = 90 }
+			font = "hoi_20bs"
+			text = "mai_chp_state_ncp_pop_list"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_ffp_pop"
+			position = { x = -5 y = 120 }
+			font = "hoi_20bs"
+			text = "mai_chp_state_ffp_pop_list"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_tfk_pop"
+			position = { x = -5 y = 150 }
+			font = "hoi_20bs"
+			text = "mai_chp_state_tfk_pop_list"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_ccfrok_pop"
+			position = { x = -5 y = 180 }
+			font = "hoi_20bs"
+			text = "mai_chp_state_ccfrok_pop_list"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_campaign_header"
+			position = { x = -5 y = 225 }
+			font = "hoi_24header"
+			text = "mai_chp_state_seats_header"
+			format = center
+			maxWidth = 436
+			maxHeight = 24
+		}
+
+		buttonType = {
+			name = "mai_chp_camp_ncp_icon"
+			position = {x=120 y=290}	
+			spriteType ="GFX_decision_ncp_seat"
+			pdx_tooltip = "campaign_for_ncp"
+		}
+
+		buttonType = {
+			name = "mai_chp_camp_ffp_icon"
+			position = {x=170 y=290}	
+			spriteType ="GFX_decision_ffp_seat"
+			pdx_tooltip = "campaign_for_ffp"
+		}
+
+		buttonType = {
+			name = "mai_chp_camp_tfk_icon"
+			position = {x=220 y=290}	
+			spriteType ="GFX_decision_tfk_seat"
+			pdx_tooltip = "campaign_for_tfk"
+		}
+
+		buttonType = {
+			name = "mai_chp_camp_ccfrok_icon"
+			position = {x=270 y=290}	
+			spriteType ="GFX_decision_ccfrok_seat"
+			pdx_tooltip = "campaign_for_ccfrok"
+		}
+
+		instantTextBoxType = {
+			name ="mai_chp_state_campaign_note"
+			position = { x = 12 y = 350 }
+			font = "hoi_20bs"
+			text = "mai_chp_state_seats_note"
+			format = center
+			maxWidth = 400
+			maxHeight = 24
+		}
+	}
+
+	#OLD CODE
+	containerWindowType = {
 		name = "children_parliament_container"
 		position = { x = 1035 y = 4 }
 		
@@ -38,163 +690,6 @@ guiTypes = {
 			spriteType = "GFX_generic_box"
 			position = { x=0 y=0 }
 		}
-	}
-
-	containerWindowType = {
-		name = "children_parliament_decision_ui_window"
-		position = { x = 0 y = 0 }
-		size = { width = 100% height= 500 }
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_parties_support_header"
-			position = { x = 0 y = @HEADERS_Y }
-			font = "hoi_24header"
-			text = "MAI_children_parliament_parties_support_header"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_party_list_party_1_name"
-			position = { x = 0 y = 27 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_party_list_party_1"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_party_list_party_2_name"
-			position = { x = 0 y = 51 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_party_list_party_2"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_party_list_party_3_name"
-			position = { x = 0 y = 75 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_party_list_party_3"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-
-			pdx_tooltip = "CHILDREN_PARLIAMENT_PARTY_3_TOOLTIP"	
-		}
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_party_list_party_4_name"
-			position = { x = 0 y = 99 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_party_list_party_4"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name ="MAI_children_parliament_current_leader_header"
-			position = { x = 248 y = 0 }
-			font = "hoi_24header"
-			text = "MAI_children_parliament_current_leader_header"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		iconType = {
-			name = "children_parliament_current_leader_icon"
-			position = {x=343 y=34}	
-			spriteType ="GFX_decision_mai_ch_par_leaders"
-			scale = 0.71
-		}
-
-		iconType = {
-			name = "leader_frame2"
-			spriteType = "GFX_pol_leader_frame"
-			position = { x = 339 y = 30 }		
-			allwaystransparent = yes
-			scale = 0.71
-		}
-
-		instantTextboxType = {
-			name = "children_parliament_current_leader_name"
-			position = { x = 321 y = 187 }
-			font = "hoi_18mbs"
-			text = "MAI_children_parliament_current_leader_name"
-			maxWidth = 155
-			maxHeight = 20
-			format = center
-			vertical_alignment = center
-
-
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_header"
-			position = { x = 3 y = 200}
-			font = "hoi_24header"
-			text = "MAI_children_parliament_next_session_header"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_date"
-			position = { x = 3 y = 254 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_next_session_date_date"
-			format = center
-			maxWidth = 300
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_topics_header"
-			position = { x = 0 y = 300}
-			font = "hoi_24header"
-			text = "MAI_children_parliament_next_session_topics_header_text"
-			format = center
-			maxWidth = 500
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_topic_1"
-			position = { x = 0 y = 354 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_next_session_topic_1_text"
-			format = center
-			maxWidth = 500
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_topic_2"
-			position = { x = 0 y = 394 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_next_session_topic_2_text"
-			format = center
-			maxWidth = 500
-			maxHeight = 24
-		}
-
-		instantTextBoxType = {
-			name = "MAI_children_parliament_next_session_topic_3"
-			position = { x = 0 y = 434 }
-			font = "hoi_20bs"
-			text = "MAI_children_parliament_next_session_topic_3_text"
-			format = center
-			maxWidth = 500
-			maxHeight = 24
-		}
-
 	}
 
 	containerWindowType = {

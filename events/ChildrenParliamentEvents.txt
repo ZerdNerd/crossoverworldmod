@@ -610,118 +610,534 @@ country_event = { #Second elections
 	desc = childrenparliament.18.d
 	picture = GFX_report_children_parliament
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = childrenparliament.18.a
-		custom_effect_tooltip = MAI_national_children_party_wins
 		hidden_effect = {
-			set_country_flag = national_children_party_wins
-			activate_mission = MAI_next_seating_of_children_parliament
-			set_variable = {
-    			var = MAI_children_parliament_party_1_popularity
-    			value = 53
+			if = {
+				limit = {
+					has_variable = first_elections_done
+				}
+				clr_country_flag = we_have_a_tie
+				clr_country_flag = national_children_party_wins
+				clr_country_flag = free_future_party_wins
+				clr_country_flag = time_for_kids_wins
+				clr_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+				clr_country_flag = ncp_in_the_coalition
+				clr_country_flag = ffp_in_the_coalition
+				clr_country_flag = tfk_in_the_coalition
+				clr_country_flag = ccfrok_in_the_coalition
+				clr_country_flag = government_has_majority_or_coalition
+				clear_variable = coalition_event_fired
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_2_popularity
-    			value = 23
+			if = {
+				limit = {
+					NOT = {
+						has_variable = first_elections_done
+					}
+				}
+				set_variable = { first_elections_done = 1 }
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_3_popularity
-    			value = 16
+		if = {
+			limit = {
+				NOT = {
+					has_variable = mai_chp_ncp_leader_frame
+					has_variable = mai_chp_ffp_leader_frame
+					has_variable = mai_chp_tfk_leader_frame
+					has_variable = mai_chp_ccfrok_leader_frame
+				}
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_4_popularity
-    			value = 8
-			}
-			set_variable = { chp_leader_icon_temp_number = 2 }
-			recalc_children_parliament_leader_icon = yes
+			set_variable = { mai_chp_ncp_leader_frame = 2 }
+			set_variable = { mai_chp_ffp_leader_frame = 3 }
+			set_variable = { mai_chp_tfk_leader_frame = 4 }
+			set_variable = { mai_chp_ccfrok_leader_frame = 5 }
 		}
-	}
-
-	option = {
-		name = childrenparliament.18.b
-		custom_effect_tooltip = MAI_free_future_party_wins
-		hidden_effect = {
-			set_country_flag = free_future_party_wins
-			activate_mission = MAI_next_seating_of_children_parliament
-			set_variable = {
-    			var = MAI_children_parliament_party_1_popularity
-    			value = 21
+			clear_variable = ncp_seats_in_chp
+			clear_variable = ffp_seats_in_chp
+			clear_variable = tfk_seats_in_chp
+			clear_variable = ccfrok_seats_in_chp
+			if = {
+				limit = {
+					owns_state = 736
+				}
+				set_variable = { current_seats_in_chp = 47 }
+				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
+				divide_variable = { half_of_the_seats_chp = 2 }
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_2_popularity
-    			value = 55
+			if = {
+				limit = {
+					owns_state = 897
+				}
+				set_variable = { current_seats_in_chp = 43 }
+				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
+				divide_variable = { half_of_the_seats_chp = 2 }
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_3_popularity
-    			value = 14
+			if = {
+				limit = {
+					owns_state = 872
+				}
+				set_variable = { current_seats_in_chp = 41 }
+				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
+				divide_variable = { half_of_the_seats_chp = 2 }
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_4_popularity
-    			value = 10
+			if = {
+				limit = {
+					NOT = {
+						owns_state = 736
+						owns_state = 897
+						owns_state = 872
+					}
+				}
+				set_variable = { current_seats_in_chp = 38 }
+				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
+				divide_variable = { half_of_the_seats_chp = 2 }
 			}
-			set_variable = { chp_leader_icon_temp_number = 3 }
-			recalc_children_parliament_leader_icon = yes
-		}
-	}
-
-	option = {
-		name = childrenparliament.18.c
-		custom_effect_tooltip = MAI_time_for_kids_wins
-		hidden_effect = {
-			set_country_flag = time_for_kids_wins
-			activate_mission = MAI_next_seating_of_children_parliament
-			set_variable = {
-    			var = MAI_children_parliament_party_1_popularity
-    			value = 19
+			#MAI_chp_calculate_bill_support = yes
+			set_variable = { ncp_seats_in_chp = 0 }
+			set_variable = { ffp_seats_in_chp = 0 }
+			set_variable = { tfk_seats_in_chp = 0 }
+			set_variable = { ccfrok_seats_in_chp = 0 }
+			dhondt_calculate_for_literally_every_macius_state = yes
+			736 = {
+        		if = {
+            		limit = {
+                		736 = {
+                    		is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+    		767 = {
+        		if = {
+            		limit = {
+                		767 = {
+                    		is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+    		776 = {
+        		if = {
+            		limit = {
+                		776 = {
+                    		is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+    		773 = {
+        		if = {
+            		limit = {
+                		773 = {
+                   		 	is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+    		812 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		858 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		843 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		852 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		831 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		808 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		799 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		792 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		796 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		824 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		817 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		798 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		822 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		814 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		803 = {
+        		dhondt_calculate_overall_seats = yes
+    		}
+    		789 = {
+				dhondt_calculate_overall_seats = yes  
+    		}
+			if = {
+				limit = {
+					check_variable = { ncp_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { ncp_seats_in_chp > tfk_seats_in_chp }
+					check_variable = { ncp_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = national_children_party_wins
+				else_if = {
+					limit = {
+						OR = {
+							check_variable = { ncp_seats_in_chp = ffp_seats_in_chp }
+							check_variable = { ncp_seats_in_chp = tfk_seats_in_chp }
+							check_variable = { ncp_seats_in_chp = ccfrok_seats_in_chp }
+						}
+					}
+					set_country_flag = we_have_a_tie
+				}
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_2_popularity
-    			value = 15
+			if = {
+				limit = {
+					check_variable = { ffp_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { ffp_seats_in_chp > tfk_seats_in_chp }
+					check_variable = { ffp_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = free_future_party_wins
+				else_if = {
+					limit = {
+						OR = {
+							check_variable = { ffp_seats_in_chp = ncp_seats_in_chp }
+							check_variable = { ffp_seats_in_chp = tfk_seats_in_chp }
+							check_variable = { ffp_seats_in_chp = ccfrok_seats_in_chp }
+						}
+					}
+					set_country_flag = we_have_a_tie
+				}
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_3_popularity
-    			value = 51
+			if = {
+				limit = {
+					check_variable = { tfk_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = time_for_kids_wins
+				else_if = {
+					limit = {
+						OR = {
+							check_variable = { tfk_seats_in_chp = ffp_seats_in_chp }
+							check_variable = { tfk_seats_in_chp = ncp_seats_in_chp }
+							check_variable = { tfk_seats_in_chp = ccfrok_seats_in_chp }
+						}
+					}
+					set_country_flag = we_have_a_tie
+				}
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_4_popularity
-    			value = 15
+			if = {
+				limit = {
+					check_variable = { ccfrok_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > tfk_seats_in_chp }
+				}
+				set_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+				else_if = {
+					limit = {
+						OR = {
+							check_variable = { ccfrok_seats_in_chp = ffp_seats_in_chp }
+							check_variable = { ccfrok_seats_in_chp = ncp_seats_in_chp }
+							check_variable = { ccfrok_seats_in_chp = tfk_seats_in_chp }
+						}
+					}
+					set_country_flag = we_have_a_tie
+				}
 			}
-			set_variable = { chp_leader_icon_temp_number = 4 }
-			recalc_children_parliament_leader_icon = yes
-		}
-	}
-
-	option = {
-		name = childrenparliament.18.e
-		custom_effect_tooltip = MAI_children_coalition_for_the_renewal_of_the_kingdom_wins
-		hidden_effect = {
-			set_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
-			activate_mission = MAI_next_seating_of_children_parliament
-			set_variable = {
-    			var = MAI_children_parliament_party_1_popularity
-    			value = 23
+			if = {
+				limit = {
+					has_country_flag = national_children_party_wins
+				}
+				set_variable = { ncp_vs_the_rest = 0 }
+				add_to_variable = { ncp_vs_the_rest = ffp_seats_in_chp }
+				add_to_variable = { ncp_vs_the_rest = tfk_seats_in_chp }
+				add_to_variable = { ncp_vs_the_rest = ccfrok_seats_in_chp }
+				else_if = {
+					limit = {
+						has_country_flag = free_future_party_wins
+					}
+					set_variable = { ffp_vs_the_rest = 0 }
+					add_to_variable = { ffp_vs_the_rest = ncp_seats_in_chp }
+					add_to_variable = { ffp_vs_the_rest = tfk_seats_in_chp }
+					add_to_variable = { ffp_vs_the_rest = ccfrok_seats_in_chp }
+					else_if = {
+						limit = {
+							has_country_flag = time_for_kids_wins
+						}
+						set_variable = { tfk_vs_the_rest = 0 }
+						add_to_variable = { tfk_vs_the_rest = ncp_seats_in_chp }
+						add_to_variable = { tfk_vs_the_rest = ffp_seats_in_chp }
+						add_to_variable = { tfk_vs_the_rest = ccfrok_seats_in_chp }
+						else_if = {
+							limit = {
+								has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+							}
+							set_variable = { ccfrok_vs_the_rest = 0 }
+							add_to_variable = { ccfrok_vs_the_rest = ncp_seats_in_chp }
+							add_to_variable = { ccfrok_vs_the_rest = ffp_seats_in_chp }
+							add_to_variable = { ccfrok_vs_the_rest = tfk_seats_in_chp }
+							else = {
+								#null
+							}
+						}
+					}
+				}
 			}
-			set_variable = {
-    			var = MAI_children_parliament_party_2_popularity
-    			value = 10
-			}
-			set_variable = {
-    			var = MAI_children_parliament_party_3_popularity
-    			value = 10
-			}
-			set_variable = {
-    			var = MAI_children_parliament_party_4_popularity
-    			value = 57
-			}
-			set_variable = { chp_leader_icon_temp_number = 5 }
-			recalc_children_parliament_leader_icon = yes
 		}
 	}
 }
+
+country_event = { #Coalition is needed!
+	id = childrenparliament.181
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.181"}
+	title = childrenparliament.181.t
+	desc = childrenparliament.181.d
+	picture = GFX_report_children_parliament
+
+	trigger = {
+		tag = MAI
+		NOT = {
+			has_variable = coalition_event_fired
+		}
+		OR = {
+			check_variable = { ncp_seats_in_chp < ncp_vs_the_rest }
+			check_variable = { ffp_seats_in_chp < ffp_vs_the_rest }
+			check_variable = { tfk_seats_in_chp < tfk_vs_the_rest }
+			check_variable = { ccfrok_seats_in_chp < ccfrok_vs_the_rest }
+		}
+	}
+
+	immediate = {
+		set_variable = { coalition_event_fired = 1 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Invite NCP to the government
+		name = childrenparliament.181.a
+		trigger = {
+			NOT = {
+				has_country_flag = national_children_party_wins
+			}
+			NOT = {
+				AND = {
+					check_variable = { ncp_seats_in_chp < ffp_seats_in_chp }
+					check_variable = { ncp_seats_in_chp < tfk_seats_in_chp }
+					check_variable = { ncp_seats_in_chp < ccfrok_seats_in_chp }
+				}
+			}
+		}
+		country_event = {
+			id = childrenparliament.182
+			days = 1
+		}
+	}
+
+	option = { #Invite FFP to the government
+		name = childrenparliament.181.b
+		trigger = {
+			NOT = {
+				has_country_flag = free_future_party_wins
+			}
+			NOT = {
+				AND = {
+					check_variable = { ffp_seats_in_chp < ncp_seats_in_chp }
+					check_variable = { ffp_seats_in_chp < tfk_seats_in_chp }
+					check_variable = { ffp_seats_in_chp < ccfrok_seats_in_chp }
+				}
+			}
+		}
+		country_event = {
+			id = childrenparliament.183
+			days = 1
+		}
+	}
+
+	option = { #Invite TFK to the government
+		name = childrenparliament.181.c
+		trigger = {
+			NOT = {
+				has_country_flag = time_for_kids_wins
+			}
+			NOT = {
+				AND = {
+					check_variable = { tfk_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ccfrok_seats_in_chp }
+				}
+			}
+		}
+		country_event = {
+			id = childrenparliament.184
+			days = 1
+		}
+	}
+
+	option = { #Invite CCFRoK to the government
+		name = childrenparliament.181.e
+		trigger = {
+			NOT = {
+				has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+			}
+			NOT = {
+				AND = {
+					check_variable = { ccfrok_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > tfk_seats_in_chp }
+				}
+			}
+		}
+		country_event = {
+			id = childrenparliament.185
+			days = 1
+		}
+	}
+}
+
+country_event = { #Inviting NCP to the coalition
+	id = childrenparliament.182
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.182"}
+	title = childrenparliament.182.t
+	desc = childrenparliament.182.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Good that we have the coalition now.
+		name = childrenparliament.182.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = ncp_in_the_coalition
+		}
+	}
+}
+
+country_event = { #Inviting FFP to the coalition
+	id = childrenparliament.183
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.183"}
+	title = childrenparliament.183.t
+	desc = childrenparliament.183.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Good that we have the coalition now.
+		name = childrenparliament.183.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = ffp_in_the_coalition
+		}
+	}
+}
+
+country_event = { #Inviting TFK to the coalition
+	id = childrenparliament.184
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.184"}
+	title = childrenparliament.184.t
+	desc = childrenparliament.184.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Good that we have the coalition now.
+		name = childrenparliament.184.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = tfk_in_the_coalition
+		}
+	}
+}
+
+country_event = { #Inviting CCFRoK to the coalition
+	id = childrenparliament.185
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.185"}
+	title = childrenparliament.185.t
+	desc = childrenparliament.185.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Good that we have the coalition now.
+		name = childrenparliament.185.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = ccfrok_in_the_coalition
+		}
+	}
+}
+
+country_event = { #First seating after elections
+	id = childrenparliament.186
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.186"}
+	title = childrenparliament.186.t
+	desc = childrenparliament.186.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Yay
+		name = childrenparliament.186.a
+		hidden_effect = {
+			set_country_flag = government_has_majority_or_coalition
+			if = {
+				limit = {
+					NOT = {
+						has_active_mission = MAI_next_seating_of_children_parliament
+					}
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+}
+
+country_event = { #Convincing 5 undecided deputies
+	id = childrenparliament.187
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.187"}
+	title = childrenparliament.187.t
+	desc = childrenparliament.187.d
+	picture = GFX_report_children_parliament
+
+	is_triggered_only = yes
+
+	option = { #Convinced
+		name = childrenparliament.187.a
+		custom_effect_tooltip = mai_five_are_convinced
+		hidden_effect = {
+			subtract_from_variable = { mai_chp_dep_undecided = 5 }
+			add_to_variable = { mai_chp_dep_support = 5 }
+		}
+		add_political_power = -20
+	}
+
+	option = { #Not convinced
+		name = childrenparliament.187.b
+		custom_effect_tooltip = mai_five_are_not_convinced
+		hidden_effect = {
+			subtract_from_variable = { mai_chp_dep_undecided = 5 }
+			add_to_variable = { mai_chp_dep_oppose = 5 }
+		}
+		add_political_power = 10
+	}
+}
+	
 
 country_event = { #
 	id = childrenparliament.19
@@ -2920,6 +3336,76 @@ country_event = { #No session because there are no bills to be discussed
 			add_political_power = 50
 			hidden_effect = {
 				set_country_flag = were_done_here
+			}
+		}
+	}
+}
+
+country_event = { #Debug event
+	id = childrenparliament.999
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.999"}
+	title = childrenparliament.999.t
+	desc = childrenparliament.999.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_country_flag = national_children_party_wins
+		clr_country_flag = time_for_kids_wins
+		clr_country_flag = free_future_party_wins
+		clr_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+	}
+
+	option = {
+		name = childrenparliament.0.a
+		hidden_effect = {
+			set_variable = { mai_chp_ncp_leader_frame = 2 }
+			set_variable = { mai_chp_ffp_leader_frame = 3 }
+			set_variable = { mai_chp_tfk_leader_frame = 4 }
+			set_variable = { mai_chp_ccfrok_leader_frame = 5 }
+			clear_variable = ncp_seats_in_chp
+			clear_variable = ffp_seats_in_chp
+			clear_variable = tfk_seats_in_chp
+			clear_variable = ccfrok_seats_in_chp
+			set_variable = { current_seats_in_chp = 38 }
+			MAI_chp_calculate_bill_support = yes
+			#state seats
+			#MAI_calculate_state_seats = yes
+			every_owned_state = {
+				dhondt_calculate_overall_seats = yes
+			}
+			if = {
+				limit = {
+					check_variable = { ncp_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { ncp_seats_in_chp > tfk_seats_in_chp }
+					check_variable = { ncp_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = national_children_party_wins
+			}
+			if = {
+				limit = {
+					check_variable = { ffp_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { ffp_seats_in_chp > tfk_seats_in_chp }
+					check_variable = { ffp_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = free_future_party_wins
+			}
+			if = {
+				limit = {
+					check_variable = { tfk_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { tfk_seats_in_chp > ccfrok_seats_in_chp }
+				}
+				set_country_flag = time_for_kids_wins
+			}
+			if = {
+				limit = {
+					check_variable = { ccfrok_seats_in_chp > ffp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > ncp_seats_in_chp }
+					check_variable = { ccfrok_seats_in_chp > tfk_seats_in_chp }
+				}
+				set_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
 			}
 		}
 	}

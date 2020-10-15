@@ -5,13 +5,19 @@ state={
 		548 1189 2403 3972 5147 6139 6141 6161 6162 6260 
 	}
 	manpower=275000
-	state_category = rural
+	state_category = town
 	buildings_max_level_factor=1.000
 	history = {
 		owner = ARE
 		add_core_of = ARE
 		buildings = {
 			infrastructure = 2
+			industrial_complex = 2
+		}
+}
+		resources = {
+			steel = 5
+			rubber = 8
 		}
 	}
-}
+

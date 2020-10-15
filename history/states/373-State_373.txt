@@ -1,11 +1,10 @@
 state={
 	id=373
 	name="STATE_373"
-	state_category = rural
 	provinces={
 		1840 2158 2977 3998 5756 7192 7231 7265 7307 7352 7370 7401 7415 7444 7495 
 	}
-	state_category = rural
+	state_category = city
 	manpower=600000
 	buildings_max_level_factor=1.000
 	history = {
@@ -13,6 +12,8 @@ state={
 		add_core_of = GRN
 		buildings = {
 			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 2
 		}
 	}
 }

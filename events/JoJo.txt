@@ -1,0 +1,522 @@
+﻿
+add_namespace = jojo
+
+################################################################################################################################################################################################################################
+#
+#	DDDDD   IIIII  OOOOO     EEEEEEE VV     VV EEEEEEE NN   NN TTTTTTT  SSSSS  
+#	DD  DD   III  OO   OO    EE      VV     VV EE      NNN  NN   TTT   SS      
+#	DD   DD  III  OO   OO    EEEEE    VV   VV  EEEEE   NN N NN   TTT    SSSSS  
+#	DD   DD  III  OO   OO    EE        VV VV   EE      NN  NNN   TTT        SS 
+#	DDDDDD  IIIII  OOOO0     EEEEEEE    VVV    EEEEEEE NN   NN   TTT    SSSSS  
+#
+################################################################################################################################################################################################################################
+                                                                           
+
+country_event = { #Choosing the plan
+	id = jojo.1
+	title = jojo.1.t
+	desc = jojo.1.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.1.a
+		complete_national_focus = DIO_pucci_plan
+	}
+
+	option = {
+		name = jojo.1.b
+		complete_national_focus = DIO_enya_plan
+	}
+}
+
+country_event = { #Dio proposes pact to Pillar Men
+	id = jojo.2
+	title = jojo.2.t
+	desc = jojo.2.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.2.a
+		DIO = {
+			country_event = {
+				id = jojo.3
+				days = 0
+			}
+		}
+		diplomatic_relation = {
+    		country = DIO
+    		relation = non_aggression_pact
+    		active = yes
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = jojo.2.b
+		DIO = {
+			country_event = {
+				id = jojo.4
+				days = 0
+			}
+		}
+		add_political_power = 50
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Pillar Men accept
+	id = jojo.3
+	title = jojo.3.t
+	desc = jojo.3.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.3.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #Pillar Men reject
+	id = jojo.4
+	title = jojo.4.t
+	desc = jojo.4.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.4.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Pressuring Mice
+	id = jojo.5
+	title = jojo.5.t
+	desc = jojo.5.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.5.a
+		DIO = {
+			transfer_state = 367
+			transfer_state = 417
+			country_event = {
+				id = jojo.6
+				days = 0
+			}
+		}
+		if = {
+			limit = {
+				DIO = {
+					has_non_aggression_pact_with = PIL
+				}
+			}
+			PIL = {
+				transfer_state = 471
+			}
+		}
+	}
+
+	option = {
+		name = jojo.5.b
+		DIO = {
+			country_event = {
+				id = jojo.7
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Mice fade
+	id = jojo.6
+	title = jojo.6.t
+	desc = jojo.6.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.6.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #Mice reject
+	id = jojo.7
+	title = jojo.7.t
+	desc = jojo.7.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.7.a
+		create_wargoal = {
+			target = MIC
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = jojo.7.b
+	}
+}
+
+country_event = { #Pressuring Khorinis
+	id = jojo.8
+	title = jojo.8.t
+	desc = jojo.8.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.8.a
+		DIO = {
+			country_event = {
+				id = jojo.9
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = jojo.8.b
+		DIO = {
+			country_event = {
+				id = jojo.10
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Khorinis fades
+	id = jojo.9
+	title = jojo.9.t
+	desc = jojo.9.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.9.a
+		add_political_power = 50
+		puppet = KHO
+	}
+}
+
+country_event = { #Khorinis rejects
+	id = jojo.10
+	title = jojo.10.t
+	desc = jojo.10.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.10.a
+		KHO = {
+			every_owned_state = {
+				add_core_of = DIO
+			}
+		}
+		create_wargoal = {
+			target = KHO
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = jojo.10.b
+		KHO = {
+			every_owned_state = {
+				add_core_of = DIO
+			}
+		}
+	}
+}
+
+country_event = { #Pressuring Arendelle
+	id = jojo.11
+	title = jojo.11.t
+	desc = jojo.11.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.11.a
+		DIO = {
+			country_event = {
+				id = jojo.12
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = jojo.11.b
+		DIO = {
+			country_event = {
+				id = jojo.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Arendelle fades
+	id = jojo.12
+	title = jojo.12.t
+	desc = jojo.12.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.12.a
+		add_political_power = 50
+		transfer_state = 208
+		transfer_state = 226
+	}
+}
+
+country_event = { #Arendelle rejects
+	id = jojo.13
+	title = jojo.13.t
+	desc = jojo.13.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.13.a
+		ARE = {
+			every_owned_state = {
+				add_core_of = DIO
+			}
+		}
+		create_wargoal = {
+			target = ARE
+			type = annex_everything
+		}
+	}
+
+	option = {
+		name = jojo.13.b
+		ARE = {
+			every_owned_state = {
+				add_core_of = DIO
+			}
+		}
+	}
+}
+
+country_event = { #Fate of Mice Republic
+	id = jojo.14
+	title = jojo.14.t
+	desc = jojo.14.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.14.a
+		DIO = {
+			country_event = {
+				id = jojo.15
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = jojo.14.b
+		DIO = {
+			country_event = {
+				id = jojo.16
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Mice surrender
+	id = jojo.15
+	title = jojo.15.t
+	desc = jojo.15.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.15.a
+		add_political_power = 50
+		annex_country = {
+    		target = MIC
+    		transfer_troops = no
+		}
+	}
+}
+
+country_event = { #Mice reject
+	id = jojo.16
+	title = jojo.16.t
+	desc = jojo.16.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.16.a
+		declare_war_on = {
+			target = MIC
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Dio wants to establish bases on Berk
+	id = jojo.17
+	title = jojo.17.t
+	desc = jojo.17.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.17.a
+		add_political_power = 100
+		DIO = {
+			transfer_state = 15
+			transfer_state = 16
+			country_event = {
+				id = jojo.18
+				days = 1
+			}
+		}
+	}
+
+	option = {
+		name = jojo.17.b
+		DIO = {
+			country_event = {
+				id = jojo.19
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Berk sells the territory for bases
+	id = jojo.18
+	title = jojo.18.t
+	desc = jojo.18.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.18.a
+		add_political_power = -100
+		15 = {
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				instant_build = yes
+				province = 10731
+			}
+		}
+		16 = {
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				instant_build = yes
+				province = 10732
+			}
+		}
+	}
+}
+
+country_event = { #Berk rejects
+	id = jojo.19
+	title = jojo.19.t
+	desc = jojo.19.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.19.a
+		add_political_power = -50
+		15 = {
+			add_claim_by = DIO
+		}
+		16 = {
+			add_claim_by = DIO
+		}
+	}
+}
+
+country_event = { #Dio's expansion must be stopped!
+	id = jojo.20
+	title = jojo.20.t
+	desc = jojo.20.d
+	
+	picture = GFX_report_event_generic_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.20.a
+		declare_war_on = {
+			target = DIO
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = {
+		name = jojo.20.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+

@@ -20,19 +20,6 @@ bookmarks = {
 				MAI_children_parliament_focus
 			}
 		}
-
-		"FRI"={
-			history = "FRI_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-				FRI_colonial_beginnings
-			}
-			focuses = {
-				FRI_expeditions_for_resources
-				FRI_continue_colonization
-				FRI_hartmut_rules
-			}
-		}
 		
 		"GRN"={
 			history = "GRN_GATHERING_STORM_DESC"
@@ -46,17 +33,26 @@ bookmarks = {
 				GRN_coronation_of_tabaluga
 			}
 		}
-		
-		"ICW"={
-			history = "ICW_GATHERING_STORM_DESC"
+
+		"DES"={
+			history = "DES_GATHERING_STORM_DESC"
 			ideas = {
 				pre-industrial_tech
-				ICW_frozen_dragon_idea
 			}
 			focuses = {
-				ICW_leftovers_of_an_empire
-				ICW_try_second_time
-				ICW_versus_greenland
+				DES_open_for_international_relations
+				DES_take_care_of_sioux_tribe
+				DES_demand_reclaimed_fields
+			}
+		}
+
+		"DIO"={
+			history = "DIO_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+			
 			}
 		}
 		
@@ -86,26 +82,8 @@ bookmarks = {
 			}
 		}
 
-		"TSA"={
-			history = "TSA_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-			}
-			focuses = {
-				TSA_elections_of_1936
-				TSA_proclaim_doofania
-				TSA_bastion_of_democracy
-			}
-		}
-
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC_TCW"
-		}
-
-		#HERE COME THE MINORS
-
-		"GON"={ #sorry Shen, please don't kill me
-			minor = yes
+		"GON"={
+			
 			history = "GON_GATHERING_STORM_DESC"
 			ideas = {
 				pre-industrial_tech
@@ -119,16 +97,23 @@ bookmarks = {
 			}
 		}
 
-		"DES"={
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		#HERE COME THE MINORS
+
+		"TSA"={
 			minor = yes
-			history = "DES_GATHERING_STORM_DESC"
+			history = "TSA_GATHERING_STORM_DESC"
 			ideas = {
-				pre-industrial_tech
+				modern_tech_idea
 			}
 			focuses = {
-				DES_open_for_international_relations
-				DES_take_care_of_sioux_tribe
-				DES_demand_reclaimed_fields
+				TSA_elections_of_1936
+				TSA_proclaim_doofania
+				TSA_bastion_of_democracy
 			}
 		}
 
@@ -250,6 +235,36 @@ bookmarks = {
 			
 			}
 		}
+
+		"FRI"={
+			minor = yes
+			history = "FRI_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				FRI_colonial_beginnings
+			}
+			focuses = {
+				FRI_expeditions_for_resources
+				FRI_continue_colonization
+				FRI_hartmut_rules
+			}
+		}
+
+		"ICW"={
+			minor = yes
+			history = "ICW_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+				ICW_frozen_dragon_idea
+			}
+			focuses = {
+				ICW_leftovers_of_an_empire
+				ICW_try_second_time
+				ICW_versus_greenland
+			}
+		}
+
+		
 		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !

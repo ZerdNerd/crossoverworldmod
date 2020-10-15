@@ -1,0 +1,2500 @@
+focus_tree = { 
+	id = konodioda #you expected some creative focus tree id, BUT IT WAS ME, DIO!
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = DIO
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = DIO_building_the_eastern_powerhouse
+		icon = GFX_goal_generic_production
+		x = 18
+		y = 0
+		cost = 5
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			country_event = {
+				id = jojo.1
+				days = 0
+			}
+		} 
+	}
+
+	###############################################################################################################################################################################
+	#
+	#	PPPPPP  UU   UU  CCCCC   CCCCC  IIIII 
+	#	PP   PP UU   UU CC    C CC    C  III  
+	#	PPPPPP  UU   UU CC      CC       III  
+	#	PP      UU   UU CC    C CC    C  III  
+	#	PP       UUUUU   CCCCC   CCCCC  IIIII 
+	#
+	###############################################################################################################################################################################
+
+	focus = { 
+		id = DIO_pucci_plan
+		icon = GFX_focus_pucci
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_building_the_eastern_powerhouse
+		}
+		mutually_exclusive = {
+			focus = DIO_enya_plan
+		}
+
+		available = {
+			always = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = DIO_enfore_stricter_rules
+		icon = GFX_focus_rom_parties_end
+		x = 2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_pucci_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_stability = -0.05
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = DIO_one_man_one_stand
+		icon = GFX_goal_generic_military_sphere
+		x = 1
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_enfore_stricter_rules
+		}
+		mutually_exclusive = {
+			focus = DIO_hand_out_the_discs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_one_man_stand
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_hand_out_the_discs
+		icon = GFX_focus_disc
+		x = 3
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_enfore_stricter_rules
+		}
+		mutually_exclusive = {
+			focus = DIO_one_man_one_stand
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_discs_in_circulation
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_western_stand_tactics
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_one_man_one_stand
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_mass_assault
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_organize_practical_trainings
+		icon = GFX_focus_generic_military_mission
+		x = 0
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_western_stand_tactics
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				DIO_practical_trainings
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_increase_soldiers_pay
+		icon = GFX_focus_mex_privatisation
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_hand_out_the_discs
+			focus = DIO_one_man_one_stand
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_increased_pay
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improving_military_research
+		icon = GFX_focus_research
+		x = 2
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_increase_soldiers_pay
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improving_stands_quality
+		icon = GFX_focus_focus_fra_maquis
+		x = 1
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improving_military_research
+		}
+		prerequisite = {
+			focus = DIO_organize_practical_trainings
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_switching_stand_tactics
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_hand_out_the_discs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_superior_firepower
+				category = cat_mobile_warfare
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_proper_disc_handling
+		icon = GFX_focus_disc
+		x = 4
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_switching_stand_tactics
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_superior_firepower
+				category = cat_mobile_warfare
+			}
+			add_ideas = {
+				DIO_proper_handling
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_mobile_stand_units
+		icon = GFX_goal_generic_army_motorized
+		x = 3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_proper_disc_handling
+		}
+		prerequisite = {
+			focus = DIO_improving_military_research
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+				category = cat_mechanized_equipment
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_silent_and_unseen
+		icon = GFX_goal_generic_special_forces
+		x = 2
+		y = 7
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_mobile_stand_units
+			focus = DIO_improving_stands_quality
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_dio_image
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_pucci_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = DIO_joestars_are_devils
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 8
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_dio_image
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			JOJ = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = DIO_anti_joestar_propaganda
+				}
+			}
+			custom_effect_tooltip = DIO_anti_joestar_propaganda_decisions_enabled
+		} 
+	}
+
+	focus = { 
+		id = DIO_send_agents_to_the_west
+		icon = GFX_focus_prc_infiltration
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_joestars_are_devils
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = DIO_trade_missions_decisions_enabled
+		} 
+	}
+
+	focus = { 
+		id = DIO_call_to_the_desert
+		icon = GFX_goal_generic_improve_relations
+		x = 6
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_send_agents_to_the_west
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			DES = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			add_opinion_modifier = {
+    			target = DES
+    			modifier = TCWMod_supports_our_cause
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_the_southern_potential
+		icon = GFX_goal_generic_military_deal
+		x = 6
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_call_to_the_desert
+		}
+
+		available = {
+			MOR = {
+				has_government = fascism
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			MOR = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			add_opinion_modifier = {
+    			target = MOR
+    			modifier = TCWMod_supports_our_cause
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_and_devils_must_be_crushed
+		icon = GFX_focus_generic_manpower
+		x = 8
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_joestars_are_devils
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_manpower = 25000
+		} 
+	}
+
+	focus = { 
+		id = DIO_no_mercy_approach
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_and_devils_must_be_crushed
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_show_no_mercy
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_across_the_sea
+		icon = GFX_focus_generic_destroyer
+		x = 11
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_joestars_are_devils
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			navy_experience = 10
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_stoick
+		icon = GFX_goal_generic_military_sphere
+		x = 10
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_across_the_sea
+		}
+
+		mutually_exclusive = {
+			focus = DIO_support_halvar
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			BER = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			VIC = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_enemy_cause
+				}
+			}
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = BER
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_halvar
+		icon = GFX_goal_generic_military_sphere
+		x = 12
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_across_the_sea
+		}
+
+		mutually_exclusive = {
+			focus = DIO_support_stoick
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			VIC = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			BER = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_enemy_cause
+				}
+			}
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = VIC
+			}
+		} 
+	}
+
+	#################################################################################################################################################################################
+	#
+	#	EEEEEEE  CCCCC   OOOOO  NN   NN  OOOOO  MM    MM YY   YY 
+	#	EE      CC    C OO   OO NNN  NN OO   OO MMM  MMM YY   YY 
+	#	EEEEE   CC      OO   OO NN N NN OO   OO MM MM MM  YYYYY  
+	#	EE      CC    C OO   OO NN  NNN OO   OO MM    MM   YYY   
+	#	EEEEEEE  CCCCC   OOOO0  NN   NN  OOOO0  MM    MM   YYY   
+	#
+	#################################################################################################################################################################################
+
+	focus = { 
+		id = DIO_the_economical_way_to_heaven
+		icon = GFX_goal_generic_production
+		x = 18
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_pucci_plan
+			focus = DIO_enya_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_the_disc_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 15
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_the_economical_way_to_heaven
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_did_you_complete_pucci_focus
+				has_completed_focus = DIO_pucci_plan
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_concentrate_everything_in_the_south
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 15
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_the_disc_factories
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			442 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_appease_the_citizens
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 15
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_concentrate_everything_in_the_south
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			433 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_expansion_of_electricity
+		icon = GFX_goal_generic_construct_civilian
+		x = 17
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_the_economical_way_to_heaven
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_moving_under_the_sun
+		icon = GFX_goal_generic_defence
+		x = 17
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_expansion_of_electricity
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_roads_in_the_cities
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 17
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_moving_under_the_sun
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						has_state_category = town
+						has_state_category = city
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_proper_naval_expansion
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 19
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_the_economical_way_to_heaven
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			navy_experience = 5
+			421 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_northern_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 19
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_proper_naval_expansion
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_modernization_of_the_naval_bases
+		icon = GFX_goal_generic_build_navy
+		x = 19
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_northern_dockyards
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			334 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 5704
+				}
+			}
+			421 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 7633
+				}
+			}
+			219 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1901
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_excavating_more_arrows
+		icon = GFX_goal_generic_construct_civilian
+		x = 21
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_the_economical_way_to_heaven
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_did_you_complete_enya_focus
+				has_completed_focus = DIO_enya_plan
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_keeping_people_content
+		icon = GFX_goal_generic_construction
+		x = 21
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_excavating_more_arrows
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			334 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			219 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_concentrating_the_armory
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 21
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_keeping_people_content
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			421 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	#################################################################################################################################################################################
+	#
+	#	EEEEEEE NN   NN YY   YY   AAA   
+	#	EE      NNN  NN YY   YY  AAAAA  
+	#	EEEEE   NN N NN  YYYYY  AA   AA 
+	#	EE      NN  NNN   YYY   AAAAAAA 
+	#	EEEEEEE NN   NN   YYY   AA   AA 	
+	#
+	#################################################################################################################################################################################
+
+	focus = { 
+		id = DIO_enya_plan
+		icon = GFX_focus_enya
+		x = 31
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_building_the_eastern_powerhouse
+		}
+		mutually_exclusive = {
+			focus = DIO_pucci_plan
+		}
+		available = {
+			always = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = DIO_improve_management_of_arrows
+		icon = GFX_focus_generic_air_defense
+		x = 28
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_enya_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_war_support = 0.05
+			army_experience = 5
+		} 
+	}
+
+	focus = { 
+		id = DIO_try_to_replicate_the_arrows
+		icon = GFX_focus_generic_concessions
+		x = 27
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improve_management_of_arrows
+		}
+
+		mutually_exclusive = {
+			focus = DIO_shoot_as_many_as_you_can
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_attempt_replicating_arrows
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_shoot_as_many_as_you_can
+		icon = GFX_focus_focus_fra_maquis
+		x = 29
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improve_management_of_arrows
+		}
+
+		mutually_exclusive = {
+			focus = DIO_try_to_replicate_the_arrows
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_shoot_as_many_cmon
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_combining_stands_and_conventional_warfare
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 26
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_try_to_replicate_the_arrows
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_superior_firepower
+				category = cat_mobile_warfare
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improving_the_coordination
+		icon = GFX_focus_generic_self_management
+		x = 26
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_combining_stands_and_conventional_warfare
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 1
+				category = cat_superior_firepower
+				category = cat_mobile_warfare
+			}
+			add_ideas = {
+				DIO_improv_coordination
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_buy_their_loyalty
+		icon = GFX_focus_mex_privatisation
+		x = 28
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_try_to_replicate_the_arrows
+			focus = DIO_shoot_as_many_as_you_can
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				DIO_buy_loyalty
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improving_the_labs
+		icon = GFX_focus_research
+		x = 28
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_buy_their_loyalty
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_research_slot = 1
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = infantry_weapons
+				category = artillery
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_maximize_stands_potential
+		icon = GFX_goal_generic_demand_territory
+		x = 30
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_shoot_as_many_as_you_can
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.5
+				uses = 2
+				category = cat_mass_assault
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improve_defensive_aspects
+		icon = GFX_goal_generic_defence
+		x = 30
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_maximize_stands_potential
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				DIO_def_aspects
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_improve_the_transports
+		icon = GFX_goal_generic_army_motorized
+		x = 27
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improving_the_coordination
+		}
+		prerequisite = {
+			focus = DIO_improving_the_labs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = motorized_equipment
+				category = cat_mechanized_equipment
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_quality_over_quantity
+		icon = GFX_goal_generic_military_sphere
+		x = 29
+		y = 6
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improve_defensive_aspects
+		}
+		prerequisite = {
+			focus = DIO_improving_the_labs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_the_stand_commandos
+		icon = GFX_goal_generic_special_forces
+		x = 28
+		y = 7
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_improve_the_transports
+			focus = DIO_quality_over_quantity
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 2
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_search_for_temporary_allies
+		icon = GFX_goal_generic_national_unity
+		x = 33
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_enya_plan
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = DIO_search_in_the_west
+		icon = GFX_goal_generic_major_alliance
+		x = 33
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_search_for_temporary_allies
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = DIO_west_diplomats_decisions_enabled
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_humsin
+		icon = GFX_goal_generic_improve_relations
+		x = 32
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_search_in_the_west
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			DES = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = DES
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_contact_shen
+		icon = GFX_goal_generic_improve_relations
+		x = 32
+		y = 5
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_support_humsin
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			GON = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = GON
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_morioh_with_more_arrows
+		icon = GFX_goal_generic_military_sphere
+		x = 34
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = DIO_search_in_the_west
+		}
+
+		available = {
+			MOR = {
+				has_government = fascism
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			MOR = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = MOR
+			}
+		} 
+	}
+
+	##########################################################################################################################################################################################################
+	#
+	#	TTTTTTT HH   HH IIIII  SSSSS     IIIII  SSSSS     WW      WW HH   HH EEEEEEE RRRRRR  EEEEEEE    TTTTTTT HH   HH EEEEEEE    FFFFFFF UU   UU NN   NN    BBBBB   EEEEEEE   GGGG  IIIII NN   NN  SSSSS  
+	#	  TTT   HH   HH  III  SS          III  SS         WW      WW HH   HH EE      RR   RR EE           TTT   HH   HH EE         FF      UU   UU NNN  NN    BB   B  EE       GG  GG  III  NNN  NN SS      
+	#	  TTT   HHHHHHH  III   SSSSS      III   SSSSS     WW   W  WW HHHHHHH EEEEE   RRRRRR  EEEEE        TTT   HHHHHHH EEEEE      FFFF    UU   UU NN N NN    BBBBBB  EEEEE   GG       III  NN N NN  SSSSS  
+	#	  TTT   HH   HH  III       SS     III       SS     WW WWW WW HH   HH EE      RR  RR  EE           TTT   HH   HH EE         FF      UU   UU NN  NNN    BB   BB EE      GG   GG  III  NN  NNN      SS 
+	#	  TTT   HH   HH IIIII  SSSSS     IIIII  SSSSS       WW   WW  HH   HH EEEEEEE RR   RR EEEEEEE      TTT   HH   HH EEEEEEE    FF       UUUUU  NN   NN    BBBBBB  EEEEEEE  GGGGGG IIIII NN   NN  SSSSS  
+	#
+	##########################################################################################################################################################################################################
+
+	focus = { 
+		id = DIO_the_way_to_heaven
+		icon = GFX_goal_generic_territory_or_war
+		x = 19
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_you_have_completed_one_of_the_plans
+				OR = {
+					AND = {
+						has_completed_focus = DIO_no_mercy_approach
+						OR = {
+							AND = {
+								has_completed_focus = DIO_call_to_the_desert
+								MOR = {
+									NOT = {
+										has_government = fascism
+									}
+								}
+							}
+							AND = {
+								has_completed_focus = DIO_the_southern_potential
+								MOR = {
+									has_government = fascism
+								}
+							}
+						}
+						has_completed_focus = DIO_silent_and_unseen
+						has_completed_focus = DIO_appease_the_citizens
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+						OR = {
+							has_completed_focus = DIO_support_halvar
+							has_completed_focus = DIO_support_stoick
+						}
+					}
+					AND = {
+						has_completed_focus = DIO_the_stand_commandos
+						has_completed_focus = DIO_contact_shen
+						has_completed_focus = DIO_support_morioh_with_more_arrows
+						has_completed_focus = DIO_concentrating_the_armory
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = DIO_first_take_out_animals
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 19
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_the_way_to_heaven
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = RAB
+			}
+			RAB = {
+				every_owned_state = {
+					add_core_of = DIO
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_second_the_case_of_emptiness
+		icon = GFX_goal_generic_position_armies
+		x = 19
+		y = 10
+		cost = 5
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_first_take_out_animals
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = DIO_colonization_enabled
+			hidden_effect = {
+				set_country_flag = colonies_enabled
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_pact_with_pillar_men
+		icon = GFX_goal_generic_dangerous_deal
+		x = 16
+		y = 11
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_second_the_case_of_emptiness
+		}
+
+		mutually_exclusive = {
+			focus = DIO_antagonize_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			PIL = {
+				country_event = {
+					id = jojo.2
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_pressure_mice
+		icon = GFX_goal_generic_forceful_treaty
+		x = 15
+		y = 12
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pact_with_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			367 = {
+				add_core_of = DIO
+			}
+			417 = {
+				add_core_of = DIO
+			}
+			471 = {
+				add_core_of = PIL
+			}
+			MIC = {
+				country_event = {
+					id = jojo.5
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_for_lord_shen
+		icon = GFX_goal_generic_military_sphere
+		x = 14
+		y = 13
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pressure_mice
+		}
+
+		available = {
+			GON = {
+				has_war_with = FLO
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = GON
+			}
+			custom_effect_tooltip = DIO_GON_will_welcome_volunteers
+		} 
+	}
+
+	focus = { 
+		id = DIO_subjugating_khorinis
+		icon = GFX_focus_rom_handle_king
+		x = 17
+		y = 12
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pact_with_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			KHO = {
+				country_event = {
+					id = jojo.8
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_pressure_arendelle
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 13
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pressure_mice
+		}
+
+		prerequisite = {
+			focus = DIO_subjugating_khorinis
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			226 = {
+				add_core_of = DIO
+			}
+			208 = {
+				add_core_of = DIO
+			}
+			ARE = {
+				country_event = {
+					id = jojo.11
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_fate_of_mice_republic
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 15
+		y = 14
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pressure_arendelle
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			MIC = {
+				country_event = {
+					id = jojo.14
+					days = 0
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_backstab_pillar_men
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 14
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_pressure_arendelle
+		}
+
+		available = {
+			PIL = {
+				has_war_with = JOJ
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = PIL
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_for_morioh
+		icon = GFX_goal_generic_military_sphere
+		x = 19
+		y = 13
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_border_regions_of_mice_republic
+			focus = DIO_subjugating_khorinis
+		}
+
+		available = {
+			MOR = {
+				has_war_with = JOJ
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = MOR
+			}
+			custom_effect_tooltip = DIO_MOR_will_welcome_volunteers
+		} 
+	}
+
+	focus = { 
+		id = DIO_operation_road_roller
+		icon = GFX_goal_generic_major_war
+		x = 19
+		y = 15
+		cost = 3
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = DIO_fate_of_mice_republic
+			focus = DIO_claim_hornets_lands
+			focus = DIO_establish_bases_in_berk
+			focus = DIO_backstab_pillar_men
+		} 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_you_have_completed_selected_part_of_international_tree
+				OR = {
+					AND = {
+						has_completed_focus = DIO_fate_of_mice_republic
+						has_completed_focus = DIO_backstab_pillar_men
+					}
+					AND = {
+						has_completed_focus = DIO_claim_hornets_lands
+						has_completed_focus = DIO_establish_bases_in_berk
+					}
+				}
+			}
+			is_neighbor_of = JOJ
+			PIL = {
+				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = JOJ
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_antagonize_pillar_men
+		icon = GFX_goal_generic_demand_territory
+		x = 22
+		y = 11
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_second_the_case_of_emptiness
+		}
+
+		mutually_exclusive = {
+			focus = DIO_pact_with_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			PIL = {
+				add_opinion_modifier = {
+    				target = DIO
+    				modifier = TCWMod_they_see_us_as_enemy
+				}
+			}
+			add_opinion_modifier = {
+    			target = PIL
+    			modifier = TCWMod_they_see_us_as_enemy
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_border_regions_of_mice_republic
+		icon = GFX_goal_generic_territory_or_war
+		x = 21
+		y = 12
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_antagonize_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			MIC = {
+				country_event = {
+					id = jojo.5
+					days = 1
+				}
+			}
+			MIC = {
+				every_owned_state = {
+					add_core_of = DIO
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_take_out_pillar_men
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 23
+		y = 12
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_antagonize_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			PIL = {
+				every_owned_state = {
+					add_core_of = DIO
+				}
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = PIL
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_support_for_humsin
+		icon = GFX_goal_generic_military_sphere
+		x = 24
+		y = 13
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_take_out_pillar_men
+		}
+
+		available = {
+			DES = {
+				has_war_with = GRN
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 500
+    			target = DES
+			}
+			custom_effect_tooltip = DIO_DES_will_welcome_volunteers
+		} 
+	}
+
+	focus = { 
+		id = DIO_an_oil_tanker_for_mice
+		icon = GFX_goal_generic_small_arms
+		x = 22
+		y = 13
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_border_regions_of_mice_republic
+		}
+
+		prerequisite = {
+			focus = DIO_take_out_pillar_men
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = MIC
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_establish_bases_in_berk
+		icon = GFX_goal_generic_forceful_treaty
+		x = 23
+		y = 14
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_an_oil_tanker_for_mice
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			BER = {
+				country_event = {
+					id = jojo.17
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_claim_hornets_lands
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 21
+		y = 14
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_an_oil_tanker_for_mice
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			HOR = {
+				every_owned_state = {
+					add_claim_by = DIO
+				}
+			}
+		} 
+	}
+
+	##########################################################################################################################################################################
+	#
+	#	HH   HH EEEEEEE   AAA   VV     VV EEEEEEE NN   NN 
+	#	HH   HH EE       AAAAA  VV     VV EE      NNN  NN 
+	#	HHHHHHH EEEEE   AA   AA  VV   VV  EEEEE   NN N NN 
+	#	HH   HH EE      AAAAAAA   VV VV   EE      NN  NNN 
+	#	HH   HH EEEEEEE AA   AA    VVV    EEEEEEE NN   NN 
+	#
+	##########################################################################################################################################################################
+
+	focus = { 
+		id = DIO_a_bit_closer_to_heaven
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 19
+		y = 17
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_operation_road_roller
+		}
+
+		allow_branch = {
+			has_completed_focus = DIO_operation_road_roller
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_joestars_defeated
+				JOJ = {
+					exists = no
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			if = {
+				limit = {
+					DIO = {
+						any_owned_state  ={
+							NOT = {
+								is_core_of = DIO
+							}
+						}
+					}
+				}
+				every_owned_state = {
+					limit = {
+						NOT = {
+							is_core_of = DIO
+						}
+					}
+					add_core_of = DIO
+				}
+			}
+			every_country = {
+				limit = {
+					capital_scope = {
+						is_on_continent = north_america
+					}
+					NOT = {
+						tag = UNC
+						tag = DIO
+						tag = GLO
+					}
+				}
+				every_owned_state = {
+					add_core_of = DIO
+				}
+			}
+			every_country = {
+				limit = {
+					is_subject_of = DIO
+				}
+				DIO = {
+					annex_country = {
+    					target = PREV
+    					transfer_troops = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					OUT = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = DES
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					TIG = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = TIG
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					BEE = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = BEE
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					HOR = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = HOR
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					MOR = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = MOR
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					SIO = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = SIO
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					VIC = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = VIC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					BER = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = BER
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					KHO = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = KHO
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					TUG = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = TUG
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					WOL = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WOL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					WEA = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WEA
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					SQU = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = SQU
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					FLE = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = FLE
+					type = annex_everything
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = DIO_heaven_is_close
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 19
+		y = 18
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_a_bit_closer_to_heaven
+		}
+
+	#	allow_branch = {
+	#		has_completed_focus = DIO_heaven_is_close
+	#	}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_eastern_continent_under_control
+				UNC = {
+					all_owned_state = {
+						NOT = {
+							is_on_continent = north_america
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			set_cosmetic_tag = GoneToHeaven
+			every_country = {
+				limit = {
+					NOT = {
+						tag = UNC
+						tag = DIO
+						tag = GLO
+					}
+				}
+				every_owned_state = {
+					add_core_of = DIO
+				}
+			}
+			every_country = {
+				limit = {
+					exists = yes
+					NOT = {
+						tag = UNC
+						tag = DIO
+						tag = GLO
+						tag = UND
+					}
+				}
+				country_event = {
+					id = jojo.20
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = DIO_heaven_achieved
+		icon = GFX_goal_generic_demand_territory
+		x = 19
+		y = 19
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = DIO_heaven_is_close
+		}
+
+	#	allow_branch = {
+	#		all_state = {
+	#			is_owned_by = DIO
+	#		}
+	#	}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DIO_the_world_is_under_control
+				all_state = {
+					OR = {
+						is_owned_by = DIO
+						is_owned_by = UNC
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			hidden_effect = {
+				annex_country = {
+					target = UNC
+    				transfer_troops = no
+				}
+			}
+			#the final event
+		}
+	}
+                                                                                                                                                                                                    
+}

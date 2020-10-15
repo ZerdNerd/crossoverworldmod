@@ -4,6 +4,7 @@ oob = "DIO_1936"
 
 # Starting tech
 set_technology = {
+	stands_are_allowed = 1
 	infantry_weapons_med = 1
 	infantry_weapons = 1
 	infantry_weapons1 = 1
@@ -84,6 +85,15 @@ add_ideas = {
 	modern_tech_idea
 }
 
+set_variable = {
+	za_warudo_count = 0
+}
+
+add_opinion_modifier = {
+    target = JOJ
+    modifier = TCWMod_mortal_enemies
+}
+
 set_convoys = 50
 
 set_popularities = {
@@ -155,7 +165,7 @@ create_field_marshal = {
 	name = "Dio Brando"
 	portrait_path = "gfx/leaders/DIO/dio.dds"
 	desc = "POLITICS_DIO_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 3
     attack_skill = 4
     defense_skill = 4
@@ -168,7 +178,7 @@ create_field_marshal = {
 	name = "Enrico Pucci"
 	portrait_path = "gfx/leaders/DIO/pucci.dds"
 	desc = "POLITICS_PUCCI_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 3
     attack_skill = 2
     defense_skill = 3
@@ -181,7 +191,7 @@ create_corps_commander = {
 	name = "Donatello Versus"
 	portrait_path = "gfx/leaders/DIO/donatello_versus.dds"
 	desc = "POLITICS_DONATELLO_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 2
     attack_skill = 2
     defense_skill = 3
@@ -194,7 +204,7 @@ create_corps_commander = {
 	name = "Steely Dan"
 	portrait_path = "gfx/leaders/DIO/steely_dan.dds"
 	desc = "POLITICS_STEELY_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 3
     attack_skill = 4
     defense_skill = 2
@@ -207,7 +217,7 @@ create_corps_commander = {
 	name = "Vanilla Ice"
 	portrait_path = "gfx/leaders/DIO/vanilla_ice.dds"
 	desc = "POLITICS_VANILLA_ICE_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 4
     attack_skill = 4
     defense_skill = 4
@@ -220,7 +230,7 @@ create_corps_commander = {
 	name = "Daniel J. D'Arby"
 	portrait_path = "gfx/leaders/DIO/go_ahead_mr_joestar.dds"
 	desc = "POLITICS_D_DARBY_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 3
     attack_skill = 3
     defense_skill = 3
@@ -233,7 +243,7 @@ create_corps_commander = {
 	name = "Telence T. D'Arby"
 	portrait_path = "gfx/leaders/DIO/gamer_darby.dds"
 	desc = "POLITICS_T_DARBY_DESC"
-	traits = { }
+	traits = { stand_user }
 	skill = 3
     attack_skill = 3
     defense_skill = 2

@@ -69,6 +69,31 @@ scripted_gui = {
                             }
                         }
                     }
+                    AND = {
+                        ROOT = {
+                            tag = GRN
+                            has_country_flag = limited_colonies_enabled
+                        }
+                        OR = {
+                            THIS = {
+                                NOT = {
+                                    state = 283
+                                    state = 237
+                                    state = 206
+                                    state = 273
+                                    state = 241
+                                    state = 196
+                                    state = 173
+                                    state = 285
+                                    state = 254
+                                    state = 276
+                                }
+                            }
+                            ROOT = {
+                                has_political_power < 50
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -85,6 +110,10 @@ scripted_gui = {
             colonization_button_grey_click = {
 
             }
+        }
+
+        ai_enabled = {
+            always = yes
         }
     }
 
@@ -142,6 +171,27 @@ scripted_gui = {
                                 state = 108
                                 state = 101
                                 state = 105
+                            }
+                        }
+                    }
+                    AND = {
+                        ROOT = {
+                            tag = GRN
+                            has_country_flag = limited_colonies_enabled
+                        }
+                        THIS = {
+                            is_owned_by = UNC
+                            OR = {
+                                state = 283
+                                state = 237
+                                state = 206
+                                state = 273
+                                state = 241
+                                state = 196
+                                state = 173
+                                state = 285
+                                state = 254
+                                state = 276
                             }
                         }
                     }
@@ -226,6 +276,35 @@ scripted_gui = {
                 }
                 ROOT = {
                     add_political_power = -50
+                }
+            }
+        }
+
+        ai_enabled = {
+            always = yes
+        }
+
+        ai_test_interval = 168
+        ai_test_variance = 0.000000001
+ 
+        ai_check = {
+            OR = {
+                has_country_flag = limited_colonies_enabled
+                has_country_flag = colonies_enabled
+            }
+            has_political_power > 50
+        }
+
+        ai_test_scopes = test_neighbouring_states
+
+        ai_check_scope = {
+            is_owned_by = UNC
+        }
+
+        ai_weights = {
+            colonization_button_click = {
+                ai_will_do = {
+                    factor = 1
                 }
             }
         }

@@ -64,3 +64,52 @@ is_valid_war_target = {
 		}
 	}
 }
+
+is_limited_colonization_state = {
+	OR = {
+		AND = {
+			ROOT = {
+				tag = GON
+			}
+			THIS = {
+				OR = {
+					state = 206
+        			state = 173
+        			state = 237
+       		 		state = 196
+        			state = 137
+       		 		state = 120
+        			state = 110
+        			state = 117
+        			state = 123
+        			state = 130
+        			state = 157
+        			state = 121
+        			state = 108
+        			state = 101
+        			state = 105
+					state = 283
+				}
+			}
+		}
+		AND = {
+			ROOT = {
+				tag = GRN
+			}
+			THIS = {
+				OR = {
+					state = 283
+                    state = 237
+                	state = 206
+                    state = 273
+                    state = 241
+                    state = 196
+                    state = 173
+                    state = 285
+                    state = 254
+                    state = 276
+				}
+			}
+		}
+	}
+}

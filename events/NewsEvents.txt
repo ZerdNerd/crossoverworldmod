@@ -3708,3 +3708,151 @@ news_event = { #Winslows executed
 		}
 	}
 }
+
+news_event = { #Shen-FH Pact
+	id = worldnews.98
+	title = worldnews.98.t
+	desc = worldnews.98.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.98.a
+		trigger = {
+			OR = {
+				tag = GON
+				tag = FLO
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.98.b
+		trigger = {
+			NOT = {
+				tag = GON
+				tag = FLO
+			}
+		}
+	}
+}
+
+news_event = { #Gongmen Empire invades Greenland
+	id = worldnews.99
+	title = worldnews.99.t
+	desc = worldnews.99.d
+	picture = GFX_news_event_chinese_soldiers_march
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.99.a
+		trigger = {
+			tag = GON
+		}
+	}
+
+	option = {
+		name = worldnews.99.b
+		trigger = {
+			tag = GRN
+		}
+	}
+
+	option = {
+		name = worldnews.99.c
+		trigger = {
+			NOT = {
+				tag = GRN
+				tag = GON
+			}
+		}
+	}
+}
+
+news_event = { #Tabaluga crowned King of Greenland
+	id = worldnews.100
+	title = worldnews.100.t
+	desc = worldnews.100.d
+	picture = GFX_news_tabaluga_coronation
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.100.a
+		trigger = {
+			tag = GRN
+		}
+	}
+
+	option = {
+		name = worldnews.100.iceworld
+		trigger = {
+			tag = ICW
+		}
+	}
+
+	option = {
+		name = worldnews.100.b
+		trigger = {
+			NOT = {
+				tag = GRN
+				tag = ICW
+			}
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.100.c
+		trigger = {
+			NOT = {
+				tag = GRN
+				tag = ICW
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}
+
+news_event = { #Gongmen Treaty signed
+	id = worldnews.101
+	title = worldnews.101.t
+	desc = worldnews.101.d
+	picture = GFX_news_event_generic_sign_treaty1
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.101.a
+		trigger = {
+			OR = {
+				tag = GRN
+				tag = FLO
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.101.b
+		trigger = {
+			NOT = {
+				tag = GRN
+				tag = FLO
+			}
+		}
+	}
+}

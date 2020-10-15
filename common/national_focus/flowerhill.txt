@@ -1508,8 +1508,21 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes 
 
+		bypass = {
+			has_country_flag = FLO_signed_gongmen_pact
+		}
+
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				factor = 0
+			}
 		} 
 
 		prerequisite = {
@@ -1534,6 +1547,19 @@ focus_tree = {
 
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+				}
+				factor = 0
+			}
 		}
 
 		prerequisite = {
@@ -1605,8 +1631,18 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes 
 
+		bypass = {
+			has_country_flag = FLO_signed_gongmen_pact
+		}
+
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				factor = 0
+			}
 		}  
 
 		bypass = {
@@ -1621,9 +1657,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FLO_destroy_shen
 		}
-		prerequisite = {
-			focus = FLO_crush_danville
-		}
+		#prerequisite = {
+		#	focus = FLO_crush_danville
+		#}
 
 		completion_reward = {
 			create_wargoal = {
@@ -1643,6 +1679,19 @@ focus_tree = {
 
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+				}
+				factor = 0
+			}
 		} 
 
 		bypass = {
@@ -1676,6 +1725,23 @@ focus_tree = {
 
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+				}
+				FFA = {
+					exists = yes
+					is_puppet = no
+				}
+				factor = 0
+			}
 		} 
 
 		prerequisite = {
@@ -1708,6 +1774,23 @@ focus_tree = {
 
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+				}
+				TSA = {
+					exists = yes
+					is_puppet = no
+				}
+				factor = 0
+			}
 		} 
 
 		bypass = {
@@ -1744,6 +1827,23 @@ focus_tree = {
 
 		ai_will_do = { 
 			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+				}
+				MAI = {
+					exists = yes
+					is_puppet = no
+				}
+				TSA = {
+					exists = yes
+					is_puppet = no
+				}
+				factor = 0
+			}
 		} 
 
 		bypass = {

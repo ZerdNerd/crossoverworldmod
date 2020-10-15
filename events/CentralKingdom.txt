@@ -26,6 +26,12 @@ country_event = {
 		name = centralkingdom.1.a
 		custom_effect_tooltip = MAC_stephen_death_tooltip
 		hidden_effect = { 
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			set_country_flag = big_event_stephen_death
+		}
 		kill_country_leader = yes
 
 		set_global_flag = stephen_is_dead
@@ -63,7 +69,7 @@ country_event = {
 			}
 		}
 			news_event = { 
-				id = worldnews.1 days = 4
+				id = worldnews.1 days = 5
 			}
 		}
 	}
@@ -1248,6 +1254,45 @@ country_event = { #Tungupungu pact - denied
 	option = { #Great
 		name = centralkingdom.36.a
 		add_political_power = -50
+	}
+}
+
+country_event = { #Macius 18th birthday
+	id = centralkingdom.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.37"}
+	title = centralkingdom.37.t
+	desc = centralkingdom.37.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Long live the king!
+		name = centralkingdom.37.a
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Maciej I"
+				desc = "POLITICS_MACIUS_I_DESC"
+				picture = "macius_adult.dds"
+				expire = "1990.1.1"
+				ideology = children_parliamentary_monarchy
+				traits = {
+					#
+				}
+			}
+			create_country_leader = {
+				name = "Maciej I"
+				desc = "POLITICS_MACIUS_I_DESC"
+				picture = "macius_adult.dds"
+				expire = "1990.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+		}
 	}
 }
 

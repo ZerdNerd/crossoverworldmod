@@ -1,0 +1,97 @@
+scripted_gui = {
+    CR_bigevent_joestars_vs_dio = {
+		context_type = player_context
+		window_name = "cr_big_event_jotaro_vs_dio"
+
+		visible = {
+			has_country_flag = big_event_joestars_vs_dio
+		}
+	}
+
+	CR_bigevent_joestars_vs_dio_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_jotaro_vs_dio_frame"
+
+		visible = {
+			has_country_flag = big_event_joestars_vs_dio
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_joestars_vs_dio
+			}
+		}
+	}
+
+	CR_bigevent_stephen_dies = {
+		context_type = player_context
+		window_name = "cr_big_event_stephen_death"
+
+		visible = {
+			has_country_flag = big_event_stephen_death
+		}
+	}
+
+	CR_bigevent_stephen_dies_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_stephen_death_frame"
+
+		visible = {
+			has_country_flag = big_event_stephen_death
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_stephen_death
+			}
+		}
+	}
+
+	CR_bigevent_sioux_liberate = {
+		context_type = player_context
+		window_name = "cr_big_event_sioux_liberation"
+
+		visible = {
+			has_country_flag = big_event_sioux_liberation
+		}
+	}
+
+	CR_bigevent_sioux_liberate_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_sioux_liberation_frame"
+
+		visible = {
+			has_country_flag = big_event_sioux_liberation
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_sioux_liberation
+			}
+		}
+	}
+
+	CR_bigevent_arktos_triumph = {
+		context_type = player_context
+		window_name = "cr_big_event_arktos_triumphs"
+
+		visible = {
+			has_country_flag = big_event_arktos_triumphs
+		}
+	}
+
+	CR_bigevent_arktos_triumph_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_arktos_triumphs_frame"
+
+		visible = {
+			has_country_flag = big_event_arktos_triumphs
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_arktos_triumphs
+			}
+		}
+	}
+}

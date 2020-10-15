@@ -1,0 +1,26 @@
+guiTypes = {
+    containerWindowType = {
+		name = "stand_users_manpower"
+		position = { x = 1200 y = 5 }
+
+		iconType ={
+           name ="stand_users_manpower_bg"
+           spriteType = "GFX_generic_box_smallest"
+           position = { x=0 y=0 }
+       	}
+
+		instantTextBoxType = {
+           name ="stand_users_manpower_text"
+           position = { x= 15 y = 5 }
+           font = "hoi_18mbs"
+           text = "[?stando_tsukai]K"
+           format = center
+           maxWidth = 102
+           maxHeight = 24
+           fixedsize = yes
+    
+           pdx_tooltip = "STANDO_TSUKAI_TOOLTIP"
+           pdx_tooltip_delayed = "STANDO_TSUKAI_TOOLTIP_DELAYED"
+        }
+	}
+}

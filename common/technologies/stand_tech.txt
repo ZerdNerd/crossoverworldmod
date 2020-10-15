@@ -1,0 +1,796 @@
+technologies = {
+
+	stands_are_allowed = {
+
+		research_cost = 1
+
+		recon = {
+			maximum_speed = 0.3
+		}
+		
+		allow = {
+			always = no
+		}
+
+		enable_subunits = {
+			stand_users
+		}
+
+	}
+
+	improving_the_speed = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_the_speed_2 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			maximum_speed = 0.05
+			soft_attack = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_the_speed_2 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_the_speed_3
+		}
+		
+		category_stands = {
+			maximum_speed = 0.05
+			hard_attack = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_the_speed_3 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_the_speed_4
+		}
+		
+		category_stands = {
+			maximum_speed = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_the_speed_4 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+		category_stands = {
+			maximum_speed = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_destructive_power = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_destructive_power_2 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+			entrenchment = 3
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_destructive_power_2 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_destructive_power_3 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			hard_attack = 0.1
+			soft_attack = 0.1
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_destructive_power_3 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_destructive_power_4 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_destructive_power_4 = {
+
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+		
+		category_stands = {
+			hard_attack = 0.05
+			soft_attack = 0.05
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_range = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_range_2 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			supply_consumption = -0.02
+			default_morale = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_range_2 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_range_3 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			supply_consumption = -0.02
+			default_morale = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_range_3 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_range_4 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			supply_consumption = -0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_range_4 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+		category_stands = {
+			supply_consumption = -0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_persistence = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_persistence_2 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			default_morale = 0.03
+			reliability = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_persistence_2 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_persistence_3
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			default_morale = 0.03
+			reliability = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_persistence_3 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_persistence_4
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			default_morale = 0.02
+			reliability = 0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_persistence_4 = {
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+		category_stands = {
+			default_morale = 0.02
+			reliability = 0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_precision = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_precision_2 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			initiative = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 0 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_precision_2 = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_precision_3 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			initiative = 0.02
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 2 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_precision_3 = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+
+		path = {
+			leads_to_tech = improving_precision_4 
+			research_cost_coeff = 1
+		}
+		
+		category_stands = {
+			initiative = 0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 4 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+
+	improving_precision_4 = {
+
+		dependencies = {
+			stands_are_allowed = 1
+		}
+		
+		xp_research_type = army
+		xp_research_cost = 100
+		xp_research_bonus = 1.00
+		
+		category_stands = {
+			initiative = 0.03
+		}
+
+		research_cost = 2
+
+		folder = {
+			name = stand_folder
+			position = { x = 6 y = 0 }
+		}
+		
+		categories = {
+			stands
+		}
+		
+		ai_will_do = {
+			factor = 20 
+			modifier = {
+				not = {
+					has_army_experience > 120
+				}
+				factor = 0.8
+			}
+		}
+	}
+	
+}

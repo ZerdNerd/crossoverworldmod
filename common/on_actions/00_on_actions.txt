@@ -1,22 +1,91 @@
 on_actions = {
 	# country 
 	on_new_term_election = {
-		random_events = {
-			100 = election.2
-			100 = election.3
-			100 = election.4
-			100 = election.5
-			100 = election.6
-			100 = election.11
-			100 = election.12
-			100 = election.13
-			100 = election.14
-			100 = election.15
+		effect = {
+			if = {
+				limit = {
+					NOT = {
+						tag = MAI
+					}
+				}
+				country_event = election.2
+				country_event = election.3
+				country_event = election.4
+				country_event = election.5
+				country_event = election.6
+				country_event = election.11
+				country_event = election.12
+				country_event = election.13
+				country_event = election.14
+				country_event = election.15
+			}
+			if = {
+				limit = {
+					tag = MAI
+				}
+				country_event = childrenparliament.18
+			}
 		}
 	}
 
 	on_daily = {
 		effect = {
+			DIO = {
+				if = {
+					limit = {
+						has_stands_enabled = yes
+					}
+					set_temp_variable = { stando_tsukai_today = manpower_k }
+					divide_temp_variable = { stando_tsukai_today = 100 }
+					multiply_temp_variable = { stando_tsukai_today = 5 }
+					set_variable = { stando_tsukai = stando_tsukai_today }
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = MAI
+					}
+				}
+				every_state = {
+					limit = {
+						is_owned_by = MAI
+						check_variable = { days_since_campaign_started > 0 }
+						check_variable = { days_since_campaign_started < 31 }
+					}
+					add_to_variable = { days_since_campaign_started = 1 }
+					log = "[GetDateText] - Another day from last campaign passed in [THIS.GetName]"
+				}
+				every_state = {
+					limit = {
+						is_owned_by = MAI
+						check_variable = { days_since_campaign_started = 31 }
+					}
+					clear_variable = days_since_campaign_started
+					log = "[GetDateText] - New campaign can be organized in [THIS.GetName]"
+				}
+			}
+			if = {
+				limit = {
+					AND = {
+						date > 1945.10.02
+						date < 1945.10.04
+						MAI = {
+							exists = yes
+							has_country_leader = {
+								name = "Macius I"
+								ruling_only = yes
+							}
+						}
+					}
+				}
+				MAI = {
+					country_event = {
+						id = centralkingdom.37
+						days = 0
+					}
+				}
+			}
 			if = {
 				limit = { 
                     AND = {
@@ -313,6 +382,73 @@ on_actions = {
 					}
 				}
 			}
+
+			if = {
+				limit = {
+					SIO = {
+						exists = yes 
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_variable = sio_shown_the_big_event
+						}
+					}
+					705 = {
+						is_owned_and_controlled_by = SIO
+					}
+					DES = {
+						exists = no
+					}
+				}
+				every_country  ={
+					limit = {
+						is_ai = no
+						exists = yes
+					}
+					set_country_flag = big_event_sioux_liberation
+				}
+				SIO = {
+					set_variable = { sio_shown_the_big_event = 1}
+				}
+			}
+
+			if = {
+				limit = {
+					ICW = {
+						exists = yes
+						NOT = {
+							has_variable = icw_shown_the_big_event
+						}
+					}
+					439 = {
+						is_owned_and_controlled_by = ICW
+					}
+					632 = {
+						is_owned_and_controlled_by = ICW
+					}
+					705 = {
+						is_owned_and_controlled_by = ICW
+					}
+					DES = {
+						exists = no
+					}
+					GRN = {
+						exists = no
+					}
+					SIO = {
+						exists = no
+					}
+				}
+				every_country  ={
+					limit = {
+						is_ai = no
+						exists = yes
+					}
+					set_country_flag = big_event_arktos_triumphs
+				}
+				ICW = {
+					set_variable = { icw_shown_the_big_event = 1}
+				}
+			}
 		}
 	}
 
@@ -513,6 +649,38 @@ on_actions = {
 	#FROM is war target
 	on_declare_war = {
 		effect = {
+			#################### BIG WAR EVENTS
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = {
+								tag = DIO
+							}
+							FROM = {
+								tag = JOJ
+							}
+						}
+						AND = {
+							ROOT = {
+								tag = JOJ
+							}
+							FROM = {
+								tag = DIO
+							}
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						exists = yes 
+						is_ai = no
+					}
+					set_country_flag = big_event_joestars_vs_dio
+				}
+			}
+
+			#################### REST
 			if = {
 				limit = {
 					ROOT = {
@@ -870,6 +1038,16 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			every_country = {
+				if = {
+					limit = {
+						has_stands_enabled = yes
+					}
+					set_variable = { stando_tsukai = manpower_k }
+					divide_variable = { stando_tsukai = 100 }
+					multiply_variable = { stando_tsukai = 5 }
+				}
+			}
 			every_country = {
 				if = {
 					limit = {

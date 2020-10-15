@@ -1,0 +1,13 @@
+scripted_gui = {
+    stando_tsukai = {
+        window_name = "stand_users_manpower"
+        parent_window_token = top_bar
+ 
+        context_type = player_context
+ 
+        visible = {
+            #has_stands_enabled = yes
+            always = no
+        }
+    }
+}

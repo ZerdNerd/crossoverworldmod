@@ -35,6 +35,9 @@ category = {
     soundeffects = {
  	    StarPlatinumOra
         SPZW
+        RodoRollada
+        TheWorldMuda
+        ZaWarudoTimeStop
 	}
 }
 
@@ -45,6 +48,50 @@ sound = {
 sound = {
 	name = "SPZW"
 	file = "stands/SPZW.wav"
+}
+sound = {
+	name = "RodoRollada"
+	file = "stands/RodoRollada.wav"
+}
+sound = {
+	name = "TheWorldMuda"
+	file = "stands/TheWorldMuda.wav"
+}
+sound = {
+	name = "ZaWarudoTimeStop"
+	file = "stands/ZaWarudoTimeStop.wav"
+}
+
+########### BIG EVENTS SOUNDS
+
+category = {
+    name = "Effects"
+    soundeffects = {
+        cr_bigevent_jotaro_vs_dio_sound
+        cr_bigevent_stephen_death_sound
+        cr_bigevent_sioux_liberation_sound
+        cr_bigevent_arktos_triumphs_sound
+	}
+}
+
+sound = {
+	name = "cr_bigevent_jotaro_vs_dio_sound"
+	file = "bigevents/jotaro_vs_dio_sound.wav"
+}
+
+sound = {
+	name = "cr_bigevent_stephen_death_sound"
+	file = "bigevents/stephen_death.wav"
+}
+
+sound = {
+	name = "cr_bigevent_sioux_liberation_sound"
+	file = "bigevents/sioux_liberation.wav"
+}
+
+sound = {
+	name = "cr_bigevent_arktos_triumphs_sound"
+	file = "bigevents/arktos_triumphs.wav"
 }
 
 ########### VOICES

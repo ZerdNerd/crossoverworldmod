@@ -536,14 +536,12 @@ country_event = { #Greenland is notified that Humsin 'pledged' to end his tricks
 	}
 }
 
-country_event = { #Greenland wants an alliance with Tungu-Pungu
+country_event = { #Greenland proposes us an alliance
 	id = greenland.12
 	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.12"}
 	title = greenland.12.t
 	desc = greenland.12.d
 	picture = GFX_report_greenland
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 
@@ -568,35 +566,27 @@ country_event = { #Greenland wants an alliance with Tungu-Pungu
 	}
 }
 
-country_event = { #Tungu-Pungu accepts
+country_event = { #They accept
 	id = greenland.13
 	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.13"}
 	title = greenland.13.t
 	desc = greenland.13.d
 	picture = GFX_report_greenland
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
 		name = greenland.13.a
-		give_guarantee = TUG
-		TUG = {
-			give_guarantee = GRN
-			set_country_flag = alliance_with_greenland
-		}
+		add_to_faction = FROM
 	}
 }
 
-country_event = { #Tungu-Pungu rejects
+country_event = { #They reject
 	id = greenland.14
 	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.14"}
 	title = greenland.14.t
 	desc = greenland.14.d
 	picture = GFX_report_greenland
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 
@@ -802,7 +792,7 @@ country_event = { #Friedewald refuses
 	}
 }
 
-country_event = { #Greenland wants to protect countries from expansion of Flower Hill
+country_event = { #Greenland sends their equipment to help us
 	id = greenland.22
 	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.22"}
 	title = greenland.22.t
@@ -811,29 +801,13 @@ country_event = { #Greenland wants to protect countries from expansion of Flower
 
 	is_triggered_only = yes
 
-	option = {
+	option = { #yey, thanks
 		name = greenland.12.a
-		ai_chance = {
-			factor = 5
-		}
-		GRN = { #Accept
-			country_event = {
-				id = greenland.23
-				days = 0
-			}
-		}
-	}
-
-	option = { #Refuse
-		name = greenland.12.b
-		ai_chance = {
-			factor = 95
-		}
-		GRN = {
-			country_event = {
-				id = greenland.24
-				days = 0
-			}
+		army_experience = 15
+		add_equipment_to_stockpile = {
+    		type = infantry_equipment
+    		amount = 2500
+    		producer = GRN
 		}
 	}
 }
@@ -1912,5 +1886,413 @@ country_event = { #Vultur defects (after Humsin's downfall)
 			available_to_spy_master = yes
 			nationalities = { DES ICW }
 		}
+	}
+}
+
+country_event = { #Council of Elders meeting
+	id = greenland.61
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.61"}
+	title = greenland.61.t
+	desc = greenland.61.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #What are we going to discuss this time?
+		name = greenland.61.a
+		hidden_effect = {
+			country_event = {
+				id = greenland.62
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Council of Elders meeting - economic matters
+	id = greenland.62
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.62"}
+	title = greenland.62.t
+	desc = greenland.62.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Accept Shouhu Plan
+		name = greenland.62.a
+		hidden_effect = {
+			set_country_flag = GRN_chose_shouhu_plan
+			country_event = {
+				id = greenland.63
+				days = 0
+			}
+		}
+	}
+
+	option = { #Accept Nessajja Plan
+		name = greenland.62.b
+		hidden_effect = {
+			set_country_flag = GRN_chose_nessajja_plan
+			country_event = {
+				id = greenland.63
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Council of Elders meeting - domestic matters
+	id = greenland.63
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.63"}
+	title = greenland.63.t
+	desc = greenland.63.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree to give human citizens equal rights as animal citizens
+		name = greenland.63.a
+		hidden_effect = {
+			set_country_flag = GRN_agreed_human_citizens
+			country_event = {
+				id = greenland.64
+				days = 0
+			}
+		}
+	}
+
+	option = { #Let humans serve in our military
+		name = greenland.63.b
+		hidden_effect = {
+			set_country_flag = GRN_rejected_human_citizens
+			country_event = {
+				id = greenland.64
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Council of Elders meeting - international matters
+	id = greenland.64
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.64"}
+	title = greenland.64.t
+	desc = greenland.64.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Acknowledge the report and close the meeting
+		name = greenland.64.a
+	}
+}
+
+country_event = { #Dragon Immigration Question
+	id = greenland.65
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.65"}
+	title = greenland.65.t
+	desc = greenland.65.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Grant them these empty lands in the northeast
+		name = greenland.65.a
+		if = {
+			limit = {
+				owns_state = 283
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 237
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 206
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 273
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 241
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 196
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 173
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 285
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 254
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+		if = {
+			limit = {
+				owns_state = 276
+			}
+			#DRG is the country tag for Dragon Republic
+		}
+	}
+
+	option = { #Grant them more rights
+		name = greenland.65.b
+		add_political_power = -50
+	}
+}
+
+country_event = { #Greenland wants to sign an economic agreement with us
+	id = greenland.66
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.66"}
+	title = greenland.66.t
+	desc = greenland.66.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = greenland.66.a
+		GRN = {
+			country_event = {
+				id = greenland.67
+				days = 0
+			}
+		}
+	}
+
+	option = { #Decline
+		name = greenland.66.b
+		GRN = {
+			country_event = {
+				id = greenland.68
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Arendelle accepts
+	id = greenland.67
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.67"}
+	title = greenland.67.t
+	desc = greenland.67.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #yay
+		name = greenland.67.a
+		add_political_power = 50
+		#scripted opinion modifier
+	}
+}
+
+country_event = { #Arendelle rejects
+	id = greenland.68
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.68"}
+	title = greenland.68.t
+	desc = greenland.68.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #damn
+		name = greenland.68.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Greenland sends us equipment
+	id = greenland.69
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.69"}
+	title = greenland.69.t
+	desc = greenland.69.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Oh thank you guys
+		name = greenland.69.a
+		add_equipment_to_stockpile = {
+    		type = infantry_equipment
+    		amount = 5000
+    		producer = GRN
+		}
+	}
+}
+
+country_event = { #Stance on Central War
+	id = greenland.70
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.70"}
+	title = greenland.70.t
+	desc = greenland.70.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Support Macius
+		name = greenland.70.a
+		MAI = {
+			add_opinion_modifier = {
+				target = GRN
+				modifier = TCWMod_supports_our_cause
+			}
+		}
+		FRI = {
+			add_opinion_modifier = {
+				target = GRN
+				modifier = TCWMod_supports_enemy_cause
+			}
+		}
+		send_equipment = {
+   			equipment = infantry_equipment
+    		amount = 5000
+    		target = MAI
+		}
+	}
+
+	option = { #Support Friedewalt/Hartmut
+		name = greenland.70.b
+		FRI = {
+			add_opinion_modifier = {
+				target = GRN
+				modifier = TCWMod_supports_our_cause
+			}
+		}
+		MAI = {
+			add_opinion_modifier = {
+				target = GRN
+				modifier = TCWMod_supports_enemy_cause
+			}
+		}
+		send_equipment = {
+   			equipment = infantry_equipment
+    		amount = 5000
+    		target = FRI
+		}
+	}
+}
+
+country_event = { #Greenland proposes Gongmen Treaty
+	id = greenland.71
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.71"}
+	title = greenland.71.t
+	desc = greenland.71.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = greenland.71.a
+		GRN = {
+			country_event = {
+				id = greenland.72
+				days = 0
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FLO_signed_gongmen_pact
+		}
+	}
+
+	option = { #Decline
+		name = greenland.71.b
+		GRN = {
+			country_event = {
+				id = greenland.73
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Flower Hill signs Gongmen Treaty
+	id = greenland.72
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.72"}
+	title = greenland.72.t
+	desc = greenland.72.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Good
+		name = greenland.72.a
+		add_political_power = 50
+		add_named_threat = { 
+    		threat = -10
+    		name = gongmen_treaty_signed
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.101
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Flower Hill refuses to sign Gongmen Treaty
+	id = greenland.73
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.73"}
+	title = greenland.73.t
+	desc = greenland.73.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Damn it
+		name = greenland.73.a
+		add_political_power = -50
 	}
 }

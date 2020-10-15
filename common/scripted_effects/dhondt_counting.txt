@@ -1,0 +1,2932 @@
+#Implementation of D'Hondt method of vote counting
+#This version has 4 parties and 5 products
+
+#Step one - getting the votes and dividing them to five products
+dhondt_count_and_divide_the_votes = {
+    #Clearing previous vars
+    clear_variable = ncp_first_degree_more_than_ffp
+    clear_variable = ncp_first_degree_more_than_tfk
+    clear_variable = ncp_first_degree_more_than_ccfrok
+    clear_variable = ffp_first_degree_more_than_ncp
+    clear_variable = ffp_first_degree_more_than_tfk
+    clear_variable = ffp_first_degree_more_than_ccfrok
+    clear_variable = tfk_first_degree_more_than_ffp
+    clear_variable = tfk_first_degree_more_than_ncp
+    clear_variable = tfk_first_degree_more_than_ccfrok
+    clear_variable = ccfrok_first_degree_more_than_ffp
+    clear_variable = ccfrok_first_degree_more_than_tfk
+    clear_variable = ccfrok_first_degree_more_than_ncp
+    clear_variable = ncp_second_degree_more_than_ffp
+    clear_variable = ncp_second_degree_more_than_tfk
+    clear_variable = ncp_second_degree_more_than_ccfrok
+    clear_variable = ffp_second_degree_more_than_ncp
+    clear_variable = ffp_second_degree_more_than_tfk
+    clear_variable = ffp_second_degree_more_than_ccfrok
+    clear_variable = tfk_second_degree_more_than_ffp
+    clear_variable = tfk_second_degree_more_than_ncp
+    clear_variable = tfk_second_degree_more_than_ccfrok
+    clear_variable = ccfrok_second_degree_more_than_ffp
+    clear_variable = ccfrok_second_degree_more_than_tfk
+    clear_variable = ccfrok_second_degree_more_than_ncp
+    clear_variable = ncp_third_degree_more_than_ffp
+    clear_variable = ncp_third_degree_more_than_tfk
+    clear_variable = ncp_third_degree_more_than_ccfrok
+    clear_variable = ffp_third_degree_more_than_ncp
+    clear_variable = ffp_third_degree_more_than_tfk
+    clear_variable = ffp_third_degree_more_than_ccfrok
+    clear_variable = tfk_third_degree_more_than_ffp
+    clear_variable = tfk_third_degree_more_than_ncp
+    clear_variable = tfk_third_degree_more_than_ccfrok
+    clear_variable = ccfrok_third_degree_more_than_ffp
+    clear_variable = ccfrok_third_degree_more_than_tfk
+    clear_variable = ccfrok_third_degree_more_than_ncp
+    clear_variable = ncp_fourth_degree_more_than_ffp
+    clear_variable = ncp_fourth_degree_more_than_tfk
+    clear_variable = ncp_fourth_degree_more_than_ccfrok
+    clear_variable = ffp_fourth_degree_more_than_ncp
+    clear_variable = ffp_fourth_degree_more_than_tfk
+    clear_variable = ffp_fourth_degree_more_than_ccfrok
+    clear_variable = tfk_fourth_degree_more_than_ffp
+    clear_variable = tfk_fourth_degree_more_than_ncp
+    clear_variable = tfk_fourth_degree_more_than_ccfrok
+    clear_variable = ccfrok_fourth_degree_more_than_ffp
+    clear_variable = ccfrok_fourth_degree_more_than_tfk
+    clear_variable = ccfrok_fourth_degree_more_than_ncp
+    clear_variable = ncp_fifth_degree_more_than_ffp
+    clear_variable = ncp_fifth_degree_more_than_tfk
+    clear_variable = ncp_fifth_degree_more_than_ccfrok
+    clear_variable = ffp_fifth_degree_more_than_ncp
+    clear_variable = ffp_fifth_degree_more_than_tfk
+    clear_variable = ffp_fifth_degree_more_than_ccfrok
+    clear_variable = tfk_fifth_degree_more_than_ffp
+    clear_variable = tfk_fifth_degree_more_than_ncp
+    clear_variable = tfk_fifth_degree_more_than_ccfrok
+    clear_variable = ccfrok_fifth_degree_more_than_ffp
+    clear_variable = ccfrok_fifth_degree_more_than_tfk
+    clear_variable = ccfrok_fifth_degree_more_than_ncp
+    clear_variable = ncp_2_degree_more_than_ffp_1
+    clear_variable = ncp_2_degree_more_than_tfk_1
+    clear_variable = ncp_2_degree_more_than_ccfrok_1
+    clear_variable = ffp_2_degree_more_than_ncp_1
+    clear_variable = ffp_2_degree_more_than_tfk_1
+    clear_variable = ffp_2_degree_more_than_ccfrok_1
+    clear_variable = tfk_2_degree_more_than_ffp_1
+    clear_variable = tfk_2_degree_more_than_ncp_1
+    clear_variable = tfk_2_degree_more_than_ccfrok_1
+    clear_variable = ccfrok_2_degree_more_than_ffp_1
+    clear_variable = ccfrok_2_degree_more_than_tfk_1
+    clear_variable = ccfrok_2_degree_more_than_ncp_1
+    clear_variable = ncp_3_degree_more_than_ffp_2
+    clear_variable = ncp_3_degree_more_than_tfk_2
+    clear_variable = ncp_3_degree_more_than_ccfrok_2
+    clear_variable = ffp_3_degree_more_than_ncp_2
+    clear_variable = ffp_3_degree_more_than_tfk_2
+    clear_variable = ffp_3_degree_more_than_ccfrok_2
+    clear_variable = tfk_3_degree_more_than_ffp_2
+    clear_variable = tfk_3_degree_more_than_ncp_2
+    clear_variable = tfk_3_degree_more_than_ccfrok_2
+    clear_variable = ccfrok_3_degree_more_than_ffp_2
+    clear_variable = ccfrok_3_degree_more_than_tfk_2
+    clear_variable = ccfrok_3_degree_more_than_ncp_2
+    clear_variable = ncp_4_degree_more_than_ffp_3
+    clear_variable = ncp_4_degree_more_than_tfk_3
+    clear_variable = ncp_4_degree_more_than_ccfrok_3
+    clear_variable = ffp_4_degree_more_than_ncp_3
+    clear_variable = ffp_4_degree_more_than_tfk_3
+    clear_variable = ffp_4_degree_more_than_ccfrok_3
+    clear_variable = tfk_4_degree_more_than_ffp_3
+    clear_variable = tfk_4_degree_more_than_ncp_3
+    clear_variable = tfk_4_degree_more_than_ccfrok_3
+    clear_variable = ccfrok_4_degree_more_than_ffp_3
+    clear_variable = ccfrok_4_degree_more_than_tfk_3
+    clear_variable = ccfrok_4_degree_more_than_ncp_3
+    clear_variable = ncp_5_degree_more_than_ffp_4
+    clear_variable = ncp_5_degree_more_than_tfk_4
+    clear_variable = ncp_5_degree_more_than_ccfrok_4
+    clear_variable = ffp_5_degree_more_than_ncp_4
+    clear_variable = ffp_5_degree_more_than_tfk_4
+    clear_variable = ffp_5_degree_more_than_ccfrok_4
+    clear_variable = tfk_5_degree_more_than_ffp_4
+    clear_variable = tfk_5_degree_more_than_ncp_4
+    clear_variable = tfk_5_degree_more_than_ccfrok_4
+    clear_variable = ccfrok_5_degree_more_than_ffp_4
+    clear_variable = ccfrok_5_degree_more_than_tfk_4
+    clear_variable = ccfrok_5_degree_more_than_ncp_4
+    #
+    set_variable = { votes_for_ncp = children_population }
+	multiply_variable = { votes_for_ncp = ncp_popularity_in_state }
+	set_variable = { votes_for_ffp = children_population }
+	multiply_variable = { votes_for_ffp = ffp_popularity_in_state }
+	set_variable = { votes_for_tfk = children_population }
+	multiply_variable = { votes_for_tfk = tfk_popularity_in_state }
+	set_variable = { votes_for_ccfrok = children_population }
+	multiply_variable = { votes_for_ccfrok = ccfrok_popularity_in_state }
+    #1st degree
+	set_variable = { votes_for_ncp_1 = votes_for_ncp }
+	set_variable = { votes_for_ffp_1 = votes_for_ffp }
+	set_variable = { votes_for_tfk_1 = votes_for_tfk }
+	set_variable = { votes_for_ccfrok_1 = votes_for_ccfrok }
+	#2nd degree
+	set_temp_variable = { votes_for_ncp_2_t = votes_for_ncp }
+	divide_temp_variable = { votes_for_ncp_2_t = 2 }
+	set_temp_variable = { votes_for_ffp_2_t = votes_for_ffp }
+	divide_temp_variable = { votes_for_ffp_2_t = 2 }
+	set_temp_variable = { votes_for_tfk_2_t = votes_for_tfk }
+	divide_temp_variable = { votes_for_tfk_2_t = 2 }
+	set_temp_variable = { votes_for_ccfrok_2_t = votes_for_ccfrok }
+	divide_temp_variable = { votes_for_ccfrok_2_t = 2 }
+    set_variable = { votes_for_ncp_2 = votes_for_ncp_2_t }
+    set_variable = { votes_for_ffp_2 = votes_for_ffp_2_t }
+	set_variable = { votes_for_tfk_2 = votes_for_tfk_2_t }
+	set_variable = { votes_for_ccfrok_2 = votes_for_ccfrok_2_t }
+	#3rd degree
+	set_temp_variable = { votes_for_ncp_3_t = votes_for_ncp }
+	divide_temp_variable = { votes_for_ncp_3_t = 3 }
+	set_temp_variable = { votes_for_ffp_3_t = votes_for_ffp }
+	divide_temp_variable = { votes_for_ffp_3_t = 3 }
+	set_temp_variable = { votes_for_tfk_3_t = votes_for_tfk }
+	divide_temp_variable = { votes_for_tfk_3_t = 3 }
+	set_temp_variable = { votes_for_ccfrok_3_t = votes_for_ccfrok }
+	divide_temp_variable = { votes_for_ccfrok_3_t = 3 }
+    set_variable = { votes_for_ncp_3 = votes_for_ncp_3_t }
+    set_variable = { votes_for_ffp_3 = votes_for_ffp_3_t }
+	set_variable = { votes_for_tfk_3 = votes_for_tfk_3_t }
+	set_variable = { votes_for_ccfrok_3 = votes_for_ccfrok_3_t }
+	#4th degree
+	set_temp_variable = { votes_for_ncp_4_t = votes_for_ncp }
+	divide_temp_variable = { votes_for_ncp_4_t = 4 }
+	set_temp_variable = { votes_for_ffp_4_t = votes_for_ffp }
+	divide_temp_variable = { votes_for_ffp_4_t = 4 }
+	set_temp_variable = { votes_for_tfk_4_t = votes_for_tfk }
+	divide_temp_variable = { votes_for_tfk_4_t = 4 }
+	set_temp_variable = { votes_for_ccfrok_4_t = votes_for_ccfrok }
+	divide_temp_variable = { votes_for_ccfrok_4_t = 4 }
+    set_variable = { votes_for_ncp_4 = votes_for_ncp_4_t }
+    set_variable = { votes_for_ffp_4 = votes_for_ffp_4_t }
+	set_variable = { votes_for_tfk_4 = votes_for_tfk_4_t }
+	set_variable = { votes_for_ccfrok_4 = votes_for_ccfrok_4_t }
+	#5th degree
+	set_temp_variable = { votes_for_ncp_5_t = votes_for_ncp }
+	divide_temp_variable = { votes_for_ncp_5_t = 5 }
+	set_temp_variable = { votes_for_ffp_5_t = votes_for_ffp }
+	divide_temp_variable = { votes_for_ffp_5_t = 5 }
+	set_temp_variable = { votes_for_tfk_5_t = votes_for_tfk }
+	divide_temp_variable = { votes_for_tfk_5_t = 5 }
+	set_temp_variable = { votes_for_ccfrok_5_t = votes_for_ccfrok }
+	divide_temp_variable = { votes_for_ccfrok_5_t = 5 }
+    set_variable = { votes_for_ncp_5 = votes_for_ncp_5_t }
+    set_variable = { votes_for_ffp_5 = votes_for_ffp_5_t }
+	set_variable = { votes_for_tfk_5 = votes_for_tfk_5_t }
+	set_variable = { votes_for_ccfrok_5 = votes_for_ccfrok_5_t }
+}
+
+#Step two - which party in each degree has more votes?
+dhondt_compare_parties = {
+    #Detemining the places of parties in first product - LONGGGGGGG!
+    #NCP goes first
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_1 > votes_for_ffp_1
+			}
+		}
+        set_variable = { ncp_first_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_1 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ncp_first_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_1 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ncp_first_degree_more_than_ccfrok = 1 }
+    }
+    #FFP
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_first_degree_more_than_ffp
+            }
+        }
+        set_variable = { ffp_first_degree_more_than_ncp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_1 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ffp_first_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_1 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ffp_first_degree_more_than_ccfrok = 1 }
+    }
+    #TFK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_first_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_first_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_first_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_first_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_1 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { tfk_first_degree_more_than_ccfrok = 1 }
+    }
+    #CCFROK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_first_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_first_degree_more_than_ffp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = tfk_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_first_degree_more_than_tfk = 1 }
+    }
+	#Second degree
+    #NCP
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_ffp_2
+			}
+		}
+        set_variable = { ncp_second_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ncp_second_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ncp_second_degree_more_than_ccfrok = 1 }
+    }
+    #FFP
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_second_degree_more_than_ffp
+            }
+        }
+        set_variable = { ffp_second_degree_more_than_ncp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_2 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ffp_second_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_2 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ffp_second_degree_more_than_ccfrok = 1 }
+    }
+    #TFK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_second_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_second_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_second_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_second_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_2 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { tfk_second_degree_more_than_ccfrok = 1 }
+    }
+    #CCFROK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_second_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_second_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_second_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_second_degree_more_than_ffp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = tfk_second_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_second_degree_more_than_tfk = 1 }
+    }
+    #Third degree
+    #NCP
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ffp_3
+			}
+		}
+        set_variable = { ncp_third_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ncp_third_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ncp_third_degree_more_than_ccfrok = 1 }
+    }
+    #FFP
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_third_degree_more_than_ffp
+            }
+        }
+        set_variable = { ffp_third_degree_more_than_ncp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ffp_third_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ffp_third_degree_more_than_ccfrok = 1 }
+    }
+    #TFK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_third_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_third_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_third_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_third_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { tfk_third_degree_more_than_ccfrok = 1 }
+    }
+    #CCFROK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_third_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_third_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_third_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_third_degree_more_than_ffp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = tfk_third_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_third_degree_more_than_tfk = 1 }
+    }
+    #Fourth degree
+    #NCP
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ffp_4
+			}
+		}
+        set_variable = { ncp_fourth_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_tfk_4
+			}
+		}
+        set_variable = { ncp_fourth_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { ncp_fourth_degree_more_than_ccfrok = 1 }
+    }
+    #FFP
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fourth_degree_more_than_ffp
+            }
+        }
+        set_variable = { ffp_fourth_degree_more_than_ncp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_tfk_4
+			}
+		}
+        set_variable = { ffp_fourth_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { ffp_fourth_degree_more_than_ccfrok = 1 }
+    }
+    #TFK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fourth_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_fourth_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_fourth_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_fourth_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { tfk_fourth_degree_more_than_ccfrok = 1 }
+    }
+    #CCFROK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fourth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fourth_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_fourth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fourth_degree_more_than_ffp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = tfk_fourth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fourth_degree_more_than_tfk = 1 }
+    }
+    #Fifth degree
+    #NCP
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ffp_5
+			}
+		}
+        set_variable = { ncp_fifth_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_tfk_5
+			}
+		}
+        set_variable = { ncp_fifth_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ccfrok_5
+			}
+		}
+        set_variable = { ncp_fifth_degree_more_than_ccfrok = 1 }
+    }
+    #FFP
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fifth_degree_more_than_ffp
+            }
+        }
+        set_variable = { ffp_fifth_degree_more_than_ncp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_tfk_5
+			}
+		}
+        set_variable = { ffp_fifth_degree_more_than_tfk = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_ccfrok_5
+			}
+		}
+        set_variable = { ffp_fifth_degree_more_than_ccfrok = 1 }
+    }
+    #TFK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fifth_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_fifth_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_fifth_degree_more_than_tfk
+            }
+        }
+        set_variable = { tfk_fifth_degree_more_than_ffp = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ccfrok_5
+			}
+		}
+        set_variable = { tfk_fifth_degree_more_than_ccfrok = 1 }
+    }
+    #CCFROK
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ncp_fifth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fifth_degree_more_than_ncp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = ffp_fifth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fifth_degree_more_than_ffp = 1 }
+    }
+    if = {
+        limit = {
+            NOT = {
+                has_variable = tfk_fifth_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { ccfrok_fifth_degree_more_than_tfk = 1 }
+    }
+
+    #Now let's compare products
+    #NCP goes first
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_ffp_1
+			}
+		}
+        set_variable = { ncp_2_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ncp_2_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_2 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ncp_2_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ffp_1
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ffp_2
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_3 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ncp_3_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ffp_2
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ffp_3
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_4 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ncp_4_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ffp_3
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ffp_4
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_ffp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_tfk_4
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_tfk_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ncp_5 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { ncp_5_degree_more_than_ccfrok_4 = 1 }
+    }
+    #FFP
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_2 > votes_for_ncp_1
+			}
+		}
+        set_variable = { ffp_2_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_2 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ffp_2_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_2 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ffp_2_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_ncp_1
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_ncp_2
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_3 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ffp_3_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_ncp_2
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_ncp_3
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_4 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ffp_4_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_ncp_3
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_ncp_4
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_ncp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_tfk_4
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_tfk_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ffp_5 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { ffp_5_degree_more_than_ccfrok_4 = 1 }
+    }
+    #TFK
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_2 > votes_for_ncp_1
+			}
+		}
+        set_variable = { tfk_2_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_2 > votes_for_ffp_1
+			}
+		}
+        set_variable = { tfk_2_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_2 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { tfk_2_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ncp_1
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ffp_1
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ccfrok_1
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ccfrok_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ncp_2
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ffp_2
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_3 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { tfk_3_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ncp_2
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ffp_2
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ccfrok_2
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ccfrok_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ncp_3
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ffp_3
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_4 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { tfk_4_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ncp_3
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ffp_3
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ccfrok_3
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ccfrok_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ncp_4
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ncp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ffp_4
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ffp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_tfk_5 > votes_for_ccfrok_4
+			}
+		}
+        set_variable = { tfk_5_degree_more_than_ccfrok_4 = 1 }
+    }
+    #CCFROK
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_2 > votes_for_ncp_1
+			}
+		}
+        set_variable = { ccfrok_2_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_2 > votes_for_ffp_1
+			}
+		}
+        set_variable = { ccfrok_2_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_2 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ccfrok_2_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_ncp_1
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_ncp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_ffp_1
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_ffp_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_tfk_1
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_tfk_1 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_ncp_2
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_ffp_2
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_3 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ccfrok_3_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_ncp_2
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_ncp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_ffp_2
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_ffp_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_tfk_2
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_tfk_2 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_ncp_3
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_ffp_3
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_4 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ccfrok_4_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_ncp_3
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_ncp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_ffp_3
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_ffp_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_tfk_3
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_tfk_3 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_ncp_4
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_ncp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_ffp_4
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_ffp_4 = 1 }
+    }
+    if = {
+		limit = {
+			check_variable = {
+				votes_for_ccfrok_5 > votes_for_tfk_4
+			}
+		}
+        set_variable = { ccfrok_5_degree_more_than_tfk_4 = 1 }
+    }
+}
+
+#Step three - actually divide the votes!
+#This step uses thirteen different commands, named "dhondt_<number>_seat". This is to make commands easier to read and break down.
+dhondt_first_seat = {
+    if = {
+        limit = {
+            AND = {
+                has_variable = ncp_first_degree_more_than_ffp
+                has_variable = ncp_first_degree_more_than_tfk
+                has_variable = ncp_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { seat_1 = 1 }
+		set_variable = { ncp_product_level = 1 }
+        
+    }
+    if = {
+        limit = {
+            AND = {
+                has_variable = ffp_first_degree_more_than_ncp
+                has_variable = ffp_first_degree_more_than_tfk
+                has_variable = ffp_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { seat_1 = 2 }
+		set_variable = { ffp_product_level = 1 }
+        
+            
+    }
+    if = {
+        limit = {
+            AND = {
+                has_variable = tfk_first_degree_more_than_ffp
+                has_variable = tfk_first_degree_more_than_ncp
+                has_variable = tfk_first_degree_more_than_ccfrok
+            }
+        }
+        set_variable = { seat_1 = 3 }
+		set_variable = { tfk_product_level = 1 }
+        
+    }
+    if = {
+        limit = {
+            AND = {
+                has_variable = ccfrok_first_degree_more_than_ffp
+                has_variable = ccfrok_first_degree_more_than_tfk
+                has_variable = ccfrok_first_degree_more_than_ncp
+            }
+        }
+        set_variable = { seat_1 = 4 }
+		set_variable = { ccfrok_product_level = 1 }
+        
+    }
+    dhondt_second_seat = yes
+}
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+dhondt_second_seat = {
+    if = {
+        limit = {
+            check_variable = { ncp_product_level = 1 }
+        }
+        if = {
+            limit = {
+                has_variable = ncp_2_degree_more_than_ffp_1
+                has_variable = ncp_2_degree_more_than_tfk_1
+                has_variable = ncp_2_degree_more_than_ccfrok_1
+            }
+            set_variable = { seat_2 = 1 }
+            add_to_variable = { ncp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    has_variable = ffp_first_degree_more_than_tfk
+                    has_variable = ffp_first_degree_more_than_ccfrok
+                }
+                set_variable = { seat_2 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        has_variable = tfk_first_degree_more_than_ffp
+                        has_variable = tfk_first_degree_more_than_ccfrok
+                    }
+                    set_variable = { seat_2 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_2 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            check_variable = { ffp_product_level = 1 }
+            NOT = {
+                has_variable = seat_2
+            }
+        }
+        if = {
+            limit = {
+                has_variable = ffp_2_degree_more_than_ncp_1
+                has_variable = ffp_2_degree_more_than_tfk_1
+                has_variable = ffp_2_degree_more_than_ccfrok_1
+            }
+            set_variable = { seat_2 = 2 }
+            add_to_variable = { ffp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    has_variable = ncp_first_degree_more_than_tfk
+                    has_variable = ncp_first_degree_more_than_ccfrok
+                }
+                set_variable = { seat_2 = 1 }
+                add_to_variable = { ncp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        has_variable = tfk_first_degree_more_than_ncp
+                        has_variable = tfk_first_degree_more_than_ccfrok
+                    }
+                    set_variable = { seat_2 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_2 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            check_variable = { tfk_product_level = 1 }
+            NOT = {
+                has_variable = seat_2
+            }
+        }
+        if = {
+            limit = {
+                has_variable = tfk_2_degree_more_than_ncp_1
+                has_variable = tfk_2_degree_more_than_ffp_1
+                has_variable = tfk_2_degree_more_than_ccfrok_1
+            }
+            set_variable = { seat_2 = 3 }
+            add_to_variable = { tfk_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    has_variable = ffp_first_degree_more_than_ncp
+                    has_variable = ffp_first_degree_more_than_ccfrok
+                }
+                set_variable = { seat_2 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        has_variable = ncp_first_degree_more_than_ffp
+                        has_variable = ncp_first_degree_more_than_ccfrok
+                    }
+                    set_variable = { seat_2 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_2 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            check_variable = { ccfrok_product_level = 1 }
+            NOT = {
+                has_variable = seat_2
+            }
+        }
+        if = {
+            limit = {
+                has_variable = ccfrok_2_degree_more_than_ncp_1
+                has_variable = ccfrok_2_degree_more_than_ffp_1
+                has_variable = ccfrok_2_degree_more_than_tfk_1
+            }
+            set_variable = { seat_2 = 4 }
+            add_to_variable = { ccfrok_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    has_variable = ffp_first_degree_more_than_ncp
+                    has_variable = ffp_first_degree_more_than_ccfrok
+                }
+                set_variable = { seat_2 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        has_variable = ncp_first_degree_more_than_ffp
+                        has_variable = ncp_first_degree_more_than_ncp
+                    }
+                    set_variable = { seat_2 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_2 = 3 }
+                        add_to_variable = { tfk_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            THIS = {
+                OR = {
+                    state = 812
+					state = 858
+					state = 808
+					state = 803
+					state = 736
+                }
+            }
+        }
+        dhondt_third_seat = yes
+    }
+}
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+    #
+dhondt_third_seat = {
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ncp_product_level = 2 }
+                AND = {
+                    check_variable = { ncp_product_level = 1 }
+                    check_variable = { ffp_product_level = 1 }
+                    check_variable = { ncp_second_degree_more_than_ffp = 1 }
+                }
+                AND = {
+                    check_variable = { ncp_product_level = 1 }
+                    check_variable = { tfk_product_level = 1 }
+                    check_variable = { ncp_second_degree_more_than_tfk = 1 }
+                }
+                AND = {
+                    check_variable = { ncp_product_level = 1 }
+                    check_variable = { ccfrok_product_level = 1 }
+                    check_variable = { ncp_second_degree_more_than_ccfrok = 1 }
+                }
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_tfk_1
+                            has_variable = ncp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_ffp_1
+                            has_variable = ncp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_tfk_1
+                            has_variable = ncp_2_degree_more_than_ffp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ncp_product_level = 2 }
+                        has_variable = ncp_3_degree_more_than_ffp_1
+                        has_variable = ncp_3_degree_more_than_tfk_1
+                        has_variable = ncp_3_degree_more_than_ccfrok_1
+                    }
+                }
+            }
+            set_variable = { seat_3 = 1 }
+            add_to_variable = { ncp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_tfk
+                        has_variable = tfk_product_level
+                    }
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_ccfrok
+                        has_variable = ccfrok_product_level
+                    }
+                }
+                set_variable = { seat_3 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_variable = tfk_first_degree_more_than_ffp
+                            check_variable = { ffp_product_level = 1 }
+                        }
+                        OR = {
+                            has_variable = tfk_first_degree_more_than_ccfrok
+                            check_variable = { ccfrok_product_level = 1 }
+                        }
+                    }
+                    set_variable = { seat_3 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_3 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ffp_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_ncp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_tfk = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_ccfrok = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_3
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 2 }
+                        has_variable = ffp_3_degree_more_than_ncp_1
+                        has_variable = ffp_3_degree_more_than_tfk_1
+                        has_variable = ffp_3_degree_more_than_ccfrok_1
+                    }
+                }
+            }
+            set_variable = { seat_3 = 2 }
+            add_to_variable = { ffp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        has_variable = ncp_first_degree_more_than_tfk
+                        check_variable = { tfk_product_level = 1 }
+                    }
+                    OR = {
+                        has_variable = ncp_first_degree_more_than_ccfrok
+                        check_variable = { ccfrok_product_level = 1 }
+                    }
+                }
+                set_variable = { seat_3 = 1 }
+                add_to_variable = { ncp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_variable = tfk_first_degree_more_than_ncp
+                            check_variable = { ncp_product_level = 1 }
+                        }
+                        OR = {
+                            has_variable = tfk_first_degree_more_than_ccfrok
+                            check_variable = { ccfrok_product_level = 1 }
+                        }
+                    }
+                    set_variable = { seat_3 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_3 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { tfk_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ccfrok = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_3
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ncp_1
+                            has_variable = tfk_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ffp_1
+                            has_variable = tfk_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ncp_1
+                            has_variable = tfk_2_degree_more_than_ffp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 2 }
+                        has_variable = tfk_3_degree_more_than_ffp_1
+                        has_variable = tfk_3_degree_more_than_ncp_1
+                        has_variable = tfk_3_degree_more_than_ccfrok_1
+                    }
+                }
+            }
+            set_variable = { seat_3 = 3 }
+            add_to_variable = { tfk_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_ncp
+                        check_variable = { ncp_product_level = 1 }
+                    }
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_ccfrok
+                        check_variable = { ccfrok_product_level = 1 }
+                    }
+                }
+                set_variable = { seat_3 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_variable = ncp_first_degree_more_than_ffp
+                            check_variable = { ffp_product_level = 1 }
+                        }
+                        OR = {
+                            has_variable = ncp_first_degree_more_than_ccfrok
+                            check_variable = { ccfrok_product_level = 1 }
+                        }
+                    }
+                    set_variable = { seat_3 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_3 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ccfrok_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_ncp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_tfk = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_3
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ccfrok_product_level = 1 }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ncp_1
+                            has_variable = ccfrok_2_degree_more_than_tfk_1
+                        }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ffp_1
+                            has_variable = ccfrok_2_degree_more_than_tfk_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ncp_1
+                            has_variable = ccfrok_2_degree_more_than_ffp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ccfrok_product_level = 2 }
+                        has_variable = ccfrok_3_degree_more_than_ffp_1
+                        has_variable = ccfrok_3_degree_more_than_ncp_1
+                        has_variable = ccfrok3_degree_more_than_tfk_1
+                    }
+                }
+            }
+            set_variable = { seat_3 = 4 }
+            add_to_variable = { ccfrok_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_ncp
+                        check_variable = { ncp_product_level = 1 }
+                    }
+                    OR = {
+                        has_variable = ffp_first_degree_more_than_ccfrok
+                        check_variable = { ccfrok_product_level = 1 }
+                    }
+                }
+                set_variable = { seat_3 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            has_variable = ncp_first_degree_more_than_ffp
+                            check_variable = { ffp_product_level = 1 }
+                        }
+                        OR = {
+                            has_variable = ncp_first_degree_more_than_tfk
+                            check_variable = { tfk_product_level = 1 }
+                        }
+                    }
+                    set_variable = { seat_3 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_3 = 3 }
+                        add_to_variable = { tfk_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            THIS = {
+                OR = {
+                    state = 812
+					state = 858
+                }
+            }
+        }
+        dhondt_fourth_seat = yes
+    }
+}
+
+dhondt_fourth_seat = {
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ncp_product_level = 3 }
+                check_variable = { ncp_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ncp_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ncp_second_degree_more_than_tfk = 1 }
+                    }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ncp_second_degree_more_than_ccfrok = 1 }
+                    }
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_tfk_1
+                            has_variable = ncp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_ffp_1
+                            has_variable = ncp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_tfk_1
+                            has_variable = ncp_2_degree_more_than_ffp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ncp_product_level = 2 }
+                        has_variable = ncp_3_degree_more_than_ffp_1
+                        has_variable = ncp_3_degree_more_than_tfk_1
+                        has_variable = ncp_3_degree_more_than_ccfrok_1
+                    }
+                    AND = {
+                        check_variable = { ncp_product_level = 3 }
+                        OR = {
+                            AND = {
+                                OR = {
+                                    check_variable = { ffp_product_level < 1 }
+                                    check_variable = { tfk_product_level < 1 }
+                                    check_variable = { ccfrok_product_level < 1 }
+                                }
+                                has_variable = ncp_4_degree_more_than_ffp_1
+                                has_variable = ncp_4_degree_more_than_tfk_1
+                                has_variable = ncp_4_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                OR = {
+                                    check_variable = { ffp_product_level < 2 }
+                                    check_variable = { tfk_product_level < 2 }
+                                    check_variable = { ccfrok_product_level < 2 }
+                                }
+                                has_variable = ncp_4_degree_more_than_ffp_2
+                                has_variable = ncp_4_degree_more_than_tfk_2
+                                has_variable = ncp_4_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                }
+            }
+            set_variable = { seat_4 = 1 }
+            add_to_variable = { ncp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = {
+                                has_variable = ffp_product_level
+                            }
+                            OR = {
+                                check_variable = { tfk_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_tfk
+                            }
+                            OR = {
+                                check_variable = { ccfrok_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_ccfrok
+                            }
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 2 }
+                            has_variable = ffp_3_degree_more_than_tfk_2
+                            has_variable = ffp_3_degree_more_than_ccfrok_2
+                        }
+                    }
+                }
+                set_variable = { seat_4 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            AND = {
+                                NOT = {
+                                    has_variable = tfk_product_level
+                                }
+                                OR = {
+                                    check_variable = { ffp_product_level = 1 }
+                                    has_variable = tfk_first_degree_more_than_ffp
+                                }
+                                OR = {
+                                    check_variable = { ccfrok_product_level = 1 }
+                                    has_variable = tfk_first_degree_more_than_ccfrok
+                                }
+                            }
+                            AND = {
+                                check_variable = { tfk_product_level = 1 }
+                                has_variable = tfk_2_degree_more_than_ffp_1
+                                has_variable = tfk_2_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                check_variable = { tfk_product_level = 2 }
+                                has_variable = tfk_3_degree_more_than_ffp_2
+                                has_variable = tfk_3_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                    set_variable = { seat_4 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_4 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ffp_product_level = 3 }
+                check_variable = { ffp_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_ncp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_tfk = 1 }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ffp_second_degree_more_than_ccfrok = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_4
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ffp_product_level = 1 }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 2 }
+                        has_variable = ffp_3_degree_more_than_ncp_1
+                        has_variable = ffp_3_degree_more_than_tfk_1
+                        has_variable = ffp_3_degree_more_than_ccfrok_1
+                    }
+                    AND = {
+                        check_variable = { ffp_product_level = 3 }
+                        OR = {
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 1 }
+                                    check_variable = { tfk_product_level < 1 }
+                                    check_variable = { ccfrok_product_level < 1 }
+                                }
+                                has_variable = ffp_4_degree_more_than_ncp_1
+                                has_variable = ffp_4_degree_more_than_tfk_1
+                                has_variable = ffp_4_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 2 }
+                                    check_variable = { tfk_product_level < 2 }
+                                    check_variable = { ccfrok_product_level < 2 }
+                                }
+                                has_variable = ffp_4_degree_more_than_ncp_2
+                                has_variable = ffp_4_degree_more_than_tfk_2
+                                has_variable = ffp_4_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                }
+            }
+            set_variable = { seat_4 = 2 }
+            add_to_variable = { ffp_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = {
+                                has_variable = ncp_product_level
+                            }
+                            OR = {
+                                check_variable = { tfk_product_level = 1 }
+                                has_variable = ncp_first_degree_more_than_tfk
+                            }
+                            OR = {
+                                check_variable = { ccfrok_product_level = 1 }
+                                has_variable = ncp_first_degree_more_than_ccfrok
+                            }
+                        }
+                        AND = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = ncp_2_degree_more_than_tfk_1
+                            has_variable = ncp_2_degree_more_than_ccfrok_1
+                        }
+                        AND = {
+                            check_variable = { ncp_product_level = 2 }
+                            has_variable = ncp_3_degree_more_than_tfk_2
+                            has_variable = ncp_3_degree_more_than_ccfrok_2
+                        }
+                    }
+                }
+                set_variable = { seat_4 = 1 }
+                add_to_variable = { ncp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            AND = {
+                                NOT = {
+                                    has_variable = tfk_product_level
+                                }
+                                OR = {
+                                    check_variable = { ncp_product_level = 1 }
+                                    has_variable = tfk_first_degree_more_than_ncp
+                                }
+                                OR = {
+                                    check_variable = { ccfrok_product_level = 1 }
+                                    has_variable = tfk_first_degree_more_than_ccfrok
+                                }
+                            }
+                            AND = {
+                                check_variable = { tfk_product_level = 1 }
+                                has_variable = tfk_2_degree_more_than_ncp_1
+                                has_variable = tfk_2_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                check_variable = { tfk_product_level = 2 }
+                                has_variable = tfk_3_degree_more_than_ncp_2
+                                has_variable = tfk_3_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                    set_variable = { seat_4 = 3 }
+                    add_to_variable = { tfk_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_4 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { tfk_product_level = 3 }
+                check_variable = { tfk_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ncp = 1 }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { tfk_second_degree_more_than_ccfrok = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_4
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { tfk_product_level = 1 }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ffp_1
+                            has_variable = tfk_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ncp_1
+                            has_variable = tfk_2_degree_more_than_ccfrok_1
+                        }
+                        OR = {
+                            check_variable = { ccfrok_product_level = 1 }
+                            has_variable = tfk_2_degree_more_than_ffp_1
+                            has_variable = tfk_2_degree_more_than_ncp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 2 }
+                        has_variable = tfk_3_degree_more_than_ncp_1
+                        has_variable = tfk_3_degree_more_than_ffp_1
+                        has_variable = tfk_3_degree_more_than_ccfrok_1
+                    }
+                    AND = {
+                        check_variable = { tfk_product_level = 3 }
+                        OR = {
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 1 }
+                                    check_variable = { ffp_product_level < 1 }
+                                    check_variable = { ccfrok_product_level < 1 }
+                                }
+                                has_variable = tfk_4_degree_more_than_ncp_1
+                                has_variable = tfk_4_degree_more_than_ffp_1
+                                has_variable = tfk_4_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 2 }
+                                    check_variable = { ffp_product_level < 2 }
+                                    check_variable = { ccfrok_product_level < 2 }
+                                }
+                                has_variable = tfk_4_degree_more_than_ncp_2
+                                has_variable = tfk_4_degree_more_than_ffp_2
+                                has_variable = tfk_4_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                }
+            }
+            set_variable = { seat_4 = 3 }
+            add_to_variable = { tfk_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = {
+                                has_variable = ffp_product_level
+                            }
+                            OR = {
+                                check_variable = { ncp_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_ncp
+                            }
+                            OR = {
+                                check_variable = { ccfrok_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_ccfrok
+                            }
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                            has_variable = ffp_2_degree_more_than_ccfrok_1
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 2 }
+                            has_variable = ffp_3_degree_more_than_ncp_2
+                            has_variable = ffp_3_degree_more_than_ccfrok_2
+                        }
+                    }
+                }
+                set_variable = { seat_4 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            AND = {
+                                NOT = {
+                                    has_variable = ncp_product_level
+                                }
+                                OR = {
+                                    check_variable = { ffp_product_level = 1 }
+                                    has_variable = ncp_first_degree_more_than_ffp
+                                }
+                                OR = {
+                                    check_variable = { ccfrok_product_level = 1 }
+                                    has_variable = ncp_first_degree_more_than_ccfrok
+                                }
+                            }
+                            AND = {
+                                check_variable = { ncp_product_level = 1 }
+                                has_variable = ncp_2_degree_more_than_ffp_1
+                                has_variable = ncp_2_degree_more_than_ccfrok_1
+                            }
+                            AND = {
+                                check_variable = { ncp_product_level = 2 }
+                                has_variable = ncp_3_degree_more_than_ffp_2
+                                has_variable = ncp_3_degree_more_than_ccfrok_2
+                            }
+                        }
+                    }
+                    set_variable = { seat_4 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_4 = 4 }
+                        add_to_variable = { ccfrok_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                check_variable = { ccfrok_product_level = 3 }
+                check_variable = { ccfrok_product_level = 2 }
+                    AND = {
+                        check_variable = { ncp_product_level = 1 }
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_ncp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { ffp_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_ffp = 1 }
+                    }
+                    AND = {
+                        check_variable = { ccfrok_product_level = 1 }
+                        check_variable = { tfk_product_level = 1 }
+                        check_variable = { ccfrok_second_degree_more_than_tfk = 1 }
+                    }
+            }
+            NOT = {
+                has_variable = seat_4
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    AND = {
+                        check_variable = { ccfrok_product_level = 1 }
+                        OR = {
+                            check_variable = { ncp_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ffp_1
+                            has_variable = ccfrok_2_degree_more_than_tfk_1
+                        }
+                        OR = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ncp_1
+                            has_variable = ccfrok_2_degree_more_than_tfk_1
+                        }
+                        OR = {
+                            check_variable = { tfk_product_level = 1 }
+                            has_variable = ccfrok_2_degree_more_than_ffp_1
+                            has_variable = ccfrok_2_degree_more_than_ncp_1
+                        }
+                    }
+                    AND = {
+                        check_variable = { ccfrok_product_level = 2 }
+                        has_variable = ccfrok_3_degree_more_than_ncp_1
+                        has_variable = ccfrok_3_degree_more_than_ffp_1
+                        has_variable = ccfrok_3_degree_more_than_tfk_1
+                    }
+                    AND = {
+                        check_variable = { ccfrok_product_level = 3 }
+                        OR = {
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 1 }
+                                    check_variable = { ffp_product_level < 1 }
+                                    check_variable = { tfk_product_level < 1 }
+                                }
+                                has_variable = ccfrok_4_degree_more_than_ncp_1
+                                has_variable = ccfrok_4_degree_more_than_ffp_1
+                                has_variable = ccfrok_4_degree_more_than_tfk_1
+                            }
+                            AND = {
+                                OR = {
+                                    check_variable = { ncp_product_level < 2 }
+                                    check_variable = { ffp_product_level < 2 }
+                                    check_variable = { tfk_product_level < 2 }
+                                }
+                                has_variable = ccfrok_4_degree_more_than_ncp_2
+                                has_variable = ccfrok_4_degree_more_than_ffp_2
+                                has_variable = ccfrok_4_degree_more_than_tfk_2
+                            }
+                        }
+                    }
+                }
+            }
+            set_variable = { seat_4 = 4 }
+            add_to_variable = { ccfrok_product_level = 1 }
+            
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            NOT = {
+                                has_variable = ffp_product_level
+                            }
+                            OR = {
+                                check_variable = { ncp_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_ncp
+                            }
+                            OR = {
+                                check_variable = { tfk_product_level = 1 }
+                                has_variable = ffp_first_degree_more_than_tfk
+                            }
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 1 }
+                            has_variable = ffp_2_degree_more_than_ncp_1
+                            has_variable = ffp_2_degree_more_than_tfk_1
+                        }
+                        AND = {
+                            check_variable = { ffp_product_level = 2 }
+                            has_variable = ffp_3_degree_more_than_ncp_2
+                            has_variable = ffp_3_degree_more_than_tfk_2
+                        }
+                    }
+                }
+                set_variable = { seat_4 = 2 }
+                add_to_variable = { ffp_product_level = 1 }
+                
+                else_if = {
+                    limit = {
+                        OR = {
+                            AND = {
+                                NOT = {
+                                    has_variable = ncp_product_level
+                                }
+                                OR = {
+                                    check_variable = { ffp_product_level = 1 }
+                                    has_variable = ncp_first_degree_more_than_ffp
+                                }
+                                OR = {
+                                    check_variable = { tfk_product_level = 1 }
+                                    has_variable = ncp_first_degree_more_than_tfk
+                                }
+                            }
+                            AND = {
+                                check_variable = { ncp_product_level = 1 }
+                                has_variable = ncp_2_degree_more_than_ffp_1
+                                has_variable = ncp_2_degree_more_than_tfk_1
+                            }
+                            AND = {
+                                check_variable = { ncp_product_level = 2 }
+                                has_variable = ncp_3_degree_more_than_ffp_2
+                                has_variable = ncp_3_degree_more_than_tfk_2
+                            }
+                        }
+                    }
+                    set_variable = { seat_4 = 1 }
+                    add_to_variable = { ncp_product_level = 1 }
+                    
+                    else = {
+                        set_variable = { seat_4 = 3 }
+                        add_to_variable = { tfk_product_level = 1 }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+###Crucial commands go here - if there will be any
+#Every state code
+dhondt_calculate_for_literally_every_macius_state = {
+    736 = {
+        if = {
+            limit = {
+                736 = {
+                    is_owned_and_controlled_by = MAI
+                }
+            }
+            execute_dhondt_method = yes
+            
+        }
+    }
+    767 = {
+        if = {
+            limit = {
+                767 = {
+                    is_owned_and_controlled_by = MAI
+                }
+            }
+            execute_dhondt_method = yes
+            
+        }
+    }
+    776 = {
+        if = {
+            limit = {
+                776 = {
+                    is_owned_and_controlled_by = MAI
+                }
+            }
+            execute_dhondt_method = yes
+            
+        }
+    }
+    773 = {
+        if = {
+            limit = {
+                773 = {
+                    is_owned_and_controlled_by = MAI
+                }
+            }
+            execute_dhondt_method = yes
+            
+        }
+    }
+    812 = {
+        execute_dhondt_method = yes
+        
+    }
+    858 = {
+        execute_dhondt_method = yes
+        
+    }
+    843 = {
+        execute_dhondt_method = yes
+        
+    }
+    852 = {
+        execute_dhondt_method = yes
+        
+    }
+    831 = {
+        execute_dhondt_method = yes
+        
+    }
+    808 = {
+        execute_dhondt_method = yes
+        
+    }
+    799 = {
+        execute_dhondt_method = yes
+        
+    }
+    792 = {
+        execute_dhondt_method = yes
+        
+    }
+    796 = {
+        execute_dhondt_method = yes
+        
+    }
+    824 = {
+        execute_dhondt_method = yes
+        
+    }
+    817 = {
+        execute_dhondt_method = yes
+        
+    }
+    798 = {
+        execute_dhondt_method = yes
+        
+    }
+    822 = {
+        execute_dhondt_method = yes
+        
+    }
+    814 = {
+        execute_dhondt_method = yes
+        
+    }
+    803 = {
+        execute_dhondt_method = yes
+        
+    }
+    789 = {
+        execute_dhondt_method = yes
+        
+    }
+}
+
+dhondt_calculate_overall_seats = {
+    #log = "####################################################################"
+    THIS = {
+    if = {
+        limit = {
+            THIS = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        ROOT = {
+            add_to_variable = { ncp_seats_in_chp = 1 }
+            #log = "NCP gets 1st seat in [THIS.GetName]"
+        }
+        else_if = {
+            limit = {
+                THIS = {
+                    check_variable = { seat_1 = 2 }
+                }
+            }
+            ROOT = {
+                add_to_variable = { ffp_seats_in_chp = 1 }
+                #log = "FFP gets 1st seat in [THIS.GetName]"
+            }
+            else_if = {
+                limit = {
+                    THIS = {
+                        check_variable = { seat_1 = 3 }
+                    }
+                }
+                ROOT = {
+                    add_to_variable = { tfk_seats_in_chp = 1 }
+                    #log = "TFK gets 1st seat in [THIS.GetName]"
+                }
+                else_if = {
+                    limit = {
+                        THIS = {
+                            check_variable = { seat_1 = 4 }
+                        }
+                    }
+                    ROOT = {
+                        add_to_variable = { ccfrok_seats_in_chp = 1 }
+                        #log = "CCFROK gets 1st seat in [THIS.GetName]"
+                    }
+                    else = {
+                        #log = "Nope."
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            THIS = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        ROOT = {
+            add_to_variable = { ncp_seats_in_chp = 1 }
+            #log = "NCP gets 2nd seat in [THIS.GetName]"
+        }
+        else_if = {
+            limit = {
+                THIS = {
+                    check_variable = { seat_2 = 2 }
+                }
+            }
+            ROOT = {
+                add_to_variable = { ffp_seats_in_chp = 1 }
+                #log = "FFP gets 2nd seat in [THIS.GetName]"
+            }
+            else_if = {
+                limit = {
+                    THIS = {
+                        check_variable = { seat_2 = 3 }
+                    }
+                }
+                ROOT = {
+                    add_to_variable = { tfk_seats_in_chp = 1 }
+                    #log = "TFK gets 2nd seat in [THIS.GetName]"
+                }
+                else_if = {
+                    limit = {
+                        THIS = {
+                            check_variable = { seat_2 = 4 }
+                        }
+                    }
+                    ROOT = {
+                        add_to_variable = { ccfrok_seats_in_chp = 1 }
+                        #log = "CCFROK gets 2nd seat in [THIS.GetName]"
+                    }
+                    else = {
+                        #log = "Nope."
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                state = 736
+                state = 812
+                state = 858
+                state = 808
+                state = 803
+            }
+            THIS = {
+                check_variable = { seat_3 = 1 }
+            }
+        }
+        ROOT = {
+            add_to_variable = { ncp_seats_in_chp = 1 }
+            #log = "NCP gets 3rd seat in [THIS.GetName]"
+        }
+        else_if = {
+            limit = {
+                THIS = {
+                    check_variable = { seat_3 = 2 }
+                }
+            }
+            ROOT = {
+                add_to_variable = { ffp_seats_in_chp = 1 }
+                #log = "FFP gets 3rd seat in [THIS.GetName]"
+            }
+            else_if = {
+                limit = {
+                    THIS = {
+                        check_variable = { seat_3 = 3 }
+                    }
+                }
+                ROOT = {
+                    add_to_variable = { tfk_seats_in_chp = 1 }
+                    #log = "TFK gets 3rd seat in [THIS.GetName]"
+                }
+                else_if = {
+                    limit = {
+                        THIS = {
+                            check_variable = { seat_3 = 4 }
+                        }
+                    }
+                    ROOT = {
+                        add_to_variable = { ccfrok_seats_in_chp = 1 }
+                        #log = "CCFROK gets 3rd seat in [THIS.GetName]"
+                    }
+                    else = {
+                        #log = "Nope."
+                    }
+                }
+            }
+        }
+    }
+    if = {
+        limit = {
+            OR = {
+                state = 812
+                state = 858
+            }
+            THIS = {
+                check_variable = { seat_4 = 1 }
+            }
+        }
+        ROOT = {
+            add_to_variable = { ncp_seats_in_chp = 1 }
+            #log = "NCP gets 4th seat in [THIS.GetName]"
+        }
+        else_if = {
+            limit = {
+                THIS = {
+                    check_variable = { seat_4 = 2 }
+                }
+            }
+            ROOT = {
+                add_to_variable = { ffp_seats_in_chp = 1 }
+                #log = "FFP gets 4th seat in [THIS.GetName]"
+            }
+            else_if = {
+                limit = {
+                    THIS = {
+                        check_variable = { seat_4 = 3 }
+                    }
+                }
+                ROOT = {
+                    add_to_variable = { tfk_seats_in_chp = 1 }
+                    #log = "TFK gets 4th seat in [THIS.GetName]"
+                }
+                else_if = {
+                    limit = {
+                        THIS = {
+                            check_variable = { seat_4 = 4 }
+                        }
+                    }
+                    ROOT = {
+                        add_to_variable = { ccfrok_seats_in_chp = 1 }
+                        #log = "CCFROK gets 4th seat in [THIS.GetName]"
+                    }
+                    else = {
+                        #log = "Nope."
+                    }
+                }
+            }
+        }
+    }
+    }
+}
+
+    
