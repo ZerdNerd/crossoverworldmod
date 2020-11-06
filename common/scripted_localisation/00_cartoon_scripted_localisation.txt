@@ -92,6 +92,42 @@ defined_text = { #Colonization not available cause loc
     }
 }
 
+defined_text = { #Joestars and their ambassador to Sioux
+    name = THE_AMBASSADOR_SCRIPT
+    text = {
+        trigger = {
+            JOJ = {
+                has_country_flag = iggy_has_been_sent_to_sioux
+            }
+        }
+        localization_key = THE_AMBASSADOR_SCRIPT_VERSION_1
+    }
+    text = {
+        trigger = {
+            JOJ = {
+                has_country_flag = danny_has_been_sent_to_sioux
+            }
+        }
+        localization_key = THE_AMBASSADOR_SCRIPT_VERSION_2
+    }
+    text = {
+        trigger = {
+            JOJ = {
+                has_country_flag = holy_has_been_sent_to_sioux
+            }
+        }
+        localization_key = THE_AMBASSADOR_SCRIPT_VERSION_3
+    }
+    text = {
+        trigger = {
+            JOJ = {
+                has_country_flag = anasui_has_been_sent_to_sioux
+            }
+        }
+        localization_key = THE_AMBASSADOR_SCRIPT_VERSION_4
+    }
+}
+
 defined_text = { #James taken
     name = ENC_james_taken_script
     text = {

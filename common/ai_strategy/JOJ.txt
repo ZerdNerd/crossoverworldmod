@@ -1,0 +1,69 @@
+jojo_helps_morioh = {
+	enable = {
+		tag = JOJ
+		MO2 = {
+			has_war_with = MOR
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "MO2"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "MO2"			
+		value = 100
+	}
+}
+
+jojo_helps_sioux = {
+	enable = {
+		tag = JOJ
+		SIO = {
+			has_war_with = DES
+			OR = {
+				has_global_flag = sioux_are_returning
+				has_completed_focus = SIO_get_lost_humsin
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "SIO"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "SIO"			
+		value = 100
+	}
+}
+
+jojo_helps_greenland = {
+	enable = {
+		tag = JOJ
+		GRN = {
+			has_war = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "GRN"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "GRN"			
+		value = 100
+	}
+}

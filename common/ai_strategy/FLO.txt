@@ -196,6 +196,12 @@ fh_wont_engage_if_wolves_are_not_dealt_with = {
 	}
 
 	ai_strategy = {
+		type = dont_join_wars_with
+		id = "SAN"			
+		value = 7000
+	}
+
+	ai_strategy = {
 		type = ignore
 		id = "TSA"			
 		value = 7000

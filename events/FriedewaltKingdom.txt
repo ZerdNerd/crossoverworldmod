@@ -847,6 +847,9 @@ country_event = { #Expeditions for resources - resources found 1a
     		amount = 8
     		state = 634
 		}
+		SIO = {
+			give_resource_rights = { receiver = ROOT state = 634 }
+		}
 	}
 }
 
@@ -872,6 +875,9 @@ country_event = { #Expeditions for resources - resources found 1b
     		type = oil
     		amount = 10
     		state = 634
+		}
+		SIO = {
+			give_resource_rights = { receiver = ROOT state = 634 }
 		}
 	}
 }
@@ -899,6 +905,9 @@ country_event = { #Expeditions for resources - resources found 2a
     		amount = 6
     		state = 634
 		}
+		SIO = {
+			give_resource_rights = { receiver = ROOT state = 634 }
+		}
 	}
 }
 
@@ -924,6 +933,9 @@ country_event = { #Expeditions for resources - resources found 2b
     		type = rubber
     		amount = 8
     		state = 634
+		}
+		SIO = {
+			give_resource_rights = { receiver = ROOT state = 634 }
 		}
 	}
 }

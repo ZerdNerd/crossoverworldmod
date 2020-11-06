@@ -55,6 +55,16 @@ bookmarks = {
 			
 			}
 		}
+
+		"JOJ"={
+			history = "JOJ_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+			
+			}
+		}
 		
 		"ENC"={
 			history = "ENC_GATHERING_STORM_DESC"
@@ -97,41 +107,34 @@ bookmarks = {
 			}
 		}
 
-
-		"---"={
-			history = "OTHER_GATHERING_STORM_DESC_TCW"
-		}
-
-		#HERE COME THE MINORS
-
-		"TSA"={
-			minor = yes
-			history = "TSA_GATHERING_STORM_DESC"
+		"FRI"={
+			history = "FRI_GATHERING_STORM_DESC"
 			ideas = {
 				modern_tech_idea
+				FRI_colonial_beginnings
 			}
 			focuses = {
-				TSA_elections_of_1936
-				TSA_proclaim_doofania
-				TSA_bastion_of_democracy
+				FRI_expeditions_for_resources
+				FRI_continue_colonization
+				FRI_hartmut_rules
 			}
 		}
 
-		"DUL"={
-			minor = yes
-			history = "DUL_GATHERING_STORM_DESC"
+		"AVA"={
+			history = "AVA_GATHERING_STORM_DESC"
 			ideas = {
 				middleage_tech
+				AVA_legacy_of_kingdom_of_maru
+				AVA_shuriki_dark_legacy_idea_1
 			}
 			focuses = {
-				DUL_fund_colonial_expedition
-				DUL_demand_everrealm_gate
-				DUL_apply_the_antidote
+				AVA_shuriki_dark_legacy
+				AVA_economic_legacy_of_maru
+				AVA_clear_the_remnants_of_shuriki_rule
 			}
 		}
 
 		"JPN"={
-			minor = yes
 			history = "JPN_GATHERING_STORM_DESC"
 			ideas = {
 				modern_tech_idea
@@ -145,7 +148,6 @@ bookmarks = {
 		}
 
 		"LEC"={
-			minor = yes
 			history = "LEC_GATHERING_STORM_DESC"
 			ideas = {
 				middleage_tech
@@ -157,18 +159,56 @@ bookmarks = {
 			}
 		}
 
-		"AVA"={
-			minor = yes
-			history = "AVA_GATHERING_STORM_DESC"
+		"SLD"={
+			history = "SLD_GATHERING_STORM_DESC"
 			ideas = {
-				middleage_tech
-				AVA_legacy_of_kingdom_of_maru
-				AVA_shuriki_dark_legacy_idea_1
+				modern_tech_idea
 			}
 			focuses = {
-				AVA_shuriki_dark_legacy
-				AVA_economic_legacy_of_maru
-				AVA_clear_the_remnants_of_shuriki_rule
+				SLD_the_great_elections
+				SLD_operation_major_ear
+				SLD_peaceful_negotiations
+			}
+		}
+
+		"TSA"={
+			history = "TSA_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+				TSA_elections_of_1936
+				TSA_proclaim_doofania
+				TSA_bastion_of_democracy
+			}
+		}
+
+		"SIO"={
+			history = "SIO_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+			}
+			focuses = {
+			
+			}
+		}
+
+		"---"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		#HERE COME THE MINORS
+
+		"DUL"={
+			minor = yes
+			history = "DUL_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+			}
+			focuses = {
+				DUL_fund_colonial_expedition
+				DUL_demand_everrealm_gate
+				DUL_apply_the_antidote
 			}
 		}
 
@@ -199,19 +239,6 @@ bookmarks = {
 			}
 		}
 
-		"SLD"={
-			minor = yes
-			history = "SLD_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-			}
-			focuses = {
-				SLD_the_great_elections
-				SLD_operation_major_ear
-				SLD_peaceful_negotiations
-			}
-		}
-
 		"SAN"={
 			minor = yes
 			history = "SAN_GATHERING_STORM_DESC"
@@ -222,31 +249,6 @@ bookmarks = {
 				SAN_stonoga_rejects_elections
 				SAN_the_one_and_only
 				SAN_ppu_takes_the_reign
-			}
-		}
-
-		"SIO"={
-			minor = yes
-			history = "SIO_GATHERING_STORM_DESC"
-			ideas = {
-				middleage_tech
-			}
-			focuses = {
-			
-			}
-		}
-
-		"FRI"={
-			minor = yes
-			history = "FRI_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-				FRI_colonial_beginnings
-			}
-			focuses = {
-				FRI_expeditions_for_resources
-				FRI_continue_colonization
-				FRI_hartmut_rules
 			}
 		}
 

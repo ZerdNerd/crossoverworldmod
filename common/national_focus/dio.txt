@@ -1729,13 +1729,13 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 3
 		} 
 
 		completion_reward = {
 			send_equipment = {
     			equipment = infantry_equipment
-    			amount = 500
+    			amount = 1500
     			target = GON
 			}
 			custom_effect_tooltip = DIO_GON_will_welcome_volunteers
@@ -1879,14 +1879,20 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			MOR = {
+				exists = no
+			}
+		}
+
 		ai_will_do = { 
-			factor = 1
+			factor = 3
 		} 
 
 		completion_reward = {
 			send_equipment = {
     			equipment = infantry_equipment
-    			amount = 500
+    			amount = 1500
     			target = MOR
 			}
 			custom_effect_tooltip = DIO_MOR_will_welcome_volunteers
@@ -1925,6 +1931,9 @@ focus_tree = {
 			is_neighbor_of = JOJ
 			PIL = {
 				exists = no
+			}
+			NOT = {
+				has_war = yes
 			}
 		}
 
@@ -2053,13 +2062,13 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 3
 		} 
 
 		completion_reward = {
 			send_equipment = {
     			equipment = infantry_equipment
-    			amount = 500
+    			amount = 1500
     			target = DES
 			}
 			custom_effect_tooltip = DIO_DES_will_welcome_volunteers
@@ -2454,7 +2463,7 @@ focus_tree = {
 
 	focus = { 
 		id = DIO_heaven_achieved
-		icon = GFX_goal_generic_demand_territory
+		icon = GFX_focus_heaven
 		x = 19
 		y = 19
 		cost = 7.25
@@ -2494,6 +2503,644 @@ focus_tree = {
 				}
 			}
 			#the final event
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DIO_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 7
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		custom_trigger_tooltip = {
+				tooltip = DIO_you_have_completed_one_of_the_plans
+				OR = {
+					AND = {
+						has_completed_focus = DIO_no_mercy_approach
+						OR = {
+							AND = {
+								has_completed_focus = DIO_call_to_the_desert
+								MOR = {
+									NOT = {
+										has_government = fascism
+									}
+								}
+							}
+							AND = {
+								has_completed_focus = DIO_the_southern_potential
+								MOR = {
+									has_government = fascism
+								}
+							}
+						}
+						has_completed_focus = DIO_silent_and_unseen
+						has_completed_focus = DIO_appease_the_citizens
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+						OR = {
+							has_completed_focus = DIO_support_halvar
+							has_completed_focus = DIO_support_stoick
+						}
+					}
+					AND = {
+						has_completed_focus = DIO_the_stand_commandos
+						has_completed_focus = DIO_contact_shen
+						has_completed_focus = DIO_support_morioh_with_more_arrows
+						has_completed_focus = DIO_concentrating_the_armory
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+					}
+				}
+			}
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = DIO_naval_effort }
+		mutually_exclusive = { focus = DIO_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = DIO_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = DIO_naval_effort }
+		mutually_exclusive = { focus = DIO_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = DIO_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DIO_flexible_navy focus = DIO_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = DIO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = DIO_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = DIO_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = DIO_flexible_navy focus = DIO_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = DIO_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = DIO_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = DIO_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = DIO_large_navy focus = DIO_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = DIO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = DIO_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = DIO_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = DIO_large_navy focus = DIO_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = DIO_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = DIO_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = DIO_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DIO_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 30
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		custom_trigger_tooltip = {
+				tooltip = DIO_you_have_completed_one_of_the_plans
+				OR = {
+					AND = {
+						has_completed_focus = DIO_no_mercy_approach
+						OR = {
+							AND = {
+								has_completed_focus = DIO_call_to_the_desert
+								MOR = {
+									NOT = {
+										has_government = fascism
+									}
+								}
+							}
+							AND = {
+								has_completed_focus = DIO_the_southern_potential
+								MOR = {
+									has_government = fascism
+								}
+							}
+						}
+						has_completed_focus = DIO_silent_and_unseen
+						has_completed_focus = DIO_appease_the_citizens
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+						OR = {
+							has_completed_focus = DIO_support_halvar
+							has_completed_focus = DIO_support_stoick
+						}
+					}
+					AND = {
+						has_completed_focus = DIO_the_stand_commandos
+						has_completed_focus = DIO_contact_shen
+						has_completed_focus = DIO_support_morioh_with_more_arrows
+						has_completed_focus = DIO_concentrating_the_armory
+						has_completed_focus = DIO_roads_in_the_cities
+						has_completed_focus = DIO_modernization_of_the_naval_bases
+					}
+				}
+			}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DIO_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = DIO_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DIO_fighter_focus }
+		prerequisite = { focus = DIO_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = DIO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = DIO_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = DIO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DIO_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = DIO_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DIO_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = DIO_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = DIO_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = DIO_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = DIO_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DIO_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = DIO_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DIO_heavy_fighter_focus }
+		prerequisite = { focus = DIO_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = DIO_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = DIO_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = DIO_heavy_fighter_focus }
+		prerequisite = { focus = DIO_CAS_effort }
+		prerequisite = { focus = DIO_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = DIO_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DIO_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = DIO_aviation_effort_2 }
+		prerequisite = { focus = DIO_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = DIO_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
                                                                                                                                                                                                     

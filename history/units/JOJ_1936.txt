@@ -11,6 +11,18 @@
 }
 
 division_template = {
+	name = "Stand User Division"
+	regiments = {
+		stand_users = { x = 0 y = 0 }
+		stand_users = { x = 0 y = 1 }
+		stand_users = { x = 0 y = 2 }
+		stand_users = { x = 1 y = 0 }
+		stand_users = { x = 1 y = 1 }
+		stand_users = { x = 1 y = 1 }
+	}
+}
+
+division_template = {
 	name = "Tank Division"
 	regiments = {
 		light_armor = { x = 0 y = 0 }
@@ -21,6 +33,30 @@ division_template = {
 }
 
 units = {
+	division = {
+		name = "1. Stand User Division"
+		location = 8915
+		division_template = "Stand User Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "2. Stand User Division"
+		location = 8915
+		division_template = "Stand User Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "3. Stand User Division"
+		location = 8592
+		division_template = "Stand User Division"
+		start_experience_factor = 0.2
+	}
+	division = {
+		name = "4. Stand User Division"
+		location = 8592
+		division_template = "Stand User Division"
+		start_experience_factor = 0.2
+	}
 	division = {
 		name = "1. Infantry Division"
 		location = 8915
@@ -47,19 +83,19 @@ units = {
 	}
 	division = {
 		name = "5. Infantry Division"
-		location = 8915
+		location = 8592
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 	}
 	division = {
 		name = "6. Infantry Division"
-		location = 8915
+		location = 8592
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 	}
 	division = {
 		name = "7. Infantry Division"
-		location = 8915
+		location = 8592
 		division_template = "Infantry Division"
 		start_experience_factor = 0.2
 	}
@@ -71,7 +107,7 @@ units = {
 	}
 	division = {
 		name = "2. Tank Division"
-		location = 8915
+		location = 8592
 		division_template = "Tank Division"
 		start_experience_factor = 0.2
 	}

@@ -2738,6 +2738,133 @@ ideas = {
 			}
 			picture = generic_infantry_bonus
 		}
+
+		JOJ_hamon_schools = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.05
+				defence = 0.05
+			}
+			picture = generic_manpower_bonus
+		}
+
+		JOJ_noman_behind = {
+			allowed = { always = no }
+			modifier = {
+				land_reinforce_rate = 0.1
+				conscription = 0.05
+				attrition = -0.05
+			}
+			picture = generic_infantry_bonus
+		}
+
+		JOJ_truegentleman = {
+			allowed = { always = no }
+			modifier = {
+				resistance_target = -0.2
+				stability_factor = 0.05
+			}
+			picture = eng_steady_as_she_goes
+		}
+
+		JOJ_tsplit = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.02
+			}
+			picture = trumpet
+		}
+
+		JOJ_tcsa = {
+			allowed = { always = no }
+			modifier = {
+				defence = 0.025
+				army_morale_factor = 0.05
+			}
+			picture = trumpet
+		}
+
+		JOJ_path_of_warrior = {
+			allowed = { always = no }
+			modifier = {
+				army_artillery_attack_factor = 0.1
+				army_infantry_attack_factor = 0.1
+			}
+			picture = generic_victors_of_ww1
+		}
+
+		JOJ_flight_schools = {
+			allowed = { always = no }
+			modifier = {
+				air_accidents_factor = -0.15
+				air_weather_penalty = -0.1
+			}
+			picture = air_support_focus
+		}
+
+		JOJ_aerobill = {
+			allowed = { always = no }
+			modifier = {
+				army_bonus_air_superiority_factor = 0.05
+				experience_gain_air = 0.02
+			}
+			picture = HUN_treaty_of_triannon
+		}
+
+		JOJ_practicing_jumps = {
+			allowed = { always = no }
+			modifier = {
+				air_paradrop_attack_factor = 0.05
+				air_paradrop_defence_factor = 0.05
+			}
+			picture = air_war_plans_division_focus
+		}
+
+		JOJ_coming_from_the_skies = {
+			allowed = { always = no }
+			modifier = {
+				air_paradrop_attack_factor = 0.05
+				air_paradrop_defence_factor = 0.05
+				out_of_supply_factor = -0.1
+			}
+			picture = generic_air_bonus
+		}
+
+		JOJ_national_aquariums = {
+			allowed = { always = no }
+			modifier = {
+				naval_hit_chance = 0.05
+				spotting_chance = 0.1
+				naval_speed_factor = 0.05
+			}
+			picture = idea_hol_naval_heritage
+		}
+
+		JOJ_navalbill = {
+			allowed = { always = no }
+			modifier = {
+				convoy_escort_efficiency = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+			picture = HUN_treaty_of_triannon
+		}
+
+		JOJ_ult_stands = {
+			allowed = { always = no }
+			modifier = {
+				offence = 0.05
+			}
+			picture = generic_victors_of_ww1
+		}
+
+		JOJ_naval_backstab = {
+			allowed = { always = no }
+			modifier = {
+				amphibious_invasion = 0.15
+				invasion_preparation = -0.15
+			}
+			picture = liberty_ships_focus
+		}
 	}
 
 	##############################################################################################################################
@@ -3617,6 +3744,79 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		JOJ_speedwagon = {
+
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_leave_everything_to_speedwagon
+			}
+		
+			traits = { lieutenant_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_jonathan = {
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { popular_figurehead2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_joseph = {
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { head_of_intelligence }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_jotaro = {
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { financial_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_smokey = {
+
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_let_smokey_design_it
+			}
+		
+			traits = { lieutenant_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	high_command = {
@@ -3725,6 +3925,85 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		JOJ_zeppeli_2 = {
+
+			ledger = army
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { army_commando_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_avdol_2 = {
+
+			ledger = army
+
+			allowed = {
+				original_tag = JOJ
+			}
+
+			research_bonus = {
+				stands = 0.1
+			}
+		
+			traits = { army_infantry_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_jonathan_2 = {
+
+			ledger = army
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { army_logistics_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_joseph_2 = {
+
+			ledger = air
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { air_close_air_support_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_jolyne = {
+
+			ledger = navy
+
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { navy_amphibious_assault_2 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	theorist = {
@@ -3754,5 +4033,142 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		JOJ_zeppeli = {
+
+			ledger = army
+
+			allowed = {
+				original_tag = JOJ
+			}
+
+		#	research_bonus = {
+		#		stands = 0.1
+		#	}
+		
+			traits = { council_of_theorists }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		JOJ_avdol = {
+
+			ledger = army
+
+			allowed = {
+				original_tag = JOJ
+			}
+
+			research_bonus = {
+				stands = 0.1
+			}
+		
+			traits = { superior_firepower_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	naval_manufacturer = {
+
+		designer = yes
+
+		speedwagon_foundation_naval_branch = {
+			
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_expand_naval_branch
+			}
+						
+			research_bonus = {
+				naval_equipment = 0.1
+			}
+			
+			traits = { naval_manufacturer }
+
+			cost = 150
+
+		}
+	}
+
+	aircraft_manufacturer = { 
+	
+		designer = yes
+	
+		speedwagon_foundation_air_branch = {
+			
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_combine_naval_and_aero_branches
+			}
+						
+			research_bonus = {
+				air_equipment = 0.1
+			}
+			
+			traits = { light_aircraft_manufacturer naval_aircraft_manufacturer }
+
+			cost = 150
+
+		}
+
+	}
+
+	industrial_concern = {
+	
+		speedwagon_foundation_industrial_branch = {
+			
+			allowed = {
+				original_tag = JOJ
+			}
+						
+			research_bonus = {
+				industry = 0.05
+				electronics = 0.05
+			}
+			
+			traits = { industrial_concern electronics_concern }
+
+			cost = 200
+
+		}
+
+	}
+
+	materiel_manufacturer = {
+	
+		designer = yes
+	
+		speedwagon_foundation_equipment_branch = {
+			
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_establish_military_branch
+			}
+						
+			research_bonus = {
+				infantry_weapons = 0.05
+				artillery = 0.05
+			}
+			
+			traits = { infantry_equipment_manufacturer }
+
+			cost = 200
+
+		}
+
 	}
 }	

@@ -540,3 +540,20 @@ flower_hill_shoulda_invade_wolves = {
 		value = 7000
 	}
 }
+
+sioux_waiting_for_the_occasion = {
+	enable = {
+		tag = SIO
+		has_wargoal_against = FLE
+		FRI = {
+			has_war = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "FLE"			
+		value = 100
+	}
+}

@@ -340,6 +340,135 @@ enchancian_cw_faction_joining = {
 
 }
 
+#Script that forbids countries to declare wars across the continents
+
+if_youre_not_on_central_continent_then_ignore_them = {
+	enable = {
+		capital_scope = {
+			NOT = {
+				is_on_continent = europe
+			}
+		}
+	}
+	abort = {
+		OR = {
+			any_allied_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = europe
+				}
+			}
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = -500
+	}
+}
+
+if_youre_not_on_eastern_continent_then_ignore_them = {
+	enable = {
+		capital_scope = {
+			NOT = {
+				is_on_continent = north_america
+			}
+		}
+	}
+	abort = {
+		OR = {
+			any_allied_country = {
+				capital_scope = {
+					is_on_continent = north_america
+				}
+			}
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = north_america
+				}
+			}
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = north_america
+		value = -500
+	}
+}
+
+if_youre_not_in_everrealm_then_ignore_them = {
+	enable = {
+		capital_scope = {
+			NOT = {
+				is_on_continent = south_america
+			}
+		}
+	}
+	abort = {
+		OR = {
+			any_allied_country = {
+				capital_scope = {
+					is_on_continent = south_america
+				}
+			}
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = south_america
+				}
+			}
+			AND = {
+				OR = {
+					has_country_flag = ECW_support_amber
+					has_country_flag = ECW_support_james
+					has_country_flag = ECW_support_dunwiddie
+					has_country_flag = ECW_support_cedric
+				}
+				NOT = {
+					has_global_flag = enchancian_civil_war_ended
+				}
+			}
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = -500
+	}
+}
+
+leave_khurain_alone = {
+	enable = {
+		capital_scope = {
+			NOT = {
+				is_on_continent = africa
+			}
+		}
+	}
+	abort = {
+		OR = {
+			any_allied_country = {
+				capital_scope = {
+					is_on_continent = africa
+				}
+			}
+			any_enemy_country = {
+				capital_scope = {
+					is_on_continent = africa
+				}
+			}
+		}
+	}
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -500
+	}
+}
+
 #it was temporary here, now its permanent
 
 humsin_and_wolves = {
@@ -395,6 +524,44 @@ humsin_and_turtles = {
 	}
 }
 
+flower_hill_wont_invade_overseas_if_eastern_continent_is_not_done_with = {
+	enable = {
+		original_tag = FLO
+		OR = {
+			WOL = {
+				exists = yes
+			}
+			GON = {
+				exists = yes
+			}
+			GRN = {
+				exists = yes
+			}
+			ICW = {
+				exists = yes
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = area_priority
+		id = europe
+		value = -2500
+	}
+	ai_strategy = {
+		type = area_priority
+		id = south_america
+		value = -2500
+	}
+	ai_strategy = {
+		type = area_priority
+		id = africa
+		value = -2500
+	}
+	
+}
+
 flower_hill_towards_others = {
 	enable = {
 		original_tag = FLO
@@ -430,28 +597,8 @@ flower_hill_towards_others = {
 		value = 100
 	}
 	ai_strategy = {
-		type = invade
-		id = "ICW"
-		value = 100
-	}
-	ai_strategy = {
-		type = invade
-		id = "GRN"
-		value = 100
-	}
-	ai_strategy = {
 		type = declare_war
 		id = "DCB"
-		value = 100
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "ICW"
-		value = 100
-	}
-	ai_strategy = {
-		type = declare_war
-		id = "GRN"
 		value = 100
 	}
 	ai_strategy = {
@@ -620,6 +767,87 @@ wei_ling_civil_war_commune_support = {
 		type = ignore
 		id = "WEI"
 		value = 100
+	}
+}
+
+flower_hill_invasion_of_cc = {
+	enable = {
+		tag = FLO
+	}
+	abort = {
+		NOT = {
+			tag = FLO
+		}
+	}
+
+	ai_strategy = {
+ 		type = front_control
+
+		#you can define a target in following ways. you can define more than one
+
+		area = europe			# target on a specific ai area
+		country_trigger = { 
+			AND = {
+				WOL = {
+					exists = no
+				}
+				GON = {
+					exists = no
+				}
+				GRN = {
+					OR = {
+						exists = no
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					OR = {
+						exists = no
+						GRN = {
+							has_country_flag = FLO_signed_gongmen_pact
+						}
+					}
+				}
+			}
+		} 	# a trigger to check agaisnt a specific country. scope is enemy country from scope is our country
+
+		ratio = 0.0 # the strategy is enabled only if ratio of the front covered by this strat's targets greater than this ratio
+
+		priority = 1 # default 0, higher prio strats will override lower
+		ordertype = invasion # front or invasion. if set this strategy will only apply to that specific order type
+		execution_type = balanced # one of careful balanced rush rush_weak. if set will override the execution type of front (only for front orders)
+		execute_order = yes # yes or no. if set will override execute or not decision of front
+		manual_attack = yes # default yes. if no ai will not do manual pokes at enemy (only for front orders)
+	}	
+}
+
+flower_hill_gongmen_treaty = {
+	enable = {
+		tag = FLO
+		has_country_flag = FLO_signed_gongmen_pact
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "ICW"
+		value = -1000
+	}
+	ai_strategy = {
+		type = declare_war
+		id = "GRN"
+		value = -1000
+	}
+	ai_strategy = {
+		type = invade
+		id = "ICW"
+		value = -1000
+	}
+	ai_strategy = {
+		type = invade
+		id = "GRN"
+		value = -1000
 	}
 }
 

@@ -37,7 +37,7 @@ country_event = { #Dio proposes pact to Pillar Men
 	title = jojo.2.t
 	desc = jojo.2.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_soviet_german_soldier_handshake
 
 	is_triggered_only = yes
 
@@ -79,7 +79,7 @@ country_event = { #Pillar Men accept
 	title = jojo.3.t
 	desc = jojo.3.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_soviet_german_soldier_handshake
 
 	is_triggered_only = yes
 
@@ -94,7 +94,7 @@ country_event = { #Pillar Men reject
 	title = jojo.4.t
 	desc = jojo.4.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_soviet_german_soldier_handshake
 
 	is_triggered_only = yes
 
@@ -109,7 +109,7 @@ country_event = { #Pressuring Mice
 	title = jojo.5.t
 	desc = jojo.5.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -151,7 +151,7 @@ country_event = { #Mice fade
 	title = jojo.6.t
 	desc = jojo.6.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -166,7 +166,7 @@ country_event = { #Mice reject
 	title = jojo.7.t
 	desc = jojo.7.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -188,7 +188,7 @@ country_event = { #Pressuring Khorinis
 	title = jojo.8.t
 	desc = jojo.8.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -218,7 +218,7 @@ country_event = { #Khorinis fades
 	title = jojo.9.t
 	desc = jojo.9.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -234,7 +234,7 @@ country_event = { #Khorinis rejects
 	title = jojo.10.t
 	desc = jojo.10.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -266,7 +266,7 @@ country_event = { #Pressuring Arendelle
 	title = jojo.11.t
 	desc = jojo.11.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -296,7 +296,7 @@ country_event = { #Arendelle fades
 	title = jojo.12.t
 	desc = jojo.12.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -313,7 +313,7 @@ country_event = { #Arendelle rejects
 	title = jojo.13.t
 	desc = jojo.13.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_military_planning
 
 	is_triggered_only = yes
 
@@ -345,7 +345,7 @@ country_event = { #Fate of Mice Republic
 	title = jojo.14.t
 	desc = jojo.14.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_japan_army_mountainside
 
 	is_triggered_only = yes
 
@@ -375,7 +375,7 @@ country_event = { #Mice surrender
 	title = jojo.15.t
 	desc = jojo.15.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_japan_army_mountainside
 
 	is_triggered_only = yes
 
@@ -394,7 +394,7 @@ country_event = { #Mice reject
 	title = jojo.16.t
 	desc = jojo.16.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_japan_army_mountainside
 
 	is_triggered_only = yes
 
@@ -412,7 +412,7 @@ country_event = { #Dio wants to establish bases on Berk
 	title = jojo.17.t
 	desc = jojo.17.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_merchant_ship_01
 
 	is_triggered_only = yes
 
@@ -445,7 +445,7 @@ country_event = { #Berk sells the territory for bases
 	title = jojo.18.t
 	desc = jojo.18.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_merchant_ship_01
 
 	is_triggered_only = yes
 
@@ -476,7 +476,7 @@ country_event = { #Berk rejects
 	title = jojo.19.t
 	desc = jojo.19.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_event_merchant_ship_01
 
 	is_triggered_only = yes
 
@@ -497,7 +497,7 @@ country_event = { #Dio's expansion must be stopped!
 	title = jojo.20.t
 	desc = jojo.20.d
 	
-	picture = GFX_report_event_generic_factory
+	picture = GFX_report_ascended_dio
 
 	is_triggered_only = yes
 
@@ -506,6 +506,17 @@ country_event = { #Dio's expansion must be stopped!
 		declare_war_on = {
 			target = DIO
 			type = annex_everything
+		}
+		every_country = {
+			limit = {
+				NOT = {
+					tag = ROOT
+					tag = DIO
+					tag = UNC
+					tag = GLO
+				}
+			}
+			give_military_access = ROOT
 		}
 		ai_chance = {
 			factor = 100
@@ -520,3 +531,725 @@ country_event = { #Dio's expansion must be stopped!
 	}
 }
 
+country_event = { #Which path to take?
+	id = jojo.21
+	title = jojo.21.t
+	desc = jojo.21.d
+	
+	picture = GFX_report_event_generic_read_write
+
+	is_triggered_only = yes
+
+	option = { #Joseph
+		name = jojo.21.a
+		create_country_leader = {
+			name = "Joseph Joestar"
+			desc = "POLITICS_JOSEPH_DESC"
+			picture = "joseph.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				professional_crisis_solver #secret Joestar Technique
+				famous_aviator
+			}
+		}
+		hidden_effect = {
+			complete_national_focus = JOJ_joseph_path
+			unlock_national_focus = JOJ_reform_path
+		}
+	}
+
+	option = { #Jotaro
+		name = jojo.21.b
+		create_country_leader = {
+			name = "Jotaro Kujo"
+			desc = "POLITICS_JOTARO_DESC"
+			picture = "jotaro.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				silent_workhorse
+			}
+		}
+		hidden_effect = {
+			complete_national_focus = JOJ_kujo_path
+			unlock_national_focus = JOJ_reform_path
+		}
+	}
+
+	option = { #Jolyne
+		name = jojo.21.c
+		create_country_leader = {
+			name = "Jolyne Cujoh"
+			desc = "POLITICS_JOLYNE_DESC"
+			picture = "jolyne.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				adventurous_daredevil
+			}
+		}
+		hidden_effect = {
+			complete_national_focus = JOJ_kujo_path
+			unlock_national_focus = JOJ_reform_path
+		}
+	}
+}
+
+country_event = { #The Ambassador to Sioux
+	id = jojo.22
+	title = jojo.22.t
+	desc = jojo.22.d
+	
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Iggy
+		name = jojo.22.iggy
+		trigger = {
+			OR = {
+				has_country_leader = {
+					name = "Jotaro Kujo"
+					ruling_only = yes
+				}
+				has_country_leader = {
+					name = "Joseph Joestar"
+					ruling_only = yes
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = iggy_has_been_sent_to_sioux
+		}
+		custom_effect_tooltip = JOJ_feels_like_a_good_idea
+		SIO = {
+			country_event = {
+				id = jojo.23
+				days = 1
+			}
+		}
+	}
+
+	option = { #Danny
+		name = jojo.22.danny
+		trigger = {
+			has_country_leader = {
+				name = "Jonathan Joestar"
+				ruling_only = yes
+			}
+		}
+		hidden_effect = {
+			set_country_flag = danny_has_been_sent_to_sioux
+		}
+		custom_effect_tooltip = JOJ_feels_like_a_good_idea
+		SIO = {
+			country_event = {
+				id = jojo.23
+				days = 1
+			}
+		}
+	}
+
+	option = { #Holy
+		name = jojo.22.holy
+		hidden_effect = {
+			set_country_flag = holy_has_been_sent_to_sioux
+		}
+		SIO = {
+			country_event = {
+				id = jojo.23
+				days = 1
+			}
+		}
+	}
+
+	option = { #Anasui
+		name = jojo.22.anasui
+		hidden_effect = {
+			set_country_flag = anasui_has_been_sent_to_sioux
+		}
+		SIO = {
+			country_event = {
+				id = jojo.23
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Joestars' Ambassador arrives
+	id = jojo.23
+	title = jojo.23.t
+	desc = jojo.23.d
+	
+	picture = GFX_report_event_chinese_japanese_handshake
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.23.a
+	}
+
+}
+
+country_event = { #Joestars want to explore our territories
+	id = jojo.24
+	title = jojo.24.t
+	desc = jojo.24.d
+	
+	picture = GFX_report_event_asian_politicians
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.24.a
+		JOJ = {
+			country_event = {
+				id = jojo.25
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				JOJ = {
+					OR = {
+						has_country_flag = danny_has_been_sent_to_sioux
+						has_country_flag = iggy_has_been_sent_to_sioux
+					}
+				}
+				add = 30
+			}
+			modifier = {
+				JOJ = {
+					has_country_flag = holy_has_been_sent_to_sioux
+				}
+				add = 0
+			}
+			modifier = {
+				JOJ = {
+					has_country_flag = anasui_has_been_sent_to_sioux
+				}
+				add = -30
+			}
+		}
+	}
+
+	option = {
+		name = jojo.24.b
+		JOJ = {
+			country_event = {
+				id = jojo.26
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				JOJ = {
+					OR = {
+						has_country_flag = danny_has_been_sent_to_sioux
+						has_country_flag = iggy_has_been_sent_to_sioux
+					}
+				}
+				add = -30
+			}
+			modifier = {
+				JOJ = {
+					has_country_flag = holy_has_been_sent_to_sioux
+				}
+				add = 0
+			}
+			modifier = {
+				JOJ = {
+					has_country_flag = anasui_has_been_sent_to_sioux
+				}
+				add = 30
+			}
+		}
+	}
+}
+
+
+country_event = { #Sioux agree to explore their territories
+	id = jojo.25
+	title = jojo.25.t
+	desc = jojo.25.d
+	
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.25.a
+		hidden_effect = {
+			set_country_flag = sioux_agreed_to_explore
+		}
+	}
+}
+
+country_event = { #Sioux don't agree to explore their territories
+	id = jojo.26
+	title = jojo.26.t
+	desc = jojo.26.d
+	
+	picture = GFX_report_yakari_2
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.26.a
+	}
+}
+
+country_event = { #Joestars want to explore our territories
+	id = jojo.27
+	title = jojo.27.t
+	desc = jojo.27.d
+	
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.27.a
+		JOJ = {
+			country_event = {
+				id = jojo.28
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				JOJ = {
+					has_country_flag = received_stroheim
+				}
+				add = 30
+			}
+		}
+	}
+
+	option = {
+		name = jojo.27.b
+		JOJ = {
+			country_event = {
+				id = jojo.29
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				JOJ = {
+					NOT = {
+						has_country_flag = received_stroheim
+					}
+				}
+				add = -30
+			}
+		}
+	}
+}
+
+
+country_event = { #Flensburg agrees to explore their territories
+	id = jojo.28
+	title = jojo.28.t
+	desc = jojo.28.d
+	
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.28.a
+		hidden_effect = {
+			set_country_flag = flensburg_agreed_to_explore
+		}
+	}
+}
+
+country_event = { #Flensburg doesn't agree to explore their territories
+	id = jojo.29
+	title = jojo.29.t
+	desc = jojo.29.d
+	
+	picture = GFX_report_event_fascist_gathering
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.29.a
+	}
+}
+
+country_event = { #Joestars want to join our faction
+	id = jojo.30
+	title = jojo.30.t
+	desc = jojo.30.d
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = jojo.30.a
+		JOJ = {
+			country_event = {
+				id = jojo.31
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Deny
+		name = jojo.30.a
+		JOJ = {
+			country_event = {
+				id = jojo.32
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+country_event = { #We have been accepted into the faction
+	id = jojo.31
+	title = jojo.31.t
+	desc = jojo.31.d
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.31.a
+		FROM = {
+			add_to_faction = JOJ
+		}
+	}
+}
+
+country_event = { #We have been refused from joining the faction
+	id = jojo.32
+	title = jojo.32.t
+	desc = jojo.32.d
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.32.a
+	}
+}
+
+country_event = { #Uprising in Morioh!
+	id = jojo.33
+	title = jojo.33.t
+	desc = jojo.33.d
+	
+	picture = GFX_report_kira
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.33.a
+		MOR = {
+			every_owned_state = {
+				add_core_of = MO2
+			}
+		}
+		MO2 = {
+			transfer_state = 629
+			transfer_state = 635
+			set_capital = 629
+			hidden_effect = {
+				load_oob = MO2_uprising
+			}
+		}
+		JOJ = {
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_id = 8003
+						has_id = 8009
+						has_id = 8010
+						has_id = 8012
+					}
+				}
+				set_nationality = MO2
+			}
+		}
+		MO2 = {
+			declare_war_on = {
+				target = MOR
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Joestars invite us to their faction
+	id = jojo.34
+	title = jojo.34.t
+	desc = jojo.34.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = jojo.34.a
+		JOJ = {
+			country_event = {
+				id = jojo.35
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				is_in_faction = yes
+				add = -100
+			}
+		}
+	}
+
+	option = { #Deny
+		name = jojo.34.a
+		JOJ = {
+			country_event = {
+				id = jojo.36
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_in_faction = yes
+				add = 100
+			}
+		}
+	}
+}
+
+
+country_event = { #They accepted
+	id = jojo.35
+	title = jojo.35.t
+	desc = jojo.35.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.35.a
+		JOJ = {
+			add_to_faction = FROM
+		}
+	}
+}
+
+country_event = { #They refused
+	id = jojo.36
+	title = jojo.36.t
+	desc = jojo.36.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.36.a
+	}
+}
+
+country_event = { #Revolt in Passione
+	id = jojo.37
+	title = jojo.37.t
+	desc = jojo.37.d
+	
+	picture = GFX_report_diavolo_vs_giorno
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.37.a
+		if = {
+			limit = {
+				tag = JOJ
+			}
+			activate_mission = time_left_till_final_battle
+			DIO = {
+				activate_mission = time_left_till_final_battle
+				country_event = {
+					id = jojo.37
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_global_flag = revolt_in_passione
+				set_variable = {
+					diavolo_level_vs_giorno = 0
+				}
+				set_variable = {
+					giorno_level_vs_diavolo = 0
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Giorno takes over Passione
+	id = jojo.38
+	title = jojo.38.t
+	desc = jojo.38.d
+	
+	picture = GFX_report_diavolo_vs_giorno
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.38.a
+	}
+}
+
+country_event = { #Diavolo continues to reign over Passione
+	id = jojo.39
+	title = jojo.39.t
+	desc = jojo.39.d
+	
+	picture = GFX_report_kingu_crimson
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.39.a
+	}
+}
+
+country_event = { #Jonathan considers to resign
+	id = jojo.40
+	title = jojo.40.t
+	desc = jojo.40.d
+	
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.40.a
+		country_event = {
+			id = jojo.41
+			days = 10
+		}
+	}
+}
+
+country_event = { #Voting on Jonathan's resignation
+	id = jojo.41
+	title = jojo.41.t
+	desc = jojo.41.d
+	
+	picture = GFX_report_event_tank_factory
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.41.a
+		add_political_power = 50
+		add_stability = 0.1
+		hidden_effect = {
+			complete_national_focus = JOJ_jonathan_path
+		}
+	}
+
+	option = {
+		name = jojo.41.b
+		country_event = {
+			id = jojo.21
+			days = 0
+		}
+	}
+}
+
+country_event = { #Joseph calls Stroheim and asks him to join Joestars once again
+	id = jojo.42
+	title = jojo.42.t
+	desc = jojo.42.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = jojo.42.a
+		JOJ = {
+			country_event = {
+				id = jojo.43
+				days = 1
+			}
+		}
+		every_unit_leader = {
+			limit = {
+				has_id = 9952
+			}
+			set_nationality = JOJ
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Deny
+		name = jojo.42.a
+		JOJ = {
+			country_event = {
+				id = jojo.44
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Stroheim agrees
+	id = jojo.43
+	title = jojo.43.t
+	desc = jojo.43.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.43.a
+	}
+}
+
+country_event = { #Stroheim denies
+	id = jojo.44
+	title = jojo.44.t
+	desc = jojo.44.d
+	
+	picture = GFX_report_event_generic_conference
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.44.a
+	}
+}

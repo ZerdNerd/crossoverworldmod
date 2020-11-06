@@ -1,0 +1,319 @@
+expeditions_for_resources_dec_category = {
+
+	organize_expedition_in_this_state_sioux = {
+		icon = generic_prospect_for_resources
+
+		visible = {
+			ROOT = {
+				original_tag = JOJ
+			}
+			SIO = {
+				exists = yes
+			}
+			JOJ = {
+				has_country_flag = sioux_agreed_to_explore
+			}
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = SIO
+				NOT = {
+					has_variable = has_been_explored
+				}
+			}
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		on_map_mode = map_only
+
+		fire_only_once = no
+
+		#visible = {
+		#	FROM = {
+		#		NOT = {
+		#			has_variable = has_been_explored
+		#		}
+		#	}
+		#}
+
+		days_remove = 60
+		fixed_random_seed = no
+		remove_effect = {
+			random_list = {
+				25 = {
+					add_resource = {
+						type = oil
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.1
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = oil
+    							amount = 3
+    							exporter = SIO
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = rubber
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.2
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = rubber
+    							amount = 3
+    							exporter = SIO
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = steel
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.3
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = steel
+    							amount = 3
+    							exporter = SIO
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = chromium
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.4
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = chromium
+    							amount = 3
+    							exporter = SIO
+							}		
+						}
+					}
+				}
+			}
+		}
+	}
+
+	organize_expedition_in_this_state_flensburg = {
+		icon = generic_prospect_for_resources
+
+		visible = {
+			ROOT = {
+				original_tag = JOJ
+			}
+			FLE = {
+				exists = yes
+			}
+			JOJ = {
+				has_country_flag = flensburg_agreed_to_explore
+			}
+		}
+
+		state_target = yes
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = FLE
+				NOT = {
+					state = 632
+					state = 634
+					state = 638
+				}
+				NOT = {
+					has_variable = has_been_explored
+				}
+			}
+		}
+
+		cost = 50
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		on_map_mode = map_only
+
+		fire_only_once = no
+
+		#visible = {
+		#	FROM = {
+		#		NOT = {
+		#			has_variable = has_been_explored
+		#		}
+		#	}
+		#}
+
+		days_remove = 60
+		fixed_random_seed = no
+		remove_effect = {
+			random_list = {
+				25 = {
+					add_resource = {
+						type = oil
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.1
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = oil
+    							amount = 3
+    							exporter = FLE
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = rubber
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.2
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = rubber
+    							amount = 3
+    							exporter = FLE
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = steel
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.3
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = steel
+    							amount = 3
+    							exporter = FLE
+							}		
+						}
+					}
+				}
+				25 = {
+					add_resource = {
+						type = chromium
+    					amount = 6
+						state = FROM
+					}
+					state_event = {
+						id = search_for_resources.4
+    					days = 0
+    					trigger_for = ROOT
+					}
+					hidden_effect = {
+						FROM = {
+							set_variable = {
+								has_been_explored = 1
+							}
+						}
+						ROOT = {
+							create_import = {
+    							resource = chromium
+    							amount = 3
+    							exporter = FLE
+							}		
+						}
+					}
+				}
+			}
+		}
+	}
+}

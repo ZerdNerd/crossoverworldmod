@@ -19,6 +19,35 @@ leader_traits = {
 		}
 	}
 
+	underage_monarch = {
+		random = no
+		stability_factor = 0.10
+		political_advisor_cost_factor = 0.25
+		trade_laws_cost_factor = 0.25
+		mobilization_laws_cost_factor = 0.25
+		economy_cost_factor = 0.25
+	}
+
+	legitimate_heir = {
+		random = no
+		stability_factor = 0.10
+		political_power_factor = 0.1
+	}
+
+	collaborator_king = {
+		random = no
+		fascism_drift = 0.1
+		fascism_acceptance = 75
+		political_power_factor = 0.1
+	}
+
+	professional_crisis_solver = { #How, you ask? NIGERUNDAYO, of course!
+		random = no
+		stability_factor = 0.05
+		political_power_factor = 0.05
+		army_speed_factor = 0.05
+	}
+
 	imperial_sanction = {
 		random = no
 

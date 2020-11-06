@@ -508,5 +508,46 @@ create_ambition_areas = {
 			}
 			set_variable = { ambition_area_@SIO = 1 }
 		}
+		# Dio
+		if = {
+			limit = {
+				OR = {
+					is_core_of = DIO
+					is_claimed_by = DIO
+					is_core_of = PIL
+					is_core_of = JOJ
+					is_core_of = MOR
+					is_core_of = MO2
+					is_core_of = PAS
+					state = 208
+					state = 226
+					state = 263
+					state = 232
+					state = 178
+					state = 207
+				}
+			}
+			set_variable = { ambition_area_@DIO = 1 }
+		}
+		# SONO CHI NO SADAME
+		if = {
+			limit = {
+				OR = {
+					is_core_of = JOJ
+					is_claimed_by = JOJ
+					is_core_of = PIL
+					is_core_of = DIO
+					is_core_of = MOR
+					is_core_of = PAS
+					state = 208
+					state = 226
+					state = 263
+					state = 232
+					state = 178
+					state = 207
+				}
+			}
+			set_variable = { ambition_area_@JOJ = 1 }
+		}
 	}
 }

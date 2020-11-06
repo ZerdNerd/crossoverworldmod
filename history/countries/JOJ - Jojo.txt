@@ -22,6 +22,7 @@ set_technology = {
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	stands_are_allowed = 1
 }
 
 if = {
@@ -103,6 +104,16 @@ set_popularities = {
 	monarchism = 0
 }
 
+country_event = {
+	id = jojo.40
+	days = 234
+}
+
+country_event = {
+	id = jojo.37
+	days = 523
+}
+
 set_politics = {
 	ruling_party = democratic
 	last_election = "1930.7.1"
@@ -119,7 +130,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = administrative_monarchy
 	traits = {
-		#
+		connected_citizen
 	}
 }
 
@@ -130,7 +141,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = centrism
 	traits = {
-		#
+		connected_citizen
 	}
 }
 
@@ -141,7 +152,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = nazism
 	traits = {
-		#
+		connected_citizen
 	}
 }
 
@@ -152,7 +163,7 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = marxism
 	traits = {
-		#
+		connected_citizen
 	}
 }
 

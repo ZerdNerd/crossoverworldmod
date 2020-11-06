@@ -1,0 +1,188 @@
+#This is from Kaiserreich.
+default_pp_spend_amount = {
+	enable = {
+		always = yes
+	}
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = 100
+	}
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 100
+	}
+}
+
+black_monday_tactic = { #This is, however, original. It prioritizes cleaning up BM over picking ministers.
+	enable = {
+		OR = {
+			has_idea = TCWMod_black_monday
+			has_idea = TCWMod_black_monday_2
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = idea
+		value = -100
+	}
+
+	ai_strategy = {
+		type = pp_spend_amount
+		id = decision
+		value = 100
+	}
+}
+
+do_not_waste_pp_on_leaders = {
+	enable = {
+		has_war = no
+		has_political_power < 200
+	}
+	abort = {
+		OR = {
+			has_war = yes
+			NOT = { has_political_power < 200 }
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = general
+		value = -9999
+	}
+	ai_strategy = {
+		type = pp_spend_priority
+		id = admiral
+		value = -9999
+	}
+}
+
+do_not_waste_pp_if_saving_for_manpower_laws = {
+	enable = {
+		manpower_per_military_factory < 500
+		has_war = yes
+	}
+	abort = {
+		OR = {
+			manpower_per_military_factory > 500
+			has_war = no
+		}
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = guarantee
+		value = -9999
+	}
+}
+
+do_not_waste_pp_befriend = {
+	enable = {
+		has_political_power < 200
+	}
+	abort = {
+		has_political_power > 199
+	}
+
+	ai_strategy = {
+		type = pp_spend_priority
+		id = relation
+		value = -9999
+	}
+}
+
+division_limiter = { #THIS IS DIVISION LIMITER. IT IS USED FOR COUNTRIES THAT WENT >300 DIVS IN TEST PLAYTHROUGHS. MORIOH IS THERE BECAUSE ITS CRAZY NOISY BIZZARE TOWN.
+	enable = {
+		OR = {
+			tag = GON
+			tag = DIO
+			tag = FLO
+			tag = MOR
+		}
+		is_ai = yes
+		has_reached_maximum_divisions = yes
+		NOT = { surrender_progress > 0.05 }
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = build_army
+		id = paratroopers
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = anti_tank
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = marine
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mobile
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = armor
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = mountaineer
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = bicycle
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = garrison
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = militia
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = cavalry
+		value = -1000
+	}
+
+	ai_strategy = {
+		type = build_army
+		id = infantry
+		value = -1000
+	}
+}
+

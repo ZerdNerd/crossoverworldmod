@@ -8,6 +8,11 @@ category = {
 		DIO_infantry_positive_combat
 		DIO_infantry_retreat
 		DIO_infantry_move_out
+		JOJ_infantry_idle
+		JOJ_infantry_neutral_combat
+		JOJ_infantry_positive_combat
+		JOJ_infantry_negative_combat
+		JOJ_infantry_retreat
  	}
   	compressor = {
 		enabled = yes
@@ -45,6 +50,76 @@ sound = {
 sound = {
 	name = "DIO_Positive_003"
 	file = "voices/dio/DIO_Positive_003.wav"
+}
+
+########### JOESTARS
+sound = {
+	name = "JOJ_Idle_001"
+	file = "voices/joj/JOJ_Idle_001.wav"
+}
+sound = {
+	name = "JOJ_Idle_002"
+	file = "voices/joj/JOJ_Idle_002.wav"
+}
+sound = {
+	name = "JOJ_Idle_003"
+	file = "voices/joj/JOJ_Idle_003.wav"
+}
+sound = {
+	name = "JOJ_Idle_004"
+	file = "voices/joj/JOJ_Idle_004.wav"
+}
+sound = {
+	name = "JOJ_Idle_005"
+	file = "voices/joj/JOJ_Idle_005.wav"
+}
+sound = {
+	name = "JOJ_Positive_001"
+	file = "voices/joj/JOJ_Positive_001.wav"
+}
+sound = {
+	name = "JOJ_Positive_002"
+	file = "voices/joj/JOJ_Positive_002.wav"
+}
+sound = {
+	name = "JOJ_Positive_003"
+	file = "voices/joj/JOJ_Positive_003.wav"
+}
+sound = {
+	name = "JOJ_Positive_004"
+	file = "voices/joj/JOJ_Positive_004.wav"
+}
+sound = {
+	name = "JOJ_Positive_005"
+	file = "voices/joj/JOJ_Positive_005.wav"
+}
+sound = {
+	name = "JOJ_Positive_006"
+	file = "voices/joj/JOJ_Positive_006.wav"
+}
+sound = {
+	name = "JOJ_Negative_001"
+	file = "voices/joj/JOJ_Negative_001.wav"
+}
+sound = {
+	name = "JOJ_Negative_002"
+	file = "voices/joj/JOJ_Negative_002.wav"
+}
+sound = {
+	name = "JOJ_Negative_003"
+	file = "voices/joj/JOJ_Negative_003.wav"
+}
+sound = {
+	name = "JOJ_Negative_004"
+	file = "voices/joj/JOJ_Negative_004.wav"
+}
+sound = {
+	name = "JOJ_Retreat_001"
+	file = "voices/joj/JOJ_Retreat_001.wav"
+}
+sound = {
+	name = "JOJ_Retreat_002"
+	file = "voices/joj/JOJ_Retreat_002.wav"
 }
 
 ########## Soundeffects
@@ -104,6 +179,79 @@ soundeffect = {
     name = "DIO_infantry_move_out"
     sounds = {
         sound = DIO_MoveOut_001
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.8
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = {
+    name = "JOJ_infantry_idle"
+    sounds = {
+        sound = JOJ_Idle_001
+        sound = JOJ_Idle_002
+        sound = JOJ_Idle_003
+        sound = JOJ_Idle_004
+        sound = JOJ_Idle_005
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.8
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = {
+    name = "JOJ_infantry_negative_combat"
+    sounds = {
+        sound = JOJ_Negative_001
+        sound = JOJ_Negative_002
+        sound = JOJ_Negative_003
+        sound = JOJ_Negative_004
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.8
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = {
+    name = "JOJ_infantry_neutral_combat"
+    sounds = {
+        sound = JOJ_Positive_001
+        sound = JOJ_Positive_002
+        sound = JOJ_Positive_003
+        sound = JOJ_Positive_004
+        sound = JOJ_Positive_005
+        sound = JOJ_Positive_006
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.8
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = {
+    name = "JOJ_infantry_positive_combat"
+    sounds = {
+        sound = JOJ_Positive_001
+        sound = JOJ_Positive_002
+        sound = JOJ_Positive_003
+        sound = JOJ_Positive_004
+        sound = JOJ_Positive_005
+        sound = JOJ_Positive_006
+    }
+	max_audible = 1
+	max_audible_behaviour = fail
+	volume = 0.8
+	volume_random_offset = { 0.0 -0.15 }
+	playbackrate_random_offset = { 0.0 -0.15}
+}
+soundeffect = {
+    name = "JOJ_infantry_retreat"
+    sounds = {
+        sound = JOJ_Retreat_001
+		sound = JOJ_Retreat_002
     }
 	max_audible = 1
 	max_audible_behaviour = fail

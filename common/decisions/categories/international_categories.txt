@@ -1,12 +1,34 @@
 expeditions_for_resources_dec_category = {
 	icon = generic_political_actions
 	allowed = {
-		original_tag = FRI
-		SIO = {
-			exists = yes
-		}
-		FRI = {
-			has_country_flag = FRI_sioux_accepted_expeditions
+		OR = {
+			AND = {
+				original_tag = FRI
+				SIO = {
+					exists = yes
+				}
+				FRI = {
+					has_country_flag = FRI_sioux_accepted_expeditions
+				}
+			}
+			AND = {
+				original_tag = JOJ
+				SIO = {
+					exists = yes
+				}
+				JOJ = {
+					has_country_flag = sioux_agreed_to_explore
+				}
+			}
+			AND = {
+				original_tag = JOJ
+				FLE = {
+					exists = yes
+				}
+				JOJ = {
+					has_country_flag = flensburg_agreed_to_explore
+				}
+			}
 		}
 	}
 	

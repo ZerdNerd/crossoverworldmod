@@ -1,0 +1,355 @@
+passione_revolt_dec_category = {
+	support_giorno_with_stand_users = {
+		icon = generic_operation
+
+		visible = {
+			OR = {
+				tag = JOJ
+				tag = DIO
+			}
+			has_global_flag = revolt_in_passione
+			NOT = {
+				has_country_flag = chose_to_support_diavolo
+			}
+		}
+
+		cost = 15
+
+		complete_effect = {
+			add_manpower = -15
+			custom_effect_tooltip = jojo_will_add_5_support_points
+			hidden_effect = {
+				JOJ = {
+					add_to_variable = {
+						giorno_level_vs_diavolo = 2
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = JOJ
+						}
+					}
+					JOJ = {
+						add_to_variable = {
+							JOJ_support_giorno_points = 2
+						}
+					}
+					else = {
+						JOJ = {
+							add_to_variable = {
+								DIO_support_giorno_points = 2
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = chose_to_support_giorno
+						}
+					}
+					set_country_flag = chose_to_support_giorno
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	support_giorno_with_equipment = {
+		icon = generic_operation
+
+		visible = {
+			OR = {
+				tag = JOJ
+				tag = DIO
+			}
+			has_global_flag = revolt_in_passione
+			NOT = {
+				has_country_flag = chose_to_support_diavolo
+			}
+		}
+
+		cost = 35
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = -50
+			}
+			custom_effect_tooltip = jojo_will_add_3_support_points
+			hidden_effect = {
+				JOJ = {
+					add_to_variable = {
+						giorno_level_vs_diavolo = 3
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = JOJ
+						}
+					}
+					JOJ = {
+						add_to_variable = {
+							JOJ_support_giorno_points = 3
+						}
+					}
+					else = {
+						JOJ = {
+							add_to_variable = {
+								DIO_support_giorno_points = 3
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = chose_to_support_giorno
+						}
+					}
+					set_country_flag = chose_to_support_giorno
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	support_giorno_with_speedwagon_foundation_tech = {
+		icon = generic_operation
+
+		visible = {
+			tag = JOJ
+			has_global_flag = revolt_in_passione
+			NOT = {
+				has_country_flag = chose_to_support_diavolo
+			}
+		}
+
+		cost = 75
+
+		complete_effect = {
+			custom_effect_tooltip = jojo_will_add_2_support_points
+			hidden_effect = {
+				JOJ = {
+					add_to_variable = {
+						giorno_level_vs_diavolo = 5
+					}
+				}
+				JOJ = {
+					add_to_variable = {
+						JOJ_support_giorno_points = 5
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = chose_to_support_giorno
+						}
+					}
+					set_country_flag = chose_to_support_giorno
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	support_diavolo_with_stand_users = {
+		icon = generic_operation
+
+		visible = {
+			tag = DIO
+			has_global_flag = revolt_in_passione
+			NOT = {
+				has_country_flag = chose_to_support_giorno
+			}
+		}
+
+		cost = 15
+
+		complete_effect = {
+			add_manpower = -15
+			custom_effect_tooltip = jojo_will_add_5_support_points
+			hidden_effect = {
+				JOJ = {
+					add_to_variable = {
+						diavolo_level_vs_giorno = 3
+					}
+				}
+				JOJ = {
+					add_to_variable = {
+						DIO_support_diavolo_points = 3
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = chose_to_support_diavolo
+						}
+					}
+					set_country_flag = chose_to_support_diavolo
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	support_diavolo_with_equipment = {
+		icon = generic_operation
+
+		visible = {
+			tag = DIO
+			has_global_flag = revolt_in_passione
+			NOT = {
+				has_country_flag = chose_to_support_giorno
+			}
+		}
+
+		cost = 35
+
+		complete_effect = {
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = -50
+			}
+			custom_effect_tooltip = jojo_will_add_3_support_points
+			hidden_effect = {
+				JOJ = {
+					add_to_variable = {
+						diavolo_level_vs_giorno = 3
+					}
+				}
+				JOJ = {
+					add_to_variable = {
+				    	DIO_support_diavolo_points = 3
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = chose_to_support_diavolo
+						}
+					}
+					set_country_flag = chose_to_support_diavolo
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	time_left_till_final_battle = {
+		icon = generic_operation
+
+		visible = {
+			OR = {
+				tag = JOJ
+				tag = DIO
+			}
+			has_global_flag = revolt_in_passione
+		}
+		available = {
+			always = no
+		}
+		activation = { always = no }
+		selectable_mission = no
+		days_mission_timeout = 40
+		is_good = yes
+
+		timeout_effect = {
+			hidden_effect = {
+				if = {
+					limit = {
+						JOJ = {
+							check_variable = {
+								diavolo_level_vs_giorno > giorno_level_vs_diavolo
+							}
+						}
+					}
+					JOJ = {
+						country_event = {
+							id = jojo.39
+							days = 0
+						}
+					}
+					DIO = {
+						country_event = {
+							id = jojo.39
+							days = 0
+						}
+					}
+					clr_global_flag = revolt_in_passione
+					set_global_flag = diavolo_won
+					if = {
+						limit = {
+							DIO = {
+								has_country_flag = chose_to_support_diavolo
+							}
+						}
+						DIO = {
+							set_variable = { will_get_passione_as_allies = 1 }
+						}
+					}
+				}
+				if = {
+					limit = {
+						JOJ = {
+							check_variable = {
+								giorno_level_vs_diavolo > diavolo_level_vs_giorno
+							}
+						}
+					}
+					JOJ = {
+						country_event = {
+							id = jojo.38
+							days = 0
+						}
+					}
+					DIO = {
+						country_event = {
+							id = jojo.38
+							days = 0
+						}
+					}
+					clr_global_flag = revolt_in_passione
+					set_global_flag = giorno_won
+					if = {
+						limit = {
+							JOJ = {
+								has_country_flag = chose_to_support_giorno
+								check_variable = { JOJ_support_giorno_points > DIO_support_giorno_points }
+							}
+						}
+						JOJ = {
+							set_variable = { will_get_giorno_as_ally = 1 }
+						}
+						else = {
+							DIO = {
+								set_variable = { will_get_giorno_as_ally = 1 }
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+}

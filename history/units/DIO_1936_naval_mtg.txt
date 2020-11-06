@@ -1,0 +1,15 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "The Naval Fist"			
+		naval_base = 7633
+		task_force = {				
+			name = "Task Force Alpha"
+			location = 7633
+			ship = { name = "Lord Dio" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = DIO } } }
+			ship = { name = "Pucci" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = DIO } } }
+			ship = { name = "Vanilla Ice" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DIO } } }
+			ship = { name = "Pride of Dio" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = DIO } } }
+		}
+	}
+}

@@ -1,0 +1,65 @@
+﻿###########################
+# Search for Resources Events
+###########################
+
+add_namespace = search_for_resources
+
+state_event = { #We've found oil, m'lord!
+	id = search_for_resources.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event search_for_resources.1"}
+	title = search_for_resources.1.t
+	desc = search_for_resources.1.d
+	picture = GFX_report_event_hol_polderen
+
+	is_triggered_only = yes
+
+	option = {
+		name = search_for_resources.1.a
+		
+	}
+}
+
+state_event = { #We've found rubber, m'lord!
+	id = search_for_resources.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event search_for_resources.2"}
+	title = search_for_resources.2.t
+	desc = search_for_resources.2.d
+	picture = GFX_report_event_hol_polderen
+
+	is_triggered_only = yes
+
+	option = {
+		name = search_for_resources.2.a
+		
+	}
+}
+
+state_event = { #We've found iron, m'lord!
+	id = search_for_resources.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event search_for_resources.3"}
+	title = search_for_resources.3.t
+	desc = search_for_resources.3.d
+	picture = GFX_report_event_hol_polderen
+
+	is_triggered_only = yes
+
+	option = {
+		name = search_for_resources.3.a
+		
+	}
+}
+
+state_event = { #We've found chromium, m'lord!
+	id = search_for_resources.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event search_for_resources.4"}
+	title = search_for_resources.4.t
+	desc = search_for_resources.4.d
+	picture = GFX_report_event_hol_polderen
+
+	is_triggered_only = yes
+
+	option = {
+		name = search_for_resources.4.a
+		
+	}
+}

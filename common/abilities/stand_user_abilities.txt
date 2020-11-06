@@ -18,7 +18,7 @@ ability = {
 		}
 		
 		cost = 0.25
-		duration = 168
+		duration = 240
 		
 		one_time_effect = {
 			add_temporary_buff_to_units = {
@@ -90,7 +90,7 @@ ability = {
 		}
 		
 		cost = 0.75
-		duration = 120
+		duration = 240
 		
 		one_time_effect = {
 			add_temporary_buff_to_units = {
@@ -144,6 +144,841 @@ ability = {
 				days = 5
 				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
 			}
+		}
+	}
+
+	muda_muda_muda_giorno = {
+		name = ABILITY_MUDA_MUDA_G
+		desc = ABILITY_MUDA_MUDA_G_DESC
+		
+		sound_effect = GEMuda
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82000
+				has_id = 8200
+			}
+			skill < 7
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.75
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.35
+				combat_breakthrough = 0.3
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	return_to_zero = {
+		name = ABILITY_RTZ
+		desc = ABILITY_RTZ_DESC
+		
+		sound_effect = requiem_da
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82000
+				has_id = 8200
+			}
+			skill > 6
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 1.15
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				combat_defense = 5.0
+				combat_breakthrough = 0.5
+				org_damage_multiplier = -1
+				str_damage_multiplier = -1
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	healing = {
+		name = ABILITY_HEALING
+		desc = ABILITY_HEALING_DESC
+		
+		sound_effect = command_power_ability_defensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82000
+				has_id = 8200
+			}
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 1.15
+		duration = 240
+		
+		unit_modifiers = {
+			land_reinforce_rate = 0.4
+		}
+	}
+
+	divination = {
+		name = ABILITY_DIVINATION
+		desc = ABILITY_DIVINATION_DESC
+		
+		sound_effect = command_power_ability_defensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8001
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.7
+		duration = 150
+		
+		unit_modifiers = {
+			recon_factor = 0.4
+		}
+	}
+
+	dora_ra_ra = {
+		name = ABILITY_DORA_RA_RA
+		desc = ABILITY_DORA_RA_RA_DESC
+		
+		sound_effect = CrazyDiamondDora
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8003
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.30
+				combat_breakthrough = 0.25
+				str_damage_multiplier = 0.15
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	restoration = {
+		name = ABILITY_RESTORATION
+		desc = ABILITY_RESTORATION_DESC
+		
+		sound_effect = command_power_ability_defensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8003
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.9
+		duration = 240
+		
+		unit_modifiers = {
+			land_reinforce_rate = 0.8
+			army_morale_factor = 0.8
+		}
+
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				org_damage_multiplier = -1
+				str_damage_multiplier = -1
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	ora_ora_ora_stonefree = {
+		name = ABILITY_ORA_ORA_ORA_SF
+		desc = ABILITY_ORA_ORA_ORA_SF_DESC
+		
+		sound_effect = StoneFreeOra
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8004
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.3
+				combat_breakthrough = 0.3
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	emerald_splash = {
+		name = ABILITY_EMERALD_SPLASH
+		desc = ABILITY_EMERALD_SPLASH_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8008
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				combat_breakthrough = 0.25
+				str_damage_multiplier = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	3_freeze = {
+		name = ABILITY_THREE_FREEZE
+		desc = ABILITY_THREE_FREEZE_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8009
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				combat_defense = 0.75
+				combat_breakthrough = 0.25
+				str_damage_multiplier = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	za_hando = {
+		name = ABILITY_THE_HAND
+		desc = ABILITY_THE_HAND_DESC
+		
+		sound_effect = za_hando_sound
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8010
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				combat_breakthrough = 0.25
+				str_damage_multiplier = -0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	sword_slash_barrage = {
+		name = ABILITY_SWORD_SLASH_BARRAGE
+		desc = ABILITY_SWORD_SLASH_BARRAGE_DESC
+		
+		sound_effect = hora_hora_hora
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8011
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				combat_defense = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	sword_launch = {
+		name = ABILITY_SWORD_LAUNCH
+		desc = ABILITY_SWORD_LAUNCH_BARRAGE_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8011
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.75
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				str_damage_multiplier = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	heavens_door = {
+		name = ABILITY_HEAVENS_DOOR
+		desc = ABILITY_HEAVENS_DOOR_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8012
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			recon_factor = 0.7
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.3
+				str_damage_multiplier = 0.3
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	create_illusion = {
+		name = ABILITY_ILLUSION_CREATION
+		desc = ABILITY_ILLUSION_CREATION_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8101
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			recon_factor = 0.5
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				str_damage_multiplier = 0.5
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	unearth_their_memories = {
+		name = ABILITY_MEMORIES
+		desc = ABILITY_MEMORIES_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8102
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			recon_factor = 0.1
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.3
+				str_damage_multiplier = 0.3
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	redirect_the_pain = {
+		name = ABILITY_PAIN_REDIRECTION
+		desc = ABILITY_PAIN_REDIRECTION_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8103
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				str_damage_multiplier = -0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	void_attack = {
+		name = ABILITY_VOID_ATTACK
+		desc = ABILITY_VOID_ATTACK_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8104
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.95
+		duration = 180
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 1
+				str_damage_multiplier = 1
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	prepare_their_souls = {
+		name = ABILITY_PREPARE_THEIR_SOULS
+		desc = ABILITY_PREPARE_THEIR_SOULS_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8105
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			land_reinforce_rate = 0.25
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				str_damage_multiplier = -0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	weather_manipulation = {
+		name = ABILITY_WEATHER_MANIPULATION
+		desc = ABILITY_WEATHER_MANIPULATION_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8256
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			heat_attrition_factor = -1
+			winter_attrition_factor = -1
+			acclimatization_cold_climate_gain_factor = 0.5
+			acclimatization_hot_climate_gain_factor = 0.5
+			air_weather_penalty = -1
+		}
+	}
+
+	attack_with_sticker_trick = {
+		name = ABILITY_ATTACK_WTIH_STICKER_TRICK
+		desc = ABILITY_ATTACK_WTIH_STICKER_TRICK_DESC
+		
+		sound_effect = kiss_sound
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8255
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 240
+
+		unit_modifiers = {
+			experience_gain_army = 0.05
+		}
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.1
+				str_damage_multiplier = 0.1
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	ari_ari_ari = {
+		name = ABILITY_ARI_ARI_ARI
+		desc = ABILITY_ARI_ARI_ARI_DESC
+		
+		sound_effect = ari_ari_ari
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82010
+				has_id = 8201
+			}
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.25
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.25
+				combat_breakthrough = 0.2
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	aerosmith_attack = {
+		name = ABILITY_AEROSMITH_ATTACK
+		desc = ABILITY_AEROSMITH_ATTACK_DESC
+		
+		sound_effect = volare_via
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82020
+				has_id = 8202
+			}
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.6
+		duration = 180
+
+		unit_modifiers = {
+			experience_gain_air = 0.05
+			army_bonus_air_superiority_factor = 1
+			air_night_penalty = -0.5
+		}
+
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.1
+				combat_breakthrough = 0.1
+				str_damage_multiplier = 0.1
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	bullet_control = {
+		name = ABILITY_BULLET_CONTROL
+		desc = ABILITY_BULLET_CONTROL_DESC
+		
+		sound_effect = pass_pass_pass
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82040
+				has_id = 8204
+			}
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.6
+		duration = 180
+
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.4
+				combat_breakthrough = 0.4
+				str_damage_multiplier = -0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	replay = {
+		name = ABILITY_REPLAY
+		desc = ABILITY_REPLAY_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			OR = {
+				has_id = 82030
+				has_id = 8203
+			}
+			has_trait = stand_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.6
+		duration = 180
+		
+		unit_modifiers = {
+			planning_speed = 1
+			recon_factor = 1
+			experience_gain_army = 0.05
 		}
 	}
 }

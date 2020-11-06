@@ -1,0 +1,77 @@
+dio_helps_morioh = {
+	enable = {
+		tag = DIO
+		has_completed_focus = DIO_support_for_morioh
+		MOR = {
+			has_war_with = MO2
+			NOT = {
+				has_war_with = DIO
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "MOR"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "MOR"			
+		value = 100
+	}
+}
+
+dio_helps_humsin = {
+	enable = {
+		tag = DIO
+		has_completed_focus = DIO_support_for_humsin
+		DES = {
+			has_war = yes
+			NOT = {
+				has_war_with = DIO
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "DES"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "DES"			
+		value = 100
+	}
+}
+
+dio_helps_shen = {
+	enable = {
+		tag = DIO
+		has_completed_focus = DIO_support_for_lord_shen
+		GON = {
+			has_war = yes
+			NOT = {
+				has_war_with = DIO
+			}
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "GON"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "GON"			
+		value = 100
+	}
+}

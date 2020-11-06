@@ -1336,13 +1336,8 @@ focus = {
 		prerequisite = { focus = AVA_trade_deal_with_khurain focus = AVA_mount_the_defence }
 		available_if_capitulated = yes
 		available = {
-			OR = {
-				MAI = {
-					is_faction_leader = yes
-				}
-				GRN = {
-					is_faction_leader = yes
-				}
+			MAI = {
+				is_faction_leader = yes
 			}
 			is_in_faction = no
 		}
@@ -1350,30 +1345,10 @@ focus = {
 			factor = 1
 		} 
 		completion_reward = { 
-			if = {
-				limit = {
-					MAI = {
-						is_faction_leader = yes
-					}
-				}
-				MAI = {
-					country_event = {
-						id = everrealm.24
-						days = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					GRN = {
-						is_faction_leader = yes
-					}
-				}
-				GRN = {
-					country_event = {
-						id = everrealm.24
-						days = 1
-					}
+			MAI = {
+				country_event = {
+					id = everrealm.24
+					days = 1
 				}
 			}
 		}		
@@ -1474,11 +1449,13 @@ focus = {
 			OR = {
 				has_war_with = EN3
 				has_war_with = EN4
-				EN3 = {
-					exists = no
-				}
-				EN4 = {
-					exists = no
+				AND = {
+					EN3 = {
+						exists = no
+					}
+					EN4 = {
+						exists = no
+					}
 				}
 			}
 		}

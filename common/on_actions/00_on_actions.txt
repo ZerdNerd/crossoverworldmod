@@ -54,7 +54,6 @@ on_actions = {
 						check_variable = { days_since_campaign_started < 31 }
 					}
 					add_to_variable = { days_since_campaign_started = 1 }
-					log = "[GetDateText] - Another day from last campaign passed in [THIS.GetName]"
 				}
 				every_state = {
 					limit = {
@@ -62,7 +61,6 @@ on_actions = {
 						check_variable = { days_since_campaign_started = 31 }
 					}
 					clear_variable = days_since_campaign_started
-					log = "[GetDateText] - New campaign can be organized in [THIS.GetName]"
 				}
 			}
 			if = {
@@ -528,6 +526,24 @@ on_actions = {
 		}
 	}
 
+	on_weekly = {
+		effect = {
+			# unit limit calculations - of course from KR
+			if = {
+				limit = {
+					OR = {
+						tag = GON
+						tag = DIO
+						tag = FLO
+						tag = MOR
+					}
+					is_ai = yes
+				}
+				calculate_maximum_divisions = yes
+			}
+		}
+	}
+
 	on_nuke_drop = {
 
 		effect = {
@@ -680,6 +696,158 @@ on_actions = {
 				}
 			}
 
+			#################### JOJO STUFF
+
+			if = {
+				limit = {
+					OR = {
+						AND = {
+							ROOT = {
+								tag = DIO
+							}
+							FROM = {
+								tag = JOJ
+							}
+						}
+						AND = {
+							ROOT = {
+								tag = JOJ
+							}
+							FROM = {
+								tag = DIO
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						DIO = {
+							OR = {
+								has_variable = will_get_giorno_as_ally
+								has_variable = will_get_passione_as_allies
+							}
+						}
+					}
+					if = {
+						limit = {
+							DIO = {
+								has_variable = will_get_passione_as_allies
+								has_global_flag = diavolo_won
+							}
+						}
+						PAS = {
+							transfer_state = 541
+							transfer_state = 563
+							load_oob = passione
+						}
+						DIO = {
+							puppet = PAS
+						}
+						PAS = {
+							declare_war_on = {
+								target = JOJ
+								type = annex_everything
+							}
+						}
+						else_if = {
+							limit = {
+								DIO = {
+									has_variable = will_get_giorno_as_ally
+									has_global_flag = giorno_won
+								}
+							}
+							GIO = {
+								transfer_state = 541
+								transfer_state = 563
+								load_oob = passione
+							}
+							DIO = {
+								puppet = GIO
+							}
+							GIO = {
+								declare_war_on = {
+									target = JOJ
+									type = annex_everything
+								}
+							}
+							else = {
+
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						JOJ = {
+							has_variable = will_get_giorno_as_ally
+						}
+					}
+					JOJ = {
+						load_oob = passione
+						create_corps_commander = {
+							name = "Giorno Giovanna"
+							portrait_path = "gfx/leaders/GIO/giorno.dds"
+							desc = "POLITICS_GIORNO_DESC"
+							traits = { stand_user }
+							skill = 6
+						    attack_skill = 6
+    						defense_skill = 6
+    						planning_skill = 6
+    						logistics_skill = 5
+    						id = 82000
+						}
+						create_corps_commander = {
+							name = "Bruno Bucciarati"
+							portrait_path = "gfx/leaders/GIO/bucciarati.dds"
+							desc = "POLITICS_BUCCIARATI_DESC"
+							traits = { stand_user }
+							skill = 5
+    						attack_skill = 5
+    						defense_skill = 5
+    						planning_skill = 5
+    						logistics_skill = 5
+    						id = 82010
+						}
+						create_corps_commander = {
+							name = "Narancia Ghirga"
+							portrait_path = "gfx/leaders/GIO/narancia.dds"
+							desc = "POLITICS_NARANCIA_DESC"
+							traits = { stand_user }
+							skill = 3
+    						attack_skill = 4
+    						defense_skill = 4
+    						planning_skill = 3
+    						logistics_skill = 3
+    						id = 82020
+						}
+						create_corps_commander = {
+							name = "Guido Mista"
+							portrait_path = "gfx/leaders/GIO/mista.dds"
+							desc = "POLITICS_MISTA_DESC"
+							traits = { stand_user }
+							skill = 4 #hello darkness my old friend
+    						attack_skill = 4
+    						defense_skill = 4
+    						planning_skill = 4
+    						logistics_skill = 4
+    						id = 82040
+						}
+						create_corps_commander = {
+							name = "Leone Abbacchio"
+							portrait_path = "gfx/leaders/GIO/abbacchio.dds"
+							desc = "POLITICS_ABBACCHIO_DESC"
+							traits = { stand_user }
+							skill = 4
+    						attack_skill = 5
+    						defense_skill = 5
+    						planning_skill = 3
+    						logistics_skill = 3
+    						id = 82030
+						}
+					}
+				}
+			}
+
 			#################### REST
 			if = {
 				limit = {
@@ -765,6 +933,45 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = MO2
+					}
+				}
+				MO2 = {
+					every_unit_leader = {
+						limit = {
+							OR = {
+								has_id = 8003
+								has_id = 8009
+								has_id = 8010
+								has_id = 8012
+							}
+						}
+						set_nationality = JOJ
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = GRN
+					}
+					SIO = {
+						has_capitulated = no
+					}
+				}
+				SIO = {
+					leave_faction = yes
+					if = {
+						limit = {
+							has_war_with = GON
+						}
+						white_peace = GON
+					}
+				}
+			}
 			if = {
 				limit = {
 					ROOT = {
@@ -1047,6 +1254,18 @@ on_actions = {
 					divide_variable = { stando_tsukai = 100 }
 					multiply_variable = { stando_tsukai = 5 }
 				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						tag = GON
+						tag = DIO
+						tag = FLO
+						tag = MOR
+					}
+					is_ai = yes
+				}
+				calculate_maximum_divisions = yes
 			}
 			every_country = {
 				if = {

@@ -153,8 +153,8 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 8 y = 247 }
-			font = "hoi_20b"
+			position = { x = 8 y = 248 }
+			font = "hoi_18mbs"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 131
 			maxHeight = 20
@@ -600,7 +600,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name ="gamesetup_interesting_countries_window"
-		size = { width=1225 height=717 }
+		size = { width=1225 height=997 }
 		Orientation = center
 		origo = center
 		clipping = no
@@ -656,9 +656,10 @@ guiTypes = {
 				name ="countries_grid"
 				position = { x = 0 y = 0 }
 				size = { width = 100% height = 100% }
-				slotsize = { width = 150 height = 0 }
+				slotsize = { width = 150 height = 275 }
 				add_horizontal = yes
-				max_slots_vertical = 1
+				max_slots_horizontal = 8
+				max_slots_vertical = 2
 				format = "UPPER_LEFT"
 			}	
 			
@@ -666,7 +667,7 @@ guiTypes = {
 			
 		containerWindowType = {
 			name ="countries_medium"
-			position = { x = 15 y = 330 }
+			position = { x = 21 y = 609 }
 			size = { width = -15 height = 120}
 			
 			gridboxType = {
@@ -682,8 +683,8 @@ guiTypes = {
 
 		containerWindowType = {
 			name ="countries_mini"
-			position = { x = 15 y = 340 }
-			size = { width = -15 height = 120}
+			position = { x = 15 y = 614 }
+			size = { width = -15 height = 240 }
 			
 			gridboxType = {
 				name ="countries_grid"
@@ -699,7 +700,7 @@ guiTypes = {
 		iconType = {
 			name = "minor_country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 289 y = 441 }
+			position = { x = 289 y = 715 }
 			scale=0.696
 			rotation=-0.04
 		}
@@ -707,13 +708,97 @@ guiTypes = {
 		iconType = {
 				name ="minor_portrait_overlay"
 				spriteType = "GFX_minor_portrait_overlay"
-				position = { x= 280 y = 430 }
+				position = { x= 280 y = 704 }
+		}
+
+		#OVERLAYS GO HERE
+		#BIG ONES FIRST ROW
+		iconType = {
+			name = "country_big_no_1_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 13 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_2_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 163 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_3_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 313 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_4_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_new_ov"
+			position = { x = 463 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_5_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_new_ov"
+			position = { x = 613 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_7_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 913 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_8_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 1063 y = 45 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		#BIG ONES SECOND ROW
+		iconType = {
+			name = "country_big_no_9_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 13 y = 320 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "country_big_no_15_ov"
+			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
+			position = { x = 913 y = 320 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}
+
+		#SMOL ONES
+		iconType = {
+			name = "country_smol_5_ov"
+			quadTextureSprite ="GFX_cr_country_selection_minor_entry_reworked_ov"
+			position = { x = 618 y = 609 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
 		}
 		
 		
 		instantTextBoxType = {
 			name = "info_title"
-			position = { x = 10 y = 450 }
+			position = { x = 10 y = 728 }
 			font = "hoi4_typewriter22"
 			borderSize = {x = 0 y = 0}
 			text = "FE_COUNTRY_INFO_TITLE"
@@ -724,7 +809,7 @@ guiTypes = {
 		
 		containerWindowType = {
 			name = "info"				
-			position = { x = 35 y = 485 }
+			position = { x = 35 y = 764 }
 			
 			instantTextBoxType = {
 				name = "leader_label"
@@ -828,7 +913,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "nation_title"
-			position = { x = 437 y = 429 }
+			position = { x = 437 y = 708 }
 			font = "hoi_24header"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 340
@@ -838,7 +923,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "spirit"
-			position = { x = 451 y = 475 }
+			position = { x = 451 y = 754 }
 			
 			iconType ={
 				name ="pol_faction_icon"
@@ -882,7 +967,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "history_title"
-			position = { x = 830 y = 450 }
+			position = { x = 830 y = 729 }
 			font = "hoi4_typewriter22"
 			borderSize = {x = 0 y = 0}
 			text = "FE_COUNTRY_HISTORY_TITLE"
@@ -893,7 +978,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "history"
-			position = { x = 810 y = 490 }
+			position = { x = 810 y = 769 }
 			font = "hoi4_typewriter16"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 380

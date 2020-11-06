@@ -1,0 +1,130 @@
+focus_tree = {
+	id = tiger_clan
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = TIG
+		} 
+	} 
+
+	focus = { 
+		id = TIG_the_clan_at_the_end_of_the_world
+		icon = GFX_goal_generic_production
+		x = 6
+		y = 0
+		cost = 5
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.25
+				uses = 1
+				category = industry
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_import_production_technologies_from_greenland
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_clan_at_the_end_of_the_world
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			440 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_import_civilian_technologies_from_bees
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 7
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_clan_at_the_end_of_the_world
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			504 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_improve_food_processing
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 6
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_import_production_technologies_from_greenland
+		}
+		prerequisite = {
+			focus = TIG_import_civilian_technologies_from_bees
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			440 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			504 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+	
+	default = no
+}
