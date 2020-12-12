@@ -1,3 +1,112 @@
+defined_text = { #regarding tigers deal for technology
+	name = TIG_GET_THE_PAYMENT
+    text = {
+        trigger = {
+            TIG = {
+                check_variable = {
+				    how_tigers_pay = 1
+			    }
+            }
+        }
+        localization_key = "increased resource exports"
+    }
+    text = {
+        trigger = {
+            TIG = {
+                check_variable = {
+				    how_tigers_pay = 2
+			    }
+            }
+        }
+        localization_key = "exploration permits"
+    }
+}
+
+defined_text = {
+	name = STATE_CLAIM_STATUS
+    text = {
+        trigger = {
+            FROM = {
+                OR = {
+                    is_claimed_by = DES
+					is_core_of = DES
+					is_claimed_by = GON
+					is_core_of = GON
+					is_claimed_by = ICW
+					is_core_of = ICW
+                }
+            }
+        }
+        localization_key = "This state is already claimed."
+    }
+    text = {
+        trigger = {
+            FROM = {
+                NOT = {
+                    is_claimed_by = DES
+					is_core_of = DES
+					is_claimed_by = GON
+					is_core_of = GON
+					is_claimed_by = ICW
+					is_core_of = ICW
+                }
+            }
+        }
+        localization_key = "You can claim this state."
+    }
+}
+
+defined_text = {
+	name = DES_KAYO_RESULT_TIGERS
+    text = {
+        trigger = {
+            TIG = {
+                OR = {
+					has_country_leader = {
+						name = "Lud"
+    					ruling_only = yes
+					}
+					has_country_leader = {
+						name = "Tib"
+    					ruling_only = yes
+					}
+				}
+            }
+        }
+        localization_key = "Kayo carried out his mission even better than it was planned, as somehow previous Tiger Clan leader has been killed and his son, [TIG.GetLeader], was elected the next head of Clan, further eroding the unity inside their society"
+    }
+    text = {
+        trigger = {
+            TIG = {
+                has_variable = kayo_lost
+            }
+        }
+        localization_key = "Kayo failed his mission as usual and did not manage to do any significant damage to Tigers' society"
+    }
+}
+
+defined_text = {
+	name = DES_KAYO_RESULT_SIOUX
+    text = {
+        trigger = {
+            SIO = {
+				has_country_flag = SIO_yakari_left_the_country
+			}
+        }
+        localization_key = "Kayo did even better than he was expected to, because his deeds, combined with the atmosphere after recent Red Ribbon Race made United Council to sent Yakari to the exile; this decision further undermined the unity of the tribes"
+    }
+    text = {
+        trigger = {
+            SIO = {
+				NOT = {
+					has_country_flag = SIO_yakari_left_the_country
+				}
+			}
+        }
+        localization_key = "Kayo did not manage to do any significant damage; everything he has destroyed, was rebuilt the same day anyway"
+    }
+}
+
 defined_text = { #Flo-Shen Pact loc
     name = FLOPACT
     text = {

@@ -1,0 +1,308 @@
+tiger_leader_switching_dec_category = {
+	switch_nak_decision = {
+		icon = ger_mefo_bills
+		available = {
+			any_unit_leader = {
+				has_id = 5203
+			}
+		}
+		visible = { 
+		#	tag = TIG
+			always = no
+		}
+		cost = 0
+		ai_will_do = {
+			factor = 0
+		}
+		complete_effect = {
+			if = {
+				limit = {
+					any_army_leader = {
+						has_id = 5203
+					}
+				}
+				hidden_effect = {
+					every_army_leader = {
+						limit = {
+							has_id = 5203
+						}
+						retire = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+kayo_missions_dec_category = {
+	destroy_yakari_image = {
+		icon = generic_operation
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = SIO_yakari_lost_red_ribbon_race
+				SIO = {
+					has_country_flag = SIO_yakari_lost_red_ribbon_race
+				}
+			}
+		}
+		visible = {
+			SIO = {
+				exists = yes
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 5
+		}
+		days_remove = 28
+		complete_effect = {
+			hidden_effect = {
+				SIO = {
+					country_event = {
+						id = desert.43
+						days = 5
+					}
+				}
+			}
+		}
+		remove_effect = {
+			custom_effect_tooltip = DES_you_need_to_wait_for_kayo_to_return
+			hidden_effect = {
+				country_event = {
+					id = desert.49
+					days = 0
+				}
+			}
+		}
+	}
+	kill_tiger_clan_leader = {
+		icon = generic_operation
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = aron_is_dead
+				TIG = {
+					has_completed_focus = TIG_aron_is_dead
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 50
+		ai_will_do = {
+			factor = 5
+		}
+		complete_effect = {
+			custom_effect_tooltip = DES_you_need_to_wait_for_kayo_to_return
+			hidden_effect = {
+				TIG = {
+					country_event = {
+						id = desert.50
+						days = 5
+					}
+				}
+			}
+		}
+	}
+}
+
+dividing_greenland_dec_category = {
+	claim_this_state = {
+
+		state_target = yes
+
+		icon = {
+			key = greenland_divide_not_taken
+			trigger = {
+				FROM = {
+					NOT = {
+						is_claimed_by = DES
+						is_core_of = DES
+						is_claimed_by = GON
+						is_core_of = GON
+						is_claimed_by = ICW
+						is_core_of = ICW
+					}
+				}
+			}
+		}
+		icon = {
+			key = greenland_divide_desert
+			trigger = {
+				FROM = {
+					OR = {
+						is_claimed_by = DES
+						is_core_of = DES
+					}
+				}
+			}
+		}
+		icon = {
+			key = greenland_divide_gongmen
+			trigger = {
+				FROM = {
+					OR = {
+						is_claimed_by = GON
+						is_core_of = GON
+					}
+				}
+			}
+		}
+		icon = {
+			key = greenland_divide_iceworld
+			trigger = {
+				FROM = {
+					OR = {
+						is_claimed_by = ICW
+						is_core_of = ICW
+					}
+				}
+			}
+		}
+
+		on_map_mode = map_only
+
+		highlight_state_targets = { state = FROM }
+
+		visible = {
+			OR = {
+				AND = {
+					tag = GON
+					DES = {
+						has_country_flag = gongmen_agreed
+					}
+				}
+				AND = {
+					tag = ICW
+					DES = {
+						has_country_flag = arktos_agreed
+					}
+				}
+				AND = {
+					tag = DES
+					OR = {
+						has_country_flag = gongmen_agreed
+						has_country_flag = arktos_agreed
+					}
+				}
+			}
+			FROM = {
+				is_owned_by = GRN
+				any_neighbor_state = {
+					is_claim_or_core_of_ROOT = yes
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = greenland_state_claim_status
+				FROM = {
+					NOT = {
+						is_claimed_by = DES
+						is_core_of = DES
+						is_claimed_by = GON
+						is_core_of = GON
+						is_claimed_by = ICW
+						is_core_of = ICW
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = its_your_turn_to_claim_greenland
+				ROOT = {
+					has_variable = can_claim_greenland
+				}
+			}
+		}
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 5
+		}
+
+		complete_effect = {
+			FROM = {
+				add_claim_by = ROOT
+			}
+			hidden_effect = {
+				ROOT = {
+					clear_variable = can_claim_greenland
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = DES
+							has_country_flag = gongmen_agreed
+						}
+					}
+					GON = {
+						set_variable = {
+							can_claim_greenland = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = DES
+							has_country_flag = arktos_agreed
+							NOT = {
+								has_country_flag = gongmen_agreed
+							}
+						}
+					}
+					ICW = {
+						set_variable = {
+							can_claim_greenland = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = GON
+							DES = {
+								NOT = {
+									has_country_flag = arktos_agreed
+								}
+							}
+						}
+					}
+					DES = {
+						set_variable = {
+							can_claim_greenland = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = GON
+							DES = {
+								has_country_flag = arktos_agreed
+							}
+						}
+					}
+					ICW = {
+						set_variable = {
+							can_claim_greenland = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = ICW
+						}
+					}
+					DES = {
+						set_variable = {
+							can_claim_greenland = 1
+						}
+					}
+				}
+			}
+		}
+	}
+}

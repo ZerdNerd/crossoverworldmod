@@ -935,6 +935,9 @@ focus_tree = {
 
 		available = {
 			has_war_with = DES
+			NOT = {
+				has_country_flag = SIO_yakari_left_the_country
+			}
 		}
 
 		completion_reward = {
@@ -957,6 +960,10 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 2
 		} 
+
+		bypass = {
+			has_country_flag = SIO_yakari_left_the_country
+		}
 
 		prerequisite = {
 			focus = SIO_were_back_sandman

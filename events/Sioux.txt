@@ -429,6 +429,7 @@ country_event = { #1937 Red Ribbon Race
 		name = sioux.17.a
 		custom_effect_tooltip = SIO_challenge_refused
 		hidden_effect = {
+			set_country_flag = SIO_yakari_not_participated
 			random_list = {
 				80 = {
 					country_event = {
@@ -444,6 +445,9 @@ country_event = { #1937 Red Ribbon Race
 				}
 			}
 		}
+		ai_chance = {
+			factor = 20
+		}
 	}
 
 	option = { #Yakari accepts Proudest Cloud's challenge
@@ -451,19 +455,22 @@ country_event = { #1937 Red Ribbon Race
 		custom_effect_tooltip = SIO_challenge_accepted
 		hidden_effect = {
 			random_list = {
-				75 = {
+				50 = {
 					country_event = {
 						id = sioux.20
 						days = 2
 					}
 				}
-				25 = {
+				50 = {
 					country_event = {
 						id = sioux.21
 						days = 2
 					}
 				}
 			}
+		}
+		ai_chance = {
+			factor = 80
 		}
 	}
 }
@@ -529,6 +536,9 @@ country_event = { #Yakari wins the Red Ribbon Race, thus ending the tradition
 		name = sioux.20.a
 		add_stability = -0.05
 		army_experience = 5
+		hidden_effect = {
+			set_country_flag = SIO_yakari_won_red_ribbon_race
+		}
 	}
 }
 
@@ -554,7 +564,12 @@ country_event = { #Proudest Cloud wins the Red Ribbon Race
 		}
 		hidden_effect = {
 			set_country_flag = SIO_yakari_lost_red_ribbon_race
-			#event for Humsin
+			DES = {
+				country_event = {
+					id = desert.52
+					days = 2
+				}
+			}
 		}
 	}
 }
@@ -1137,8 +1152,6 @@ country_event = { #Post-war-not-Sandstorm politics vote result
 	title = sioux_vote.13.t
 	desc = sioux_vote.13.d
 	picture = GFX_report_sioux
-
-	fire_only_once = yes
 
 	is_triggered_only = yes
 

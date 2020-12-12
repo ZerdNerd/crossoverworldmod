@@ -1,23 +1,27 @@
+
 state={
 	id=149
 	name="STATE_149"
-	provinces={
-		548 1189 2403 3972 5147 6139 6141 6161 6162 6260 
+	resources={
+		steel=5.000
+		rubber=8.000
 	}
-	manpower=275000
-	state_category = town
-	buildings_max_level_factor=1.000
-	history = {
+
+	history={
 		owner = ARE
 		add_core_of = ARE
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 2
+
 		}
-}
-		resources = {
-			steel = 5
-			rubber = 8
-		}
+
 	}
 
+	provinces={
+		548 1189 2403 3972 5147 6260 
+	}
+	manpower=275000
+	buildings_max_level_factor=1.000
+	state_category=town
+}

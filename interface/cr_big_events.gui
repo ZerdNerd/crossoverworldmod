@@ -1,4 +1,4 @@
-guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
+guiTypes = {
     containerWindowType = {
 		name = "cr_big_event_jotaro_vs_dio"
 		size = { width = 580 height = 128 }
@@ -27,7 +27,7 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 		iconType = {
 			name ="image"
 			spriteType = "GFX_jotaro_vs_dio"
-			position = { x= -284 y = -18 }
+			position = { x= -284 y = -10 }
 			Orientation = center
 			alwaystransparent = yes
 		}
@@ -35,50 +35,28 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 
 	containerWindowType = {
 		name = "cr_big_event_jotaro_vs_dio_frame"
-		size = { width = 588 height = 465 }
-		position = { x=0 y=0 }
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
 		Orientation = center
 		Origo = center
 		clipping = no
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window_bigevent_border"
-		}
-
-		buttonType = {
-			name = "Option"
-			text = "Come as close as you like."
-			shortcut = "ESCAPE"
-			position = { x = -110 y = 183 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_20bs"
-			Orientation = center
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
 		}
 
 		iconType = {
 			name ="underlay"
 			spriteType = "GFX_superevent_text_underlay"
-			position = { x= 10 y = -161 }
+			position = { x= 10 y = -123 }
 			Orientation = lower_left
 			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name = "text_bg"
-			position = {  x = 16 y = -161 }
-			font = "hoi_24header"
-			text = "CR_BIGEVENT_JOTARO_VS_DIO_D_bg"
-			maxWidth = 540
-			maxHeight = 173
-			fixedsize = yes
-			format = left
-			Orientation = lower_left
-		}
-
-		instantTextBoxType = {
 			name = "text"
-			position = {  x = 15 y = -161 }
+			position = {  x = 15 y = -124 }
 			font = "hoi_24header"
 			text = "CR_BIGEVENT_JOTARO_VS_DIO_D"
 			maxWidth = 540
@@ -86,6 +64,16 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 			fixedsize = yes
 			format = left
 			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Come as close as you like."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
 		}
 	}
 
@@ -117,7 +105,7 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 		iconType = {
 			name ="image"
 			spriteType = "GFX_stephen_death"
-			position = { x= -284 y = -18 }
+			position = { x= -284 y = -10 }
 			Orientation = center
 			alwaystransparent = yes
 		}
@@ -125,50 +113,28 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 
 	containerWindowType = {
 		name = "cr_big_event_stephen_death_frame"
-		size = { width = 588 height = 465 }
-		position = { x=0 y=0 }
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
 		Orientation = center
 		Origo = center
 		clipping = no
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window_bigevent_border"
-		}
-
-		buttonType = {
-			name = "Option"
-			text = "The end of an era."
-			shortcut = "ESCAPE"
-			position = { x = -110 y = 183 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_20bs"
-			Orientation = center
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
 		}
 
 		iconType = {
 			name ="underlay"
 			spriteType = "GFX_superevent_text_underlay"
-			position = { x= 10 y = -161 }
+			position = { x= 10 y = -123 }
 			Orientation = lower_left
 			allwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name = "text_bg"
-			position = {  x = 16 y = -161 }
-			font = "hoi_24header"
-			text = "CR_BIGEVENT_STEPHEN_DEATH_D_bg"
-			maxWidth = 540
-			maxHeight = 173
-			fixedsize = yes
-			format = left
-			Orientation = lower_left
-		}
-
-		instantTextBoxType = {
 			name = "text"
-			position = {  x = 15 y = -161 }
+			position = {  x = 15 y = -124 }
 			font = "hoi_24header"
 			text = "CR_BIGEVENT_STEPHEN_DEATH_D"
 			maxWidth = 540
@@ -176,6 +142,16 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 			fixedsize = yes
 			format = left
 			Orientation = lower_left
+		}
+		
+		buttonType = {
+			name = "Option"
+			text = "The end of an era."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
 		}
 	}
 
@@ -207,7 +183,7 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 		iconType = {
 			name ="image"
 			spriteType = "GFX_sioux_liberation"
-			position = { x= -284 y = -18 }
+			position = { x= -284 y = -10 }
 			Orientation = center
 			alwaystransparent = yes
 		}
@@ -215,50 +191,28 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 
 	containerWindowType = {
 		name = "cr_big_event_sioux_liberation_frame"
-		size = { width = 588 height = 465 }
-		position = { x=0 y=0 }
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
 		Orientation = center
 		Origo = center
 		clipping = no
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window_bigevent_border"
-		}
-
-		buttonType = {
-			name = "Option"
-			text = "Un brave!"
-			shortcut = "ESCAPE"
-			position = { x = -110 y = 183 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_20bs"
-			Orientation = center
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
 		}
 
 		iconType = {
 			name ="underlay"
 			spriteType = "GFX_superevent_text_underlay"
-			position = { x= 10 y = -161 }
+			position = { x= 10 y = -123 }
 			Orientation = lower_left
 			allwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name = "text_bg"
-			position = {  x = 16 y = -161 }
-			font = "hoi_24header"
-			text = "CR_BIGEVENT_SIOUX_LIBERATION_D_bg"
-			maxWidth = 540
-			maxHeight = 173
-			fixedsize = yes
-			format = left
-			Orientation = lower_left
-		}
-
-		instantTextBoxType = {
 			name = "text"
-			position = {  x = 15 y = -161 }
+			position = {  x = 15 y = -124 }
 			font = "hoi_24header"
 			text = "CR_BIGEVENT_SIOUX_LIBERATION_D"
 			maxWidth = 540
@@ -266,6 +220,16 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 			fixedsize = yes
 			format = left
 			Orientation = lower_left
+		}
+		
+		buttonType = {
+			name = "Option"
+			text = "Un brave!"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
 		}
 	}
 
@@ -297,7 +261,7 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 		iconType = {
 			name ="image"
 			spriteType = "GFX_arktos_triumphs"
-			position = { x= -284 y = -18 }
+			position = { x= -284 y = -10 }
 			Orientation = center
 			alwaystransparent = yes
 		}
@@ -305,50 +269,28 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 
 	containerWindowType = {
 		name = "cr_big_event_arktos_triumphs_frame"
-		size = { width = 588 height = 465 }
-		position = { x=0 y=0 }
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
 		Orientation = center
 		Origo = center
 		clipping = no
 
 		background = {
 			name = "Background"
-			quadTextureSprite ="GFX_tiled_window_bigevent_border"
-		}
-
-		buttonType = {
-			name = "Option"
-			text = "Gulp."
-			shortcut = "ESCAPE"
-			position = { x = -110 y = 183 }
-			quadTextureSprite ="GFX_button_221x34"
-			buttonFont = "hoi_20bs"
-			Orientation = center
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
 		}
 
 		iconType = {
 			name ="underlay"
 			spriteType = "GFX_superevent_text_underlay"
-			position = { x= 10 y = -161 }
+			position = { x= 10 y = -123 }
 			Orientation = lower_left
 			allwaystransparent = yes
 		}
 
 		instantTextBoxType = {
-			name = "text_bg"
-			position = {  x = 16 y = -161 }
-			font = "hoi_24header"
-			text = "CR_BIGEVENT_ARKTOS_TRIUMPHS_D_bg"
-			maxWidth = 540
-			maxHeight = 173
-			fixedsize = yes
-			format = left
-			Orientation = lower_left
-		}
-
-		instantTextBoxType = {
 			name = "text"
-			position = {  x = 15 y = -161 }
+			position = {  x = 15 y = -124 }
 			font = "hoi_24header"
 			text = "CR_BIGEVENT_ARKTOS_TRIUMPHS_D"
 			maxWidth = 540
@@ -356,6 +298,16 @@ guiTypes = { #yes. inspired by TNO and changed code from TNO. panzer pls no kill
 			fixedsize = yes
 			format = left
 			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Gulp."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
 		}
 	}
 }

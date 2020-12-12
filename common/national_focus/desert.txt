@@ -11,75 +11,253 @@ focus_tree = {
 	default = no
 
 	focus = { 
-	id = DES_economy_on_the_desert
-	icon = GFX_goal_generic_production
-	x = 2
-	y = 0
-	cost = 7.25
-	available_if_capitulated = yes 
-	ai_will_do = { 
-		factor = 1
-	} 
+		id = DES_the_sand_empire
+		icon = GFX_focus_generic_tank_production
+		x = 21
+		y = 0
+		cost = 5
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
 
-	completion_reward = {
-		add_tech_bonus = {
-			name = industrial_bonus
-			bonus = 0.5
-			uses = 1
-			category = industry
-		}
-	} 
-}
-
-focus = {
-	id = DES_supplies_for_subjects
-	icon = GFX_goal_generic_construct_civ_factory
-	prerequisite = { focus = DES_economy_on_the_desert }
-	x = 0
-	y = 1
-	cost = 7.25
-
-	available_if_capitulated = yes
-
-
-		
-	ai_will_do = {
-		factor = 2
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = electronics
+			}
+		} 
 	}
 
-	complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}			
+	focus = { 
+		id = DES_economy_on_the_desert
+		icon = GFX_goal_generic_production
+		x = 2
+		y = 1
+		cost = 7.25
+		prerequisite = { focus = DES_the_sand_empire }
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+			country_event = {
+				id = desert.53
+				days = 0
+			}
+		} 
+	}
+
+	focus = {
+		id = DES_starting_up_naval_industry
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_economy_on_the_desert }
+		relative_position_id = DES_economy_on_the_desert
+		x = -7
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			613 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			651 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			562 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_establish_eastern_facilities
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_starting_up_naval_industry }
+		relative_position_id = DES_starting_up_naval_industry
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			557 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			591 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_southern_docks
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_establish_eastern_facilities }
+		relative_position_id = DES_establish_eastern_facilities
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			651 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			637 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_main_ship_assembly
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DES_southern_docks }
+		relative_position_id = DES_southern_docks
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			613 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_move_economy_west
+		icon = GFX_focus_western_desert
+		prerequisite = { focus = DES_economy_on_the_desert }
+		relative_position_id = DES_economy_on_the_desert
+		x = -4
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		mutually_exclusive = {
+			focus = DES_move_economy_east
+			focus = DES_balance_the_locations
+		}
+
+		available = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 2
 		}
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = {
+		id = DES_sandy_town_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = DES_move_economy_west }
+		relative_position_id = DES_move_economy_west
+		x = -1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			613 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}		
+		}
+	}
+
+	focus = {
+		id = DES_recreate_the_river_valleys
+		icon = GFX_focus_generic_agriculture
+		prerequisite = { focus = DES_sandy_town_industries }
+		relative_position_id = DES_sandy_town_industries
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			562 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = industrial_complex
@@ -87,58 +265,15 @@ focus = {
 					instant_build = yes
 				}
 			}
-		}
-}
-
-focus = {
-	id = DES_food_on_the_desert
-	icon = GFX_goal_generic_construct_civ_factory
-	prerequisite = { focus = DES_supplies_for_subjects }
-	x = 0
-	y = 2
-	cost = 7.25
-
-	available_if_capitulated = yes
-
-
-		
-	ai_will_do = {
-		factor = 2
-	}
-
-	complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}			
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
+			535 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
 				}
+			}
+			550 = {
 				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = industrial_complex
@@ -147,139 +282,352 @@ focus = {
 				}
 			}
 		}
-}
+	}
 
-focus = {
-	id = DES_factories_for_citizens
-	icon = GFX_goal_generic_construction
-	prerequisite = { focus = DES_food_on_the_desert }
-	x = 0
-	y = 3
-	cost = 7.25
+	focus = {
+		id = DES_ingenio_complex
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = DES_recreate_the_river_valleys }
+		relative_position_id = DES_recreate_the_river_valleys
+		x = 0
+		y = 1
+		cost = 7.25
 
-	available_if_capitulated = yes
+		available_if_capitulated = yes
 
 
 		
-	ai_will_do = {
-		factor = 2
-	}
+		ai_will_do = {
+			factor = 2
+		}
 
-	complete_tooltip = {
-		add_extra_state_shared_building_slots = 1
-		add_building_construction = {
-			type = industrial_complex
-			level = 1
-			instant_build = yes
-		}			
-	}
-
-	completion_reward = {
-		random_owned_controlled_state = {
-			limit = {
-				free_building_slots = {
-					building = industrial_complex
-					size > 0
-					include_locked = yes
+		completion_reward = {
+			637 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
 				}
-				OR = {
-					is_in_home_area = yes
-					NOT = {
-						owner = {
-							any_owned_state = {
-								free_building_slots = {
-									building = industrial_complex
-									size > 0
-										include_locked = yes
-								}
-								is_in_home_area = yes
-							}
-						}
-					}
-				}
-			}
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
 			}
 		}
 	}
-}
+
+	focus = {
+		id = DES_send_salamanders_to_work
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_move_economy_west }
+		relative_position_id = DES_move_economy_west
+		x = 1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			588 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_hide_in_the_sand_hills
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_send_salamanders_to_work }
+		relative_position_id = DES_send_salamanders_to_work
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			589 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_and_in_the_mountains
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_hide_in_the_sand_hills }
+		relative_position_id = DES_hide_in_the_sand_hills
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			622 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			599 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_balance_the_locations
+		icon = GFX_focus_whole_desert
+		prerequisite = { focus = DES_economy_on_the_desert }
+		relative_position_id = DES_economy_on_the_desert
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			always = no
+		}
+
+		mutually_exclusive = {
+			focus = DES_move_economy_east
+			focus = DES_move_economy_west
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = {
+		id = DES_sandy_town_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = DES_balance_the_locations }
+		relative_position_id = DES_balance_the_locations
+		x = -1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			613 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}		
+		}
+	}
+
+	focus = {
+		id = DES_eastern_agriculture
+		icon = GFX_focus_generic_agriculture
+		prerequisite = { focus = DES_sandy_town_complex }
+		relative_position_id = DES_sandy_town_complex
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			557 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			555 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_supplies_for_sand_castle
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = DES_eastern_agriculture }
+		relative_position_id = DES_eastern_agriculture
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			550 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_industry_in_sand_hills
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_balance_the_locations }
+		relative_position_id = DES_balance_the_locations
+		x = 1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			589 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_relocate_to_the_shores
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_industry_in_sand_hills }
+		relative_position_id = DES_industry_in_sand_hills
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			591 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+            557 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+            637 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_southern_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_relocate_to_the_shores }
+		relative_position_id = DES_relocate_to_the_shores
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			653 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+            651 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
 
 	focus = {
 		id = DES_desert_roads
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = DES_economy_on_the_desert }
-		x = 2
+		relative_position_id = DES_economy_on_the_desert
+		x = 7
 		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
 
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
 		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
+			every_owned_state = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -290,17 +638,53 @@ focus = {
 	}
 
 	focus = {
-		id = DES_every_state_a_road
+		id = DES_north_south_highway
 		icon = GFX_goal_generic_construct_infrastructure
 		prerequisite = { focus = DES_desert_roads }
-		x = 2
-		y = 2
+		relative_position_id = DES_desert_roads
+		x = 0
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			every_owned_state = {
+			507 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			550 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			589 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			599 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			653 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -311,11 +695,55 @@ focus = {
 	}
 
 	focus = {
-		id = DES_new_highways
+		id = DES_coast_to_coast
 		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = DES_every_state_a_road }
-		x = 2
-		y = 3
+		prerequisite = { focus = DES_north_south_highway }
+		relative_position_id = DES_north_south_highway
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			613 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			588 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			555 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			557 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_filling_the_gaps
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = DES_coast_to_coast }
+		relative_position_id = DES_coast_to_coast
+		x = 0
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
@@ -332,17 +760,150 @@ focus = {
 	}
 
 	focus = {
-		id = DES_prepare_war_machine
-		icon = GFX_goal_generic_construct_mil_factory
+		id = DES_move_economy_east
+		icon = GFX_focus_eastern_desert
 		prerequisite = { focus = DES_economy_on_the_desert }
+		relative_position_id = DES_economy_on_the_desert
 		x = 4
 		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
 
+		available = {
+			always = no
+		}
+
+		mutually_exclusive = {
+			focus = DES_move_economy_west
+			focus = DES_balance_the_locations
+		}
+		
+		ai_will_do = {
+			factor = 2
+		}
+
 		completion_reward = {
-			random_owned_controlled_state = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = {
+		id = DES_eastern_point_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = DES_move_economy_east }
+		relative_position_id = DES_move_economy_east
+		x = -1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			557 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}	
+			}		
+		}
+	}
+
+	focus = {
+		id = DES_eastern_river
+		icon = GFX_focus_generic_agriculture
+		prerequisite = { focus = DES_eastern_point_industries }
+		relative_position_id = DES_eastern_point_industries
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			557 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			555 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			610 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_eastern_shores_complex
+		icon = GFX_goal_generic_construction
+		prerequisite = { focus = DES_eastern_river }
+		relative_position_id = DES_eastern_river
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		
+		ai_will_do = {
+			factor = 2
+		}
+
+		completion_reward = {
+			591 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_old_valley_industrialization
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = DES_move_economy_east }
+		relative_position_id = DES_move_economy_east
+		x = 1
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			610 = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = arms_factory
@@ -354,29 +915,22 @@ focus = {
 	}
 
 	focus = {
-		id = DES_weapon_projects
+		id = DES_relocate_to_northeastern_desert
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = DES_prepare_war_machine }
-		x = 4
-		y = 2
+		prerequisite = { focus = DES_old_valley_industrialization }
+		relative_position_id = DES_old_valley_industrialization
+		x = 0
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+			508 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -384,29 +938,22 @@ focus = {
 	}
 
 	focus = {
-		id = DES_final_factories
+		id = DES_eastern_point_complex
 		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = DES_weapon_projects }
-		x = 4
-		y = 3
+		prerequisite = { focus = DES_relocate_to_northeastern_desert }
+		relative_position_id = DES_relocate_to_northeastern_desert
+		x = 0
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
+			557 = {
+				add_extra_state_shared_building_slots = 3
 				add_building_construction = {
 					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
+					level = 3
 					instant_build = yes
 				}
 			}
@@ -416,11 +963,21 @@ focus = {
 	focus = {
 		id = DES_economy_works_fine
 		icon = GFX_goal_generic_construct_civilian
-		prerequisite = { focus = DES_new_highways }
-		prerequisite = { focus = DES_factories_for_citizens }
-		prerequisite = { focus = DES_final_factories }
-		x = 2
-		y = 4
+		prerequisite = { 
+			focus = DES_supplies_for_sand_castle
+			focus = DES_ingenio_complex
+			focus = DES_eastern_shores_complex
+		}
+		prerequisite = { 
+			focus = DES_and_in_the_mountains
+			focus = DES_southern_complex
+			focus = DES_eastern_point_complex
+		}
+		prerequisite = { focus = DES_filling_the_gaps }
+		prerequisite = { focus = DES_main_ship_assembly }
+		relative_position_id = DES_southern_complex
+		x = -1
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
@@ -439,14 +996,18 @@ focus = {
 	focus = {
 		id = DES_open_for_international_relations
 		icon = GFX_goal_generic_positive_trade_relations
-		x = 15
+		x = 18
 		y = 1
 		cost = 7.25
+
+		prerequisite = {
+			focus = DES_the_sand_empire
+		}
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 50
+			add_manpower = 50000
 			add_ideas = {
 				DES_foreign_affairs_bureau
 			}
@@ -454,436 +1015,109 @@ focus = {
 	}
 
 	focus = {
-		id = DES_invest_in_republic_of_turtles
-		icon = GFX_goal_generic_construction
+		id = DES_improving_humsin_image
+		icon = GFX_goal_generic_national_unity
 		prerequisite = { focus = DES_open_for_international_relations }
-		x = 14
+		x = 13
 		y = 2
 		cost = 7.25
 
-		bypass = {
-			TRL = {
-				exists = no
-			}
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 50
-			272 = {
-				add_resource = {
-    				type = steel
-    				amount = 10
-				}
+			add_ideas = {
+				DES_humsin_image
 			}
 		}
 	}
 
 	focus = {
-		id = DES_southern_port
-		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = DES_invest_in_republic_of_turtles }
-		x = 14
-		y = 3
-		cost = 7.25
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			651 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 2682
-				}
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-#	focus = {
-#		id = DES_colonize_southwestern_land
-#		icon = GFX_focus_hol_the_foundations_of_defense
-#		prerequisite = { focus = DES_southern_port }
-#		x = 14
-#		y = 4
-#		cost = 20
-#
-#		available_if_capitulated = yes
-#
-#		completion_reward = {
-#			add_political_power = -250
-#			transfer_state = 665
-#			665 = {
-#				add_core_of = DES
-#				add_manpower = 70000
-#				add_building_construction = {
-#					type = infrastructure
-#					level = 1
-#					instant_build = yes
-#				}
-#				add_building_construction = {
-#					type = naval_base
-#					level = 1
-#					instant_build = yes
-#					province = 9147
-#				}
-#			}
-#		}
-#	}
-
-	focus = {
-		id = DES_relations_with_wolves
-		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = DES_open_for_international_relations }
-		x = 16
-		y = 2
-		cost = 7.25
-
-		bypass = {
-			TRL = {
-				exists = no
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_political_power = 50
-			add_opinion_modifier = {
-				target = WOL
-				modifier = TCWmod_generic_relations
-			}
-			WOL = {
-				add_opinion_modifier = {
-					target = DES
-					modifier = TCWmod_generic_relations
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = DES_eastern_desert_point_port
-		icon = GFX_goal_generic_construct_naval_dockyard
-		prerequisite = { focus = DES_relations_with_wolves }
-		x = 16
-		y = 3
-		cost = 7.25
-
-		bypass = {
-			TRL = {
-				exists = no
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			557 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 8528
-				}
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = DES_invade_tungu_pungu
-		icon = GFX_goal_generic_major_war
-		prerequisite = { focus = DES_eastern_desert_point_port }
-		prerequisite = { focus = DES_take_care_of_sioux_tribe }
-		x = 16
+		id = DES_establish_relations_with_lord_shen
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_improving_humsin_image }
+		x = 12
 		y = 4
 		cost = 7.25
 
-		available = {
-			always = no
-		}
-
 		available_if_capitulated = yes
 
 		completion_reward = {
-			create_wargoal = {
-   				type = annex_everything
-   				target = TUG
+			GON = {
+				add_opinion_modifier = {
+    				target = DES
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = GON
+    			modifier = TCWmod_generic_relations
 			}
 		}
 	}
 
 	focus = {
-		id = DES_preparations_for_invasion
-		icon = GFX_goal_generic_position_armies
+		id = DES_establish_relations_with_doofenshmirtz
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_improving_humsin_image }
 		x = 13
-		y = 0
-		cost = 7.25
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_political_power = 50
-			army_experience = 5
-		}
-	}
-
-	focus = {
-		id = DES_study_failed_attacks
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = DES_preparations_for_invasion }
-		x = 9
-		y = 1
-		cost = 7.25
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.3
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = DES_give_them_fleas
-		icon = GFX_goal_rhineland
-		prerequisite = { focus = DES_study_failed_attacks }
-		x = 6
-		y = 2
-		cost = 7.25
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = DES_not_pledged
-				NOT = {
-					has_country_flag = pledge_to_end_tricks
-				}
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = DES_pledged
-				has_country_flag = pledge_to_end_tricks
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 1
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-			#event about the fleas
-		}
-	}
-
-	focus = {
-		id = DES_try_impersonating_arktos
-		icon = GFX_goal_support_fascism
-		prerequisite = { focus = DES_study_failed_attacks }
-		x = 8
-		y = 2
-		cost = 7.25
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = DES_not_pledged
-				NOT = {
-					has_country_flag = pledge_to_end_tricks
-				}
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = DES_pledged
-				has_country_flag = pledge_to_end_tricks
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 0.5
-				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
-			#event about impersonating
-		}
-	}
-
-	focus = {
-		id = DES_steal_the_crystal_ball
-		icon = GFX_goal_generic_production2
-		prerequisite = { focus = DES_study_failed_attacks }
-		x = 10
-		y = 2
-		cost = 7.25
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = DES_not_pledged
-				NOT = {
-					has_country_flag = pledge_to_end_tricks
-				}
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = DES_pledged
-				has_country_flag = pledge_to_end_tricks
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			#event about stealing the crystal ball
-		}
-	}
-
-	focus = {
-		id = DES_hypnotize_greenlanders
-		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = DES_study_failed_attacks }
-		x = 12
-		y = 2
-		cost = 7.25
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = DES_not_pledged
-				NOT = {
-					has_country_flag = pledge_to_end_tricks
-				}
-			}
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = DES_pledged
-				has_country_flag = pledge_to_end_tricks
-			}
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = dd_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				technology = early_destroyer
-				technology = basic_destroyer
-			}
-			#event about hypnotizing them
-		}
-	}
-
-	focus = {
-		id = DES_the_aftermath_of_plans
-		icon = GFX_goal_generic_dangerous_deal
-		prerequisite = { focus = DES_give_them_fleas }
-		prerequisite = { focus = DES_try_impersonating_arktos }
-		prerequisite = { focus = DES_steal_the_crystal_ball }
-		prerequisite = { focus = DES_hypnotize_greenlanders }
-		x = 9
 		y = 3
 		cost = 7.25
 
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_war_support = 0.15
-		}
-	}
-
-	focus = {
-		id = DES_upgrade_our_weapons
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = DES_preparations_for_invasion }
-		x = 19
-		y = 1
-		cost = 7.25
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
+		available = {
+			TSA = {
+				has_government = fascism
 			}
 		}
-	}
 
-	focus = {
-		id = DES_cooperate_with_arktos
-		icon = GFX_goal_generic_military_deal
-		prerequisite = { focus = DES_upgrade_our_weapons }
-		mutually_exclusive = { focus = DES_invade_alone }
-		x = 18
-		y = 2
-		cost = 7.25
+		available_if_capitulated = yes
 
-		ai_will_do = {
-			factor = 2
-		}
-
-		available = {
-			ICW = {
-				NOT = {
-					has_completed_focus = ICW_versus_humsin
-					has_completed_focus = ICW_maintain_balance
-					is_in_faction = yes
+		completion_reward = {
+			TSA = {
+				add_opinion_modifier = {
+    				target = DES
+    				modifier = TCWmod_generic_relations
 				}
 			}
+			add_opinion_modifier = {
+    			target = TSA
+    			modifier = TCWmod_generic_relations
+			}
+		}
+	}
+
+	focus = {
+		id = DES_ally_with_doofenshmirtz
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = DES_establish_relations_with_doofenshmirtz }
+		x = 13
+		y = 5
+		cost = 7.25
+
+		available = {
+			TSA = {
+				has_government = fascism
+				is_in_faction = no
+			}
+			MOO = {
+				exists = no
+			}
+			DCB = {
+				OR = {
+					exists = no
+					has_war_with = TSA
+				}
+			}
+			GRN = {
+				exists = no
+			}
 		}
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = -100
-			ICW = {
+			TSA = {
 				country_event = {
-					id = desert.1
+					id = desert.30
 					days = 1
 				}
 			}
@@ -891,12 +1125,205 @@ focus = {
 	}
 
 	focus = {
-		id = DES_invade_alone
-		icon = GFX_goal_generic_demand_territory
-		prerequisite = { focus = DES_upgrade_our_weapons }
-		mutually_exclusive = { focus = DES_cooperate_with_arktos }
-		x = 20
-		y = 2
+		id = DES_establish_relations_with_arktos
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_improving_humsin_image }
+		x = 11
+		y = 3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ICW = {
+				add_opinion_modifier = {
+    				target = DES
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = ICW
+    			modifier = TCWmod_generic_relations
+			}
+		}
+	}
+
+	focus = {
+		id = DES_alliance_against_greenland
+		icon = GFX_focus_greenland
+		prerequisite = { focus = DES_establish_relations_with_arktos }
+		prerequisite = { focus = DES_establish_relations_with_lord_shen }
+		x = 11
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			ICW = {
+				country_event = {
+					id = desert.1
+					days = 0
+				}
+			}
+			if = {
+				limit = {
+					GON = {
+						NOT = {
+							has_completed_focus = GON_negotiate_with_humsin
+						}
+					}
+				}
+				GON = {
+					country_event = {
+						id = desert.1
+						days = 0
+					}
+				}
+				else_if = {
+					limit = {
+						GON = {
+							has_country_flag = humsin_agreed
+						}
+					}
+					set_country_flag = gongmen_agreed
+					else = {
+
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_establish_relations_with_dio
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_improving_humsin_image }
+		x = 14
+		y = 4
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			DIO = {
+				add_opinion_modifier = {
+    				target = DES
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = DIO
+    			modifier = TCWmod_generic_relations
+			}
+		}
+	}
+
+	focus = {
+		id = DES_modernization_now
+		icon = GFX_focus_narrow_gauge
+		prerequisite = { focus = DES_establish_relations_with_dio }
+		x = 14
+		y = 6
+		cost = 30
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			add_research_slot = 2
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
+		}
+	}
+
+	focus = {
+		id = DES_establish_relations_with_hornets
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_improving_humsin_image }
+		x = 15
+		y = 3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			HOR = {
+				add_opinion_modifier = {
+    				target = DES
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = HOR
+    			modifier = TCWmod_generic_relations
+			}
+		}
+	}
+
+	focus = {
+		id = DES_invite_hornets_to_the_alliance
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = DES_establish_relations_with_hornets }
+		x = 15
+		y = 5
+		cost = 7.25
+
+		available = {
+			OR = {
+				GRN = {
+					exists = no
+				}
+				TIG = {
+					is_neighbor_of = HOR
+					is_in_faction_with = GRN
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			HOR = {
+				country_event = {
+					id = desert.33
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_preparations_for_invasion
+		icon = GFX_goal_generic_position_armies
+		relative_position_id = DES_open_for_international_relations
+		x = 5
+		y = 1
+		cost = 7.25
+
+		prerequisite = {
+			focus = DES_open_for_international_relations
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_political_power = 50
+			army_experience = 5
+		}
+	}
+
+	focus = {
+		id = DES_release_kayo
+		icon = GFX_goal_generic_small_arms #change to Kayo gfx when you receive his portrait
+		prerequisite = { focus = DES_preparations_for_invasion }
+		relative_position_id = DES_preparations_for_invasion
+		x = 0
+		y = 1
 		cost = 7.25
 
 		ai_will_do = {
@@ -906,17 +1333,26 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_political_power = 50
-			army_experience = 10
+			custom_effect_tooltip = DES_special_missions_for_kayo
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			hidden_effect = {
+				set_country_flag = DES_kayo_has_been_released
+			}
 		}
 	}
 
 	focus = {
 		id = DES_take_care_of_sioux_tribe
 		icon = GFX_focus_generic_strike_at_democracy1
-		prerequisite = { focus = DES_cooperate_with_arktos focus = DES_invade_alone }
-		x = 18
-		y = 3
+		prerequisite = { focus = DES_release_kayo}
+		relative_position_id = DES_release_kayo
+		x = -2
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
@@ -926,7 +1362,31 @@ focus = {
 		}
 
 		available = {
-			date > 1938.02.01
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = DES_kayo_finished_his_mission
+					SIO = {
+						OR = {
+							has_country_flag = SIO_yakari_left_the_country
+							has_variable = kayo_lost
+						}
+					}
+					has_country_flag = good_good_sioux
+				}
+				custom_trigger_tooltip = {
+					tooltip = SIO_yakari_not_participated
+					SIO = {
+						has_country_flag = SIO_yakari_not_participated
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = SIO_yakari_won_red_ribbon_race
+					SIO = {
+						has_country_flag = SIO_yakari_won_red_ribbon_race
+					}
+				}
+			}
+			num_divisions > 15
 		}
 
 		completion_reward = {
@@ -943,30 +1403,16 @@ focus = {
     			threat = 10 
    				name = DES_has_demanded_sioux_lands
 			}
-			hidden_effect = {
-				if = {
-					limit = {
-						DES = {
-							is_in_faction_with = ICW
-						}
-					}
-					DES = {
-						country_event = {
-							id = desert.4
-							days = 18
-						}
-					}
-				}
-			}
 		}
 	}
 
 	focus = {
-		id = DES_the_case_of_salamanders
-		icon = GFX_goal_generic_political_pressure
-		prerequisite = { focus = DES_cooperate_with_arktos focus = DES_invade_alone }
-		x = 20
-		y = 3
+		id = DES_take_out_tiger_clan
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_release_kayo }
+		relative_position_id = DES_release_kayo
+		x = 0
+		y = 1
 		cost = 7.25
 
 		available_if_capitulated = yes
@@ -975,8 +1421,70 @@ focus = {
 			factor = 2
 		}
 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_kayo_failed
+				TIG = {
+					has_variable = kayo_lost
+				}
+			}
+		}
+
 		available = {
-			date > 1938.03.01
+			custom_trigger_tooltip = {
+				tooltip = DES_kayo_finished_his_mission
+				has_country_flag = good_good_tigers
+				TIG = {
+					OR = {
+						has_country_leader = {
+							name = "Lud"
+    						ruling_only = yes
+						}
+						AND = {
+							has_country_leader = {
+								name = "Tib"
+    							ruling_only = yes
+							}
+							NOT = {
+								is_in_faction_with = GRN
+							}
+						}
+					}
+				}
+			}
+			num_divisions > 20
+		}
+
+		completion_reward = {
+			TIG = {
+				every_owned_state = {
+					add_claim_by = DES
+				}
+			}
+			create_wargoal = {
+				target = TIG
+				type = annex_everything
+			}
+			add_named_threat = { 
+    			threat = 10 
+   				name = DES_prepares_to_invade_tigers
+			}
+		}
+	}
+
+	focus = {
+		id = DES_the_case_of_salamanders
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = DES_release_kayo }
+		relative_position_id = DES_release_kayo
+		x = 2
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		ai_will_do = {
+			factor = 2
 		}
 
 		completion_reward = {
@@ -992,17 +1500,19 @@ focus = {
 		icon = GFX_focus_generic_support_the_left_right
 		prerequisite = { focus = DES_take_care_of_sioux_tribe }
 		prerequisite = { focus = DES_the_case_of_salamanders }
+		prerequisite = { focus = DES_take_out_tiger_clan }
 		mutually_exclusive = { focus = DES_around_their_lines }
-		x = 18
-		y = 4
+		relative_position_id = DES_take_care_of_sioux_tribe
+		x = 1
+		y = 1
 		cost = 7.25
-
-		available = {
-			date > 1939.05.14
-		}
 
 		ai_will_do = {
 			factor = 2
+		}
+
+		bypass = {
+			has_war_with = GRN
 		}
 
 		available_if_capitulated = yes
@@ -1017,9 +1527,11 @@ focus = {
 		icon = GFX_focus_around_their_lines
 		prerequisite = { focus = DES_take_care_of_sioux_tribe }
 		prerequisite = { focus = DES_the_case_of_salamanders }
+		prerequisite = { focus = DES_take_out_tiger_clan }
 		mutually_exclusive = { focus =  DES_straight_into_greenland }
-		x = 20
-		y = 4
+		relative_position_id = DES_take_care_of_sioux_tribe
+		x = 3
+		y = 1
 		cost = 7.25
 
 		ai_will_do = {
@@ -1027,10 +1539,10 @@ focus = {
 		}
 
 		available = {
-			date > 1939.05.14
 			OUT = {
 				exists = yes
 			}
+			num_divisions > 25
 		}
 
 		available_if_capitulated = yes
@@ -1043,7 +1555,7 @@ focus = {
 				}
 			}
 			add_named_threat = { 
-    			threat = 15 
+    			threat = 10 
    				name = DES_has_demanded_outcast_lands
 			}
 		}
@@ -1053,12 +1565,17 @@ focus = {
 		id = DES_demand_reclaimed_fields
 		icon = GFX_goal_generic_territory_or_war
 		prerequisite = { focus = DES_straight_into_greenland focus = DES_around_their_lines }
-		x = 19
-		y = 5
+		relative_position_id = DES_around_their_lines
+		x = -1
+		y = 1
 		cost = 7.25
 
 		ai_will_do = {
 			factor = 2
+		}
+
+		available = {
+			num_divisions > 25
 		}
 
 		bypass = {
@@ -1080,7 +1597,7 @@ focus = {
 				}
 			}
 			add_named_threat = { 
-    			threat = 15 
+    			threat = 20 
    				name = DES_reclaimed_fields_demanded
 			}
 		}
@@ -1090,12 +1607,17 @@ focus = {
 		id = DES_war_with_greenland
 		icon = GFX_focus_generic_strike_at_democracy1
 		prerequisite = { focus = DES_demand_reclaimed_fields }
-		x = 19
-		y = 6
+		relative_position_id = DES_demand_reclaimed_fields
+		x = 0
+		y = 1
 		cost = 7.25
 
 		ai_will_do = {
 			factor = 2
+		}
+
+		available = {
+			num_divisions > 25
 		}
 
 		bypass = {
@@ -1110,10 +1632,1597 @@ focus = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			declare_war_on = { 
+			create_wargoal = { 
 				target = GRN
 				type = annex_everything	
 			}
+		}
+	}
+
+	focus = {
+		id = DES_prepare_the_western_front
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = DES_war_with_greenland }
+		relative_position_id = DES_war_with_greenland
+		x = -3
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			GRN = {
+				exists = no
+			}
+		}
+
+		bypass = {
+			BRO = {
+				OR = {
+					exists = no
+					is_puppet = yes
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = BRO
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_clear_our_rear
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = DES_prepare_the_western_front }
+		relative_position_id = DES_prepare_the_western_front
+		x = 0
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			BRO = {
+				OR = {
+					exists = no
+					is_puppet_of = ROOT
+				}
+			}
+		}
+
+		bypass = {
+			GRY = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = GRY
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_take_out_arktos
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_clear_our_rear }
+		relative_position_id = DES_clear_our_rear
+		x = -2
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		bypass = {
+			ICW = {
+				OR = {
+					exists = no
+					is_puppet = yes
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = ICW
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_team_up_with_flower_hill
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_clear_our_rear }
+		relative_position_id = DES_clear_our_rear
+		x = 0
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			FLO = {
+				has_war_with = GON
+			}
+		}
+
+		bypass = {
+			OR = {
+				FLO = {
+					exists = no
+				}
+				GON = {
+					OR = {
+						exists = no
+						is_puppet = yes
+					}
+				}
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = GON
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_pax_orientis
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = DES_team_up_with_flower_hill }
+		relative_position_id = DES_team_up_with_flower_hill
+		mutually_exclusive = { focus = DES_pax_humsinis }
+		x = -1
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 5
+		}
+
+		available = {
+			GON = {
+				exists = no
+			}
+			FLO = {
+				exists = yes
+				is_puppet = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			FLO = {
+				country_event = {
+					id = desert.36
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_pax_humsinis
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_team_up_with_flower_hill }
+		relative_position_id = DES_team_up_with_flower_hill
+		mutually_exclusive = { focus = DES_pax_orientis }
+		x = 1
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			GON = {
+				exists = no
+			}
+			FLO = {
+				exists = yes
+				is_puppet = no
+			}
+		}
+
+		bypass = {
+			has_war_with = FLO
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = FLO
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_attack_tri_state_area
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_clear_our_rear }
+		relative_position_id = DES_clear_our_rear
+		x = 2
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			OR = {
+				MOO = {
+					exists = yes
+					is_in_faction_with = TSA
+					is_puppet = no
+				}
+				TSA = {
+					has_government = fascism
+					exists = yes
+				}
+			}
+		}
+
+		bypass = {
+			TSA = {
+				is_puppet = yes
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = TSA
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_prepare_the_southern_front
+		icon = GFX_goal_generic_more_territorial_claims
+		prerequisite = { focus = DES_war_with_greenland }
+		relative_position_id = DES_war_with_greenland
+		x = 3
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			GRN = {
+				exists = no
+			}
+		}
+
+		bypass = {
+			TUG = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = TUG
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_attack_neu_flensburg
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = DES_prepare_the_southern_front }
+		relative_position_id = DES_prepare_the_southern_front
+		x = 0
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			TUG = {
+				exists = no
+			}
+		}
+
+		bypass = {
+			FLE = {
+				exists = no
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = FLE
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_take_western_luvlandia
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_attack_neu_flensburg }
+		relative_position_id = DES_attack_neu_flensburg
+		x = -1
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = west_luvlandia_has_been_colonized
+				all_state = {
+					OR = {
+						region = 76
+						region = 77
+					}
+					NOT = {
+						is_owned_by = UNC
+					}
+				}
+			}
+		}
+
+		bypass = {
+			all_state = {
+				OR = {
+					region = 76
+					region = 77
+				}
+				is_owned_by = ROOT
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = 901.Owner
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_attack_joestars
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = DES_attack_neu_flensburg }
+		relative_position_id = DES_attack_neu_flensburg
+		x = 1
+		y = 1
+		cost = 7.25
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				add = 5
+			}
+		}
+
+		available = {
+			JOJ = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+			has_war_with = JOJ
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			create_wargoal = { 
+				target = JOJ
+				type = annex_everything	
+			}
+		}
+	}
+
+	focus = {
+		id = DES_study_failed_attacks
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = DES_the_sand_empire }
+		x = 41
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_manpower = 25000
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 0.3
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_give_them_fleas
+		icon = GFX_goal_rhineland
+		prerequisite = { focus = DES_study_failed_attacks }
+		relative_position_id = DES_study_failed_attacks
+		x = -3
+		y = 1
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = GRN
+						tag = DES
+					}
+				}
+				country_event = {
+					id = desert.39
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_try_impersonating_arktos
+		icon = GFX_goal_support_fascism
+		prerequisite = { focus = DES_study_failed_attacks }
+		relative_position_id = DES_study_failed_attacks
+		x = -1
+		y = 1
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = GRN
+						tag = DES
+					}
+				}
+				country_event = {
+					id = desert.40
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_steal_the_crystal_ball
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = DES_study_failed_attacks }
+		relative_position_id = DES_study_failed_attacks
+		x = 1
+		y = 1
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = GRN
+						tag = DES
+					}
+				}
+				country_event = {
+					id = desert.41
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_hypnotize_greenlanders
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = DES_study_failed_attacks }
+		relative_position_id = DES_study_failed_attacks
+		x = 3
+		y = 1
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DES_not_pledged
+				NOT = {
+					has_country_flag = pledge_to_end_tricks
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = DES_pledged
+				has_country_flag = pledge_to_end_tricks
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = GRN
+						tag = DES
+					}
+				}
+				country_event = {
+					id = desert.42
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_the_aftermath_of_plans
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = DES_give_them_fleas }
+		prerequisite = { focus = DES_try_impersonating_arktos }
+		prerequisite = { focus = DES_steal_the_crystal_ball }
+		prerequisite = { focus = DES_hypnotize_greenlanders }
+		relative_position_id = DES_study_failed_attacks
+		x = 0
+		y = 2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_war_support = 0.15
+		}
+	}
+
+	focus = {
+		id = DES_generic_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = DES_the_aftermath_of_plans }
+		relative_position_id = DES_the_aftermath_of_plans
+		x = -9
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DES_generic_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = DES_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = DES_generic_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = DES_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = DES_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = DES_generic_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = DES_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = DES_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = DES_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = DES_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = DES_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = DES_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = DES_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = DES_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = DES_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = DES_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = DES_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = DES_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = DES_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = DES_generic_weapon_development_3 }
+		prerequisite = { focus = DES_generic_military_academy }
+		prerequisite = { focus = DES_generic_armor_effort }
+		prerequisite = { focus = DES_generic_new_officer_corps }
+		prerequisite = { focus = DES_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = DES_generic_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DES_generic_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = DES_the_aftermath_of_plans }
+		relative_position_id = DES_the_aftermath_of_plans
+		x = 0
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_flexible_navy
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = DES_generic_naval_effort }
+		mutually_exclusive = { focus = DES_generic_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = DES_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_large_navy
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = DES_generic_naval_effort }
+		mutually_exclusive = { focus = DES_generic_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = DES_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DES_generic_flexible_navy focus = DES_generic_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = DES_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = DES_generic_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = DES_generic_flexible_navy focus = DES_generic_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = DES_generic_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = DES_generic_large_navy focus = DES_generic_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = DES_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = DES_generic_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = DES_generic_large_navy focus = DES_generic_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_capital_ships_effort
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = DES_generic_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DES_generic_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = DES_the_aftermath_of_plans }
+		relative_position_id = DES_the_aftermath_of_plans
+		x = 9
+		y = 1
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DES_generic_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = DES_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DES_generic_fighter_focus }
+		prerequisite = { focus = DES_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = DES_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = DES_generic_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DES_generic_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = DES_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DES_generic_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = DES_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = DES_generic_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = DES_generic_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DES_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = DES_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DES_generic_heavy_fighter_focus }
+		prerequisite = { focus = DES_generic_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = DES_generic_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = DES_generic_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = DES_generic_heavy_fighter_focus }
+		prerequisite = { focus = DES_generic_CAS_effort }
+		prerequisite = { focus = DES_generic_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = DES_generic_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DES_generic_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = DES_generic_aviation_effort_2 }
+		prerequisite = { focus = DES_generic_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = DES_generic_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 

@@ -2865,6 +2865,139 @@ ideas = {
 			}
 			picture = liberty_ships_focus
 		}
+
+		TIG_enemies_of_state = {
+			allowed = { always = no }
+			modifier = {
+				foreign_subversive_activites = -0.1
+				political_power_gain = 0.1
+				resistance_target = 0.05
+			}
+			picture = chi_army_corruption
+		}
+
+		TIG_no_mercy_policy = {
+			allowed = { always = no }
+			modifier = {
+				opinion_gain_monthly_factor = -0.15
+				trade_opinion_factor = -0.15
+				defensive_war_stability_factor = 0.3
+				offensive_war_stability_factor = 0.3
+				stability_factor = -0.10
+				political_power_factor = 0.02	
+			}
+			picture = generic_victors_of_ww1
+		}
+
+		TIG_tiger_guard = {
+			allowed = { always = no }
+			modifier = {
+				non_core_manpower = 0.06
+				conscription = 0.05
+				army_core_defence_factor = 0.05
+			}
+			picture = generic_infantry_bonus
+		}
+
+		TIG_reeduaction = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = -0.10
+				war_support_factor = 0.05
+			}
+			picture = trumpet
+		}
+
+		TIG_traditions_and_reeducation = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.1
+				war_support_factor = -0.05
+			}
+			picture = trumpet
+		}
+
+		TIG_new_training_grounds = {
+			allowed = { always = no }
+			modifier = {
+				conscription = 0.025
+				army_core_defence_factor = 0.05
+				army_core_attack_factor = 0.05
+			}
+			picture = generic_infantry_bonus
+		}
+
+		TIG_educating_new_generation = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.15
+			}
+			picture = trumpet
+		}
+
+		TIG_environment_friendly_exploitation = {
+			allowed = { always = no }
+			modifier = {
+				stability_factor = 0.05
+				local_resources_factor = 0.05
+			}
+			picture = generic_local_self_management
+		}
+
+		TIG_holding_out = {
+			allowed = { always = no }
+			modifier = {
+				defence = 0.1
+			}
+			picture = chi_army_corruption
+		}
+
+		TIG_our_stabilization_forces = {
+			allowed = { always = no }
+			modifier = {
+				send_volunteer_size = 5
+				no_supply_grace = 24
+			}
+			picture = generic_wall_line
+		}
+
+		TIG_gloomy_forest_economic_treaty = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+				local_resources_factor = 0.05
+			}
+			picture = coins
+		}
+
+		TIG_limited_staff = {
+			
+			picture = generic_victors_of_ww1
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				military_leader_cost_factor = 300
+				operative_slot = -1
+				new_operative_slot_bonus = -2
+			}
+		}
+
+		DES_humsin_image = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = 0.05
+				opinion_gain_monthly_factor = 0.05
+				stability_factor = -0.05
+				war_support_factor = 0.05
+			}
+			picture = trumpet
+		}
 	}
 
 	##############################################################################################################################
@@ -3589,15 +3722,48 @@ ideas = {
 		SIO_rainbow = {
 
 			allowed = {
-				original_tag = SIO
+				OR = {
+					original_tag = SIO
+					original_tag = GRN
+				}
 			}
 
 			visible = {
-				has_global_flag = sioux_are_returning
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+							has_country_flag = rainbow_not_returning_too
+						}
+					}
+				}
 			}
 
 			available = {
-				has_global_flag = sioux_are_returning
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+							has_country_flag = rainbow_not_returning_too
+						}
+					}
+				}
 			}
 		
 			traits = { our_right_to_survive compassionate_commoner }
@@ -3631,15 +3797,48 @@ ideas = {
 		SIO_yakari = {
 
 			allowed = {
-				original_tag = SIO
+				OR = {
+					original_tag = SIO
+					original_tag = GRN
+				}
 			}
 
 			visible = {
-				has_global_flag = sioux_are_returning
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						has_country_flag = yakari_arrived
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+				}
 			}
 
 			available = {
-				has_global_flag = sioux_are_returning
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						has_country_flag = yakari_arrived
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+				}
 			}
 		
 			traits = { army_chief_morale_2 }

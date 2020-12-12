@@ -1848,6 +1848,12 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			PIL = {
+				is_puppet_of = JOJ
+			}
+		}
+
 		ai_will_do = { 
 			factor = 1
 		} 
@@ -1928,9 +1934,17 @@ focus_tree = {
 					}
 				}
 			}
-			is_neighbor_of = JOJ
+			OR = {
+				is_neighbor_of = JOJ
+				PIL = {
+					is_puppet_of = JOJ
+				}
+			}
 			PIL = {
-				exists = no
+				OR = {
+					exists = no
+					is_puppet_of = JOJ
+				}
 			}
 			NOT = {
 				has_war = yes
@@ -2525,7 +2539,8 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		custom_trigger_tooltip = {
+		available = {
+			custom_trigger_tooltip = {
 				tooltip = DIO_you_have_completed_one_of_the_plans
 				OR = {
 					AND = {
@@ -2565,6 +2580,7 @@ focus_tree = {
 					}
 				}
 			}
+		}
 		
 		completion_reward = {
 			navy_experience = 25
@@ -2867,7 +2883,8 @@ focus_tree = {
 
 		available_if_capitulated = yes
 
-		custom_trigger_tooltip = {
+		available = {
+			custom_trigger_tooltip = {
 				tooltip = DIO_you_have_completed_one_of_the_plans
 				OR = {
 					AND = {
@@ -2907,6 +2924,7 @@ focus_tree = {
 					}
 				}
 			}
+		}
 
 		completion_reward = {
 			air_experience = 25

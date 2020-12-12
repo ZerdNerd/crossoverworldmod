@@ -30,6 +30,49 @@ on_actions = {
 
 	on_daily = {
 		effect = {
+			#Check for big events!
+			SIO = {
+				if = {
+					limit = {
+						exists = yes
+						DES = {
+							exists = no
+						}
+						NOT = {
+							has_global_flag = shown_the_big_event_sioux_return
+						}
+					}
+					set_global_flag = shown_the_big_event_sioux_return
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						set_country_flag = big_event_sioux_liberation
+					}
+				}
+			}
+			ICW = {
+				if = {
+					limit = {
+						exists = yes
+						GRN = {
+							exists = no
+						}
+						owns_state = 439
+						NOT = {
+							has_global_flag = shown_the_big_event_arktos_wins
+						}
+					}
+					set_global_flag = shown_the_big_event_arktos_wins
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						set_country_flag = big_event_arktos_triumphs
+					}
+				}
+			}
+			#Other checks
 			DIO = {
 				if = {
 					limit = {
@@ -102,7 +145,7 @@ on_actions = {
 					ROOT = {
 						any_owned_state = {
 							has_state_flag = state_is_being_colonized
-							state_population > 2000
+							state_population > 120000
 						}
 					}
 				}
@@ -388,6 +431,7 @@ on_actions = {
 						has_global_flag = sioux_are_returning
 						NOT = {
 							has_variable = sio_shown_the_big_event
+							has_country_flag = SIO_yakari_left_the_country
 						}
 					}
 					705 = {
@@ -933,6 +977,33 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			every_state = {
+				limit = {
+					has_variable = is_being_exploited_@ROOT
+				}
+				set_variable = {
+					is_being_exploited_@FROM = 1
+				}
+				clear_variable = is_being_exploited_@ROOT
+			}
+			every_state = {
+				limit = {
+					has_variable = exploitation_expanded_1_@ROOT
+				}
+				set_variable = {
+					exploitation_expanded_1_@FROM = 1
+				}
+				clear_variable = exploitation_expanded_1_@ROOT
+			}
+			every_state = {
+				limit = {
+					has_variable = exploitation_expanded_2_@ROOT
+				}
+				set_variable = {
+					exploitation_expanded_2_@FROM = 1
+				}
+				clear_variable = exploitation_expanded_2_@ROOT
+			}
 			if = {
 				limit = {
 					ROOT = {

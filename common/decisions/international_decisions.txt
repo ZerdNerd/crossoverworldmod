@@ -70,7 +70,114 @@ expeditions_for_resources_dec_category = {
 	}
 }
 
+bridging_the_gaps_dec_category = {
+
+	bridge_the_gap_with_nak = {
+		icon = generic_operation
+
+		visible = {
+			tag = TIG
+			has_country_flag = bridge_the_gaps_tib
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			country_event = {
+				id = tigers.9
+				days = 0
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+
+	bridge_the_gap_with_nic_and_nob = {
+		icon = generic_operation
+
+		visible = {
+			tag = TIG
+			has_country_flag = bridge_the_gaps_tib
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			country_event = {
+				id = tigers.10
+				days = 0
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+
+	bridge_the_gap_with_lud = {
+		icon = generic_operation
+
+		fire_only_once = yes
+
+		visible = {
+			tag = TIG
+			has_country_flag = bridge_the_gaps_tib
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = talked_with_nic_nak_nob
+				has_variable = TIG_nic_nob_content
+				has_variable = TIG_nak_content
+			}
+		}
+
+		cost = 0
+
+		complete_effect = {
+			country_event = {
+				id = tigers.11
+				days = 0
+			}
+		}
+
+		ai_will_do = {
+			factor = 50
+		}
+	}
+
+}
+
 international_policy_dec_category = {
+
+	achievement_get_debug_decision = {
+		icon = generic_prospect_for_resources
+
+		visible = {
+			always = no
+		}
+
+		cost = 0
+
+		complete_effect = {
+			add_to_array = {
+				PB_achievement_get_array = 9
+			}
+			set_variable = {
+				show_achievement_unlocked_window = 1
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
 
 	sioux_return = {
 		icon = generic_operation
@@ -143,16 +250,6 @@ international_policy_dec_category = {
 				}
 				if = {
 					limit = {
-						MAI = {
-							is_faction_leader = yes
-						}
-					}
-					MAI = {
-						add_to_faction = SIO
-					}
-				}
-				if = {
-					limit = {
 						GRN = {
 							is_in_faction = yes
 							NOT = {
@@ -193,6 +290,28 @@ international_policy_dec_category = {
 					hidden_effect = {
 						middleage_to_modern = yes
 						add_research_slot = 3
+					}
+					if = {
+						limit = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+						create_country_leader = {
+							name = "Buffalo Seed"
+							desc = "POLITICS_BUFFALO_DESC"
+							picture = "buffalo_seed.dds"
+							expire = "1965.1.1"
+							ideology = fascism_ideology
+							traits = {
+								#
+							}
+						}
+						set_politics = {
+							ruling_party = fascism
+						}
+						add_popularity = {
+    						ideology = fascism
+    						popularity = 0.6
+						}
 					}
 				}
 				#SIO = {

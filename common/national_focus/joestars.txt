@@ -33,7 +33,7 @@ focus_tree = {
 
 	focus = { 
 		id = JOJ_leave_everything_to_speedwagon
-		icon = GFX_goal_generic_production #remember to change to best waifu gfx
+		icon = GFX_focus_best_waifu #remember to change to best waifu gfx
 		x = -3
 		y = 1
 		cost = 5
@@ -430,7 +430,7 @@ focus_tree = {
 
 	focus = { 
 		id = JOJ_let_smokey_design_it
-		icon = GFX_goal_generic_production #remember to change to Smokey gfx
+		icon = GFX_focus_smokey #remember to change to Smokey gfx
 		x = 3
 		y = 1
 		cost = 5
@@ -450,7 +450,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#Smokey will be available as an idea
+			custom_effect_tooltip = smokey_will_be_available_as_idea
 		} 
 	}
 
@@ -925,13 +925,8 @@ focus_tree = {
 		}
 		relative_position_id = JOJ_jonathan_path
 
-		complete_tooltip = {
-			add_ideas = {
-				JOJ_tsplit
-			}
-		}
-
 		completion_reward = {
+			custom_effect_tooltip = JOJ_adds_tca_idea
 			hidden_effect = {
 				add_ideas = {
 					JOJ_tcsa
@@ -2223,6 +2218,9 @@ focus_tree = {
 				DIO = {
 					has_war_with = MIC
 				}
+				MIC = {
+					exists = no
+				}
 			}
 		}
 
@@ -2317,10 +2315,15 @@ focus_tree = {
 		}
 
 		available = {
-			PIL = {
-				OR = {
+			OR = {
+				PIL = {
+					OR = {
+						exists = no
+						has_war_with = DIO
+					}
+				}
+				MIC = {
 					exists = no
-					has_war_with = DIO
 				}
 			}
 		}

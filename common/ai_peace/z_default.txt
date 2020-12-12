@@ -78,6 +78,152 @@ default_peace = {
 			}
 		}
 
+		# prioritize neighboring states
+		modifier = {
+			factor = 10.0
+			FROM = {
+				num_owned_neighbour_states = { count > 0 owner = ROOT }
+			}
+		}
+		modifier = {
+			factor = 8.0
+			FROM = {
+				NOT = { num_owned_neighbour_states = { count > 0 owner = ROOT } }
+				num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+			}
+		}
+		modifier = {
+			factor = 3.0
+			FROM = {
+				# has two neighboring states
+				OR = {
+					num_owned_neighbour_states = { count > 1 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+				}
+				# but not more
+				NOT = {
+					num_owned_neighbour_states = { count > 2 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5.0
+			FROM = {
+				# has three neighboring states
+				OR = {
+					num_owned_neighbour_states = { count > 2 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+				}
+				# but not more
+				NOT = {
+					num_owned_neighbour_states = { count > 3 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 3 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 2 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 7.0
+			FROM = {
+				# has four neighboring states
+				OR = {
+					num_owned_neighbour_states = { count > 3 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 3 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 2 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					}
+				}
+				# but not more
+				NOT = {
+					num_owned_neighbour_states = { count > 4 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 4 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 2 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 3 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 3 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 9.0
+			FROM = {
+				# has five or more neighboring states
+				OR = {
+					num_owned_neighbour_states = { count > 4 owner = ROOT }
+					num_claimed_peace_conference_neighbour_states = { count > 4 owner = ROOT }
+					AND = {
+						num_owned_neighbour_states = { count > 2 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 1 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 1 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 2 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 0 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 3 owner = ROOT }
+					}
+					AND = {
+						num_owned_neighbour_states = { count > 3 owner = ROOT }
+						num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+					}
+				}
+			}
+		}
+
 		# give slight preference to states next to ones we've already claimed
 		modifier = {
 			factor = 1.1

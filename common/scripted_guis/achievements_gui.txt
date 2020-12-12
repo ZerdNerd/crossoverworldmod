@@ -573,14 +573,41 @@ scripted_gui = { #yes, its from pax custom achievements shit
 
 		effects = {
 			Custom_Achievements_Window_Enabler_click = {
-			if = {
-				limit = {	
-					NOT = {
-						has_country_flag = Custom_Achievements_Window_Open
+				if = {
+					limit = {	
+						NOT = {
+							has_country_flag = Custom_Achievements_Window_Open
+						}
 					}
+					set_country_flag  = Custom_Achievements_Window_Open
 				}
-				set_country_flag  = Custom_Achievements_Window_Open
-				}
+			}
+		}
+	}
+
+	Achievement_Unlocked = {
+		context_type = player_context
+		window_name = "Achievement_Unlocked_Window"
+
+		visible = {
+			has_variable = show_achievement_unlocked_window
+		}
+
+		dynamic_lists = {
+			list = {
+				array = PB_achievement_get_array
+				entry_container = PB_achievement_get_entry
+			}
+		}
+
+ 		properties = {
+            achievement_icon = { image = "[get_achievement_image]" }
+        }
+
+		effects = {
+			Achievement_Unlocked_Window_close_button_click = {
+				clear_variable  = show_achievement_unlocked_window
+				clear_array = PB_achievement_get_array
 			}
 		}
 	}

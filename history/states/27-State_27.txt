@@ -4,14 +4,21 @@ state={
 	provinces={
 		341 9303 9338 9381 
 	}
-	state_category = rural
-	manpower=120000
+	state_category = city
+	manpower=625000
 	buildings_max_level_factor=1.000
 	history = {
 		owner = FLE
 		add_core_of = FLE
 		buildings = {
-			infrastructure = 2
+			infrastructure = 3
+			air_base = 3
+			9338 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			9338 20
 		}
 	}
 }

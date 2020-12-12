@@ -39,6 +39,31 @@ on_actions = {
 				add_to_array = {
 					PB_achievement_array = 12
 				}
+				add_to_array = {
+					PB_achievement_array = 13
+				}
+			}
+		}
+	}
+
+	on_daily = {
+		effect = {
+			if = {
+				limit = {
+					has_country_flag = achievement_unlocked_1
+					NOT = {
+						has_variable = show_achievement_unlocked_window
+					}
+					NOT = {
+						has_variable = achievement_unlocked_1_window_showed
+					}
+				}
+				set_variable = {
+					show_achievement_unlocked_window = 1
+				}
+				set_variable = {
+					achievement_unlocked_1_window_showed = 1
+				}
 			}
 		}
 	}

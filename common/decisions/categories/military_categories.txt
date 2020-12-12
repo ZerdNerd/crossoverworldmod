@@ -1,0 +1,27 @@
+tiger_leader_switching_dec_category = {
+	icon = generic_political_actions
+	
+	priority = 49
+}
+
+kayo_missions_dec_category = {
+	icon = generic_political_actions
+
+	allowed = {
+		tag = DES
+	}
+
+	visible = {
+		has_completed_focus = DES_release_kayo
+	}
+	
+	priority = 49
+}
+
+dividing_greenland_dec_category = {
+	icon = GFX_decision_cat_divide_greenland
+
+	picture = generic_political_actions
+	
+	priority = 50
+}

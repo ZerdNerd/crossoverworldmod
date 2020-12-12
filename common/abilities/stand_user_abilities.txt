@@ -151,7 +151,7 @@ ability = {
 		name = ABILITY_MUDA_MUDA_G
 		desc = ABILITY_MUDA_MUDA_G_DESC
 		
-		sound_effect = GEMuda
+		sound_effect = GoldExperienceMuda
 		
 		type = army_leader
 		
@@ -492,7 +492,7 @@ ability = {
 		name = ABILITY_SWORD_SLASH_BARRAGE
 		desc = ABILITY_SWORD_SLASH_BARRAGE_DESC
 		
-		sound_effect = hora_hora_hora
+		sound_effect = SilverChariotHora
 		
 		type = army_leader
 		
@@ -802,7 +802,7 @@ ability = {
 		name = ABILITY_ATTACK_WTIH_STICKER_TRICK
 		desc = ABILITY_ATTACK_WTIH_STICKER_TRICK_DESC
 		
-		sound_effect = kiss_sound
+		sound_effect = KissOsha
 		
 		type = army_leader
 		
@@ -838,7 +838,7 @@ ability = {
 		name = ABILITY_ARI_ARI_ARI
 		desc = ABILITY_ARI_ARI_ARI_DESC
 		
-		sound_effect = ari_ari_ari
+		sound_effect = StickyFingersAriariari
 		
 		type = army_leader
 		
@@ -918,7 +918,7 @@ ability = {
 		name = ABILITY_BULLET_CONTROL
 		desc = ABILITY_BULLET_CONTROL_DESC
 		
-		sound_effect = pass_pass_pass
+		sound_effect = SexPistolsPassPassPass
 		
 		type = army_leader
 		
@@ -979,6 +979,255 @@ ability = {
 			planning_speed = 1
 			recon_factor = 1
 			experience_gain_army = 0.05
+		}
+	}
+
+	# um, here go the hamon attacks
+
+	sendo_overdrive = {
+		name = ABILITY_SENDO_OVERDRIVE
+		desc = ABILITY_SENDO_OVERDRIVE_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_trait = hamon_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.3
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.4
+				combat_breakthrough = 0.4
+				str_damage_multiplier = 0.3
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	sendowavekick = {
+		name = ABILITY_SENDO_KICK
+		desc = ABILITY_SENDO_KICK_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			NOT = {
+				has_id = 8000
+				has_id = 8250
+				has_id = 8005
+				has_id = 8001
+				has_id = 8006
+				has_id = 8251
+			}
+			has_trait = hamon_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.3
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.3
+				combat_breakthrough = 0.2
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	sunlight_yellow_overdrive = {
+		name = ABILITY_SYO
+		desc = ABILITY_SYO_DESC
+		
+		sound_effect = SunlightYellowOverdrive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8000
+			has_trait = hamon_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.4
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				combat_breakthrough = 0.5
+				str_damage_multiplier = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	youfellforitfool = {
+		name = ABILITY_THUNDER_CROSS_SPLIT_ATTACK
+		desc = ABILITY_THUNDER_CROSS_SPLIT_ATTACK_DESC
+		
+		sound_effect = Thunder_Cross_Split_Attack
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_id = 8250
+			has_trait = hamon_user
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.5
+		duration = 180
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.5
+				combat_breakthrough = 0.5
+				str_damage_multiplier = 0.5
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 5
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	clackervolley = {
+		name = ABILITY_CLACKERS
+		desc = ABILITY_CLACKERS_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_trait = hamon_user
+			has_id = 8001
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.3
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.3
+				combat_breakthrough = 0.2
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	bubble_launcher = {
+		name = ABILITY_BUBBLES
+		desc = ABILITY_BUBBLES_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_trait = hamon_user
+			has_id = 8006
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.3
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.35
+				combat_breakthrough = 0.25
+				str_damage_multiplier = 0.25
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
+		}
+	}
+
+	beetlescarf = {
+		name = ABILITY_BEETLESCARF
+		desc = ABILITY_BEETLESCARF_DESC
+		
+		sound_effect = command_power_ability_offensive
+		
+		type = army_leader
+		
+		allowed = {
+			is_border_war = no
+			has_trait = hamon_user
+			OR = {
+				has_id = 8005
+				has_id = 8251
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		cost = 0.3
+		duration = 240
+		
+		one_time_effect = {
+			add_temporary_buff_to_units = {
+				combat_offense = 0.35
+				combat_breakthrough = 0.25
+				str_damage_multiplier = 0.2
+				cannot_retreat_while_attacking = 1.0
+				
+				days = 10
+				#tooltip = ABILITY_FORCE_ATTACK_TOOLTIP
+			}
 		}
 	}
 }

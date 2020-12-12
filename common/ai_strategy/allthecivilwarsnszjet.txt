@@ -471,59 +471,6 @@ leave_khurain_alone = {
 
 #it was temporary here, now its permanent
 
-humsin_and_wolves = {
-	enable = {
-		tag = DES
-		NOT = {
-			has_completed_focus = DES_relations_with_wolves
-		}
-	}
-	abort = {
-		NOT = {
-			tag = DES
-		}
-	}
-	ai_strategy = {
-		type = ignore
-		id = "WOL"
-		value = 100
-	}
-	ai_strategy = {
-		type = alliance
-		id = "WOL"
-		value = -100
-	}
-	ai_strategy = {
-		type = ignore
-		id = "WEA"
-		value = 100
-	}
-	ai_strategy = {
-		type = alliance
-		id = "WEA"
-		value = -100
-	}
-}
-
-humsin_and_turtles = {
-	enable = {
-		tag = DES
-		NOT = {
-			has_completed_focus = DES_invest_in_republic_of_turtles
-		}
-	}
-	abort = {
-		NOT = {
-			tag = DES
-		}
-	}
-	ai_strategy = {
-		type = alliance
-		id = "TRL"
-		value = 100
-	}
-}
-
 flower_hill_wont_invade_overseas_if_eastern_continent_is_not_done_with = {
 	enable = {
 		original_tag = FLO

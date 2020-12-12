@@ -7,6 +7,10 @@ sioux_council_dec_category = {
 	visible = {
 		NOT = {
 			has_country_flag = SIO_council_abolished
+			AND = {
+				has_country_flag = SIO_yakari_left_the_country
+				has_global_flag = sioux_are_returning
+			}
 		}
 	}
 

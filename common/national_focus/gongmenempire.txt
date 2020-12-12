@@ -994,7 +994,7 @@ focus_tree = {
 		} 
 		completion_reward = { 
 			declare_war_on = {
-				target = NOT
+				target = NTR
 				type = annex_everything
 			}
 			add_named_threat = { 
@@ -1002,7 +1002,7 @@ focus_tree = {
     			name = GON_invasion_of_northern_republic
 			}
 			hidden_effect = {
-				NOT = {
+				NTR = {
 					every_owned_state = {
 						add_core_of = GON
 					}
@@ -1412,7 +1412,11 @@ focus_tree = {
 		prerequisite = { focus = GON_deeper_into_the_continent }
 		bypass = {
 			DES = {
-				exists = no
+				OR = {
+					exists = no
+					has_country_flag = gongmen_agreed
+					has_country_flag = gongmen_rejected
+				}
 			}
 		}
 

@@ -771,7 +771,7 @@ focus_tree = {
 				middleage_to_preindustrial = yes
 				preindustrial_to_premodern = yes
 			}
-			add_research_slot = 1
+			add_research_slot = 2
 		} 
 	}
 
@@ -841,6 +841,15 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = GRN_get_closer_with_outcasts }
 		available_if_capitulated = no
+
+		bypass = {
+			TIG = {
+				NOT = {
+					has_government = democratic
+					has_government = paidocracy
+				}
+			}
+		}
 		
 		ai_will_do = { 
 			factor = 2

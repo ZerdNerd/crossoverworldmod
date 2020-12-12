@@ -9,14 +9,15 @@ set_technology = {
 
 add_ideas = {
 	middleage_tech
+	TIG_limited_staff
 }
 
 set_convoys = 50
 
 set_popularities = {
-	democratic = 100
+	democratic = 65
 
-	fascism = 0
+	fascism = 35
 		
 	communism = 0
 		
@@ -55,9 +56,9 @@ create_country_leader = {
 }
 
 create_country_leader = {
-	name = "Lar"
+	name = "Nak"
 	desc = "POLITICS_TBD_DESC"
-	picture = "lar.dds"
+	picture = "nak.dds"
 	expire = "1965.1.1"
 	ideology = fascism_ideology
 	traits = {
@@ -85,4 +86,39 @@ create_country_leader = {
 	traits = {
 		#
 	}
+}
+
+create_corps_commander = {
+	name = "Tom"
+	portrait_path = "gfx/leaders/TIG/tom.dds"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 3
+	id = 5200
+}
+
+create_corps_commander = {
+	name = "Nak"
+	portrait_path = "gfx/leaders/TIG/nak.dds"
+	traits = { }
+	skill = 4
+    attack_skill = 5
+    defense_skill = 4
+    planning_skill = 2
+    logistics_skill = 2
+	id = 5203
+}
+
+create_corps_commander = {
+	name = "Krum"
+	portrait_path = "gfx/leaders/TIG/krum.dds"
+	traits = { }
+	skill = 3
+    attack_skill = 3
+    defense_skill = 4
+    planning_skill = 2
+    logistics_skill = 1
 }

@@ -1,17 +1,24 @@
+
 state={
 	id=531
 	name="STATE_531"
-	provinces={
-		2662 8279 8286 8332 8388 8438 
-	}
-	state_category = rural
-	manpower=450000
-	buildings_max_level_factor=1.000
-	history = {
+
+	history={
 		owner = BEE
 		add_core_of = BEE
 		buildings = {
 			infrastructure = 2
+			8438 = {
+				naval_base = 2
+			}
 		}
+
 	}
+
+	provinces={
+		2662 8332 8388 8438 
+	}
+	manpower=450000
+	buildings_max_level_factor=1.000
+	state_category=rural
 }

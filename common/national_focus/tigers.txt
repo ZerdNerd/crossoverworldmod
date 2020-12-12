@@ -14,7 +14,7 @@ focus_tree = {
 		icon = GFX_goal_generic_production
 		x = 6
 		y = 0
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -36,7 +36,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 5
 		y = 1
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
@@ -64,7 +64,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 7
 		y = 1
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
@@ -84,6 +84,12 @@ focus_tree = {
 					instant_build = yes
 				}
 			}
+			hidden_effect = {
+				country_event = {
+					id = tigers.1
+					days = 7
+				}
+			}
 		} 
 	}
 
@@ -92,7 +98,7 @@ focus_tree = {
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 6
 		y = 2
-		cost = 5
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
@@ -125,6 +131,1899 @@ focus_tree = {
 			}
 		} 
 	}
+
+	focus = { 
+		id = TIG_the_ventures_into_gloomy_forest
+		icon = GFX_goal_generic_construction2
+		x = 6
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_improve_food_processing
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = GLO
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+	
+	focus = { 
+		id = TIG_the_narrow_connection
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_ventures_into_gloomy_forest
+		}
+
+		available = {
+			has_completed_focus = TIG_a_bit_more_advanced
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			440 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			504 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_from_the_forest_to_seashore
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 3
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_narrow_connection
+		}
+
+		available = {
+			has_completed_focus = TIG_our_window_to_the_world
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 440
+						state = 504
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			504 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4479
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_conveniently_through_the_forest
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_from_the_forest_to_seashore
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_iron_mines_and_steel_factories
+		icon = GFX_focus_generic_steel
+		x = 5
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_ventures_into_gloomy_forest
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = GLO
+			}
+			has_completed_focus = TIG_a_bit_more_advanced
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_resource = {
+    				type = steel
+    				amount = 7
+    				state = THIS
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_the_rubber_heaven
+		icon = GFX_focus_generic_rubber
+		x = 5
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_iron_mines_and_steel_factories
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = GLO
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_resource = {
+    				type = rubber
+    				amount = 4
+    				state = THIS
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_black_gold
+		icon = GFX_goal_generic_oil_refinery
+		x = 5
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_rubber_heaven
+		}
+
+		available = {
+			any_owned_state = {
+				is_core_of = GLO
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_resource = {
+    				type = oil
+    				amount = 3
+    				state = THIS
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_beginnings_of_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_ventures_into_gloomy_forest
+		}
+
+		available = {
+			has_completed_focus = TIG_a_bit_more_advanced
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			440 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			504 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_expansion_of_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_beginnings_of_industry
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			440 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			504 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_concentrating_military_production
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 7
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_expansion_of_industries
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = GLO
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_expand_our_window_to_the_world
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 9
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_the_ventures_into_gloomy_forest
+		}
+
+		available = {
+			has_completed_focus = TIG_our_window_to_the_world
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			504 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4479
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_minor_naval_power
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 9
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = TIG_expand_our_window_to_the_world
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			504 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4479
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	########################################################################################################################################################################################################################
+	#
+	#	DDDDD    OOOOO  MM    MM EEEEEEE  SSSSS  TTTTTTT IIIII  CCCCC  
+	#	DD  DD  OO   OO MMM  MMM EE      SS        TTT    III  CC    C 
+	#	DD   DD OO   OO MM MM MM EEEEE    SSSSS    TTT    III  CC      
+	#	DD   DD OO   OO MM    MM EE           SS   TTT    III  CC    C 
+	#	DDDDDD   OOOO0  MM    MM EEEEEEE  SSSSS    TTT   IIIII  CCCCC  
+	#
+	########################################################################################################################################################################################################################
+
+	focus = { 
+		id = TIG_aron_is_dead
+		icon = GFX_focus_aron_dead
+		x = 20
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TIG_unforseen_consequences
+		icon = GFX_focus_lud
+		x = 11
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			has_country_flag = TIG_nak_is_dead
+		}
+
+		prerequisite = {
+			focus = TIG_aron_is_dead
+		} 
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TIG_the_enemies_of_state
+		icon = GFX_focus_generic_military_mission
+		x = 10
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_unforseen_consequences
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_enemies_of_state
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_policy_of_hate
+		icon = GFX_goal_generic_political_pressure
+		x = 12
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_unforseen_consequences
+		}
+
+		completion_reward = {
+			add_manpower = 5000
+			add_political_power = 100
+			add_stability = -0.05
+		} 
+	}
+
+	focus = { 
+		id = TIG_no_mercy_to_anyone
+		icon = GFX_goal_generic_political_pressure
+		x = 11
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_policy_of_hate
+		}
+
+		prerequisite = {
+			focus = TIG_the_enemies_of_state
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_no_mercy_policy
+			}
+			hidden_effect = {
+				unlock_national_focus = TIG_abandon_the_traditions
+				unlock_national_focus = TIG_form_the_tiger_guard
+				unlock_national_focus = TIG_reeducation
+				unlock_national_focus = TIG_start_spreading_gossips
+				unlock_national_focus = TIG_itensify_the_exploitation_of_gloomy_forest
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_nak_turns_up
+		icon = GFX_focus_nak
+		x = 16
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = TIG_tom_turns_up
+		}
+
+		prerequisite = {
+			focus = TIG_aron_is_dead
+		} 
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TIG_abandon_the_traditions
+		icon = GFX_focus_generic_support_the_left_right
+		x = 14
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_nak_turns_up
+		}
+
+		completion_reward = {
+			add_political_power = 100
+			add_stability = -0.2
+		} 
+	}
+
+	focus = { 
+		id = TIG_form_the_tiger_guard
+		icon = GFX_focus_generic_military_mission
+		x = 16
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_nak_turns_up
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_tiger_guard
+			}
+			#special oob
+		} 
+	}
+
+	focus = { 
+		id = TIG_reeducation
+		icon = GFX_focus_generic_self_management
+		x = 18
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_nak_turns_up
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_reeduaction
+			}
+			add_stability = -0.05
+		} 
+	}
+
+	focus = { 
+		id = TIG_start_spreading_gossips
+		icon = GFX_goal_generic_dangerous_deal
+		x = 17
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_reeducation
+		}
+
+		prerequisite = {
+			focus = TIG_form_the_tiger_guard
+		}
+
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = TIG_itensify_the_exploitation_of_gloomy_forest
+		icon = GFX_goal_generic_construction2
+		x = 15
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_abandon_the_traditions
+		}
+
+		prerequisite = {
+			focus = TIG_form_the_tiger_guard
+		}
+
+		completion_reward = {
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = TIG_exile_toms_family
+		icon = GFX_focus_toms_family
+		x = 17
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_nak_is_dead
+				}
+			}
+		}
+
+		mutually_exclusive = {
+			focus = TIG_kill_tumtum
+		}
+
+		prerequisite = {
+			focus = TIG_start_spreading_gossips
+		}
+
+		prerequisite = {
+			focus = TIG_itensify_the_exploitation_of_gloomy_forest
+		}
+
+		completion_reward = {
+			country_event = {
+				id = tigers.6
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_kill_tumtum
+		icon = GFX_focus_tumtum
+		x = 15
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				OR = {
+					has_country_flag = TIG_nak_is_dead
+					NOT = {
+						has_country_flag = TIG_nak_is_dead
+					}
+				}
+			}
+		}
+
+		mutually_exclusive = {
+			focus = TIG_exile_toms_family
+		}
+
+		prerequisite = {
+			focus = TIG_start_spreading_gossips
+		}
+
+		prerequisite = {
+			focus = TIG_itensify_the_exploitation_of_gloomy_forest
+		}
+
+		completion_reward = {
+			country_event = {
+				id = tigers.2
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_golden_age_is_upon_us
+		icon = GFX_goal_generic_demand_territory
+		x = 16
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_exile_toms_family
+			focus = TIG_kill_tumtum
+		}
+
+		completion_reward = {
+			add_stability = 0.15
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = TIG_the_cursed_times
+		icon = GFX_focus_tib
+		x = 29
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			has_country_flag = TIG_tom_is_dead
+		}
+
+		prerequisite = {
+			focus = TIG_aron_is_dead
+		} 
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TIG_maintain_the_traditions_and_educate_the_young
+		icon = GFX_focus_generic_self_management
+		x = 28
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_the_cursed_times
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = {
+				TIG_traditions_and_reeducation
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_reverse_the_polarization
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 30
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_the_cursed_times
+		}
+
+		completion_reward = {
+			add_stability = 0.1
+			add_political_power = 50
+		} 
+	}
+
+	focus = { 
+		id = TIG_bridge_the_gaps_end_the_curse
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 29
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_reverse_the_polarization
+		}
+
+		prerequisite = {
+			focus = TIG_maintain_the_traditions_and_educate_the_young
+		}
+
+		completion_reward = {
+			country_event = {
+				id = tigers.8
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_tom_turns_up
+		icon = GFX_focus_tom
+		x = 24
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = TIG_nak_turns_up
+		}
+
+		prerequisite = {
+			focus = TIG_aron_is_dead
+		} 
+
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = TIG_protect_the_traditions
+		icon = GFX_focus_generic_support_the_left_right
+		x = 22
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_tom_is_dead
+				}
+			}
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_tom_turns_up
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+		} 
+	}
+
+	focus = { 
+		id = TIG_establish_new_training_grounds
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		x = 24
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_tom_is_dead
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_tom_turns_up
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_new_training_grounds
+			}
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = TIG_educate_the_new_generation
+		icon = GFX_focus_generic_military_academy
+		x = 26
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_tom_is_dead
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_tom_turns_up
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_educating_new_generation
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_careful_and_planned_exploitation
+		icon = GFX_goal_generic_construction
+		x = 23
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_tom_is_dead
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_protect_the_traditions
+		}
+
+		prerequisite = {
+			focus = TIG_establish_new_training_grounds
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_environment_friendly_exploitation
+			}
+			add_stability = 0.05
+		} 
+	}
+
+	focus = { 
+		id = TIG_attract_new_settlers_and_soldiers
+		icon = GFX_goal_generic_construction
+		x = 25
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = TIG_did_something_happen
+				NOT = {
+					has_country_flag = TIG_tom_is_dead
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_educate_the_new_generation
+		}
+
+		prerequisite = {
+			focus = TIG_establish_new_training_grounds
+		}
+
+		completion_reward = {
+			add_manpower = 55000
+			440 = {
+				add_manpower = 140000
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_peaceful_continuation_of_aron_policies
+		icon = GFX_goal_generic_improve_relations
+		x = 25
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_careful_and_planned_exploitation
+		}
+
+		prerequisite = {
+			focus = TIG_attract_new_settlers_and_soldiers
+		}
+
+		mutually_exclusive = {
+			focus = TIG_set_the_goals_for_our_expansion
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = TIG_set_the_goals_for_our_expansion
+		icon = GFX_goal_generic_position_armies
+		x = 23
+		y = 4
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = TIG_peaceful_continuation_of_aron_policies
+		}
+
+		prerequisite = {
+			focus = TIG_careful_and_planned_exploitation
+		}
+
+		prerequisite = {
+			focus = TIG_attract_new_settlers_and_soldiers
+		}
+
+		completion_reward = {
+			add_political_power = 100
+		} 
+	}
+
+	focus = { 
+		id = TIG_holding_out_in_this_world
+		icon = GFX_goal_generic_position_armies
+		x = 24
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_set_the_goals_for_our_expansion
+			focus = TIG_peaceful_continuation_of_aron_policies
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_holding_out
+			}
+		} 
+	}
+
+	########################################################################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL      
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL      
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL 
+	#
+	########################################################################################################################################################################################################################
+
+	focus = { 
+		id = TIG_establish_contact_with_western_powers
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 16
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_golden_age_is_upon_us
+		}
+
+		completion_reward = {
+			country_event = {
+				id = tigers.15
+				days = 0
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_a_bit_more_advanced
+		icon = GFX_focus_research
+		x = 20
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_establish_contact_with_western_powers
+			focus = TIG_contact_greenland
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+			hidden_effect = {
+				middleage_to_preindustrial = yes
+			}
+			add_research_slot = 1
+		} 
+	}
+
+	focus = { 
+		id = TIG_our_window_to_the_world
+		icon = GFX_focus_generic_destroyer
+		x = 20
+		y = 8
+		cost = 10
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_a_bit_more_advanced
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_premodern = yes
+				premodern_to_modern = yes
+			}
+			add_research_slot = 2
+			504 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4479
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = dockyard
+					level = 3
+					instant_build = yes
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_the_quest_for_living_space
+		icon = GFX_focus_generic_support_the_left_right
+		x = 15
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = TIG_prioritize_expansion_into_greenland
+		}
+
+		prerequisite = {
+			focus = TIG_establish_contact_with_western_powers
+		}
+
+		completion_reward = {
+			add_state_core = 406
+			add_state_core = 447
+			add_state_core = 480
+			add_state_core = 490
+			add_state_core = 508
+			add_state_core = 487
+			add_state_core = 445
+			add_state_core = 468
+			add_state_core = 434
+			add_state_core = 425
+			add_state_claim = 520
+			add_state_claim = 531
+			add_state_claim = 544
+			add_state_claim = 536
+			add_state_claim = 516
+			add_state_claim = 529
+			add_state_claim = 539
+			add_state_claim = 501
+			add_state_claim = 524
+			add_state_claim = 555
+			add_state_claim = 557
+		} 
+	}
+
+	focus = { 
+		id = TIG_prioritize_expansion_into_greenland
+		icon = GFX_focus_greenland
+		x = 17
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		mutually_exclusive = {
+			focus = TIG_the_quest_for_living_space
+		}
+
+		prerequisite = {
+			focus = TIG_establish_contact_with_western_powers
+		}
+
+		completion_reward = {
+			add_state_core = 508
+			add_state_core = 487
+			add_state_core = 445
+			add_state_core = 468
+			add_state_core = 425
+			add_state_claim = 434
+			add_state_claim = 373
+			add_state_claim = 389
+			add_state_claim = 342
+			add_state_claim = 414
+		} 
+	}
+
+	focus = { 
+		id = TIG_wait_for_perfect_moment
+		icon = GFX_goal_generic_major_war
+		x = 15
+		y = 8
+		cost = 1
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			GRN = {
+				has_war = yes
+			}
+		}
+
+		bypass = {
+			has_war_with = GRN
+		}
+
+		prerequisite = {
+			focus = TIG_prioritize_expansion_into_greenland
+			focus = TIG_the_quest_for_living_space
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = GRN
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_the_eastern_operation
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			owns_state = 406
+		}
+
+		prerequisite = {
+			focus = TIG_prioritize_expansion_into_greenland
+			focus = TIG_the_quest_for_living_space
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = 406.Owner
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_strike_humsin
+		icon = GFX_goal_generic_major_war
+		x = 15
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			DES = {
+				OR = {
+					exists = no
+					has_war_with = ROOT
+				}
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_wait_for_perfect_moment
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = DES
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_finish_the_job
+		icon = GFX_goal_generic_major_war
+		x = 17
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			HOR = {
+				exists = no
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_the_eastern_operation
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = HOR
+				type = annex_everything
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_battle_for_control_over_the_sea
+		icon = GFX_focus_generic_navy_battleship2
+		x = 19
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			TUG = {
+				exists = no
+			}
+		}
+
+		prerequisite = {
+			focus = TIG_the_eastern_operation
+		}
+
+		prerequisite = {
+			focus = TIG_our_window_to_the_world
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = TUG
+				type = annex_everything
+			}
+		} 
+	}
+	
+	focus = { 
+		id = TIG_contact_greenland
+		icon = GFX_focus_greenland
+		x = 24
+		y = 6
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_holding_out_in_this_world
+		}
+
+		completion_reward = {
+			GRN = {
+				add_opinion_modifier = {
+    				target = TIG
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_get_together_with_outcasts
+		icon = GFX_goal_generic_improve_relations
+		x = 23
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_contact_greenland
+		}
+
+		completion_reward = {
+			OUT = {
+				add_opinion_modifier = {
+    				target = TIG
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_establish_relations_with_bees
+		icon = GFX_goal_generic_improve_relations
+		x = 25
+		y = 7
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_contact_greenland
+		}
+
+		completion_reward = {
+			BEE = {
+				add_opinion_modifier = {
+    				target = TIG
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_defense_of_our_lands
+		icon = GFX_goal_generic_fortify_city
+		x = 24
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_get_together_with_outcasts
+		}
+
+		prerequisite = {
+			focus = TIG_establish_relations_with_bees
+		}
+
+		completion_reward = {
+			440 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3072
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 5089
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 5709
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 8025
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 8033
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 8060
+				}
+			}
+			504 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 8140
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_cooperation_treaty_with_greenland
+		icon = GFX_goal_generic_major_alliance
+		x = 22
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_get_together_with_outcasts
+		}
+
+		completion_reward = {
+			GRN = {
+				country_event = {
+					id = tigers.23
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_a_long_journey_to_tungu_pungu
+		icon = GFX_goal_generic_improve_relations
+		x = 26
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_establish_relations_with_bees
+		}
+
+		completion_reward = {
+			TUG = {
+				add_opinion_modifier = {
+    				target = TIG
+    				modifier = MAI_true_relations
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_gloomy_forest_economic_treaty
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 23
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_cooperation_treaty_with_greenland
+		}
+
+		prerequisite = {
+			focus = TIG_our_window_to_the_world
+		}
+
+		prerequisite = {
+			focus = TIG_defense_of_our_lands
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_gloomy_forest_economic_treaty
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						tag = TIG
+					}
+					any_owned_state = {
+						is_core_of = GLO
+					}
+				}
+				country_event = {
+					id = tigers.26
+					days = 1
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = TIG_stabilization_forces
+		icon = GFX_focus_generic_manpower
+		x = 25
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		prerequisite = {
+			focus = TIG_a_long_journey_to_tungu_pungu
+		}
+
+		prerequisite = {
+			focus = TIG_defense_of_our_lands
+		}
+
+		completion_reward = {
+			add_ideas = {
+				TIG_our_stabilization_forces
+			}
+		} 
+	}
+                                                               
 	
 	default = no
 }

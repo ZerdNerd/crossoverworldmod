@@ -84,6 +84,13 @@ defined_text = { #CUSTOM ACHIEVEMENT TITLES
         }
         localization_key = "Achievement_Panzer_Vor"
     }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 13 }
+        }
+        localization_key = "Achievement_Zero_Redeeming_Qualities"
+    }
     
 }
 
@@ -172,6 +179,13 @@ defined_text = { #CUSTOM ACHIEVEMENT DESCRIPTIONS
             check_variable = { v = 12 }
         }
         localization_key = "Achievement_Panzer_Vor_desc"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 13 }
+        }
+        localization_key = "Achievement_Zero_Redeeming_Qualities_desc"
     }
 
     
@@ -263,6 +277,13 @@ defined_text = { #CUSTOM ACHIEVEMENT IMAGE
         }
         localization_key = "GFX_Achievement_Panzer_Vor_Image"
     }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 13 }
+        }
+        localization_key = "GFX_Achievement_Zero_Redeeming_Qualities_Image"
+    }
 }
 
 defined_text = { #CUSTOM ACHIEVEMENT REQUIREMENT TOOLTIP
@@ -350,6 +371,13 @@ defined_text = { #CUSTOM ACHIEVEMENT REQUIREMENT TOOLTIP
             check_variable = { v = 12 }
         }
         localization_key = "Achievement_Panzer_Vor_Requirements"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 13 }
+        }
+        localization_key = "Achievement_Zero_Redeeming_Qualities_Requirements"
     }
     
 }

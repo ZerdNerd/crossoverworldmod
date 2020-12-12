@@ -302,20 +302,23 @@ country_event = { #Humsin agrees
 
 	option = { #Great!
 		name = gongmenempire.12.a
+		hidden_effect = {
+			set_country_flag = humsin_agreed
+		}
 		diplomatic_relation = {
     		country = DES
     		relation = non_aggression_pact
     		active = yes
 		}
-		add_state_claim = 245
-		add_state_claim = 262
-		add_state_claim = 252
-		add_state_claim = 293
-		add_state_claim = 318
-		add_state_claim = 322
-		add_state_claim = 342
-		add_state_claim = 297
-		add_state_claim = 373
+	#	add_state_claim = 245
+	#	add_state_claim = 262
+	#	add_state_claim = 252
+	#	add_state_claim = 293
+	#	add_state_claim = 318
+	#	add_state_claim = 322
+	#	add_state_claim = 342
+	#	add_state_claim = 297
+	#	add_state_claim = 373
 	}
 }
 

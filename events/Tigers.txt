@@ -1,0 +1,1104 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = tigers
+
+country_event = { #Aron dies
+	id = tigers.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.1"}
+	title = tigers.1.t
+	desc = tigers.1.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.1.a
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Tom"
+			desc = "POLITICS_TOM_TIG_DESC"
+			picture = "tom.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			complete_national_focus = TIG_aron_is_dead
+			complete_national_focus = TIG_tom_turns_up
+		}
+	}
+
+	option = {
+		name = tigers.1.b
+		kill_country_leader = yes
+		set_politics = {
+			ruling_party = fascism
+		}
+		create_country_leader = {
+			name = "Tom"
+			desc = "POLITICS_TOM_TIG_DESC"
+			picture = "tom.dds"
+			expire = "1965.1.1"
+			ideology = centrism
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			complete_national_focus = TIG_aron_is_dead
+			complete_national_focus = TIG_nak_turns_up
+			set_popularities = {
+				democratic = 0.5
+				fascism = 0.5
+			}
+		}
+	}
+}
+
+country_event = { #Killing Tumtum
+	id = tigers.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.2"}
+	title = tigers.2.t
+	desc = tigers.2.d
+	picture = GFX_report_tiger_tumtum
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.2.a
+		hidden_effect = {
+			country_event = {
+				id = tigers.3
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Tumtum's death is discovered
+	id = tigers.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.3"}
+	title = tigers.3.t
+	desc = tigers.3.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.3.a
+		add_stability = -0.15
+		hidden_effect = {
+			country_event = {
+				id = tigers.4
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Tib leaves the clan
+	id = tigers.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.4"}
+	title = tigers.4.t
+	desc = tigers.4.d
+	picture = GFX_report_tiger_tib
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.4.a
+		add_political_power = 50
+		hidden_effect = {
+			GRN = {
+				country_event = {
+					id = tigers.5
+					days = 3
+				}
+			}
+			create_country_leader = {
+				name = "Tara"
+				desc = "POLITICS_TARA_DESC"
+				picture = "tara.dds"
+				expire = "1965.1.1"
+				ideology = paidocracy_sub
+				traits = {
+					#
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Tib arrives to Greenland
+	id = tigers.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.5"}
+	title = tigers.5.t
+	desc = tigers.5.d
+	picture = GFX_report_tiger_tib
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.5.a
+		hidden_effect = {
+			set_country_flag = GRN_tib_arrived_in_greenland
+		}
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 3
+    		logistics_skill = 3
+			id = 5201
+		}	
+	}
+}
+
+country_event = { #Tom's family is exiled
+	id = tigers.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.6"}
+	title = tigers.6.t
+	desc = tigers.6.d
+	picture = GFX_report_tiger_toms_family
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.6.a
+		remove_unit_leader = 5200
+		add_political_power = 100
+		add_stability = -0.15
+		add_popularity = {
+    		ideology = democratic
+    		popularity = -0.2
+		}
+		add_popularity = {
+    		ideology = fascism
+    		popularity = 0.2
+		}
+		hidden_effect = {
+			GRN = {
+				hidden_effect = {
+					country_event = {
+						id = tigers.7
+						days = 3
+					}
+				}
+			}
+			create_country_leader = {
+				name = "Tara"
+				desc = "POLITICS_TARA_DESC"
+				picture = "tara.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+			create_country_leader = {
+				name = "Tara"
+				desc = "POLITICS_TARA_DESC"
+				picture = "tara.dds"
+				expire = "1965.1.1"
+				ideology = paidocracy_sub
+				traits = {
+					#
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Tom's family (and Tumtum) arrive to Greenland
+	id = tigers.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.7"}
+	title = tigers.7.t
+	desc = tigers.7.d
+	picture = GFX_report_tiger_toms_family
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.7.a
+		hidden_effect = {
+			set_country_flag = GRN_toms_family_arrived_in_greenland
+		}
+		create_corps_commander = {
+			name = "Tom"
+			portrait_path = "gfx/leaders/TIG/tom.dds"
+			traits = { }
+			skill = 4
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 3
+    		logistics_skill = 3
+			id = 52001
+		}
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 3
+    		logistics_skill = 3
+			id = 52011
+		}
+		create_corps_commander = {
+			name = "Tumtum"
+			portrait_path = "gfx/leaders/TIG/tumtum.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 5
+    		defense_skill = 5
+    		planning_skill = 1
+    		logistics_skill = 1
+			id = 52021
+		}	
+	}
+}
+
+country_event = { #Bridging the gaps
+	id = tigers.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.8"}
+	title = tigers.8.t
+	desc = tigers.8.d
+	picture = GFX_report_tiger_tib
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.8.a
+		custom_effect_tooltip = TIG_will_unlock_decisions_to_bridge_the_gaps
+		hidden_effect = {
+			set_country_flag = bridge_the_gaps_tib
+		}
+	}
+}
+
+country_event = { #Bridging the gap with Nak
+	id = tigers.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.9"}
+	title = tigers.9.t
+	desc = tigers.9.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.9.a
+		custom_effect_tooltip = TIG_nak_will_be_now_content_with_tibs_rule
+		add_political_power = -25
+		add_stability = 0.05
+		hidden_effect = {
+			set_variable = {
+				TIG_nak_content = 1
+			}
+			UNC = {
+				every_unit_leader = {
+					limit = {
+						has_id = 5203
+					}
+					set_nationality = TIG
+				}
+			}
+		}
+	}
+
+	option = {
+		name = tigers.9.b
+		custom_effect_tooltip = TIG_nak_will_not_be_content_with_tibs_rule
+		add_political_power = 25
+		hidden_effect = {
+			set_variable = {
+				TIG_nak_content = -1
+			}
+		}
+	}
+}
+
+country_event = { #Bridging the gap with Nic and Nob
+	id = tigers.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.10"}
+	title = tigers.10.t
+	desc = tigers.10.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = {
+		name = tigers.10.a
+		custom_effect_tooltip = TIG_nic_and_nob_will_be_now_content_with_tibs_rule
+		add_political_power = -50
+		add_stability = 0.05
+		army_experience = 5
+		hidden_effect = {
+			set_variable = {
+				TIG_nic_nob_content = 1
+			}
+		}
+	}
+
+	option = {
+		name = tigers.10.b
+		custom_effect_tooltip = TIG_nic_and_nob_will_not_be_content_with_tibs_rule
+		add_political_power = 50
+		hidden_effect = {
+			set_variable = {
+				TIG_nic_nob_content = -1
+			}
+		}
+	}
+}
+
+country_event = { #The gap with Lud
+	id = tigers.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.11"}
+	title = tigers.11.t
+	desc = tigers.11.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Come tomorrow - if Nak is supporting Tib
+		name = tigers.11.a
+		trigger = {
+			check_variable = {
+				TIG_nak_content > 0
+			}
+			check_variable = {
+				TIG_nic_nob_content < 0
+			}
+		}
+		country_event = {
+			id = tigers.12
+			days = 1
+		}
+	}
+
+	option = { #Come tomorrow - if Nic and Nob are supporting Tib
+		name = tigers.11.a
+		trigger = {
+			check_variable = {
+				TIG_nic_nob_content > 0
+			}
+			check_variable = {
+				TIG_nak_content < 0
+			}
+		}
+		country_event = {
+			id = tigers.13
+			days = 1
+		}
+	}
+
+	option = { #Come tomorrow - if Nic, Nak and Nob are supporting Tib
+		name = tigers.11.a
+		trigger = {
+			check_variable = {
+				TIG_nic_nob_content > 0
+			}
+			check_variable = {
+				TIG_nak_content > 0
+			}
+		}
+		country_event = {
+			id = tigers.14
+			days = 1
+		}
+	}
+
+	option = { #Lud leaves the meeting, and in consequence, the clan, together with his father (failure)
+		name = tigers.11.b
+		trigger = {
+			check_variable = {
+				TIG_nic_nob_content < 0
+			}
+			check_variable = {
+				TIG_nak_content < 0
+			}
+		}
+		add_political_power = -100
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 3
+    		defense_skill = 3
+    		planning_skill = 2
+    		logistics_skill = 2
+			id = 5201
+		}
+		hidden_effect = {
+			unlock_national_focus = TIG_protect_the_traditions
+			unlock_national_focus = TIG_establish_new_training_grounds
+			unlock_national_focus = TIG_educate_the_new_generation
+			unlock_national_focus = TIG_careful_and_planned_exploitation
+			unlock_national_focus = TIG_attract_new_settlers_and_soldiers
+		}
+	}
+}
+
+country_event = { #The gap with Lud - with Nak supporting Tib
+	id = tigers.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.12"}
+	title = tigers.12.t
+	desc = tigers.12.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Lud stays neutral
+		name = tigers.12.a
+		add_stability = 0.1
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 3
+    		logistics_skill = 3
+			id = 5201
+		}
+		hidden_effect = {
+			unlock_national_focus = TIG_protect_the_traditions
+			unlock_national_focus = TIG_establish_new_training_grounds
+			unlock_national_focus = TIG_educate_the_new_generation
+			unlock_national_focus = TIG_careful_and_planned_exploitation
+			unlock_national_focus = TIG_attract_new_settlers_and_soldiers
+		}
+	}
+}
+
+country_event = { #The gap with Lud - with Nic and Nob supporting Tib
+	id = tigers.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.13"}
+	title = tigers.13.t
+	desc = tigers.13.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Lud stays passive
+		name = tigers.13.a
+		add_stability = 0.05
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 3
+    		logistics_skill = 3
+			id = 5201
+		}
+		hidden_effect = {
+			unlock_national_focus = TIG_protect_the_traditions
+			unlock_national_focus = TIG_establish_new_training_grounds
+			unlock_national_focus = TIG_educate_the_new_generation
+			unlock_national_focus = TIG_careful_and_planned_exploitation
+			unlock_national_focus = TIG_attract_new_settlers_and_soldiers
+		}
+	}
+}
+
+country_event = { #The gap with Lud - with Nic, Nak and Nob all supporting Tib
+	id = tigers.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.14"}
+	title = tigers.14.t
+	desc = tigers.14.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Lud befriends Tib
+		name = tigers.14.a
+		add_stability = 0.15
+		add_country_leader_trait = tenacious_negotiator
+		create_corps_commander = {
+			name = "Tib"
+			portrait_path = "gfx/leaders/TIG/tib.dds"
+			traits = { }
+			skill = 4
+    		attack_skill = 4
+    		defense_skill = 4
+    		planning_skill = 4
+    		logistics_skill = 3
+			id = 5201
+		}
+		create_corps_commander = {
+			name = "Lud"
+			portrait_path = "gfx/leaders/TIG/the_devil_himself.dds" #but now he's not the devil
+			traits = { }
+			skill = 3
+    		attack_skill = 4
+    		defense_skill = 3
+    		planning_skill = 3
+    		logistics_skill = 2
+			id = 5204
+		}
+		hidden_effect = {
+			unlock_national_focus = TIG_protect_the_traditions
+			unlock_national_focus = TIG_establish_new_training_grounds
+			unlock_national_focus = TIG_educate_the_new_generation
+			unlock_national_focus = TIG_careful_and_planned_exploitation
+			unlock_national_focus = TIG_attract_new_settlers_and_soldiers
+		}
+	}
+}
+
+country_event = { #Contacting the 'western' countries
+	id = tigers.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.15"}
+	title = tigers.15.t
+	desc = tigers.15.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Contact Dio
+		name = tigers.15.a
+		DIO = {
+			country_event = {
+				id = tigers.16
+				days = 3
+			}
+		}
+	}
+
+	option = { #Contact Flower Hill
+		name = tigers.15.b
+		FLO = {
+			country_event = {
+				id = tigers.16
+				days = 5
+			}
+		}
+	}
+
+	option = { #Contact Gongmen Empire
+		name = tigers.15.c
+		trigger = {
+			GON = {
+				has_idea = modern_tech_idea
+			}
+		}
+		GON = {
+			country_event = {
+				id = tigers.16
+				days = 4
+			}
+		}
+	}
+
+	option = { #Contact Tri-State Area
+		name = tigers.15.dd
+		trigger = {
+			TSA = {
+				has_government = fascism
+			}
+		}
+		TSA = {
+			country_event = {
+				id = tigers.16
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Tiger Clan wants to buy our technology
+	id = tigers.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.16"}
+	title = tigers.16.t
+	desc = tigers.16.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #How do you want to pay?
+		name = tigers.16.a
+		TIG = {
+			country_event = {
+				id = tigers.17
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #How do we want to pay?
+	id = tigers.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.17"}
+	title = tigers.17.t
+	desc = tigers.17.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #In increased resource export
+		name = tigers.17.a
+		FROM = {
+			country_event = {
+				id = tigers.18
+				days = 3
+			}
+		}
+	}
+
+	option = { #In resource exploration permits
+		name = tigers.17.b
+		FROM = {
+			country_event = {
+				id = tigers.19
+				days = 3
+			}
+		}
+	}
+
+	option = { #In military access rights
+		name = tigers.17.c
+		FROM = {
+			country_event = {
+				id = tigers.20
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Tigers want to pay in resource exports
+	id = tigers.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.18"}
+	title = tigers.18.t
+	desc = tigers.18.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #It's a deal, then
+		name = tigers.18.a
+		TIG = {
+			hidden_effect = {
+				set_variable = {
+					how_tigers_pay = 1
+				}
+			}
+			country_event = {
+				id = tigers.21
+				days = 3
+			}
+		}
+	}
+
+	option = { #Actually, we want resource exploration permits
+		name = tigers.18.b
+		TIG = {
+			hidden_effect = {
+				set_variable = {
+					how_tigers_pay = 2
+				}
+			}
+			country_event = {
+				id = tigers.22
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Tigers want to pay in resource exploration permits
+	id = tigers.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.19"}
+	title = tigers.19.t
+	desc = tigers.19.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #It's a deal, then
+		name = tigers.18.a
+		TIG = {
+			hidden_effect = {
+				set_variable = {
+					how_tigers_pay = 2
+				}
+			}
+			country_event = {
+				id = tigers.21
+				days = 3
+			}
+		}
+	}
+
+	option = { #Actually, we want resource exports
+		name = tigers.19.b
+		TIG = {
+			hidden_effect = {
+				set_variable = {
+					how_tigers_pay = 1
+				}
+			}
+			country_event = {
+				id = tigers.22
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Tigers want to pay in military access
+	id = tigers.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.20"}
+	title = tigers.20.t
+	desc = tigers.20.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #It's a deal, then
+		name = tigers.18.a
+		TIG = {
+			country_event = {
+				id = tigers.21
+				days = 3
+			}
+			hidden_effect = {
+				set_variable = {
+					how_tigers_pay = 3
+				}
+			}
+		}
+	}
+}
+
+country_event = { #They have accepted our proposal
+	id = tigers.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.21"}
+	title = tigers.21.t
+	desc = tigers.21.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Good!
+		name = tigers.21.a
+		trigger = {
+			check_variable = {
+				how_tigers_pay = 1
+			}
+		}
+		add_political_power = 50
+		add_relation_modifier = {
+    		target = FROM
+    		modifier = tiger_west_exchange
+		}
+	}
+
+	option = { #Good!
+		name = tigers.21.a
+		trigger = {
+			check_variable = {
+				how_tigers_pay = 2
+			}
+		}
+		add_political_power = 50
+		hidden_effect = {
+			FROM = {
+				set_country_flag = can_explore_tigers_lands
+			}
+		}
+	}
+
+	option = { #Good!
+		name = tigers.21.a
+		trigger = {
+			check_variable = {
+				how_tigers_pay = 3
+			}
+		}
+		add_political_power = 50
+		give_military_access = FROM
+	}
+}
+
+country_event = { #They want exploration permits instead
+	id = tigers.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.22"}
+	title = tigers.22.t
+	desc = tigers.22.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #If we don't have any other choice...
+		name = tigers.22.a
+		trigger = {
+			check_variable = {
+				how_tigers_pay = 1
+			}
+		}
+		add_relation_modifier = {
+    		target = FROM
+    		modifier = tiger_west_exchange
+		}
+	}
+
+	option = { #If we don't have any other choice...
+		name = tigers.22.a
+		trigger = {
+			check_variable = {
+				how_tigers_pay = 2
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				set_country_flag = can_explore_tigers_lands
+			}
+		}
+	}
+}
+
+country_event = { #Tigers propose a cooperation treaty
+	id = tigers.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.23"}
+	title = tigers.23.t
+	desc = tigers.23.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #A good idea
+		name = tigers.23.a
+		ai_chance = {
+			factor = 100
+		}
+		#add_to_research_group
+		TIG = {
+			country_event = {
+				id = tigers.24
+				days = 1
+			}
+		}
+	}
+
+	option = { #I can't see why we should agree
+		name = tigers.23.b
+		ai_chance = {
+			factor = 0
+		}
+		TIG = {
+			country_event = {
+				id = tigers.25
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Greenland agrees
+	id = tigers.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.24"}
+	title = tigers.24.t
+	desc = tigers.24.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = tigers.24.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #Greenland rejects
+	id = tigers.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.25"}
+	title = tigers.25.t
+	desc = tigers.25.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Damnit
+		name = tigers.25.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Tigers propose Gloomy Forest Economic Treaty
+	id = tigers.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.26"}
+	title = tigers.26.t
+	desc = tigers.26.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #A good idea
+		name = tigers.26.a
+		ai_chance = {
+			factor = 95
+		}
+		TIG = {
+			country_event = {
+				id = tigers.27
+				days = 1
+			}
+		}
+	}
+
+	option = { #I can't see why we should agree
+		name = tigers.26.b
+		ai_chance = {
+			factor = 5
+		}
+		TIG = {
+			country_event = {
+				id = tigers.28
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #They agree
+	id = tigers.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.27"}
+	title = tigers.27.t
+	desc = tigers.27.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = tigers.27.a
+		add_political_power = 50
+		FROM = {
+			add_ideas = {
+				TIG_gloomy_forest_economic_treaty
+			}
+			add_to_tech_sharing_group = gloomy_forest_economic_treaty_research
+		}
+	}
+}
+
+country_event = { #They reject
+	id = tigers.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.28"}
+	title = tigers.28.t
+	desc = tigers.28.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Damnit
+		name = tigers.28.a
+		add_political_power = -50
+	}
+}
+
+country_event = { #Nak dies during the hunt
+	id = tigers.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.29"}
+	title = tigers.29.t
+	desc = tigers.29.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Oh no!
+		name = tigers.29.a
+		add_stability = -0.15
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Lud"
+			desc = "POLITICS_LUD_DESC"
+			picture = "the_devil_himself.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+		hidden_effect = {
+			set_country_flag = TIG_nak_is_dead
+			every_unit_leader = {
+				limit = {
+					has_id = 5203
+				}
+				retire = yes
+			}
+			complete_national_focus = TIG_unforseen_consequences
+			DES = {
+				country_event = {
+					id = desert.51
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Tom dies during the hunt
+	id = tigers.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event tigers.30"}
+	title = tigers.30.t
+	desc = tigers.30.d
+	picture = GFX_report_tiger_village
+
+	is_triggered_only = yes
+
+	option = { #Oh no!
+		name = tigers.30.a
+		add_stability = -0.15
+		kill_country_leader = yes
+		set_politics = {
+			ruling_party = paidocracy
+		}
+		hidden_effect = {
+			create_country_leader = {
+				name = "Tib"
+				desc = "POLITICS_TIB_DESC"
+				picture = "tib.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+			set_country_flag = TIG_tom_is_dead
+			every_unit_leader = {
+				limit = {
+					has_id = 5203
+				}
+				set_nationality = UNC
+			}
+			every_unit_leader = {
+				limit = {
+					has_id = 5200
+				}
+				retire = yes
+			}
+			complete_national_focus = TIG_the_cursed_times
+			DES = {
+				country_event = {
+					id = desert.51
+					days = 2
+				}
+			}
+		}
+	}
+}

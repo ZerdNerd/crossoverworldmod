@@ -75,3 +75,18 @@ dio_helps_shen = {
 		value = 100
 	}
 }
+
+dio_attacks_joestars = {
+	enable = {
+		tag = DIO
+		has_completed_focus = DIO_operation_road_roller
+		has_wargoal_against = JOJ
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = declare_war
+		id = "JOJ"			
+		value = 1000
+	}
+}

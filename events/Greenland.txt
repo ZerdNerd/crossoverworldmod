@@ -942,14 +942,6 @@ country_event = { #Humsin has been defeated
 
 	option = { #Great
 		name = greenland.28.a
-		every_owned_state = {
-			if = {
-				limit = {
-					is_core_of = DES
-				}
-				remove_core_of = DES
-			}
-		}
 		hidden_effect = {
 			set_country_flag = humsin_defeated
 		}
