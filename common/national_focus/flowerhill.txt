@@ -14,8 +14,8 @@ focus_tree = {
 	focus = { 
 		id = FLO_1936_flower_elections
 		icon = GFX_goal_support_communism
-		x = 2
-		y = 0
+		x = 17
+		y = -7
 		cost = 3
 		available_if_capitulated = yes 
 
@@ -32,14 +32,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_maintain_current_course
-		icon = GFX_focus_prc_agrarian_socialism
-		x = 2
+		id = FLO_so_goesumdochi_wins
+		icon = GFX_focus_goseumdochi
+		x = 0
 		y = 1
-		cost = 10
+		relative_position_id = FLO_1936_flower_elections
+		cost = 7.25
 		available_if_capitulated = yes 
-		mutually_exclusive = { focus = FLO_strengthen_the_spirit }
-		mutually_exclusive = { focus = FLO_expand_flower_hill }
+		mutually_exclusive = { focus = FLO_so_darami_wins }
+		mutually_exclusive = { focus = FLO_so_geumsaegi_wins }
 
 		prerequisite = {
 			focus = FLO_1936_flower_elections
@@ -56,21 +57,54 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				has_country_flag = goseumdochi_elected
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = FLO_finish_second_agrarian_reform
+		icon = GFX_focus_prc_agrarian_socialism
+		x = -2
+		y = 1
+		relative_position_id = FLO_so_goesumdochi_wins
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_so_goesumdochi_wins
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
 		completion_reward = {
 			add_political_power = 100
+			remove_ideas = {
+				FLO_second_agrarian_reform_underway
+			}
 		} 
 	}
 
 	focus = { 
 		id = FLO_lessen_the_curfew
 		icon = GFX_focus_generic_treaty
-		x = 2
-		y = 2
-		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FLO_so_goesumdochi_wins
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_maintain_current_course
+			focus = FLO_so_goesumdochi_wins
 		}
 
 		ai_will_do = { 
@@ -84,15 +118,43 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_encourage_patriots
-		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 2
-		y = 3
-		cost = 10
+		id = FLO_increase_social_benefits
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = -1
+		y = 1
+		relative_position_id = FLO_lessen_the_curfew
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
 			focus = FLO_lessen_the_curfew
+		}
+
+		prerequisite = {
+			focus = FLO_finish_second_agrarian_reform
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.1
+		} 
+	}
+
+	focus = { 
+		id = FLO_encourage_patriots
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 2
+		y = 1
+		relative_position_id = FLO_so_goesumdochi_wins
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_so_goesumdochi_wins
 		}
 
 		ai_will_do = { 
@@ -105,14 +167,134 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_strengthen_the_spirit
-		icon = GFX_focus_prc_maoism
-		x = 0
+		id = FLO_lessen_production_quotas
+		icon = GFX_focus_generic_industry_3
+		x = 1
 		y = 1
-		cost = 10
+		relative_position_id = FLO_lessen_the_curfew
+		cost = 7.25
 		available_if_capitulated = yes 
-		mutually_exclusive = { focus = FLO_maintain_current_course }
-		mutually_exclusive = { focus = FLO_expand_flower_hill }
+
+		prerequisite = {
+			focus = FLO_lessen_the_curfew
+		}
+
+		prerequisite = {
+			focus = FLO_encourage_patriots
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FLO_medium_production_quotas
+				add_idea = FLO_low_production_quotas
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_begin_rural_electrification
+		icon = GFX_focus_generic_industry_1
+		x = -3
+		y = 1
+		relative_position_id = FLO_lessen_the_curfew
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_lessen_the_curfew
+		}
+
+		prerequisite = {
+			focus = FLO_encourage_patriots
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = FLO_rural_electrification_ongoing
+				days = 400
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_allow_small_businesses
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 3
+		y = 1
+		relative_position_id = FLO_lessen_the_curfew
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_encourage_patriots
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_small_businesses_allowed
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_the_interspecies_act
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		relative_position_id = FLO_lessen_production_quotas
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_increase_social_benefits
+		}
+
+		prerequisite = {
+			focus = FLO_lessen_production_quotas
+		}
+
+		prerequisite = {
+			focus = FLO_begin_rural_electrification
+		}
+
+		prerequisite = {
+			focus = FLO_allow_small_businesses
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = FLO_country_divided
+				add_idea = FLO_interspecies_act
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_so_darami_wins
+		icon = GFX_focus_darami
+		x = -10
+		y = 1
+		relative_position_id = FLO_1936_flower_elections
+		cost = 7.25
+		available_if_capitulated = yes 
+		mutually_exclusive = { focus = FLO_so_goesumdochi_wins }
+		mutually_exclusive = { focus = FLO_so_geumsaegi_wins }
 
 		prerequisite = {
 			focus = FLO_1936_flower_elections
@@ -129,21 +311,54 @@ focus_tree = {
 			}
 		}
 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				has_country_flag = darami_elected
+			}
+		}
+
 		completion_reward = {
-			add_political_power = -50
+			custom_effect_tooltip = will_fire_automatically
 		} 
 	}
 
 	focus = { 
-		id = FLO_indoctrination
+		id = FLO_criticize_previous_developments
+		icon = GFX_focus_prc_maoism
+		x = -2
+		y = 1
+		relative_position_id = FLO_so_darami_wins
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_so_darami_wins
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_political_power = -100
+			remove_ideas = {
+				FLO_second_agrarian_reform_underway
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_proper_education_reform
 		icon = GFX_goal_generic_military_sphere
 		x = 0
-		y = 2
-		cost = 10
+		y = 1
+		relative_position_id = FLO_so_darami_wins
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_strengthen_the_spirit
+			focus = FLO_so_darami_wins
 		}
 
 		ai_will_do = { 
@@ -159,13 +374,14 @@ focus_tree = {
 	focus = { 
 		id = FLO_know_your_enemy
 		icon = GFX_focus_eng_expose_the_belly_of_the_bear
-		x = 0
-		y = 3
-		cost = 10
+		x = 2
+		y = 1
+		relative_position_id = FLO_so_darami_wins
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_indoctrination
+			focus = FLO_so_darami_wins
 		}
 
 		ai_will_do = { 
@@ -180,15 +396,71 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_the_act_of_unity
+		id = FLO_expand_limits_for_urbanization
+		icon = GFX_goal_generic_construction
+		x = -1
+		y = 1
+		relative_position_id = FLO_criticize_previous_developments
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_criticize_previous_developments
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_new_urbanization_limits
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_reform_social_system
 		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 1
-		y = 4
-		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = FLO_proper_education_reform
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_encourage_patriots
+			focus = FLO_proper_education_reform
+		}
+
+		prerequisite = {
+			focus = FLO_criticize_previous_developments
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_reformed_social_system
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_abandon_production_quotas
+		icon = GFX_focus_generic_industry_2
+		x = -1
+		y = 1
+		relative_position_id = FLO_know_your_enemy
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_proper_education_reform
+		}
+
+		prerequisite = {
 			focus = FLO_know_your_enemy
 		}
 
@@ -197,25 +469,87 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			add_political_power = -150
-			add_war_support = 0.15
-			add_manpower = 2500
 			remove_ideas = {
-				FLO_country_divided
+				FLO_medium_production_quotas
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_seventy_thirty_reform
+		icon = GFX_goal_generic_neutrality_focus
+		x = 1
+		y = 1
+		relative_position_id = FLO_know_your_enemy
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_know_your_enemy
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_seventy_thirty_economy
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_the_act_of_unity
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 3
+		relative_position_id = FLO_so_darami_wins
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_expand_limits_for_urbanization
+		}
+
+		prerequisite = {
+			focus = FLO_reform_social_system
+		}
+
+		prerequisite = {
+			focus = FLO_abandon_production_quotas
+		}
+
+		prerequisite = {
+			focus = FLO_seventy_thirty_reform
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_political_power = -100
+			add_manpower = 3000
+			swap_ideas = {
+				remove_idea = FLO_country_divided
+				add_idea = FLO_unity_act
 			}
 		} 
 	}
 
 	focus = { 
 		id = FLO_1940_flower_elections
-		icon = GFX_focus_generic_self_management
-		x = 1
-		y = 5
+		icon = GFX_focus_generic_elections
+		x = 5
+		y = 1
+		relative_position_id = FLO_the_act_of_unity
 		cost = 3
 		available_if_capitulated = yes 
 
 		prerequisite = {
 			focus = FLO_the_act_of_unity
+			focus = FLO_the_interspecies_act
 		}
 		available = {
 			date > 1940.1.1
@@ -227,10 +561,7 @@ focus_tree = {
 				SQU = {
 					exists = no
 				}
-				BIR = {
-					exists = no
-				}
-				EAP = {
+				TRL = {
 					exists = no
 				}
 			}
@@ -259,14 +590,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_expand_flower_hill
-		icon = GFX_focus_ger_great_red_menace
-		x = 4
+		id = FLO_so_geumsaegi_wins
+		icon = GFX_focus_geumsaegi
+		x = 10
 		y = 1
-		cost = 10
+		relative_position_id = FLO_1936_flower_elections
+		cost = 7.25
 		available_if_capitulated = yes 
-		mutually_exclusive = { focus = FLO_strengthen_the_spirit }
-		mutually_exclusive = { focus = FLO_maintain_current_course }
+		mutually_exclusive = { focus = FLO_so_darami_wins }
+		mutually_exclusive = { focus = FLO_so_goesumdochi_wins }
 
 		prerequisite = {
 			focus = FLO_1936_flower_elections
@@ -283,21 +615,51 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				has_country_flag = geumsaegi_elected
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		} 
+	}
+
+	focus = { 
+		id = FLO_review_the_military
+		icon = GFX_focus_ger_great_red_menace
+		x = -2
+		y = 1
+		relative_position_id = FLO_so_geumsaegi_wins
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_so_geumsaegi_wins
+		}
+
+		ai_will_do = { 
+			factor = 1
+		}
+
 		completion_reward = {
 			add_political_power = -100
 		} 
 	}
 
 	focus = { 
-		id = FLO_introduce_secret_police
+		id = FLO_establish_gab
 		icon = GFX_focus_generic_military_mission
-		x = 4
-		y = 2
-		cost = 10
+		x = 0
+		y = 1
+		relative_position_id = FLO_so_geumsaegi_wins
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_expand_flower_hill
+			focus = FLO_so_geumsaegi_wins
 		}
 
 		ai_will_do = { 
@@ -308,20 +670,20 @@ focus_tree = {
 			add_ideas = {
 				FLO_secret_police
 			}
-			add_political_power = -50
 		} 
 	}
 
 	focus = { 
-		id = FLO_declare_martial_law
-		icon = GFX_goal_generic_propaganda
-		x = 4
-		y = 3
-		cost = 10
+		id = FLO_national_verification_programme
+		icon = GFX_focus_generic_soviet_politics
+		x = 2
+		y = 1
+		relative_position_id = FLO_so_geumsaegi_wins
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		prerequisite = {
-			focus = FLO_introduce_secret_police
+			focus = FLO_so_geumsaegi_wins
 		}
 
 		ai_will_do = { 
@@ -329,27 +691,81 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			add_ideas = {
-				FLO_martial_law
+			add_timed_idea = {
+				idea = FLO_national_verification_ongoing
+				days = 250
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_take_the_oaths
+		icon = GFX_focus_generic_military_academy
+		x = -3
+		y = 1
+		relative_position_id = FLO_establish_gab
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_review_the_military
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+		} 
+	}
+
+	focus = { 
+		id = FLO_declare_martial_law
+		icon = GFX_goal_generic_propaganda
+		x = -1
+		y = 1
+		relative_position_id = FLO_establish_gab
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_review_the_military
+		}
+
+		prerequisite = {
+			focus = FLO_establish_gab
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = FLO_martial_law
+				days = 1825
 			}
 			add_political_power = -100
 		} 
 	}
 
 	focus = { 
-		id = FLO_operation_sugcheong
-		icon = GFX_focus_YUG_pan_slavic_congress
-		x = 4
-		y = 4
-		cost = 10
+		id = FLO_increase_production_quotas
+		icon = GFX_focus_generic_tank_production
+		x = 1
+		y = 1
+		relative_position_id = FLO_establish_gab
+		cost = 7.25
 		available_if_capitulated = yes 
 
-		available = {
-			has_army_manpower = { size > 75000 }
+		prerequisite = {
+			focus = FLO_national_verification_programme
 		}
 
 		prerequisite = {
-			focus = FLO_declare_martial_law
+			focus = FLO_establish_gab
 		}
 
 		ai_will_do = { 
@@ -358,24 +774,119 @@ focus_tree = {
 
 		completion_reward = {
 			swap_ideas = {
-				remove_idea = FLO_country_divided
-				add_idea = FLO_the_purge
+				remove_idea = FLO_medium_production_quotas
+				add_idea = FLO_high_production_quotas
 			}
-			add_political_power = -200
+		} 
+	}
+
+	focus = { 
+		id = FLO_amend_history_books
+		icon = GFX_focus_generic_concessions
+		x = 1
+		y = 1
+		relative_position_id = FLO_national_verification_programme
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		prerequisite = {
+			focus = FLO_national_verification_programme
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_new_version_of_history
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_operation_sugcheong
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 1
+		y = 1
+		relative_position_id = FLO_declare_martial_law
+		cost = 7.25
+		available_if_capitulated = yes 
+
+		available = {
+			has_army_manpower = { size > 75000 }
+		}
+
+		prerequisite = {
+			focus = FLO_take_the_oaths
+		}
+
+		prerequisite = {
+			focus = FLO_declare_martial_law
+		}
+
+		prerequisite = {
+			focus = FLO_increase_production_quotas
+		}
+
+		prerequisite = {
+			focus = FLO_amend_history_books
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			remove_ideas = FLO_country_divided
+			add_timed_idea = {
+				idea = FLO_the_purge
+				days = 1200
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_adopt_songun
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 1
+		relative_position_id = FLO_operation_sugcheong
+		cost = 7.25
+		available_if_capitulated = yes
+
+		prerequisite = {
+			focus = FLO_operation_sugcheong
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				FLO_military_first
+			}
 		} 
 	}
 
 
-	################################
-	#ECONOMIC PART - FOUR YEAR PLAN#
-	################################
+	################################################################################################################################################################################################
+	#
+	#	FFFFFFF  OOOOO  UU   UU RRRRRR     YY   YY EEEEEEE   AAA   RRRRRR     PPPPPP  LL        AAA   NN   NN 
+	#	FF      OO   OO UU   UU RR   RR    YY   YY EE       AAAAA  RR   RR    PP   PP LL       AAAAA  NNN  NN 
+	#	FFFF    OO   OO UU   UU RRRRRR      YYYYY  EEEEE   AA   AA RRRRRR     PPPPPP  LL      AA   AA NN N NN 
+	#	FF      OO   OO UU   UU RR  RR       YYY   EE      AAAAAAA RR  RR     PP      LL      AAAAAAA NN  NNN 
+	#	FF       OOOO0   UUUUU  RR   RR      YYY   EEEEEEE AA   AA RR   RR    PP      LLLLLLL AA   AA NN   NN 
+    #                                                                                                  
+	################################################################################################################################################################################################
 
 	focus = { 
 		id = FLO_four_year_plan
 		icon = GFX_goal_generic_soviet_construction
-		x = 9
-		y = 0
-		cost = 10
+		x = 4
+		y = -1
+		cost = 7.25
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -386,8 +897,9 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = FLO_completed_political_tree
 				OR = {
-					has_completed_focus = FLO_operation_sugcheong
-					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_so_goesumdochi_wins
+					has_completed_focus = FLO_so_darami_wins
+					has_completed_focus = FLO_adopt_songun
 				}
 			}
 		}
@@ -400,11 +912,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_flower_hill_sea
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 7
+		id = FLO_puhung_road
+		icon = GFX_goal_generic_construct_civilian
+		x = -3
 		y = 1
-		cost = 10
+		cost = 7.25
+		relative_position_id = FLO_four_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_four_year_plan
@@ -438,14 +951,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_victory_highway
+		id = FLO_sungni_highway
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 7
-		y = 2
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_puhung_road
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_flower_hill_sea
+			focus = FLO_puhung_road
 		}
 
 		ai_will_do = { 
@@ -478,14 +992,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_upgrading_rural_roads
+		id = FLO_hwanggumbol_project
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 7
-		y = 3
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_sungni_highway
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_victory_highway
+			focus = FLO_sungni_highway
 		}
 
 		ai_will_do = { 
@@ -506,9 +1021,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_expand_factories_in_capital
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 9
+		x = -1
 		y = 1
-		cost = 10
+		cost = 7.25
+		relative_position_id = FLO_four_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_four_year_plan
@@ -531,11 +1047,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_seaside_industrial_complex
+		id = FLO_ragwon_complex
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 9
-		y = 2
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_expand_factories_in_capital
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_expand_factories_in_capital
@@ -547,14 +1064,9 @@ focus_tree = {
 
 		completion_reward = {
 			341 = {
-				add_extra_state_shared_building_slots = 4
+				add_extra_state_shared_building_slots = 2
 				add_building_construction= { 
 					type = arms_factory 
-					level = 2
-					instant_build = yes 
-				}
-				add_building_construction= { 
-					type = dockyard 
 					level = 2
 					instant_build = yes 
 				}
@@ -563,14 +1075,19 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_industrializing_southwest_pt1
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 9
-		y = 3
-		cost = 10
+		id = FLO_hyoksin_complex
+		icon = GFX_focus_generic_license_production
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_ragwon_complex
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_seaside_industrial_complex
+			focus = FLO_ragwon_complex
+		}
+
+		prerequisite = {
+			focus = FLO_puhung_complex
 		}
 
 		ai_will_do = { 
@@ -579,96 +1096,34 @@ focus_tree = {
 
 		completion_reward = {
 			357 = {
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction= { 
 					type = arms_factory 
 					level = 2
 					instant_build = yes 
-				}
-				add_building_construction= { 
-					type = dockyard 
-					level = 1
-					instant_build = yes 
-				}
+				}		
 			}	
 		} 
 	}
 
 	focus = { 
-		id = FLO_eastern_fields
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 11
+		id = FLO_kwangbok_subcomplex
+		icon = GFX_focus_generic_combined_arms
+		x = 0
 		y = 1
-		cost = 10
+		relative_position_id = FLO_hyoksin_complex
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_four_year_plan
+			focus = FLO_hyoksin_complex
 		}
 
-		ai_will_do = { 
-			factor = 3
-		}
-
-		completion_reward = {
-			324 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction= { 
-					type = industrial_complex 
-					level = 2
-					instant_build = yes 
-				}
-			}
-			add_resource = {
-    			type = rubber
-    			amount = 5
-    			state = 324
-			}	
-		} 
-	}
-
-	focus = { 
-		id = FLO_civilian_factories_in_capital
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 11
-		y = 2
-		cost = 10
-		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_eastern_fields
+			focus = FLO_konguk_national_dockyard
 		}
 
-		ai_will_do = { 
-			factor = 3
-		}
-
-		completion_reward = {
-			325 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction= { 
-					type = industrial_complex 
-					level = 1
-					instant_build = yes 
-				}
-			}
-		} 
-	}
-
-	focus = { 
-		id = FLO_industrializing_southwest_pt2
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 11
-		y = 3
-		cost = 10
-		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_civilian_factories_in_capital
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_part1_complete
-				has_completed_focus = FLO_industrializing_southwest_pt1
-			}
+			focus = FLO_hwanggumbol_project
 		}
 
 		ai_will_do = { 
@@ -697,34 +1152,189 @@ focus_tree = {
 		} 
 	}
 
-	################################
-	#ECONOMIC PART - SIX YEAR PLAN #
-	################################
+	focus = { 
+		id = FLO_put_second_agrarian_reform_into_effect
+		icon = GFX_focus_generic_agriculture
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_four_year_plan
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_four_year_plan
+		}
+
+		ai_will_do = { 
+			factor = 3
+		}
+
+		completion_reward = {
+			324 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2
+					instant_build = yes 
+				}
+			}
+			add_resource = {
+    			type = rubber
+    			amount = 5
+    			state = 324
+			}	
+			if = {
+				limit = {
+					has_country_leader = {
+						name = "Geumsaegi"
+						ruling_only = yes
+					}
+				}
+				remove_ideas = {
+					FLO_second_agrarian_reform_underway
+				}
+			}
+		} 
+	}
 
 	focus = { 
-		id = FLO_six_year_plan
-		icon = GFX_focus_prc_agrarian_socialism
-		x = 11
-		y = 4
-		cost = 10
+		id = FLO_puhung_complex
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_put_second_agrarian_reform_into_effect
 		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_put_second_agrarian_reform_into_effect
+		}
+
+		ai_will_do = { 
+			factor = 3
+		}
+
+		completion_reward = {
+			325 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = FLO_saeloun_haegun_project
+		icon = GFX_focus_generic_navy_battleship2
+		x = 3
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_four_year_plan
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_four_year_plan
+		}
+
+		ai_will_do = { 
+			factor = 3
+		}
+
+		completion_reward = {
+			357 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard 
+					level = 2
+					instant_build = yes 
+				}
+			}	
+		} 
+	}
+
+	focus = { 
+		id = FLO_ponghwa_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_saeloun_haegun_project
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_saeloun_haegun_project
+		}
+
+		ai_will_do = { 
+			factor = 3
+		}
+
+		completion_reward = {
+			341 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard 
+					level = 2
+					instant_build = yes 
+				}
+			}	
+		} 
+	}
+
+	focus = { 
+		id = FLO_konguk_national_dockyard
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_ponghwa_dockyards
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_ponghwa_dockyards
+		}
+
+		ai_will_do = { 
+			factor = 3
+		}
+
+		completion_reward = {
+			345 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = dockyard 
+					level = 2
+					instant_build = yes 
+				}
+			}	
+		} 
+	}
+
+	################################################################################################################################################################################################
+	#
+	#	TTTTTTT HH   HH RRRRRR  EEEEEEE EEEEEEE    YY   YY EEEEEEE   AAA   RRRRRR     PPPPPP  LL        AAA   NN   NN 
+	#	  TTT   HH   HH RR   RR EE      EE         YY   YY EE       AAAAA  RR   RR    PP   PP LL       AAAAA  NNN  NN 
+	#	  TTT   HHHHHHH RRRRRR  EEEEE   EEEEE       YYYYY  EEEEE   AA   AA RRRRRR     PPPPPP  LL      AA   AA NN N NN 
+	#	  TTT   HH   HH RR  RR  EE      EE           YYY   EE      AAAAAAA RR  RR     PP      LL      AAAAAAA NN  NNN 
+	#	  TTT   HH   HH RR   RR EEEEEEE EEEEEEE      YYY   EEEEEEE AA   AA RR   RR    PP      LLLLLLL AA   AA NN   NN 
+	#	                                                                                                             
+	################################################################################################################################################################################################
+
+	focus = { 
+		id = FLO_three_year_plan
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 0
+		y = 2
+		cost = 7.25
+		relative_position_id = FLO_kwangbok_subcomplex
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_kwangbok_subcomplex
+		}
 
 		ai_will_do = { 
 			factor = 1
 		} 
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_completed_four_year_plan
-				AND = {
-					has_completed_focus = FLO_upgrading_rural_roads
-					has_completed_focus = FLO_industrializing_southwest_pt1
-					has_completed_focus = FLO_industrializing_southwest_pt2
-				}
-				WOL = {
-					exists = no
-				}
-			}
 			custom_trigger_tooltip = {
 				tooltip = FLO_completed_unification
 				DUC = {
@@ -733,10 +1343,7 @@ focus_tree = {
 				SQU = {
 					exists = no
 				}
-				BIR = {
-					exists = no
-				}
-				EAP = {
+				TRL = {
 					exists = no
 				}
 			}
@@ -759,14 +1366,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLO_expand_victory_highway
+		id = FLO_expand_sungni_highway
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 6
-		y = 5
+		x = -5
+		y = 1
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_six_year_plan
+			focus = FLO_three_year_plan
 		}
 
 		ai_will_do = { 
@@ -822,12 +1430,13 @@ focus_tree = {
 	focus = { 
 		id = FLO_national_railways
 		icon = GFX_goal_generic_construct_infrastructure
-		x = 6
-		y = 6
+		x = -5
+		y = 2
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_expand_victory_highway
+			focus = FLO_expand_sungni_highway
 		}
 
 		ai_will_do = { 
@@ -851,12 +1460,13 @@ focus_tree = {
 	focus = { 
 		id = FLO_manchun-dong_industrial_complex
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 8
-		y = 5
+		x = -3
+		y = 1
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_six_year_plan
+			focus = FLO_three_year_plan
 		}
 
 		ai_will_do = { 
@@ -878,9 +1488,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_southern_industrial_complex
 		icon = GFX_goal_generic_construct_mil_factory
-		x = 8
-		y = 6
+		x = -3
+		y = 2
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_manchun-dong_industrial_complex
@@ -905,12 +1516,13 @@ focus_tree = {
 	focus = { 
 		id = FLO_new_machinery
 		icon = GFX_goal_generic_construct_civ_factory
-		x = 10
-		y = 5
+		x = -1
+		y = 1
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_six_year_plan
+			focus = FLO_three_year_plan
 		}
 
 		ai_will_do = { 
@@ -927,9 +1539,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_new_port
 		icon = GFX_goal_generic_construction2
-		x = 10
-		y = 6
+		x = -1
+		y = 2
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_new_machinery
@@ -954,12 +1567,13 @@ focus_tree = {
 	focus = { 
 		id = FLO_chromium_factories
 		icon = GFX_goal_generic_construct_civilian
-		x = 12
-		y = 5
+		x = 1
+		y = 1
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_six_year_plan
+			focus = FLO_three_year_plan
 		}
 
 		ai_will_do = { 
@@ -988,9 +1602,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_new_steelworks
 		icon = GFX_focus_generic_steel
-		x = 12
-		y = 6
+		x = 1
+		y = 2
 		cost = 15
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_chromium_factories
@@ -1017,12 +1632,13 @@ focus_tree = {
 	focus = { 
 		id = FLO_atom
 		icon = GFX_focus_atom
-		x = 15
-		y = 5
-		cost = 10
+		x = 4
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_three_year_plan
 		available_if_capitulated = yes 
 		prerequisite = {
-			focus = FLO_six_year_plan
+			focus = FLO_three_year_plan
 		}
 
 		available = {
@@ -1048,9 +1664,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_atom_vver
 		icon = GFX_focus_vver
-		x = 14
-		y = 6
-		cost = 10
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_atom
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_atom
@@ -1079,9 +1696,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_atom_rbmk
 		icon = GFX_focus_rbmk
-		x = 16
-		y = 6
-		cost = 10
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_atom
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = FLO_atom
@@ -1107,32 +1725,32 @@ focus_tree = {
 		} 
 	}
 
-	
-
-	####################
-	#INTERNATIONAL PART#
-	####################
+	################################################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL      
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL      
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL 
+    #                                                                                                
+	################################################################################################################################################################
 
 	focus = { 
 		id = FLO_path_to_world_domination
 		icon = GFX_focus_generic_join_comintern
-		x = 19
-		y = 0
+		x = 0
+		y = 3
 		cost = 5
+		relative_position_id = FLO_the_interspecies_act
 		available_if_capitulated = yes 
+		prerequisite = {
+			focus = FLO_the_interspecies_act
+			focus = FLO_adopt_songun
+			focus = FLO_the_act_of_unity
+		}
 
 		ai_will_do = { 
 			factor = 5
-		} 
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_completed_political_tree
-				OR = {
-					has_completed_focus = FLO_operation_sugcheong
-					has_completed_focus = FLO_the_act_of_unity
-				}
-			}
 		}
 
 		completion_reward = {
@@ -1143,9 +1761,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_artisans_enchancia
 		icon = GFX_focus_enchancia
-		x = 14
+		x = -5
 		y = 1
 		cost = 4
+		relative_position_id = FLO_path_to_world_domination
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1158,10 +1777,10 @@ focus_tree = {
 				EN4 = {
 					exists = yes
 					OR = {
-					has_war_with = ENC
-					has_war_with = EN1
-					has_war_with = EN2
-					has_war_with = EN3
+						has_war_with = ENC
+						has_war_with = EN1
+						has_war_with = EN2
+						has_war_with = EN3
 					}
 				}
 			}
@@ -1190,9 +1809,10 @@ focus_tree = {
 	focus = { 
 		id = FLO_help_artisans_rebuild
 		icon = GFX_goal_generic_construction
-		x = 14
-		y = 2
+		x = 0
+		y = 1
 		cost = 4
+		relative_position_id = FLO_artisans_enchancia
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1223,12 +1843,13 @@ focus_tree = {
 		} 
 	}
 
-	focus = {
-		id = FLO_take_back_whats_ours
-		icon = GFX_goal_demand_sudetenland
-		x = 18
+	focus = { 
+		id = FLO_comrades_in_wei_ling
+		icon = GFX_focus_focus_fra_maquis
+		x = -3
 		y = 1
-		cost = 7.25
+		cost = 4
+		relative_position_id = FLO_path_to_world_domination
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1236,7 +1857,13 @@ focus_tree = {
 		} 
 
 		available = {
-			date > 1938.10.1
+			custom_trigger_tooltip = {
+				tooltip = WLC_risen_up
+				WLC = {
+					exists = yes
+					has_war_with = WEI
+				}
+			}
 		}
 
 		prerequisite = {
@@ -1244,35 +1871,51 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			DUC = {
-				every_owned_state = {
-					add_core_of = FLO
+			add_political_power = 50
+			add_manpower = -5000
+			WLC = {
+				add_manpower = 5000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 5000
+    				producer = FLO
 				}
 			}
-			SQU = {
-				every_owned_state = {
-					add_core_of = FLO
-				}
-			}
-			EAP = {
-				every_owned_state = {
-					add_core_of = FLO
-				}
-			}
-			TRL = {
-				every_owned_state = {
-					add_core_of = FLO
-				}
+			hidden_effect = {
+				set_country_flag = WCW_support_commies
 			}
 		} 
 	}
 
 	focus = {
-		id = FLO_eliminate_ducks
-		icon = GFX_goal_generic_territory_or_war
-		x = 18
-		y = 2
+		id = FLO_tongil_mobilization
+		icon = GFX_focus_generic_manpower
+		x = 0
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_path_to_world_domination
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 5
+		}
+
+		prerequisite = {
+			focus = FLO_path_to_world_domination
+		}
+
+		completion_reward = {
+			add_manpower = 75000
+		} 
+	}
+
+	focus = {
+		id = FLO_operation_namjjog
+		icon = GFX_goal_generic_territory_or_war
+		x = -2
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_tongil_mobilization
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1280,7 +1923,7 @@ focus_tree = {
 		} 
 
 		prerequisite = {
-			focus = FLO_take_back_whats_ours
+			focus = FLO_tongil_mobilization
 		}
 
 		available = {
@@ -1303,11 +1946,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_eliminate_turtles
+		id = FLO_operation_dongjjog
 		icon = GFX_goal_generic_territory_or_war
-		x = 18
-		y = 3
+		x = 2
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_tongil_mobilization
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1326,7 +1970,7 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_eliminate_ducks
+			focus = FLO_tongil_mobilization
 		}
 
 		completion_reward = {
@@ -1344,11 +1988,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_time_for_squirrels
+		id = FLO_operation_baesinja
 		icon = GFX_goal_generic_territory_or_war
-		x = 18
-		y = 4
+		x = 0
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_tongil_mobilization
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1361,7 +2006,7 @@ focus_tree = {
 		} 
 
 		prerequisite = {
-			focus = FLO_eliminate_turtles
+			focus = FLO_tongil_mobilization
 		}
 
 		completion_reward = {
@@ -1381,9 +2026,10 @@ focus_tree = {
 	focus = {
 		id = FLO_payback_time
 		icon = GFX_focus_generic_strike_at_democracy1
-		x = 18
-		y = 5
+		x = 0
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_operation_baesinja
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1396,7 +2042,15 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_time_for_squirrels
+			focus = FLO_operation_namjjog
+		}
+
+		prerequisite = {
+			focus = FLO_operation_dongjjog
+		}
+
+		prerequisite = {
+			focus = FLO_operation_baesinja
 		}
 
 		completion_reward = {
@@ -1426,9 +2080,10 @@ focus_tree = {
 	focus = {
 		id = FLO_destroy_the_alliance
 		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 18
-		y = 6
+		x = 0
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_payback_time
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1475,7 +2130,7 @@ focus_tree = {
 	focus = { #REAL SHIT STARTS HERE
 		id = FLO_exporting_revolution
 		icon = GFX_focus_ger_great_red_menace
-		x = 23
+		x = 24
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes 
@@ -1501,97 +2156,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_invade_iceworld
+		id = FLO_plan_hayan
 		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 21
-		y = 3
+		x = 3
+		y = 1
 		cost = 7.25
-		available_if_capitulated = yes 
-
-		bypass = {
-			has_country_flag = FLO_signed_gongmen_pact
-		}
-
-		ai_will_do = { 
-			factor = 1
-			modifier = {
-				GON = {
-					exists = yes
-				}
-				GRN = {
-					exists = yes
-				}
-				factor = 0
-			}
-		} 
-
-		prerequisite = {
-			focus = FLO_destroy_shen
-		}
-
-		completion_reward = {
-			create_wargoal = {
-    			type = annex_everything
-    			target = ICW
-			}
-		} 
-	}
-
-	focus = {
-		id = FLO_crush_danville
-		icon = GFX_focus_eng_crush_the_dream
-		x = 23
-		y = 2
-		cost = 7.25
-		available_if_capitulated = yes 
-
-		ai_will_do = { 
-			factor = 1
-			modifier = {
-				GON = {
-					exists = yes
-				}
-				GRN = {
-					exists = yes
-				}
-				ICW = {
-					exists = yes
-					is_puppet = no
-				}
-				factor = 0
-			}
-		}
-
-		prerequisite = {
-			focus = FLO_exporting_revolution
-		}
-
-		completion_reward = {
-			create_wargoal = {
-    			type = annex_everything
-    			target = TSA
-			}
-			create_wargoal = {
-    			type = annex_everything
-    			target = DCB
-			}
-			create_wargoal = {
-    			type = annex_everything
-    			target = VIS
-			}
-			create_wargoal = {
-    			type = annex_everything
-    			target = MUS
-			}
-		} 
-	}
-
-	focus = {
-		id = FLO_destroy_shen
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 21
-		y = 2
-		cost = 7.25
+		relative_position_id = FLO_exporting_revolution
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1624,16 +2194,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_greenland_on_the_sights
-		icon = GFX_focus_greenland
-		x = 23
-		y = 3
+		id = FLO_plan_cholog
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
 		cost = 7.25
-		available_if_capitulated = yes 
-
-		bypass = {
-			has_country_flag = FLO_signed_gongmen_pact
-		}
+		relative_position_id = FLO_plan_hayan
+		available_if_capitulated = yes
 
 		ai_will_do = { 
 			factor = 1
@@ -1647,18 +2214,22 @@ focus_tree = {
 
 		bypass = {
 			OR = {
+				has_country_flag = FLO_signed_gongmen_pact
 				GRN = {
 					exists = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
 				}
 				has_war_with = GRN
 			}
 		}
 
 		prerequisite = {
-			focus = FLO_destroy_shen
+			focus = FLO_plan_hayan
 		}
 		#prerequisite = {
-		#	focus = FLO_crush_danville
+		#	focus = FLO_variant_seojjog
 		#}
 
 		completion_reward = {
@@ -1670,12 +2241,20 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_invade_far_far_away
-		icon = GFX_goal_generic_major_war
-		x = 25
-		y = 2
+		id = FLO_plan_juhwangsaeg
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 0
+		y = 1
 		cost = 7.25
+		relative_position_id = FLO_plan_cholog
 		available_if_capitulated = yes 
+
+		bypass = {
+			OR = {
+				has_country_flag = FLO_signed_gongmen_pact
+				has_country_flag = FLO_signed_pax_orientis
+			}
+		}
 
 		ai_will_do = { 
 			factor = 1
@@ -1686,10 +2265,274 @@ focus_tree = {
 				GRN = {
 					exists = yes
 				}
+				has_war = yes
+				factor = 0
+			}
+		} 
+
+		prerequisite = {
+			focus = FLO_plan_cholog
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = ICW
+			}
+			if = {
+				limit = {
+					DES = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = DES
+				}
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_variant_seojjog
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_exporting_revolution
+		available_if_capitulated = yes 
+		mutually_exclusive = { focus = FLO_variant_dongjjog }
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
 				ICW = {
 					exists = yes
 					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
 				}
+				has_war = yes
+				factor = 0
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_exporting_revolution
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = GUM
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_operation_jihacheol
+		icon = GFX_focus_generic_provoke_border_clashes
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_variant_seojjog
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				has_war = yes
+				factor = 0
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_variant_seojjog
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = UND
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_variant_dongjjog
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_exporting_revolution
+		available_if_capitulated = yes 
+		mutually_exclusive = { focus = FLO_variant_seojjog }
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				has_war = yes
+				factor = 0
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_exporting_revolution
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = GRY
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_operation_kwangmyong
+		icon = GFX_focus_eng_crush_the_dream
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_variant_dongjjog
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				has_war = yes
+				factor = 0
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_variant_dongjjog
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					TSA = {
+						has_government = fascism
+					}
+				}
+				if = {
+					limit = {
+						BRO = {
+							exists = yes
+						}
+					}
+					create_wargoal = {
+    					type = annex_everything
+    					target = BRO
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = TSA
+				}
+			}
+			if = {
+				limit = {
+					BRO = {
+						is_in_faction_with = TSA
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = TSA
+				}
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_plan_ppalgan
+		icon = GFX_goal_generic_major_war
+		x = -3
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_exporting_revolution
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				has_war = yes
 				factor = 0
 			}
 		} 
@@ -1716,11 +2559,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_communism_in_everrealm
+		id = FLO_plan_geomjeong
 		icon = GFX_goal_generic_major_war
-		x = 25
-		y = 3
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_plan_ppalgan
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
@@ -1731,32 +2575,31 @@ focus_tree = {
 				}
 				GRN = {
 					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
 				}
 				ICW = {
 					exists = yes
 					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
 				}
 				FFA = {
 					exists = yes
 					is_puppet = no
 				}
+				has_war = yes
 				factor = 0
 			}
 		} 
 
 		prerequisite = {
-			focus = FLO_invade_far_far_away
+			focus = FLO_plan_ppalgan
 		}
 
 		completion_reward = {
-			create_wargoal = {
-    			type = annex_everything
-    			target = ISL
-			}
-			create_wargoal = {
-    			type = annex_everything
-    			target = MAR
-			}
 			create_wargoal = {
     			type = annex_everything
     			target = DUL
@@ -1767,24 +2610,15 @@ focus_tree = {
 	focus = {
 		id = FLO_take_care_of_friedewalt
 		icon = GFX_goal_generic_major_war
-		x = 24
-		y = 4
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_operation_kwangmyong
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
 			factor = 1
 			modifier = {
-				GON = {
-					exists = yes
-				}
-				GRN = {
-					exists = yes
-				}
-				ICW = {
-					exists = yes
-					is_puppet = no
-				}
 				TSA = {
 					exists = yes
 					is_puppet = no
@@ -1803,10 +2637,7 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_greenland_on_the_sights
-		}
-		prerequisite = {
-			focus = FLO_communism_in_everrealm
+			focus = FLO_operation_kwangmyong
 		}
 
 		completion_reward = {
@@ -1820,23 +2651,17 @@ focus_tree = {
 	focus = {
 		id = FLO_get_rid_of_macius
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 24
-		y = 5
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_take_care_of_friedewalt
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
 			factor = 1
 			modifier = {
-				GON = {
+				FRI = {
 					exists = yes
-				}
-				GRN = {
-					exists = yes
-				}
-				MAI = {
-					exists = yes
-					is_puppet = no
 				}
 				TSA = {
 					exists = yes
@@ -1871,21 +2696,19 @@ focus_tree = {
 	####ARMY
 
 	focus = {
-		id = FLO_army_effort
+		id = FLO_generic_army_effort
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 30
-		y = 0
-		cost = 10
+		x = 37
+		y = -7
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_completed_political_tree
-				OR = {
-					has_completed_focus = FLO_operation_sugcheong
-					has_completed_focus = FLO_the_act_of_unity
-				}
+			OR = {
+				has_completed_focus = FLO_the_interspecies_act
+				has_completed_focus = FLO_the_act_of_unity
+				has_completed_focus = FLO_adopt_songun
 			}
 		}
 
@@ -1893,7 +2716,7 @@ focus_tree = {
 			army_experience = 5
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 1.0
 				uses = 1
 				category = land_doctrine
 			}
@@ -1901,19 +2724,20 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_equipment_effort
+		id = FLO_generic_weapon_development
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = FLO_army_effort }
-		x = 29
+		prerequisite = { focus = FLO_generic_army_effort }
+		x = -3
 		y = 1
-		cost = 10
+		relative_position_id = FLO_generic_army_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
+				name = infantry_bonus
+				bonus = 1.0
 				uses = 1
 				category = infantry_weapons
 			}
@@ -1921,60 +2745,20 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_motorization_effort
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = FLO_army_effort }
-		bypass = { has_tech = motorised_infantry }
-		x = 31
+		id = FLO_generic_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FLO_generic_weapon_development }
+		x = 1
 		y = 1
-		cost = 10
+		relative_position_id = FLO_generic_weapon_development
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 0.75
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_doctrine_effort
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = FLO_army_effort }
-		x = 30
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = FLO_equipment_effort }
-		x = 28
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
+				name = artillery_bonus
+				bonus = 1.0
 				uses = 1
 				category = artillery
 			}
@@ -1982,19 +2766,154 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = FLO_motorization_effort }
-		x = 32
-		y = 2
-		cost = 10
+		id = FLO_generic_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = FLO_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = FLO_generic_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = FLO_generic_army_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				ahead_reduction = 0.5
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FLO_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = FLO_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = FLO_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = FLO_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = FLO_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FLO_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = FLO_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = FLO_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
 				uses = 1
 				category = motorized_equipment
 			}
@@ -2002,21 +2921,21 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_doctrine_effort_2
+		id = FLO_generic_doctrine_effort_2
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = FLO_doctrine_effort }
-		mutually_exclusive = { focus = FLO_doctrine_effort_3 }
-		x = 29
-		y = 3
-		cost = 10
+		prerequisite = { focus = FLO_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_doctrine_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 10
+			army_experience = 5
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.1
+				bonus = 1.0
 				uses = 1
 				category = land_doctrine
 			}
@@ -2024,41 +2943,39 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_doctrine_effort_3
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = FLO_doctrine_effort }
-		mutually_exclusive = { focus = FLO_doctrine_effort_2 }
-		x = 31
-		y = 3
-		cost = 10
+		id = FLO_generic_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = FLO_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_doctrine_effort_2
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 10
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.1
-				uses = 1
-				category = land_doctrine
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
 			}
 		}
 	}
 
 	focus = {
-		id = FLO_equipment_effort_3
+		id = FLO_generic_weapon_development_3
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = FLO_equipment_effort_2 }
-		x = 27
-		y = 3
-		cost = 10
+		prerequisite = { focus = FLO_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_weapons_and_co
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = infantry_artillery_bonus
-				ahead_reduction = 1
+				ahead_reduction = 2
 				uses = 1
 				category = infantry_weapons
 				category = artillery
@@ -2067,34 +2984,38 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_armor_effort
+		id = FLO_generic_armor_effort
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = FLO_mechanization_effort }
-		x = 33
-		y = 3
-		cost = 10
+		prerequisite = { focus = FLO_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_mechanization_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = armor_bonus
-				bonus = 0.5
-				uses = 2
+				bonus = 1.0
+				uses = 1
 				category = armor
 			}
 		}
 	}
 
 	focus = {
-		id = FLO_special_forces
+		id = FLO_generic_special_forces
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = FLO_equipment_effort_3 }
-		prerequisite = { focus = FLO_doctrine_effort_2 focus = FLO_doctrine_effort_3 }
-		prerequisite = { focus = FLO_armor_effort }  
-		x = 30
-		y = 4
-		cost = 10
+		prerequisite = { focus = FLO_generic_weapon_development_3 }
+		prerequisite = { focus = FLO_generic_military_academy }
+		prerequisite = { focus = FLO_generic_armor_effort }
+		prerequisite = { focus = FLO_generic_new_officer_corps }
+		prerequisite = { focus = FLO_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = FLO_generic_weapon_development_3
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -2102,332 +3023,12 @@ focus_tree = {
 			add_ideas = special_forces
 			add_tech_bonus = {
 				name = special_forces_bonus
-				bonus = 0.5
+				bonus = 1.0
 				uses = 1
 				technology = paratroopers
 				technology = paratroopers2
-				technology = marines
-				technology = marines2
 				technology = tech_mountaineers
 				technology = tech_mountaineers2
-			}
-			add_research_slot = 1
-		}
-	}
-
-	####################################################################################################
-	#
-	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
-	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
-	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
-	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
-	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
-	#
-	####################################################################################################
-
-	focus = {
-		id = FLO_aviation_effort
-		icon = GFX_goal_generic_build_airforce
-		x = 36
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_completed_political_tree
-				OR = {
-					has_completed_focus = FLO_operation_sugcheong
-					has_completed_focus = FLO_the_act_of_unity
-				}
-			}
-		}
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = aviation_effort_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}			
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}			
-		}
-
-		completion_reward = {
-			air_experience = 25
-
-			if = {
-				limit = {
-					capital_scope = {
-						NOT = {
-							free_building_slots = {
-								building = air_base
-								size > 1
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_AB }
-				}
-			}
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_fighter_focus
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = FLO_aviation_effort }
-		mutually_exclusive = { focus = FLO_bomber_focus }
-		x = -1
-		y = 1
-		relative_position_id = FLO_aviation_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 1.0
-				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_bomber_focus
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = FLO_aviation_effort }
-		mutually_exclusive = { focus = FLO_fighter_focus }
-		x = 1
-		y = 1
-		relative_position_id = FLO_aviation_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 1.0
-				uses = 2
-				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
-				category = tactical_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_aviation_effort_2
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = FLO_bomber_focus focus = FLO_fighter_focus }
-		x = -1
-		y = 1
-		relative_position_id = FLO_bomber_focus
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = aviation_effort_2_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}
-		}
-		completion_reward = {
-			air_experience = 25
-			if = {
-				limit = {
-					capital_scope = {
-						OR = {
-							NOT = { is_controlled_by = ROOT }
-							NOT = {
-								free_building_slots = {
-									building = air_base
-									size > 1
-								}
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = aviation_effort_2_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}				
-					ROOT = { set_country_flag = aviation_effort_2_AB }
-				}
-			}
-			add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_CAS_effort
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = FLO_aviation_effort_2 }
-		x = -1
-		y = 1
-		relative_position_id = FLO_aviation_effort_2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_rocket_effort
-		icon = GFX_focus_rocketry
-		prerequisite = { focus = FLO_aviation_effort_2 }
-		x = 0
-		y = 2
-		relative_position_id = FLO_aviation_effort_2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = jet_rocket_bonus
-				ahead_reduction = 2
-				uses = 2
-				category = rocketry
-				category = jet_technology
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_NAV_effort
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = FLO_aviation_effort_2 }
-		x = 1
-		y = 1
-		relative_position_id = FLO_aviation_effort_2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = nav_bomber_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = naval_bomber
 			}
 		}
 	}
@@ -2443,165 +3044,60 @@ focus_tree = {
 	####################################################################################################
 
 	focus = {
-		id = FLO_naval_effort
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 32
-		y = 5
-		cost = 10
+		id = FLO_generic_naval_effort
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 37
+		y = -1
+		cost = 7.25
 
 		available_if_capitulated = yes
 
-
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FLO_completed_political_tree
-				OR = {
-					has_completed_focus = FLO_operation_sugcheong
-					has_completed_focus = FLO_the_act_of_unity
-				}
-			}
-		}
-
-		complete_tooltip = {
-			navy_experience = 25
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = dockyard
-				level = 2
-				instant_build = yes
+			OR = {
+				has_completed_focus = FLO_the_interspecies_act
+				has_completed_focus = FLO_the_act_of_unity
+				has_completed_focus = FLO_adopt_songun
 			}
 		}
 		
 		completion_reward = {
 			navy_experience = 25
-			if = {
+			random_owned_state = {
 				limit = {
-					NOT = {
-						any_owned_state = {
-							dockyard > 0
-							free_building_slots = {
-								building = dockyard
-								size > 2
-								include_locked = yes
-							}
-						}
-					}
-					any_owned_state = {
-						is_coastal = yes
-					}
+					is_coastal = yes
 				}
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
 				}
-				set_country_flag = naval_effort_built
 			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = naval_effort_built }
-					any_owned_state = {
-						dockyard > 0
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						dockyard > 0
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-				set_country_flag = naval_effort_built
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = naval_effort_built }
-					NOT = {
-						any_owned_state = {
-							free_building_slots = {
-								building = dockyard
-								size > 2
-								include_locked = yes
-							}
-						}
-					}
-				}
-				random_state = {
-					limit = {
-						controller = { tag = ROOT }
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-			}			
 		}
 	}
 
 	focus = {
-		id = FLO_flexible_navy
+		id = FLO_generic_flexible_navy
 		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = FLO_naval_effort }
-		mutually_exclusive = { focus = FLO_large_navy }
-		x = -1
+		prerequisite = { focus = FLO_generic_naval_effort }
+		mutually_exclusive = { focus = FLO_generic_large_navy }
+		x = -3
 		y = 1
-		relative_position_id = FLO_naval_effort
-		cost = 10
+		relative_position_id = FLO_generic_naval_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
 		}
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = sub_op_bonus
 				bonus = 1.0
-				uses = 2
+				uses = 1
 				technology = convoy_interdiction_ti
 				technology = unrestricted_submarine_warfare
 				technology = wolfpacks
@@ -2612,71 +3108,127 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_large_navy
+		id = FLO_generic_large_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = FLO_naval_effort }
-		mutually_exclusive = { focus = FLO_flexible_navy }
-		x = 1
+		prerequisite = { focus = FLO_generic_naval_effort }
+		mutually_exclusive = { focus = FLO_generic_flexible_navy }
+		x = 3
 		y = 1
-		relative_position_id = FLO_naval_effort
-		cost = 10
+		relative_position_id = FLO_generic_naval_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
 		}
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = fleet_in_being_bonus
 				bonus = 1.0
-				uses = 2
+				uses = 1
 				category = fleet_in_being_tree
 			}
 		}
 	}
 
 	focus = {
-		id = FLO_submarine_effort
-		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = FLO_flexible_navy focus = FLO_large_navy }
-		x = 0
+		id = FLO_generic_naval_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
+		x = -4
 		y = 1
-		relative_position_id = FLO_flexible_navy
-		cost = 10
+		relative_position_id = FLO_generic_large_navy
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
 		}
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = ss_bonus
 				bonus = 1.0
-				ahead_reduction = 2
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_a_new_type_of_infantry
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = FLO_generic_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_destroyer_effort
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_submarine_effort
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = FLO_generic_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
 				uses = 1
 				category = ss_tech
 			}
@@ -2684,35 +3236,78 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_cruiser_effort
-		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = FLO_large_navy focus = FLO_flexible_navy }
+		id = FLO_generic_floating_airfields
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = FLO_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_naval_air_force
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = FLO_generic_floating_airfields }
 		x = 0
 		y = 1
-		relative_position_id = FLO_large_navy
-		cost = 10
+		relative_position_id = FLO_generic_floating_airfields
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
 		}
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = cr_bonus
 				bonus = 1.0
-				ahead_reduction = 2
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_cruiser_effort
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
 				uses = 1
 				category = cl_tech
 				category = ca_tech
@@ -2721,77 +3316,292 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_destroyer_effort
-		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = FLO_submarine_effort }
-		x = 0
-		y = 1
-		relative_position_id = FLO_submarine_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = dd_bonus
-				bonus = 1.0
-				ahead_reduction = 2
-				uses = 1
-				category = dd_tech
-			}
-		}
-	}
-
-	focus = {
-		id = FLO_capital_ships_effort
+		id = FLO_generic_capital_ships_effort
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = FLO_cruiser_effort }
+		prerequisite = { focus = FLO_generic_cruiser_effort }
 		x = 0
 		y = 1
-		relative_position_id = FLO_cruiser_effort
-		cost = 10
+		relative_position_id = FLO_generic_cruiser_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 
 		ai_will_do = {
 			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
 		}
 
 		completion_reward = {
 			navy_experience = 25
 			add_tech_bonus = {
-				name = capital_ships_bonus
 				bonus = 1.0
-				ahead_reduction = 2
 				uses = 1
 				category = bc_tech
 				category = bb_tech
-				category = cv_tech
 			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = FLO_generic_aviation_effort
+		icon = GFX_goal_generic_build_airforce
+		x = 37
+		y = 4
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			OR = {
+				has_completed_focus = FLO_the_interspecies_act
+				has_completed_focus = FLO_the_act_of_unity
+				has_completed_focus = FLO_adopt_songun
+			}
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FLO_generic_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = FLO_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_heavy_fighter_focus
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FLO_generic_fighter_focus }
+		prerequisite = { focus = FLO_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FLO_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_CAS_effort
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = FLO_generic_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_air_force_academy
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FLO_generic_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = FLO_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_bomber_focus
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FLO_generic_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = FLO_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_reverse_engineer_foreign_bombers
+		icon = GFX_focus_research
+		prerequisite = { focus = FLO_generic_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = FLO_generic_strategic_bombing
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FLO_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FLO_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_expand_bombing_command
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
+		prerequisite = { focus = FLO_generic_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = FLO_generic_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = FLO_generic_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_aviation_effort_2
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
+		prerequisite = { focus = FLO_generic_CAS_effort }
+		prerequisite = { focus = FLO_generic_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = FLO_generic_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FLO_generic_rocket_effort
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = FLO_generic_aviation_effort_2 }
+		prerequisite = { focus = FLO_generic_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = FLO_generic_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
 		}
 	}
 }

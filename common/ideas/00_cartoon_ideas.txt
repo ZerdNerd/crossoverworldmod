@@ -428,9 +428,9 @@ ideas = {
 			}
 	
 			modifier = {
-				consumer_goods_factor = 0.05
-				stability_factor = -0.25
-				political_power_factor = -0.1
+				consumer_goods_factor = 0.15
+				stability_factor = -0.45
+				political_power_factor = -0.2
 			}
 		}
 
@@ -609,7 +609,7 @@ ideas = {
 		}
 
 		MAI_landlocked = {
-#			picture = GFX_idea_coins
+#			picture = GFX_idea_MAI_landlocked
 			allowed = {
 				always = no
 			}
@@ -2661,7 +2661,7 @@ ideas = {
 				experience_loss_factor = -0.1
 				political_power_factor = -0.1
 			}
-			picture = coins
+			picture = MAI_landlocked
 		}
 
 		DIO_proper_handling = {
@@ -2718,7 +2718,7 @@ ideas = {
 				conscription = 0.05
 				political_power_factor = -0.2
 			}
-			picture = coins
+			picture = MAI_landlocked
 		}
 
 		DIO_def_aspects = {
@@ -2970,7 +2970,7 @@ ideas = {
 				consumer_goods_factor = -0.05
 				local_resources_factor = 0.05
 			}
-			picture = coins
+			picture = MAI_landlocked
 		}
 
 		TIG_limited_staff = {
@@ -2997,6 +2997,202 @@ ideas = {
 				war_support_factor = 0.05
 			}
 			picture = trumpet
+		}
+
+		FLO_national_verification_ongoing = {
+			allowed = { always = no }
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.1
+			}
+			picture = generic_spy_political
+		}
+
+		FLO_rural_electrification_ongoing = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = 0.1
+				political_power_factor = 0.025
+				production_speed_buildings_factor = 0.05
+			}
+			picture = FRA_factory_strikes
+		}
+
+		FLO_small_businesses_allowed = {
+			allowed = { always = no }
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				political_power_factor = 0.025
+			}
+			picture = FRA_factory_strikes
+		}
+
+		FLO_interspecies_act = {
+			
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_factor = 0.05
+				weekly_manpower = 40
+			}
+		}
+
+		FLO_unity_act = {
+			
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+				weekly_manpower = 25
+			}
+		}
+
+		FLO_second_agrarian_reform_underway = {
+			
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				political_power_factor = -0.075
+				production_factory_max_efficiency_factor = -0.05
+			}
+		}
+
+		FLO_new_urbanization_limits = {
+			
+			picture = generic_local_self_management
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				local_building_slots_factor = 0.3
+			}
+		}
+
+		FLO_reformed_social_system = {
+			
+			picture = chi_army_corruption
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				weekly_manpower = 10
+				stability_factor = 0.075
+				political_power_factor = -0.075
+			}
+		}
+
+		FLO_seventy_thirty_economy = {
+			
+			picture = MAI_landlocked
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		FLO_high_production_quotas = {
+			
+			picture = FRA_factory_strikes
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.1
+				consumer_goods_factor = 0.15
+				industrial_capacity_factory = -0.15
+				production_speed_buildings_factor = -0.15
+			}
+		}
+
+		FLO_medium_production_quotas = {
+			
+			picture = FRA_factory_strikes
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.075
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.1
+				production_speed_buildings_factor = -0.1
+			}
+		}
+
+		FLO_low_production_quotas = {
+			
+			picture = FRA_factory_strikes
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = 0.05
+				industrial_capacity_factory = -0.05
+				production_speed_buildings_factor = -0.05
+			}
+		}
+
+		FLO_new_version_of_history = {
+			
+			picture = chi_army_corruption
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		FLO_military_first = {
+			
+			picture = generic_infantry_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				weekly_manpower = 15
+				consumer_goods_factor = -0.05
+				stability_factor = -0.05
+				political_power_factor = 0.05
+				war_support_factor = 0.05
+			}
 		}
 	}
 

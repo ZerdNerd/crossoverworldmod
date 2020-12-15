@@ -547,6 +547,9 @@ country_event = { #Greenland proposes us an alliance
 
 	option = {
 		name = greenland.12.a
+		ai_chance = {
+			factor = 100
+		}
 		GRN = {
 			country_event = {
 				id = greenland.13
@@ -557,6 +560,9 @@ country_event = { #Greenland proposes us an alliance
 
 	option = {
 		name = greenland.12.b
+		ai_chance = {
+			factor = 0
+		}
 		GRN = {
 			country_event = {
 				id = greenland.14
@@ -2229,6 +2235,9 @@ country_event = { #Greenland proposes Gongmen Treaty
 				days = 0
 			}
 		}
+		ai_chance = {
+			factor = 100
+		}
 		hidden_effect = {
 			set_country_flag = FLO_signed_gongmen_pact
 		}
@@ -2236,6 +2245,9 @@ country_event = { #Greenland proposes Gongmen Treaty
 
 	option = { #Decline
 		name = greenland.71.b
+		ai_chance = {
+			factor = 0
+		}
 		GRN = {
 			country_event = {
 				id = greenland.73
