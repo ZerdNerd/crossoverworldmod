@@ -3194,6 +3194,20 @@ ideas = {
 				war_support_factor = 0.05
 			}
 		}
+
+		TCWMod_empty_land = {
+			
+			picture = chi_army_corruption
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				foreign_subversive_activites = -1
+				encryption = 100
+			}
+		}
 	}
 
 	##############################################################################################################################
@@ -4212,9 +4226,113 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		FLO_bamsaegi = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+				}
+			}
+		
+			traits = { prince_of_terror }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_generic_2 = {
+
+			allowed = {
+				original_tag = FLO
+			}
+		
+			traits = { lieutenant_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_generic_1 = {
+
+			allowed = {
+				original_tag = FLO
+			}
+		
+			traits = { captain_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_darami = {
+
+			allowed = {
+				original_tag = FLO
+			}
+		
+			traits = { socialite_connections }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	high_command = {
+		FLO_geumsaegi = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			ledger = army
+		
+			traits = { army_chief_reform_2 army_chief_defensive_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_goseumdochi = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			ledger = army
+		
+			traits = { army_chief_offensive_1 army_chief_defensive_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_juldarami = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			ledger = army
+		
+			traits = { army_chief_maneuver_1 army_chief_morale_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		
 		MAI_general = {
 #			picture = MAI_general_p
 			ledger = army
@@ -4461,6 +4579,36 @@ ideas = {
 			}
 		
 			traits = { superior_firepower_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_geumsaegi_2 = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			ledger = army
+		
+			traits = { army_artillery_1 army_infantry_1 }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FLO_murori = {
+
+			allowed = {
+				original_tag = FLO
+			}
+
+			ledger = navy
+		
+			traits = { naval_theorist army_infantry_1 }
 
 			ai_will_do = {
 				factor = 1

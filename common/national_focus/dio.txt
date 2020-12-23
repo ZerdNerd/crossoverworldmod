@@ -1842,12 +1842,6 @@ focus_tree = {
 			focus = DIO_pressure_arendelle
 		}
 
-		available = {
-			PIL = {
-				has_war_with = JOJ
-			}
-		}
-
 		bypass = {
 			PIL = {
 				is_puppet_of = JOJ
@@ -1919,6 +1913,12 @@ focus_tree = {
 			focus = DIO_establish_bases_in_berk
 			focus = DIO_backstab_pillar_men
 		} 
+
+		bypass = {
+			JOJ = {
+				exists = no
+			}
+		}
 
 		available = {
 			custom_trigger_tooltip = {
@@ -2532,6 +2532,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 7
 		y = 9
@@ -2600,6 +2607,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = DIO_naval_effort }
 		mutually_exclusive = { focus = DIO_large_navy }
@@ -2631,6 +2645,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = DIO_naval_effort }
 		mutually_exclusive = { focus = DIO_flexible_navy }
@@ -2658,6 +2679,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = DIO_flexible_navy focus = DIO_large_navy }
 		x = -4
@@ -2683,6 +2711,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = DIO_naval_academy }
 		x = 0
@@ -2709,6 +2744,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = DIO_flexible_navy focus = DIO_large_navy }
 		x = 0
@@ -2734,6 +2776,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = DIO_destroyer_effort }
 		x = 0
@@ -2759,6 +2808,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = DIO_large_navy focus = DIO_flexible_navy }
 		x = -2
@@ -2788,6 +2844,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = DIO_floating_airfields }
 		x = 0
@@ -2813,6 +2876,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = DIO_large_navy focus = DIO_flexible_navy }
 		x = 0
@@ -2839,6 +2909,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = DIO_cruiser_effort }
 		x = 0
@@ -2876,6 +2953,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 30
 		y = 9
@@ -2946,6 +3030,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = DIO_aviation_effort }
 		x = -2
@@ -2966,6 +3057,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = DIO_fighter_focus }
 		prerequisite = { focus = DIO_bomber_focus }
@@ -2987,6 +3085,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = DIO_fighter_focus }
 		x = 0
@@ -3007,6 +3112,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = DIO_fighter_focus }
 		x = -2
@@ -3028,6 +3140,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = DIO_aviation_effort }
 		x = 2
@@ -3048,6 +3167,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = DIO_bomber_focus }
 		x = 0
@@ -3069,6 +3195,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = DIO_bomber_focus }
 		x = 2
@@ -3089,6 +3222,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = DIO_heavy_fighter_focus }
 		prerequisite = { focus = DIO_reverse_engineer_foreign_bombers }
@@ -3113,6 +3253,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = DIO_heavy_fighter_focus }
 		prerequisite = { focus = DIO_CAS_effort }
@@ -3137,6 +3284,13 @@ focus_tree = {
 
 	focus = {
 		id = DIO_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = DIO_aviation_effort_2 }
 		prerequisite = { focus = DIO_expand_bombing_command }

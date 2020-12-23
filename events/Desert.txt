@@ -984,7 +984,9 @@ country_event = { #Sioux refugees return to their country - Greenland
 	desc = desert.27.d
 	picture = GFX_report_greenland
 
-	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 7
+	}
 
 	trigger = {
 		tag = GRN
@@ -1004,6 +1006,12 @@ country_event = { #Sioux refugees return to their country - Greenland
 		}
 		transfer_state = 22
 		transfer_state = 23
+		hidden_effect = {
+			SIO = {
+				remove_state_core = 22
+				remove_state_core = 23
+			}
+		}
 	}
 }
 

@@ -377,6 +377,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 12
 		y = 0
@@ -419,6 +426,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = EN3_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -440,6 +454,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = EN3_army_effort }
 		x = 0
@@ -484,6 +505,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = EN3_motorization_effort }
 		x = 1
@@ -505,6 +533,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = EN3_doctrine_effort }
 		x = 0
@@ -549,6 +584,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = EN3_mechanization_effort }
 		x = 0
@@ -570,6 +612,13 @@ focus_tree = {
 
 	focus = {
 		id = EN3_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = EN3_equipment_effort_3 }
 		prerequisite = { focus = EN3_doctrine_effort_2 }

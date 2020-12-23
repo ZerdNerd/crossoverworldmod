@@ -50,6 +50,35 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					ROOT = {
+						NOT = {
+							tag = UND
+						}
+						is_ai = no
+						UND = {
+							all_state = {
+								is_core_of = UND
+    							is_owned_by = ROOT
+							}
+						}
+						NOT = {
+							has_country_flag = nuked_underground
+							has_country_flag = showed_achievement_window
+						}
+					}
+				}
+				ROOT = {
+					add_to_array = {
+						PB_achievement_get_array = 9
+					}
+					set_variable = {
+						show_achievement_unlocked_window = 1
+					}
+					set_country_flag = showed_achievement_window
+				}
+			}
+			if = {
+				limit = {
 					has_country_flag = achievement_unlocked_1
 					NOT = {
 						has_variable = show_achievement_unlocked_window

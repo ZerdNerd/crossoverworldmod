@@ -47,6 +47,15 @@ scripted_gui = {
             }
           }
         }
+        AND = {
+          tag = FLO
+          FLO = {
+            focus_progress = {
+              focus = FLO_operation_jihacheol
+              progress > 0.1
+            }
+          }
+        }
         any_country = {
           is_justifying_wargoal_against = UND
         }
@@ -228,6 +237,15 @@ scripted_gui = {
           SLD = {
             focus_progress = {
               focus = SLD_final_showdown
+              progress > 0.65
+            }
+          }
+        }
+        AND = {
+          tag = FLO
+          FLO = {
+            focus_progress = {
+              focus = FLO_operation_jihacheol
               progress > 0.65
             }
           }

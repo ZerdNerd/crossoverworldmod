@@ -1869,6 +1869,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = -5
 		y = 4
@@ -1895,6 +1902,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = GON_generic_army_effort }
 		x = -3
@@ -1916,6 +1930,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = GON_generic_weapon_development }
 		x = 1
@@ -1937,6 +1958,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = GON_generic_artillery_research }
 		x = 0
@@ -1959,6 +1987,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = GON_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -1980,6 +2015,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = GON_generic_army_effort }
 		x = 0
@@ -2002,6 +2044,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = GON_generic_weapon_development }
 		x = -1
@@ -2023,6 +2072,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = GON_generic_motorization_effort }
 		x = -1
@@ -2050,6 +2106,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = GON_generic_practice_reverse_engineering }
 		x = 0
@@ -2071,6 +2134,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = GON_generic_motorization_effort }
 		x = 1
@@ -2092,6 +2162,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = GON_generic_doctrine_effort }
 		x = 0
@@ -2114,6 +2191,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = GON_generic_doctrine_effort_2 }
 		x = 0
@@ -2133,6 +2217,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = GON_generic_weapons_and_co }
 		x = 0
@@ -2155,6 +2246,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = GON_generic_mechanization_effort }
 		x = 0
@@ -2176,6 +2274,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = GON_generic_weapon_development_3 }
 		prerequisite = { focus = GON_generic_military_academy }
@@ -2215,6 +2320,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 15
 		y = 4
@@ -2246,6 +2358,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = GON_generic_naval_effort }
 		mutually_exclusive = { focus = GON_generic_large_navy }
@@ -2277,6 +2396,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = GON_generic_naval_effort }
 		mutually_exclusive = { focus = GON_generic_flexible_navy }
@@ -2304,6 +2430,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = GON_generic_flexible_navy focus = GON_generic_large_navy }
 		x = -4
@@ -2329,6 +2462,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = GON_generic_naval_academy }
 		x = 0
@@ -2355,6 +2495,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = GON_generic_flexible_navy focus = GON_generic_large_navy }
 		x = 0
@@ -2380,6 +2527,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = GON_generic_destroyer_effort }
 		x = 0
@@ -2405,6 +2559,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = GON_generic_large_navy focus = GON_generic_flexible_navy }
 		x = -2
@@ -2434,6 +2595,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = GON_generic_floating_airfields }
 		x = 0
@@ -2459,6 +2627,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = GON_generic_large_navy focus = GON_generic_flexible_navy }
 		x = 0
@@ -2485,6 +2660,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = GON_generic_cruiser_effort }
 		x = 0
@@ -2522,6 +2704,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 15
 		y = 9
@@ -2556,6 +2745,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = GON_generic_aviation_effort }
 		x = -2
@@ -2576,6 +2772,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = GON_generic_fighter_focus }
 		prerequisite = { focus = GON_generic_bomber_focus }
@@ -2597,6 +2800,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = GON_generic_fighter_focus }
 		x = 0
@@ -2617,6 +2827,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = GON_generic_fighter_focus }
 		x = -2
@@ -2638,6 +2855,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = GON_generic_aviation_effort }
 		x = 2
@@ -2658,6 +2882,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = GON_generic_bomber_focus }
 		x = 0
@@ -2679,6 +2910,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = GON_generic_bomber_focus }
 		x = 2
@@ -2699,6 +2937,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = GON_generic_heavy_fighter_focus }
 		prerequisite = { focus = GON_generic_reverse_engineer_foreign_bombers }
@@ -2723,6 +2968,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = GON_generic_heavy_fighter_focus }
 		prerequisite = { focus = GON_generic_CAS_effort }
@@ -2747,6 +2999,13 @@ focus_tree = {
 
 	focus = {
 		id = GON_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = GON_generic_aviation_effort_2 }
 		prerequisite = { focus = GON_generic_expand_bombing_command }

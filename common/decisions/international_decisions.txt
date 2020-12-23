@@ -349,6 +349,212 @@ international_policy_dec_category = {
 				SIO = {
 					transfer_state = 22
 					transfer_state = 23
+					add_state_core = 22
+					add_state_core = 23
+				}
+			}
+		}
+	}
+
+	increase_support_for_epr = {
+		icon = generic_operation
+
+		visible = {
+			tag = FLO
+			has_completed_focus = FLO_artisans_enchancia
+			EN4 = {
+				exists = yes
+				OR = {
+					has_war_with = ENC
+					has_war_with = EN1
+					has_war_with = EN2
+					has_war_with = EN3
+				}
+			}
+		}
+
+		available = {
+			has_manpower > 14999
+			OR = {
+				NOT = {
+					104 = {
+						is_controlled_by = EN4
+					}
+				}
+				NOT = {
+					156 = {
+						is_controlled_by = EN4
+					}
+				}
+			}
+			date > 1938.06.01
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			add_manpower = -15000
+			EN4 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 15000
+    				producer = FLO
+				}
+			}
+		}
+	}
+
+	increase_support_for_epr_2 = {
+		icon = generic_operation
+
+		visible = {
+			tag = FLO
+			has_completed_focus = FLO_artisans_enchancia
+			EN4 = {
+				exists = yes
+				OR = {
+					has_war_with = ENC
+					has_war_with = EN1
+					has_war_with = EN2
+					has_war_with = EN3
+				}
+			}
+		}
+
+		available = {
+			has_manpower > 14999
+			AND = {
+				NOT = {
+					104 = {
+						is_controlled_by = EN4
+					}
+				}
+				NOT = {
+					156 = {
+						is_controlled_by = EN4
+					}
+				}
+			}
+			date > 1939.04.01
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			add_manpower = -15000
+			EN4 = {
+				add_manpower = 15000
+				add_equipment_to_stockpile = {
+    				type = infantry_equipment_0
+    				amount = 15000
+    				producer = FLO
+				}
+			}
+		}
+	}
+
+	intervene_in_enchancian_civil_war_on_epr_side = {
+		icon = generic_operation
+
+		visible = {
+			tag = FLO
+			has_completed_focus = FLO_artisans_enchancia
+			EN4 = {
+				exists = yes
+				OR = {
+					has_war_with = ENC
+					has_war_with = EN1
+					has_war_with = EN2
+					has_war_with = EN3
+				}
+			}
+		}
+
+		available = {
+			has_war = no
+			EN4 = {
+				surrender_progress > 0.7
+			}
+			date > 1940.01.01
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		complete_effect = {
+			EN4 = {
+				give_military_access = FLO
+			}
+			106 = {
+				add_claim_by = FLO
+			}
+			12 = {
+				add_claim_by = FLO
+			}
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+						has_war_with = EN4
+					}
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+						has_war_with = EN4
+					}
+				}
+				declare_war_on = {
+					target = EN1
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+						has_war_with = EN4
+					}
+				}
+				declare_war_on = {
+					target = EN2
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+						has_war_with = EN4
+					}
+				}
+				declare_war_on = {
+					target = EN3
+					type = annex_everything
 				}
 			}
 		}
@@ -480,6 +686,35 @@ international_policy_dec_category = {
 							days = 0
 						}
 					}
+				}
+			}
+		}
+	}
+
+	neu_flensburg_peace = {
+		icon = generic_operation
+
+		visible = {
+			tag = SIO
+			has_war_with = FLE
+			controls_state = 632
+			controls_state = 634
+			controls_state = 638
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		complete_effect = {
+			FLE = {
+				country_event = {
+					id = truce_proposal.4
+					days = 0
 				}
 			}
 		}

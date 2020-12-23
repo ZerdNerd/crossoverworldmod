@@ -88,6 +88,18 @@ country_event = {
 		hidden_effect = {
 			retire_country_leader = yes
 			set_country_flag = darami_elected
+			every_unit_leader = {
+				limit = {
+					has_id = 7001
+				}
+				promote_leader = yes
+			}
+			every_unit_leader = {
+				limit = {
+					has_id = 7000
+				}
+				demote_leader = yes
+			}
 		}
 		create_country_leader = {
 			name = "Darami"
@@ -112,13 +124,25 @@ country_event = {
 		hidden_effect = {
 			retire_country_leader = yes
 			set_country_flag = geumsaegi_elected
+			every_unit_leader = {
+				limit = {
+					has_id = 7002
+				}
+				promote_leader = yes
+			}
+			every_unit_leader = {
+				limit = {
+					has_id = 7000
+				}
+				demote_leader = yes
+			}
 		}
 		create_country_leader = {
 			name = "Geumsaegi"
 			desc = "POLITICS_TBA_I_DESC"
 			picture = "geumsaegi.dds"
 			expire = "1965.1.1"
-			ideology = stalinism
+			ideology = juche
 			traits = {
 				great_war_hero
 			}
@@ -315,8 +339,6 @@ country_event = {
 	desc = flowerhill.9.d
 	picture = GFX_report_flower_hill
 
-	fire_only_once = yes
-
 	is_triggered_only = yes
 
 	option = {
@@ -324,7 +346,6 @@ country_event = {
 			has_country_flag = goseumdochi_elected
 		}
 		name = flowerhill.9.a
-		add_political_power = -50
 	}
 
 	option = {
@@ -335,7 +356,6 @@ country_event = {
 		hidden_effect = {
 			retire_country_leader = yes
 			clr_country_flag = darami_elected
-			set_country_flag = goseumdochi_elected
 		}
 		create_country_leader = {
 			name = "Goseumdochi"
@@ -357,7 +377,6 @@ country_event = {
 		hidden_effect = {
 			retire_country_leader = yes
 			clr_country_flag = goseumdochi_elected
-			set_country_flag = darami_elected
 		}
 		create_country_leader = {
 			name = "Darami"
@@ -376,6 +395,144 @@ country_event = {
 			has_country_flag = darami_elected
 		}
 		name = flowerhill.9.e
-		add_political_power = -50
+	}
+
+	option = {
+		trigger = {
+			has_completed_focus = FLO_so_darami_wins
+		}
+		name = flowerhill.9.f
+		hidden_effect = {
+			retire_country_leader = yes
+		}
+		create_country_leader = {
+			name = "Bamsaegi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "bamsaegi.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				#
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flowerhill.10 #Post-1940-Election elections event
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flowerhill.10"}
+	title = flowerhill.10.t
+	desc = flowerhill.10.d
+	picture = GFX_report_flower_hill
+
+	is_triggered_only = yes
+
+	option = { #Reelect current leader
+		trigger = {
+			check_variable = {
+				current_leader_term < 2
+			}
+		}
+		name = flowerhill.10.a
+		hidden_effect = {
+			add_to_variable = {
+				current_leader_term = 1
+			}
+		}
+	}
+
+	option = { #Darami
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Darami"
+					ruling_only = yes
+				}
+			}
+		}
+		name = flowerhill.10.b
+		hidden_effect = {
+			set_variable = {
+				current_leader_term = 1
+			}
+			retire_country_leader = yes
+		}
+		create_country_leader = {
+			name = "Darami"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "darami.dds"
+			expire = "1965.1.1"
+			ideology = leninism
+			traits = {
+				#
+			}
+		}
+	}
+
+	option = { #Goseumdochi
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Goseumdochi"
+					ruling_only = yes
+				}
+			}
+		}
+		name = flowerhill.10.c
+		hidden_effect = {
+			set_variable = {
+				current_leader_term = 1
+			}
+			retire_country_leader = yes
+		}
+		create_country_leader = {
+			name = "Goseumdochi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "goseumdochi.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				#
+			}
+		}
+	}
+
+	option = { #Bamsaegi
+		trigger = {
+			NOT = {
+				has_country_leader = {
+					name = "Bamsaegi"
+					ruling_only = yes
+				}
+			}
+			has_completed_focus = FLO_so_darami_wins
+		}
+		name = flowerhill.10.e
+		hidden_effect = {
+			set_variable = {
+				current_leader_term = 1
+			}
+			retire_country_leader = yes
+		}
+		create_country_leader = {
+			name = "Bamsaegi"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "bamsaegi.dds"
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				#
+			}
+		}
+	}
+
+	option = { #Unexpected winner
+		name = flowerhill.10.f
+		hidden_effect = {
+			set_variable = {
+				current_leader_term = 1
+			}
+			retire_country_leader = yes
+		}
 	}
 }

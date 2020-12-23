@@ -90,6 +90,10 @@ country_event = { #Fate of Winslow Family - exile on one of the islands
 	is_triggered_only = yes
 
 	option = { #Exile them to northeastern island
+		trigger = {
+			owns_state = 106
+			owns_state = 12
+		}
 		name = eprep.2.a
 		add_political_power = -150
 		add_stability = -0.15

@@ -3189,6 +3189,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 15
 		y = 13
@@ -3209,6 +3216,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = KPT_army_effort }
 		x = -3
@@ -3230,6 +3244,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = KPT_weapon_development }
 		x = 1
@@ -3251,6 +3272,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = KPT_artillery_research }
 		x = 0
@@ -3273,6 +3301,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = KPT_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -3294,6 +3329,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = KPT_army_effort }
 		x = 0
@@ -3316,6 +3358,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = KPT_weapon_development }
 		x = -1
@@ -3337,6 +3386,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = KPT_motorization_effort }
 		x = -1
@@ -3364,6 +3420,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = KPT_practice_reverse_engineering }
 		x = 0
@@ -3385,6 +3448,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = KPT_motorization_effort }
 		x = 1
@@ -3406,6 +3476,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = KPT_doctrine_effort }
 		x = 0
@@ -3428,6 +3505,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = KPT_doctrine_effort_2 }
 		x = 0
@@ -3447,6 +3531,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = KPT_weapons_and_co }
 		x = 0
@@ -3469,6 +3560,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = KPT_mechanization_effort }
 		x = 0
@@ -3490,6 +3588,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = KPT_weapon_development_3 }
 		prerequisite = { focus = KPT_military_academy }
@@ -3529,6 +3634,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 27
 		y = 13
@@ -3554,6 +3666,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = KPT_naval_effort }
 		mutually_exclusive = { focus = KPT_large_navy }
@@ -3585,6 +3704,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = KPT_naval_effort }
 		mutually_exclusive = { focus = KPT_flexible_navy }
@@ -3612,6 +3738,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = KPT_flexible_navy focus = KPT_large_navy }
 		x = -4
@@ -3637,6 +3770,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = KPT_naval_academy }
 		x = 0
@@ -3663,6 +3803,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = KPT_flexible_navy focus = KPT_large_navy }
 		x = 0
@@ -3688,6 +3835,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = KPT_destroyer_effort }
 		x = 0
@@ -3713,6 +3867,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = KPT_large_navy focus = KPT_flexible_navy }
 		x = -2
@@ -3742,6 +3903,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = KPT_floating_airfields }
 		x = 0
@@ -3767,6 +3935,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = KPT_large_navy focus = KPT_flexible_navy }
 		x = 0
@@ -3793,6 +3968,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = KPT_cruiser_effort }
 		x = 0
@@ -3830,6 +4012,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 39
 		y = 13
@@ -3861,6 +4050,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = KPT_aviation_effort }
 		x = -2
@@ -3881,6 +4077,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = KPT_fighter_focus }
 		prerequisite = { focus = KPT_bomber_focus }
@@ -3902,6 +4105,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = KPT_fighter_focus }
 		x = 0
@@ -3922,6 +4132,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = KPT_fighter_focus }
 		x = -2
@@ -3943,6 +4160,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = KPT_aviation_effort }
 		x = 2
@@ -3963,6 +4187,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = KPT_bomber_focus }
 		x = 0
@@ -3984,6 +4215,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = KPT_bomber_focus }
 		x = 2
@@ -4004,6 +4242,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = KPT_heavy_fighter_focus }
 		prerequisite = { focus = KPT_reverse_engineer_foreign_bombers }
@@ -4028,6 +4273,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = KPT_heavy_fighter_focus }
 		prerequisite = { focus = KPT_CAS_effort }
@@ -4052,6 +4304,13 @@ focus_tree = {
 
 	focus = {
 		id = KPT_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = KPT_aviation_effort_2 }
 		prerequisite = { focus = KPT_expand_bombing_command }

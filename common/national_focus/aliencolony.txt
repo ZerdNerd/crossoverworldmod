@@ -1529,6 +1529,13 @@ focus = {
 
 	focus = {
 		id = SKO_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 26
 		y = 0
@@ -1549,6 +1556,13 @@ focus = {
 
 	focus = {
 		id = SKO_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = SKO_army_effort }
 		x = -3
@@ -1570,6 +1584,13 @@ focus = {
 
 	focus = {
 		id = SKO_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SKO_weapon_development }
 		x = 1
@@ -1591,6 +1612,13 @@ focus = {
 
 	focus = {
 		id = SKO_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = SKO_artillery_research }
 		x = 0
@@ -1613,6 +1641,13 @@ focus = {
 
 	focus = {
 		id = SKO_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SKO_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -1634,6 +1669,13 @@ focus = {
 
 	focus = {
 		id = SKO_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SKO_army_effort }
 		x = 0
@@ -1656,6 +1698,13 @@ focus = {
 
 	focus = {
 		id = SKO_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = SKO_weapon_development }
 		x = -1
@@ -1677,6 +1726,13 @@ focus = {
 
 	focus = {
 		id = SKO_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = SKO_motorization_effort }
 		x = -1
@@ -1704,6 +1760,13 @@ focus = {
 
 	focus = {
 		id = SKO_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SKO_practice_reverse_engineering }
 		x = 0
@@ -1725,6 +1788,13 @@ focus = {
 
 	focus = {
 		id = SKO_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = SKO_motorization_effort }
 		x = 1
@@ -1746,6 +1816,13 @@ focus = {
 
 	focus = {
 		id = SKO_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SKO_doctrine_effort }
 		x = 0
@@ -1768,6 +1845,13 @@ focus = {
 
 	focus = {
 		id = SKO_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = SKO_doctrine_effort_2 }
 		x = 0
@@ -1787,6 +1871,13 @@ focus = {
 
 	focus = {
 		id = SKO_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SKO_weapons_and_co }
 		x = 0
@@ -1809,6 +1900,13 @@ focus = {
 
 	focus = {
 		id = SKO_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SKO_mechanization_effort }
 		x = 0
@@ -1830,6 +1928,13 @@ focus = {
 
 	focus = {
 		id = SKO_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = SKO_weapon_development_3 }
 		prerequisite = { focus = SKO_military_academy }
@@ -1869,6 +1974,13 @@ focus = {
 
 	focus = {
 		id = SKO_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 26
 		y = 5
@@ -1894,6 +2006,13 @@ focus = {
 
 	focus = {
 		id = SKO_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = SKO_naval_effort }
 		mutually_exclusive = { focus = SKO_large_navy }
@@ -1925,6 +2044,13 @@ focus = {
 
 	focus = {
 		id = SKO_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = SKO_naval_effort }
 		mutually_exclusive = { focus = SKO_flexible_navy }
@@ -1952,6 +2078,13 @@ focus = {
 
 	focus = {
 		id = SKO_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SKO_flexible_navy focus = SKO_large_navy }
 		x = -4
@@ -1977,6 +2110,13 @@ focus = {
 
 	focus = {
 		id = SKO_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = SKO_naval_academy }
 		x = 0
@@ -2003,6 +2143,13 @@ focus = {
 
 	focus = {
 		id = SKO_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = SKO_flexible_navy focus = SKO_large_navy }
 		x = 0
@@ -2028,6 +2175,13 @@ focus = {
 
 	focus = {
 		id = SKO_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = SKO_destroyer_effort }
 		x = 0
@@ -2053,6 +2207,13 @@ focus = {
 
 	focus = {
 		id = SKO_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = SKO_large_navy focus = SKO_flexible_navy }
 		x = -2
@@ -2082,6 +2243,13 @@ focus = {
 
 	focus = {
 		id = SKO_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = SKO_floating_airfields }
 		x = 0
@@ -2107,6 +2275,13 @@ focus = {
 
 	focus = {
 		id = SKO_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = SKO_large_navy focus = SKO_flexible_navy }
 		x = 0
@@ -2133,6 +2308,13 @@ focus = {
 
 	focus = {
 		id = SKO_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = SKO_cruiser_effort }
 		x = 0
@@ -2170,6 +2352,13 @@ focus = {
 
 	focus = {
 		id = SKO_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 26
 		y = 9
@@ -2197,6 +2386,13 @@ focus = {
 
 	focus = {
 		id = SKO_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SKO_aviation_effort }
 		x = -2
@@ -2217,6 +2413,13 @@ focus = {
 
 	focus = {
 		id = SKO_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SKO_fighter_focus }
 		prerequisite = { focus = SKO_bomber_focus }
@@ -2238,6 +2441,13 @@ focus = {
 
 	focus = {
 		id = SKO_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = SKO_fighter_focus }
 		x = 0
@@ -2258,6 +2468,13 @@ focus = {
 
 	focus = {
 		id = SKO_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SKO_fighter_focus }
 		x = -2
@@ -2279,6 +2496,13 @@ focus = {
 
 	focus = {
 		id = SKO_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SKO_aviation_effort }
 		x = 2
@@ -2299,6 +2523,13 @@ focus = {
 
 	focus = {
 		id = SKO_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = SKO_bomber_focus }
 		x = 0
@@ -2320,6 +2551,13 @@ focus = {
 
 	focus = {
 		id = SKO_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SKO_bomber_focus }
 		x = 2
@@ -2340,6 +2578,13 @@ focus = {
 
 	focus = {
 		id = SKO_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SKO_heavy_fighter_focus }
 		prerequisite = { focus = SKO_reverse_engineer_foreign_bombers }
@@ -2364,6 +2609,13 @@ focus = {
 
 	focus = {
 		id = SKO_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = SKO_heavy_fighter_focus }
 		prerequisite = { focus = SKO_CAS_effort }
@@ -2388,6 +2640,13 @@ focus = {
 
 	focus = {
 		id = SKO_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = SKO_aviation_effort_2 }
 		prerequisite = { focus = SKO_expand_bombing_command }

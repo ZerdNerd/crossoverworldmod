@@ -19,9 +19,36 @@ kayo_missions_dec_category = {
 }
 
 dividing_greenland_dec_category = {
-	icon = GFX_decision_cat_divide_greenland
+	icon = generic_political_actions
 
-	picture = generic_political_actions
+	picture = GFX_decision_cat_divide_greenland
+	
+	priority = 50
+}
+
+fall_of_desert_hegemony_dec_category = {
+	icon = generic_political_actions
+	
+	priority = 50
+}
+
+conflict_for_influence_dec_category = {
+	icon = generic_political_actions
+	visible_when_empty = yes
+
+	picture = GFX_decision_cat_conflict_for_influence
+
+	allowed = {
+		tag = MAI
+	}
+
+	visible = {
+		has_global_flag = stephen_is_dead
+		NOT = {
+			has_country_flag = general_has_rebelled
+			has_country_flag = macius_reached_adulthood
+		}
+	}
 	
 	priority = 50
 }

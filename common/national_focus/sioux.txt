@@ -935,16 +935,52 @@ focus_tree = {
 
 		available = {
 			has_war_with = DES
-			NOT = {
-				has_country_flag = SIO_yakari_left_the_country
+			custom_trigger_tooltip = {
+				tooltip = SIO_everything_went_right
+				NOT = {
+					has_country_flag = SIO_yakari_left_the_country
+					has_country_flag = braid_night_takes_over
+				}
 			}
 		}
 
 		completion_reward = {
-			add_manpower = 40000
+			add_manpower = 50000
 			custom_effect_tooltip = SIO_animals_living_in_sioux_territories
 			hidden_effect = {
-				#new animal generals go here
+				create_corps_commander = {
+					name = "Little Thunder"
+					portrait_path = "gfx/leaders/SIO/little_thunder.dds"
+					traits = { cavalry_officer }
+					skill = 4
+    				attack_skill = 4
+    				defense_skill = 4
+    				planning_skill = 5
+    				logistics_skill = 3
+					id = 6500
+				}
+				create_corps_commander = {
+					name = "Droopy Ear"
+					portrait_path = "gfx/leaders/SIO/droopy_ear.dds"
+					traits = { trait_cautious }
+					skill = 2
+    				attack_skill = 2
+    				defense_skill = 4
+    				planning_skill = 3
+    				logistics_skill = 2
+					id = 6501
+				}
+				create_corps_commander = {
+					name = "Great Eagle"
+					portrait_path = "gfx/leaders/SIO/great_eagle.dds"
+					traits = { brilliant_strategist }
+					skill = 5
+    				attack_skill = 5
+    				defense_skill = 5
+    				planning_skill = 6
+    				logistics_skill = 6
+					id = 6502
+				}
 			}
 		} 
 	}
@@ -962,7 +998,13 @@ focus_tree = {
 		} 
 
 		bypass = {
-			has_country_flag = SIO_yakari_left_the_country
+			custom_trigger_tooltip = {
+				tooltip = SIO_something_went_wrong
+				OR = {
+					has_country_flag = SIO_yakari_left_the_country
+					has_country_flag = braid_night_takes_over
+				}
+			}
 		}
 
 		prerequisite = {
@@ -2734,8 +2776,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#remove idea
 			add_political_power = 50
+			hidden_effect = {
+                clr_country_flag = SIO_halted_all_festivities
+                set_country_flag = SIO_festivities_reinstated
+                clear_variable = festivities_halted_counter_stopped
+            }
 		} 
 	}
 
@@ -4494,7 +4540,12 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			#event
+			GRN = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
 		} 
 	}
 
@@ -4547,6 +4598,13 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			every_state = {
+				limit = {
+					is_owned_by = TSA
+					is_core_of = MOO
+				}
+				add_core_of = SIO
+			}
 			create_wargoal = {
 				target = TSA
 				type = annex_everything
@@ -4631,6 +4689,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 15
 		y = 9
@@ -4658,6 +4723,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = SIO_generic_army_effort }
 		x = -3
@@ -4679,6 +4751,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SIO_generic_weapon_development }
 		x = 1
@@ -4700,6 +4779,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = SIO_generic_artillery_research }
 		x = 0
@@ -4722,6 +4808,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SIO_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -4743,6 +4836,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SIO_generic_army_effort }
 		x = 0
@@ -4765,6 +4865,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = SIO_generic_weapon_development }
 		x = -1
@@ -4786,6 +4893,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = SIO_generic_motorization_effort }
 		x = -1
@@ -4813,6 +4927,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SIO_generic_practice_reverse_engineering }
 		x = 0
@@ -4834,6 +4955,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = SIO_generic_motorization_effort }
 		x = 1
@@ -4855,6 +4983,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SIO_generic_doctrine_effort }
 		x = 0
@@ -4877,6 +5012,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = SIO_generic_doctrine_effort_2 }
 		x = 0
@@ -4896,6 +5038,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SIO_generic_weapons_and_co }
 		x = 0
@@ -4918,6 +5067,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SIO_generic_mechanization_effort }
 		x = 0
@@ -4939,6 +5095,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = SIO_generic_weapon_development_3 }
 		prerequisite = { focus = SIO_generic_military_academy }
@@ -4978,6 +5141,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 39
 		y = 9
@@ -5010,6 +5180,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = SIO_generic_naval_effort }
 		mutually_exclusive = { focus = SIO_generic_large_navy }
@@ -5041,6 +5218,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = SIO_generic_naval_effort }
 		mutually_exclusive = { focus = SIO_generic_flexible_navy }
@@ -5068,6 +5252,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SIO_generic_flexible_navy focus = SIO_generic_large_navy }
 		x = -4
@@ -5093,6 +5284,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = SIO_generic_naval_academy }
 		x = 0
@@ -5119,6 +5317,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = SIO_generic_flexible_navy focus = SIO_generic_large_navy }
 		x = 0
@@ -5144,6 +5349,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = SIO_generic_destroyer_effort }
 		x = 0
@@ -5169,6 +5381,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = SIO_generic_large_navy focus = SIO_generic_flexible_navy }
 		x = -2
@@ -5198,6 +5417,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = SIO_generic_floating_airfields }
 		x = 0
@@ -5223,6 +5449,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = SIO_generic_large_navy focus = SIO_generic_flexible_navy }
 		x = 0
@@ -5249,6 +5482,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = SIO_generic_cruiser_effort }
 		x = 0
@@ -5286,6 +5526,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 49
 		y = 9
@@ -5317,6 +5564,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SIO_generic_aviation_effort }
 		x = -2
@@ -5337,6 +5591,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SIO_generic_fighter_focus }
 		prerequisite = { focus = SIO_generic_bomber_focus }
@@ -5358,6 +5619,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = SIO_generic_fighter_focus }
 		x = 0
@@ -5378,6 +5646,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SIO_generic_fighter_focus }
 		x = -2
@@ -5399,6 +5674,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SIO_generic_aviation_effort }
 		x = 2
@@ -5419,6 +5701,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = SIO_generic_bomber_focus }
 		x = 0
@@ -5440,6 +5729,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SIO_generic_bomber_focus }
 		x = 2
@@ -5460,6 +5756,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SIO_generic_heavy_fighter_focus }
 		prerequisite = { focus = SIO_generic_reverse_engineer_foreign_bombers }
@@ -5484,6 +5787,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = SIO_generic_heavy_fighter_focus }
 		prerequisite = { focus = SIO_generic_CAS_effort }
@@ -5508,6 +5818,13 @@ focus_tree = {
 
 	focus = {
 		id = SIO_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = SIO_generic_aviation_effort_2 }
 		prerequisite = { focus = SIO_generic_expand_bombing_command }

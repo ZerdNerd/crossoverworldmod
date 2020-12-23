@@ -574,6 +574,381 @@ country_event = { #Proudest Cloud wins the Red Ribbon Race
 	}
 }
 
+country_event = { #Sioux warriors taken prisoner
+	id = sioux.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.22"}
+	title = sioux.22.t
+	desc = sioux.22.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Get rid of them.
+		name = sioux.22.a
+	}
+}
+
+country_event = { #Where are the men?
+	id = sioux.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.23"}
+	title = sioux.23.t
+	desc = sioux.23.d
+	picture = GFX_report_sioux
+
+	trigger = {
+		tag = SIO
+		has_global_flag = sioux_are_returning
+		controls_state = 705
+		OR = {
+			controls_state = 674
+			controls_state = 675
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	fire_only_once = yes
+
+	option = { #Can't find them...
+		name = sioux.23.a
+	}
+}
+
+country_event = { #Humsin challenges Yakari to a duel
+	id = sioux.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.24"}
+	title = sioux.24.t
+	desc = sioux.24.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #What twisted idea did he have now?
+		name = sioux.24.a
+		trigger = {
+			tag = GRN
+		}
+	}
+
+	option = { #Accept the challenge
+		name = sioux.24.b
+		ai_chance = {
+			factor = 80
+		}
+		trigger = {
+			tag = SIO
+		}
+		hidden_effect = {
+			random_list = {
+				90 = {
+					SIO = {
+						set_variable = {
+							yakari_wins_with_humsin = 1
+						}
+					}
+				}
+				10 = {
+					SIO = {
+						set_variable = {
+							humsin_wins_with_yakari = 1
+						}
+					}
+				}
+			}
+			SIO = {
+				country_event = {
+					id = sioux.25
+					days = 1
+				}
+			}
+			DES = {
+				country_event = {
+					id = sioux.25
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { #Refuse the challenge
+		name = sioux.24.c
+		ai_chance = {
+			factor = 20
+		}
+		trigger = {
+			tag = SIO
+		}
+		hidden_effect = {
+			DES = {
+				country_event = {
+					id = sioux.27
+					days = 0
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The duel of the century
+	id = sioux.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.25"}
+	title = sioux.25.t
+	desc = {
+		trigger = {
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+		text = sioux.25.d.y_wins
+	}
+	desc = {
+		trigger = {
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+		text = sioux.25.d.h_wins
+	}
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Yakari wins - Sioux option
+		name = sioux.25.a
+		trigger = {
+			tag = SIO
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+		add_manpower = 10000
+		add_stability = 0.15
+		add_war_support = 0.15
+		hidden_effect = {
+			country_event = {
+				id = sioux.26
+				days = 1
+			}
+			GRN = {
+				country_event = {
+					id = sioux.26
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { #Yakari wins - Desert option
+		name = sioux.25.a
+		trigger = {
+			tag = DES
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+		kill_country_leader = yes
+		hidden_effect = {
+			create_country_leader = {
+				name = "Kayo"
+				desc = "POLITICS_TBD_DESC"
+				picture = "kayo.dds"
+				expire = "1965.1.1"
+				ideology = fascism_ideology
+				traits = {
+					#
+				}
+			}
+		}
+		add_manpower = -10000
+		add_stability = -0.3
+		add_war_support = -0.3
+	}
+
+	option = { #Yakari loses - Sioux option
+		name = sioux.25.a
+		trigger = {
+			tag = SIO
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+		kill_country_leader = yes
+		hidden_effect = {
+			every_unit_leader = {
+				limit = {
+					has_id = 9000
+				}
+				retire = yes
+			}
+			set_country_flag = braid_night_takes_over
+			create_country_leader = {
+				name = "Braid Night"
+				desc = "POLITICS_BRAID_NIGHT_DESC"
+				picture = "braid_night.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+					#
+				}
+			}
+			create_corps_commander = {
+				name = "Braid Night"
+				portrait_path = "gfx/leaders/SIO/braid_night.dds"
+				skill = 3
+   				attack_skill = 3
+    			defense_skill = 2
+    			planning_skill = 2
+    			logistics_skill = 3
+				female = yes
+   				id = 9101
+			}
+			country_event = {
+				id = sioux.26
+				days = 1
+			}
+			GRN = {
+				country_event = {
+					id = sioux.26
+					days = 1
+				}
+			}
+		}
+		add_stability = -0.3
+		add_war_support = -0.3
+	}
+
+	option = { #Yakari loses - Desert option
+		name = sioux.25.a
+		trigger = {
+			tag = DES
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+		add_manpower = 10000
+		add_stability = 0.25
+		add_war_support = 0.25
+	}
+}
+
+country_event = { #Aftermath of the duel
+	id = sioux.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.26"}
+	title = sioux.26.t
+	desc = {
+		trigger = {
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+		text = sioux.26.d.y_wins
+	}
+	desc = {
+		trigger = {
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+		text = sioux.26.d.h_wins
+	}
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Good job
+		name = sioux.26.a
+		trigger = {
+			tag = GRN
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+	}
+
+	option = { #We still have war to win!
+		name = sioux.26.b
+		trigger = {
+			tag = SIO
+			SIO = {
+				has_variable = yakari_wins_with_humsin
+			}
+		}
+	}
+
+	option = { #We will avenge him
+		name = sioux.26.c
+		trigger = {
+			tag = GRN
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+		hidden_effect = {
+			set_country_flag = will_hunt_humsin_down
+		}
+	}
+
+	option = { #We will avenge him
+		name = sioux.26.c
+		trigger = {
+			tag = SIO
+			SIO = {
+				has_variable = humsin_wins_with_yakari
+			}
+		}
+	}
+}
+
+country_event = { #Humsin captured (event after Desert capitulation)
+	id = sioux.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.27"}
+	title = sioux.27.t
+	desc = sioux.27.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #He's gone for good.
+		name = sioux.27.a
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = GRN
+				}
+				DES = {
+					kill_country_leader = yes
+					create_country_leader = {
+						name = "Kayo"
+						desc = "POLITICS_TBD_DESC"
+						picture = "kayo.dds"
+						expire = "1965.1.1"
+						ideology = fascism_ideology
+						traits = {
+							#
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Yakari rejects Humsin's challenge
+	id = sioux.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event sioux.28"}
+	title = sioux.28.t
+	desc = sioux.28.d
+	picture = GFX_report_sioux
+
+	is_triggered_only = yes
+
+	option = { #Coward.
+		name = sioux.28.a
+	}
+}
+
 
 #######################################################################################################################################################################################################
 #
@@ -951,6 +1326,12 @@ country_event = { #Post-Sandstorm politics vote result
 					has_country_flag = buffalo_branch_vote_lost
 					has_country_flag = rainbow_branch_vote_lost
 					has_country_flag = braid_night_branch_vote_lost
+				}
+				NOT = {
+					has_country_flag = yakari_branch_vote_accepted
+					has_country_flag = buffalo_branch_vote_accepted
+					has_country_flag = rainbow_branch_vote_accepted
+					has_country_flag = braid_night_branch_vote_accepted
 				}
 			}
 			add_stability = -0.05

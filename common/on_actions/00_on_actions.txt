@@ -25,6 +25,22 @@ on_actions = {
 				}
 				country_event = childrenparliament.18
 			}
+			if = {
+				limit = {
+					tag = FLO
+					NOT = {
+						has_country_flag = regular_voting_established
+					}
+				}
+				country_event = flowerhill.9
+			}
+			if = {
+				limit = {
+					tag = FLO
+					has_country_flag = regular_voting_established
+				}
+				country_event = flowerhill.10
+			}
 		}
 	}
 
@@ -37,6 +53,12 @@ on_actions = {
 						exists = yes
 						DES = {
 							exists = no
+						}
+						SIO = {
+							NOT = {
+								has_country_flag = braid_night_takes_over
+								has_country_flag = SIO_yakari_left_the_country
+							}
 						}
 						NOT = {
 							has_global_flag = shown_the_big_event_sioux_return
@@ -387,6 +409,10 @@ on_actions = {
 						check_variable = { SIO_days_since_last_sun_dance > 0 }
 						check_variable = { SIO_days_since_last_sun_dance < 365 }
 					}
+					NOT = {
+						has_country_flag = SIO_halted_all_festivities
+						has_country_flag = SIO_festivities_reinstated
+					}
 				}
 				add_to_variable = { SIO_days_since_last_sun_dance = 1 }
 			}
@@ -395,11 +421,15 @@ on_actions = {
 				limit = {
 					tag = SIO
 					AND = {
-						check_variable = { SIO_days_since_last_sun_dance = 365 }
+						check_variable = { SIO_days_since_last_sun_dance < 366 }
 						has_country_flag = SIO_halted_all_festivities
+					}
+					NOT = {
+						has_variable = festivities_halted_counter_stopped
 					}
 				}
 				set_variable = { SIO_days_since_last_sun_dance = 1 }
+				set_variable = { festivities_halted_counter_stopped = 1 }
 			}
 
 			if = {
@@ -977,6 +1007,22 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = DES
+					}
+					SIO = {
+						has_country_flag = braid_night_takes_over
+					}
+				}
+				GRN = {
+					country_event = {
+						id = sioux.27
+						days = 1
+					}
+				}
+			}
 			every_state = {
 				limit = {
 					has_variable = is_being_exploited_@ROOT

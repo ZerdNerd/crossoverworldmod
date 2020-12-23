@@ -9,7 +9,696 @@ focus_tree = {
 	} 
 	
 	default = no
-	
+
+	#Focus for The way of diplomacy
+	focus = { 
+		id = MAI_thewayofdiplomacy
+		icon = GFX_goal_tripartite_pact
+		x = 4
+		y = 0
+		cost = 3
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_crowned
+				has_global_flag = stephen_is_dead
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			add_political_power = 5
+		}
+		
+	} 
+
+	focus = { 
+		id = MAI_diplo_rel_enchancia
+		icon = GFX_focus_enchancia
+		x = 2
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_thewayofdiplomacy } 
+		ai_will_do = { 
+			factor = 5
+		}
+
+		completion_reward = {
+			add_political_power = 75
+			add_opinion_modifier = {
+				target = ENC
+				modifier = MAI_true_relations
+			}
+			ENC = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_true_relations
+				}		
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_ecw_our_stance
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_diplo_rel_enchancia } 
+		ai_will_do = { 
+			factor = 100
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+		} 
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_didnt_broke
+				ENC = {
+					has_country_flag = civil_war_avoided
+				}
+			}
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.6
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_enc_tech_jump
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 3
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_ecw_our_stance } 
+		ai_will_do = { 
+			factor = 100
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_didnt_broke
+				ENC = {
+					has_country_flag = civil_war_avoided
+					has_idea = pre-modern_tech
+				}
+			}
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.7
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_alliance_enc
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_enc_tech_jump } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			ENC = {
+				country_event = {
+					id = enchancia.43
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_enc_rebuild
+		icon = GFX_goal_generic_construction
+		x = 2
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_ecw_our_stance } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						ENC = {
+							exists = yes
+							NOT = {
+								has_cosmetic_tag = WIN
+							}
+						}
+						EN1 = {
+							exists = yes
+						}
+						EN2 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_rebuild_proposal
+			hidden_effect = {
+				if = {
+					limit = {
+						ENC = {
+							exists = yes
+						}
+					}
+					ENC = {
+						country_event = {
+							id = enchancia.44
+							days = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						EN1 = {
+							exists = yes
+						}
+					}
+					EN1 = {
+						country_event = {
+							id = enchancia.44
+							days = 1
+						}
+					}
+				}
+				if = {
+					limit = {
+						EN2 = {
+							exists = yes
+						}
+					}
+					EN2 = {
+						country_event = {
+							id = enchancia.44
+							days = 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_alliance_enc_ecw
+		icon = GFX_goal_generic_major_alliance
+		x = 2
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_enc_rebuild } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			OR = {
+				ENC = {
+					NOT = {
+						has_idea = ENC_aftermath_of_civil_war
+					}
+				}
+				EN1 = {
+					NOT = {
+						has_idea = ENC_aftermath_of_civil_war
+					}
+				}
+				EN2 = {
+					NOT = {
+						has_idea = ENC_aftermath_of_civil_war
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				ENC = {
+					country_event = {
+						id = enchancia.46
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				EN1 = {
+					country_event = {
+						id = enchancia.46
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				EN2 = {
+					country_event = {
+						id = enchancia.46
+						days = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_enc_isolate
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 4
+		y = 3
+		cost = 15
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_ecw_our_stance } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_ended_badder
+				AND = {
+					has_global_flag = enchancian_civil_war_over
+					OR = {
+						EN3 = {
+							exists = yes
+						}
+						EN4 = {
+							exists = yes
+						}
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = EN3
+					modifier = MAI_isolation
+				}
+				EN3 = {
+					add_opinion_modifier = {
+						target = MAI
+						modifier = MAI_isolation
+					}
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = EN4
+					modifier = MAI_isolation
+				}
+				EN4 = {
+					add_opinion_modifier = {
+						target = MAI
+						modifier = MAI_isolation
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_back_enchancian_family
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 4
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_enc_isolate } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_winslow_exiled
+				has_country_flag = winslow_on_exile
+			}
+		}
+
+		completion_reward = {
+			every_country = {
+				limit = {
+					has_country_flag = winslow_on_exile
+						NOT = {
+							tag = MAI
+						}
+					}
+					add_opinion_modifier = {
+						target = MAI
+						modifier = backs_winslow_family
+					}
+				}
+			add_political_power = 150
+		}
+	}
+
+	focus = { 
+		id = MAI_diplo_rel_greenland
+		icon = GFX_focus_greenland
+		x = 6
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_thewayofdiplomacy } 
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				has_country_flag = greenland_priority
+				factor = 75
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 75
+			add_opinion_modifier = {
+				target = GRN
+				modifier = MAI_true_relations
+			}
+			GRN = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_true_relations
+				}		
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_state_visit_to_greenland
+		icon = GFX_focus_usa_escort_fighters
+		x = 6
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_diplo_rel_greenland } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			country_event = {
+				id = centralkingdom.15
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_upgrade_grn
+		icon = GFX_goal_continuous_research
+		x = 6
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_state_visit_to_greenland } 
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		bypass = {
+			always = yes
+		}
+
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAC_visited_grn
+				has_country_flag = visited_grn
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 20
+			GRN = {
+				country_event = {
+					id = greenland.1
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_propose_alliance_GRN
+		icon = GFX_goal_anschluss
+		x = 6
+		y = 4
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_upgrade_grn } 
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		bypass = {
+			always = yes
+		}
+		
+		available = { 
+
+		}
+
+		completion_reward = {
+			create_faction = united_front_of_free_nations
+			GRN = {
+				country_event = {
+					id = greenland.2
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_road_to_sea
+		icon = GFX_focus_generic_navy_battleship2
+		x = 8
+		y = 1
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_thewayofdiplomacy } 
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				has_country_flag = sea_priority
+				factor = 75
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 120
+			FRI = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_wants_sea
+				}
+			}
+			WEK = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_wants_sea
+				}
+			}
+			SLD = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_wants_sea
+				}
+			}
+			hidden_effect = {
+				news_event = { 
+					id = worldnews.8 hours = 6
+				} 
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_the_zoo_project
+		icon = GFX_focus_usa_tank_destroyer_doctrine
+		x = 8
+		y = 2
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_road_to_sea } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAC_zoo_project
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_tungu_pungu
+		icon = GFX_focus_usa_escort_fighters
+		x = 8
+		y = 3
+		cost = 5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_zoo_project } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			TUG = {
+				exists = yes
+			}
+		}
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = TUG
+				modifier = MAC_friendship
+			}
+			TUG = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAC_friendship
+				}
+			}
+			add_political_power = 150
+			add_popularity = {
+    			ideology = fascism
+   				popularity = 0.15
+			}
+			add_popularity = {
+    			ideology = monarchism
+   					popularity = -0.15
+			}
+			set_country_flag = MAI_visited_tungupungu
+		}
+	}
+
+	focus = { 
+		id = MAI_royal_convention
+		icon = GFX_focus_generic_home_defense
+		x = 8
+		y = 4
+		cost = 30
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_tungu_pungu } 
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_organizing_convention
+			hidden_effect = {
+				MAI = {
+					country_event = {
+						id = royalconvention.6
+						days = 0
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_sea_access
+		icon = GFX_goal_generic_navy_cruiser
+		x = 4
+		y = 5
+		cost = 0
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_royal_convention } 
+		prerequisite = { focus = MAI_propose_alliance_GRN } 
+		prerequisite = { focus = MAI_alliance_enc focus = MAI_alliance_enc_ecw focus = MAI_back_enchancian_family } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			NOT = {
+				always = yes
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_sea_access_tooltip
+				MAI = {
+					has_completed_focus = MAI_propose_alliance_GRN
+					OR = {
+						has_completed_focus = MAI_back_enchancian_family
+						has_completed_focus = MAI_alliance_enc_ecw
+						has_completed_focus = MAI_alliance_enc
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+			}
+		}
+
+		completion_reward = {
+
+		}
+	}
+
 #Focus for The way of Army
 focus = { 
 	id = MAI_thewayofarmy
@@ -625,748 +1314,6 @@ focus = {
 	completion_reward = { 
 		add_research_slot = 1
 	} 
-}
-
-#Focus for The way of diplomacy
-focus = { 
-	id = MAI_thewayofdiplomacy
-	icon = GFX_goal_tripartite_pact
-	x = 4
-	y = 0
-	cost = 3
-	available_if_capitulated = yes 
-	available = {
-		custom_trigger_tooltip = {
-				tooltip = MAI_macius_crowned
-				has_global_flag = stephen_is_dead
-			}
-	}
-	ai_will_do = { 
-		factor = 5
-	} 
-	completion_reward = { 
-		add_political_power = 5
-	}
-	
-} 
-
-focus = { 
-	id = MAI_diplo_rel_enchancia
-	icon = GFX_focus_enchancia
-	x = 2
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofdiplomacy } 
-	ai_will_do = { 
-		factor = 5
-		modifier = {
-			has_country_flag = enchancian_priority
-			factor = 75
-		}
-	} 
-#	available = { 
-#		OR = {
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_chose_enc
-#				has_country_flag = enchancian_priority
-#			}
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_didnt_chose_enc
-#				OR = {
-#					has_completed_focus = MAI_propose_alliance_GRN
-#					has_completed_focus = MAI_royal_convention
-#				}
-#			}
-#		}
-#	} 
-
-	completion_reward = {
-		add_political_power = 75
-		add_opinion_modifier = {
-			target = ENC
-			modifier = MAI_true_relations
-		}
-		ENC = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_true_relations
-			}	
-		}
-	}
-}
-
-focus = { 
-	id = MAI_ecw_our_stance
-	icon = GFX_goal_tfv_strengthen_commonwealth_ties
-	x = 2
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_diplo_rel_enchancia } 
-	ai_will_do = { 
-		factor = 100
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_ecw_broke
-			has_global_flag = enchancian_civil_war
-		}
-	} 
-	bypass = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_ecw_didnt_broke
-			ENC = {
-				has_country_flag = civil_war_avoided
-			}
-		}
-	}
-
-	completion_reward = {
-		country_event = {
-			id = centralkingdom.6
-			days = 0
-		}
-	}
-}
-
-focus = { 
-	id = MAI_enc_tech_jump
-	icon = GFX_goal_generic_scientific_exchange
-	x = 0
-	y = 3
-	cost = 15
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_ecw_our_stance } 
-	ai_will_do = { 
-		factor = 100
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_ecw_didnt_broke
-			ENC = {
-				has_country_flag = civil_war_avoided
-				has_idea = pre-modern_tech
-			}
-		}
-	}
-
-	completion_reward = {
-		country_event = {
-			id = centralkingdom.7
-			days = 0
-		}
-	}
-}
-
-focus = { 
-	id = MAI_alliance_enc
-	icon = GFX_goal_generic_national_unity
-	x = 0
-	y = 4
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_enc_tech_jump } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-
-	}
-
-	completion_reward = {
-		ENC = {
-			country_event = {
-				id = enchancia.43
-				days = 0
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_enc_rebuild
-	icon = GFX_goal_generic_construction
-	x = 2
-	y = 3
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_ecw_our_stance } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_ecw_ended
-			AND = {
-				has_global_flag = enchancian_civil_war_over
-				OR = {
-					ENC = {
-						exists = yes
-						NOT = {
-							has_cosmetic_tag = WIN
-						}
-					}
-					EN1 = {
-						exists = yes
-					}
-					EN2 = {
-						exists = yes
-					}
-				}
-			}
-		}
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_rebuild_proposal
-		hidden_effect = {
-		if = {
-			limit = {
-				ENC = {
-					exists = yes
-				}
-			}
-			ENC = {
-				country_event = {
-					id = enchancia.44
-					days = 1
-				}
-			}
-		}
-		if = {
-			limit = {
-				EN1 = {
-					exists = yes
-				}
-			}
-			EN1 = {
-				country_event = {
-					id = enchancia.44
-					days = 1
-				}
-			}
-		}
-		if = {
-			limit = {
-				EN2 = {
-					exists = yes
-				}
-			}
-			EN2 = {
-				country_event = {
-					id = enchancia.44
-					days = 1
-				}
-			}
-		}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_alliance_enc_ecw
-	icon = GFX_goal_generic_major_alliance
-	x = 2
-	y = 4
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_enc_rebuild } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		OR = {
-			ENC = {
-				NOT = {
-					has_idea = ENC_aftermath_of_civil_war
-				}
-			}
-			EN1 = {
-				NOT = {
-					has_idea = ENC_aftermath_of_civil_war
-				}
-			}
-			EN2 = {
-				NOT = {
-					has_idea = ENC_aftermath_of_civil_war
-				}
-			}
-		}
-	}
-
-	completion_reward = {
-		if = {
-			limit = {
-				ENC = {
-					exists = yes
-				}
-			}
-			ENC = {
-				country_event = {
-					id = enchancia.46
-					days = 1
-				}
-			}
-		}
-		if = {
-			limit = {
-				EN1 = {
-					exists = yes
-				}
-			}
-			EN1 = {
-				country_event = {
-					id = enchancia.46
-					days = 1
-				}
-			}
-		}
-		if = {
-			limit = {
-				EN2 = {
-					exists = yes
-				}
-			}
-			EN2 = {
-				country_event = {
-					id = enchancia.46
-					days = 1
-				}
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_enc_isolate
-	icon = GFX_focus_generic_strike_at_democracy2
-	x = 4
-	y = 3
-	cost = 15
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_ecw_our_stance } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_ecw_ended_badder
-			AND = {
-				has_global_flag = enchancian_civil_war_over
-				OR = {
-					EN3 = {
-						exists = yes
-					}
-					EN4 = {
-						exists = yes
-					}
-				}
-			}
-		}
-	}
-
-	completion_reward = {
-		if = {
-			limit = {
-				EN3 = {
-					exists = yes
-				}
-			}
-			add_opinion_modifier = {
-				target = EN3
-				modifier = MAI_isolation
-			}
-			EN3 = {
-				add_opinion_modifier = {
-					target = MAI
-					modifier = MAI_isolation
-				}
-			}
-		}
-		if = {
-			limit = {
-				EN4 = {
-					exists = yes
-				}
-			}
-			add_opinion_modifier = {
-				target = EN4
-				modifier = MAI_isolation
-			}
-			EN4 = {
-				add_opinion_modifier = {
-					target = MAI
-					modifier = MAI_isolation
-				}
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_back_enchancian_family
-	icon = GFX_focus_rom_royal_dictatorship
-	x = 4
-	y = 4
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_enc_isolate } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-
-	}
-
-	bypass = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_winslow_exiled
-			has_country_flag = winslow_on_exile
-		}
-	}
-
-	completion_reward = {
-		every_country = {
-			limit = {
-				has_country_flag = winslow_on_exile
-				NOT = {
-					tag = MAI
-				}
-			}
-			add_opinion_modifier = {
-				target = MAI
-				modifier = backs_winslow_family
-			}
-		}
-		add_political_power = 150
-	}
-}
-
-focus = { 
-	id = MAI_diplo_rel_greenland
-	icon = GFX_focus_greenland
-	x = 6
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofdiplomacy } 
-	ai_will_do = { 
-		factor = 1
-		modifier = {
-			has_country_flag = greenland_priority
-			factor = 75
-		}
-	} 
-#	available = { 
-#		OR = {
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_chose_grn
-#				has_country_flag = greenland_priority
-#			}
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_didnt_chose_grn
-#				OR = {
-#					has_completed_focus = MAI_back_enchancian_family
-#					has_completed_focus = MAI_alliance_enc
-#					has_completed_focus = MAI_alliance_enc_ecw
-#					has_completed_focus = MAI_royal_convention
-#				}
-#			}
-#		}
-#	} 
-
-	completion_reward = {
-		add_political_power = 75
-		add_opinion_modifier = {
-			target = GRN
-			modifier = MAI_true_relations
-		}
-		GRN = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_true_relations
-			}	
-		}
-	}
-}
-
-focus = { 
-	id = MAI_state_visit_to_greenland
-	icon = GFX_focus_usa_escort_fighters
-	x = 6
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_diplo_rel_greenland } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_political_power = 50
-		country_event = {
-			id = centralkingdom.15
-			days = 0
-		}
-	}
-}
-
-focus = { 
-	id = MAI_upgrade_grn
-	icon = GFX_goal_continuous_research
-	x = 6
-	y = 3
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_state_visit_to_greenland } 
-	ai_will_do = { 
-		factor = 1
-	} 
-
-	bypass = {
-		always = yes
-	}
-
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAC_visited_grn
-			has_country_flag = visited_grn
-		}
-	}
-
-	completion_reward = {
-		add_political_power = 20
-		GRN = {
-			country_event = {
-				id = greenland.1
-				days = 0
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_propose_alliance_GRN
-	icon = GFX_goal_anschluss
-	x = 6
-	y = 4
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_upgrade_grn } 
-	ai_will_do = { 
-		factor = 1
-	} 
-
-	bypass = {
-		always = yes
-	}
-	
-	available = { 
-
-	}
-
-	completion_reward = {
-		create_faction = united_front_of_free_nations
-		GRN = {
-			country_event = {
-				id = greenland.2
-				days = 1
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_road_to_sea
-	icon = GFX_focus_generic_navy_battleship2
-	x = 8
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofdiplomacy } 
-	ai_will_do = { 
-		factor = 1
-		modifier = {
-			has_country_flag = sea_priority
-			factor = 75
-		}
-	} 
-#	available = { 
-#		OR = {
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_chose_sea
-#				has_country_flag = sea_priority
-#			}
-#			custom_trigger_tooltip = {
-#				tooltip = MAI_didnt_chose_sea
-#				OR = {
-#					has_completed_focus = MAI_back_enchancian_family
-#					has_completed_focus = MAI_alliance_enc
-#					has_completed_focus = MAI_alliance_enc_ecw
-#					has_completed_focus = MAI_propose_alliance_GRN
-#				}
-#			}
-#		}
-#	} 
-
-	completion_reward = {
-		add_political_power = 120
-		FRI = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_wants_sea
-			}
-		}
-		WEK = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_wants_sea
-			}
-		}
-		SLD = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_wants_sea
-			}
-		}
-		hidden_effect = {
-			news_event = { 
-				id = worldnews.8 hours = 6
-			} 
-		}
-	}
-}
-
-focus = { 
-	id = MAI_the_zoo_project
-	icon = GFX_focus_usa_tank_destroyer_doctrine
-	x = 8
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_road_to_sea } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-
-	}
-
-	completion_reward = {
-		add_ideas = {
-			MAC_zoo_project
-		}
-	}
-}
-
-focus = { 
-	id = MAI_tungu_pungu
-	icon = GFX_focus_usa_escort_fighters
-	x = 8
-	y = 3
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_the_zoo_project } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		TUG = {
-			exists = yes
-		}
-	}
-
-	completion_reward = {
-		add_opinion_modifier = {
-			target = TUG
-			modifier = MAC_friendship
-		}
-		TUG = {
-			add_opinion_modifier = {
-			target = MAI
-			modifier = MAC_friendship
-			}
-		}
-		add_political_power = 150
-		add_popularity = {
-    		ideology = fascism
-   			popularity = 0.15
-		}
-		add_popularity = {
-    		ideology = monarchism
-   			popularity = -0.15
-		}
-		set_country_flag = MAI_visited_tungupungu
-	}
-}
-
-focus = { 
-	id = MAI_royal_convention
-	icon = GFX_focus_generic_home_defense
-	x = 8
-	y = 4
-	cost = 30
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_tungu_pungu } 
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_organizing_convention
-		hidden_effect = {
-			MAI = {
-				country_event = {
-					id = royalconvention.6
-					days = 0
-				}
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_sea_access
-	icon = GFX_goal_generic_navy_cruiser
-	x = 4
-	y = 5
-	cost = 0
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_royal_convention } 
-	prerequisite = { focus = MAI_propose_alliance_GRN } 
-	prerequisite = { focus = MAI_alliance_enc focus = MAI_alliance_enc_ecw focus = MAI_back_enchancian_family } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		NOT = {
-			always = yes
-		}
-	}
-
-	bypass = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_sea_access_tooltip
-			MAI = {
-				has_completed_focus = MAI_propose_alliance_GRN
-				OR = {
-					has_completed_focus = MAI_back_enchancian_family
-					has_completed_focus = MAI_alliance_enc_ecw
-					has_completed_focus = MAI_alliance_enc
-				}
-				any_owned_state = {
-					is_coastal = yes
-				}
-			}
-		}
-	}
-
-	completion_reward = {
-
-	}
 }
 
 #Focus for The way of internal politics

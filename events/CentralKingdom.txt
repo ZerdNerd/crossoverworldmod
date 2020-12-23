@@ -36,6 +36,30 @@ country_event = {
 
 		set_global_flag = stephen_is_dead
 
+		set_variable = {
+			MAI_NCK_SOC_support_v = 90
+		}
+
+		set_variable = {
+			MAI_NCK_MIL_support_v = 70
+		}
+
+		set_variable = {
+			MAI_NCK_IND_support_v = 75
+		}
+
+		set_variable = {
+			MAI_SCK_SOC_support_v = 80
+		}
+
+		set_variable = {
+			MAI_SCK_MIL_support_v = 65
+		}
+
+		set_variable = {
+			MAI_SCK_IND_support_v = 70
+		}
+
 		create_country_leader = {
 			name = "Macius I"
 			desc = "POLITICS_MACIUS_I_DESC"
@@ -1271,6 +1295,7 @@ country_event = { #Macius 18th birthday
 	option = { #Long live the king!
 		name = centralkingdom.37.a
 		hidden_effect = {
+			set_country_flag = macius_reached_adulthood
 			retire_country_leader = yes
 			create_country_leader = {
 				name = "Maciej I"

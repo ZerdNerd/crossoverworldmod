@@ -3447,6 +3447,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 32
 		y = 0
@@ -3471,6 +3478,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = SLD_army_effort }
 		x = -3
@@ -3492,6 +3506,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SLD_weapon_development }
 		x = 1
@@ -3513,6 +3534,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = SLD_artillery_research }
 		x = 0
@@ -3535,6 +3563,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = SLD_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -3556,6 +3591,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SLD_army_effort }
 		x = 0
@@ -3578,6 +3620,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = SLD_weapon_development }
 		x = -1
@@ -3599,6 +3648,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = SLD_motorization_effort }
 		x = -1
@@ -3626,6 +3682,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SLD_practice_reverse_engineering }
 		x = 0
@@ -3647,6 +3710,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = SLD_motorization_effort }
 		x = 1
@@ -3668,6 +3738,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = SLD_doctrine_effort }
 		x = 0
@@ -3690,6 +3767,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = SLD_doctrine_effort_2 }
 		x = 0
@@ -3709,6 +3793,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = SLD_weapons_and_co }
 		x = 0
@@ -3731,6 +3822,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = SLD_mechanization_effort }
 		x = 0
@@ -3752,6 +3850,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = SLD_weapon_development_3 }
 		prerequisite = { focus = SLD_military_academy }
@@ -3791,6 +3896,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 32
 		y = 5
@@ -3820,6 +3932,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = SLD_naval_effort }
 		mutually_exclusive = { focus = SLD_large_navy }
@@ -3851,6 +3970,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = SLD_naval_effort }
 		mutually_exclusive = { focus = SLD_flexible_navy }
@@ -3878,6 +4004,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SLD_flexible_navy focus = SLD_large_navy }
 		x = -4
@@ -3903,6 +4036,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = SLD_naval_academy }
 		x = 0
@@ -3929,6 +4069,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = SLD_flexible_navy focus = SLD_large_navy }
 		x = 0
@@ -3954,6 +4101,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = SLD_destroyer_effort }
 		x = 0
@@ -3979,6 +4133,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = SLD_large_navy focus = SLD_flexible_navy }
 		x = -2
@@ -4008,6 +4169,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = SLD_floating_airfields }
 		x = 0
@@ -4033,6 +4201,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = SLD_large_navy focus = SLD_flexible_navy }
 		x = 0
@@ -4059,6 +4234,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = SLD_cruiser_effort }
 		x = 0
@@ -4096,6 +4278,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 32
 		y = 9
@@ -4128,6 +4317,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SLD_aviation_effort }
 		x = -2
@@ -4148,6 +4344,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = SLD_fighter_focus }
 		prerequisite = { focus = SLD_bomber_focus }
@@ -4169,6 +4372,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = SLD_fighter_focus }
 		x = 0
@@ -4189,6 +4399,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = SLD_fighter_focus }
 		x = -2
@@ -4210,6 +4427,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SLD_aviation_effort }
 		x = 2
@@ -4230,6 +4454,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = SLD_bomber_focus }
 		x = 0
@@ -4251,6 +4482,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SLD_bomber_focus }
 		x = 2
@@ -4271,6 +4509,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = SLD_heavy_fighter_focus }
 		prerequisite = { focus = SLD_reverse_engineer_foreign_bombers }
@@ -4295,6 +4540,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = SLD_heavy_fighter_focus }
 		prerequisite = { focus = SLD_CAS_effort }
@@ -4319,6 +4571,13 @@ focus_tree = {
 
 	focus = {
 		id = SLD_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = SLD_aviation_effort_2 }
 		prerequisite = { focus = SLD_expand_bombing_command }

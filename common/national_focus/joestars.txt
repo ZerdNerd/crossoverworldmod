@@ -2622,6 +2622,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 1
 		y = 7
@@ -2666,6 +2673,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = JOJ_develop_stands }
 		x = 1
@@ -2687,6 +2701,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = JOJ_artillery_research }
 		x = 0
@@ -2730,6 +2751,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = JOJ_army_effort }
 		x = 0
@@ -2752,6 +2780,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = JOJ_develop_stands }
 		x = -1
@@ -2773,6 +2808,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = JOJ_develop_hamon }
 		x = -1
@@ -2800,6 +2842,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = JOJ_practice_reverse_engineering }
 		x = 0
@@ -2821,6 +2870,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = JOJ_develop_hamon }
 		x = 1
@@ -2842,6 +2898,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = JOJ_doctrine_effort }
 		x = 0
@@ -2864,6 +2927,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = JOJ_doctrine_effort_2 }
 		x = 0
@@ -2910,6 +2980,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = JOJ_mechanization_effort }
 		x = 0
@@ -2931,6 +3008,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = JOJ_develop_stands_3 }
 		prerequisite = { focus = JOJ_military_academy }
@@ -2970,6 +3054,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 7
 		y = 11
@@ -2999,6 +3090,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = JOJ_naval_effort }
 		mutually_exclusive = { focus = JOJ_large_navy }
@@ -3030,6 +3128,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = JOJ_naval_effort }
 		mutually_exclusive = { focus = JOJ_flexible_navy }
@@ -3057,6 +3162,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = JOJ_flexible_navy focus = JOJ_large_navy }
 		x = -4
@@ -3082,6 +3194,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = JOJ_naval_academy }
 		x = 0
@@ -3108,6 +3227,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = JOJ_flexible_navy focus = JOJ_large_navy }
 		x = 0
@@ -3133,6 +3259,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = JOJ_destroyer_effort }
 		x = 0
@@ -3158,6 +3291,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = JOJ_large_navy focus = JOJ_flexible_navy }
 		x = -2
@@ -3187,6 +3327,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = JOJ_floating_airfields }
 		x = 0
@@ -3212,6 +3359,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = JOJ_large_navy focus = JOJ_flexible_navy }
 		x = 0
@@ -3238,6 +3392,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = JOJ_cruiser_effort }
 		x = 0
@@ -3275,6 +3436,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 30
 		y = 7
@@ -3306,6 +3474,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = JOJ_aviation_effort }
 		x = -2
@@ -3326,6 +3501,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = JOJ_fighter_focus }
 		prerequisite = { focus = JOJ_bomber_focus }
@@ -3347,6 +3529,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = JOJ_fighter_focus }
 		x = 0
@@ -3367,6 +3556,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = JOJ_fighter_focus }
 		x = -2
@@ -3388,6 +3584,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = JOJ_aviation_effort }
 		x = 2
@@ -3408,6 +3611,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = JOJ_bomber_focus }
 		x = 0
@@ -3429,6 +3639,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = JOJ_bomber_focus }
 		x = 2
@@ -3449,6 +3666,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = JOJ_heavy_fighter_focus }
 		prerequisite = { focus = JOJ_reverse_engineer_foreign_bombers }
@@ -3473,6 +3697,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = JOJ_heavy_fighter_focus }
 		prerequisite = { focus = JOJ_CAS_effort }
@@ -3497,6 +3728,13 @@ focus_tree = {
 
 	focus = {
 		id = JOJ_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = JOJ_aviation_effort_2 }
 		prerequisite = { focus = JOJ_expand_bombing_command }

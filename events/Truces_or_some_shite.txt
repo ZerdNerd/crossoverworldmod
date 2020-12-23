@@ -119,3 +119,81 @@ country_event = { #Avalor rejects Peace with Honor
 		name = truce_proposal.3.a
 	}
 }
+
+country_event = { #Colony of Neu Flensburg receives peace proposal from Sioux
+	id = truce_proposal.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.4"}
+	title = truce_proposal.4.t
+	desc = truce_proposal.4.d
+	picture = GFX_report_event_polish_tanks_01
+
+	is_triggered_only = yes
+
+	option = { #We can agree for this
+		name = truce_proposal.4.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = truce_proposal.5
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { #Come and get us, fools!
+		name = truce_proposal.4.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = truce_proposal.6
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Neu Flensburg accepts peace proposal
+	id = truce_proposal.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.5"}
+	title = truce_proposal.5.t
+	desc = truce_proposal.5.d
+	picture = GFX_report_event_polish_tanks_01
+
+	is_triggered_only = yes
+
+	option = { #That's very nice of you.
+		name = truce_proposal.5.a
+		white_peace = FLE
+		if = {
+			limit = {
+				has_war_with = FRI
+			}
+			white_peace = FRI
+		}
+		transfer_state = 632
+		transfer_state = 634
+		transfer_state = 638
+	}
+}
+
+country_event = { #Neu Flensburg rejects peace proposal
+	id = truce_proposal.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event truce_proposal.6"}
+	title = truce_proposal.6.t
+	desc = truce_proposal.6.d
+	picture = GFX_report_event_polish_tanks_01
+
+	is_triggered_only = yes
+
+	option = { #They will regret this.
+		name = truce_proposal.6.a
+	}
+}

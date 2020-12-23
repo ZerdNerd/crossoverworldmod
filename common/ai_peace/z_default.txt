@@ -75,6 +75,7 @@ default_peace = {
 			FROM = {
 				is_claim_or_core_of_ROOT = no
 				is_ambition_area_of_ROOT = yes
+				is_occupation_zone = no
 			}
 		}
 
@@ -474,7 +475,7 @@ default_peace = {
 		}
 
 		modifier = { # Sancti Magistri: rest of Friedewalt? Do not want!
-			factor = 0
+			factor = 10
 			tag = SKO
 			FROM = {
 				OR = {
@@ -538,6 +539,36 @@ default_peace = {
 					state = 231
 					state = 194
 					state = 177
+					state = 217
+				}
+			}
+		}
+
+		modifier = { # Greenland takes Lalaloopsy and Northern Republic
+			factor = 10
+			tag = GRN
+			FROM = {
+				OR = {
+					is_core_of = LAL
+					is_core_of = NTR
+				}
+			}
+		}
+
+		modifier = { # Greenland refrains from taking Western Gongmen if Flower Hill is present
+			factor = 0
+			tag = GRN
+			FLO = { at_conference_no_war_with_ROOT = yes }
+			FROM = {
+				OR = {
+					state = 190
+					state = 167
+					state = 181
+					state = 192
+					state = 163
+					state = 213
+					state = 199
+					state = 236
 				}
 			}
 		}
@@ -555,24 +586,6 @@ default_peace = {
 					state = 213
 					state = 199
 					state = 236
-				}
-			}
-		}
-
-		modifier = { # Japanifornia takes Southern Lechia
-			factor = 10
-			tag = JPN
-			FROM = {
-				OR = {
-					state = 810
-					state = 800
-					state = 779
-					state = 772
-					state = 781
-					state = 778
-					state = 771
-					state = 764
-					state = 738
 				}
 			}
 		}
@@ -603,14 +616,32 @@ default_peace = {
 			}
 		}
 
-		modifier = { # A je to takes Eastern Lechia
+		modifier = { # Japanifornia takes lands needed for Southern Lechia
+			factor = 10
+			tag = JPN
+			FROM = {
+				OR = {
+					state = 764
+					state = 781
+					state = 738
+					state = 778
+					state = 771
+					state = 772
+					state = 779
+					state = 800
+					state = 810
+				}
+			}
+		}
+
+		modifier = { # A je to takes lands needed for Myszyniec
 			factor = 10
 			tag = PAT
 			FROM = {
 				OR = {
+					state = 702
 					state = 720
 					state = 721
-					state = 702
 					state = 739
 					state = 693
 					state = 694
@@ -618,25 +649,78 @@ default_peace = {
 			}
 		}
 
-		modifier = { # Avalor takes Central Lechia
+		modifier = { # Avalor takes lands needed for Karlino and Wadowice
 			factor = 10
 			tag = AVA
 			FROM = {
 				OR = {
-					state = 746
-					state = 766
-					state = 730
-					state = 754
-					state = 720
-					state = 721
-					state = 702
-					state = 725
-					state = 716
-					state = 682
-					state = 673
 					state = 655
 					state = 685
 					state = 650
+					state = 682
+					state = 673
+					state = 746
+					state = 716
+					state = 725
+					state = 766
+					state = 730
+					state = 754
+				}
+			}
+		}
+
+		modifier = { # If Avalor is not present, Japanifornia takes lands needed for Wadowice
+			factor = 10
+			tag = JPN
+			NOT = {
+				AVA = { is_in_peace_conference = yes }
+			}
+			FROM = {
+				OR = {
+					state = 746
+					state = 716
+					state = 725
+					state = 766
+					state = 730
+					state = 754
+				}
+			}
+		}
+
+		modifier = { # If Avalor is not present, A je to! takes lands needed for Karlino
+			factor = 10
+			tag = PAT
+			NOT = {
+				AVA = { is_in_peace_conference = yes }
+			}
+			FROM = {
+				OR = {
+					state = 655
+					state = 685
+					state = 650
+					state = 682
+					state = 673
+				}
+			}
+		}
+
+		modifier = { # If Japanifornia is not present, A je to! takes lands needed for Southern Lechia
+			factor = 10
+			tag = PAT
+			NOT = {
+				AVA = { is_in_peace_conference = yes }
+			}
+			FROM = {
+				OR = {
+					state = 764
+					state = 781
+					state = 738
+					state = 778
+					state = 771
+					state = 772
+					state = 779
+					state = 800
+					state = 810
 				}
 			}
 		}
@@ -664,6 +748,7 @@ default_peace = {
 		modifier = { # These lands should be taken by Ice Kingdom if there's no one around
 			factor = 10
 			tag = ICK
+			LEC = { at_conference_has_war_with_ROOT = yes }
 			JPN = {
 				NOT = {
 					has_war_with = LEC

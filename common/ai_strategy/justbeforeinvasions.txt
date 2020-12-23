@@ -557,3 +557,25 @@ sioux_waiting_for_the_occasion = {
 		value = 100
 	}
 }
+
+just_ignore_wastelands = {
+	enable = {
+		OR = {
+			is_neighbor_of = UNC
+			is_neighbor_of = GLO
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = ignore
+		id = "UNC"			
+		value = 10000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "GLO"			
+		value = 10000
+	}
+}

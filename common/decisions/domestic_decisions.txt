@@ -1,0 +1,98 @@
+domestic_politics_dec_category = {
+	halt_all_festivities = {
+        icon = generic_political_discourse
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        visible = {
+            tag = SIO
+            has_war_with = DES
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            add_political_power = -50
+            add_stability = -0.15
+            hidden_effect = {
+                set_country_flag = SIO_halted_all_festivities
+            }
+        }
+    }
+
+    reinstate_all_festivities = {
+        icon = generic_political_discourse
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        fire_only_once = yes
+
+        visible = {
+            tag = SIO
+            OR = {
+                has_completed_focus = SIO_the_liberator_stays
+                has_completed_focus = SIO_decisive_rule
+                has_completed_focus = SIO_the_remnants_of_old_order
+                has_completed_focus = SIO_its_girls_turn
+                has_completed_focus = SIO_the_rule_of_women
+                has_completed_focus = SIO_turn_into_monarchy
+                has_completed_focus = SIO_establish_republic
+                has_completed_focus = SIO_surrounded_by
+            }
+        }
+
+        complete_effect = {
+            add_political_power = 50
+            add_stability = 0.15
+            hidden_effect = {
+                clr_country_flag = SIO_halted_all_festivities
+                set_country_flag = SIO_festivities_reinstated
+                clear_variable = festivities_halted_counter_stopped
+            }
+        }
+    }
+
+    recall_the_animals = {
+        icon = generic_political_discourse
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        fire_only_once = yes
+
+        visible = {
+            tag = SIO
+            has_completed_focus = SIO_alliance_of_interspecies
+            OR = {
+                has_completed_focus = SIO_decisive_rule
+                has_completed_focus = SIO_the_remnants_of_old_order
+                has_completed_focus = SIO_its_girls_turn
+                has_completed_focus = SIO_the_rule_of_women
+            }
+        }
+
+        complete_effect = {
+            every_unit_leader = {
+                limit = {
+                    OR = {
+                        has_id = 6500
+                        has_id = 6501
+                        has_id = 6502
+                    }
+                }
+                retire = yes
+            }
+        }
+    }
+}

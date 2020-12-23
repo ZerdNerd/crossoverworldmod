@@ -1281,6 +1281,9 @@ occupation_dec_category = {
 			172 = {
 				is_owned_by = GRN
 			}
+			217 = {
+				is_owned_by = GRN
+			}
 			GON = {
 				exists = no
 			}
@@ -1330,6 +1333,7 @@ occupation_dec_category = {
 				transfer_state = 177
 				transfer_state = 158
 				transfer_state = 172
+				transfer_state = 217
 				GRN = {
 					puppet = PREV
 				}
@@ -1604,6 +1608,9 @@ occupation_dec_category = {
 			177 = {
 				is_owned_by = FLO
 			}
+			217 = {
+				is_owned_by = FLO
+			}
 			GON = {
 				exists = no
 			}
@@ -1653,6 +1660,7 @@ occupation_dec_category = {
 				transfer_state = 231
 				transfer_state = 194
 				transfer_state = 177
+				transfer_state = 217
 				FLO = {
 					puppet = PREV
 				}
@@ -1780,6 +1788,9 @@ occupation_dec_category = {
 			172 = {
 				is_owned_by = GRN
 			}
+			217 = {
+				is_owned_by = GRN
+			}
 			GON = {
 				exists = no
 			}
@@ -1831,6 +1842,7 @@ occupation_dec_category = {
 				transfer_state = 177
 				transfer_state = 158
 				transfer_state = 172
+				transfer_state = 217
 				GRN = {
 					puppet = PREV
 				}
@@ -4001,6 +4013,15 @@ occupation_dec_category = {
 					transfer_state = 632
 					add_state_core = 632
 				}
+				if = {
+					limit = {
+						ROOT = {
+							owns_state = 653
+						}
+					}
+					transfer_state = 653
+					add_state_core = 653
+				}
 				add_state_core = 705
 				add_state_core = 675
 				add_state_core = 674
@@ -5739,8 +5760,43 @@ occupation_dec_category = {
 		complete_effect = {
 			release = JPN
 			JPN = {
+				load_focus_tree = generic_focus
 				ROOT = {
 					puppet = PREV
+				}
+			}
+			if = {
+				limit = {
+					JPN = {
+						owns_state = 807
+						owns_state = 793
+						owns_state = 775
+					}
+					PAT = {
+						exists = yes
+					}
+				}
+				PAT = {
+					transfer_state = 807
+					transfer_state = 793
+					transfer_state = 775
+				}
+			}
+			if = {
+				limit = {
+					JPN = {
+						owns_state = 806
+						owns_state = 823
+						owns_state = 836
+						owns_state = 783
+						is_puppet_of = LEC
+					}
+				}
+				LEC = {
+					transfer_state = 806
+					transfer_state = 823
+					transfer_state = 836
+					transfer_state = 783
 				}
 			}
 		}
@@ -6223,7 +6279,41 @@ occupation_dec_category = {
 						is_core_of = MAI
 					}
 				}
-				transfer_state = 872
+				FRI = {
+					transfer_state = 872
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 897
+					897 = {
+						is_core_of = MAI
+					}
+					WEK = {
+						exists = yes
+					}
+				}
+				WEK = {
+					transfer_state = 877
+					transfer_state = 897
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 736
+					736 = {
+						is_core_of = MAI
+					}
+					SLD = {
+						exists = yes
+					}
+				}
+				SLD = {
+					transfer_state = 736
+					transfer_state = 767
+					transfer_state = 776
+					transfer_state = 773
+				}
 			}
 		}
 	}
@@ -6488,7 +6578,7 @@ occupation_dec_category = {
 				tag = FLO
 			}
 			ROOT = {
-				owns_state = 429
+				owns_state = 178
 				is_puppet = no
 			}
 			ARE = {
@@ -6578,12 +6668,12 @@ occupation_dec_category = {
 		complete_effect = {
 			release = PIL
 			PIL = {
-				retire_country_leader = yes
 				load_focus_tree = generic_focus
 				set_cosmetic_tag = PIL_occupied
 				ROOT = {
 					puppet = PREV
 				}
+				retire_country_leader = yes
 				every_unit_leader = {
 					retire = yes
 				}
@@ -6752,6 +6842,302 @@ occupation_dec_category = {
 							#
 						}
 					}
+				}
+			}
+		}
+	}
+
+	liberation_of_bee_kingdom = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = BEE
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				owns_state = 520
+				is_puppet = no
+			}
+			BEE = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = BEE
+			BEE = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberation_of_hornets = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = HOR
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				owns_state = 516
+				is_puppet = no
+			}
+			HOR = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = HOR
+			HOR = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	cede_windy_peninsula_to_morioh = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = JOJ
+			}
+			NOT = {
+				tag = GON
+			}
+			NOT = {
+				tag = MOR
+			}
+			NOT = {
+				tag = MO2
+			}
+			ROOT = {
+				owns_state = 649
+				owns_state = 606
+				owns_state = 619
+				owns_state = 633
+				owns_state = 642
+				owns_state = 593
+				owns_state = 571
+				owns_state = 563
+				owns_state = 558
+				owns_state = 546
+				owns_state = 522
+				owns_state = 541
+				is_puppet = no
+			}
+			JOJ = {
+				exists = no
+			}
+			MO2 = {
+				exists = yes
+			}
+		}
+
+		complete_effect = {
+			MO2 = {
+				transfer_state = 649
+				transfer_state = 606
+				transfer_state = 619
+				transfer_state = 633
+				transfer_state = 642
+				transfer_state = 593
+				transfer_state = 571
+				transfer_state = 563
+				transfer_state = 558
+				transfer_state = 546
+				transfer_state = 522
+				transfer_state = 541
+				add_state_core = 649
+				add_state_core = 606
+				add_state_core = 619
+				add_state_core = 633
+				add_state_core = 642
+				add_state_core = 593
+				add_state_core = 571
+				add_state_core = 563
+				add_state_core = 558
+				add_state_core = 546
+				add_state_core = 522
+				add_state_core = 541
+			}
+		}
+	}
+
+	liberate_tiger_clan = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = TIG
+			}
+			ROOT = {
+				owns_state = 440
+				is_puppet = no
+			}
+			TIG = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = TIG
+			TIG = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = GRN
+						}
+					}
+					retire_country_leader = yes
+					if = {
+						limit = {
+							TIG = {
+								NOT = {
+									has_country_flag = TIG_tom_is_dead
+								}
+							}
+						}
+						create_country_leader = {
+							name = "Tom"
+							desc = "POLITICS_TOM_TIG_DESC"
+							picture = "tom.dds"
+							expire = "1965.1.1"
+							ideology = administrative_monarchy
+							traits = {
+								#
+							}
+						}
+						else = {
+							create_country_leader = {
+								name = "Tib"
+								desc = "POLITICS_TIB_DESC"
+								picture = "tib.dds"
+								expire = "1965.1.1"
+								ideology = administrative_monarchy
+								traits = {
+									#
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = GRN
+							}
+							has_government = democratic
+						}
+					}
+					retire_country_leader = yes
+					if = {
+						limit = {
+							TIG = {
+								NOT = {
+									has_country_flag = TIG_tom_is_dead
+								}
+							}
+						}
+						create_country_leader = {
+							name = "Tom"
+							desc = "POLITICS_TOM_TIG_DESC"
+							picture = "tom.dds"
+							expire = "1965.1.1"
+							ideology = centrism
+							traits = {
+								#
+							}
+						}
+						else = {
+							create_country_leader = {
+								name = "Tib"
+								desc = "POLITICS_TIB_DESC"
+								picture = "tib.dds"
+								expire = "1965.1.1"
+								ideology = centrism
+								traits = {
+									#
+								}
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = GRN
+								has_government = democratic
+								has_government = communism
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_government = communism
+						}
+					}
+					retire_country_leader = yes
 				}
 			}
 		}

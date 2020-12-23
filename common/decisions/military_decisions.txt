@@ -306,3 +306,86 @@ dividing_greenland_dec_category = {
 		}
 	}
 }
+
+fall_of_desert_hegemony_dec_category = {
+	challenge_yakari = {
+		icon = generic_operation
+		visible = {
+			tag = DES
+			has_global_flag = sioux_are_returning
+			SIO = {
+				has_country_leader = {
+					name = "Yakari"
+					ruling_only = yes
+				}
+				exists = yes
+			}
+			GRN = {
+				exists = yes
+			}
+			OR = {
+				AND = {
+					GRN = {
+						OR = {
+							controls_province = 8486
+							controls_province = 3569
+							controls_province = 2030
+							controls_province = 2274
+							controls_province = 4443
+							controls_province = 8577
+							controls_province = 8624
+						}
+					}
+					OR = {
+						SIO = {
+							OR = {
+								controls_state = 599
+								controls_state = 610
+								controls_state = 637
+								controls_state = 589
+							}
+						}
+						GRN = {
+							OR = {
+								controls_state = 599
+								controls_state = 610
+								controls_state = 637
+								controls_state = 589
+							}
+						}
+					}
+				}
+				SIO = {
+					OR = {
+						controls_province = 8486
+						controls_province = 3569
+						controls_province = 2030
+						controls_province = 2274
+						controls_province = 4443
+						controls_province = 8577
+						controls_province = 8624
+					}
+				}
+			}
+		}
+		fire_only_once = yes
+		cost = 0
+		ai_will_do = {
+			factor = 100
+		}
+		complete_effect = {
+			GRN = {
+				country_event = {
+					id = sioux.24
+					days = 0
+				}
+			}
+			SIO = {
+				country_event = {
+					id = sioux.24
+					days = 0
+				}
+			}
+		}
+	}
+}

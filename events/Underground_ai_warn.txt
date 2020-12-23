@@ -71,6 +71,12 @@ country_event = { #BAD TIME AHEAD PT 2
        				progress > 0.1
        			}
        		}
+			FLO = {
+            	focus_progress = {
+            	  	focus = FLO_operation_jihacheol
+            	  	progress > 0.1
+            	}	
+          	}
         }
 	}
 
@@ -134,6 +140,15 @@ country_event = { #BAD TIME AHEAD PT 3 (AFTER PREVIOUS WARNING)
        					}
        				}
             	}
+				AND = {
+          			tag = FLO
+          			FLO = {
+            			focus_progress = {
+              				focus = FLO_operation_jihacheol
+              				progress > 0.65
+            			}
+        			}
+        		}
             }
         }
 	}

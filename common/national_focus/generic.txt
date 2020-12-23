@@ -52,6 +52,13 @@ focus_tree = {
 
 	focus = {
 		id = motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -73,6 +80,13 @@ focus_tree = {
 
 	focus = {
 		id = doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = army_effort }
 		x = 0
@@ -117,6 +131,13 @@ focus_tree = {
 
 	focus = {
 		id = mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = motorization_effort }
 		x = 0
@@ -138,6 +159,13 @@ focus_tree = {
 
 	focus = {
 		id = doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = doctrine_effort }
 		x = 0
@@ -182,6 +210,13 @@ focus_tree = {
 
 	focus = {
 		id = armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = mechanization_effort }
 		x = 0
@@ -203,6 +238,13 @@ focus_tree = {
 
 	focus = {
 		id = special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = equipment_effort_3 }
 		prerequisite = { focus = doctrine_effort_2 }
@@ -315,6 +357,13 @@ focus_tree = {
 
 	focus = {
 		id = fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = aviation_effort }
 		mutually_exclusive = { focus = bomber_focus }
@@ -343,6 +392,13 @@ focus_tree = {
 
 	focus = {
 		id = bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = aviation_effort }
 		mutually_exclusive = { focus = fighter_focus }
@@ -368,6 +424,13 @@ focus_tree = {
 
 	focus = {
 		id = aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = bomber_focus focus = fighter_focus }
 		x = -1
@@ -455,6 +518,13 @@ focus_tree = {
 
 	focus = {
 		id = CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = aviation_effort_2 }
 		prerequisite = { focus = motorization_effort }
@@ -478,6 +548,13 @@ focus_tree = {
 
 	focus = {
 		id = rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = aviation_effort_2 }
 		prerequisite = { focus = infrastructure_effort }
@@ -658,6 +735,13 @@ focus_tree = {
 
 	focus = {
 		id = flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = naval_effort }
 		mutually_exclusive = { focus = large_navy }
@@ -698,6 +782,13 @@ focus_tree = {
 
 	focus = {
 		id = large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = naval_effort }
 		mutually_exclusive = { focus = flexible_navy }
@@ -734,6 +825,13 @@ focus_tree = {
 
 	focus = {
 		id = submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = flexible_navy focus = large_navy }
 		x = 0
@@ -770,6 +868,13 @@ focus_tree = {
 
 	focus = {
 		id = cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = large_navy focus = flexible_navy }
 		x = 0
@@ -807,6 +912,13 @@ focus_tree = {
 
 	focus = {
 		id = destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_wolf_pack
 		prerequisite = { focus = submarine_effort }
 		x = 0
@@ -843,6 +955,13 @@ focus_tree = {
 
 	focus = {
 		id = capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = cruiser_effort }
 		x = 0

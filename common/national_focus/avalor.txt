@@ -1584,6 +1584,13 @@ focus = {
 
 	focus = {
 		id = AVA_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 23
 		y = 5
@@ -1608,6 +1615,13 @@ focus = {
 
 	focus = {
 		id = AVA_avalor_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = AVA_army_effort }
 		x = -3
@@ -1629,6 +1643,13 @@ focus = {
 
 	focus = {
 		id = AVA_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = AVA_avalor_weapon_development }
 		x = 1
@@ -1650,6 +1671,13 @@ focus = {
 
 	focus = {
 		id = AVA_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = AVA_artillery_research }
 		x = 0
@@ -1672,6 +1700,13 @@ focus = {
 
 	focus = {
 		id = AVA_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = AVA_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -1693,6 +1728,13 @@ focus = {
 
 	focus = {
 		id = AVA_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = AVA_army_effort }
 		x = 0
@@ -1736,6 +1778,13 @@ focus = {
 
 	focus = {
 		id = AVA_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = AVA_motorization_effort }
 		x = -1
@@ -1763,6 +1812,13 @@ focus = {
 
 	focus = {
 		id = AVA_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = AVA_practice_reverse_engineering }
 		x = 0
@@ -1784,6 +1840,13 @@ focus = {
 
 	focus = {
 		id = AVA_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = AVA_motorization_effort }
 		x = 1
@@ -1805,6 +1868,13 @@ focus = {
 
 	focus = {
 		id = AVA_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = AVA_doctrine_effort }
 		x = 0
@@ -1846,6 +1916,13 @@ focus = {
 
 	focus = {
 		id = AVA_avalor_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = AVA_coaraci_weapons_corporation }
 		x = 0
@@ -1868,6 +1945,13 @@ focus = {
 
 	focus = {
 		id = AVA_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = AVA_mechanization_effort }
 		x = 0
@@ -1889,6 +1973,13 @@ focus = {
 
 	focus = {
 		id = AVA_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = AVA_avalor_weapon_development_3 }
 		prerequisite = { focus = AVA_avalor_war_studies_university }
@@ -1928,6 +2019,13 @@ focus = {
 
 	focus = {
 		id = AVA_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 32
 		y = 5
@@ -1957,6 +2055,13 @@ focus = {
 
 	focus = {
 		id = AVA_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = AVA_naval_effort }
 		mutually_exclusive = { focus = AVA_large_navy }
@@ -1988,6 +2093,13 @@ focus = {
 
 	focus = {
 		id = AVA_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = AVA_naval_effort }
 		mutually_exclusive = { focus = AVA_flexible_navy }
@@ -2015,6 +2127,13 @@ focus = {
 
 	focus = {
 		id = AVA_encruzilhada_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = AVA_flexible_navy focus = AVA_large_navy }
 		x = -4
@@ -2040,6 +2159,13 @@ focus = {
 
 	focus = {
 		id = AVA_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = AVA_encruzilhada_naval_academy }
 		x = 0
@@ -2066,6 +2192,13 @@ focus = {
 
 	focus = {
 		id = AVA_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = AVA_flexible_navy focus = AVA_large_navy }
 		x = 0
@@ -2091,6 +2224,13 @@ focus = {
 
 	focus = {
 		id = AVA_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = AVA_destroyer_effort }
 		x = 0
@@ -2116,6 +2256,13 @@ focus = {
 
 	focus = {
 		id = AVA_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = AVA_large_navy focus = AVA_flexible_navy }
 		x = -2
@@ -2145,6 +2292,13 @@ focus = {
 
 	focus = {
 		id = AVA_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = AVA_floating_airfields }
 		x = 0
@@ -2170,6 +2324,13 @@ focus = {
 
 	focus = {
 		id = AVA_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = AVA_large_navy focus = AVA_flexible_navy }
 		x = 0
@@ -2196,6 +2357,13 @@ focus = {
 
 	focus = {
 		id = AVA_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = AVA_cruiser_effort }
 		x = 0
@@ -2233,6 +2401,13 @@ focus = {
 
 	focus = {
 		id = AVA_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 28
 		y = 9
@@ -2268,6 +2443,13 @@ focus = {
 
 	focus = {
 		id = AVA_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = AVA_aviation_effort }
 		x = -2
@@ -2288,6 +2470,13 @@ focus = {
 
 	focus = {
 		id = AVA_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = AVA_fighter_focus }
 		prerequisite = { focus = AVA_bomber_focus }
@@ -2309,6 +2498,13 @@ focus = {
 
 	focus = {
 		id = AVA_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = AVA_fighter_focus }
 		x = 0
@@ -2350,6 +2546,13 @@ focus = {
 
 	focus = {
 		id = AVA_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = AVA_aviation_effort }
 		x = 2
@@ -2370,6 +2573,13 @@ focus = {
 
 	focus = {
 		id = AVA_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = AVA_bomber_focus }
 		x = 0
@@ -2391,6 +2601,13 @@ focus = {
 
 	focus = {
 		id = AVA_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = AVA_bomber_focus }
 		x = 2
@@ -2411,6 +2628,13 @@ focus = {
 
 	focus = {
 		id = AVA_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = AVA_heavy_fighter_focus }
 		prerequisite = { focus = AVA_reverse_engineer_foreign_bombers }
@@ -2435,6 +2659,13 @@ focus = {
 
 	focus = {
 		id = AVA_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = AVA_heavy_fighter_focus }
 		prerequisite = { focus = AVA_CAS_effort }
@@ -2459,6 +2690,13 @@ focus = {
 
 	focus = {
 		id = AVA_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = AVA_aviation_effort_2 }
 		prerequisite = { focus = AVA_expand_bombing_command }

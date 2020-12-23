@@ -1,7 +1,7 @@
 focus_tree = { 
 	id = flowerhill
 	country = { 
-		factor = 0 
+		base = 0 
 		modifier = { 
 			add = 10 
 			tag = FLO 
@@ -20,7 +20,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -47,7 +47,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		available = {
@@ -83,7 +83,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		}
 
 		completion_reward = {
@@ -108,7 +108,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -135,7 +135,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -158,7 +158,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -184,7 +184,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -213,7 +213,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -238,7 +238,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -274,7 +274,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -301,7 +301,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		available = {
@@ -311,7 +311,7 @@ focus_tree = {
 			}
 		}
 
-		available = {
+		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = will_fire_automatically
 				has_country_flag = darami_elected
@@ -337,7 +337,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		}
 
 		completion_reward = {
@@ -362,7 +362,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -385,7 +385,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -409,7 +409,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -437,7 +437,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -465,7 +465,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -489,7 +489,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -525,7 +525,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -534,6 +534,9 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = FLO_country_divided
 				add_idea = FLO_unity_act
+			}
+			hidden_effect = {
+				set_country_flag = regular_voting_established
 			}
 		} 
 	}
@@ -577,15 +580,20 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
 			add_political_power = 50
-			country_event = {
-				id = flowerhill.9
-				days = 7
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+				election_frequency = 60
 			}
+		#	country_event = {
+		#		id = flowerhill.9
+		#		days = 7
+		#	}
 		} 
 	}
 
@@ -605,7 +613,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		available = {
@@ -641,7 +649,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		}
 
 		completion_reward = {
@@ -663,7 +671,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -687,7 +695,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -712,7 +720,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -739,7 +747,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -769,7 +777,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -794,7 +802,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -834,7 +842,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -860,7 +868,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 		} 
 
 		completion_reward = {
@@ -890,7 +898,15 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		} 
 
 		available = {
@@ -924,7 +940,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -963,7 +987,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1004,7 +1036,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1031,7 +1071,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1059,7 +1107,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1091,7 +1147,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1127,7 +1191,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1165,7 +1237,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1209,7 +1289,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1237,7 +1325,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1265,7 +1361,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1293,7 +1397,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 3
+			base = 0
+			modifier = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+					has_completed_focus = FLO_the_interspecies_act
+				}
+				add = 50
+			}
 		}
 
 		completion_reward = {
@@ -1750,7 +1862,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		}
 
 		completion_reward = {
@@ -1768,7 +1880,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		} 
 
 		available = {
@@ -1816,7 +1928,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		} 
 
 		available = {
@@ -1853,7 +1965,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		} 
 
 		available = {
@@ -1897,7 +2009,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		}
 
 		prerequisite = {
@@ -1919,7 +2031,11 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			base = 0
+			modifier = {
+				has_completed_focus = FLO_ragwon_complex
+				add = 50
+			}
 		} 
 
 		prerequisite = {
@@ -1955,7 +2071,18 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			base = 0
+			modifier = {
+				has_completed_focus = FLO_ragwon_complex
+				add = 25
+			}
+			modifier = {
+				has_completed_focus = FLO_operation_namjjog
+				DUC = {
+					exists = no
+				}
+				add = 50
+			}
 		} 
 
 		bypass = {
@@ -1997,7 +2124,18 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			base = 0
+			modifier = {
+				has_completed_focus = FLO_operation_dongjjog
+				add = 25
+			}
+			modifier = {
+				has_completed_focus = FLO_operation_namjjog
+				SQU = {
+					exists = no
+				}
+				add = 50
+			}
 		}
 
 		available = {
@@ -2033,7 +2171,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			factor = 50
 		} 
 
 		available = {
@@ -2087,7 +2225,13 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 5
+			base = 0
+			modifier = {
+				NOT = {
+					has_war = yes
+				}
+				factor = 100
+			}
 		} 
 
 		prerequisite = {
@@ -2136,7 +2280,13 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			base = 0
+			modifier = {
+				WOL = {
+					exists = no
+				}
+				add = 50
+			}
 		} 
 
 		available = {
@@ -2203,12 +2353,19 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = { 
-			factor = 1
+			base = 0
 			modifier = {
 				GON = {
 					exists = yes
 				}
 				factor = 0
+			}
+			modifier = {
+				date > 1941.5.1
+				NOT = {
+					has_country_flag = FLO_signed_gongmen_pact
+				}
+				factor = 100
 			}
 		}  
 
@@ -2257,15 +2414,17 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 100
 			modifier = {
-				GON = {
-					exists = yes
+				OR = {
+					GON = {
+						exists = yes
+					}
+					GRN = {
+						exists = yes
+					}
+					has_war = yes
 				}
-				GRN = {
-					exists = yes
-				}
-				has_war = yes
 				factor = 0
 			}
 		} 
@@ -2301,10 +2460,9 @@ focus_tree = {
 		cost = 7.25
 		relative_position_id = FLO_exporting_revolution
 		available_if_capitulated = yes 
-		mutually_exclusive = { focus = FLO_variant_dongjjog }
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2349,7 +2507,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2385,6 +2543,69 @@ focus_tree = {
 	}
 
 	focus = {
+		id = FLO_operation_chollima
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_operation_jihacheol
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			factor = 50
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				GRN = {
+					exists = yes
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				ICW = {
+					exists = yes
+					is_puppet = no
+					NOT = {
+						has_country_flag = FLO_signed_gongmen_pact
+					}
+				}
+				has_war = yes
+				factor = 0
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_operation_jihacheol
+		}
+
+		completion_reward = {
+			if = {
+				limit = {
+					VIS = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = VIS
+				}
+			}
+			if = {
+				limit = {
+					TSA = {
+						has_government = fascism
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = TSA
+				}
+			}
+		} 
+	}
+
+	focus = {
 		id = FLO_variant_dongjjog
 		icon = GFX_focus_generic_strike_at_democracy2
 		x = 1
@@ -2392,10 +2613,9 @@ focus_tree = {
 		cost = 7.25
 		relative_position_id = FLO_exporting_revolution
 		available_if_capitulated = yes 
-		mutually_exclusive = { focus = FLO_variant_seojjog }
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2440,7 +2660,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2501,6 +2721,30 @@ focus_tree = {
     				target = TSA
 				}
 			}
+			if = {
+				limit = {
+					NOT = {
+						TSA = {
+							has_government = fascism
+						}
+						BRO = {
+							is_in_faction_with = TSA
+						}
+					}
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = TSA
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = BRO
+				}
+				create_wargoal = {
+    				type = annex_everything
+    				target = MOO
+				}
+			}
 		} 
 	}
 
@@ -2514,7 +2758,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2568,7 +2812,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2617,7 +2861,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				TSA = {
 					exists = yes
@@ -2658,7 +2902,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 1
+			factor = 50
 			modifier = {
 				FRI = {
 					exists = yes
@@ -2697,6 +2941,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 37
 		y = -7
@@ -2725,6 +2976,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = FLO_generic_army_effort }
 		x = -3
@@ -2746,6 +3004,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = FLO_generic_weapon_development }
 		x = 1
@@ -2767,6 +3032,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = FLO_generic_artillery_research }
 		x = 0
@@ -2789,6 +3061,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = FLO_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -2810,6 +3089,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = FLO_generic_army_effort }
 		x = 0
@@ -2832,6 +3118,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = FLO_generic_weapon_development }
 		x = -1
@@ -2853,6 +3146,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = FLO_generic_motorization_effort }
 		x = -1
@@ -2880,6 +3180,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = FLO_generic_practice_reverse_engineering }
 		x = 0
@@ -2901,6 +3208,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = FLO_generic_motorization_effort }
 		x = 1
@@ -2922,6 +3236,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = FLO_generic_doctrine_effort }
 		x = 0
@@ -2944,6 +3265,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = FLO_generic_doctrine_effort_2 }
 		x = 0
@@ -2963,6 +3291,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = FLO_generic_weapons_and_co }
 		x = 0
@@ -2985,6 +3320,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = FLO_generic_mechanization_effort }
 		x = 0
@@ -3006,6 +3348,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = FLO_generic_weapon_development_3 }
 		prerequisite = { focus = FLO_generic_military_academy }
@@ -3045,6 +3394,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 37
 		y = -1
@@ -3078,6 +3434,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = FLO_generic_naval_effort }
 		mutually_exclusive = { focus = FLO_generic_large_navy }
@@ -3109,6 +3472,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = FLO_generic_naval_effort }
 		mutually_exclusive = { focus = FLO_generic_flexible_navy }
@@ -3136,6 +3506,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
 		x = -4
@@ -3161,6 +3538,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = FLO_generic_naval_academy }
 		x = 0
@@ -3187,6 +3571,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
 		x = 0
@@ -3212,6 +3603,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = FLO_generic_destroyer_effort }
 		x = 0
@@ -3237,6 +3635,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
 		x = -2
@@ -3266,6 +3671,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = FLO_generic_floating_airfields }
 		x = 0
@@ -3291,6 +3703,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
 		x = 0
@@ -3317,6 +3736,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = FLO_generic_cruiser_effort }
 		x = 0
@@ -3354,6 +3780,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_build_airforce
 		x = 37
 		y = 4
@@ -3389,6 +3822,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = FLO_generic_aviation_effort }
 		x = -2
@@ -3409,6 +3849,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		prerequisite = { focus = FLO_generic_bomber_focus }
@@ -3430,6 +3877,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		x = 0
@@ -3450,6 +3904,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		x = -2
@@ -3471,6 +3932,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_aviation_effort }
 		x = 2
@@ -3491,6 +3959,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_research
 		prerequisite = { focus = FLO_generic_bomber_focus }
 		x = 0
@@ -3512,6 +3987,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_bomber_focus }
 		x = 2
@@ -3532,6 +4014,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
 		prerequisite = { focus = FLO_generic_reverse_engineer_foreign_bombers }
@@ -3556,6 +4045,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
 		prerequisite = { focus = FLO_generic_CAS_effort }
@@ -3580,6 +4076,13 @@ focus_tree = {
 
 	focus = {
 		id = FLO_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = FLO_generic_aviation_effort_2 }
 		prerequisite = { focus = FLO_generic_expand_bombing_command }
