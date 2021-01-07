@@ -1,0 +1,2099 @@
+###CHILDREN PARLIAMENT
+
+focus = { 
+	id = MAI_children_parliament_focus
+	icon = GFX_focus_generic_the_giant_wakes
+	x = 9
+	y = 6
+	cost = 15
+	available_if_capitulated = yes
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+		custom_trigger_tooltip = {
+			tooltip = MAI_was_on_tungu_pungu
+			has_completed_focus = MAI_tungu_pungu
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_created_children_gazette
+			has_completed_focus = MAI_children_gazette
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_economy_can_handle_this
+			has_completed_focus = MAI_new_technologies
+		}
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_children_parliament_complete_tooltip
+		hidden_effect = {
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "Macius I"
+				desc = "POLITICS_MACIUS_I_DESC"
+				picture = "macius.dds"
+				expire = "1965.1.1"
+				ideology = children_parliamentary_monarchy
+				traits = {
+					#
+				}
+			}
+			add_political_power = -300
+			news_event = {
+				id = worldnews.15
+				hours = 6
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_expand_parliament_jurisdiction
+	icon = GFX_goal_support_democracy
+	x = 8
+	y = 7
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_children_parliament_focus }
+	mutually_exclusive = { focus = MAI_tighten_parliament_liberties }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+	}
+
+	completion_reward = {
+		add_political_power = -100
+		add_popularity = {
+   			ideology = democratic
+    		popularity = 0.1
+		}
+		add_popularity = {
+   			ideology = monarchism
+    		popularity = -0.2
+		}
+		add_popularity = {
+   			ideology = fascism
+    		popularity = 0.1
+		}
+		add_stability = -0.15
+	}
+}
+
+focus = { 
+	id = MAI_tighten_parliament_liberties
+	icon = GFX_goal_generic_neutrality_focus
+	x = 10
+	y = 7
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_children_parliament_focus }
+	mutually_exclusive = { focus = MAI_expand_parliament_jurisdiction }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+	}
+
+	completion_reward = {
+		add_political_power = -150
+		add_popularity = {
+   			ideology = democratic
+    		popularity = 0.1
+		}
+		add_popularity = {
+   			ideology = monarchism
+    		popularity = -0.1
+		}
+		add_stability = -0.10
+	}
+}
+
+focus = { 
+	id = MAI_first_elections
+	icon = GFX_focus_generic_elections
+	x = 9
+	y = 8
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_expand_parliament_jurisdiction focus = MAI_tighten_parliament_liberties }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+	}
+
+	completion_reward = {
+		country_event = {
+			id = childrenparliament.1
+			days = 0
+		}
+		hidden_effect = {
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+	}
+}
+
+focus = { 
+	id = MAI_children_in_army_leadership
+	icon = GFX_goal_rhineland
+	x = 11
+	y = 9
+	cost = 3
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_first_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+		custom_trigger_tooltip = {
+			tooltip = MAI_children_in_army_leadership_yay
+			has_country_flag = children_in_army_leadership_yay
+		}
+	}
+
+	completion_reward = {
+		add_stability = -0.1
+		add_war_support = -0.15
+	}
+}
+
+focus = { 
+	id = MAI_adjusting_the_economy
+	icon = GFX_goal_generic_consumer_goods
+	x = 9
+	y = 9
+	cost = 3
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_first_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+		custom_trigger_tooltip = {
+			tooltip = MAI_adjusting_the_economy_yay
+			has_country_flag = adjusting_the_economy_yay
+		}
+	}
+
+	completion_reward = {
+		add_political_power = -100
+		add_stability = -0.05
+	}
+}
+
+focus = { 
+	id = MAI_talks_with_james
+	icon = GFX_focus_enchancia
+	x = 7
+	y = 9
+	cost = 3
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_first_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+		custom_trigger_tooltip = {
+			tooltip = MAI_talks_with_james_yay
+			has_country_flag = talks_with_james_yay
+		}
+		EN1 = {
+			exists = yes
+		}
+	}
+	bypass = {
+		EN1 = {
+			OR = {
+				exists = no
+				has_country_flag = bandits_army_sent
+			}
+		}
+	}
+
+	completion_reward = {
+		add_political_power = 50
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+			EN1 = {
+				hidden_effect = {
+					set_country_flag = enchancian_civil_war_made_me_do_this
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = enchancian_civil_war_over
+			}
+			EN1 = {
+				country_event = {
+					id = enchancia.71
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_hartmut_crisis
+	icon = GFX_goal_generic_political_pressure
+	x = 9
+	y = 10
+	cost = 1
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_children_in_army_leadership }
+	prerequisite = { focus = MAI_adjusting_the_economy }
+	prerequisite = { focus = MAI_talks_with_james }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = { 
+		custom_trigger_tooltip = {
+			tooltip = MAI_hartumut_demands
+			has_country_flag = hartmut_demands
+		}
+	}
+
+	completion_reward = {
+		add_stability = -0.05
+		add_war_support = 0.1
+		add_political_power = 20
+	}
+}
+
+focus = { 
+	id = MAI_withdraw_role_change_law
+	icon = GFX_goal_generic_major_alliance
+	x = 19
+	y = 11
+	cost = 20
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_hartmut_crisis }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		OR = {
+			has_completed_focus = MAI_we_wont_give_in
+			has_completed_focus = MAI_reform_the_parliament
+		}
+	}
+
+	completion_reward = {
+		remove_ideas = {
+			MAI_the_great_switcheroo
+		}
+		add_stability = 0.05
+		add_political_power = -250
+	}
+}
+
+focus = { 
+	id = MAI_reform_the_parliament
+	icon = GFX_goal_generic_dangerous_deal
+	x = 14
+	y = 11
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_hartmut_crisis }
+	mutually_exclusive = { focus = MAI_we_wont_give_in }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = MAI_agreed_to_reform_parliament
+			has_country_flag = agreed_to_reform_parliament
+		}
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_parliament_reforms
+		hidden_effect = {
+			set_country_flag = parliament_reformed
+			set_country_flag = national_children_party_formed
+			FRI = {
+				country_event = {
+					id = centralkingdom.33
+					days = 1
+				}
+			}
+			news_event = {
+				id = worldnews.27
+				hours = 6
+			}
+			country_event = {
+				id = childrenparliament.15
+				days = 5
+			}
+			remove_mission = MAI_next_seating_of_children_parliament
+		}
+	}
+}
+
+focus = { 
+	id = MAI_another_elections
+	icon = GFX_focus_generic_elections
+	x = 14
+	y = 12
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_reform_the_parliament }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = MAI_new_parties_ready
+			has_country_flag = national_children_party_formed
+			has_country_flag = free_future_party_formed
+			has_country_flag = time_for_kids_formed
+			has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_formed
+		}
+	}
+
+	completion_reward = {
+		hidden_effect = {
+			812 = {
+				random_list = {
+					
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			858 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			808 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			803 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			789 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			814 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			822 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			824 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			817 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			798 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			796 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			792 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			799 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			831 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			852 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			843 = {
+				random_list = {
+					25 = {
+						set_variable = { ncp_popularity_in_state = 0.55 }
+						set_variable = { ffp_popularity_in_state = 0.25 }
+						set_variable = { tfk_popularity_in_state = 0.15 }
+						set_variable = { ccfrok_popularity_in_state = 0.05 }	
+					}
+					25 = {
+						set_variable = { ffp_popularity_in_state = 0.55 }
+						set_variable = { ncp_popularity_in_state = 0.25 }
+						set_variable = { ccfrok_popularity_in_state = 0.15 }
+						set_variable = { tfk_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { tfk_popularity_in_state = 0.55 }
+						set_variable = { ccfrok_popularity_in_state = 0.25 }
+						set_variable = { ncp_popularity_in_state = 0.15 }
+						set_variable = { ffp_popularity_in_state = 0.05 }
+					}
+					25 = {
+						set_variable = { ccfrok_popularity_in_state = 0.55 }
+						set_variable = { tfk_popularity_in_state = 0.25 }
+						set_variable = { ffp_popularity_in_state = 0.15 }
+						set_variable = { ncp_popularity_in_state = 0.05 }
+					}
+				}
+			}
+			if = {
+				limit = {
+					MAI = {
+						owns_state = 773
+						owns_state = 776
+						owns_state = 767
+						owns_state = 736
+					}
+				}
+				773 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				776 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				767 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+				736 = {
+					random_list = {
+						25 = {
+							set_variable = { ncp_popularity_in_state = 0.55 }
+							set_variable = { ffp_popularity_in_state = 0.25 }
+							set_variable = { tfk_popularity_in_state = 0.15 }
+							set_variable = { ccfrok_popularity_in_state = 0.05 }	
+						}
+						25 = {
+							set_variable = { ffp_popularity_in_state = 0.55 }
+							set_variable = { ncp_popularity_in_state = 0.25 }
+							set_variable = { ccfrok_popularity_in_state = 0.15 }
+							set_variable = { tfk_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { tfk_popularity_in_state = 0.55 }
+							set_variable = { ccfrok_popularity_in_state = 0.25 }
+							set_variable = { ncp_popularity_in_state = 0.15 }
+							set_variable = { ffp_popularity_in_state = 0.05 }
+						}
+						25 = {
+							set_variable = { ccfrok_popularity_in_state = 0.55 }
+							set_variable = { tfk_popularity_in_state = 0.25 }
+							set_variable = { ffp_popularity_in_state = 0.15 }
+							set_variable = { ncp_popularity_in_state = 0.05 }
+						}
+					}
+				}
+			}
+			every_owned_state = {
+				execute_dhondt_method = yes
+			}
+			activate_mission = MAI_next_seating_of_children_parliament
+		}
+		set_politics = {
+			ruling_party = monarchism
+			elections_allowed = yes
+			election_frequency = 24
+		}
+	}
+}
+
+focus = { 
+	id = MAI_national_children_party_won
+	icon = GFX_focus_rom_royal_dictatorship
+	x = 11
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_another_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_country_flag = national_children_party_wins
+	}
+
+	completion_reward = {
+	}
+}
+
+focus = { 
+	id = MAI_regaining_the_trust
+	icon = GFX_goal_generic_national_unity
+	x = 11
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_national_children_party_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_stability = 0.05
+		add_political_power = 10
+	}
+}
+
+focus = { 
+	id = MAI_reach_out_to_duckburg
+	icon = GFX_goal_generic_improve_relations
+	x = 11
+	y = 15
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_regaining_the_trust }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_political_power = 25
+		add_opinion_modifier = {
+			target = DCB
+			modifier = TCWmod_generic_relations
+		}
+		DCB = {
+			add_opinion_modifier = {
+				target = MAI
+				modifier = TCWmod_generic_relations
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_free_future_party_won
+	icon = GFX_focus_research
+	x = 13
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_another_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_country_flag = free_future_party_wins
+	}
+
+	completion_reward = {
+	}
+}
+
+focus = { 
+	id = MAI_creation_of_technological_bureau
+	icon = GFX_focus_research2
+	x = 13
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_free_future_party_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_ideas = {
+			MAI_technological_bureau
+		}
+	}
+}
+
+focus = { 
+	id = MAI_operation_colonization
+	icon = GFX_goal_generic_navy_battleship
+	x = 13
+	y = 15
+	cost = 16
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_creation_of_technological_bureau }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		has_navy_size = {
+    		size > 7
+   			type = screen_ship
+		}
+	}
+
+	bypass = {
+		always = yes
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_colonization
+		hidden_effect = {
+			random_list = {
+				60 = {
+					transfer_state = 782
+					782 = {
+						add_manpower = 10000
+						add_building_construction = {
+    						type = naval_base
+    						level = 1
+    						instant_build = yes
+    						province = 2664
+						}
+					}
+				}
+				30 = {
+					transfer_state = 31
+					31 = {
+						add_manpower = 10000
+						add_building_construction = {
+    						type = naval_base
+    						level = 1
+    						instant_build = yes
+    						province = 95
+						}
+					}
+				}
+				10 = {
+					transfer_state = 642
+					642 = {
+						add_manpower = 10000
+						add_building_construction = {
+    						type = naval_base
+    						level = 1
+    						instant_build = yes
+    						province = 9074
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_time_for_kids_won
+	icon = GFX_focus_hol_abandon_the_gold_standard
+	x = 15
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_another_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_country_flag = time_for_kids_wins
+	}
+
+	completion_reward = {
+	}
+}
+
+focus = { 
+	id = MAI_lower_the_prices
+	icon = GFX_focus_generic_treaty
+	x = 15
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_time_for_kids_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_stability = 0.1
+		add_political_power = -150
+	}
+}
+
+focus = { 
+	id = MAI_education_reform_new
+	icon = GFX_focus_generic_military_academy
+	x = 15
+	y = 15
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_lower_the_prices }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_stability = 0.05
+		add_political_power = -200
+	}
+}
+
+focus = { 
+	id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
+	icon = GFX_focus_mex_privatisation
+	x = 17
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_another_elections }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		always = no
+	}
+	bypass = {
+		has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+	}
+
+	completion_reward = {
+	}
+}
+
+focus = { 
+	id = MAI_privatisation
+	icon = GFX_focus_eng_concessions_to_the_trade_unions
+	x = 17
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = coalition_or_majority
+			has_country_flag = government_has_majority_or_coalition
+		}
+	}
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_stability = -0.1
+		add_political_power = 50
+	}
+}
+
+focus = { 
+	id = MAI_lift_the_limits
+	icon = GFX_goal_generic_improve_relations
+	x = 17
+	y = 15
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_privatisation }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_stability = -0.15
+		add_political_power = 100
+	}
+}
+
+focus = { 
+	id = MAI_we_wont_give_in
+	icon = GFX_goal_generic_demand_territory
+	x = 4
+	y = 11
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_hartmut_crisis }
+	mutually_exclusive = { focus = MAI_reform_the_parliament }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = MAI_denied_reforming_parliament
+			has_country_flag = denied_reforming_parliament
+		}
+	}
+	bypass = {
+		has_war_with = FRI
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_denied_reforms
+		hidden_effect = {
+			FRI = {
+				country_event = {
+					id = centralkingdom.32
+					days = 1
+				}
+			}
+			news_event = {
+				id = worldnews.26
+				hours = 6
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_emergency_fortifications_around_capital
+	icon = GFX_goal_generic_fortify_city
+	x = 2
+	y = 12
+	cost = 3
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_we_wont_give_in }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		has_war_with = FRI
+		surrender_progress > 0.3
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_emergency_fortifications
+		hidden_effect = {
+			812 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 10163
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 10164
+				}
+			}
+			817 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 10170
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 10177
+				}
+			}
+			822 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 3270
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 1101
+				}
+			}
+			798 = {
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 10141
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 3388
+				}
+				add_building_construction = {
+    				type = bunker
+    				level = 1
+    				instant_build = yes
+    				province = 1628
+				}
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_construct_makeshift_airfields
+	icon = GFX_goal_generic_air_fighter
+	x = 4
+	y = 12
+	cost = 3
+	available_if_capitulated = no 
+	prerequisite = { focus = MAI_we_wont_give_in }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		has_war_with = FRI
+		surrender_progress > 0.3
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_makeshift_airfields
+		hidden_effect = {
+			798 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			814 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			817 = {
+				add_building_construction = {
+    				type = air_base
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_international_reaction_to_invasion
+	icon = GFX_focus_hol_war_on_pacifism
+	x = 6
+	y = 12
+	cost = 3
+	available_if_capitulated = no 
+	prerequisite = { focus = MAI_we_wont_give_in }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		has_war_with = FRI
+	}
+
+	completion_reward = {
+		#here will be events
+	}
+}
+
+focus = { 
+	id = MAI_the_last_resort
+	icon = GFX_goal_generic_defence
+	x = 4
+	y = 13
+	cost = 3
+	available_if_capitulated = no 
+	prerequisite = { focus = MAI_emergency_fortifications_around_capital }
+	prerequisite = { focus = MAI_construct_makeshift_airfields }
+	prerequisite = { focus = MAI_international_reaction_to_invasion }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		has_war_with = FRI
+		surrender_progress > 0.5
+	}
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = MAI_no_stepping_back
+			days = 150
+		}
+	}
+}
+
+focus = { 
+	id = MAI_foreign_politics_of_parliament
+	icon = GFX_goal_generic_position_armies
+	x = 26
+	y = 11
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_hartmut_crisis }
+	ai_will_do = { 
+		factor = 1
+	} 
+	available = {
+		OR = {
+			has_completed_focus = MAI_we_wont_give_in
+			AND = {
+				has_completed_focus = MAI_reform_the_parliament
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+			}
+		}
+	}
+
+	completion_reward = {
+		add_political_power = 50
+	}
+}
+
+focus = { 
+	id = MAI_a_look_to_the_east
+	icon = GFX_goal_generic_military_sphere
+	x = 21
+	y = 12
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_foreign_politics_of_parliament }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_chp_look_to_the_east
+	}
+}
+
+focus = { 
+	id = MAI_base_on_tungupungu
+	icon = GFX_goal_generic_intelligence_exchange
+	x = 20
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_a_look_to_the_east }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_political_power = -300
+		TUG = {
+			24 = {
+				add_building_construction = {
+					type = naval_base
+					level = 6
+					instant_build = yes
+					province = 9069
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 5
+					instant_build = yes
+				}
+			}
+			give_military_access = MAI
+		}
+	}
+}
+
+focus = { 
+	id = MAI_liberation_of_greenland
+	icon = GFX_goal_generic_major_war
+	x = 20
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_base_on_tungupungu }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		GRN = {
+			exists = no
+		}
+		DES = {
+			exists = yes
+		}
+		NOT = {
+			has_war_with = DES
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_grn
+			has_country_flag = MAI_parliament_passed_grn_flag
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = DES
+			type = liberate_wargoal
+		}
+	}
+}
+
+focus = { 
+	id = MAI_our_own_colonies
+	icon = GFX_goal_generic_navy_battleship
+	x = 22
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_a_look_to_the_east }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_colonies
+			has_country_flag = MAI_parliament_passed_colonies_flag
+		}
+	}
+
+	completion_reward = {
+		add_political_power = -200
+		custom_effect_tooltip = MAI_colonies
+		hidden_effect = {
+			transfer_state = 788
+			788 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 1854
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 3
+					instant_build = yes
+				}
+				add_manpower = 10000
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_tungupungu_pact
+	icon = GFX_goal_generic_improve_relations
+	x = 22
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_our_own_colonies }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_political_power = -100
+		TUG = {
+			country_event = {
+				id = centralkingdom.34
+				days = 1
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_menaces_in_the_north
+	icon = GFX_goal_generic_attack_allies
+	x = 26
+	y = 12
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_foreign_politics_of_parliament }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_chp_menaces_in_the_north
+	}
+}
+
+focus = { 
+	id = MAI_greenland_as_the_base_of_operations
+	icon = GFX_focus_greenland
+	x = 25
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_menaces_in_the_north }
+	mutually_exclusive = { focus = MAI_duckburg_as_the_base_of_operations }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		GRN = {
+			exists = yes
+		}
+	}
+
+	completion_reward = {
+		add_political_power = -300
+		GRN = {
+			355 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			359 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			366 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			439 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 7786
+				}
+			}
+		}
+	}
+}
+
+focus = { 
+	id = MAI_duckburg_as_the_base_of_operations
+	icon = GFX_goal_generic_military_deal
+	x = 27
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_menaces_in_the_north }
+	mutually_exclusive = { focus = MAI_greenland_as_the_base_of_operations }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		add_political_power = -200
+		if = {
+			limit = {
+				is_in_faction = no
+			}
+			DCB = {
+				give_military_access = MAI
+			}
+		}
+		if = {
+			limit = {
+				is_in_faction = yes
+			}
+			add_to_faction = DCB
+		}
+	}
+}
+
+focus = { 
+	id = MAI_liberation_of_unity_peninsula
+	icon = GFX_goal_generic_major_war
+	x = 24
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
+	mutually_exclusive = { focus = MAI_when_two_quarrel focus = MAI_contain_lord_shen }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		SQU = {
+			exists = no
+		}
+		DUC = {
+			exists = no
+		}
+		BIR = {
+			exists = no
+		}
+		TRL = {
+			exists = no
+		}
+		FLO = {
+			exists = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_unity
+			has_country_flag = MAI_parliament_passed_unity_flag
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = FLO
+			type = liberate_wargoal
+		}
+	}
+}
+
+focus = { 
+	id = MAI_when_two_quarrel
+	icon = GFX_focus_generic_military_mission
+	x = 26
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
+	mutually_exclusive = { focus = MAI_liberation_of_unity_peninsula focus = MAI_contain_lord_shen }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		FLO = {
+			has_war_with = GON
+		}
+		GON = {
+			has_war_with = FLO
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_quarrel
+			has_country_flag = MAI_parliament_passed_quarrel_flag
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = FLO
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = GON
+			type = annex_everything
+		}
+	}
+}
+
+focus = { 
+	id = MAI_contain_lord_shen
+	icon = GFX_goal_generic_major_war
+	x = 28
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
+	mutually_exclusive = { focus = MAI_liberation_of_unity_peninsula focus = MAI_when_two_quarrel }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		GON = {
+			exists = yes
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_shen
+			has_country_flag = MAI_parliament_passed_shen_flag
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = GON
+			type = annex_everything
+		}
+	}
+}
+
+focus = { 
+	id = MAI_everrealm_sphere
+	icon = GFX_focus_generic_home_defense
+	x = 31
+	y = 12
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_foreign_politics_of_parliament }
+	ai_will_do = { 
+		factor = 1
+	}
+
+	completion_reward = {
+		custom_effect_tooltip = MAI_chp_everrealm_sphere
+	}
+}
+
+focus = { 
+	id = MAI_operation_enchancian_freedom
+	icon = GFX_focus_enchancia
+	x = 31
+	y = 13
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_everrealm_sphere }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		OR = {
+			EN3 = {
+				exists = yes
+			}
+			EN4 = {
+				exists = yes
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_enchancian_freedom
+			has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+		}
+	}
+	bypass = {
+		EN3 = {
+			exists = no
+		}
+		EN4 = {
+			exists = no
+		}
+	}
+
+	completion_reward = {
+		if = {
+			limit = {
+				EN3 = {
+					exists = yes
+				}
+			}
+			declare_war_on = {
+				target = EN3
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				EN4 = {
+					exists = yes
+				}
+			}
+			declare_war_on = {
+				target = EN4
+				type = annex_everything
+			}
+		}
+		if = {
+			limit = {
+				ENC = {
+					exists = yes
+					has_cosmetic_tag = WIN
+				}
+			}
+			add_to_faction = ENC
+		}
+	}
+}
+
+focus = { 
+	id = MAI_free_khaldoun
+	icon = GFX_focus_generic_anti_fascist_diplomacy
+	x = 30
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_operation_enchancian_freedom }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		KHA = {
+			has_government = fascism
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_khaldoun
+			has_country_flag = MAI_parliament_passed_khaldoun_flag
+		}
+	}
+	bypass = {
+		NOT = {
+			KHA = {
+				has_government = fascism
+			}
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = KHA
+			type = annex_everything
+		}
+	}
+}
+
+focus = { 
+	id = MAI_free_rudistan
+	icon = GFX_focus_generic_anti_fascist_diplomacy
+	x = 30
+	y = 15
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_free_khaldoun }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		RUD = {
+			has_government = fascism
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_rudistan
+			has_country_flag = MAI_parliament_passed_rudistan_flag
+		}
+	}
+	bypass = {
+		NOT = {
+			RUD = {
+				has_government = fascism
+			}
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = RUD
+			type = annex_everything
+		}
+	}
+}
+
+focus = { 
+	id = MAI_free_corinthia
+	icon = GFX_goal_anti_comintern_pact
+	x = 32
+	y = 14
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_operation_enchancian_freedom }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		COR = {
+			has_government = communism
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_corinthia
+			has_country_flag = MAI_parliament_passed_corinthia_flag
+		}
+	}
+	bypass = {
+		NOT = {
+			COR = {
+				has_government = communism
+			}
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = COR
+			type = annex_everything
+		}
+	}
+}
+
+focus = { 
+	id = MAI_free_trufflandia
+	icon = GFX_goal_anti_comintern_pact
+	x = 32
+	y = 15
+	cost = 10
+	available_if_capitulated = yes 
+	prerequisite = { focus = MAI_free_corinthia }
+	ai_will_do = { 
+		factor = 1
+	}
+	available = {
+		TRU = {
+			has_government = communism
+		}
+		custom_trigger_tooltip = {
+			tooltip = MAI_parliament_passed_trufflandia
+			has_country_flag = MAI_parliament_passed_trufflandia_flag
+		}
+	}
+	bypass = {
+		NOT = {
+			TRU = {
+				has_government = communism
+			}
+		}
+	}
+
+	completion_reward = {
+		declare_war_on = {
+			target = TRU
+			type = annex_everything
+		}
+	}
+}

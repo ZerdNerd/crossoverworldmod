@@ -557,6 +557,56 @@ scripted_gui = { #yes, its from pax custom achievements shit
 							}
 						}
 					}
+
+					AND = {
+						check_variable = { v = 13 }
+						ROOT = {
+							is_ai = no
+							tag = TIG
+							has_country_leader = {
+								name = "Lud"
+								ruling_only = yes
+							}
+							has_completed_focus = TIG_kill_tumtum
+						}
+					}
+
+					AND = {
+						check_variable = { v = 14 }
+						ROOT = {
+							is_ai = no
+							tag = MAI
+							has_country_leader = {
+								name = "Maciej I"
+								ruling_only = yes
+							}
+							NOT = {
+								has_completed_focus = MAI_ive_been_betrayed
+							}
+						}
+					}
+
+					AND = {
+						check_variable = { v = 15 }
+						ROOT = {
+							is_ai = no
+							tag = MAI
+							has_completed_focus = MAI_ive_been_betrayed
+						}
+						UNC = {
+							exists = yes
+						}
+						MAI = {
+							exists = yes
+						}
+						any_other_country = {
+							NOT = {
+								tag = MAI
+								tag = UNC
+							}
+							exists = no
+						}
+					}
 				}
 			}
         }

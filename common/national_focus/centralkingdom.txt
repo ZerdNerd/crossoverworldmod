@@ -7,28 +7,507 @@ focus_tree = {
 			tag = MAI 
 		} 
 	} 
+
+	continuous_focus_position = {
+		x = 100
+		y = 100
+	}
 	
 	default = no
 
-	#Focus for The way of diplomacy
 	focus = { 
-		id = MAI_thewayofdiplomacy
-		icon = GFX_goal_tripartite_pact
-		x = 4
+		id = MAI_but_hes_too_young
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 15
 		y = 0
-		cost = 3
-		available_if_capitulated = yes 
+		cost = 4.3
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			country_event = {
+				id = centralkingdom.38
+				days = 0
+			}
+		}
+		
+	} 
+
+	focus = { 
+		id = MAI_ill_show_them_now
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		relative_position_id = MAI_but_hes_too_young
+		prerequisite = {
+			focus = MAI_but_hes_too_young
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = MAI_macius_crowned
 				has_global_flag = stephen_is_dead
 			}
 		}
+
+		ai_will_do = { 
+			factor = 5
+		} 
+
+		completion_reward = { 
+			country_event = {
+				id = centralkingdom.39
+				days = 0
+			}
+		}
+		
+	}
+
+	focus = { 
+		id = MAI_peaceful_resolution
+		icon = GFX_goal_support_democracy
+		x = -3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_ill_show_them_now
+		prerequisite = { focus = MAI_ill_show_them_now }
+		mutually_exclusive = { focus = MAI_arrest_them_all } 
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.40
+				days = 0
+			}
+			add_popularity = {
+   				ideology = democratic
+    			popularity = -0.05
+			}
+			add_popularity = {
+   				ideology = monarchism
+   	 			popularity = 0.05
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_appoint_new_ministers
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_peaceful_resolution
+		prerequisite = { focus = MAI_peaceful_resolution } 
+		mutually_exclusive = {
+			focus = MAI_the_reformer
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			add_ideas = {
+				MAI_new_ministers
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_the_reformer
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_peaceful_resolution
+		prerequisite = { focus = MAI_peaceful_resolution } 
+		mutually_exclusive = {
+			focus = MAI_appoint_new_ministers
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+		}
+
+		completion_reward = {
+			add_country_leader_trait = the_reformer
+		}
+	}
+
+	focus = { 
+		id = MAI_arrest_them_all
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_ill_show_them_now
+		prerequisite = { focus = MAI_ill_show_them_now }
+		mutually_exclusive = { focus = MAI_peaceful_resolution }  
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.41
+				days = 0
+			}
+			add_political_power = -50
+		}
+	}
+
+	focus = { 
+		id = MAI_an_absolute_monarch
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_arrest_them_all
+		prerequisite = { focus = MAI_arrest_them_all } 
+		mutually_exclusive = {
+			focus = MAI_actually_i_need_them
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.42
+				days = 0
+			}
+			add_popularity = {
+   				ideology = democratic
+    			popularity = -0.1
+			}
+			add_popularity = {
+   				ideology = monarchism
+    			popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+
+	focus = { 
+		id = MAI_actually_i_need_them
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_arrest_them_all
+		prerequisite = { focus = MAI_arrest_them_all }
+		mutually_exclusive = {
+			focus = MAI_an_absolute_monarch
+		} 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.43
+				days = 0
+			}
+			add_popularity = {
+   				ideology = democratic
+    			popularity = -0.05
+			}
+			add_popularity = {
+   				ideology = monarchism
+    			popularity = 0.05
+			}
+			add_stability = -0.05
+		}
+	}
+
+	focus = { 
+		id = MAI_talk_with_reds
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_ill_show_them_now
+		prerequisite = { focus = MAI_the_reformer focus = MAI_appoint_new_ministers focus = MAI_actually_i_need_them }
+		mutually_exclusive = {
+			focus = MAI_expell_commies
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.44
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_expell_commies
+		icon = GFX_goal_anti_comintern_pact
+		x = 2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_ill_show_them_now
+		mutually_exclusive = {
+			focus = MAI_talk_with_reds
+		}
+		prerequisite = { focus = MAI_the_reformer focus = MAI_an_absolute_monarch focus = MAI_actually_i_need_them }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+
+		}
+
+		completion_reward = {
+			add_stability = -0.15
+			add_political_power = 50
+			remove_ideas = {
+				MAI_fighting_with_commies
+			}
+			FLO = {
+				country_event = {
+					id = flowerhill.2
+					days = 1
+				}
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_expelled_commies
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_education_reform
+		icon = GFX_focus_generic_self_management
+		x = -2
+		y = 3
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_ill_show_them_now
+		prerequisite = { focus = MAI_the_reformer focus = MAI_appoint_new_ministers focus = MAI_actually_i_need_them }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_political_power = -50
+			add_stability = 0.1
+		}
+	}
+
+	focus = { 
+		id = MAI_for_king_and_country
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_education_reform
+		prerequisite = { focus = MAI_education_reform }
+		prerequisite = { focus = MAI_expell_commies focus = MAI_talk_with_reds }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_pro_rege_lege_et_grege
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_the_king_of_children
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 2
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_an_absolute_monarch
+		prerequisite = { focus = MAI_an_absolute_monarch }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_king_of_children
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_chocolate_and_carousels
+		icon = GFX_goal_generic_consumer_goods
+		x = 3
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_for_king_and_country
+		prerequisite = { focus = MAI_for_king_and_country focus = MAI_the_king_of_children }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_the_chocolate_and_carousels
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_audience_for_children
+		icon = GFX_focus_generic_military_academy
+		x = 1
+		y = 1
+		cost = 1.5
+		available_if_capitulated = yes 
+		relative_position_id = MAI_for_king_and_country
+		prerequisite = { focus = MAI_for_king_and_country focus = MAI_the_king_of_children }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_audience_for_children_idea
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_write_the_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_audience_for_children
+		prerequisite = { focus = MAI_tungu_pungu }
+		prerequisite = { focus = MAI_for_king_and_country }
+		prerequisite = { focus = MAI_audience_for_children }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			has_country_flag = MAI_visited_tungupungu
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_the_constitution
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_children_gazette
+		icon = GFX_big_news
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_audience_for_children
+		prerequisite = { focus = MAI_chocolate_and_carousels }
+		prerequisite = { focus = MAI_audience_for_children }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = there_is_someone_who_can_lead_the_newspaper
+				has_country_flag = journalist_appeared
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_children_gazette_idea
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_organize_summer_camps_for_children
+		icon = GFX_goal_generic_construction
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes 
+		relative_position_id = MAI_chocolate_and_carousels
+		prerequisite = { focus = MAI_chocolate_and_carousels }
+		prerequisite = { focus = MAI_visit_to_our_neighbors }
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			add_ideas = {
+				MAI_pioneer_camps
+			}
+		}
+	}
+
+	#Focus for The way of diplomacy
+	focus = { 
+		id = MAI_thewayofdiplomacy
+		icon = GFX_goal_tripartite_pact
+		x = 12
+		y = 5
+		cost = 7.25
+		available_if_capitulated = yes 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
 		ai_will_do = { 
 			factor = 5
 		} 
 		completion_reward = { 
-			add_political_power = 5
+			custom_effect_tooltip = will_fire_automatically
 		}
 		
 	} 
@@ -36,13 +515,23 @@ focus_tree = {
 	focus = { 
 		id = MAI_diplo_rel_enchancia
 		icon = GFX_focus_enchancia
-		x = 2
+		x = -7
 		y = 1
-		cost = 5
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_thewayofdiplomacy } 
 		ai_will_do = { 
 			factor = 5
+		}
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_didnt_broke
+				ENC = {
+					has_country_flag = civil_war_avoided
+					has_idea = pre-modern_tech
+				}
+			}
 		}
 
 		completion_reward = {
@@ -61,13 +550,35 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_ecw_our_stance
-		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 2
+		id = MAI_enc_tech_jump
+		icon = GFX_goal_generic_scientific_exchange
+		x = -7
 		y = 2
-		cost = 5
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_diplo_rel_enchancia } 
+		ai_will_do = { 
+			factor = 100
+		} 
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.7
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_ecw_our_stance
+		icon = GFX_goal_generic_military_sphere
+		x = -4
+		y = 1
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_thewayofdiplomacy } 
 		ai_will_do = { 
 			factor = 100
 		} 
@@ -95,65 +606,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_enc_tech_jump
-		icon = GFX_goal_generic_scientific_exchange
-		x = 0
-		y = 3
-		cost = 15
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_ecw_our_stance } 
-		ai_will_do = { 
-			factor = 100
-		} 
-		available = { 
-			custom_trigger_tooltip = {
-				tooltip = MAI_ecw_didnt_broke
-				ENC = {
-					has_country_flag = civil_war_avoided
-					has_idea = pre-modern_tech
-				}
-			}
-		}
-
-		completion_reward = {
-			country_event = {
-				id = centralkingdom.7
-				days = 0
-			}
-		}
-	}
-
-	focus = { 
-		id = MAI_alliance_enc
-		icon = GFX_goal_generic_national_unity
-		x = 0
-		y = 4
-		cost = 5
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_enc_tech_jump } 
-		ai_will_do = { 
-			factor = 1
-		} 
-		available = { 
-
-		}
-
-		completion_reward = {
-			ENC = {
-				country_event = {
-					id = enchancia.43
-					days = 0
-				}
-			}
-		}
-	}
-
-	focus = { 
 		id = MAI_enc_rebuild
 		icon = GFX_goal_generic_construction
-		x = 2
-		y = 3
-		cost = 5
+		x = -5
+		y = 2
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_ecw_our_stance } 
 		ai_will_do = { 
@@ -229,85 +687,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_alliance_enc_ecw
-		icon = GFX_goal_generic_major_alliance
-		x = 2
-		y = 4
-		cost = 5
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_enc_rebuild } 
-		ai_will_do = { 
-			factor = 1
-		} 
-		available = { 
-			OR = {
-				ENC = {
-					NOT = {
-						has_idea = ENC_aftermath_of_civil_war
-					}
-				}
-				EN1 = {
-					NOT = {
-						has_idea = ENC_aftermath_of_civil_war
-					}
-				}
-				EN2 = {
-					NOT = {
-						has_idea = ENC_aftermath_of_civil_war
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			if = {
-				limit = {
-					ENC = {
-						exists = yes
-					}
-				}
-				ENC = {
-					country_event = {
-						id = enchancia.46
-						days = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					EN1 = {
-						exists = yes
-					}
-				}
-				EN1 = {
-					country_event = {
-						id = enchancia.46
-						days = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					EN2 = {
-						exists = yes
-					}
-				}
-				EN2 = {
-					country_event = {
-						id = enchancia.46
-						days = 1
-					}
-				}
-			}
-		}
-	}
-
-	focus = { 
 		id = MAI_enc_isolate
 		icon = GFX_focus_generic_strike_at_democracy2
-		x = 4
-		y = 3
-		cost = 15
+		x = -3
+		y = 2
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_ecw_our_stance } 
 		ai_will_do = { 
@@ -371,22 +756,21 @@ focus_tree = {
 	focus = { 
 		id = MAI_back_enchancian_family
 		icon = GFX_focus_rom_royal_dictatorship
-		x = 4
-		y = 4
-		cost = 5
+		x = -3
+		y = 3
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 1.5
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_enc_isolate } 
 		ai_will_do = { 
 			factor = 1
 		} 
 		available = { 
-
-		}
-
-		bypass = {
 			custom_trigger_tooltip = {
 				tooltip = MAI_winslow_exiled
-				has_country_flag = winslow_on_exile
+				any_country = {
+					has_country_flag = winslow_on_exile
+				}
 			}
 		}
 
@@ -403,169 +787,158 @@ focus_tree = {
 						modifier = backs_winslow_family
 					}
 				}
-			add_political_power = 150
+			add_political_power = 100
 		}
 	}
 
 	focus = { 
-		id = MAI_diplo_rel_greenland
-		icon = GFX_focus_greenland
-		x = 6
+		id = MAI_visit_to_our_neighbors
+		icon = GFX_goal_generic_improve_relations
+		x = 0
 		y = 1
-		cost = 5
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_thewayofdiplomacy } 
 		ai_will_do = { 
-			factor = 1
-			modifier = {
-				has_country_flag = greenland_priority
-				factor = 75
-			}
+			factor = 5
 		}
 
 		completion_reward = {
 			add_political_power = 75
-			add_opinion_modifier = {
-				target = GRN
-				modifier = MAI_true_relations
-			}
-			GRN = {
+			FRI = {
 				add_opinion_modifier = {
 					target = MAI
-					modifier = MAI_true_relations
+					modifier = TCWmod_generic_relations
+				}		
+			}
+			WEK = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = TCWmod_generic_relations
+				}		
+			}
+			if = {
+				limit = {
+					SLD = {
+						NOT = {
+							has_government = fascism
+							has_government = communism
+						}
+					}
+				}
+				SLD = {
+					add_opinion_modifier = {
+						target = MAI
+						modifier = TCWmod_generic_relations
+					}		
+				}
+				else = {
+					country_event = {
+						id = centralkingdom.45
+						days = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_visit_duckburg
+		icon = GFX_goal_generic_improve_relations
+		x = -1
+		y = 1
+		relative_position_id = MAI_visit_to_our_neighbors
+		cost = 1.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_visit_to_our_neighbors } 
+		ai_will_do = { 
+			factor = 5
+		}
+
+		available = {
+			DCB = {
+				exists = yes
+			}
+		}
+
+		bypass = {
+			DCB = {
+				OR = {
+					exists = no
+					is_pupept = yes
+				}
+			}
+		}
+
+		completion_reward = {
+			DCB = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = TCWmod_generic_relations
 				}		
 			}
 		}
 	}
 
 	focus = { 
-		id = MAI_state_visit_to_greenland
-		icon = GFX_focus_usa_escort_fighters
-		x = 6
-		y = 2
-		cost = 5
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_diplo_rel_greenland } 
-		ai_will_do = { 
-			factor = 1
-		} 
-		available = { 
-		}
-
-		completion_reward = {
-			add_political_power = 50
-			country_event = {
-				id = centralkingdom.15
-				days = 0
-			}
-		}
-	}
-
-	focus = { 
-		id = MAI_upgrade_grn
-		icon = GFX_goal_continuous_research
-		x = 6
-		y = 3
-		cost = 5
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_state_visit_to_greenland } 
-		ai_will_do = { 
-			factor = 1
-		} 
-
-		bypass = {
-			always = yes
-		}
-
-		available = { 
-			custom_trigger_tooltip = {
-				tooltip = MAC_visited_grn
-				has_country_flag = visited_grn
-			}
-		}
-
-		completion_reward = {
-			add_political_power = 20
-			GRN = {
-				country_event = {
-					id = greenland.1
-					days = 0
-				}
-			}
-		}
-	}
-
-	focus = { 
-		id = MAI_propose_alliance_GRN
-		icon = GFX_goal_anschluss
-		x = 6
-		y = 4
-		cost = 5
-		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_upgrade_grn } 
-		ai_will_do = { 
-			factor = 1
-		} 
-
-		bypass = {
-			always = yes
-		}
-		
-		available = { 
-
-		}
-
-		completion_reward = {
-			create_faction = united_front_of_free_nations
-			GRN = {
-				country_event = {
-					id = greenland.2
-					days = 1
-				}
-			}
-		}
-	}
-
-	focus = { 
-		id = MAI_road_to_sea
-		icon = GFX_focus_generic_navy_battleship2
-		x = 8
+		id = MAI_visit_danville
+		icon = GFX_goal_generic_improve_relations
+		x = 0
 		y = 1
-		cost = 5
+		relative_position_id = MAI_visit_duckburg
+		cost = 1.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_visit_duckburg } 
+		ai_will_do = { 
+			factor = 5
+		}
+
+		available = {
+			TSA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		completion_reward = {
+			TSA = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = TCWmod_generic_relations
+				}		
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_tungu_pungu
+		icon = GFX_focus_usa_escort_fighters
+		x = 2
+		y = 1
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_thewayofdiplomacy } 
+		prerequisite = { focus = MAI_for_king_and_country focus = MAI_the_king_of_children }
 		ai_will_do = { 
 			factor = 1
-			modifier = {
-				has_country_flag = sea_priority
-				factor = 75
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = gold_needed_mlord
+				has_country_flag = gold_needed
+			}
+			TUG = {
+				exists = yes
 			}
 		}
 
 		completion_reward = {
-			add_political_power = 120
-			FRI = {
-				add_opinion_modifier = {
-					target = MAI
-					modifier = MAI_wants_sea
-				}
-			}
-			WEK = {
-				add_opinion_modifier = {
-					target = MAI
-					modifier = MAI_wants_sea
-				}
-			}
-			SLD = {
-				add_opinion_modifier = {
-					target = MAI
-					modifier = MAI_wants_sea
-				}
-			}
-			hidden_effect = {
-				news_event = { 
-					id = worldnews.8 hours = 6
-				} 
+			country_event = {
+				id = centralkingdom.46
+				days = 7
 			}
 		}
 	}
@@ -573,16 +946,18 @@ focus_tree = {
 	focus = { 
 		id = MAI_the_zoo_project
 		icon = GFX_focus_usa_tank_destroyer_doctrine
-		x = 8
+		x = 1
 		y = 2
-		cost = 5
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 2.15
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_road_to_sea } 
+		prerequisite = { focus = MAI_tungu_pungu } 
+		prerequisite = { focus = MAI_visit_to_our_neighbors }
 		ai_will_do = { 
 			factor = 1
 		} 
 		available = { 
-
+			has_country_flag = MAI_visited_tungupungu
 		}
 
 		completion_reward = {
@@ -593,54 +968,39 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_tungu_pungu
-		icon = GFX_focus_usa_escort_fighters
-		x = 8
-		y = 3
-		cost = 5
+		id = MAI_visit_avalor
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = MAI_the_zoo_project
+		cost = 2.9
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_the_zoo_project } 
 		ai_will_do = { 
-			factor = 1
-		} 
-		available = { 
-			TUG = {
-				exists = yes
-			}
+			factor = 5
 		}
 
 		completion_reward = {
-			add_opinion_modifier = {
-				target = TUG
-				modifier = MAC_friendship
-			}
-			TUG = {
+			AVA = {
 				add_opinion_modifier = {
 					target = MAI
-					modifier = MAC_friendship
-				}
+					modifier = TCWmod_generic_relations
+				}		
 			}
-			add_political_power = 150
-			add_popularity = {
-    			ideology = fascism
-   				popularity = 0.15
-			}
-			add_popularity = {
-    			ideology = monarchism
-   					popularity = -0.15
-			}
-			set_country_flag = MAI_visited_tungupungu
 		}
 	}
 
 	focus = { 
 		id = MAI_royal_convention
 		icon = GFX_focus_generic_home_defense
-		x = 8
+		x = 2
 		y = 4
-		cost = 30
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 10.6
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_tungu_pungu } 
+		prerequisite = { focus = MAI_visit_avalor }
+		prerequisite = { focus = MAI_children_parliament_focus }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -658,3001 +1018,5382 @@ focus_tree = {
 		}
 	}
 
+	#Focus for The way of Economy
 	focus = { 
-		id = MAI_sea_access
-		icon = GFX_goal_generic_navy_cruiser
-		x = 4
-		y = 5
-		cost = 0
+		id = MAI_thewayofeconomy
+		icon = GFX_goal_generic_consumer_goods
+		x = 28
+		y = 6
+		cost = 7.25
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_royal_convention } 
-		prerequisite = { focus = MAI_propose_alliance_GRN } 
-		prerequisite = { focus = MAI_alliance_enc focus = MAI_alliance_enc_ecw focus = MAI_back_enchancian_family } 
+		prerequisite = { focus = MAI_for_king_and_country focus = MAI_the_king_of_children }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = we_have_enough_gold
+				has_country_flag = gold_needed
+				has_country_flag = MAI_visited_tungupungu
+			}
+		}
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = MAI_favor_north
+		icon = GFX_goal_generic_consumer_goods
+		x = -5
+		y = 1
+		relative_position_id = MAI_thewayofeconomy
+		prerequisite = { focus = MAI_thewayofeconomy }
+		mutually_exclusive = { focus = MAI_favor_south }
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = MAI_northern_rail_lines
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_north } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+
+		}
+		completion_reward = { 
+			792 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			796 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			798 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			814 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			hidden_effect = {
+				set_country_flag = lines_modernized
+			}
+		} 
+	} 
+
+	focus = { 
+		id = MAI_lubniewice_main
+		icon = GFX_goal_generic_construction
+		x = -2
+		y = 1
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_north }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			812 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_roads_in_the_west
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 1
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_north }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			803 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			822 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			824 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_lubniewice_international_airport
+		icon = GFX_goal_generic_air_bomber
+		x = 1
+		y = 2
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_northern_rail_lines }
+		prerequisite = { focus = MAI_roads_in_the_west }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			812 = {
+				add_building_construction = { 
+					type = air_base
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_royal_decree_324
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 2
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_roads_in_the_west }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			812 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory
+					level = 2 
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_northern_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 2
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_northern_rail_lines }
+		prerequisite = { focus = MAI_lubniewice_main } 
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			792 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2
+					instant_build = yes 
+				}
+			}
+			796 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			799 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+
+ 	} 
+ 
+ 	focus = { 
+		id = MAI_equipment_for_northern_farmers
+		icon = GFX_focus_generic_agriculture
+		x = -3
+		y = 2
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_lubniewice_main }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			789 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			814 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			798 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+
+		} 
+
+ 	}
+
+	focus = { 
+		id = MAI_southern_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 3
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_northern_industrial_complex } 
+		prerequisite = { focus = MAI_equipment_for_northern_farmers }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			858 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			808 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_roads_in_the_south
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 3
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_northern_industrial_complex } 
+		prerequisite = { focus = MAI_lubniewice_international_airport }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			852 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			831 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			808 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			843 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			858 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_pyrzyce_airport
+		icon = GFX_goal_generic_air_fighter2
+		x = 2
+		y = 3
+		relative_position_id = MAI_favor_north
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_royal_decree_324 } 
+		prerequisite = { focus = MAI_lubniewice_international_airport }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			858 = {
+				add_building_construction= { 
+					type = air_base 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_favor_south
+		icon = GFX_goal_generic_consumer_goods
+		x = 5
+		y = 1
+		relative_position_id = MAI_thewayofeconomy
+		prerequisite = { focus = MAI_thewayofeconomy }
+		mutually_exclusive = { focus = MAI_favor_north }
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 5
+		} 
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = MAI_southern_rail_lines
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_south } 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+
+		}
+		completion_reward = { 
+			858 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			843 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			831 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			852 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+            808 = {
+				add_building_construction = { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	} 
+
+	focus = { 
+		id = MAI_redesign_pyrzyce_rail_junction
+		icon = GFX_goal_generic_construction
+		x = -2
+		y = 1
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_south }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			858 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_roads_in_the_east
+		icon = GFX_goal_generic_construct_civilian
+		x = 2
+		y = 1
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_favor_south }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			808 = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			843 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_pyrzyce_international_airport
+		icon = GFX_goal_generic_air_bomber
+		x = 1
+		y = 2
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_southern_rail_lines }
+		prerequisite = { focus = MAI_roads_in_the_east }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			858 = {
+				add_building_construction = { 
+					type = air_base
+					level = 3 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_royal_decree_323
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
+		y = 2
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_roads_in_the_east }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			858 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory
+					level = 2 
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_southern_industrial_complex
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 2
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_southern_rail_lines }
+		prerequisite = { focus = MAI_redesign_pyrzyce_rail_junction } 
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			831 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2
+					instant_build = yes 
+				}
+			}
+			843 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			808 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+
+ 	} 
+ 
+ 	focus = { 
+		id = MAI_equipment_for_southern_farmers
+		icon = GFX_focus_generic_agriculture
+		x = -3
+		y = 2
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_redesign_pyrzyce_rail_junction }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			858 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			843 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			808 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+
+		} 
+
+ 	}
+
+	focus = { 
+		id = MAI_northern_industries
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 3
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_southern_industrial_complex } 
+		prerequisite = { focus = MAI_equipment_for_southern_farmers }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			812 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			803 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = industrial_complex 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_roads_in_the_north
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 3
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_southern_industrial_complex } 
+		prerequisite = { focus = MAI_pyrzyce_international_airport }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			814 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			822 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			803 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			824 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			789 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+            798 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+            817 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+            796 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+            812 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+            792 = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_expand_lubniewice_airport
+		icon = GFX_goal_generic_air_fighter2
+		x = 2
+		y = 3
+		relative_position_id = MAI_favor_south
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_royal_decree_323 } 
+		prerequisite = { focus = MAI_pyrzyce_international_airport }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			812 = {
+				add_building_construction= { 
+					type = air_base 
+					level = 2
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+
+	focus = { 
+		id = MAI_new_technologies
+		icon = GFX_focus_research2
+		x = 0
+		y = 5
+		relative_position_id = MAI_thewayofeconomy
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_roads_in_the_south focus = MAI_roads_in_the_north } 
+		prerequisite = { focus = MAI_pyrzyce_airport focus = MAI_expand_lubniewice_airport }
+		prerequisite = { focus = MAI_northern_industries focus = MAI_southern_industries }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_research_slot = 1
+		} 
+	}
+
+	###CHILDREN PARLIAMENT
+
+	focus = { 
+		id = MAI_children_parliament_focus
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 16
+		y = 8
+		cost = 14.3
+		available_if_capitulated = yes
+
+		prerequisite = { 
+			focus = MAI_write_the_constitution 
+			focus = MAI_organize_summer_camps_for_children 
+		}
+
+		prerequisite = {
+			focus = MAI_children_gazette
+		}
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_economy_can_handle_this
+				has_completed_focus = MAI_new_technologies
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_children_parliament_complete_tooltip
+			add_political_power = -100
+			hidden_effect = {
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Macius I"
+					desc = "POLITICS_MACIUS_I_DESC"
+					picture = "macius.dds"
+					expire = "1965.1.1"
+					ideology = children_parliamentary_monarchy
+					traits = {
+						underage_monarch
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = MAI_the_reformer
+					}
+					add_country_leader_trait = the_reformer
+				}
+				news_event = {
+					id = worldnews.15
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_first_elections
+		icon = GFX_focus_generic_elections
+		x = 0
+		y = 2
+		relative_position_id = MAI_children_parliament_focus
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_children_parliament_focus }
+		prerequisite = { focus = MAI_royal_convention }
 		ai_will_do = { 
 			factor = 1
 		} 
 		available = { 
-			NOT = {
-				always = yes
+		}
+
+		completion_reward = {
+			country_event = {
+				id = childrenparliament.1
+				days = 0
+			}
+			hidden_effect = {
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_sign_the_role_change_law
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = MAI_first_elections
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_first_elections }
+
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = role_change_law_has_been_passed
+				has_country_flag = role_change_law_passed
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_the_great_switcheroo
+			}
+			hidden_effect = {
+				news_event = {
+					id = worldnews.16
+					hours = 4
+				}
+				FRI = {
+					country_event = {
+						id = centralkingdom.29
+						days = 14
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_talks_with_james
+		icon = GFX_focus_enchancia
+		x = -2
+		y = 1
+		relative_position_id = MAI_first_elections
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_first_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_talks_with_james_yay
+				has_country_flag = talks_with_james_yay
+			}
+			EN1 = {
+				exists = yes
 			}
 		}
 
 		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_sea_access_tooltip
-				MAI = {
-					has_completed_focus = MAI_propose_alliance_GRN
-					OR = {
-						has_completed_focus = MAI_back_enchancian_family
-						has_completed_focus = MAI_alliance_enc_ecw
-						has_completed_focus = MAI_alliance_enc
+			EN1 = {
+				OR = {
+					exists = no
+					has_country_flag = bandits_army_sent
+				}
+			}
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = enchancian_civil_war_over
 					}
-					any_owned_state = {
-						is_coastal = yes
+				}
+				EN1 = {
+					hidden_effect = {
+						set_country_flag = enchancian_civil_war_made_me_do_this
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_global_flag = enchancian_civil_war_over
+				}
+				EN1 = {
+					country_event = {
+						id = enchancia.71
+						days = 1
+					}
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_hartmut_crisis
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 1
+		relative_position_id = MAI_sign_the_role_change_law
+		cost = 1
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_sign_the_role_change_law }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_hartumut_demands
+				has_country_flag = hartmut_demands
+			}
+		}
+		bypass = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_hartumut_demands
+				has_country_flag = hartmut_demands
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_reform_the_parliament
+		icon = GFX_goal_generic_dangerous_deal
+		x = 12
+		y = 1
+		relative_position_id = MAI_hartmut_crisis
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_hartmut_crisis }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_agreed_to_reform_parliament
+				has_country_flag = agreed_to_reform_parliament
+			}
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_parliament_reforms
+			hidden_effect = {
+				set_country_flag = parliament_reformed
+				set_country_flag = national_children_party_formed
+				FRI = {
+					country_event = {
+						id = centralkingdom.33
+						days = 1
+					}
+				}
+				news_event = {
+					id = worldnews.27
+					hours = 6
+				}
+				country_event = {
+					id = childrenparliament.15
+					days = 5
+				}
+				remove_mission = MAI_next_seating_of_children_parliament
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_another_elections
+		icon = GFX_focus_generic_elections
+		x = 0
+		y = 1
+		relative_position_id = MAI_reform_the_parliament
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_reform_the_parliament }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_new_parties_ready
+				has_country_flag = national_children_party_formed
+				has_country_flag = free_future_party_formed
+				has_country_flag = time_for_kids_formed
+				has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_formed
+			}
+			has_war = no
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				another_elections_script = yes
+				every_owned_state = {
+					execute_dhondt_method = yes
+				}
+				activate_mission = MAI_next_seating_of_children_parliament
+			}
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = yes
+				election_frequency = 24
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_national_children_party_won
+		icon = GFX_focus_rom_royal_dictatorship
+		x = -6
+		y = 1
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = national_children_party_wins
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_business_rebuilding_fund
+		icon = GFX_goal_generic_national_unity
+		x = -7
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_national_children_party_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+			has_idea = MAI_aftermath_of_role_change_law_1
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_promote_national_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -7
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_business_rebuilding_fund }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_our_currency
+		icon = GFX_focus_fra_devalue_the_franc
+		x = -5
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_national_children_party_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_central_zloty
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_schools_and_scouts
+		icon = GFX_focus_generic_self_management
+		x = -5
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_our_currency }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_scouts_in_schools
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_sign_final_reconstruction_bill
+		icon = GFX_focus_generic_treaty
+		x = -6
+		y = 4
+		relative_position_id = MAI_another_elections
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_promote_national_industry }
+		prerequisite = { focus = MAI_schools_and_scouts }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_free_future_party_won
+		icon = GFX_focus_research
+		x = -2
+		y = 1
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = free_future_party_wins
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_creation_of_technological_bureau
+		icon = GFX_focus_research2
+		x = -3
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_free_future_party_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_technological_bureau
+			}
+			add_research_slot = 1
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_discounts_for_businesses
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -3
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_creation_of_technological_bureau }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_fund_naval_expansion
+		icon = GFX_goal_generic_navy_battleship
+		x = -1
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_free_future_party_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_expanding_the_navy
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_attract_investors_to_colonies
+		icon = GFX_focus_generic_industry_3
+		x = -1
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_fund_naval_expansion }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_colonial_fund
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_trade_restoration_bill
+		icon = GFX_goal_generic_trade
+		x = -2
+		y = 4
+		relative_position_id = MAI_another_elections
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_discounts_for_businesses }
+		prerequisite = { focus = MAI_attract_investors_to_colonies }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_time_for_kids_won
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 2
+		y = 1
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = time_for_kids_wins
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_lower_the_prices
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_time_for_kids_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_resume_issuing_social_benefits
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_lower_the_prices }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_education_reform_new
+		icon = GFX_focus_generic_military_academy
+		x = 3
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_time_for_kids_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = { 
+		id = MAI_new_summer_camps_for_kids
+		icon = GFX_goal_generic_construction
+		x = 3
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_education_reform_new }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_new_pioneer_camps
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_good_old_times_bill
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 2
+		y = 4
+		relative_position_id = MAI_another_elections
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_resume_issuing_social_benefits }
+		prerequisite = { focus = MAI_new_summer_camps_for_kids }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
+		icon = GFX_focus_mex_privatisation
+		x = 6
+		y = 1
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_privatisation
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 5
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_attract_foreign_investors
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 5
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_privatisation }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_lift_the_limits
+		icon = GFX_goal_generic_improve_relations
+		x = 7
+		y = 2
+		relative_position_id = MAI_another_elections
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_the_chocolate_and_carousels
+			}
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = MAI_lower_taxes
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 7
+		y = 3
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_lift_the_limits }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = { 
+		id = MAI_easier_life_bill
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 6
+		y = 4
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_attract_foreign_investors }
+		prerequisite = { focus = MAI_lower_taxes }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_we_wont_give_in
+		icon = GFX_goal_generic_demand_territory
+		x = -10
+		y = 1
+		relative_position_id = MAI_hartmut_crisis
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_hartmut_crisis }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_denied_reforming_parliament
+				has_country_flag = denied_reforming_parliament
+			}
+		}
+		bypass = {
+			has_war_with = FRI
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_denied_reforms
+			hidden_effect = {
+				FRI = {
+					country_event = {
+						id = centralkingdom.32
+						days = 1
+					}
+				}
+				news_event = {
+					id = worldnews.26
+					hours = 6
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_emergency_fortifications_around_capital
+		icon = GFX_goal_generic_fortify_city
+		x = -2
+		y = 1
+		relative_position_id = MAI_we_wont_give_in
+		cost = 1.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_we_wont_give_in }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			OR = {
+				surrender_progress > 0.3
+				custom_trigger_tooltip = {
+					tooltip = pyrzyce_has_fallen
+					FRI = {
+						controls_province = 10417
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = przyglow_has_fallen
+					FRI = {
+						controls_province = 756
 					}
 				}
 			}
 		}
 
 		completion_reward = {
-
-		}
-	}
-
-#Focus for The way of Army
-focus = { 
-	id = MAI_thewayofarmy
-	icon = GFX_goal_generic_army_doctrines
-	x = 22
-	y = 0
-	cost = 3
-	available_if_capitulated = yes 
-	available = {
-		custom_trigger_tooltip = {
-				tooltip = MAI_macius_crowned
-				has_global_flag = stephen_is_dead
-			}
-	}
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_political_power = 5
-	}
-	
-	
-} 
-
-focus = { 
-	id = MAI_our_own_way
-	icon = GFX_goal_tfv_can_forced_quebec_conscription
-	x = 20
-	y = 1
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofarmy }
-	mutually_exclusive = { focus = MAI_stephen_way }
-	mutually_exclusive = { focus = MAI_general_proposal }
-	ai_will_do = { 
-		factor = 1
-	}
-	completion_reward = { 
-		add_political_power = 50
-	} 
-
-} 
-
-focus = { 
-	id = MAI_new_doctrines
-	icon = GFX_goal_generic_army_tanks
-	x = 20
-	y = 2
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_our_own_way }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = land_doc_bonus
-			bonus = 0.75
-			uses = 1
-			category = land_doctrine
-			technology = mobile_warfare
-		}
-	} 
-} 
-
-focus = { 
-	id = MAI_tanks_and_motorized_research
-	icon = GFX_goal_generic_army_motorized
-	x = 20
-	y = 3
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_new_doctrines }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = armor_bonus
-			bonus = 0.5
-			uses = 1
-			category = armor
-		}
-		add_tech_bonus = {
-			name = motorized_bonus
-			bonus = 0.75
-			technology = motorised_infantry
-		}
-	} 
-} 
-
-focus = { 
-	id = MAI_stephen_way
-	icon = GFX_goal_generic_small_arms
-	x = 22
-	y = 1
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofarmy }
-	mutually_exclusive = { focus = MAI_our_own_way }
-	mutually_exclusive = { focus = MAI_general_proposal }
-	ai_will_do = { 
-		factor = 1
-	}
-	completion_reward = { 
-		add_political_power = 50
-	} 
-
-} 
-
-focus = { 
-	id = MAI_research_trench_warfare
-	icon = GFX_goal_generic_army_tanks
-	x = 22
-	y = 2
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_stephen_way }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = land_doc_bonus
-			bonus = 0.75
-			uses = 1
-			category = land_doctrine
-			technology = trench_warfare
-		}
-	} 
-} 
-
-focus = { 
-	id = MAI_artillery_research
-	icon = GFX_goal_generic_army_tanks
-	x = 22
-	y = 3
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_research_trench_warfare }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = infantry_artillery_bonus
-			ahead_reduction = 1
-			uses = 1
-			category = artillery
-		}
-	} 
-} 
-
-focus = { 
-	id = MAI_general_proposal
-	icon = GFX_goal_rhineland
-	x = 24
-	y = 1
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofarmy }
-	mutually_exclusive = { focus = MAI_our_own_way }
-	mutually_exclusive = { focus = MAI_stephen_way }
-	ai_will_do = { 
-		factor = 1
-	}
-	completion_reward = { 
-		add_political_power = -50
-	} 
-
-} 
-
-focus = { 
-	id = MAI_bigger_conscription
-	icon = GFX_focus_prc_infiltration
-	x = 24
-	y = 2
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_general_proposal }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_manpower = 50000
-	} 
-} 
-
-focus = { 
-	id = MAI_bigger_and_better_cannons
-	icon = GFX_goal_generic_army_artillery2
-	x = 24
-	y = 3
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_bigger_conscription }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = infantry_artillery_bonus
-			ahead_reduction = 1
-			uses = 2
-			category = artillery
-		}
-		hidden_effect = {
-			set_country_flag = general_can_rebel_now
-		}
-	} 
-}
-
-focus = { 
-	id = MAI_new_planes
-	icon = GFX_goal_generic_air_fighter
-	x = 20
-	y = 4
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_tanks_and_motorized_research focus = MAI_artillery_research focus = MAI_bigger_and_better_cannons }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = fighter_bonus
-			bonus = 0.5
-			uses = 2
-			technology = early_fighter
-			technology = fighter1
-			technology = fighter2
-			technology = fighter3
-			technology = heavy_fighter1
-			technology = heavy_fighter2
-			technology = heavy_fighter3
-		}
-		add_tech_bonus = {
-			name = bomber_bonus
-			bonus = 0.5
-			uses = 2
-			technology = strategic_bomber1
-			technology = strategic_bomber2
-			technology = strategic_bomber3
-			category = tactical_bomber
-		}
-	} 
-} 
-focus = { 
-	id = MAI_new_equipment
-	icon = GFX_goal_generic_army_artillery
-	x = 22
-	y = 4
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_tanks_and_motorized_research focus = MAI_artillery_research focus = MAI_bigger_and_better_cannons }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = infantry_artillery_bonus
-			bonus = 0.75
-			uses = 1
-			category = infantry_weapons
-		}
-	} 
-}
-
-focus = { 
-	id = MAI_final_army_reforms
-	icon = GFX_focus_generic_support_the_left_right
-	x = 22
-	y = 5
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_new_equipment }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_research_slot = 1
-		add_war_support = 0.1
-	} 
-}
-
-focus = { 
-	id = MAI_new_navy
-	icon = GFX_goal_generic_navy_battleship
-	x = 24
-	y = 4
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_tanks_and_motorized_research focus = MAI_artillery_research focus = MAI_bigger_and_better_cannons }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		any_state = {
-			is_coastal = yes
-			is_controlled_by = ROOT
-		}
-	}
-	completion_reward = { 
-		random_owned_controlled_state = {
-			limit = {
-				is_coastal = yes
-			}
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = dockyard
-				level = 3
-				instant_build = yes
-			}
-		}
-		navy_experience = 25
-	} 
-}
-
-#Focus for The way of Economy
-focus = { 
-	id = MAI_thewayofeconomy
-	icon = GFX_goal_generic_consumer_goods
-	x = 17
-	y = 0
-	cost = 3
-	available_if_capitulated = yes 
-	available = {
-		custom_trigger_tooltip = {
-				tooltip = MAI_macius_crowned
-				has_global_flag = stephen_is_dead
-			}
-	}
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_tech_bonus = {
-			name = industrial_bonus
-			bonus = 0.5
-			uses = 1
-			category = industry
-		}
-	}		
-}
-
-#Focus for Modernize railway lines
-focus = { 
-	id = MAI_modernizerailwaylines
-	icon = GFX_goal_generic_construct_infrastructure
-	x = 18
-	y = 1
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofeconomy } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-	}
-	completion_reward = { 
-		random_owned_state = {
-		add_building_construction = { 
-			type = infrastructure
-			level = 1 
-			instant_build = yes }
-		}
-		random_owned_state = {
-		add_building_construction= { 
-			type = infrastructure 
-			level = 1 
-			instant_build = yes }
-		}
-		random_owned_state = {
-			add_building_construction = { 
-				type = infrastructure 
-				level = 2 
-				instant_build = yes }
-		}
-		hidden_effect = {
-			set_country_flag = lines_modernized
-		}
-	} 
-} 
-
-focus = { 
-	id = MAI_lubniewice_main
-	icon = GFX_goal_generic_construction
-	x = 18
-	y = 2
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_modernizerailwaylines }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		812 = {
-			add_building_construction= { 
-				type = infrastructure 
-				level = 2
-				instant_build = yes 
-			}
-		}
-	} 
-}
-
-focus = { 
-	id = MAI_electrification
-	icon = GFX_goal_generic_construction
-	x = 18
-	y = 3
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_lubniewice_main }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_political_power = -300
-		add_stability = 0.05
-	} 
-}
-
-focus = { 
-	id = MAI_new_airports
-	icon = GFX_goal_generic_air_bomber
-	x = 18
-	y = 4
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_electrification }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_political_power = -100
-		random_owned_state = {
-			add_building_construction = { 
-				type = air_base
-				level = 2 
-				instant_build = yes 
-			}
-		}
-	} 
-}
-
-#Focus for Northern Factory Center
-focus = { 
-	id = MAI_northernfactorycenter
-	icon = GFX_goal_generic_construct_mil_factory
-	x = 16
-	y = 1
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofeconomy } 
-	ai_will_do = { 
-		factor = 1
-	}
-	completion_reward = { 
-		792 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction= { 
-				type = arms_factory 
-				level = 2
-				instant_build = yes 
-			}
-		}
-		796 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction= { 
-				type = arms_factory 
-				level = 1 
-				instant_build = yes 
-			}
-		}
-		799 = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction= { 
-				type = arms_factory 
-				level = 1 
-				instant_build = yes 
-			}
-		}
-	} 
-
- } 
- 
- focus = { 
-	id = MAI_northernfactorycenter_pt2
-	icon = GFX_goal_generic_construct_civ_factory
-	x = 16
-	y = 2
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_northernfactorycenter } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		792 = {
-			add_building_construction= { 
-				type = infrastructure 
-				level = 2
-				instant_build = yes 
-			}
-		}
-		796 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction= { 
-				type = industrial_complex 
-				level = 1 
-				instant_build = yes 
-			}
-			add_building_construction= { 
-				type = arms_factory
-				level = 1 
-				instant_build = yes 
-			}
-			add_building_construction= { 
-				type = infrastructure 
-				level = 2
-				instant_build = yes 
-			}
-		}
-		799 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction= { 
-				type = industrial_complex 
-				level = 2
-				instant_build = yes 
-			}
-			add_building_construction= { 
-				type = infrastructure 
-				level = 2
-				instant_build = yes 
-			}
-		}
-
-	} 
-
- }
-
-focus = { 
-	id = MAI_extend_capital
-	icon = GFX_goal_generic_construct_infrastructure
-	x = 16
-	y = 3
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_northernfactorycenter_pt2 } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		812 = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction= { 
-				type = arms_factory
-				level = 2 
-				instant_build = yes 
-			}
-			add_building_construction= { 
-				type = infrastructure 
-				level = 1
-				instant_build = yes 
-			}
-		}
-	} 
-}
-
-focus = { 
-	id = MAI_expand_countryside
-	icon = GFX_goal_generic_construct_infrastructure
-	x = 16
-	y = 4
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_extend_capital } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		random_owned_state = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction= { 
-				type = arms_factory
-				level = 1 
-				instant_build = yes 
-			}
-		}
-		every_owned_state = {
-			add_building_construction= { 
-				type = infrastructure 
-				level = 1
-				instant_build = yes 
-			}
-		}
-	} 
-}
-
-focus = { 
-	id = MAI_new_technologies
-	icon = GFX_focus_research2
-	x = 17
-	y = 5
-	cost = 6
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_expand_countryside } 
-	prerequisite = { focus = MAI_new_airports }
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_research_slot = 1
-	} 
-}
-
-#Focus for The way of internal politics
-focus = { 
-	id = MAI_thewayofinternalpolitics
-	icon = GFX_goal_tfv_strengthen_commonwealth_ties
-	x = 12
-	y = 0
-	cost = 3
-	available_if_capitulated = yes 
-	available = {
-		custom_trigger_tooltip = {
-				tooltip = MAI_macius_crowned
-				has_global_flag = stephen_is_dead
-			}
-	}
-	ai_will_do = { 
-		factor = 1
-	} 
-	completion_reward = { 
-		add_political_power = 5
-	}
-	
-
-} 
-
-focus = { 
-	id = MAI_royal_decree_325
-	icon = GFX_goal_support_democracy
-	x = 12
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofinternalpolitics }
-	mutually_exclusive = { focus = MAI_strengthen_royal_power } 
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = 150
-		add_popularity = {
-   			ideology = democratic
-    		popularity = -0.05
-		}
-		add_popularity = {
-   			ideology = monarchism
-    		popularity = 0.05
-		}
-	}
-}
-
-focus = { 
-	id = MAI_appoint_new_ministers
-	icon = GFX_goal_generic_intelligence_exchange
-	x = 12
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_royal_decree_325 } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_political_power = 50
-		add_ideas = {
-			MAI_new_ministers
-		}
-	}
-}
-
-focus = { 
-	id = MAI_strengthen_royal_power
-	icon = GFX_focus_rom_royal_dictatorship
-	x = 10
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofinternalpolitics }
-	mutually_exclusive = { focus = MAI_royal_decree_325 }  
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = -250
-	}
-}
-
-focus = { 
-	id = MAI_deal_with_democrats
-	icon = GFX_focus_generic_strike_at_democracy2
-	x = 10
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_strengthen_royal_power } 
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_popularity = {
-   			ideology = democratic
-    		popularity = -0.1
-		}
-		add_popularity = {
-   			ideology = monarchism
-    		popularity = 0.1
-		}
-		add_stability = -0.1
-	}
-}
-
-focus = { 
-	id = MAI_expell_commies
-	icon = GFX_goal_anti_comintern_pact
-	x = 12
-	y = 3
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_appoint_new_ministers focus = MAI_deal_with_democrats } 
-	prerequisite = { focus = MAI_audience_for_children }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_stability = 0.15
-		add_political_power = 50
-		add_opinion_modifier = {
-			target = FLO
-			modifier = MAI_expelled_commies
-		}
-		remove_ideas = {
-			MAI_fighting_with_commies
-		}
-		FLO = {
-			country_event = {
-				id = flowerhill.2
-				days = 1
-			}
-			add_opinion_modifier = {
-				target = MAI
-				modifier = MAI_expelled_commies
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_education_reform
-	icon = GFX_focus_generic_self_management
-	x = 14
-	y = 1
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_thewayofinternalpolitics }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = -100
-		add_stability = 0.1
-	}
-}
-
-focus = { 
-	id = MAI_audience_for_children
-	icon = GFX_focus_generic_military_academy
-	x = 14
-	y = 2
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_education_reform }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_political_power = -50
-		add_ideas = {
-			MAI_audience_for_children_idea
-		}
-	}
-}
-
-focus = { 
-	id = MAI_children_gazette
-	icon = GFX_focus_hol_the_foundations_of_defense
-	x = 12
-	y = 4
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_expell_commies }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_political_power = -250
-		add_ideas = {
-			MAI_children_gazette_idea
-		}
-	}
-}
-
-focus = { 
-	id = MAI_for_king_and_country
-	icon = GFX_focus_generic_diplomatic_treaty
-	x = 12
-	y = 5
-	cost = 5
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_children_gazette }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_ideas = {
-			MAI_pro_rege_lege_et_grege
-		}
-	}
-}
-
-###CHILDREN PARLIAMENT
-
-focus = { 
-	id = MAI_children_parliament_focus
-	icon = GFX_focus_generic_the_giant_wakes
-	x = 9
-	y = 6
-	cost = 15
-	available_if_capitulated = yes
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_was_on_tungu_pungu
-			has_completed_focus = MAI_tungu_pungu
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_created_children_gazette
-			has_completed_focus = MAI_children_gazette
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_economy_can_handle_this
-			has_completed_focus = MAI_new_technologies
-		}
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_children_parliament_complete_tooltip
-		hidden_effect = {
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Macius I"
-				desc = "POLITICS_MACIUS_I_DESC"
-				picture = "macius.dds"
-				expire = "1965.1.1"
-				ideology = children_parliamentary_monarchy
-				traits = {
-					#
+			custom_effect_tooltip = MAI_emergency_fortifications
+			hidden_effect = {
+				812 = {
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 10163
+					}
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 10164
+					}
+				}
+				817 = {
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 10170
+					}
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 10177
+					}
+				}
+				822 = {
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 3270
+					}
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 1101
+					}
+				}
+				798 = {
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 10141
+					}
+					add_building_construction = {
+    					type = bunker
+    					level = 1
+    					instant_build = yes
+    					province = 3388
+					}
+					add_building_construction = {
+    					type = bunker
+						level = 1
+						instant_build = yes
+    					province = 1628
+					}
 				}
 			}
-			add_political_power = -300
-			news_event = {
-				id = worldnews.15
-				hours = 6
+		}
+	}
+
+	focus = { 
+		id = MAI_construct_makeshift_airfields
+		icon = GFX_goal_generic_air_fighter
+		x = -4
+		y = 1
+		relative_position_id = MAI_we_wont_give_in
+		cost = 1.25
+		available_if_capitulated = no 
+		prerequisite = { focus = MAI_we_wont_give_in }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			surrender_progress > 0.3
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_makeshift_airfields
+			hidden_effect = {
+				798 = {
+					add_building_construction = {
+    					type = air_base
+    					level = 1
+    					instant_build = yes
+					}
+				}
+				814 = {
+					add_building_construction = {
+    					type = air_base
+    					level = 1
+    					instant_build = yes
+					}
+				}
+				817 = {
+					add_building_construction = {
+    					type = air_base
+    					level = 1
+    					instant_build = yes
+					}
+				}
 			}
 		}
 	}
-}
 
-focus = { 
-	id = MAI_expand_parliament_jurisdiction
-	icon = GFX_goal_support_democracy
-	x = 8
-	y = 7
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_children_parliament_focus }
-	mutually_exclusive = { focus = MAI_tighten_parliament_liberties }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
+	focus = { 
+		id = MAI_international_reaction_to_invasion
+		icon = GFX_focus_hol_war_on_pacifism
+		x = 0
+		y = 1
+		relative_position_id = MAI_we_wont_give_in
+		cost = 0.25
+		available_if_capitulated = no 
+		prerequisite = { focus = MAI_we_wont_give_in }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+		}
 
-	completion_reward = {
-		add_political_power = -100
-		add_popularity = {
-   			ideology = democratic
-    		popularity = 0.1
-		}
-		add_popularity = {
-   			ideology = monarchism
-    		popularity = -0.2
-		}
-		add_popularity = {
-   			ideology = fascism
-    		popularity = 0.1
-		}
-		add_stability = -0.15
-	}
-}
-
-focus = { 
-	id = MAI_tighten_parliament_liberties
-	icon = GFX_goal_generic_neutrality_focus
-	x = 10
-	y = 7
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_children_parliament_focus }
-	mutually_exclusive = { focus = MAI_expand_parliament_jurisdiction }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		add_political_power = -150
-		add_popularity = {
-   			ideology = democratic
-    		popularity = 0.1
-		}
-		add_popularity = {
-   			ideology = monarchism
-    		popularity = -0.1
-		}
-		add_stability = -0.10
-	}
-}
-
-focus = { 
-	id = MAI_first_elections
-	icon = GFX_focus_generic_elections
-	x = 9
-	y = 8
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_expand_parliament_jurisdiction focus = MAI_tighten_parliament_liberties }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-	}
-
-	completion_reward = {
-		country_event = {
-			id = childrenparliament.1
-			days = 0
-		}
-		hidden_effect = {
-			activate_mission = MAI_next_seating_of_children_parliament
-		}
-	}
-}
-
-focus = { 
-	id = MAI_children_in_army_leadership
-	icon = GFX_goal_rhineland
-	x = 11
-	y = 9
-	cost = 3
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_first_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_children_in_army_leadership_yay
-			has_country_flag = children_in_army_leadership_yay
+		completion_reward = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = AVA
+						tag = LEC
+						AND = {
+							tag = JPN
+							NOT = {
+								has_government = fascism
+							}
+						}
+						AND = {
+							tag = TSA
+							NOT = {
+								has_government = fascism
+							}
+						}
+						tag = GRN
+						tag = DCB
+						AND = {
+							tag = SAN
+							NOT = {
+								has_war_with = SLD
+							}
+						}
+						AND = {
+							tag = SLD
+							NOT = {
+								has_government = fascism
+								has_government = communism
+								has_war_with = MAI
+							}
+						}
+						AND = {
+							tag = WEK
+							NOT = {
+								has_war_with = MAI
+							}
+						}
+					}
+					has_war = no
+				}
+				country_event = {
+					id = centralkingdom.47
+					days = 1
+				}
+			}
 		}
 	}
 
-	completion_reward = {
-		add_stability = -0.1
-		add_war_support = -0.15
-	}
-}
+	focus = { 
+		id = MAI_the_last_resort
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 1
+		relative_position_id = MAI_emergency_fortifications_around_capital
+		cost = 0.25
+		available_if_capitulated = no 
+		prerequisite = { focus = MAI_emergency_fortifications_around_capital }
+		prerequisite = { focus = MAI_construct_makeshift_airfields }
+		prerequisite = { focus = MAI_international_reaction_to_invasion }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			surrender_progress > 0.5
+		}
 
-focus = { 
-	id = MAI_adjusting_the_economy
-	icon = GFX_goal_generic_consumer_goods
-	x = 9
-	y = 9
-	cost = 3
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_first_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_adjusting_the_economy_yay
-			has_country_flag = adjusting_the_economy_yay
+		completion_reward = {
+			add_timed_idea = {
+				idea = MAI_no_stepping_back
+				days = 150
+			}
 		}
 	}
 
-	completion_reward = {
-		add_political_power = -100
-		add_stability = -0.05
-	}
-}
+	focus = { 
+		id = MAI_a_surprising_offensive
+		icon = GFX_focus_generic_support_the_left_right
+		x = 4
+		y = 1
+		relative_position_id = MAI_we_wont_give_in
+		cost = 0.75
+		available_if_capitulated = no 
+		prerequisite = { focus = MAI_we_wont_give_in }
+		ai_will_do = { 
+			factor = 1
+		} 
 
-focus = { 
-	id = MAI_talks_with_james
-	icon = GFX_focus_enchancia
-	x = 7
-	y = 9
-	cost = 3
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_first_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_talks_with_james_yay
-			has_country_flag = talks_with_james_yay
-		}
-		EN1 = {
-			exists = yes
-		}
-	}
-	bypass = {
-		EN1 = {
+		available = {
 			OR = {
-				exists = no
-				has_country_flag = bandits_army_sent
+				custom_trigger_tooltip = {
+					tooltip = if_at_war_with_fri_only
+					AND = {
+						has_war_with = FRI
+						NOT = {
+							has_war_with = WEK
+						}
+						NOT = {
+							has_war_with = SLD
+						}
+						FRI = {
+							surrender_progress > 0.00
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = if_at_war_with_fri_and_wek
+					AND = {
+						has_war_with = FRI
+						has_war_with = WEK
+						NOT = {
+							has_war_with = SLD
+						}
+						FRI = {
+							surrender_progress > 0.00
+						}
+						WEK = {
+							surrender_progress > 0.00
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = if_at_war_with_the_triumvirate
+					AND = {
+						has_war_with = FRI
+						has_war_with = WEK
+						has_war_with = SLD
+						FRI = {
+							surrender_progress > 0.00
+						}
+						WEK = {
+							surrender_progress > 0.00
+						}
+						SLD = {
+							surrender_progress > 0.00
+						}
+					}
+				}
 			}
+		}
+
+		completion_reward = {
+			add_war_support = 0.15
 		}
 	}
 
-	completion_reward = {
-		add_political_power = 50
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = enchancian_civil_war_over
+	focus = { 
+		id = MAI_sign_separate_peace_with_others
+		icon = GFX_goal_tripartite_pact
+		x = 0
+		y = 1
+		relative_position_id = MAI_a_surprising_offensive
+		cost = 0.75
+		available_if_capitulated = no 
+		prerequisite = { focus = MAI_a_surprising_offensive }
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		available = {
+			OR = {
+				AND = {
+					has_war_with = SLD
+					SLD = {
+						is_puppet = no
+					}
 				}
-			}
-			EN1 = {
-				hidden_effect = {
-					set_country_flag = enchancian_civil_war_made_me_do_this
-				}
+				has_war_with = WEK
 			}
 		}
-		if = {
-			limit = {
-				has_global_flag = enchancian_civil_war_over
-			}
-			EN1 = {
-				country_event = {
-					id = enchancia.71
-					days = 1
+
+		bypass = {
+			NOT = {
+				AND = {
+					has_war_with = SLD
+					SLD = {
+						is_puppet = no
+					}
 				}
+				has_war_with = WEK
 			}
 		}
-	}
-}
 
-focus = { 
-	id = MAI_hartmut_crisis
-	icon = GFX_goal_generic_political_pressure
-	x = 9
-	y = 10
-	cost = 1
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_children_in_army_leadership }
-	prerequisite = { focus = MAI_adjusting_the_economy }
-	prerequisite = { focus = MAI_talks_with_james }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = { 
-		custom_trigger_tooltip = {
-			tooltip = MAI_hartumut_demands
-			has_country_flag = hartmut_demands
-		}
-	}
-
-	completion_reward = {
-		add_stability = -0.05
-		add_war_support = 0.1
-		add_political_power = 20
-	}
-}
-
-focus = { 
-	id = MAI_withdraw_role_change_law
-	icon = GFX_goal_generic_major_alliance
-	x = 19
-	y = 11
-	cost = 20
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_hartmut_crisis }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		OR = {
-			has_completed_focus = MAI_we_wont_give_in
-			has_completed_focus = MAI_reform_the_parliament
-		}
-	}
-
-	completion_reward = {
-		remove_ideas = {
-			MAI_the_great_switcheroo
-		}
-		add_stability = 0.05
-		add_political_power = -250
-	}
-}
-
-focus = { 
-	id = MAI_reform_the_parliament
-	icon = GFX_goal_generic_dangerous_deal
-	x = 14
-	y = 11
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_hartmut_crisis }
-	mutually_exclusive = { focus = MAI_we_wont_give_in }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_agreed_to_reform_parliament
-			has_country_flag = agreed_to_reform_parliament
-		}
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_parliament_reforms
-		hidden_effect = {
-			set_country_flag = parliament_reformed
-			set_country_flag = national_children_party_formed
-			FRI = {
-				country_event = {
-					id = centralkingdom.33
-					days = 1
+		completion_reward = {
+			if = {
+				limit = {
+					has_war_with = WEK
 				}
-			}
-			news_event = {
-				id = worldnews.27
-				hours = 6
-			}
-			country_event = {
-				id = childrenparliament.15
-				days = 5
-			}
-			remove_mission = MAI_next_seating_of_children_parliament
-		}
-	}
-}
-
-focus = { 
-	id = MAI_another_elections
-	icon = GFX_focus_generic_elections
-	x = 14
-	y = 12
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_reform_the_parliament }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_new_parties_ready
-			has_country_flag = national_children_party_formed
-			has_country_flag = free_future_party_formed
-			has_country_flag = time_for_kids_formed
-			has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_formed
-		}
-	}
-
-	completion_reward = {
-		hidden_effect = {
-			812 = {
-				random_list = {
-					
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			858 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			808 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			803 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			789 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			814 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			822 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			824 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			817 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			798 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			796 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			792 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			799 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			831 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			852 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
-					}
-				}
-			}
-			843 = {
-				random_list = {
-					25 = {
-						set_variable = { ncp_popularity_in_state = 0.55 }
-						set_variable = { ffp_popularity_in_state = 0.25 }
-						set_variable = { tfk_popularity_in_state = 0.15 }
-						set_variable = { ccfrok_popularity_in_state = 0.05 }	
-					}
-					25 = {
-						set_variable = { ffp_popularity_in_state = 0.55 }
-						set_variable = { ncp_popularity_in_state = 0.25 }
-						set_variable = { ccfrok_popularity_in_state = 0.15 }
-						set_variable = { tfk_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { tfk_popularity_in_state = 0.55 }
-						set_variable = { ccfrok_popularity_in_state = 0.25 }
-						set_variable = { ncp_popularity_in_state = 0.15 }
-						set_variable = { ffp_popularity_in_state = 0.05 }
-					}
-					25 = {
-						set_variable = { ccfrok_popularity_in_state = 0.55 }
-						set_variable = { tfk_popularity_in_state = 0.25 }
-						set_variable = { ffp_popularity_in_state = 0.15 }
-						set_variable = { ncp_popularity_in_state = 0.05 }
+				WEK = {
+					country_event = {
+						id = centralkingdom.48
+						days = 1
 					}
 				}
 			}
 			if = {
 				limit = {
-					MAI = {
-						owns_state = 773
-						owns_state = 776
-						owns_state = 767
-						owns_state = 736
-					}
+					has_war_with = SLD
 				}
-				773 = {
-					random_list = {
-						25 = {
-							set_variable = { ncp_popularity_in_state = 0.55 }
-							set_variable = { ffp_popularity_in_state = 0.25 }
-							set_variable = { tfk_popularity_in_state = 0.15 }
-							set_variable = { ccfrok_popularity_in_state = 0.05 }	
-						}
-						25 = {
-							set_variable = { ffp_popularity_in_state = 0.55 }
-							set_variable = { ncp_popularity_in_state = 0.25 }
-							set_variable = { ccfrok_popularity_in_state = 0.15 }
-							set_variable = { tfk_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { tfk_popularity_in_state = 0.55 }
-							set_variable = { ccfrok_popularity_in_state = 0.25 }
-							set_variable = { ncp_popularity_in_state = 0.15 }
-							set_variable = { ffp_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { ccfrok_popularity_in_state = 0.55 }
-							set_variable = { tfk_popularity_in_state = 0.25 }
-							set_variable = { ffp_popularity_in_state = 0.15 }
-							set_variable = { ncp_popularity_in_state = 0.05 }
-						}
-					}
-				}
-				776 = {
-					random_list = {
-						25 = {
-							set_variable = { ncp_popularity_in_state = 0.55 }
-							set_variable = { ffp_popularity_in_state = 0.25 }
-							set_variable = { tfk_popularity_in_state = 0.15 }
-							set_variable = { ccfrok_popularity_in_state = 0.05 }	
-						}
-						25 = {
-							set_variable = { ffp_popularity_in_state = 0.55 }
-							set_variable = { ncp_popularity_in_state = 0.25 }
-							set_variable = { ccfrok_popularity_in_state = 0.15 }
-							set_variable = { tfk_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { tfk_popularity_in_state = 0.55 }
-							set_variable = { ccfrok_popularity_in_state = 0.25 }
-							set_variable = { ncp_popularity_in_state = 0.15 }
-							set_variable = { ffp_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { ccfrok_popularity_in_state = 0.55 }
-							set_variable = { tfk_popularity_in_state = 0.25 }
-							set_variable = { ffp_popularity_in_state = 0.15 }
-							set_variable = { ncp_popularity_in_state = 0.05 }
-						}
-					}
-				}
-				767 = {
-					random_list = {
-						25 = {
-							set_variable = { ncp_popularity_in_state = 0.55 }
-							set_variable = { ffp_popularity_in_state = 0.25 }
-							set_variable = { tfk_popularity_in_state = 0.15 }
-							set_variable = { ccfrok_popularity_in_state = 0.05 }	
-						}
-						25 = {
-							set_variable = { ffp_popularity_in_state = 0.55 }
-							set_variable = { ncp_popularity_in_state = 0.25 }
-							set_variable = { ccfrok_popularity_in_state = 0.15 }
-							set_variable = { tfk_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { tfk_popularity_in_state = 0.55 }
-							set_variable = { ccfrok_popularity_in_state = 0.25 }
-							set_variable = { ncp_popularity_in_state = 0.15 }
-							set_variable = { ffp_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { ccfrok_popularity_in_state = 0.55 }
-							set_variable = { tfk_popularity_in_state = 0.25 }
-							set_variable = { ffp_popularity_in_state = 0.15 }
-							set_variable = { ncp_popularity_in_state = 0.05 }
-						}
-					}
-				}
-				736 = {
-					random_list = {
-						25 = {
-							set_variable = { ncp_popularity_in_state = 0.55 }
-							set_variable = { ffp_popularity_in_state = 0.25 }
-							set_variable = { tfk_popularity_in_state = 0.15 }
-							set_variable = { ccfrok_popularity_in_state = 0.05 }	
-						}
-						25 = {
-							set_variable = { ffp_popularity_in_state = 0.55 }
-							set_variable = { ncp_popularity_in_state = 0.25 }
-							set_variable = { ccfrok_popularity_in_state = 0.15 }
-							set_variable = { tfk_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { tfk_popularity_in_state = 0.55 }
-							set_variable = { ccfrok_popularity_in_state = 0.25 }
-							set_variable = { ncp_popularity_in_state = 0.15 }
-							set_variable = { ffp_popularity_in_state = 0.05 }
-						}
-						25 = {
-							set_variable = { ccfrok_popularity_in_state = 0.55 }
-							set_variable = { tfk_popularity_in_state = 0.25 }
-							set_variable = { ffp_popularity_in_state = 0.15 }
-							set_variable = { ncp_popularity_in_state = 0.05 }
-						}
-					}
-				}
-			}
-			every_owned_state = {
-				execute_dhondt_method = yes
-			}
-			activate_mission = MAI_next_seating_of_children_parliament
-		}
-		set_politics = {
-			ruling_party = monarchism
-			elections_allowed = yes
-			election_frequency = 24
-		}
-	}
-}
-
-focus = { 
-	id = MAI_national_children_party_won
-	icon = GFX_focus_rom_royal_dictatorship
-	x = 11
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_another_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_country_flag = national_children_party_wins
-	}
-
-	completion_reward = {
-	}
-}
-
-focus = { 
-	id = MAI_regaining_the_trust
-	icon = GFX_goal_generic_national_unity
-	x = 11
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_national_children_party_won }
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = coalition_or_majority
-			has_country_flag = government_has_majority_or_coalition
-		}
-	}
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_stability = 0.05
-		add_political_power = 10
-	}
-}
-
-focus = { 
-	id = MAI_reach_out_to_duckburg
-	icon = GFX_goal_generic_improve_relations
-	x = 11
-	y = 15
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_regaining_the_trust }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = 25
-		add_opinion_modifier = {
-			target = DCB
-			modifier = TCWmod_generic_relations
-		}
-		DCB = {
-			add_opinion_modifier = {
-				target = MAI
-				modifier = TCWmod_generic_relations
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_free_future_party_won
-	icon = GFX_focus_research
-	x = 13
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_another_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_country_flag = free_future_party_wins
-	}
-
-	completion_reward = {
-	}
-}
-
-focus = { 
-	id = MAI_creation_of_technological_bureau
-	icon = GFX_focus_research2
-	x = 13
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_free_future_party_won }
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = coalition_or_majority
-			has_country_flag = government_has_majority_or_coalition
-		}
-	}
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_ideas = {
-			MAI_technological_bureau
-		}
-	}
-}
-
-focus = { 
-	id = MAI_operation_colonization
-	icon = GFX_goal_generic_navy_battleship
-	x = 13
-	y = 15
-	cost = 16
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_creation_of_technological_bureau }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		has_navy_size = {
-    		size > 7
-   			type = screen_ship
-		}
-	}
-
-	bypass = {
-		always = yes
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_colonization
-		hidden_effect = {
-			random_list = {
-				60 = {
-					transfer_state = 782
-					782 = {
-						add_manpower = 10000
-						add_building_construction = {
-    						type = naval_base
-    						level = 1
-    						instant_build = yes
-    						province = 2664
-						}
-					}
-				}
-				30 = {
-					transfer_state = 31
-					31 = {
-						add_manpower = 10000
-						add_building_construction = {
-    						type = naval_base
-    						level = 1
-    						instant_build = yes
-    						province = 95
-						}
-					}
-				}
-				10 = {
-					transfer_state = 642
-					642 = {
-						add_manpower = 10000
-						add_building_construction = {
-    						type = naval_base
-    						level = 1
-    						instant_build = yes
-    						province = 9074
-						}
+				SLD = {
+					country_event = {
+						id = centralkingdom.48
+						days = 1
 					}
 				}
 			}
 		}
 	}
-}
 
-focus = { 
-	id = MAI_time_for_kids_won
-	icon = GFX_focus_hol_abandon_the_gold_standard
-	x = 15
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_another_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_country_flag = time_for_kids_wins
-	}
-
-	completion_reward = {
-	}
-}
-
-focus = { 
-	id = MAI_lower_the_prices
-	icon = GFX_focus_generic_treaty
-	x = 15
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_time_for_kids_won }
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = coalition_or_majority
-			has_country_flag = government_has_majority_or_coalition
+	focus = { 
+		id = MAI_seashore_in_exchange_for_peace
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = -6
+		y = 1
+		relative_position_id = MAI_the_last_resort
+		cost = 0.25
+		available_if_capitulated = no 
+		mutually_exclusive = {
+			focus = MAI_only_a_total_victory
+			focus = MAI_exile_him_to_the_colony
 		}
-	}
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_stability = 0.1
-		add_political_power = -150
-	}
-}
-
-focus = { 
-	id = MAI_education_reform_new
-	icon = GFX_focus_generic_military_academy
-	x = 15
-	y = 15
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_lower_the_prices }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_stability = 0.05
-		add_political_power = -200
-	}
-}
-
-focus = { 
-	id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
-	icon = GFX_focus_mex_privatisation
-	x = 17
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_another_elections }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		always = no
-	}
-	bypass = {
-		has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
-	}
-
-	completion_reward = {
-	}
-}
-
-focus = { 
-	id = MAI_privatisation
-	icon = GFX_focus_eng_concessions_to_the_trade_unions
-	x = 17
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = coalition_or_majority
-			has_country_flag = government_has_majority_or_coalition
+		prerequisite = { focus = MAI_the_last_resort focus = MAI_sign_separate_peace_with_others }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			OR = {
+				FRI = {
+					surrender_progress > 0.20
+				}
+				custom_trigger_tooltip = {
+					tooltip = zawady_are_ours
+					controls_province = 10529
+				}
+				custom_trigger_tooltip = {
+					tooltip = southern_canal_is_ours
+					controls_province = 1160
+				}
+			}
 		}
-	}
-	ai_will_do = { 
-		factor = 1
-	}
 
-	completion_reward = {
-		add_stability = -0.1
-		add_political_power = 50
-	}
-}
-
-focus = { 
-	id = MAI_lift_the_limits
-	icon = GFX_goal_generic_improve_relations
-	x = 17
-	y = 15
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_privatisation }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_stability = -0.15
-		add_political_power = 100
-	}
-}
-
-focus = { 
-	id = MAI_we_wont_give_in
-	icon = GFX_goal_generic_demand_territory
-	x = 4
-	y = 11
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_hartmut_crisis }
-	mutually_exclusive = { focus = MAI_reform_the_parliament }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_denied_reforming_parliament
-			has_country_flag = denied_reforming_parliament
-		}
-	}
-	bypass = {
-		has_war_with = FRI
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_denied_reforms
-		hidden_effect = {
+		completion_reward = {
 			FRI = {
 				country_event = {
-					id = centralkingdom.32
-					days = 1
-				}
-			}
-			news_event = {
-				id = worldnews.26
-				hours = 6
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_emergency_fortifications_around_capital
-	icon = GFX_goal_generic_fortify_city
-	x = 2
-	y = 12
-	cost = 3
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_we_wont_give_in }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		has_war_with = FRI
-		surrender_progress > 0.3
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_emergency_fortifications
-		hidden_effect = {
-			812 = {
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 10163
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 10164
-				}
-			}
-			817 = {
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 10170
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 10177
-				}
-			}
-			822 = {
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 3270
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 1101
-				}
-			}
-			798 = {
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 10141
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 3388
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 1628
-				}
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_construct_makeshift_airfields
-	icon = GFX_goal_generic_air_fighter
-	x = 4
-	y = 12
-	cost = 3
-	available_if_capitulated = no 
-	prerequisite = { focus = MAI_we_wont_give_in }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		has_war_with = FRI
-		surrender_progress > 0.3
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_makeshift_airfields
-		hidden_effect = {
-			798 = {
-				add_building_construction = {
-    				type = air_base
-    				level = 1
-    				instant_build = yes
-				}
-			}
-			814 = {
-				add_building_construction = {
-    				type = air_base
-    				level = 1
-    				instant_build = yes
-				}
-			}
-			817 = {
-				add_building_construction = {
-    				type = air_base
-    				level = 1
-    				instant_build = yes
-				}
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_international_reaction_to_invasion
-	icon = GFX_focus_hol_war_on_pacifism
-	x = 6
-	y = 12
-	cost = 3
-	available_if_capitulated = no 
-	prerequisite = { focus = MAI_we_wont_give_in }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		has_war_with = FRI
-	}
-
-	completion_reward = {
-		#here will be events
-	}
-}
-
-focus = { 
-	id = MAI_the_last_resort
-	icon = GFX_goal_generic_defence
-	x = 4
-	y = 13
-	cost = 3
-	available_if_capitulated = no 
-	prerequisite = { focus = MAI_emergency_fortifications_around_capital }
-	prerequisite = { focus = MAI_construct_makeshift_airfields }
-	prerequisite = { focus = MAI_international_reaction_to_invasion }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		has_war_with = FRI
-		surrender_progress > 0.5
-	}
-
-	completion_reward = {
-		add_timed_idea = {
-			idea = MAI_no_stepping_back
-			days = 150
-		}
-	}
-}
-
-focus = { 
-	id = MAI_foreign_politics_of_parliament
-	icon = GFX_goal_generic_position_armies
-	x = 26
-	y = 11
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_hartmut_crisis }
-	ai_will_do = { 
-		factor = 1
-	} 
-	available = {
-		OR = {
-			has_completed_focus = MAI_we_wont_give_in
-			AND = {
-				has_completed_focus = MAI_reform_the_parliament
-				custom_trigger_tooltip = {
-					tooltip = coalition_or_majority
-					has_country_flag = government_has_majority_or_coalition
+					id = centralkingdom.49
+					days = 0
 				}
 			}
 		}
 	}
 
-	completion_reward = {
-		add_political_power = 50
-	}
-}
-
-focus = { 
-	id = MAI_a_look_to_the_east
-	icon = GFX_goal_generic_military_sphere
-	x = 21
-	y = 12
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_foreign_politics_of_parliament }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_chp_look_to_the_east
-	}
-}
-
-focus = { 
-	id = MAI_base_on_tungupungu
-	icon = GFX_goal_generic_intelligence_exchange
-	x = 20
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_a_look_to_the_east }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = -300
-		TUG = {
-			24 = {
-				add_building_construction = {
-					type = naval_base
-					level = 6
-					instant_build = yes
-					province = 9069
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 5
-					instant_build = yes
-				}
-			}
-			give_military_access = MAI
+	focus = { 
+		id = MAI_we_were_on_the_verge_of_greatness
+		icon = GFX_goal_demand_sudetenland
+		x = 0
+		y = 3
+		relative_position_id = MAI_seashore_in_exchange_for_peace
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_seashore_in_exchange_for_peace 
+			focus = MAI_exile_him_to_the_colony
 		}
-	}
-}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
 
-focus = { 
-	id = MAI_liberation_of_greenland
-	icon = GFX_goal_generic_major_war
-	x = 20
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_base_on_tungupungu }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		GRN = {
-			exists = no
-		}
-		DES = {
-			exists = yes
-		}
-		NOT = {
-			has_war_with = DES
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_grn
-			has_country_flag = MAI_parliament_passed_grn_flag
-		}
-	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = DES
-			type = liberate_wargoal
-		}
-	}
-}
-
-focus = { 
-	id = MAI_our_own_colonies
-	icon = GFX_goal_generic_navy_battleship
-	x = 22
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_a_look_to_the_east }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_colonies
-			has_country_flag = MAI_parliament_passed_colonies_flag
-		}
-	}
-
-	completion_reward = {
-		add_political_power = -200
-		custom_effect_tooltip = MAI_colonies
-		hidden_effect = {
-			transfer_state = 788
-			788 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 1854
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 3
-					instant_build = yes
-				}
-				add_manpower = 10000
-			}
-		}
-	}
-}
-
-focus = { 
-	id = MAI_tungupungu_pact
-	icon = GFX_goal_generic_improve_relations
-	x = 22
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_our_own_colonies }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		add_political_power = -100
-		TUG = {
+		completion_reward = {
 			country_event = {
-				id = centralkingdom.34
-				days = 1
+				id = centralkingdom.52
+				days = 0
 			}
 		}
 	}
-}
 
-focus = { 
-	id = MAI_menaces_in_the_north
-	icon = GFX_goal_generic_attack_allies
-	x = 26
-	y = 12
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_foreign_politics_of_parliament }
-	ai_will_do = { 
-		factor = 1
-	}
+	focus = { 
+		id = MAI_i_see_through_your_lies_macius
+		icon = GFX_focus_rom_handle_king
+		x = -1
+		y = 1
+		relative_position_id = MAI_we_were_on_the_verge_of_greatness
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_were_on_the_verge_of_greatness }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
 
-	completion_reward = {
-		custom_effect_tooltip = MAI_chp_menaces_in_the_north
-	}
-}
-
-focus = { 
-	id = MAI_greenland_as_the_base_of_operations
-	icon = GFX_focus_greenland
-	x = 25
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_menaces_in_the_north }
-	mutually_exclusive = { focus = MAI_duckburg_as_the_base_of_operations }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		GRN = {
-			exists = yes
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
 		}
 	}
 
-	completion_reward = {
-		add_political_power = -300
-		GRN = {
-			355 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
+	focus = { 
+		id = MAI_dont_lecture_me_felix
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 1
+		y = 1
+		relative_position_id = MAI_we_were_on_the_verge_of_greatness
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_were_on_the_verge_of_greatness }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_a_second_horror
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
+		relative_position_id = MAI_dont_lecture_me_felix
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_dont_lecture_me_felix }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = yes
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_the_second_horror
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_cleaning_up_the_mess
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = MAI_a_second_horror
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_a_second_horror }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.53
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_we_still_have_work_to_do
+		icon = GFX_goal_generic_major_alliance
+		x = 0
+		y = 1
+		relative_position_id = MAI_cleaning_up_the_mess
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_cleaning_up_the_mess }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_cleanup_after_civil_war_finished
+				NOT = {
+					has_idea = MAI_aftermath_of_civil_war_3
 				}
 			}
-			359 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_unlock_international_part_of_the_tree
+		}
+	}
+
+	focus = { 
+		id = MAI_exile_him_to_the_colony
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = MAI_the_last_resort
+		cost = 0.25
+		available_if_capitulated = no 
+		mutually_exclusive = {
+			focus = MAI_only_a_total_victory
+			focus = MAI_seashore_in_exchange_for_peace
+		}
+		prerequisite = { focus = MAI_the_last_resort focus = MAI_sign_separate_peace_with_others }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			OR = {
+				FRI = {
+					surrender_progress > 0.20
+				}
+				custom_trigger_tooltip = {
+					tooltip = zawady_are_ours
+					controls_province = 10529
+				}
+				custom_trigger_tooltip = {
+					tooltip = southern_canal_is_ours
+					controls_province = 1160
 				}
 			}
-			366 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			439 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 7786
+		}
+
+		completion_reward = {
+			FRI = {
+				country_event = {
+					id = centralkingdom.50
+					days = 0
 				}
 			}
 		}
 	}
-}
 
-focus = { 
-	id = MAI_duckburg_as_the_base_of_operations
-	icon = GFX_goal_generic_military_deal
-	x = 27
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_menaces_in_the_north }
-	mutually_exclusive = { focus = MAI_greenland_as_the_base_of_operations }
-	ai_will_do = { 
-		factor = 1
-	}
+	focus = { 
+		id = MAI_we_won_whats_next
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 3
+		relative_position_id = MAI_exile_him_to_the_colony
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_seashore_in_exchange_for_peace 
+			focus = MAI_exile_him_to_the_colony 
+			focus = MAI_only_a_total_victory
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
 
-	completion_reward = {
-		add_political_power = -200
-		if = {
-			limit = {
-				is_in_faction = no
-			}
-			DCB = {
-				give_military_access = MAI
-			}
-		}
-		if = {
-			limit = {
-				is_in_faction = yes
-			}
-			add_to_faction = DCB
-		}
-	}
-}
-
-focus = { 
-	id = MAI_liberation_of_unity_peninsula
-	icon = GFX_goal_generic_major_war
-	x = 24
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
-	mutually_exclusive = { focus = MAI_when_two_quarrel focus = MAI_contain_lord_shen }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		SQU = {
-			exists = no
-		}
-		DUC = {
-			exists = no
-		}
-		BIR = {
-			exists = no
-		}
-		TRL = {
-			exists = no
-		}
-		FLO = {
-			exists = yes
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_unity
-			has_country_flag = MAI_parliament_passed_unity_flag
-		}
-	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = FLO
-			type = liberate_wargoal
-		}
-	}
-}
-
-focus = { 
-	id = MAI_when_two_quarrel
-	icon = GFX_focus_generic_military_mission
-	x = 26
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
-	mutually_exclusive = { focus = MAI_liberation_of_unity_peninsula focus = MAI_contain_lord_shen }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		FLO = {
-			has_war_with = GON
-		}
-		GON = {
-			has_war_with = FLO
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_quarrel
-			has_country_flag = MAI_parliament_passed_quarrel_flag
-		}
-	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = FLO
-			type = annex_everything
-		}
-		declare_war_on = {
-			target = GON
-			type = annex_everything
-		}
-	}
-}
-
-focus = { 
-	id = MAI_contain_lord_shen
-	icon = GFX_goal_generic_major_war
-	x = 28
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_greenland_as_the_base_of_operations focus = MAI_duckburg_as_the_base_of_operations }
-	mutually_exclusive = { focus = MAI_liberation_of_unity_peninsula focus = MAI_when_two_quarrel }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		GON = {
-			exists = yes
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_shen
-			has_country_flag = MAI_parliament_passed_shen_flag
-		}
-	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = GON
-			type = annex_everything
-		}
-	}
-}
-
-focus = { 
-	id = MAI_everrealm_sphere
-	icon = GFX_focus_generic_home_defense
-	x = 31
-	y = 12
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_foreign_politics_of_parliament }
-	ai_will_do = { 
-		factor = 1
-	}
-
-	completion_reward = {
-		custom_effect_tooltip = MAI_chp_everrealm_sphere
-	}
-}
-
-focus = { 
-	id = MAI_operation_enchancian_freedom
-	icon = GFX_focus_enchancia
-	x = 31
-	y = 13
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_everrealm_sphere }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		OR = {
-			EN3 = {
-				exists = yes
-			}
-			EN4 = {
-				exists = yes
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.54
+				days = 0
 			}
 		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_enchancian_freedom
-			has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
-		}
 	}
-	bypass = {
-		EN3 = {
-			exists = no
+
+	focus = { 
+		id = MAI_parliament_was_an_error
+		icon = GFX_focus_usa_voter_registration_act
+		x = -2
+		y = 1
+		relative_position_id = MAI_we_won_whats_next
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_won_whats_next }
+		mutually_exclusive = {
+			focus = MAI_we_need_to_be_more_cautious
+			focus = MAI_they_were_right
 		}
-		EN4 = {
-			exists = no
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
 		}
 	}
 
-	completion_reward = {
-		if = {
-			limit = {
-				EN3 = {
-					exists = yes
+	focus = { 
+		id = MAI_return_to_sole_monarchy
+		icon = GFX_focus_generic_monarchy_2
+		x = 0
+		y = 1
+		relative_position_id = MAI_parliament_was_an_error
+		cost = 14.3
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_parliament_was_an_error 
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_children_parliament_withdrawn_tooltip
+			hidden_effect = {
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "Macius I"
+					desc = "POLITICS_MACIUS_I_DESC"
+					picture = "macius.dds"
+					expire = "1965.1.1"
+					ideology = administrative_monarchy
+					traits = {
+						underage_monarch
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = MAI_the_reformer
+					}
+					add_country_leader_trait = the_reformer
+				}
+			#	news_event = {
+			#		id = worldnews.15
+			#		hours = 6
+			#	}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_we_need_to_be_more_cautious
+		icon = GFX_goal_generic_dangerous_deal
+		x = 0
+		y = 1
+		relative_position_id = MAI_we_won_whats_next
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_won_whats_next }
+		mutually_exclusive = {
+			focus = MAI_parliament_was_an_error
+			focus = MAI_they_were_right
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_partification_of_parliament
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = MAI_we_need_to_be_more_cautious
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_need_to_be_more_cautious }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_partification_additional_info
+		}
+	}
+
+	focus = { 
+		id = MAI_they_were_right
+		icon = GFX_goal_generic_forceful_treaty
+		x = 2
+		y = 1
+		relative_position_id = MAI_we_won_whats_next
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_we_won_whats_next }
+		mutually_exclusive = {
+			focus = MAI_parliament_was_an_error
+			focus = MAI_we_need_to_be_more_cautious
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_abdication
+		icon = GFX_focus_rom_abdicate
+		x = 0
+		y = 1
+		relative_position_id = MAI_they_were_right
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_they_were_right }
+		ai_will_do = { 
+			factor = 1
+		} 
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_macius_abdicates
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+				election_frequency = 24
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_only_a_total_victory
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = MAI_sign_separate_peace_with_others
+		cost = 0.25
+		available_if_capitulated = no 
+		mutually_exclusive = {
+			focus = MAI_exile_him_to_the_colony
+			focus = MAI_seashore_in_exchange_for_peace
+		}
+		prerequisite = { focus = MAI_sign_separate_peace_with_others }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war_with = FRI
+			OR = {
+				FRI = {
+					surrender_progress > 0.20
+				}
+				custom_trigger_tooltip = {
+					tooltip = zawady_are_ours
+					controls_province = 10529
+				}
+				custom_trigger_tooltip = {
+					tooltip = southern_canal_is_ours
+					controls_province = 1160
 				}
 			}
-			declare_war_on = {
-				target = EN3
+		}
+
+		completion_reward = {
+			FRI = {
+				every_owned_state = {
+					add_claim_by = MAI
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_ive_been_betrayed
+		icon = GFX_goal_generic_territory_or_war
+		x = 0
+		y = 3
+		relative_position_id = MAI_only_a_total_victory
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_only_a_total_victory }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_my_eyes_have_seen_the_glory
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_betrayal_in_my_country
+		icon = GFX_goal_generic_political_pressure
+		x = -1
+		y = 1
+		relative_position_id = MAI_ive_been_betrayed
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_ive_been_betrayed }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.55
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_betrayal_outside_my_country
+		icon = GFX_goal_generic_position_armies
+		x = 1
+		y = 1
+		relative_position_id = MAI_ive_been_betrayed
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = { focus = MAI_ive_been_betrayed }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.56
+				days = 0
+			}
+			every_country = {
+				limit = {
+					has_country_flag = refused_help_to_macius
+				}
+				country_event = {
+					id = centralkingdom.56
+					days = 0
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_they_will_remember_my_name
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 0
+		y = 2
+		relative_position_id = MAI_ive_been_betrayed
+		cost = 7.25
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_betrayal_outside_my_country
+			focus = MAI_betrayal_in_my_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_cult_of_macius
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_old_macius_is_dead
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 0
+		y = 1
+		relative_position_id = MAI_they_will_remember_my_name
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_they_will_remember_my_name
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.56
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_kill_the_past
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
+		relative_position_id = MAI_old_macius_is_dead
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_old_macius_is_dead
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			create_wargoal = {
+				target = SLD
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = WEK
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = FRI
 				type = annex_everything
 			}
 		}
-		if = {
-			limit = {
+	}
+
+	focus = { 
+		id = MAI_now_they_suffer_like_me
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = 0
+		y = 1
+		relative_position_id = MAI_kill_the_past
+		cost = 1.5
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_kill_the_past
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+		}
+
+		completion_reward = {
+			every_state = {
+				limit = {
+					OR = {
+						is_core_of = JPN
+						is_core_of = LEC
+						is_core_of = PAT
+						is_core_of = SMU
+						is_core_of = TSA
+						is_core_of = MOO
+						is_core_of = DCB
+						is_core_of = VIS
+						is_core_of = MUS
+						is_core_of = UND
+						is_core_of = SAN
+						is_core_of = GUM
+						is_core_of = BRO
+						is_core_of = GRY
+						is_core_of = PDX
+						is_core_of = SKO
+						is_core_of = KPT
+					}
+					NOT = {
+						is_owned_by = MAI
+						is_claimed_by = MAI
+					}
+				}
+				add_claim_by = MAI
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_nobody_but_me
+		icon = GFX_focus_ger_reichskommisariats
+		x = 0
+		y = 1
+		relative_position_id = MAI_now_they_suffer_like_me
+		cost = 0.25
+		available_if_capitulated = no
+		prerequisite = { 
+			focus = MAI_now_they_suffer_like_me
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = half_of_the_continent_is_ours
+				JPN = {
+					is_puppet_of = MAI
+				}
+				LEC = {
+					is_puppet_of = MAI
+				}
+				PAT = {
+					is_puppet_of = MAI
+				}
+				SMU = {
+					is_puppet_of = MAI
+				}
+				TSA = {
+					is_puppet_of = MAI
+				}
+				MOO = {
+					is_puppet_of = MAI
+				}
+				BRO = {
+					is_puppet_of = MAI
+				}
+				GRY = {
+					is_puppet_of = MAI
+				}
+				VIS = {
+					is_puppet_of = MAI
+				}
+				MUS = {
+					is_puppet_of = MAI
+				}
+				UND = {
+					is_puppet_of = MAI
+				}
+				SAN = {
+					is_puppet_of = MAI
+				}
+				GUM = {
+					is_puppet_of = MAI
+				}
+				DCB = {
+					is_puppet_of = MAI
+				}
+			}
+		}
+
+		completion_reward = {
+			country_event = {
+				id = centralkingdom.58
+				days = 0
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_the_reconstruction
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 3
+		relative_position_id = MAI_hartmut_crisis
+		cost = 7.25
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 	
+		id = MAI_move_funds_from_parliament_to_reconstruction
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 1
+		relative_position_id = MAI_the_reconstruction
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_the_reconstruction
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_civil_war_1
+				add_idea = MAI_aftermath_of_civil_war_2
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_introduce_new_construction_technologies
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 1
+		relative_position_id = MAI_move_funds_from_parliament_to_reconstruction
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_move_funds_from_parliament_to_reconstruction
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_civil_war_2
+				add_idea = MAI_aftermath_of_civil_war_3
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_mend_the_rift_between_north_and_south
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = MAI_move_funds_from_parliament_to_reconstruction
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_move_funds_from_parliament_to_reconstruction
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = -50
+		}
+	}
+
+	focus = { 	
+		id = MAI_borrow_funds_from_duckburg
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		relative_position_id = MAI_the_reconstruction
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_the_reconstruction
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			DCB = {
+				OR = {
+					is_puppet = yes
+					exists = no
+				}
+			}
+		}
+		
+		completion_reward = {
+			DCB = {
+				country_event = {
+					id = centralkingdom.59
+					days = 1
+				}
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_attract_more_investors
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = MAI_borrow_funds_from_duckburg
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_borrow_funds_from_duckburg
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = {
+				MAI_investments_boom
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_relaunch_trade
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 2
+		y = 1
+		relative_position_id = MAI_borrow_funds_from_duckburg
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_borrow_funds_from_duckburg
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = closed_economy
+				add_idea = export_focus
+			}
+		}
+	}
+
+	focus = { 	
+		id = MAI_united_once_more
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 2
+		relative_position_id = MAI_borrow_funds_from_duckburg
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = {
+			focus = MAI_relaunch_trade
+		}
+		prerequisite = {
+			focus = MAI_attract_more_investors
+		}
+		prerequisite = {
+			focus = MAI_mend_the_rift_between_north_and_south
+		}
+		prerequisite = {
+			focus = MAI_introduce_new_construction_technologies
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_civil_war_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_a_new_foreign_policy
+		icon = GFX_goal_generic_position_armies
+		x = 22
+		y = 20
+		cost = 1.5
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = MAI_we_still_have_work_to_do
+					has_completed_focus = MAI_return_to_sole_monarchy
+					has_completed_focus = MAI_partification_of_parliament
+					has_completed_focus = MAI_abdication
+				}
+				AND = {
+					has_completed_focus = MAI_reform_the_parliament
+					custom_trigger_tooltip = {
+						tooltip = coalition_or_majority
+						has_country_flag = government_has_majority_or_coalition
+					}
+					OR = {
+						has_completed_focus = MAI_sign_final_reconstruction_bill
+						has_completed_focus = MAI_trade_restoration_bill
+						has_completed_focus = MAI_good_old_times_bill
+						has_completed_focus = MAI_easier_life_bill
+					}
+				}
+			}
+		}
+	
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+	focus = { 
+		id = MAI_a_look_to_the_east
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 1
+		relative_position_id = MAI_a_new_foreign_policy
+		cost = 3.70
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_new_foreign_policy }
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = MAI_chp_look_to_the_east
+		}
+	}
+	
+	focus = { 
+		id = MAI_base_on_tungupungu
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -2
+		y = 1
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_look_to_the_east }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			TUG = {
+				exists = yes
+			}
+		}
+	
+		completion_reward = {
+			TUG = {
+				24 = {
+					add_building_construction = {
+						type = naval_base
+						level = 4
+						instant_build = yes
+						province = 9069
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 4
+						instant_build = yes
+					}
+				}
+				give_military_access = MAI
+			}
+			give_guarantee = TUG
+		}
+	}
+	
+	focus = { 
+		id = MAI_our_own_colonies
+		icon = GFX_goal_generic_navy_battleship
+		x = 0
+		y = 1
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_look_to_the_east }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_colonies
+				has_country_flag = MAI_parliament_passed_colonies_flag
+			}
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = MAI_colonies
+			hidden_effect = {
+				set_country_flag = limited_colonies_enabled
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_ambassador_to_sioux
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_look_to_the_east }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			SIO = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		bypass = {
+			SIO = {
+				OR = {
+					exists = no
+					is_in_faction_with = MAI
+				}
+			}
+		}
+	
+		completion_reward = {
+			add_opinion_modifier = {
+				target = SIO
+				modifier = MAI_true_relations
+			}
+			SIO = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_true_relations
+				}	
+				give_military_access = MAI	
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_liberation_of_greenland
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 2
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { 
+			focus = MAI_base_on_tungupungu 
+			focus = MAI_ambassador_to_sioux
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = MAI_establish_relations_with_greenland
+		}
+		available = {
+			GRN = {
+				exists = no
+			}
+			439 = {
+				owner = {
+					OR = {
+						is_puppet = yes
+						tag = ICW
+						tag = DES
+					}
+					NOT = {
+						tag = GRN
+					}
+				}
+			}
+			NOT = {
+				has_war_with = 439.Owner
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_grn
+				has_country_flag = MAI_parliament_passed_grn_flag
+			}
+			has_war = no
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = 439.Owner
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					DES = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = DES
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					ICW = {
+						exists = yes
+						is_puppet = no
+					}
+				}
+				create_wargoal = {
+					target = ICW
+					type = annex_everything
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_establish_relations_with_greenland
+		icon = GFX_focus_greenland
+		x = 1
+		y = 2
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { 
+			focus = MAI_base_on_tungupungu 
+			focus = MAI_ambassador_to_sioux
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		mutually_exclusive = {
+			focus = MAI_liberation_of_greenland
+		}
+		available = {
+			GRN = {
+				exists = yes
+			}
+		}
+	
+		completion_reward = {
+			add_opinion_modifier = {
+				target = GRN
+				modifier = MAI_true_relations
+			}
+			give_military_access = GRN
+			GRN = {
+				add_opinion_modifier = {
+					target = MAI
+					modifier = MAI_true_relations
+				}	
+				give_military_access = MAI	
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_democracy_turned_red
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 3
+		relative_position_id = MAI_a_look_to_the_east
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { 
+			focus = MAI_liberation_of_greenland 
+			focus = MAI_establish_relations_with_greenland
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			TSA = {
+				has_government = fascism
+			}
+			has_war = no
+		}
+
+		bypass = {
+			has_war_with = TSA
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = TSA
+				type = annex_everything
+			}
+		}
+	}
+	
+	focus = { 
+		id = MAI_where_red_terror_ends
+		icon = GFX_goal_anti_comintern_pact
+		x = -2
+		y = 1
+		relative_position_id = MAI_democracy_turned_red
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_democracy_turned_red }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			FLO = {
+				exists = yes
+				has_war_with = GRN
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_unity
+				has_country_flag = MAI_parliament_passed_unity_flag
+			}
+			has_war = no
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = FLO
+				type = annex_everything
+			}
+		}
+	}
+	
+	focus = { 
+		id = MAI_contain_lord_shen
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
+		relative_position_id = MAI_democracy_turned_red
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_democracy_turned_red }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			GON = {
+				exists = yes
+				has_war_with = GRN
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_shen
+				has_country_flag = MAI_parliament_passed_shen_flag
+			}
+			has_war = no
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = GON
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_end_of_the_god
+		icon = GFX_goal_generic_major_war
+		x = 2
+		y = 1
+		relative_position_id = MAI_democracy_turned_red
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_democracy_turned_red }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			DIO = {
+				exists = yes
+				has_war = yes
+			}
+			has_war = no
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = DIO
+				type = annex_everything
+			}
+		}
+	}
+	
+	focus = { 
+		id = MAI_look_west
+		icon = GFX_focus_generic_home_defense
+		x = -6
+		y = 1
+		relative_position_id = MAI_a_new_foreign_policy
+		cost = 3.70
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_new_foreign_policy }
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = MAI_chp_look_west
+		}
+	}
+
+	focus = { 
+		id = MAI_aid_lechina_empire
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = -1
+		y = 1
+		relative_position_id = MAI_look_west
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_look_west }
+		mutually_exclusive = {
+			focus = MAI_aid_japanifornia
+		}
+		available = {
+			LEC = {
+				exists = yes
+				has_war_with = JPN
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			LEC = {
+				give_military_access = MAI
+			}
+			give_military_access = LEC
+			create_wargoal = {
+				target = JPN
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_aid_japanifornia
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 1
+		y = 1
+		relative_position_id = MAI_look_west
+		cost = 1.5
+		available_if_capitulated = yes 
+		mutually_exclusive = {
+			focus = MAI_aid_lechina_empire
+		}
+		prerequisite = { focus = MAI_look_west }
+		available = {
+			JPN = {
+				exists = yes
+				NOT = {
+					has_government = fascism
+				}
+				has_war_with = LEC
+			}
+			has_war = no
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			JPN = {
+				give_military_access = MAI
+			}
+			give_military_access = JPN
+			create_wargoal = {
+				target = LEC
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_send_ambassador_to_avalor
+		icon = GFX_goal_tripartite_pact
+		x = 1
+		y = 1
+		relative_position_id = MAI_aid_lechina_empire
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { 
+			focus = MAI_aid_lechina_empire 
+			focus = MAI_aid_japanifornia
+		}
+		available = {
+			AVA = {
+				exists = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		bypass = {
+			AVA = {
+				is_in_faction_with = MAI
+			}
+		}
+	
+		completion_reward = {
+			AVA = {
+				give_military_access = MAI
+			}
+			give_military_access = AVA
+		}
+	}
+	
+	focus = { 
+		id = MAI_operation_enchancian_freedom
+		icon = GFX_focus_enchancia
+		x = -1
+		y = 1
+		relative_position_id = MAI_send_ambassador_to_avalor
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_send_ambassador_to_avalor }
+		mutually_exclusive = {
+			focus = MAI_resume_contact_with_enchancia
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
+			OR = {
+				EN3 = {
+					exists = yes
+				}
 				EN4 = {
 					exists = yes
 				}
 			}
-			declare_war_on = {
-				target = EN4
-				type = annex_everything
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_enchancian_freedom
+				has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+			}
+			has_war = no
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = EN3
+				has_war_with = EN4
 			}
 		}
-		if = {
-			limit = {
-				ENC = {
-					exists = yes
-					has_cosmetic_tag = WIN
+	
+		completion_reward = {
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN3
+					type = annex_everything
 				}
 			}
-			add_to_faction = ENC
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN4
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+						has_cosmetic_tag = WIN
+					}
+				}
+				add_to_faction = ENC
+			}
 		}
 	}
-}
 
-focus = { 
-	id = MAI_free_khaldoun
-	icon = GFX_focus_generic_anti_fascist_diplomacy
-	x = 30
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_operation_enchancian_freedom }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		KHA = {
-			has_government = fascism
+	focus = { 
+		id = MAI_resume_contact_with_enchancia
+		icon = GFX_focus_enchancia
+		x = 1
+		y = 1
+		relative_position_id = MAI_send_ambassador_to_avalor
+		cost = 1.5
+		available_if_capitulated = yes 
+		mutually_exclusive = {
+			focus = MAI_operation_enchancian_freedom
 		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_khaldoun
-			has_country_flag = MAI_parliament_passed_khaldoun_flag
+		prerequisite = { 
+			focus = MAI_send_ambassador_to_avalor 
+		}
+		available = {
+			OR = {
+				ENC = {
+					exists = yes
+				}
+				EN1 = {
+					exists = yes
+				}
+				EN2 = {
+					exists = yes
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			ENC = {
+				give_military_access = MAI
+			}
+			give_military_access = ENC
 		}
 	}
-	bypass = {
-		NOT = {
+	
+	focus = { 
+		id = MAI_free_khaldoun
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 0
+		y = 1
+		relative_position_id = MAI_resume_contact_with_enchancia
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_resume_contact_with_enchancia focus = MAI_operation_enchancian_freedom }
+		ai_will_do = { 
+			factor = 1
+		}
+		available = {
 			KHA = {
 				has_government = fascism
 			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_khaldoun
+				has_country_flag = MAI_parliament_passed_khaldoun_flag
+			}
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					KHA = {
+						has_government = fascism
+					}
+				}
+				has_war_with = KHA
+			}
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = KHA
+				type = annex_everything
+			}
 		}
 	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = KHA
-			type = annex_everything
+	
+	focus = { 
+		id = MAI_free_rudistan
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 0
+		y = 2
+		relative_position_id = MAI_resume_contact_with_enchancia
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_free_khaldoun }
+		ai_will_do = { 
+			factor = 1
 		}
-	}
-}
-
-focus = { 
-	id = MAI_free_rudistan
-	icon = GFX_focus_generic_anti_fascist_diplomacy
-	x = 30
-	y = 15
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_free_khaldoun }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		RUD = {
-			has_government = fascism
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_rudistan
-			has_country_flag = MAI_parliament_passed_rudistan_flag
-		}
-	}
-	bypass = {
-		NOT = {
+		available = {
 			RUD = {
 				has_government = fascism
 			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_rudistan
+				has_country_flag = MAI_parliament_passed_rudistan_flag
+			}
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					RUD = {
+						has_government = fascism
+					}
+				}
+				has_war_with = RUD
+			}
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = RUD
+				type = annex_everything
+			}
 		}
 	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = RUD
-			type = annex_everything
+	
+	focus = { 
+		id = MAI_free_corinthia
+		icon = GFX_goal_anti_comintern_pact
+		x = 0
+		y = 1
+		relative_position_id = MAI_operation_enchancian_freedom
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_operation_enchancian_freedom focus = MAI_resume_contact_with_enchancia }
+		ai_will_do = { 
+			factor = 1
 		}
-	}
-}
-
-focus = { 
-	id = MAI_free_corinthia
-	icon = GFX_goal_anti_comintern_pact
-	x = 32
-	y = 14
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_operation_enchancian_freedom }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		COR = {
-			has_government = communism
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_corinthia
-			has_country_flag = MAI_parliament_passed_corinthia_flag
-		}
-	}
-	bypass = {
-		NOT = {
+		available = {
 			COR = {
 				has_government = communism
 			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_corinthia
+				has_country_flag = MAI_parliament_passed_corinthia_flag
+			}
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					COR = {
+						has_government = communism
+					}
+				}
+				has_war_with = COR
+			}
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = COR
+				type = annex_everything
+			}
 		}
 	}
-
-	completion_reward = {
-		declare_war_on = {
-			target = COR
-			type = annex_everything
+	
+	focus = { 
+		id = MAI_free_trufflandia
+		icon = GFX_goal_anti_comintern_pact
+		x = 0
+		y = 2
+		relative_position_id = MAI_operation_enchancian_freedom
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_free_corinthia }
+		ai_will_do = { 
+			factor = 1
 		}
-	}
-}
-
-focus = { 
-	id = MAI_free_trufflandia
-	icon = GFX_goal_anti_comintern_pact
-	x = 32
-	y = 15
-	cost = 10
-	available_if_capitulated = yes 
-	prerequisite = { focus = MAI_free_corinthia }
-	ai_will_do = { 
-		factor = 1
-	}
-	available = {
-		TRU = {
-			has_government = communism
-		}
-		custom_trigger_tooltip = {
-			tooltip = MAI_parliament_passed_trufflandia
-			has_country_flag = MAI_parliament_passed_trufflandia_flag
-		}
-	}
-	bypass = {
-		NOT = {
+		available = {
 			TRU = {
 				has_government = communism
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_parliament_passed_trufflandia
+				has_country_flag = MAI_parliament_passed_trufflandia_flag
+			}
+		}
+		bypass = {
+			OR = {
+				NOT = {
+					TRU = {
+						has_government = communism
+					}
+				}
+				has_war_with = TRU
+			}
+		}
+	
+		completion_reward = {
+			create_wargoal = {
+				target = TRU
+				type = annex_everything
 			}
 		}
 	}
 
-	completion_reward = {
-		declare_war_on = {
-			target = TRU
-			type = annex_everything
+	focus = { 
+		id = MAI_towards_a_stable_world
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 4
+		y = 1
+		relative_position_id = MAI_a_new_foreign_policy
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_new_foreign_policy }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_intervention_in_west_finished
+				OR = {
+					has_completed_focus = MAI_aid_lechina_empire
+					has_completed_focus = MAI_aid_japanifornia
+				}
+				has_war = no
+			}
+		}
+	
+		completion_reward = {
+			create_faction = stabilization_pact
+			custom_effect_tooltip = MAI_invitations_to_the_pact_in_decisions
 		}
 	}
-}
+
+	focus = { 
+		id = MAI_a_more_serious_politics
+		icon = GFX_focus_generic_home_defense
+		x = 8
+		y = 1
+		relative_position_id = MAI_a_new_foreign_policy
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_new_foreign_policy }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_reached_adulthood
+				date > 1945.10.02
+				has_country_leader = {
+					name = "Maciej I"
+					ruling_only = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_is_sane
+				NOT = {
+					has_completed_focus = MAI_ive_been_betrayed
+				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_reached_adulthood
+				date > 1945.10.02
+				has_country_leader = {
+					name = "Maciej I"
+					ruling_only = yes
+				}
+				NOT = {
+					has_completed_focus = MAI_ive_been_betrayed
+				}
+			}
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = MAI_this_tree_will_unlock_when_macius_reaches_adulthood
+		}
+	}
+
+	focus = { 
+		id = MAI_the_kingdom_must_have_a_queen
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 0
+		y = 1
+		relative_position_id = MAI_a_more_serious_politics
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_more_serious_politics }
+		ai_will_do = { 
+			factor = 1
+		}
+	
+		completion_reward = {
+			#event
+		}
+	}
+
+	focus = { 
+		id = MAI_queen_from_enchancia
+		icon = GFX_focus_unknown #change to Sofia
+		x = -3
+		y = 1
+		relative_position_id = MAI_the_kingdom_must_have_a_queen
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_kingdom_must_have_a_queen }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			always = no
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_eternal_alliance_with_enchancia
+		icon = GFX_focus_enchancia
+		x = 0
+		y = 1
+		relative_position_id = MAI_queen_from_enchancia
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_queen_from_enchancia }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_sofia_is_the_queen
+				has_country_flag = queen_sofia
+			}
+		}
+	
+		completion_reward = {
+			#event for alliance
+		}
+	}
+
+	focus = { 
+		id = MAI_queen_from_avalor
+		icon = GFX_focus_unknown #change to Isabel
+		x = -1
+		y = 1
+		relative_position_id = MAI_the_kingdom_must_have_a_queen
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_kingdom_must_have_a_queen }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			always = no
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_eternal_alliance_with_avalor
+		icon = GFX_focus_unknown #change to Avalor perhaps?
+		x = 0
+		y = 1
+		relative_position_id = MAI_queen_from_avalor
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_queen_from_avalor }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_isabel_is_the_queen
+				has_country_flag = queen_isabel
+			}
+		}
+	
+		completion_reward = {
+			#event for alliance
+		}
+	}
+
+	focus = { 
+		id = MAI_queen_from_tungu_pungu
+		icon = GFX_focus_unknown #change to Klu-Klu
+		x = 3
+		y = 1
+		relative_position_id = MAI_the_kingdom_must_have_a_queen
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_kingdom_must_have_a_queen }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			always = no
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_help_tungu_pungu_gain_power
+		icon = GFX_focus_unknown #change to Tungu Pungu
+		x = 0
+		y = 1
+		relative_position_id = MAI_queen_from_tungu_pungu
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_queen_from_tungu_pungu }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_klu_klu_is_the_queen
+				has_country_flag = queen_klu_klu
+			}
+			TUG = {
+				exists = yes
+			}
+		}
+	
+		completion_reward = {
+			#event for alliance
+		}
+	}
+
+	focus = { 
+		id = MAI_queen_commoner
+		icon = GFX_focus_unknown #change to Hanna
+		x = 1
+		y = 1
+		relative_position_id = MAI_the_kingdom_must_have_a_queen
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_kingdom_must_have_a_queen }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		available = {
+			always = no
+		}
+	
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_second_generation_in_parliament
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 0
+		y = 1
+		relative_position_id = MAI_queen_commoner
+		cost = 1.5
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_queen_commoner }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		allow_branch = {
+			always = no
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_hanna_is_the_queen
+				has_country_flag = queen_hanna
+			}
+		}
+	
+		completion_reward = {
+			#event for second generation in parliament
+		}
+	}
+
+	focus = { 
+		id = MAI_aftermath_of_the_ten_days
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 37
+		y = 21
+		cost = 10
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+
+		completion_reward = {
+            custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = MAI_bail_out_national_factories
+		icon = GFX_focus_mex_privatisation
+		x = -1
+		y = 1
+		relative_position_id = MAI_aftermath_of_the_ten_days
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_aftermath_of_the_ten_days }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_technological_bureau
+			}
+			add_research_slot = 1
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_resume_the_production
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 2
+		relative_position_id = MAI_aftermath_of_the_ten_days
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_bail_out_national_factories }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_provide_additional_workforce
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		relative_position_id = MAI_aftermath_of_the_ten_days
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_aftermath_of_the_ten_days }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_manpower = -5000
+		}
+	}
+
+	focus = { 
+		id = MAI_start_restoring_social_benefits
+		icon = GFX_focus_generic_concessions
+		x = 1
+		y = 2
+		relative_position_id = MAI_aftermath_of_the_ten_days
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_provide_additional_workforce }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+
+	focus = { 
+		id = MAI_stability_restored
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 0
+		y = 3
+		relative_position_id = MAI_aftermath_of_the_ten_days
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_resume_the_production }
+		prerequisite = { focus = MAI_start_restoring_social_benefits }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
+	#	AA   AA RRRRRR  MM MM MM  YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA RR  RR  MM    MM   YYY        TTT   RR  RR  EE      EE      
+	#	AA   AA RR   RR MM    MM   YYY        TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	####################################################################################################
+                                                                    
+
+	focus = {
+		id = MAI_generic_army_effort
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 28
+		y = 0
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_crowned
+				has_global_flag = stephen_is_dead
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_weapon_development
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = MAI_generic_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = MAI_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_artillery_research
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = MAI_generic_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = MAI_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_new_officer_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = MAI_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_motorization_effort
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = MAI_generic_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = MAI_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_doctrine_effort
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAI_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_weapons_and_co
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = MAI_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = MAI_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_practice_reverse_engineering
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = MAI_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = MAI_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_study_foreign_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MAI_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_mechanization_effort
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = MAI_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = MAI_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_doctrine_effort_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = MAI_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_military_academy
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = MAI_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_weapon_development_3
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = MAI_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_armor_effort
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = MAI_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_special_forces
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = MAI_generic_weapon_development_3 }
+		prerequisite = { focus = MAI_generic_military_academy }
+		prerequisite = { focus = MAI_generic_armor_effort }
+		prerequisite = { focus = MAI_generic_new_officer_corps }
+		prerequisite = { focus = MAI_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = MAI_generic_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = MAI_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 40
+		y = 0
+		cost = 7.25
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = MAI_generic_naval_effort }
+		mutually_exclusive = { focus = MAI_generic_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = MAI_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = MAI_generic_naval_effort }
+		mutually_exclusive = { focus = MAI_generic_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = MAI_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = MAI_generic_flexible_navy focus = MAI_generic_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = MAI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = MAI_generic_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = MAI_generic_flexible_navy focus = MAI_generic_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = MAI_generic_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = MAI_generic_large_navy focus = MAI_generic_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = MAI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = MAI_generic_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = MAI_generic_large_navy focus = MAI_generic_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = MAI_generic_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = MAI_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_airforce
+		x = 40
+		y = 11
+		cost = 7.25
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_macius_crowned
+				has_global_flag = stephen_is_dead
+			}
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MAI_generic_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = MAI_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = MAI_generic_fighter_focus }
+		prerequisite = { focus = MAI_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = MAI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = MAI_generic_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = MAI_generic_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = MAI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MAI_generic_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = MAI_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_research
+		prerequisite = { focus = MAI_generic_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = MAI_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MAI_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = MAI_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = MAI_generic_heavy_fighter_focus }
+		prerequisite = { focus = MAI_generic_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = MAI_generic_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = MAI_generic_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = MAI_generic_heavy_fighter_focus }
+		prerequisite = { focus = MAI_generic_CAS_effort }
+		prerequisite = { focus = MAI_generic_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = MAI_generic_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = MAI_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = MAI_generic_aviation_effort_2 }
+		prerequisite = { focus = MAI_generic_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = MAI_generic_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 
 
 

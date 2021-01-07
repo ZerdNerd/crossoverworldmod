@@ -4,9 +4,25 @@ state={
 	provinces={
 		771 2025 5629 5965 
 	}
-	manpower=0
+	manpower=200000
+	state_category = town
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = WOR
+		add_core_of = WOR
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			771 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			771 10
+		}
+	}
+	resources = {
+		wood = 5
+		oil = 5
 	}
 }

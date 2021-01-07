@@ -195,6 +195,24 @@ scripted_gui = {
                             }
                         }
                     }
+                    AND = {
+                        ROOT = {
+                            tag = MAI
+                            has_country_flag = limited_colonies_enabled
+                        }
+                        THIS = {
+                            is_owned_by = UNC
+                            OR = {
+                                state = 945
+                                state = 68
+                                state = 940
+                                state = 928
+                                state = 72
+                                state = 71
+                                state = 52
+                            }
+                        }
+                    }
                 }
             }
         }

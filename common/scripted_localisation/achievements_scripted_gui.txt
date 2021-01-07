@@ -91,6 +91,20 @@ defined_text = { #CUSTOM ACHIEVEMENT TITLES
         }
         localization_key = "Achievement_Zero_Redeeming_Qualities"
     }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 14 }
+        }
+        localization_key = "Achievement_There_Will_Be_No_Funeral"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 15 }
+        }
+        localization_key = "Achievement_The_Darkest_Dream"
+    }
     
 }
 
@@ -186,6 +200,20 @@ defined_text = { #CUSTOM ACHIEVEMENT DESCRIPTIONS
             check_variable = { v = 13 }
         }
         localization_key = "Achievement_Zero_Redeeming_Qualities_desc"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 14 }
+        }
+        localization_key = "Achievement_There_Will_Be_No_Funeral_desc"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 15 }
+        }
+        localization_key = "Achievement_The_Darkest_Dream_desc"
     }
 
     
@@ -284,6 +312,20 @@ defined_text = { #CUSTOM ACHIEVEMENT IMAGE
         }
         localization_key = "GFX_Achievement_Zero_Redeeming_Qualities_Image"
     }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 14 }
+        }
+        localization_key = "GFX_Achievement_There_Will_Be_No_Funeral_Image"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 15 }
+        }
+        localization_key = "GFX_Achievement_The_Darkest_Dream_Image"
+    }
 }
 
 defined_text = { #CUSTOM ACHIEVEMENT REQUIREMENT TOOLTIP
@@ -379,5 +421,46 @@ defined_text = { #CUSTOM ACHIEVEMENT REQUIREMENT TOOLTIP
         }
         localization_key = "Achievement_Zero_Redeeming_Qualities_Requirements"
     }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 14 }
+        }
+        localization_key = "Achievement_There_Will_Be_No_Funeral_Requirements"
+    }
+
+    text = { 
+        trigger = {
+            check_variable = { v = 15 }
+        }
+        localization_key = "Achievement_The_Darkest_Dream_Requirements"
+    }
     
+}
+
+defined_text = { #ALTERING ACHIEVEMENT DESCRIPTIONS FROM HERE DOWN
+    name = TDD_REQ_DYNAMIC
+
+    text = { 
+        trigger = {
+            MAI = {
+                has_completed_focus = MAI_ive_been_betrayed
+                is_ai = no
+            }
+        }
+        localization_key = "King Macius must have the whole colonized world under his boot."
+    }
+
+    text = { 
+        trigger = {
+            MAI = {
+                NOT = {
+                    has_completed_focus = MAI_ive_been_betrayed
+                }
+                is_ai = no
+            }
+        }
+        localization_key = "Play your cards right, and you will know where said path begins."
+    }
+
 }

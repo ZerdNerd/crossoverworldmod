@@ -134,25 +134,13 @@ country_event = {
 
 	option = {
 		name = childrenparliament.5.a
-		add_ideas = {
-			MAI_the_great_switcheroo
-		}
 		hidden_effect = {
 			clr_country_flag = MAI_chp_topic_1_taken_option_1
 			clr_country_flag = MAI_chp_rcl_proposed
 			set_country_flag = MAI_chp_topic_1_not_taken
 			set_country_flag = MAI_chp_topic_2_not_taken
 			set_country_flag = MAI_chp_topic_3_not_taken
-			news_event = {
-				id = worldnews.16
-				days = 9
-			}
-			FRI = {
-				country_event = {
-					id = centralkingdom.29
-					days = 14
-				}
-			}
+			set_country_flag = role_change_law_passed
 			activate_mission = MAI_next_seating_of_children_parliament
 		}
 	}

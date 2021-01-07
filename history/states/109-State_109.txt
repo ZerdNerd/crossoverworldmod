@@ -2,11 +2,30 @@ state={
 	id=109
 	name="STATE_109"
 	provinces={
-		977 1499 1502 2852 2906 4267 6014 6021 6034 
+		977 1499 2852 4267 6014 6021 6034 6036 4970 
 	}
-	manpower=0
+	manpower=1650000
+	state_category = metropolis
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = ELW
+		add_core_of = ELW
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+			dockyard = 2
+			4267 = {
+				naval_base = 3
+			}
+		}
+		victory_points = {
+			4267 20
+		}
+	}
+	resources = {
+		steel = 20
+		aluminium = 10
+		tungsten = 10
 	}
 }

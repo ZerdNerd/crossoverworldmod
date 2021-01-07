@@ -2,11 +2,16 @@ state={
 	id=77
 	name="STATE_77"
 	provinces={
-		653 1103 2098 3271 
+		653 2098 3271 
 	}
-	manpower=0
+	manpower=100000
+	state_category = rural
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = WOR
+		add_core_of = WOR
+		buildings = {
+			infrastructure = 2
+		}
 	}
 }

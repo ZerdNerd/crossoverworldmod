@@ -102,12 +102,13 @@ ideas = {
 	
 			modifier = {
 				trade_opinion_factor = 0.15
+				political_power_gain = 0.1
 			}
 		}
 
 		MAI_gained_shore = {
 			
-			picture = eng_steady_as_she_goes
+			picture = idea_generic_the_london_naval_treaty
 
 			allowed = {
 				always = no
@@ -124,7 +125,7 @@ ideas = {
 
 		MAI_new_ministers = {
 			
-			picture = generic_pp_unity_bonus
+			picture = idea_prc_low_popular_support3
 
 			allowed = {
 				always = no
@@ -134,29 +135,28 @@ ideas = {
 				production_speed_industrial_complex_factor = 0.1
 				production_speed_arms_factory_factor = 0.1
 				production_speed_synthetic_refinery_factor = 0.1
-				consumer_goods_factor = 0.01
+				consumer_goods_factor = 0.05
 			}
 		}
 
 		MAI_audience_for_children_idea = {
 			
-			picture = generic_victors_of_ww1
+			picture = idea_generic_army_war_college
 
 			allowed = {
 				always = no
 			}
 	
 			modifier = {
-				production_speed_industrial_complex_factor = 0.1
-				production_speed_arms_factory_factor = 0.1
-				production_speed_synthetic_refinery_factor = 0.1
+				stability_factor = 0.05
 				consumer_goods_factor = 0.01
+				political_power_gain = -0.01
 			}
 		}
 
 		MAI_pro_rege_lege_et_grege = {
 			
-			picture = eng_tackle_capitalism
+			picture = idea_generic_monarchist_uprising
 
 			allowed = {
 				always = no
@@ -174,7 +174,7 @@ ideas = {
 
 		MAI_open_rail_market = {
 			
-			picture = can_patriation
+			picture = idea_generic_build_infrastructure
 
 			allowed = {
 				always = no
@@ -187,18 +187,23 @@ ideas = {
 
 		MAI_the_great_switcheroo = {
 			
-			picture = FRA_factory_strikes
+			picture = idea_generic_constitutional_guarantee
 
 			allowed = {
 				always = no
 			}
 	
 			modifier = {
-				stability_factor = -0.15
-				surrender_limit = -0.2
-				political_power_gain = -0.03
-				military_leader_cost_factor = -0.75
-				army_org = -3
+				stability_factor = -0.25
+				surrender_limit = -0.25
+				political_power_gain = -0.15
+				military_leader_cost_factor = 0.25
+				consumer_goods_factor = 0.2
+				war_support_factor = -0.25
+				production_speed_buildings_factor = -0.25 
+				production_factory_efficiency_gain_factor = -0.25
+				production_factory_max_efficiency_factor = -0.5
+				army_org = -5
 				attrition = 0.15
 			}
 		}
@@ -860,7 +865,7 @@ ideas = {
 		}
 
 		ENC_aftermath_of_civil_war = {
-			picture = chi_army_corruption
+			picture = idea_chi_hyper_inflation
 			allowed = {
 				always = no
 			}
@@ -2286,7 +2291,7 @@ ideas = {
 
 		TCWMod_black_monday = {
 			
-			picture = great_depression
+			picture = idea_usa_great_depression_2
 
 			allowed = {
 				always = no
@@ -3204,8 +3209,325 @@ ideas = {
 			}
 	
 			modifier = {
-				foreign_subversive_activites = -1
+				foreign_subversive_activites = -100
 				encryption = 100
+			}
+		}
+
+		MAI_king_of_children = {
+			
+			picture = trumpet
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		MAI_the_chocolate_and_carousels = {
+			
+			picture = MAI_landlocked
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.05
+				political_power_factor = -0.025
+			}
+		}
+
+		MAI_the_constitution = {
+			
+			picture = HUN_treaty_of_triannon
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				stability_factor = 0.05
+				political_power_factor = 0.1
+				industrial_capacity_factory = 0.1
+				research_speed_factor = 0.05
+			}
+		}
+
+		MAI_pioneer_camps = {
+			
+			picture = spr_torchbearers_of_tomorrow
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.02
+				stability_factor = 0.05
+				political_power_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.15
+			}
+		}
+
+		MAI_aftermath_of_role_change_law_1 = {
+			
+			picture = idea_usa_great_depression_3
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.2
+				surrender_limit = -0.2
+				political_power_gain = -0.15
+				military_leader_cost_factor = 0.25
+				consumer_goods_factor = 0.2
+				war_support_factor = -0.25
+				production_speed_buildings_factor = -0.2
+				production_factory_efficiency_gain_factor = -0.25
+				production_factory_max_efficiency_factor = -0.4
+				army_org = -4
+				attrition = 0.15
+			}
+		}
+
+		MAI_aftermath_of_role_change_law_2 = {
+			
+			picture = idea_usa_great_depression_2
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.15
+				surrender_limit = -0.1
+				political_power_gain = -0.1
+				consumer_goods_factor = 0.1
+				war_support_factor = -0.15
+				production_speed_buildings_factor = -0.15
+				production_factory_efficiency_gain_factor = -0.2
+				production_factory_max_efficiency_factor = -0.25
+				army_org = -2
+				attrition = 0.05
+			}
+		}
+
+		MAI_aftermath_of_role_change_law_3 = {
+			
+			picture = great_depression
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.07
+				surrender_limit = -0.05
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.05
+				war_support_factor = -0.05
+				production_speed_buildings_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.1
+				production_factory_max_efficiency_factor = -0.1
+			}
+		}
+
+		MAI_central_zloty = {
+			
+			picture = MAI_landlocked
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		MAI_scouts_in_schools = {
+			
+			picture = generic_pp_unity_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = 0.05
+				weekly_manpower = 10
+			}
+		}
+
+		MAI_expanding_the_navy = {
+			
+			picture = generic_navy_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				production_speed_dockyard_factor = 0.15
+				production_speed_naval_base_factor = 0.15
+				industrial_capacity_dockyard = 0.15
+			}
+		}
+
+		MAI_new_pioneer_camps = {
+			
+			picture = generic_navy_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.1
+				political_power_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.2
+			}
+		}
+
+		MAI_colonial_fund = {
+			
+			picture = idea_isolation
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				political_power_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				local_building_slots_factor = 0.2
+			}
+		}
+
+		MAI_the_second_horror = {
+			
+			picture = idea_mex_politicised_army
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				offence = 0.05
+				defence = 0.05
+			}
+		}
+
+		MAI_aftermath_of_civil_war_1 = {
+			picture = idea_chi_hyper_inflation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = -0.4
+				stability_factor = -0.4
+				production_speed_buildings_factor = -0.4
+				industrial_capacity_factory = -0.4
+				industrial_capacity_dockyard = -0.4
+				repair_speed_factor = -0.4
+				consumer_goods_factor = 0.25
+			}
+		}
+
+		MAI_aftermath_of_civil_war_2 = {
+			picture = idea_chi_hyper_inflation2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = -0.3
+				stability_factor = -0.3
+				production_speed_buildings_factor = -0.3
+				industrial_capacity_factory = -0.3
+				industrial_capacity_dockyard = -0.3
+				repair_speed_factor = -0.3
+				consumer_goods_factor = 0.2
+			}
+		}
+
+		MAI_aftermath_of_civil_war_3 = {
+			picture = idea_chi_hyper_inflation3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = -0.15
+				stability_factor = -0.15
+				production_speed_buildings_factor = -0.15
+				industrial_capacity_factory = -0.15
+				industrial_capacity_dockyard = -0.15
+				repair_speed_factor = -0.15
+				consumer_goods_factor = 0.1
+			}
+		}
+
+		MAI_my_eyes_have_seen_the_glory = {
+			
+			picture = vittoria_mutilata
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				offence = 0.1
+				defence = 0.1
+				mobilization_speed = 0.25
+				non_core_manpower = 0.25
+				recruitable_population = 0.1
+			}
+		}
+
+		MAI_cult_of_macius = {
+			
+			picture = idea_unknown #change to his portrait when it will be ready
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				war_support_factor = 0.1
+				stability_factor = 0.1
+			}
+		}
+
+		MAI_funds_from_duckburg = {
+			picture = spr_seize_the_gold_reserves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				repair_speed_factor = 0.05
+			}
+		}
+
+		MAI_investments_boom = {
+			picture = idea_generic_political_support
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
 			}
 		}
 	}

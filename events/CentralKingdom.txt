@@ -1321,3 +1321,724 @@ country_event = { #Macius 18th birthday
 	}
 }
 
+country_event = { #first plot event
+	id = centralkingdom.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.38"}
+	title = centralkingdom.38.t
+	desc = centralkingdom.38.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.38.a
+	}
+}
+
+country_event = { #second plot event
+	id = centralkingdom.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.39"}
+	title = centralkingdom.39.t
+	desc = centralkingdom.39.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.39.a
+	}
+}
+
+country_event = { #peaceful resolution plot event
+	id = centralkingdom.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.40"}
+	title = centralkingdom.40.t
+	desc = centralkingdom.40.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.40.a
+	}
+}
+
+country_event = { #arresting ministers plot event
+	id = centralkingdom.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.41"}
+	title = centralkingdom.41.t
+	desc = centralkingdom.41.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.41.a
+	}
+}
+
+country_event = { #absolute monarchy (ministers become advisors) plot event
+	id = centralkingdom.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.42"}
+	title = centralkingdom.42.t
+	desc = centralkingdom.42.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.42.a
+	}
+}
+
+country_event = { #ministers are released from jail plot event
+	id = centralkingdom.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.43"}
+	title = centralkingdom.43.t
+	desc = centralkingdom.43.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.43.a
+	}
+}
+
+country_event = { #Talks with Reds
+	id = centralkingdom.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.44"}
+	title = centralkingdom.44.t
+	desc = centralkingdom.44.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #agree to their demands
+		name = centralkingdom.44.a
+		add_popularity = {
+   			ideology = monarchism
+    		popularity = -0.1
+		}
+		add_popularity = {
+   			ideology = communism
+    		popularity = 0.1
+		}
+		add_stability = 0.1
+		remove_ideas = {
+			MAI_fighting_with_commies
+		}
+	}
+
+	option = { #agree partially to their demands
+		name = centralkingdom.44.b
+		add_popularity = {
+   			ideology = monarchism
+    		popularity = -0.05
+		}
+		add_popularity = {
+   			ideology = communism
+    		popularity = 0.05
+		}
+		add_stability = 0.05
+		remove_ideas = {
+			MAI_fighting_with_commies
+		}
+	}
+
+	option = { #reject their demands and banish them
+		name = centralkingdom.44.c
+		add_political_power = 100
+		add_stability = -0.05
+		remove_ideas = {
+			MAI_fighting_with_commies
+		}
+		FLO = {
+			country_event = {
+				id = flowerhill.2
+				days = 1
+			}
+			add_opinion_modifier = {
+				target = MAI
+				modifier = MAI_expelled_commies
+			}
+		}
+	}
+}
+
+country_event = { #Government of Spalding refuses entry for Macius
+	id = centralkingdom.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.45"}
+	title = centralkingdom.45.t
+	desc = centralkingdom.45.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.45.a
+	}
+}
+
+country_event = { #Visit to Tungu-Pungu plot event
+	id = centralkingdom.46
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.46"}
+	title = centralkingdom.46.t
+	desc = centralkingdom.46.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.46.a
+		add_opinion_modifier = {
+			target = TUG
+			modifier = MAC_friendship
+		}
+		TUG = {
+			add_opinion_modifier = {
+				target = MAI
+				modifier = MAC_friendship
+			}
+		}
+		add_political_power = 100
+		add_popularity = {
+    		ideology = fascism
+   			popularity = 0.1
+		}
+		add_popularity = {
+    		ideology = monarchism
+   			popularity = -0.1
+		}
+		hidden_effect = {
+			set_country_flag = MAI_visited_tungupungu
+			complete_national_focus = MAI_thewayofeconomy
+		}
+	}
+}
+
+country_event = { #Macius' plea for help to other countries
+	id = centralkingdom.47
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.47"}
+	title = centralkingdom.47.t
+	desc = centralkingdom.47.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Allow volunteers to go help him
+		name = centralkingdom.47.a
+		ai_chance = {
+			factor = 30
+		}
+		hidden_effect = {
+			set_country_flag = MAI_volunteer_help_allowed
+		}
+	}
+
+	option = { #Open some lend-lease routes
+		name = centralkingdom.47.b
+		ai_chance = {
+			factor = 25
+		}
+		hidden_effect = {
+			set_country_flag = MAI_lend_lease_help_allowed
+		}
+	}
+
+	option = { #That's not our war.
+		name = centralkingdom.47.c
+		ai_chance = {
+			factor = 45
+		}
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = refused_help_to_macius
+		}
+	}
+}
+
+country_event = { #Macius wants to sign separate peace - status quo ante bellum
+	id = centralkingdom.48
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.48"}
+	title = centralkingdom.48.t
+	desc = centralkingdom.48.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Good proposal
+		name = centralkingdom.48.a
+		ai_chance = {
+			factor = 100
+		}
+		white_peace = {
+    		tag = MAI
+    		message = MAI_separate_peace
+		}
+	}
+
+	option = { #No
+		name = centralkingdom.48.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Macius wants to sign peace in exchange for broader shore
+	id = centralkingdom.49
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.49"}
+	title = centralkingdom.49.t
+	desc = centralkingdom.49.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Fine, you win
+		name = centralkingdom.49.a
+		ai_chance = {
+			factor = 100
+		}
+		MAI = {
+			transfer_state = 869
+			transfer_state = 853
+			transfer_state = 835
+			transfer_state = 884
+			transfer_state = 905
+			transfer_state = 911
+			add_core_of = 869
+			add_core_of = 853
+			add_core_of = 835
+			add_core_of = 884
+			add_core_of = 905
+			add_core_of = 911
+			if = {
+				NOT = {
+					872 = {
+						is_core_of = MAI
+					}
+				}
+				transfer_state = 872
+				add_core_of = 872
+			}
+		}
+		add_political_power = -50
+		add_stability = -0.2
+		white_peace = {
+    		tag = MAI
+    		message = MAI_peace_for_shore
+		}
+		hidden_effect = {
+			set_country_flag = old_king_was_better
+		}
+	}
+
+	option = { #No! Never!
+		name = centralkingdom.49.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Macius: we will take less territory but Hartmut must go to the exile
+	id = centralkingdom.50
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.50"}
+	title = centralkingdom.50.t
+	desc = centralkingdom.50.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Fine, you win (restore Friedewalt as king)
+		name = centralkingdom.50.a
+		ai_chance = {
+			factor = 100
+		}
+		MAI = {
+			transfer_state = 884
+			transfer_state = 905
+			transfer_state = 911
+			add_core_of = 884
+			add_core_of = 905
+			add_core_of = 911
+			if = {
+				NOT = {
+					872 = {
+						is_core_of = MAI
+					}
+				}
+				transfer_state = 872
+				add_core_of = 872
+			}
+		}
+		add_stability = -0.05
+		white_peace = {
+    		tag = MAI
+    		message = MAI_peace_for_exile
+		}
+		retire_country_leader = yes
+		drop_cosmetic_tag = yes
+		create_country_leader = {
+			name = "Friedewalt III"
+			desc = "POLITICS_FRIEDEWALT_I_DESC"
+			picture = "friedewalt.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		FLE = {
+			#country_event = {}
+		}
+	}
+
+	option = { #Fine, you win (continue playing as Hartmut)
+		name = centralkingdom.50.b
+		ai_chance = {
+			factor = 0
+		}
+		MAI = {
+			transfer_state = 884
+			transfer_state = 905
+			transfer_state = 911
+			add_core_of = 884
+			add_core_of = 905
+			add_core_of = 911
+			if = {
+				NOT = {
+					872 = {
+						is_core_of = MAI
+					}
+				}
+				transfer_state = 872
+				add_core_of = 872
+			}
+		}
+		add_stability = -0.05
+		white_peace = {
+    		tag = MAI
+    		message = MAI_peace_for_exile
+		}
+		retire_country_leader = yes
+		drop_cosmetic_tag = yes
+		create_country_leader = {
+			name = "Friedewalt III"
+			desc = "POLITICS_FRIEDEWALT_I_DESC"
+			picture = "friedewalt.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		FLE = {
+			if = {
+				limit = {
+					FRI = {
+						is_ai = no
+					}
+				}
+				change_tag_from = FRI
+			}
+			#country_event = {}
+		}
+	}
+
+	option = { #No! Never!
+		name = centralkingdom.49.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = { #Hartmut refuses to capitulate
+	id = centralkingdom.51
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.51"}
+	title = centralkingdom.51.t
+	desc = centralkingdom.51.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #If that's his will...
+		name = centralkingdom.51.a
+	}
+}
+
+country_event = { #We were on the verge of greatness! We were this close!
+	id = centralkingdom.52
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.52"}
+	title = centralkingdom.52.t
+	desc = centralkingdom.52.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Play as Felix' Children Republic
+		name = centralkingdom.52.a
+		hidden_effect = {
+			complete_national_focus = MAI_i_see_through_your_lies_macius
+		}
+	}
+
+	option = { #Continue playing as Macius
+		name = centralkingdom.52.b
+		hidden_effect = {
+			complete_national_focus = MAI_dont_lecture_me_felix
+		}
+	}
+}
+
+country_event = { #Felix before Macius
+	id = centralkingdom.53
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.53"}
+	title = centralkingdom.53.t
+	desc = centralkingdom.53.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Strip him of all titles and send to work in school
+		name = centralkingdom.53.a
+		add_stability = 0.1
+	}
+}
+
+country_event = { #What's next?
+	id = centralkingdom.54
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.54"}
+	title = centralkingdom.54.t
+	desc = centralkingdom.54.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Macius concludes that Parliament was an error
+		name = centralkingdom.54.a
+		hidden_effect = {
+			complete_national_focus = MAI_parliament_was_an_error
+		}
+	}
+
+	option = { #Partification of Parliament imminent
+		name = centralkingdom.54.b
+		hidden_effect = {
+			complete_national_focus = MAI_we_need_to_be_more_cautious
+		}
+	}
+
+	option = { #Macius concludes that ministers were right in 1936
+		name = centralkingdom.54.c
+		hidden_effect = {
+			complete_national_focus = MAI_they_were_right
+		}
+	}
+}
+
+country_event = { #Betryal in the country
+	id = centralkingdom.55
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.55"}
+	title = centralkingdom.55.t
+	desc = centralkingdom.55.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #There can be only one way of revenge
+		name = centralkingdom.55.a
+	}
+}
+
+country_event = { #Betryal outside the country (if Macius sent the letters)
+	id = centralkingdom.56
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.56"}
+	title = centralkingdom.56.t
+	desc = centralkingdom.56.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #There can be only one way of revenge
+		name = centralkingdom.56.a
+		trigger = {
+			tag = MAI
+		}
+		every_country = {
+			limit = {
+				has_country_flag = refused_help_to_macius
+			}
+			add_opinion_modifier = {
+				target = MAI
+				modifier = TCWMod_mortal_enemies
+			}
+		}
+	}
+
+	option = { #wadafak?
+		name = centralkingdom.56.a
+		trigger = {
+			NOT = {
+				tag = MAI
+			}
+		}
+		MAI = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = TCWMod_mortal_enemies
+			}
+		}
+	}
+}
+
+country_event = { #Proclamation of Matt's Empire
+	id = centralkingdom.57
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.57"}
+	title = centralkingdom.57.t
+	desc = centralkingdom.57.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Tremble before him, folks.
+		name = centralkingdom.57.a
+		retire_country_leader = yes
+		if = {
+			limit = {
+				date < 1945.10.3
+			}
+			create_country_leader = {
+				name = "Caesar Matt I"
+				desc = "POLITICS_MACIUS_I_DESC"
+				picture = "macius.dds"
+				expire = "1965.1.1"
+				ideology = despotic_monarchy
+				traits = {
+					underage_monarch
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = MAI_the_reformer
+				}
+				add_country_leader_trait = the_reformer
+			}
+		}
+		if = {
+			limit = {
+				date > 1945.10.2
+			}
+			create_country_leader = {
+				name = "Caesar Matt I"
+				desc = "POLITICS_MACIUS_I_DESC"
+				picture = "macius_adult.dds"
+				expire = "1965.1.1"
+				ideology = despotic_monarchy
+				traits = {
+
+				}
+			}
+			if = {
+				limit = {
+					has_completed_focus = MAI_the_reformer
+				}
+				add_country_leader_trait = the_reformer
+			}
+		}
+		hidden_effect = {
+			#news_event = {}
+		}
+	}
+}
+
+country_event = { #Matt's Empire - endgame
+	id = centralkingdom.58
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.58"}
+	title = centralkingdom.58.t
+	desc = centralkingdom.58.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = {
+		name = centralkingdom.58.a
+	}
+}
+
+country_event = { #Central Kingdom wants to borrow funds in order to rebuild itself after war
+	id = centralkingdom.59
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.59"}
+	title = centralkingdom.59.t
+	desc = centralkingdom.59.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Okay
+		name = centralkingdom.59.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				has_war = yes
+				add = -100
+			}
+		}
+		MAI = {
+			country_event = {
+				id = centralkingdom.60
+				days = 1
+			}
+		}
+	}
+
+	option = { #Nope
+		name = centralkingdom.59.b
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 100
+			}
+		}
+		MAI = {
+			country_event = {
+				id = centralkingdom.61
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Duckburg agrees
+	id = centralkingdom.60
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.60"}
+	title = centralkingdom.60.t
+	desc = centralkingdom.60.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = centralkingdom.60.a
+		add_ideas = {
+			MAI_funds_from_duckburg
+		}
+	}
+}
+
+country_event = { #Duckburg denies
+	id = centralkingdom.61
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.61"}
+	title = centralkingdom.61.t
+	desc = centralkingdom.61.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Damn!
+		name = centralkingdom.61.a
+	}
+}
