@@ -1,26 +1,39 @@
 guiTypes = {
-    containerWindowType = {
+  containerWindowType = { #Unused since it's unimplementable.
 		name = "stand_users_manpower"
 		position = { x = 1200 y = 5 }
 
 		iconType ={
-           name ="stand_users_manpower_bg"
-           spriteType = "GFX_generic_box_smallest"
-           position = { x=0 y=0 }
-       	}
+      name ="stand_users_manpower_bg"
+      spriteType = "GFX_generic_box_smallest"
+      position = { x=0 y=0 }
+    }
 
 		instantTextBoxType = {
-           name ="stand_users_manpower_text"
-           position = { x= 15 y = 5 }
-           font = "hoi_18mbs"
-           text = "[?stando_tsukai]K"
-           format = center
-           maxWidth = 102
-           maxHeight = 24
-           fixedsize = yes
+      name ="stand_users_manpower_text"
+      position = { x= 15 y = 5 }
+      font = "hoi_18mbs"
+      text = "[?stando_tsukai]K"
+      format = center
+      maxWidth = 102
+      maxHeight = 24
+      fixedsize = yes
     
-           pdx_tooltip = "STANDO_TSUKAI_TOOLTIP"
-           pdx_tooltip_delayed = "STANDO_TSUKAI_TOOLTIP_DELAYED"
-        }
+      pdx_tooltip = "STANDO_TSUKAI_TOOLTIP"
+      pdx_tooltip_delayed = "STANDO_TSUKAI_TOOLTIP_DELAYED"
+    }
+	}
+
+  containerWindowType = {
+		name = "supreme_leader_geumsaegi_portrait" #cause literally you wanted it yourself
+		position = { x = 1200 y = 5 }
+
+		iconType ={
+      name ="the_portrait_itself"
+      spriteType = "GFX_thereisnoescape"
+      position = { x=0 y=0 }
+      scale = 0.8
+      pdx_tooltip = "SUPREME_PORTRAIT_TOOLTIP"
+    }
 	}
 }

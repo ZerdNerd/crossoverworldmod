@@ -1,24 +1,156 @@
+defined_text = { #KR
+	name = GetGeneralTemplate
+	text = {
+		trigger = { always = yes }
+		localization_key = "Jednostka Strzelecka"
+	}
+}
+
 defined_text = {
-	name = MAI_NCK_SOC_support
+	name = MAI_state_control_status
     text = {
         trigger = {
-            MAI = {
+            FROM = {
                 check_variable = {
-				    MAI_NCK_SOC_support_v > 50
-			    }
+                    who_is_controlling_this_state = 1
+                }
+            }
+        }
+        localization_key = "forces loyal to king Macius"
+    }
+    text = {
+        trigger = {
+            FROM = {
+                check_variable = {
+                    who_is_controlling_this_state = 2
+                }
+            }
+        }
+        localization_key = "forces loyal to General"
+    }
+}
+
+defined_text = {
+	name = MAI_state_control_status_events
+    text = {
+        trigger = {
+            any_owned_state = {
+                has_variable = central_cw_preparing
+                check_variable = {
+                    who_is_controlling_this_state = 1
+                }
             }
         }
         localization_key = "king Macius"
     }
     text = {
         trigger = {
-            MAI = {
+            any_owned_state = {
+                has_variable = central_cw_preparing
                 check_variable = {
-				    MAI_NCK_SOC_support_v < 50
-			    }
+                    who_is_controlling_this_state = 2
+                }
             }
         }
         localization_key = "General"
+    }
+}
+
+defined_text = {
+	name = MAI_state_control_status_events_opposing
+    text = {
+        trigger = {
+            any_owned_state = {
+                has_variable = central_cw_preparing
+                check_variable = {
+                    who_is_controlling_this_state = 1
+                }
+            }
+        }
+        localization_key = "General"
+    }
+    text = {
+        trigger = {
+            any_owned_state = {
+                has_variable = central_cw_preparing
+                check_variable = {
+                    who_is_controlling_this_state = 2
+                }
+            }
+        }
+        localization_key = "king Macius"
+    }
+}
+
+defined_text = {
+	name = why_didnt_i_fix_this_in_v01
+    text = {
+        trigger = {
+            MAI = {
+                has_country_leader = {
+					name = "Macius I"
+					ruling_only = yes
+				}
+            }
+        }
+        localization_key = "knew this, and his son, Macius, continues his father's"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_leader = {
+					name = "Stephen I"
+					ruling_only = yes
+				}
+            }
+        }
+        localization_key = "knows this - hence he adopted"
+    }
+}
+
+defined_text = {
+	name = MAI_FELIX_IDEA_SCRIPT
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = felix_is_baron
+            }
+        }
+        localization_key = "Baron Felix von Rauch"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                NOT = {
+				    has_country_flag = felix_is_baron
+			    }
+            }
+        }
+        localization_key = "Felix"
+    }
+}
+
+defined_text = {
+	name = MAI_NCK_SOC_support
+    text = {
+        trigger = {
+            MAI = {
+                check_variable = {
+				    MAI_NCK_SOC_support > 49
+			    }
+            }
+        }
+        localization_key = supporting_king_macius
+    }
+    text = {
+        trigger = {
+            MAI = {
+                check_variable = {
+				    MAI_NCK_SOC_support < 50
+			    }
+            }
+        }
+        localization_key = supporting_general
     }
 }
 
@@ -28,21 +160,21 @@ defined_text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_NCK_MIL_support_v > 50
+				    MAI_NCK_MIL_support > 49
 			    }
             }
         }
-        localization_key = "king Macius"
+        localization_key = supporting_king_macius
     }
     text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_NCK_MIL_support_v < 50
+				    MAI_NCK_MIL_support < 50
 			    }
             }
         }
-        localization_key = "General"
+        localization_key = supporting_general
     }
 }
 
@@ -52,21 +184,21 @@ defined_text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_NCK_IND_support_v > 50
+				    MAI_NCK_IND_support > 49
 			    }
             }
         }
-        localization_key = "king Macius"
+        localization_key = supporting_king_macius
     }
     text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_NCK_IND_support_v < 50
+				    MAI_NCK_IND_support < 50
 			    }
             }
         }
-        localization_key = "General"
+        localization_key = supporting_general
     }
 }
 
@@ -76,21 +208,21 @@ defined_text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_SOC_support_v > 50
+				    MAI_SCK_SOC_support > 49
 			    }
             }
         }
-        localization_key = "king Macius"
+        localization_key = supporting_king_macius
     }
     text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_SOC_support_v < 50
+				    MAI_SCK_SOC_support < 50
 			    }
             }
         }
-        localization_key = "General"
+        localization_key = supporting_general
     }
 }
 
@@ -100,21 +232,21 @@ defined_text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_MIL_support_v > 50
+				    MAI_SCK_MIL_support > 49
 			    }
             }
         }
-        localization_key = "king Macius"
+        localization_key = supporting_king_macius
     }
     text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_MIL_support_v < 50
+				    MAI_SCK_MIL_support < 50
 			    }
             }
         }
-        localization_key = "General"
+        localization_key = supporting_general
     }
 }
 
@@ -124,21 +256,21 @@ defined_text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_IND_support_v > 50
+				    MAI_SCK_IND_support > 49
 			    }
             }
         }
-        localization_key = "king Macius"
+        localization_key = supporting_king_macius
     }
     text = {
         trigger = {
             MAI = {
                 check_variable = {
-				    MAI_SCK_IND_support_v < 50
+				    MAI_SCK_IND_support < 50
 			    }
             }
         }
-        localization_key = "General"
+        localization_key = supporting_general
     }
 }
 
@@ -2566,6 +2698,366 @@ defined_text = { #MAI test
     }
 }
 
+defined_text = { #MAI test
+    name = 872_seat_1
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 872_seat_2
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 872_seat_3
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_3 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_3 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_3 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            872 = {
+                check_variable = { seat_3 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 897_seat_1
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 897_seat_2
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 897_seat_3
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_3 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_3 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_3 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            897 = {
+                check_variable = { seat_3 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 877_seat_1
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 877_seat_2
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            877 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 911_seat_1
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = { #MAI test
+    name = 911_seat_2
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
 defined_text = { #MAI Children Parliament Current Term Ruling Party
     name = mai_chp_ruling_party_majority
     text = {
@@ -2824,11 +3316,23 @@ defined_text = { #MAI Children Parliament Topic No. 1 Script
                 has_country_flag = MAI_chp_topic_1_not_taken
                 NOT = {
                     has_country_flag = MAI_chp_first_session_after_elections
-					has_country_flag = national_children_party_wins
-          			has_country_flag = free_future_party_wins
-          			has_country_flag = time_for_kids_wins
-          			has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
-					has_country_flag = government_has_majority_or_coalition
+                }
+                OR = {
+                    AND = {
+                        OR = {
+					    	has_country_flag = national_children_party_wins
+          				    has_country_flag = free_future_party_wins
+          				    has_country_flag = time_for_kids_wins
+          				    has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+					    }
+						has_country_flag = government_has_majority_or_coalition
+                    }
+                    NOT = {
+                        has_country_flag = national_children_party_wins
+          			    has_country_flag = free_future_party_wins
+          			    has_country_flag = time_for_kids_wins
+          			    has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+                    }
                 }
             }
         }
@@ -2837,15 +3341,7 @@ defined_text = { #MAI Children Parliament Topic No. 1 Script
     text = {
         trigger = {
             MAI = {
-                has_country_flag = MAI_chp_topic_1_taken_option_1
-            }
-        }
-        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.2"
-    }
-    text = {
-        trigger = {
-            MAI = {
-                has_country_flag = MAI_chp_topic_1_not_taken
+            #    has_country_flag = MAI_chp_topic_1_not_taken
                 OR = {
                     has_country_flag = MAI_chp_first_session_after_elections
                     AND = {
@@ -2975,6 +3471,150 @@ defined_text = { #MAI Children Parliament Topic No. 1 Script
             }
         }
         localization_key = "MAI_children_parliament_next_session_topic_1_text_script.17"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = MAI_chp_topic_1_taken_option_16
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.18"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = MAI_chp_topic_1_taken_option_17
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.19"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = MAI_chp_topic_1_taken_option_18
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.20"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = MAI_chp_topic_1_taken_option_19
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.21"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_1_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.22"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_2_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.23"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_3_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.24"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_4_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.25"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_5_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.26"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_6_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.27"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_7_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.28"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_8_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.29"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_9_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.30"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_10_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.31"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_11_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.32"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_12_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.33"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_13_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.34"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = deputies_bill_14_submitted
+            }
+        }
+        localization_key = "MAI_children_parliament_next_session_topic_1_text_script.35"
     }
 }
 

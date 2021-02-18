@@ -997,12 +997,21 @@ focus_tree = {
 				target = NTR
 				type = annex_everything
 			}
+			create_wargoal = {
+				target = SOO
+				type = annex_everything
+			}
 			add_named_threat = { 
     			threat = 3 
     			name = GON_invasion_of_northern_republic
 			}
 			hidden_effect = {
 				NTR = {
+					every_owned_state = {
+						add_core_of = GON
+					}
+				}
+				SOO = {
 					every_owned_state = {
 						add_core_of = GON
 					}

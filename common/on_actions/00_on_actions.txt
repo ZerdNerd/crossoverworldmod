@@ -46,7 +46,7 @@ on_actions = {
 
 	on_daily = {
 		effect = {
-			#Check for big events!
+			#Check for big events - normal circumstances!
 			SIO = {
 				if = {
 					limit = {
@@ -71,6 +71,12 @@ on_actions = {
 						}
 						set_country_flag = big_event_sioux_liberation
 					}
+					every_country = {
+						limit = {
+							has_variable = cr_superevent_music_status
+						}
+						sound_effect = cr_bigevent_sioux_liberation_sound
+					}
 				}
 			}
 			ICW = {
@@ -92,6 +98,43 @@ on_actions = {
 						}
 						set_country_flag = big_event_arktos_triumphs
 					}
+					every_country = {
+						limit = {
+							has_variable = cr_superevent_music_status
+						}
+						sound_effect = cr_bigevent_arktos_triumphs_sound
+					}
+				}
+			}
+			FLO = {
+				if = {
+					limit = {
+						exists = yes
+						owns_state = 402
+						owns_state = 488
+						owns_state = 537
+						owns_state = 457
+						owns_state = 424
+						owns_state = 298
+						owns_state = 227
+						owns_state = 325
+						NOT = {
+							has_global_flag = shown_the_big_event_flower_hill_united
+						}
+					}
+					set_global_flag = shown_the_big_event_flower_hill_united
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						set_country_flag = big_event_flower_hill_unified
+					}
+					every_country = {
+						limit = {
+							has_variable = cr_superevent_music_status
+						}
+						sound_effect = cr_bigevent_flower_hill_united_sound
+					}
 				}
 			}
 			#Other checks
@@ -104,6 +147,3454 @@ on_actions = {
 					divide_temp_variable = { stando_tsukai_today = 100 }
 					multiply_temp_variable = { stando_tsukai_today = 5 }
 					set_variable = { stando_tsukai = stando_tsukai_today }
+				}
+			}
+			MAI = {
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 110
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.88
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 95
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.89
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 69 #nice
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.90
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 60
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.89
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 85
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.88
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 55
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.90
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 45
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.88
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 35
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.88
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						
+						check_variable = {
+							days_mission_timeout@MAI_time_until_central_civil_war = 20
+						}
+					}
+					random_owned_state = {
+						limit = {
+							OR = {
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 1
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 2
+										}
+									}
+								}
+								AND = {
+									check_variable = {
+										who_is_controlling_this_state = 2
+									}
+									any_neighbor_state = {
+										check_variable = {
+											who_is_controlling_this_state = 1
+										}
+									}
+								}
+							}
+							NOT = {
+								state = 812
+								state = 858
+							}
+						}
+						set_variable = { central_cw_preparing = 1 }
+					}
+					country_event = {
+						id = centralkingdom.88
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						has_variable = days_since_deputies_submitted_bill
+						check_variable = {
+							days_since_deputies_submitted_bill < 60
+						}
+					}
+					add_to_variable = {
+						days_since_deputies_submitted_bill = 1
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								days_since_deputies_submitted_bill = 60
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									has_country_flag = MAI_chp_topic_1_not_taken
+								}
+							}
+							set_variable = {
+								days_since_deputies_submitted_bill = 0
+							}
+							else = {
+								random_list = {
+									9 = {
+										if = {
+											limit = {
+												NOT = {
+													has_country_flag = deputies_bill_1_passed
+												}
+											}
+											set_country_flag = deputies_bill_1_submitted
+											clr_country_flag = MAI_chp_topic_1_not_taken
+											country_event = {
+												id = childrenparliament.55
+												days = 0
+											}
+											else_if = {
+												limit = {
+													NOT = {
+														has_country_flag = deputies_bill_2_passed
+													}
+												}
+												set_country_flag = deputies_bill_2_submitted
+												clr_country_flag = MAI_chp_topic_1_not_taken
+												country_event = {
+													id = childrenparliament.55
+													days = 0
+												}
+												else_if = {
+													limit = {
+														NOT = {
+															has_country_flag = deputies_bill_3_passed
+														}
+													}
+													set_country_flag = deputies_bill_3_submitted
+													clr_country_flag = MAI_chp_topic_1_not_taken
+													country_event = {
+														id = childrenparliament.55
+														days = 0
+													}
+													else_if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_4_passed
+															}
+														}
+														set_country_flag = deputies_bill_4_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+															id = childrenparliament.55
+															days = 0
+														}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_5_passed
+																}
+															}
+															set_country_flag = deputies_bill_5_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																id = childrenparliament.55
+																days = 0
+															}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_6_passed
+																	}
+																}
+																set_country_flag = deputies_bill_6_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																	id = childrenparliament.55
+																	days = 0
+																}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_7_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_7_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																		id = childrenparliament.55
+																		days = 0
+																	}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_8_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_8_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																			id = childrenparliament.55
+																			days = 0
+																		}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_9_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_9_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+																				days = 0
+																			}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_10_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_10_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																					id = childrenparliament.55
+																					days = 0
+																				}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_11_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_11_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+																																	days = 0
+																					}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_12_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_12_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+																																	days = 0
+																						}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_13_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_13_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+																																	days = 0
+																							}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_14_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_14_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+																																	days = 0
+																								}
+																								else = {
+
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									7 = {
+										if = {
+											limit = {
+												NOT = {
+													has_country_flag = deputies_bill_2_passed
+												}
+											}
+											set_country_flag = deputies_bill_2_submitted
+											clr_country_flag = MAI_chp_topic_1_not_taken
+											country_event = {
+																				id = childrenparliament.55
+													days = 0
+											}
+											else_if = {
+												limit = {
+													NOT = {
+														has_country_flag = deputies_bill_3_passed
+													}
+												}
+												set_country_flag = deputies_bill_3_submitted
+												clr_country_flag = MAI_chp_topic_1_not_taken
+												country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+												else_if = {
+													limit = {
+														NOT = {
+															has_country_flag = deputies_bill_4_passed
+														}
+													}
+													set_country_flag = deputies_bill_4_submitted
+													clr_country_flag = MAI_chp_topic_1_not_taken
+													country_event = {
+																				id = childrenparliament.55
+													days = 0
+													}
+													else_if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_5_passed
+															}
+														}
+														set_country_flag = deputies_bill_5_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+																				id = childrenparliament.55
+													days = 0
+														}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_6_passed
+																}
+															}
+															set_country_flag = deputies_bill_6_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+															}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_7_passed
+																	}
+																}
+																set_country_flag = deputies_bill_7_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+																}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_8_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_8_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																															id = childrenparliament.55
+													days = 0
+																	}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_9_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_9_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																				id = childrenparliament.55
+													days = 0
+																		}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_10_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_10_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+													days = 0
+																			}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_11_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_11_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																				id = childrenparliament.55
+													days = 0
+																				}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_12_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_12_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+													days = 0
+																					}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_13_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_13_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+													days = 0
+																						}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_14_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_14_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+													days = 0
+																							}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_1_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_1_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+													days = 0
+																								}
+																								else = {
+
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									7 = {
+										if = {
+											limit = {
+												NOT = {
+													has_country_flag = deputies_bill_3_passed
+												}
+											}
+											set_country_flag = deputies_bill_3_submitted
+											clr_country_flag = MAI_chp_topic_1_not_taken
+											country_event = {
+																				id = childrenparliament.55
+													days = 0
+											}
+											else_if = {
+												limit = {
+													NOT = {
+														has_country_flag = deputies_bill_4_passed
+													}
+												}
+												set_country_flag = deputies_bill_4_submitted
+												clr_country_flag = MAI_chp_topic_1_not_taken
+												country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+												else_if = {
+													limit = {
+														NOT = {
+															has_country_flag = deputies_bill_5_passed
+														}
+													}
+													set_country_flag = deputies_bill_5_submitted
+													clr_country_flag = MAI_chp_topic_1_not_taken
+													country_event = {
+																				id = childrenparliament.55
+													days = 0
+													}
+													else_if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_6_passed
+															}
+														}
+														set_country_flag = deputies_bill_6_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+																				id = childrenparliament.55
+													days = 0
+														}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_7_passed
+																}
+															}
+															set_country_flag = deputies_bill_7_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+															}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+																}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																				id = childrenparliament.55
+													days = 0
+																	}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																				id = childrenparliament.55
+													days = 0
+																		}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+													days = 0
+																			}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																				id = childrenparliament.55
+													days = 0
+																				}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+													days = 0
+																					}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+													days = 0
+																						}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+													days = 0
+																							}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+													days = 0
+																								}
+																								else = {
+																										
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+									7 = {
+										if = {
+												limit = {
+													NOT = {
+														has_country_flag = deputies_bill_4_passed
+													}
+												}
+												set_country_flag = deputies_bill_4_submitted
+												clr_country_flag = MAI_chp_topic_1_not_taken
+												country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+												else_if = {
+													limit = {
+														NOT = {
+															has_country_flag = deputies_bill_5_passed
+														}
+													}
+													set_country_flag = deputies_bill_5_submitted
+													clr_country_flag = MAI_chp_topic_1_not_taken
+													country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+													else_if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_6_passed
+															}
+														}
+														set_country_flag = deputies_bill_6_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_7_passed
+																}
+															}
+															set_country_flag = deputies_bill_7_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																									else = {
+
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+													}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+													limit = {
+														NOT = {
+															has_country_flag = deputies_bill_5_passed
+														}
+													}
+													set_country_flag = deputies_bill_5_submitted
+													clr_country_flag = MAI_chp_topic_1_not_taken
+													country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+													else_if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_6_passed
+															}
+														}
+														set_country_flag = deputies_bill_6_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_7_passed
+																}
+															}
+															set_country_flag = deputies_bill_7_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																										else = {
+
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+														}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+														limit = {
+															NOT = {
+																has_country_flag = deputies_bill_6_passed
+															}
+														}
+														set_country_flag = deputies_bill_6_submitted
+														clr_country_flag = MAI_chp_topic_1_not_taken
+														country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+														else_if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_7_passed
+																}
+															}
+															set_country_flag = deputies_bill_7_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																											else = {
+
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+															}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+															limit = {
+																NOT = {
+																	has_country_flag = deputies_bill_7_passed
+																}
+															}
+															set_country_flag = deputies_bill_7_submitted
+															clr_country_flag = MAI_chp_topic_1_not_taken
+															country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+															else_if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																				id = childrenparliament.55
+													days = 0
+												}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else = {
+
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+																}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																limit = {
+																	NOT = {
+																		has_country_flag = deputies_bill_8_passed
+																	}
+																}
+																set_country_flag = deputies_bill_8_submitted
+																clr_country_flag = MAI_chp_topic_1_not_taken
+																country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																else_if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else = {
+
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+																	}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																	limit = {
+																		NOT = {
+																			has_country_flag = deputies_bill_9_passed
+																		}
+																	}
+																	set_country_flag = deputies_bill_9_submitted
+																	clr_country_flag = MAI_chp_topic_1_not_taken
+																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																	else_if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else = {
+
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+																		}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																		limit = {
+																			NOT = {
+																				has_country_flag = deputies_bill_10_passed
+																			}
+																		}
+																		set_country_flag = deputies_bill_10_submitted
+																		clr_country_flag = MAI_chp_topic_1_not_taken
+																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																		else_if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else_if = {
+																															limit = {
+																																NOT = {
+																																	has_country_flag = deputies_bill_9_passed
+																																}
+																															}
+																															set_country_flag = deputies_bill_9_submitted
+																															clr_country_flag = MAI_chp_topic_1_not_taken
+																															country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																															else = {
+
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+																			}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																			limit = {
+																				NOT = {
+																					has_country_flag = deputies_bill_11_passed
+																				}
+																			}
+																			set_country_flag = deputies_bill_11_submitted
+																			clr_country_flag = MAI_chp_topic_1_not_taken
+																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																			else_if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else_if = {
+																															limit = {
+																																NOT = {
+																																	has_country_flag = deputies_bill_9_passed
+																																}
+																															}
+																															set_country_flag = deputies_bill_9_submitted
+																															clr_country_flag = MAI_chp_topic_1_not_taken
+																															country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																															else_if = {
+																																limit = {
+																																	NOT = {
+																																		has_country_flag = deputies_bill_10_passed
+																																	}
+																																}
+																																set_country_flag = deputies_bill_10_submitted
+																																clr_country_flag = MAI_chp_topic_1_not_taken
+																																country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																else = {
+
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+																				}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																				limit = {
+																					NOT = {
+																						has_country_flag = deputies_bill_12_passed
+																					}
+																				}
+																				set_country_flag = deputies_bill_12_submitted
+																				clr_country_flag = MAI_chp_topic_1_not_taken
+																				country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																				else_if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else_if = {
+																															limit = {
+																																NOT = {
+																																	has_country_flag = deputies_bill_9_passed
+																																}
+																															}
+																															set_country_flag = deputies_bill_9_submitted
+																															clr_country_flag = MAI_chp_topic_1_not_taken
+																															country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																															else_if = {
+																																limit = {
+																																	NOT = {
+																																		has_country_flag = deputies_bill_10_passed
+																																	}
+																																}
+																																set_country_flag = deputies_bill_10_submitted
+																																clr_country_flag = MAI_chp_topic_1_not_taken
+																																country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																else_if = {
+																																	limit = {
+																																		NOT = {
+																																			has_country_flag = deputies_bill_11_passed
+																																		}
+																																	}
+																																	set_country_flag = deputies_bill_11_submitted
+																																	clr_country_flag = MAI_chp_topic_1_not_taken
+																																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																	else = {
+
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+																					}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																					limit = {
+																						NOT = {
+																							has_country_flag = deputies_bill_13_passed
+																						}
+																					}
+																					set_country_flag = deputies_bill_13_submitted
+																					clr_country_flag = MAI_chp_topic_1_not_taken
+																					country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																					else_if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else_if = {
+																															limit = {
+																																NOT = {
+																																	has_country_flag = deputies_bill_9_passed
+																																}
+																															}
+																															set_country_flag = deputies_bill_9_submitted
+																															clr_country_flag = MAI_chp_topic_1_not_taken
+																															country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																															else_if = {
+																																limit = {
+																																	NOT = {
+																																		has_country_flag = deputies_bill_10_passed
+																																	}
+																																}
+																																set_country_flag = deputies_bill_10_submitted
+																																clr_country_flag = MAI_chp_topic_1_not_taken
+																																country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																else_if = {
+																																	limit = {
+																																		NOT = {
+																																			has_country_flag = deputies_bill_11_passed
+																																		}
+																																	}
+																																	set_country_flag = deputies_bill_11_submitted
+																																	clr_country_flag = MAI_chp_topic_1_not_taken
+																																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																	else_if = {
+																																		limit = {
+																																			NOT = {
+																																				has_country_flag = deputies_bill_12_passed
+																																			}
+																																		}
+																																		set_country_flag = deputies_bill_12_submitted
+																																		clr_country_flag = MAI_chp_topic_1_not_taken
+																																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																		else = {
+
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+																						}
+												
+											}
+										}
+									}
+									7 = {
+										if = {
+																						limit = {
+																							NOT = {
+																								has_country_flag = deputies_bill_14_passed
+																							}
+																						}
+																						set_country_flag = deputies_bill_14_submitted
+																						clr_country_flag = MAI_chp_topic_1_not_taken
+																						country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																						else_if = {
+																							limit = {
+																								NOT = {
+																									has_country_flag = deputies_bill_1_passed
+																								}
+																							}
+																							set_country_flag = deputies_bill_1_submitted
+																							clr_country_flag = MAI_chp_topic_1_not_taken
+																							country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																							else_if = {
+																								limit = {
+																									NOT = {
+																										has_country_flag = deputies_bill_2_passed
+																									}
+																								}
+																								set_country_flag = deputies_bill_2_submitted
+																								clr_country_flag = MAI_chp_topic_1_not_taken
+																								country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																								else_if = {
+																									limit = {
+																										NOT = {
+																											has_country_flag = deputies_bill_3_passed
+																										}
+																									}
+																									set_country_flag = deputies_bill_3_submitted
+																									clr_country_flag = MAI_chp_topic_1_not_taken
+																									country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																									else_if = {
+																										limit = {
+																											NOT = {
+																												has_country_flag = deputies_bill_4_passed
+																											}
+																										}
+																										set_country_flag = deputies_bill_4_submitted
+																										clr_country_flag = MAI_chp_topic_1_not_taken
+																										country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																										else_if = {
+																											limit = {
+																												NOT = {
+																													has_country_flag = deputies_bill_5_passed
+																												}
+																											}
+																											set_country_flag = deputies_bill_5_submitted
+																											clr_country_flag = MAI_chp_topic_1_not_taken
+																											country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																											else_if = {
+																												limit = {
+																													NOT = {
+																														has_country_flag = deputies_bill_6_passed
+																													}
+																												}
+																												set_country_flag = deputies_bill_6_submitted
+																												clr_country_flag = MAI_chp_topic_1_not_taken
+																												country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																												else_if = {
+																													limit = {
+																														NOT = {
+																															has_country_flag = deputies_bill_7_passed
+																														}
+																													}
+																													set_country_flag = deputies_bill_7_submitted
+																													clr_country_flag = MAI_chp_topic_1_not_taken
+																													country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																													else_if = {
+																														limit = {
+																															NOT = {
+																																has_country_flag = deputies_bill_8_passed
+																															}
+																														}
+																														set_country_flag = deputies_bill_8_submitted
+																														clr_country_flag = MAI_chp_topic_1_not_taken
+																														country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																														else_if = {
+																															limit = {
+																																NOT = {
+																																	has_country_flag = deputies_bill_9_passed
+																																}
+																															}
+																															set_country_flag = deputies_bill_9_submitted
+																															clr_country_flag = MAI_chp_topic_1_not_taken
+																															country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																															else_if = {
+																																limit = {
+																																	NOT = {
+																																		has_country_flag = deputies_bill_10_passed
+																																	}
+																																}
+																																set_country_flag = deputies_bill_10_submitted
+																																clr_country_flag = MAI_chp_topic_1_not_taken
+																																country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																else_if = {
+																																	limit = {
+																																		NOT = {
+																																			has_country_flag = deputies_bill_11_passed
+																																		}
+																																	}
+																																	set_country_flag = deputies_bill_11_submitted
+																																	clr_country_flag = MAI_chp_topic_1_not_taken
+																																	country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																	else_if = {
+																																		limit = {
+																																			NOT = {
+																																				has_country_flag = deputies_bill_12_passed
+																																			}
+																																		}
+																																		set_country_flag = deputies_bill_12_submitted
+																																		clr_country_flag = MAI_chp_topic_1_not_taken
+																																		country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																		else_if = {
+																																			limit = {
+																																				NOT = {
+																																					has_country_flag = deputies_bill_13_passed
+																																				}
+																																			}
+																																			set_country_flag = deputies_bill_13_submitted
+																																			clr_country_flag = MAI_chp_topic_1_not_taken
+																																			country_event = {
+																			id = childrenparliament.55
+													days = 0
+												}
+																																			else = {
+
+																																			}
+																																		}
+																																	}
+																																}
+																															}
+																														}
+																													}
+																												}
+																											}
+																										}
+																									}
+																								}
+																							}
+												
+											}
+										}
+									}
+								}
+							}
+						}
+						else = {
+
+						}
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						focus_progress = {
+							focus = MAI_royal_convention
+    						progress > 0.75
+						}
+						NOT = {
+							has_variable = first_batch_sent
+						}
+					}
+					set_variable = {
+						first_batch_sent = 1
+					}
+					country_event = {
+						id = centralkingdom.25
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						focus_progress = {
+							focus = MAI_royal_convention
+    						progress > 0.8
+						}
+						NOT = {
+							has_variable = second_batch_sent
+						}
+					}
+					set_variable = {
+						second_batch_sent = 1
+					}
+					country_event = {
+						id = centralkingdom.26
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						is_in_faction = yes
+						NOT = {
+							has_country_flag = proposed_stabilization_pact
+						}
+					}
+					if = {
+						limit = {
+							is_in_faction_with = GRN
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_divisions > GRN.num_divisions
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.2
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_ships > GRN.num_ships
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.15
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_subjects > GRN.num_subjects
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.05
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_in_faction_with = AVA
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_divisions > AVA.num_divisions
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.2
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_ships > AVA.num_ships
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.15
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_subjects > AVA.num_subjects
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.05
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_in_faction_with = JPN
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_divisions > JPN.num_divisions
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.2
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_ships > JPN.num_ships
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.15
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_subjects > JPN.num_subjects
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.05
+							}
+						}
+					}
+					if = {
+						limit = {
+							is_in_faction_with = TSA
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_divisions > TSA.num_divisions
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.2
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_ships > TSA.num_ships
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.15
+							}
+						}
+						if = {
+							limit = {
+								check_variable = {
+									MAI.num_subjects > TSA.num_subjects
+								}
+							}
+							add_to_variable = {
+								mai_faction_points = 0.05
+							}
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								MAI.num_divisions > 0
+							}
+							check_variable = {
+								MAI.num_divisions < 10
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.01
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								MAI.num_divisions > 9
+							}
+							check_variable = {
+								MAI.num_divisions < 20
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								MAI.num_divisions > 19
+							}
+							check_variable = {
+								MAI.num_divisions < 30
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.1
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								MAI.num_divisions > 29
+							}
+							check_variable = {
+								MAI.num_divisions < 40
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.15
+						}
+					}
+					if = {
+						limit = {
+							check_variable = {
+								MAI.num_divisions > 39
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.2
+						}
+					}
+					if = {
+						limit = {
+							any_unit_leader = {
+								check_variable = {
+									MAI.num_units_in_combat > 0
+								}
+								check_variable = {
+									MAI.num_units_in_combat < 5
+								}
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.01
+						}
+					}
+					if = {
+						limit = {
+							any_unit_leader = {
+								check_variable = {
+									MAI.num_units_in_combat > 4
+								}
+								check_variable = {
+									MAI.num_units_in_combat < 10
+								}
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.03
+						}
+					}
+					if = {
+						limit = {
+							any_unit_leader = {
+								check_variable = {
+									MAI.num_units_in_combat > 9
+								}
+								check_variable = {
+									MAI.num_units_in_combat < 20
+								}
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.04
+						}
+					}
+					if = {
+						limit = {
+							any_unit_leader = {
+								check_variable = {
+									MAI.num_units_in_combat > 19
+								}
+							}
+						}
+						add_to_variable = {
+							mai_faction_points = 0.05
+						}
+					}
+					add_to_variable = {
+						faction_leader_points = 0.7
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_ai = no
+					AND = {
+						date > 1939.3.4
+						date < 1939.3.6
+					}
+				}
+				country_event = {
+					id = game_start_event.2137
+					days = 0
+				}
+			}
+			if = {
+				limit = {
+					tag = MAI
+					has_country_leader = {
+						name = "Macius I"
+						ruling_only = yes
+					}
+					OR = {
+						AND = {
+							check_variable = {
+								MAI_NCK_SOC_support < 50
+							}
+							check_variable = {
+								MAI_NCK_IND_support < 50
+							}
+							check_variable = {
+								MAI_NCK_MIL_support < 50
+							}
+						}
+						AND = {
+							check_variable = {
+								MAI_SCK_SOC_support < 50
+							}
+							check_variable = {
+								MAI_SCK_IND_support < 50
+							}
+							check_variable = {
+								MAI_SCK_MIL_support < 50
+							}
+						}
+					}
+				}
+				country_event = {
+					id = centralkingdom.67
+					days = 1
 				}
 			}
 			if = {
@@ -126,6 +3617,46 @@ on_actions = {
 						check_variable = { days_since_campaign_started = 31 }
 					}
 					clear_variable = days_since_campaign_started
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = MAI
+					}
+					NOT = {
+						has_country_flag = general_moved_to_second_stage
+					}
+					has_variable = days_countdown_macius_come_on
+					check_variable = {
+						days_countdown_macius_come_on < 30
+					}
+				}
+				add_to_variable = {
+					days_countdown_macius_come_on = 1
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							tag = MAI
+						}
+						NOT = {
+							has_country_flag = general_moved_to_second_stage
+						}
+						has_variable = days_countdown_macius_come_on
+						check_variable = {
+							days_countdown_macius_come_on = 30
+						}
+					}
+					MAI = {
+						country_event = {
+							id = centralkingdom.87
+							days = 0
+						}
+						set_variable = {
+							days_countdown_macius_come_on = 0
+						}
+					}
 				}
 			}
 			if = {
@@ -770,6 +4301,37 @@ on_actions = {
 				}
 			}
 
+			if = {
+				limit = {
+					ROOT = {
+						has_government = monarchism
+					}
+					has_global_flag = enchancian_civil_war_over
+					FROM = {
+						OR = {
+							tag = EN3
+							tag = EN4
+						}
+					}
+					NOT = {
+						has_global_flag = showed_big_event_liberation_of_enchancia
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_liberation_of_enchancia
+					set_global_flag = showed_big_event_liberation_of_enchancia
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_liberation_of_enchancia_sound
+				}
+			}
+
 			#################### JOJO STUFF
 
 			if = {
@@ -926,6 +4488,19 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
+						tag = FRI
+					}
+					FROM = {
+						tag = MAI
+					}
+				}
+				MAI = {
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
 						tag = FLO
 					}
 					FROM = {
@@ -1007,6 +4582,151 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			#Check for big events - capitulation!
+			if = {
+				limit = {
+					ROOT = {
+						tag = DIO
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_dio_fucking_dies
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_dio_fucking_dies_sound
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = MAI
+					}
+					FROM = {
+						tag = FRI
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_hartmut_wins
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_hartmut_wins_sound
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = FRI
+					}
+					FROM = {
+						tag = MAI
+						has_completed_focus = MAI_only_a_total_victory
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_victory_over_hartmut
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_victory_over_hartmut_sound
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = MAI
+					}
+					FROM = {
+						tag = GEN
+					}
+					has_global_flag = central_civil_war_fired
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_central_civil_war_general_wins
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_central_civil_war_general_wins_sound
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = GEN
+					}
+					FROM = {
+						tag = MAI
+					}
+					has_global_flag = central_civil_war_fired
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_central_civil_war_macius_wins
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_central_civil_war_m_wins_sound
+				}
+				MAI = {
+					add_ideas = {
+						MAI_aftermath_of_civil_war_1
+					}
+					mark_focus_tree_layout_dirty = yes
+				}
+			}
+			#Other things.
+			if = {
+				limit = {
+					ROOT = {
+						tag = TUG
+					}
+				}
+				MAI = {
+					country_event = {
+						id = centralkingdom.69
+						days = 4
+					}
+				}
+			}
+			if = {
+				limit = {
+					WOR = {
+						is_puppet_of = ROOT
+					}
+				}
+				FROM = {
+					set_country_flag = colonies_enabled
+					set_autonomy = {
+						target = WOR
+						autonomy_state = cr_colonial_government
+					}		
+				}
+			}
 			if = {
 				limit = {
 					ROOT = {
@@ -1362,6 +5082,51 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = MAI
+					}
+					OR = {
+						has_state_category = rural
+						has_state_category = town
+					}
+				}
+				add_manpower = 250000
+			}
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = MAI
+					}
+					has_state_category = large_town
+				}
+				add_manpower = 350000
+			}
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = MAI
+					}
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+					}
+				}
+				add_manpower = 600000
+			}
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = MAI
+					}
+					OR = {
+						has_state_category = megalopolis
+					}
+				}
+				add_manpower = 800000
+			}
 			every_country = {
 				if = {
 					limit = {
@@ -1390,6 +5155,7 @@ on_actions = {
 						exists = yes
 						is_ai = no
 					}
+					set_variable = { cr_superevent_music_status = 1 }
 					set_variable = { cr_welcome_screen = 1 }
 					country_event = {
 						id = game_start_event.1

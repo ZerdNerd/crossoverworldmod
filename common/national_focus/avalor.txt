@@ -1184,16 +1184,6 @@ focus = {
 				}
 			}
 		}
-		bypass = {
-			MAI = {
-				AND = {
-					has_completed_focus = MAI_alliance_enc_ecw
-					NOT = {
-						has_country_flag = greatest_alliance_formed
-					}
-				}
-			}
-		}
 		ai_will_do = { 
 			factor = 1
 		} 

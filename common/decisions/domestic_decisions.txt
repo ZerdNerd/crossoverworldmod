@@ -95,4 +95,37 @@ domestic_politics_dec_category = {
             }
         }
     }
+
+    revoke_role_change_law = {
+        icon = generic_political_discourse
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        fire_only_once = yes
+
+        visible = {
+            tag = MAI
+            has_idea = MAI_the_great_switcheroo
+            NOT = {
+                has_country_flag = felix_is_baron
+            }
+        }
+
+        complete_effect = {
+            swap_ideas = {
+                remove_idea = MAI_the_great_switcheroo
+                add_idea = MAI_aftermath_of_role_change_law_1
+            }
+            hidden_effect = {
+                unlock_national_focus = MAI_aftermath_of_the_ten_days
+                set_variable = {
+                    days_countdown_macius_come_on = 0
+                }
+            }
+        }
+    }
 }

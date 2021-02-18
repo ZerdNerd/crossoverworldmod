@@ -2,6 +2,31 @@
 ### File originally from Kaiserreich. Mixed peace conference ST and useful ST.
 ###
 
+same_government_type_as_ROOT = {
+	OR = {
+		AND = {
+			has_government = monarchism
+			ROOT = { has_government = monarchism }
+		}
+		AND = {
+			has_government = fascism
+			ROOT = { has_government = fascism }
+		}
+		AND = {
+			has_government = communism
+			ROOT = { has_government = communism }
+		}
+		AND = {
+			has_government = democratic
+			ROOT = { has_government = democratic }
+		}
+		AND = {
+			has_government = paidocracy
+			ROOT = { has_government = paidocracy }
+		}
+	}
+}
+
 is_actual_major = {
 	is_major = yes
 	OR = {
@@ -835,7 +860,7 @@ is_willing_to_take_state_ROOT = {
 	rule_claims_needs_connection_ROOT = no
 	rule_look_for_direct_connection_ROOT = no
 	rule_dont_take_land_other_continents_ROOT = no
-	rule_dont_break_occupation_zones = no
+#	rule_dont_break_occupation_zones = no
 }
 
 is_willing_to_take_state_PREV = {

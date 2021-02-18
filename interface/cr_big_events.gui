@@ -84,7 +84,7 @@ guiTypes = {
 		Orientation = center
 		Origo = center
 		clipping = no
-		show_sound = cr_bigevent_stephen_death_sound
+		#show_sound = cr_bigevent_stephen_death_sound
 
 		background = {
 			name = "Background"
@@ -162,7 +162,7 @@ guiTypes = {
 		Orientation = center
 		Origo = center
 		clipping = no
-		show_sound = cr_bigevent_sioux_liberation_sound
+		#show_sound = cr_bigevent_sioux_liberation_sound
 
 		background = {
 			name = "Background"
@@ -240,7 +240,7 @@ guiTypes = {
 		Orientation = center
 		Origo = center
 		clipping = no
-		show_sound = cr_bigevent_arktos_triumphs_sound
+		#show_sound = cr_bigevent_arktos_triumphs_sound
 
 		background = {
 			name = "Background"
@@ -303,6 +303,1254 @@ guiTypes = {
 		buttonType = {
 			name = "Option"
 			text = "Gulp."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_children_revolution"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_children_revolution_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_CHILDREN_REVOLUTION"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_children_revolution"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_children_revolution_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_CHILDREN_REVOLUTION_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Unbelievable..."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_central_civil_war_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_central_civil_war"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Alea iacta est."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war_general_wins"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_central_civil_war_general_wins_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR_GENERAL_WINS"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_central_civil_war_general_wins"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war_general_wins_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR_GENERAL_WINS_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Dark times ahead..."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war_macius_wins"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_central_civil_war_m_wins_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR_MACIUS_WINS"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_central_civil_war_macius_wins"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_central_civil_war_macius_wins_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_CENTRAL_CIVIL_WAR_MACIUS_WINS_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Evil destroyed."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_victory_over_hartmut"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_victory_over_hartmut_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_VICTORY_OVER_HARTMUT"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_victory_over_hartmut"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_victory_over_hartmut_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_VICTORY_OVER_HARTMUT_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Evil king no more."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_flower_hill_unified"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_flower_hill_unified_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_FLOWER_HILL_UNIFIED"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_flower_hill_unified"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_flower_hill_unified_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_FLOWER_HILL_UNIFIED_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Long time no see."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_flensburg_declares_independence"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_flensburg_declares_independence_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_FLENSBURG_DECLARES_INDEPENDENCE"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_flensburg_declares_independence"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_flensburg_declares_independence_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_FLENSBURG_DECLARES_INDEPENDENCE_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Other colonies tremble..."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_liberation_of_enchancia"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_liberation_of_enchancia_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_LIBERATION_OF_ENCHANCIA"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_liberation_of_enchancia"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_liberation_of_enchancia_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_LIBERATION_OF_ENCHANCIA_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "A new hope?"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_hartmut_wins"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_hartmut_wins_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_HARTMUT_WINS"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_hartmut_wins"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_hartmut_wins_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_HARTMUT_WINS_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Who's next on his list?"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_cedric_wins"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_enchancian_civil_war_cedric_wins_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_CEDRIC_WINS"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_enchancian_civil_war_cedric_wins"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_cedric_wins_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_CEDRIC_WINS_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Enchancia lies in darkness..."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_monarchist_win"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+	#	show_sound = cr_bigevent_enchancian_civil_war_monarchist_win_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_MONARCHIST_WIN"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_enchancian_civil_war_monarchist_win"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_monarchist_win_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_MONARCHIST_WIN_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Was it worth?"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_equalists_win"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_enchancian_civil_war_equalists_win_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_EQUALISTS_WIN"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_enchancian_civil_war_equalists_win"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_equalists_win_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_EQUALISTS_WIN_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Enchancia turns red."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_enchancian_civil_war_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_why_enchancia_has_fallen"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_enchancian_civil_war_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_ENCHANCIAN_CIVIL_WAR_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Enchancia turns red."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_the_young_king_is_dead"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_the_young_king_is_dead_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_THE_YOUNG_KING_IS_DEAD"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_the_young_king_is_dead"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_the_young_king_is_dead_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_THE_YOUNG_KING_IS_DEAD_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "Let him rest in peace."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_dio_fucking_dies"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_dio_fucking_dies_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_DIO_FUCKING_DIES"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_dio_fucking_dies"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_dio_fucking_dies_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_DIO_FUCKING_DIES_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "The world is safe."
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_coronation_of_last_dragon"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_coronation_of_last_dragon_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_CORONATION_OF_LAST_DRAGON"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_greenland_crown_returns"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_coronation_of_last_dragon_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_CORONATION_OF_LAST_DRAGON_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "A Kingdom once again."
 			shortcut = "ESCAPE"
 			position = { x = -110 y = 206 }
 			quadTextureSprite ="GFX_button_221x34"

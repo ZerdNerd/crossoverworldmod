@@ -270,6 +270,27 @@ country_event = { #Black Monday hits!
 		add_ideas = {
             TCWMod_black_monday
         }
+		if = {
+			limit = {
+				tag = MAI
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -3
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -3
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = -3
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = -3
+				}
+			}
+		}
 	}
 }
 

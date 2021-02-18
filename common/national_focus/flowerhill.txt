@@ -905,7 +905,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		} 
 
@@ -947,7 +947,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -994,7 +994,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1043,7 +1043,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1078,7 +1078,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1114,7 +1114,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1154,7 +1154,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1198,7 +1198,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1244,7 +1244,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1296,7 +1296,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1332,7 +1332,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1368,7 +1368,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -1404,7 +1404,7 @@ focus_tree = {
 					has_completed_focus = FLO_the_act_of_unity
 					has_completed_focus = FLO_the_interspecies_act
 				}
-				add = 50
+				add = 25
 			}
 		}
 
@@ -2083,6 +2083,12 @@ focus_tree = {
 				}
 				add = 50
 			}
+			modifier = {
+				TRL = {
+					has_war_with = GON
+				}
+				add = 150
+			}
 		} 
 
 		bypass = {
@@ -2306,8 +2312,8 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FLO_plan_hayan
-		icon = GFX_focus_generic_anti_fascist_diplomacy
+		id = FLO_plan_bugjjog
+		icon = GFX_goal_generic_more_territorial_claims
 		x = 3
 		y = 1
 		cost = 7.25
@@ -2315,10 +2321,50 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 100
+			base = 100
 			modifier = {
 				has_war = yes
-				factor = 0
+				date < 1944.6.1
+				add = -100
+			}
+		} 
+
+		bypass = {
+			OR = {
+				ELW = {
+					exists = no
+				}
+				has_war_with = ELW
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_exporting_revolution
+		}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = ELW
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_plan_hayan
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_plan_bugjjog
+		available_if_capitulated = yes 
+
+		ai_will_do = { 
+			base = 100
+			modifier = {
+				has_war = yes
+				date < 1944.6.1
+				add = -100
 			}
 		} 
 
@@ -2332,13 +2378,56 @@ focus_tree = {
 		}
 
 		prerequisite = {
-			focus = FLO_exporting_revolution
+			focus = FLO_plan_bugjjog
 		}
 
 		completion_reward = {
 			create_wargoal = {
     			type = annex_everything
     			target = GON
+			}
+		} 
+	}
+
+	focus = {
+		id = FLO_plan_cholog_bis
+		icon = GFX_goal_generic_major_war
+		x = 2
+		y = 1
+		cost = 7.25
+		relative_position_id = FLO_plan_hayan
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			base = 100
+			modifier = {
+				GON = {
+					exists = yes
+				}
+				add = -100
+			}
+		}  
+
+		bypass = {
+			OR = {
+				SOO = {
+					exists = no
+				}
+				has_war_with = SOO
+			}
+		}
+
+		prerequisite = {
+			focus = FLO_plan_hayan
+		}
+		#prerequisite = {
+		#	focus = FLO_variant_seojjog
+		#}
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = SOO
 			}
 		} 
 	}
@@ -2358,14 +2447,14 @@ focus_tree = {
 				GON = {
 					exists = yes
 				}
-				factor = 0
+				add = 0
 			}
 			modifier = {
 				date > 1941.5.1
 				NOT = {
 					has_country_flag = FLO_signed_gongmen_pact
 				}
-				factor = 100
+				add = 100
 			}
 		}  
 
@@ -2414,7 +2503,7 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 100
+			base = 100
 			modifier = {
 				OR = {
 					GON = {
@@ -2425,7 +2514,7 @@ focus_tree = {
 					}
 					has_war = yes
 				}
-				factor = 0
+				add = -100
 			}
 		} 
 
@@ -2462,7 +2551,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2481,7 +2570,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		}
 
@@ -2507,7 +2596,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2526,7 +2615,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		}
 
@@ -2552,7 +2641,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2571,7 +2660,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		}
 
@@ -2615,7 +2704,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2634,7 +2723,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		}
 
@@ -2660,7 +2749,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2679,7 +2768,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		}
 
@@ -2758,7 +2847,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2777,7 +2866,7 @@ focus_tree = {
 					}
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		} 
 
@@ -2812,7 +2901,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				GON = {
 					exists = yes
@@ -2835,7 +2924,7 @@ focus_tree = {
 					is_puppet = no
 				}
 				has_war = yes
-				factor = 0
+				add = -50
 			}
 		} 
 
@@ -2861,13 +2950,13 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				TSA = {
 					exists = yes
 					is_puppet = no
 				}
-				factor = 0
+				add = -50
 			}
 		} 
 
@@ -2902,7 +2991,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			factor = 50
+			base = 50
 			modifier = {
 				FRI = {
 					exists = yes
@@ -2911,7 +3000,7 @@ focus_tree = {
 					exists = yes
 					is_puppet = no
 				}
-				factor = 0
+				add = -50
 			}
 		} 
 
@@ -2942,12 +3031,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_army_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 37
 		y = -7
@@ -2977,12 +3078,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_weapon_development
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_small_arms
 		prerequisite = { focus = FLO_generic_army_effort }
 		x = -3
@@ -3005,12 +3118,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_artillery_research
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = FLO_generic_weapon_development }
 		x = 1
@@ -3033,12 +3158,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_new_officer_corps
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_generic_military_mission
 		prerequisite = { focus = FLO_generic_artillery_research }
 		x = 0
@@ -3062,12 +3199,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_motorization_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_motorized
 		prerequisite = { focus = FLO_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
@@ -3090,12 +3239,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_doctrine_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = FLO_generic_army_effort }
 		x = 0
@@ -3119,12 +3280,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_weapons_and_co
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_artillery
 		prerequisite = { focus = FLO_generic_weapon_development }
 		x = -1
@@ -3147,12 +3320,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_practice_reverse_engineering
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_production2
 		prerequisite = { focus = FLO_generic_motorization_effort }
 		x = -1
@@ -3181,12 +3366,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_study_foreign_tanks
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_tanks
 		prerequisite = { focus = FLO_generic_practice_reverse_engineering }
 		x = 0
@@ -3209,12 +3406,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_mechanization_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_build_tank
 		prerequisite = { focus = FLO_generic_motorization_effort }
 		x = 1
@@ -3237,12 +3446,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_doctrine_effort_2
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = FLO_generic_doctrine_effort }
 		x = 0
@@ -3266,12 +3487,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_military_academy
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_position_armies
 		prerequisite = { focus = FLO_generic_doctrine_effort_2 }
 		x = 0
@@ -3292,12 +3525,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_weapon_development_3
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_army_artillery2
 		prerequisite = { focus = FLO_generic_weapons_and_co }
 		x = 0
@@ -3321,10 +3566,22 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_armor_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
+			}
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
 			}
 		} 
 		icon = GFX_goal_generic_army_tanks
@@ -3349,12 +3606,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_special_forces
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_special_forces
 		prerequisite = { focus = FLO_generic_weapon_development_3 }
 		prerequisite = { focus = FLO_generic_military_academy }
@@ -3395,12 +3664,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_naval_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 37
 		y = -1
@@ -3435,12 +3716,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_flexible_navy
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_build_navy
 		prerequisite = { focus = FLO_generic_naval_effort }
 		mutually_exclusive = { focus = FLO_generic_large_navy }
@@ -3473,12 +3766,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_large_navy
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		prerequisite = { focus = FLO_generic_naval_effort }
 		mutually_exclusive = { focus = FLO_generic_flexible_navy }
@@ -3507,12 +3812,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_naval_academy
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
 		x = -4
@@ -3539,12 +3856,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_a_new_type_of_infantry
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_amphibious_assault
 		prerequisite = { focus = FLO_generic_naval_academy }
 		x = 0
@@ -3572,12 +3901,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_destroyer_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_generic_destroyer
 		prerequisite = { focus = FLO_generic_flexible_navy focus = FLO_generic_large_navy }
 		x = 0
@@ -3604,12 +3945,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_submarine_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_navy_submarine
 		prerequisite = { focus = FLO_generic_destroyer_effort }
 		x = 0
@@ -3636,12 +3989,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_floating_airfields
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_navy_carrier
 		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
 		x = -2
@@ -3672,12 +4037,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_naval_air_force
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_fighter2
 		prerequisite = { focus = FLO_generic_floating_airfields }
 		x = 0
@@ -3704,12 +4081,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_cruiser_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_navy_cruiser
 		prerequisite = { focus = FLO_generic_large_navy focus = FLO_generic_flexible_navy }
 		x = 0
@@ -3737,12 +4126,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_capital_ships_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_navy_battleship
 		prerequisite = { focus = FLO_generic_cruiser_effort }
 		x = 0
@@ -3781,12 +4182,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_aviation_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_build_airforce
 		x = 37
 		y = 4
@@ -3823,12 +4236,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_fighter_focus
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = FLO_generic_aviation_effort }
 		x = -2
@@ -3850,12 +4275,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_heavy_fighter_focus
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_fighter
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		prerequisite = { focus = FLO_generic_bomber_focus }
@@ -3878,12 +4315,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_CAS_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_CAS
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		x = 0
@@ -3905,12 +4354,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_air_force_academy
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_generic_military_academy
 		prerequisite = { focus = FLO_generic_fighter_focus }
 		x = -2
@@ -3933,12 +4394,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_bomber_focus
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_aviation_effort }
 		x = 2
@@ -3960,12 +4433,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_reverse_engineer_foreign_bombers
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_research
 		prerequisite = { focus = FLO_generic_bomber_focus }
 		x = 0
@@ -3988,12 +4473,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_strategic_bombing
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_bomber_focus }
 		x = 2
@@ -4015,12 +4512,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_expand_bombing_command
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_bomber
 		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
 		prerequisite = { focus = FLO_generic_reverse_engineer_foreign_bombers }
@@ -4046,12 +4555,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_aviation_effort_2
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_goal_generic_air_doctrine
 		prerequisite = { focus = FLO_generic_heavy_fighter_focus }
 		prerequisite = { focus = FLO_generic_CAS_effort }
@@ -4077,12 +4598,24 @@ focus_tree = {
 	focus = {
 		id = FLO_generic_rocket_effort
 		ai_will_do = { 
-			base = 0
+			factor = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				factor = 2
 			}
-		} 
+			modifier = {
+				factor = 2
+				date > 1939.1.1
+			}
+			modifier = {
+				factor = 2
+				date > 1940.1.1
+			}
+			modifier = {
+				factor = 5
+				date > 1941.1.1
+			}
+		}
 		icon = GFX_focus_rocketry
 		prerequisite = { focus = FLO_generic_aviation_effort_2 }
 		prerequisite = { focus = FLO_generic_expand_bombing_command }

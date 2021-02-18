@@ -498,9 +498,18 @@ invade_gummibears = {
 spalding_should_invade_san_escobar = {
 	enable = {
 		tag = SLD
-		has_wargoal_against = SAN
+		OR = {
+			has_wargoal_against = SAN
+			has_war_with = SAN
+		}
 	}
 	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SAN"			
+		value = 7000
+	}
 
 	ai_strategy = {
 		type = invade
@@ -517,6 +526,166 @@ spalding_should_invade_san_escobar = {
 	ai_strategy = {
 		type = declare_war
 		id = "SAN"			
+		value = 7000
+	}
+}
+
+spalding_should_invade_neland = {
+	enable = {
+		tag = SLD
+		NRL = {
+			exists = yes
+		}
+		OR = {
+			has_wargoal_against = NRL
+			has_war_with = NRL
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "NRL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "NRL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "NRL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "NRL"			
+		value = 7000
+	}
+}
+
+san_escobar_move_against_spalding = {
+	enable = {
+		tag = SAN
+		OR = {
+			has_wargoal_against = SLD
+			has_war_with = SLD
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SLD"			
+		value = 7000
+	}
+	
+	ai_strategy = {
+		type = invade
+		id = "SLD"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SLD"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "SLD"			
+		value = 7000
+	}
+}
+
+san_escobar_move_against_smurfs = {
+	enable = {
+		tag = SAN
+		OR = {
+			has_wargoal_against = SMU
+			has_war_with = SMU
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "SMU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "SMU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "SMU"			
+		value = 7000
+	}
+}
+
+san_escobar_move_against_vines = {
+	enable = {
+		tag = SAN
+		OR = {
+			has_wargoal_against = VIS
+			has_war_with = VIS
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "VIS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "VIS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "VIS"			
+		value = 7000
+	}
+}
+
+san_escobar_move_against_mushrooms = {
+	enable = {
+		tag = SAN
+		OR = {
+			has_wargoal_against = MUS
+			has_war_with = MUS
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = invade
+		id = "MUS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = conquer
+		id = "MUS"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = declare_war
+		id = "MUS"			
 		value = 7000
 	}
 }

@@ -39,6 +39,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = GRN
 							is_ai = no
+							is_ironman = yes
 							532 = {
 								is_owned_by = GRN
 							}
@@ -103,6 +104,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 2 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							NOT = {
 								tag = GRN
 							}
@@ -115,6 +117,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = DES
 							is_ai = no
+							is_ironman = yes
 							518 = {
 								is_owned_by = DES
 							}
@@ -210,6 +213,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = SIO
 							is_ai = no
+							is_ironman = yes
 							DES = {
 								has_completed_focus = DES_take_care_of_sioux_tribe
 							}
@@ -252,6 +256,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 							tag = TSA
 							has_government = fascism
 							is_ai = no
+							is_ironman = yes
 							652 = {
 								is_owned_by = TSA
 							}
@@ -344,6 +349,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = MAI
 							is_ai = no
+							is_ironman = yes
 							FRI = {
 								OR = {
 									exists = no
@@ -392,6 +398,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = SLD
 							is_ai = no
+							is_ironman = yes
 							has_government = monarchism
 							FRI = {
 								all_state = {
@@ -443,6 +450,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = SAN
 							is_ai = no
+							is_ironman = yes
 							SLD = {
 								all_state = {
 									is_core_of = SLD
@@ -459,6 +467,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 9 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							UND = {
 								all_state = {
 									is_core_of = UND
@@ -476,6 +485,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = ENC
 							is_ai = no
+							is_ironman = yes
 							has_global_flag = enchancian_civil_war_over
 							KHA = {
 								has_government = monarchism
@@ -515,6 +525,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						ROOT = {
 							tag = SWA
 							is_ai = no
+							is_ironman = yes
 							is_in_faction_with = FFA
 							DUL = {
 								all_state = {
@@ -547,6 +558,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 12 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							AND = {
 								has_idea = GUP_saunders
 								has_idea = GUP_stgloriana
@@ -562,6 +574,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 13 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							tag = TIG
 							has_country_leader = {
 								name = "Lud"
@@ -575,6 +588,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 14 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							tag = MAI
 							has_country_leader = {
 								name = "Maciej I"
@@ -590,6 +604,7 @@ scripted_gui = { #yes, its from pax custom achievements shit
 						check_variable = { v = 15 }
 						ROOT = {
 							is_ai = no
+							is_ironman = yes
 							tag = MAI
 							has_completed_focus = MAI_ive_been_betrayed
 						}

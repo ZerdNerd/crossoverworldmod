@@ -104,6 +104,14 @@ scripted_gui = {
 				NOT = { check_variable = { cr_welcome_screen = 4 } }
 			}
 
+			tab_5_on_visible = {
+				check_variable = { cr_welcome_screen = 5 }
+			}
+
+			tab_5_off_visible = {
+				NOT = { check_variable = { cr_welcome_screen = 5 } }
+			}
+
 			tab_1_header_visible = {
 				check_variable = { cr_welcome_screen = 1 }
 			}
@@ -118,6 +126,10 @@ scripted_gui = {
 
 			tab_4_header_visible = {
 				check_variable = { cr_welcome_screen = 4 }
+			}
+
+			tab_5_header_visible = {
+				check_variable = { cr_welcome_screen = 5 }
 			}
 		}
 
@@ -142,6 +154,10 @@ scripted_gui = {
 				set_variable = { cr_welcome_screen = 4 }
 			}
 
+			tab_5_off_click = {
+				set_variable = { cr_welcome_screen = 5 }
+			}
+
 			cr_custom_sounds_button_click = {
 				if = {
 					limit = { NOT = { has_variable = cr_custom_sounds_status } }
@@ -149,6 +165,16 @@ scripted_gui = {
 				}
 				else = {
 					clear_variable = cr_custom_sounds_status
+				}
+			}
+
+			cr_super_event_sound_button_click = {
+				if = {
+					limit = { NOT = { has_variable = cr_superevent_music_status } }
+					set_variable = { cr_superevent_music_status = 1 }
+				}
+				else = {
+					clear_variable = cr_superevent_music_status
 				}
 			}
 		}
@@ -199,6 +225,18 @@ scripted_gui = {
 		visible = {
 			is_ai = no
 			check_variable = { cr_welcome_screen = 4 }
+		}
+	}
+
+	cr_welcome_screen_tab_5_content = {
+		context_type = player_context
+
+		window_name = "cr_ws_tab_5_slider"
+		parent_window_name = "cr_welcome_screen_container"
+
+		visible = {
+			is_ai = no
+			check_variable = { cr_welcome_screen = 5 }
 		}
 	}
 

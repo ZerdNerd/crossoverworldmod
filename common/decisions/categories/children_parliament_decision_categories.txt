@@ -6,10 +6,8 @@ children_parliament_dec_category = {
 
 	visible = {
 		tag = MAI
-		#has_completed_focus = MAI_first_elections
+		has_country_flag = children_parliament
 	}
-
-	scripted_gui = children_parliament_seats_window_ui
 
 	priority = 85
 }
@@ -23,6 +21,7 @@ children_parliament_seats_category = {
 	visible = {
 		tag = MAI
 		has_country_flag = parliament_reformed
+		has_country_flag = children_parliament
 	}
 
 	priority = 80

@@ -314,8 +314,32 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "cr_ws_tab_5_slider"
+		position = { x=33 y=205 }
+		size = { width=1115 height=443 }
+		verticalScrollbar = "right_vertical_slider"
+		margin = { top = 4 bottom = 4 }
+		smooth_scrolling = yes
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_blank"
+		}
+
+		instantTextboxType = {
+			name = "tab_5_text"
+			position = { x=0 y=0 }
+			font = "hoi_20bs"
+			text = "CR_WS_TAB_5_TXT"
+			maxWidth = 1090
+			maxHeight = 432
+			#fixedsize = yes
+			scrollbartype = "standardtext_slider"
+		}
+	}
+
+	containerWindowType = {
 		name = "cr_welcome_screen_container"
-		size = { width = 1167 height = 675}
+		size = { width = 1200 height = 675}
 		position = { x=-583 y=-297 }
 		Orientation = center
 		moveable = yes
@@ -341,16 +365,16 @@ guiTypes = {
 
 		buttonType = {
 			name = "tab_1_on"
-			position = { x = 58 y = 104 }
+			position = { x = 20 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_on"
 			font = "hoi_18mbs"
-			#buttonText = "CR_WS_TAB_1"
+			buttonText = "CR_WS_TAB_1"
 			pdx_tooltip = "CR_WS_TAB_1_TT"
 		}
 
 		buttonType = {
 			name = "tab_2_on"
-			position = { x = 331 y = 104 }
+			position = { x = 252 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_on"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_2"
@@ -359,7 +383,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "tab_3_on"
-			position = { x = 596 y = 104 }
+			position = { x = 484 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_on"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_3"
@@ -368,7 +392,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "tab_4_on"
-			position = { x = 869 y = 104 }
+			position = { x = 716 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_on"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_4"
@@ -376,18 +400,27 @@ guiTypes = {
 		}
 
 		buttonType = {
+			name = "tab_5_on"
+			position = { x = 948 y = 104 }
+			quadTextureSprite ="GFX_cr_welcome_screen_tab_on"
+			font = "hoi_18mbs"
+			buttonText = "CR_WS_TAB_5"
+			pdx_tooltip = "CR_WS_TAB_5_TT"
+		}
+
+		buttonType = {
 			name = "tab_1_off"
-			position = { x = 58 y = 104 }
+			position = { x = 20 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_off"
 			font = "hoi_18mbs"
-			#buttonText = "CR_WS_TAB_1"
+			buttonText = "CR_WS_TAB_1"
 			pdx_tooltip = "CR_WS_TAB_1_TT"
 			clicksound = click_default
 		}
 
 		buttonType = {
 			name = "tab_2_off"
-			position = { x = 331 y = 104 }
+			position = { x = 252 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_off"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_2"
@@ -397,7 +430,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "tab_3_off"
-			position = { x = 596 y = 104 }
+			position = { x = 484 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_off"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_3"
@@ -407,7 +440,7 @@ guiTypes = {
 
 		buttonType = {
 			name = "tab_4_off"
-			position = { x = 869 y = 104 }
+			position = { x = 716 y = 104 }
 			quadTextureSprite ="GFX_cr_welcome_screen_tab_off"
 			font = "hoi_18mbs"
 			buttonText = "CR_WS_TAB_4"
@@ -415,17 +448,14 @@ guiTypes = {
 			clicksound = click_default
 		}
 
-		instantTextboxType = {
-			name = "tab_1_btn_text"
-			position = { x = -505 y = 125 }
+		buttonType = {
+			name = "tab_5_off"
+			position = { x = 948 y = 104 }
+			quadTextureSprite ="GFX_cr_welcome_screen_tab_off"
 			font = "hoi_18mbs"
-			text = "CR_WS_TAB_1"
-			pdx_tooltip = "CR_WS_TAB_1_TT"
-			maxWidth = 200
-			maxHeight = 18
-			fixedsize = yes
-		    Orientation = center_up
-			format = center
+			buttonText = "CR_WS_TAB_5"
+			pdx_tooltip = "CR_WS_TAB_5_TT"
+			clicksound = click_default
 		}
 
 		instantTextboxType = {
@@ -489,6 +519,15 @@ guiTypes = {
 			font = "hoi_18mbs"
 			text = "Custom sounds"
 			pdx_tooltip = "CR_WS_CUSTOM_SOUND_TT"
+		}
+
+		buttonType = {
+			name = "cr_super_event_sound_button"
+			position = { x = 222 y = 72 }
+			spriteType = "GFX_sort_button_140x29"
+			font = "hoi_18mbs"
+			text = "Superevent music"
+			pdx_tooltip = "CR_WS_SUPEREVENT_SOUND_TT"
 		}
 	}
 }

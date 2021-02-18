@@ -227,3 +227,15 @@ defined_text = {
 		localization_key = CR_WS_custom_sounds_status_off
 	}
 }
+
+defined_text = {
+	name = superevent_music_status
+	text = {
+		trigger = { has_variable = cr_superevent_music_status }
+		localization_key = CR_WS_superevent_music_status_on
+	}
+	text = {
+		trigger = { NOT = { has_variable = cr_superevent_music_status } }
+		localization_key = CR_WS_superevent_music_status_off
+	}
+}

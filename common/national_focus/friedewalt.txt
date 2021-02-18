@@ -1256,6 +1256,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+		bypass = {
+			always = yes
+		}
 		completion_reward = { 
 			WEK = {
 				country_event = {
@@ -1279,6 +1282,9 @@ focus_tree = {
 					has_government = monarchism
 				}
 			}
+		}
+		bypass = {
+			always = yes
 		}
 		prerequisite = { focus = FRI_hartmut_rules }
 		mutually_exclusive = { focus = FRI_attack_spalding }
@@ -1309,6 +1315,9 @@ focus_tree = {
 					has_government = fascism
 				}
 			}
+		}
+		bypass = {
+			always = yes
 		}
 		prerequisite = { focus = FRI_hartmut_rules }
 		mutually_exclusive = { focus = FRI_convince_spalding }
@@ -1341,6 +1350,9 @@ focus_tree = {
 		available_if_capitulated = no
 		available = {
 			has_war = no
+		}
+		bypass = {
+			always = yes
 		}
 		ai_will_do = { 
 			factor = 1
@@ -1503,7 +1515,7 @@ focus_tree = {
 		}
 		completion_reward = { 
 			SLD = {
-				every_state = {
+				every_owned_state = {
 					add_claim_by = FRI
 				}
 				if = {
@@ -1540,12 +1552,12 @@ focus_tree = {
 		}
 		completion_reward = { 
 			VIS = {
-				every_state = {
+				every_owned_state = {
 					add_claim_by = FRI
 				}
 			}
 			MUS = {
-				every_state = {
+				every_owned_state = {
 					add_claim_by = FRI
 				}
 			}
@@ -1574,6 +1586,10 @@ focus_tree = {
 		} 
 		available = {
 			has_war = no
+			has_country_leader = {
+    			name = "Hartmut II"
+   				ruling_only = yes
+			}
 		}
 		completion_reward = { 
 			custom_effect_tooltip = FRI_empire
@@ -1914,6 +1930,9 @@ focus_tree = {
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
+		}
+		available = {
+			has_war = no
 		}
 		completion_reward = { 
 			if = {

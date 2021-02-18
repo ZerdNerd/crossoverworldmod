@@ -21,4 +21,18 @@ spriteTypes = {
      name = "GFX_unit_stand_users_icon_medium_white"						
      textureFile = "gfx/interface/counters/division_templates_small/custom_template_000.dds"
    }
+
+   	spriteType = {
+		name = "GFX_nato_unit_militia_icon_small"
+		texturefile = "gfx/texticons/nato_unit_militia_icon_small.dds"
+		legacy_lazy_load = no
+	}
+	spriteType = {
+		name = "GFX_unit_militia_icon_small"
+		texturefile = "gfx/texticons/unit_militia_icon_small.dds"
+		legacy_lazy_load = no
+		noOfFrames = 2
+	}
+	spriteType = { name = "GFX_unit_militia_icon_medium"								textureFile = "gfx/interface/counters/divisions_large/unit_militia_icon.dds" noOfFrames = 2 }
+	spriteType = { name = "GFX_unit_militia_icon_medium_white"							textureFile = "gfx/interface/counters/divisions_small/onmap_unit_militia_icon.dds" noOfFrames = 2 }
 }

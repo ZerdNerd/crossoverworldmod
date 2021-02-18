@@ -1777,12 +1777,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = COR
 			}
 		} 
@@ -1809,12 +1813,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = KHA
 			}
 		} 
@@ -1841,12 +1849,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = TRU
 			}
 		} 
@@ -1873,12 +1885,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = RUD
 			}
 		} 
@@ -1933,12 +1949,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = liberate_wargoal
+    			type = annex_everything
     			target = DUL
 			}
 		} 
@@ -1962,12 +1982,16 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = {
 			create_wargoal = {
-    			type = topple_government
+    			type = annex_everything
     			target = SAN
 			}
 		} 
@@ -2003,7 +2027,11 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = { 
@@ -2045,7 +2073,7 @@ focus_tree = {
 		completion_reward = { 
 			declare_war_on = {
     			target = FRI
-    			type = topple_government
+    			type = annex_everything
 			}
 		} 
 	}
@@ -2219,7 +2247,11 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = { 
@@ -2249,7 +2281,11 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = { 
@@ -2278,7 +2314,11 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = { 
@@ -2307,11 +2347,15 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
+			}
 		}
 
 		completion_reward = { 
-			declare_war_on = {
+			create_wargoal = {
     			type = annex_everything
     			target = UND
 			}
@@ -2395,6 +2439,14 @@ focus_tree = {
 		bypass = {
 			MAI = {
 				exists = no
+			}
+		}
+
+		ai_will_do = { 
+			factor = 0
+			modifier = {
+				has_war = no
+				factor = 1
 			}
 		}
 

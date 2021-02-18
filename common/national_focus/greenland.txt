@@ -1779,6 +1779,18 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = GRN_tabaluga_coronation
 			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_coronation_of_last_dragon
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_coronation_of_last_dragon_sound
+				}
 				retire_country_leader = yes
 					create_country_leader = {
 					name = "Tabaluga I"

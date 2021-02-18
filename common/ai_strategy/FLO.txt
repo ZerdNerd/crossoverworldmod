@@ -132,18 +132,6 @@ fh_you_bastards_annex_these_idiots = {
 		value = 7000
 	}
 
-	ai_strategy = {
-		type = invade
-		id = "WOL"			
-		value = 7000
-	}
-
-	ai_strategy = {
-		type = invade
-		id = "WEA"			
-		value = 7000
-	}
-
 }
 
 fh_you_bastards_guard_southern_borders = {
@@ -161,6 +149,18 @@ fh_you_bastards_guard_southern_borders = {
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
+		type = prepare_for_war
+		id = "SQU"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "DUC"			
+		value = 7000
+	}
+
+	ai_strategy = {
 		type = invade
 		id = "SQU"			
 		value = 7000
@@ -169,6 +169,18 @@ fh_you_bastards_guard_southern_borders = {
 	ai_strategy = {
 		type = invade
 		id = "DUC"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "WOL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = ignore
+		id = "WEA"			
 		value = 7000
 	}
 
@@ -297,6 +309,48 @@ cmon_flower_hill_go_for_gold = {
 		has_tech = landing_craft
 	}
 	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "DES"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "ICW"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "GRN"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "FFA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "DUL"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "TSA"			
+		value = 7000
+	}
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "FRI"			
+		value = 7000
+	}
 
 	ai_strategy = {
 		type = invade

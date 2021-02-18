@@ -6,7 +6,13 @@ guiTypes = {
 	containerWindowType = {
 		name = "children_parliament_seats_window"
 		position = { x = 0 y = 0 }
-		size = { width = 100% height= 300 }
+		size = { width=436 height=496 }
+
+		background = {
+			name = "Background"
+			quadTextureSprite = "GFX_tiled_window_1b_border"
+			position = { x = 0 y = 5 }
+		}
 
 		instantTextBoxType = {
 			name ="mai_chp_seats_header"
@@ -84,6 +90,40 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "central_kingdom_chp_window_noreform_container"
+		position = { x = 539 y = 80 }
+		size = { width = 600 height = 600 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		orientation = UPPER_LEFT
+
+		background = {
+			quadTextureSprite = "GFX_tiled_window_1b_border"
+			name = "Background"
+		}
+
+		instantTextboxType = {
+			name = "mai_chp_headline"
+			position = {x=45 y=15}
+			font = "hoi_36header"
+			text = "The Children Parliament of Central Kingdom"
+			maxWidth = 500
+			maxHeight = 23
+			format = center
+		}
+
+		buttonType = {
+			name = "mai_chp_exit"
+			position = { x = 565 y = 5 }
+			spriteType = "GFX_closebutton"
+			shortcut = "ESCAPE"
+			pdx_tooltip = "CLOSE"
+		}
+	}
+
+	containerWindowType = {
 		name = "central_kingdom_chp_window_container"
 		position = { x = 539 y = 80 }
 		size = { width = 1200 height = 800 }
@@ -118,6 +158,39 @@ guiTypes = {
 	}
 
 	#CURRENT TOPICS - used to hide when Parliament is undergoing reforms 
+
+	containerWindowType = {
+		name = "central_kingdom_chp_current_motion_noreform_container"
+		position = { x = 539 y = 80 }
+		size = { width = 600 height = 600 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+		clipping = yes
+		moveable = yes
+		orientation = UPPER_LEFT
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topics_header"
+			position = { x = 0 y = 130}
+			font = "hoi_24header"
+			text = "MAI_children_parliament_next_session_topics_header_text"
+			format = center
+			maxWidth = 600
+			maxHeight = 24
+		}
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_next_session_topic"
+			position = { x = 0 y = 165 }
+			font = "hoi_20bs"
+			text = "MAI_children_parliament_next_session_topic_1_text"
+			format = center
+			maxWidth = 600
+			maxHeight = 24
+		}
+	}
 
 	containerWindowType = {
 		name = "central_kingdom_chp_current_motion_container"
@@ -179,72 +252,58 @@ guiTypes = {
 	containerWindowType = {
 		name = "central_kingdom_chp_noreform_container"
 		position = { x = 539 y = 80 }
-		size = { width = 1165 height = 800 }
+		size = { width = 600 height = 600 }
 		fade_time = 100
 		fade_type = linear
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 
-		containerWindowType = {
-			name = "mai_chp_party_chart_united_container"
-			position = { x = 170 y = 450 }
-			size = { width = 379	height = 234 }
-
-			iconType = {
-				name = "mai_chp_chart_united"
-				spriteType = "GFX_cr_mai_chp_united"
-				position = { x = 0 y = 0 }		
-				allwaystransparent = yes
-				orientation = CENTER
-			}
-		}
-
 		instantTextBoxType = {
 			name ="MAI_children_parliament_united_info"
-			position = { x = 15 y = 450 }
+			position = { x = 50 y = 490 }
 			font = "hoi_24header"
 			text = "MAI_children_parliament_united_info_text"
 			format = center
-			maxWidth = 1165
+			maxWidth = 500
 			maxHeight = 24
 		}
 
 		containerWindowType = {
 			name = "mai_chp_noreform_leader_container"
-			position = { x = 50% y = 94 }
-			size = { width = 420	height = 260 }
+			position = { x = 0 y = 0 }
+			size = { width = 600	height = 600 }
 
 			instantTextBoxType = {
 				name ="MAI_children_parliament_current_leader_header"
-				position = { x = -90 y = -30 }
+				position = { x = 0 y = 210 }
 				font = "hoi_24header"
 				text = "MAI_children_parliament_current_leader_header"
 				format = center
-				maxWidth = 300
+				maxWidth = 600
 				maxHeight = 24
 			}
 
 			iconType = {
 				name = "mai_chp_united_parliament_leader"
-				position = {x=0 y=0}	
+				position = { x = 230 y = 250 }	
 				spriteType ="GFX_decision_mai_ch_par_leaders"
-				scale = 0.71
+				scale = 0.9
 			}
 
 			iconType = {
 				name = "mai_chp_united_parliament_leader_frame2"
 				spriteType = "GFX_pol_leader_frame"
-				position = { x = -4 y = -4 }		
+				position = { x = 224 y = 244 }		
 				allwaystransparent = yes
-				scale = 0.71
+				scale = 0.9
 			}
 
 			instantTextboxType = {
 				name = "mai_chp_united_parliament_leader_name"
-				position = { x = -21 y = 152 }
+				position = { x = 0 y = 445 }
 				font = "hoi_18mbs"
 				text = "MAI_children_parliament_current_leader_name"
-				maxWidth = 155
+				maxWidth = 600
 				maxHeight = 20
 				format = center
 				vertical_alignment = center

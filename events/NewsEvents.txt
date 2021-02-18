@@ -3856,3 +3856,160 @@ news_event = { #Gongmen Treaty signed
 		}
 	}
 }
+
+news_event = { #The Central Wedding (Sofia variant)
+	id = worldnews.102
+	title = worldnews.102.t
+	desc = worldnews.102.d
+	picture = GFX_news_macius_palace
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = worldnews.102.a
+		trigger = {
+			OR = {
+				tag = MAI
+				tag = ENC
+				tag = EN1
+				tag = EN2
+				has_country_flag = winslow_on_exile
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.102.b
+		trigger = {
+			NOT = {
+				tag = MAI
+				tag = ENC
+				tag = EN1
+				tag = EN2
+				has_country_flag = winslow_on_exile
+			}
+			has_government = monarchism
+		}
+	}
+
+	option = {
+		name = worldnews.102.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+
+	option = {
+		name = worldnews.102.e
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.102.f
+		trigger = {
+			OR = {
+				tag = EN3
+				tag = EN4
+			}
+		}
+	}
+}
+
+news_event = { #The Central Wedding (Isabel variant)
+	id = worldnews.103
+	title = worldnews.102.t
+	desc = worldnews.103.d
+	picture = GFX_news_macius_palace
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = worldnews.102.a
+		trigger = {
+			OR = {
+				tag = MAI
+				tag = AVA
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.102.b
+		trigger = {
+			NOT = {
+				tag = MAI
+				tag = AVA
+			}
+			has_government = monarchism
+		}
+	}
+
+	option = {
+		name = worldnews.102.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+
+	option = {
+		name = worldnews.102.e
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+	}
+}
+
+news_event = { #The Central Wedding (Klu-Klu variant)
+	id = worldnews.104
+	title = worldnews.102.t
+	desc = worldnews.104.d
+	picture = GFX_news_macius_palace
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = worldnews.102.a
+		trigger = {
+			OR = {
+				tag = MAI
+				tag = TUG
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.102.b
+		trigger = {
+			NOT = {
+				tag = MAI
+				tag = TUG
+			}
+			has_government = monarchism
+		}
+	}
+
+	option = {
+		name = worldnews.102.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+
+	option = {
+		name = worldnews.102.e
+		trigger = {
+			OR = {
+				has_government = communism
+				has_government = fascism
+			}
+		}
+	}
+}

@@ -6,8 +6,37 @@ scripted_gui = {
         
     visible = {
       tag = MAI
-      has_country_flag = parliament_reformed
+      AND = {
+        has_country_flag = parliament_reformed
+        has_country_flag = children_parliament
+      }
+      always = no
     }
+  }
+
+  children_parliament_window_noreform_ui = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_window_noreform_container"
+        
+    visible = {
+      tag = MAI
+      NOT = {
+        has_country_flag = parliament_reformed
+      }
+      has_variable = MAI_chp_is_visible
+    }
+
+    properties = {
+      children_parliament_current_leader_icon = {
+				frame = current_children_parliament_leader_icon_frame
+      }
+		}
+    effects = {
+			mai_chp_exit_click = {
+				clear_variable = MAI_chp_is_visible
+			}
+		}
   }
 
 	children_parliament_window_ui = {
@@ -17,6 +46,7 @@ scripted_gui = {
         
     visible = {
       tag = MAI
+      has_country_flag = parliament_reformed
       has_variable = MAI_chp_is_visible
     }
 
@@ -56,6 +86,23 @@ scripted_gui = {
     }
   }
 
+  mai_chp_motion_visibility_noreform = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_current_motion_noreform_container"
+    parent_window_token = central_kingdom_chp_window_noreform_container
+        
+    visible = {
+      AND = {
+        tag = MAI
+        has_variable = MAI_chp_is_visible
+        NOT = {
+          has_country_flag = parliament_reformed
+        }
+      }
+    }
+  }
+
   mai_chp_motion_visibility = {
     context_type = player_context
      	
@@ -66,19 +113,14 @@ scripted_gui = {
       AND = {
         tag = MAI
         has_variable = MAI_chp_is_visible
-        OR = {
-          AND = {
-            has_country_flag = parliament_reformed
-            OR = {
-              has_country_flag = national_children_party_wins
-              has_country_flag = free_future_party_wins
-              has_country_flag = time_for_kids_wins
-              has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
-              has_country_flag = we_have_a_tie
-            }
-          }
-          NOT = {
-            has_country_flag = parliament_reformed
+        AND = {
+          has_country_flag = parliament_reformed
+          OR = {
+            has_country_flag = national_children_party_wins
+            has_country_flag = free_future_party_wins
+            has_country_flag = time_for_kids_wins
+            has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+            has_country_flag = we_have_a_tie
           }
         }
       }
@@ -1231,11 +1273,51 @@ scripted_gui = {
           }
         }
       }
+      877_seat_1_ncp_visible = {
+        877 = {
+          check_variable = { seat_1 = 1 }
+        }
+      }
+      877_seat_1_ffp_visible = {
+        877 = {
+          check_variable = { seat_1 = 2 }
+        }
+      }
+      877_seat_1_tfk_visible = {
+        877 = {
+          check_variable = { seat_1 = 3 }
+        }
+      }
+      877_seat_1_ccfrok_visible = {
+        877 = {
+          check_variable = { seat_1 = 4 }
+        }
+      }
       877_seat_1_empty_visible = {
         877 = {
           NOT = {
             is_owned_by = MAI
           }
+        }
+      }
+      877_seat_2_ncp_visible = {
+        877 = {
+          check_variable = { seat_2 = 1 }
+        }
+      }
+      877_seat_2_ffp_visible = {
+        877 = {
+          check_variable = { seat_2 = 2 }
+        }
+      }
+      877_seat_2_tfk_visible = {
+        877 = {
+          check_variable = { seat_2 = 3 }
+        }
+      }
+      877_seat_2_ccfrok_visible = {
+        877 = {
+          check_variable = { seat_2 = 4 }
         }
       }
       877_seat_2_empty_visible = {
@@ -1245,11 +1327,51 @@ scripted_gui = {
           }
         }
       }
+      897_seat_1_ncp_visible = {
+        897 = {
+          check_variable = { seat_1 = 1 }
+        }
+      }
+      897_seat_1_ffp_visible = {
+        897 = {
+          check_variable = { seat_1 = 2 }
+        }
+      }
+      897_seat_1_tfk_visible = {
+        897 = {
+          check_variable = { seat_1 = 3 }
+        }
+      }
+      897_seat_1_ccfrok_visible = {
+        897 = {
+          check_variable = { seat_1 = 4 }
+        }
+      }
       897_seat_1_empty_visible = {
         897 = {
           NOT = {
             is_owned_by = MAI
           }
+        }
+      }
+      897_seat_2_ncp_visible = {
+        897 = {
+          check_variable = { seat_2 = 1 }
+        }
+      }
+      897_seat_2_ffp_visible = {
+        897 = {
+          check_variable = { seat_2 = 2 }
+        }
+      }
+      897_seat_2_tfk_visible = {
+        897 = {
+          check_variable = { seat_2 = 3 }
+        }
+      }
+      897_seat_2_ccfrok_visible = {
+        897 = {
+          check_variable = { seat_2 = 4 }
         }
       }
       897_seat_2_empty_visible = {
@@ -1259,11 +1381,51 @@ scripted_gui = {
           }
         }
       }
+      897_seat_3_ncp_visible = {
+        897 = {
+          check_variable = { seat_3 = 1 }
+        }
+      }
+      897_seat_3_ffp_visible = {
+        897 = {
+          check_variable = { seat_3 = 2 }
+        }
+      }
+      897_seat_3_tfk_visible = {
+        897 = {
+          check_variable = { seat_3 = 3 }
+        }
+      }
+      897_seat_3_ccfrok_visible = {
+        897 = {
+          check_variable = { seat_3 = 4 }
+        }
+      }
       897_seat_3_empty_visible = {
         897 = {
           NOT = {
             is_owned_by = MAI
           }
+        }
+      }
+      872_seat_1_ncp_visible = {
+        872 = {
+          check_variable = { seat_1 = 1 }
+        }
+      }
+      872_seat_1_ffp_visible = {
+        872 = {
+          check_variable = { seat_1 = 2 }
+        }
+      }
+      872_seat_1_tfk_visible = {
+        872 = {
+          check_variable = { seat_1 = 3 }
+        }
+      }
+      872_seat_1_ccfrok_visible = {
+        872 = {
+          check_variable = { seat_1 = 4 }
         }
       }
       872_seat_1_empty_visible = {
@@ -1273,6 +1435,26 @@ scripted_gui = {
           }
         }
       }
+      872_seat_2_ncp_visible = {
+        872 = {
+          check_variable = { seat_2 = 1 }
+        }
+      }
+      872_seat_2_ffp_visible = {
+        872 = {
+          check_variable = { seat_2 = 2 }
+        }
+      }
+      872_seat_2_tfk_visible = {
+        872 = {
+          check_variable = { seat_2 = 3 }
+        }
+      }
+      872_seat_2_ccfrok_visible = {
+        872 = {
+          check_variable = { seat_2 = 4 }
+        }
+      }
       872_seat_2_empty_visible = {
         872 = {
           NOT = {
@@ -1280,8 +1462,82 @@ scripted_gui = {
           }
         }
       }
+      872_seat_3_ncp_visible = {
+        872 = {
+          check_variable = { seat_3 = 1 }
+        }
+      }
+      872_seat_3_ffp_visible = {
+        872 = {
+          check_variable = { seat_3 = 2 }
+        }
+      }
+      872_seat_3_tfk_visible = {
+        872 = {
+          check_variable = { seat_3 = 3 }
+        }
+      }
+      872_seat_3_ccfrok_visible = {
+        872 = {
+          check_variable = { seat_3 = 4 }
+        }
+      }
       872_seat_3_empty_visible = {
         872 = {
+          NOT = {
+            is_owned_by = MAI
+          }
+        }
+      }
+      911_seat_1_ncp_visible = {
+        911 = {
+          check_variable = { seat_1 = 1 }
+        }
+      }
+      911_seat_1_ffp_visible = {
+        911 = {
+          check_variable = { seat_1 = 2 }
+        }
+      }
+      911_seat_1_tfk_visible = {
+        911 = {
+          check_variable = { seat_1 = 3 }
+        }
+      }
+      911_seat_1_ccfrok_visible = {
+        911 = {
+          check_variable = { seat_1 = 4 }
+        }
+      }
+      911_seat_1_empty_visible = {
+        911 = {
+          NOT = {
+            is_owned_by = MAI
+          }
+        }
+      }
+      911_seat_2_ncp_visible = {
+        911 = {
+          check_variable = { seat_2 = 1 }
+        }
+      }
+      911_seat_2_ffp_visible = {
+        911 = {
+          check_variable = { seat_2 = 2 }
+        }
+      }
+      911_seat_2_tfk_visible = {
+        911 = {
+          check_variable = { seat_2 = 3 }
+        }
+      }
+      911_seat_2_ccfrok_visible = {
+        911 = {
+          check_variable = { seat_2 = 4 }
+        }
+      }
+      911_seat_2_empty_visible = {
+        911 = {
           NOT = {
             is_owned_by = MAI
           }

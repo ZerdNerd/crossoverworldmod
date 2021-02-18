@@ -616,6 +616,60 @@ default_peace = {
 			}
 		}
 
+		modifier = { # A je to takes western Spalding
+			factor = 10
+			tag = PAT
+			NOT = {
+				FRI = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
+			}
+			FROM = {
+				OR = {
+					state = 736
+					state = 767
+					state = 773
+					state = 776
+					region = 4
+				}
+			}
+		}
+
+		modifier = { # Friedewalt takes western Spalding if San Escobar and A je to are not present
+			factor = 10
+			tag = FRI
+			NOT = {
+				PAT = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
+			}
+			FROM = {
+				OR = {
+					state = 736
+					state = 767
+					state = 773
+					state = 776
+					region = 4
+				}
+			}
+		}
+
+		modifier = { # If San Escobar Present, and Friedewalt is not, then it takes every state in eastern Spalding
+			factor = 100
+			tag = SAN
+			NOT = {
+				FRI = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
+			}
+			FROM = {
+				is_core_of = SLD
+			}
+		}
+
+		modifier = { # If San Escobar Present, and Friedewalt is too, then don't touch any state
+			factor = 0
+			tag = SAN
+			FRI = { at_conference_no_war_with_ROOT = yes }
+			FROM = {
+				is_core_of = SLD
+			}
+		}
+
 		modifier = { # Japanifornia takes lands needed for Southern Lechia
 			factor = 10
 			tag = JPN

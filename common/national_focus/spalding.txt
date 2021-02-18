@@ -2871,6 +2871,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = FRI
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -2899,6 +2900,7 @@ focus_tree = {
 			TSA = {
 				has_government = fascism
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -2927,6 +2929,7 @@ focus_tree = {
 			JPN = {
 				has_government = fascism
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -2956,6 +2959,7 @@ focus_tree = {
 			SKO = {
 				has_war = yes
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -2985,6 +2989,7 @@ focus_tree = {
 			DUL = {
 				has_war = yes
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -3014,6 +3019,7 @@ focus_tree = {
 			FLO = {
 				has_war = yes
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 0
@@ -3089,6 +3095,7 @@ focus_tree = {
 			owns_state = 734
 			owns_state = 774
 			owns_state = 786
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3115,6 +3122,7 @@ focus_tree = {
 			owns_state = 734
 			owns_state = 774
 			owns_state = 786
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3144,6 +3152,7 @@ focus_tree = {
 			owns_state = 734
 			owns_state = 774
 			owns_state = 786
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3173,6 +3182,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = LEC
 			}
+			has_war = no
 		}
 		bypass = {
 			has_war_with = LEC
@@ -3208,6 +3218,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = JPN
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3279,6 +3290,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 5
 		} 
+		available = {
+			has_war = no
+		}
 		completion_reward = {
 			create_wargoal = {
 				type = annex_everything
@@ -3301,6 +3315,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = DCB
 			}
+			has_war = no
 		}
 		bypass = {
 			has_war_with = DCB
@@ -3333,6 +3348,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = FRI
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3360,6 +3376,9 @@ focus_tree = {
 		}
 		bypass = {
 			has_war_with = MAI
+		}
+		available = {
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3392,6 +3411,7 @@ focus_tree = {
 			NOT = {
 				is_in_faction_with = TSA
 			}
+			has_war = no
 		}
 		ai_will_do = { 
 			factor = 5
@@ -3419,6 +3439,7 @@ focus_tree = {
 		}
 		available = {
 			is_neighbor_of = UND
+			has_war = no
 		}
 		ai_will_do = { 
 			base = 0

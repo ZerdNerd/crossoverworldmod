@@ -4128,8 +4128,20 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
-			release = NRL
 			NRL = {
+				transfer_state = 777
+				transfer_state = 768
+				transfer_state = 734
+				transfer_state = 774
+				transfer_state = 786
+				transfer_state = 736
+				transfer_state = 767
+				transfer_state = 773
+				transfer_state = 776
+				add_state_core = 736
+				add_state_core = 767
+				add_state_core = 773
+				add_state_core = 776
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4176,38 +4188,23 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
-			if = {
-				limit = {
-					OR = {
+			SLD = {
+				transfer_state = 770
+				transfer_state = 780
+				transfer_state = 757
+				transfer_state = 732
+				transfer_state = 695
+				transfer_state = 689
+				if = {
+					limit = {
 						NOT = {
 							tag = TSA
-						}
-						AND = {
-							tag = TSA
-							NOT = {
-								has_government = fascism
-							}
+							has_government = fascism
 						}
 					}
-				}
-				release = SLD
-			}
-			if = {
-				limit = {
-					tag = TSA
-					has_government = fascism
-				}
-				SLD = {
-					transfer_state = 770
-					transfer_state = 780
-					transfer_state = 757
-					transfer_state = 732
-					transfer_state = 695
-					transfer_state = 689
-					transfer_state = 767
-					transfer_state = 776
-					transfer_state = 773
-					transfer_state = 736
+					transfer_state = 719
+					transfer_state = 748
+					transfer_state = 713
 				}
 			}
 			SLD = {
@@ -7023,6 +7020,9 @@ occupation_dec_category = {
 			NOT = {
 				tag = TIG
 			}
+			NOT = {
+				tag = DES
+			}
 			ROOT = {
 				owns_state = 440
 				is_puppet = no
@@ -7138,6 +7138,132 @@ occupation_dec_category = {
 						}
 					}
 					retire_country_leader = yes
+				}
+			}
+		}
+	}
+
+	liberation_of_rabbits = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = RAB
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				owns_state = 338
+				is_puppet = no
+			}
+			RAB = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			RAB = {
+				transfer_state = 338
+				transfer_state = 336
+				transfer_state = 328
+				transfer_state = 292
+				transfer_state = 276
+				transfer_state = 308
+				transfer_state = 371
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberation_of_sooty_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = SOO
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				owns_state = 101
+				is_puppet = no
+			}
+			SOO = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = SOO
+			SOO = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
+				}
+			}
+		}
+	}
+
+	liberation_of_elwood_republic = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			NOT = {
+				tag = ELW
+			}
+			NOT = {
+				tag = GON
+			}
+			ROOT = {
+				owns_state = 109
+				is_puppet = no
+			}
+			ELW = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = ELW
+			ELW = {
+				load_focus_tree = generic_focus
+				ROOT = {
+					puppet = PREV
 				}
 			}
 		}

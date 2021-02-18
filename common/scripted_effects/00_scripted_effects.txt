@@ -399,6 +399,51 @@ instantiate_collaboration_government = {
 	}
 }
 
+general_strzelcy_divisions = { #I tried playing with the code first, but it returned "blah blah blah template unknown blah blah blah error" and I gave up. From KR.
+	### calculate number of units to spawn
+	set_temp_variable = { units_to_spawn = state_population_k }
+	divide_temp_variable = { units_to_spawn = 1000 }
+
+	### failsafe so at least one unit is always spawned
+	clamp_temp_variable = { var = units_to_spawn min = 1 max = 50 }
+
+	### if core, get twice the units
+	if = {
+		limit = { is_core_of = GEN }
+		multiply_temp_variable = { units_to_spawn = 2 }
+	}
+
+	### tooltip
+	set_temp_variable = { total_units_to_spawn = units_to_spawn }
+
+	### spawn normal militias
+	set_temp_variable = { counter = 1 }
+	if = {
+		limit = {
+			check_variable = { var = units_to_spawn value = 1 compare = greater_than_or_equals }
+		}
+		for_loop_effect = {
+			start = 1
+			end = units_to_spawn
+			compare = less_than_or_equals
+
+			meta_effect = {
+				text = {
+					create_unit = {
+						division = "name = [DIVISION] division_template = [TEMPLATE] start_experience_factor = -0.4"
+						allow_spawning_on_enemy_provs = yes
+						owner = GEN
+						id = 1000
+					}
+				}
+				DIVISION = "\\\"Jednostka Strzelecka [?counter] '[THIS.GetName]'\\\""
+				TEMPLATE = "\\\"[GetGeneralTemplate]\\\""
+			}
+			add_to_temp_variable = { counter = 1 }
+		}
+	}
+}
+
 abandon_colony_tag = {
 	
 }

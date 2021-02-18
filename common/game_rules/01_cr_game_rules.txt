@@ -1,0 +1,534 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	required_dlc = "Name of the Required DLC"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	group = "TEXT_KEY_FOR_GROUP"					# Used for filtering. A single rule can be in multiple groups 
+#	icon = gfx_option_token							# Optional icon
+#	option = {										# Unless other specified, the first option is the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		allow_achievements = no						# Achievements cannot be earned if one or more game rules are set to an option that has this property set to no.
+#													# If not specified, this is set to yes for default options and no for all other options.
+#	}
+#	default = {										# Specify an option with the "default" token to override the behavior of treating the first option as the default.
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		...
+#	}
+# }
+
+
+
+ ##  ###     ###  ### #  #  ##  #   # ###  ##  ###  
+#  #  #      #  # #   #  # #  # #   #  #  #  # #  # 
+####  #      ###  ##  #### ####  # #   #  #  # ###  
+#  #  #      #  # #   #  # #  #  # #   #  #  # #  # 
+#  # ###     ###  ### #  # #  #   #   ###  ##  #  # 
+
+MAI_after_coronation_ai_behavior = {
+	name = "MAI_AI_ILL_SHOW_THEM"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = MAI_APPOINT_NEW_MINISTERS
+		text = "RULE_MAI_NEW_MINISTERS"
+		desc = "RULE_MAI_NEW_MINISTERS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = MAI_REFORMER
+		text = "RULE_MAI_REFORMER"
+		desc = "RULE_MAI_REFORMER_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = MAI_NEED_THEM
+		text = "RULE_MAI_NEED_THEM"
+		desc = "RULE_MAI_NEED_THEM_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = MAI_ABSOLUTISM
+		text = "RULE_MAI_ABSOLUTISM"
+		desc = "RULE_MAI_ABSOLUTISM_DESC"
+		allow_achievements = yes
+	}
+}
+
+MAI_hartmut_crisis_ai_behavior = {
+	name = "MAI_AI_HARTMUT_CRISIS"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = MAI_REFUSE
+		text = "RULE_MAI_REFUSE"
+		desc = "RULE_MAI_REFUSE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = MAI_AGREE_TO_REFORM
+		text = "RULE_MAI_AGREE_TO_REFORM"
+		desc = "RULE_MAI_AGREE_TO_REFORM_DESC"
+		allow_achievements = yes
+	}
+}
+
+FLO_1936_election_result = {
+	name = "FLO_1936_ELECTION_WINNER"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FLO_WINNER_GOSEUMDOCHI
+		text = "RULE_FLO_WINNER_GOSEUMDOCHI"
+		desc = "RULE_FLO_WINNER_GOSEUMDOCHI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FLO_WINNER_DARAMI
+		text = "RULE_FLO_WINNER_DARAMI"
+		desc = "RULE_FLO_WINNER_DARAMI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FLO_WINNER_GEUMSAEGI
+		text = "RULE_FLO_WINNER_GEUMSAEGI"
+		desc = "RULE_FLO_WINNER_GEUMSAEGI_DESC"
+		allow_achievements = yes
+	}
+}
+
+FLO_unification_process = {
+	name = "FLO_UNIFICATION_FIRST_COUNTRY"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FLO_TURTLES
+		text = "RULE_FLO_TURTLES"
+		desc = "RULE_FLO_TURTLES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FLO_SQUIRRELS
+		text = "RULE_FLO_SQUIRRELS"
+		desc = "RULE_FLO_SQUIRRELS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FLO_DUCKS
+		text = "RULE_FLO_DUCKS"
+		desc = "RULE_FLO_DUCKS_DESC"
+		allow_achievements = yes
+	}
+}
+
+SIO_sandstorm_rejection = {
+	name = "SIO_SANDSTORM_REJECTION"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SIO_REJECT
+		text = "RULE_SIO_REJECT"
+		desc = "RULE_SIO_REJECT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_DONT_REJECT
+		text = "RULE_SIO_DONT_REJECT"
+		desc = "RULE_SIO_DONT_REJECT_DESC"
+		allow_achievements = yes
+	}
+}
+
+SIO_yakari_status = {
+	name = "SIO_YAKARI_STATUS"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SIO_YAKARI_PRESENT
+		text = "RULE_SIO_YAKARI_PRESENT"
+		desc = "RULE_SIO_YAKARI_PRESENT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_YAKARI_NOT_PRESENT
+		text = "RULE_SIO_YAKARI_NOT_PRESENT"
+		desc = "RULE_SIO_YAKARI_NOT_PRESENT_DESC"
+		allow_achievements = yes
+	}
+}
+
+SIO_after_sandstorm_vote = {
+	name = "SIO_VOTE_AFTER_SANDSTORM"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SIO_YAKARI_STAYS
+		text = "RULE_SIO_YAKARI_STAYS"
+		desc = "RULE_SIO_YAKARI_STAYS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_BUFFALO_SEED_WINS
+		text = "RULE_SIO_BUFFALO_SEED_WINS"
+		desc = "RULE_SIO_BUFFALO_SEED_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_RAINBOW_WINS
+		text = "RULE_SIO_RAINBOW_WINS"
+		desc = "RULE_SIO_RAINBOW_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_BRAID_NIGHT_WINS
+		text = "RULE_SIO_BRAID_NIGHT_WINS"
+		desc = "RULE_SIO_BRAID_NIGHT_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_UNITED_COUNCIL_WINS
+		text = "RULE_SIO_UNITED_COUNCIL_WINS"
+		desc = "RULE_SIO_UNITED_COUNCIL_WINS_DESC"
+		allow_achievements = yes
+	}
+}
+
+SIO_no_sandstorm_vote = {
+	name = "SIO_VOTE_NO_SANDSTORM"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SIO_BOLD_GAZE_WINS
+		text = "RULE_SIO_BOLD_GAZE_WINS"
+		desc = "RULE_SIO_BOLD_GAZE_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_PROUDEST_CLOUD_WINS
+		text = "RULE_SIO_PROUDEST_CLOUD_WINS"
+		desc = "RULE_SIO_PROUDEST_CLOUD_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_REPUBLIC_WINS
+		text = "RULE_SIO_REPUBLIC_WINS"
+		desc = "RULE_SIO_REPUBLIC_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_BRAID_NIGHT_WINS
+		text = "RULE_SIO_BRAID_NIGHT_WINS"
+		desc = "RULE_SIO_BRAID_NIGHT_WINS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SIO_UNITED_COUNCIL_WINS
+		text = "RULE_SIO_UNITED_COUNCIL_WINS"
+		desc = "RULE_SIO_UNITED_COUNCIL_WINS_DESC"
+		allow_achievements = yes
+	}
+}
+
+DIO_which_plan = {
+	name = "DIO_WHICH_PLAN"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DIO_PLAN_PUCCI
+		text = "RULE_DIO_PLAN_PUCCI"
+		desc = "RULE_DIO_PLAN_PUCCI_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DIO_PLAN_ENYA
+		text = "RULE_DIO_PLAN_ENYA"
+		desc = "RULE_DIO_PLAN_ENYA_DESC"
+		allow_achievements = yes
+	}
+}
+
+DIO_approach_to_pillar_men = {
+	name = "DIO_PILLAR_MEN_APPROACH"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DIO_ANTAGONIZE
+		text = "RULE_DIO_ANTAGONIZE"
+		desc = "RULE_DIO_ANTAGONIZE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DIO_PACT
+		text = "RULE_DIO_PACT"
+		desc = "RULE_DIO_PACT_DESC"
+		allow_achievements = yes
+	}
+}
+
+JOJ_election_time = {
+	name = "JOJ_FAMILY_HEAD"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = JOJ_JONATHAN
+		text = "RULE_JOJ_JONATHAN"
+		desc = "RULE_JOJ_JONATHAN_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = JOJ_JOSEPH
+		text = "RULE_JOJ_JOSEPH"
+		desc = "RULE_JOJ_JOSEPH_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = JOJ_JOTARO
+		text = "RULE_JOJ_JOTARO"
+		desc = "RULE_JOJ_JOTARO_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = JOJ_JOLYNE
+		text = "RULE_JOJ_JOLYNE"
+		desc = "RULE_JOJ_JOLYNE_DESC"
+		allow_achievements = yes
+	}
+}
+
+SLD_election_1936 = {
+	name = "SLD_1936_ELECTION"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SLD_DEMOCRATS
+		text = "RULE_SLD_DEMOCRATS"
+		desc = "RULE_SLD_DEMOCRATS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SLD_COMMUNISTS
+		text = "RULE_SLD_COMMUNISTS"
+		desc = "RULE_SLD_COMMUNISTS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SLD_FASCISTS
+		text = "RULE_SLD_FASCISTS"
+		desc = "RULE_SLD_FASCISTS_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SLD_MONARCHISTS
+		text = "RULE_SLD_MONARCHISTS"
+		desc = "RULE_SLD_MONARCHISTS_DESC"
+		allow_achievements = yes
+	}
+}
+
+JPN_election_1936 = {
+	name = "JPN_1936_ELECTION"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = JPN_WRIGHT
+		text = "RULE_JPN_WRIGHT"
+		desc = "RULE_JPN_WRIGHT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = JPN_EDGEWORTH
+		text = "RULE_JPN_EDGEWORTH"
+		desc = "RULE_JPN_EDGEWORTH_DESC"
+		allow_achievements = yes
+	}
+}
+
+GON_approach_to_west = {
+	name = "GON_WESTERN_APPROACH"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = GON_PACT_WITH_FLOWER_HILL
+		text = "RULE_GON_PACT_WITH_FLOWER_HILL"
+		desc = "RULE_GON_PACT_WITH_FLOWER_HILL_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = GON_NO_PACT_WITH_FLOWER_HILL
+		text = "RULE_GON_NO_PACT_WITH_FLOWER_HILL"
+		desc = "RULE_GON_NO_PACT_WITH_FLOWER_HILL_DESC"
+		allow_achievements = yes
+	}
+}
+
+SAN_election_1936 = {
+	name = "SAN_1936_ELECTION"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SAN_STONOGA_REFUSE
+		text = "RULE_SAN_STONOGA_REFUSE"
+		desc = "RULE_SAN_STONOGA_REFUSE_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SAN_STONOGA_AGREEMENT
+		text = "RULE_SAN_STONOGA_AGREEMENT"
+		desc = "RULE_SAN_STONOGA_AGREEMENT_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SAN_SZNUK
+		text = "RULE_SAN_SZNUK"
+		desc = "RULE_SAN_SZNUK_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SAN_KOZIOL
+		text = "RULE_SAN_KOZIOL"
+		desc = "RULE_SAN_KOZIOL_DESC"
+		allow_achievements = yes
+	}
+}
+
+TSA_1936_ELECTIONS = {
+	name = "TSA_1936_ELECTIONS"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = TSA_ROGER
+		text = "RULE_TSA_ROGER"
+		desc = "RULE_TSA_ROGER_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TSA_HEINZ
+		text = "RULE_TSA_HEINZ"
+		desc = "RULE_TSA_HEINZ_DESC"
+		allow_achievements = yes
+	}
+}
+
+TIG_new_leader = {
+	name = "TIG_NEW_LEADER"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = TIG_NAK
+		text = "RULE_TIG_NAK"
+		desc = "RULE_TIG_NAK_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = TIG_TOM
+		text = "RULE_TIG_TOM"
+		desc = "RULE_TIG_TOM_DESC"
+		allow_achievements = yes
+	}
+}
+
+ENC_new_monarch = {
+	name = "ENC_NEW_MONARCH"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = ENC_AMBER
+		text = "RULE_ENC_AMBER"
+		desc = "RULE_ENC_AMBER_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ENC_JAMES
+		text = "RULE_ENC_JAMES"
+		desc = "RULE_ENC_JAMES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ENC_SOFIA
+		text = "RULE_ENC_SOFIA"
+		desc = "RULE_ENC_SOFIA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = ENC_MIRANDA
+		text = "RULE_ENC_MIRANDA"
+		desc = "RULE_ENC_MIRANDA_DESC"
+		allow_achievements = yes
+	}
+}

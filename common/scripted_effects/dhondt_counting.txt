@@ -1601,6 +1601,8 @@ dhondt_second_seat = {
 					state = 808
 					state = 803
 					state = 736
+                    state = 897
+                    state = 872
                 }
             }
         }
@@ -2735,7 +2737,7 @@ dhondt_calculate_overall_seats = {
         }
         ROOT = {
             add_to_variable = { ncp_seats_in_chp = 1 }
-            #log = "NCP gets 1st seat in [THIS.GetName]"
+            #log = "NCP gets 1st seat in [PREV.GetName]"
         }
         else_if = {
             limit = {
@@ -2745,7 +2747,7 @@ dhondt_calculate_overall_seats = {
             }
             ROOT = {
                 add_to_variable = { ffp_seats_in_chp = 1 }
-                #log = "FFP gets 1st seat in [THIS.GetName]"
+                #log = "FFP gets 1st seat in [PREV.GetName]. Total is [?ffp_seats_in_chp]."
             }
             else_if = {
                 limit = {
@@ -2755,7 +2757,7 @@ dhondt_calculate_overall_seats = {
                 }
                 ROOT = {
                     add_to_variable = { tfk_seats_in_chp = 1 }
-                    #log = "TFK gets 1st seat in [THIS.GetName]"
+                    #log = "TFK gets 1st seat in [PREV.GetName]"
                 }
                 else_if = {
                     limit = {
@@ -2765,7 +2767,7 @@ dhondt_calculate_overall_seats = {
                     }
                     ROOT = {
                         add_to_variable = { ccfrok_seats_in_chp = 1 }
-                        #log = "CCFROK gets 1st seat in [THIS.GetName]"
+                        #log = "CCFROK gets 1st seat in [PREV.GetName]"
                     }
                     else = {
                         #log = "Nope."
@@ -2782,7 +2784,7 @@ dhondt_calculate_overall_seats = {
         }
         ROOT = {
             add_to_variable = { ncp_seats_in_chp = 1 }
-            #log = "NCP gets 2nd seat in [THIS.GetName]"
+            #log = "NCP gets 2nd seat in [PREV.GetName]"
         }
         else_if = {
             limit = {
@@ -2792,7 +2794,7 @@ dhondt_calculate_overall_seats = {
             }
             ROOT = {
                 add_to_variable = { ffp_seats_in_chp = 1 }
-                #log = "FFP gets 2nd seat in [THIS.GetName]"
+                #log = "FFP gets 2nd seat in [PREV.GetName]. Total is [?ffp_seats_in_chp]."
             }
             else_if = {
                 limit = {
@@ -2802,7 +2804,7 @@ dhondt_calculate_overall_seats = {
                 }
                 ROOT = {
                     add_to_variable = { tfk_seats_in_chp = 1 }
-                    #log = "TFK gets 2nd seat in [THIS.GetName]"
+                    #log = "TFK gets 2nd seat in [PREV.GetName]"
                 }
                 else_if = {
                     limit = {
@@ -2812,7 +2814,7 @@ dhondt_calculate_overall_seats = {
                     }
                     ROOT = {
                         add_to_variable = { ccfrok_seats_in_chp = 1 }
-                        #log = "CCFROK gets 2nd seat in [THIS.GetName]"
+                        #log = "CCFROK gets 2nd seat in [PREV.GetName]"
                     }
                     else = {
                         #log = "Nope."
@@ -2829,6 +2831,8 @@ dhondt_calculate_overall_seats = {
                 state = 858
                 state = 808
                 state = 803
+                state = 897
+                state = 872
             }
             THIS = {
                 check_variable = { seat_3 = 1 }
@@ -2836,7 +2840,7 @@ dhondt_calculate_overall_seats = {
         }
         ROOT = {
             add_to_variable = { ncp_seats_in_chp = 1 }
-            #log = "NCP gets 3rd seat in [THIS.GetName]"
+            #log = "NCP gets 3rd seat in [PREV.GetName]"
         }
         else_if = {
             limit = {
@@ -2846,7 +2850,7 @@ dhondt_calculate_overall_seats = {
             }
             ROOT = {
                 add_to_variable = { ffp_seats_in_chp = 1 }
-                #log = "FFP gets 3rd seat in [THIS.GetName]"
+                #log = "FFP gets 3rd seat in [PREV.GetName]. Total is [?ffp_seats_in_chp]."
             }
             else_if = {
                 limit = {
@@ -2856,7 +2860,7 @@ dhondt_calculate_overall_seats = {
                 }
                 ROOT = {
                     add_to_variable = { tfk_seats_in_chp = 1 }
-                    #log = "TFK gets 3rd seat in [THIS.GetName]"
+                    #log = "TFK gets 3rd seat in [PREV.GetName]"
                 }
                 else_if = {
                     limit = {
@@ -2866,7 +2870,7 @@ dhondt_calculate_overall_seats = {
                     }
                     ROOT = {
                         add_to_variable = { ccfrok_seats_in_chp = 1 }
-                        #log = "CCFROK gets 3rd seat in [THIS.GetName]"
+                        #log = "CCFROK gets 3rd seat in [PREV.GetName]"
                     }
                     else = {
                         #log = "Nope."
@@ -2887,7 +2891,7 @@ dhondt_calculate_overall_seats = {
         }
         ROOT = {
             add_to_variable = { ncp_seats_in_chp = 1 }
-            #log = "NCP gets 4th seat in [THIS.GetName]"
+            #log = "NCP gets 4th seat in [PREV.GetName]"
         }
         else_if = {
             limit = {
@@ -2897,7 +2901,7 @@ dhondt_calculate_overall_seats = {
             }
             ROOT = {
                 add_to_variable = { ffp_seats_in_chp = 1 }
-                #log = "FFP gets 4th seat in [THIS.GetName]"
+                #log = "FFP gets 4th seat in [PREV.GetName]. Total is [?ffp_seats_in_chp]."
             }
             else_if = {
                 limit = {
@@ -2907,7 +2911,7 @@ dhondt_calculate_overall_seats = {
                 }
                 ROOT = {
                     add_to_variable = { tfk_seats_in_chp = 1 }
-                    #log = "TFK gets 4th seat in [THIS.GetName]"
+                    #log = "TFK gets 4th seat in [PREV.GetName]"
                 }
                 else_if = {
                     limit = {
@@ -2917,7 +2921,7 @@ dhondt_calculate_overall_seats = {
                     }
                     ROOT = {
                         add_to_variable = { ccfrok_seats_in_chp = 1 }
-                        #log = "CCFROK gets 4th seat in [THIS.GetName]"
+                        #log = "CCFROK gets 4th seat in [PREV.GetName]"
                     }
                     else = {
                         #log = "Nope."

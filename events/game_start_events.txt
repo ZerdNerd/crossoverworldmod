@@ -20,6 +20,9 @@ country_event = { #Main event (new)
 
 	option = {
 		name = game_start_event.0.a
+		hidden_effect = {
+			
+		}
 	}
 }
 
@@ -43,6 +46,38 @@ country_event = {
 }
 
 ###MAIN COUNTRIES
+
+country_event = { #Woloszanski's 'Hearts Made of Iron'
+	id = game_start_event.2137
+	immediate = {log = "[GetDateText]: [Root.GetName]: event game_start_event.2137"}
+	title = game_start_event.2137.t
+	desc = game_start_event.2137.d
+	picture = GFX_report_event_poland_rejects
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = game_start_event.2137.a
+		trigger = {
+			NOT = {
+				tag = FRI
+				tag = FLE
+			}
+		}
+	}
+
+	option = {
+		name = game_start_event.2137.b
+		trigger = {
+			OR = {
+				tag = FRI
+				tag = FLE
+			}
+		}
+	}
+}
 
 country_event = { #Country introduction - Flower Hill
 	id = game_start_event.2

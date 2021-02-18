@@ -108,7 +108,7 @@ ideas = {
 
 		MAI_gained_shore = {
 			
-			picture = idea_generic_the_london_naval_treaty
+			picture = generic_the_london_naval_treaty
 
 			allowed = {
 				always = no
@@ -125,7 +125,7 @@ ideas = {
 
 		MAI_new_ministers = {
 			
-			picture = idea_prc_low_popular_support3
+			picture = prc_low_popular_support3
 
 			allowed = {
 				always = no
@@ -141,7 +141,7 @@ ideas = {
 
 		MAI_audience_for_children_idea = {
 			
-			picture = idea_generic_army_war_college
+			picture = generic_army_war_college
 
 			allowed = {
 				always = no
@@ -156,7 +156,7 @@ ideas = {
 
 		MAI_pro_rege_lege_et_grege = {
 			
-			picture = idea_generic_monarchist_uprising
+			picture = generic_monarchist_uprising
 
 			allowed = {
 				always = no
@@ -174,7 +174,7 @@ ideas = {
 
 		MAI_open_rail_market = {
 			
-			picture = idea_generic_build_infrastructure
+			picture = generic_build_infrastructure
 
 			allowed = {
 				always = no
@@ -187,7 +187,7 @@ ideas = {
 
 		MAI_the_great_switcheroo = {
 			
-			picture = idea_generic_constitutional_guarantee
+			picture = generic_constitutional_guarantee
 
 			allowed = {
 				always = no
@@ -620,6 +620,7 @@ ideas = {
 			}
 			modifier = {
 				political_power_factor = -0.05
+				send_volunteer_size = -6
 			}
 		}
 
@@ -865,7 +866,7 @@ ideas = {
 		}
 
 		ENC_aftermath_of_civil_war = {
-			picture = idea_chi_hyper_inflation
+			picture = chi_hyper_inflation
 			allowed = {
 				always = no
 			}
@@ -2291,7 +2292,7 @@ ideas = {
 
 		TCWMod_black_monday = {
 			
-			picture = idea_usa_great_depression_2
+			picture = usa_great_depression_2
 
 			allowed = {
 				always = no
@@ -2842,7 +2843,7 @@ ideas = {
 				spotting_chance = 0.1
 				naval_speed_factor = 0.05
 			}
-			picture = idea_hol_naval_heritage
+			picture = hol_naval_heritage
 		}
 
 		JOJ_navalbill = {
@@ -3263,7 +3264,7 @@ ideas = {
 
 		MAI_pioneer_camps = {
 			
-			picture = spr_torchbearers_of_tomorrow
+			picture = SPR_torchbearers_of_tomorrow
 
 			allowed = {
 				always = no
@@ -3279,7 +3280,7 @@ ideas = {
 
 		MAI_aftermath_of_role_change_law_1 = {
 			
-			picture = idea_usa_great_depression_3
+			picture = usa_great_depression_3
 
 			allowed = {
 				always = no
@@ -3302,7 +3303,7 @@ ideas = {
 
 		MAI_aftermath_of_role_change_law_2 = {
 			
-			picture = idea_usa_great_depression_2
+			picture = usa_great_depression_2
 
 			allowed = {
 				always = no
@@ -3404,7 +3405,7 @@ ideas = {
 
 		MAI_colonial_fund = {
 			
-			picture = idea_isolation
+			picture = isolation
 
 			allowed = {
 				always = no
@@ -3419,7 +3420,7 @@ ideas = {
 
 		MAI_the_second_horror = {
 			
-			picture = idea_mex_politicised_army
+			picture = MEX_politicised_army
 
 			allowed = {
 				always = no
@@ -3432,7 +3433,7 @@ ideas = {
 		}
 
 		MAI_aftermath_of_civil_war_1 = {
-			picture = idea_chi_hyper_inflation
+			picture = chi_hyper_inflation
 			allowed = {
 				always = no
 			}
@@ -3448,7 +3449,7 @@ ideas = {
 		}
 
 		MAI_aftermath_of_civil_war_2 = {
-			picture = idea_chi_hyper_inflation2
+			picture = chi_hyper_inflation2
 			allowed = {
 				always = no
 			}
@@ -3464,7 +3465,7 @@ ideas = {
 		}
 
 		MAI_aftermath_of_civil_war_3 = {
-			picture = idea_chi_hyper_inflation3
+			picture = chi_hyper_inflation3
 			allowed = {
 				always = no
 			}
@@ -3498,7 +3499,7 @@ ideas = {
 
 		MAI_cult_of_macius = {
 			
-			picture = idea_unknown #change to his portrait when it will be ready
+			picture = unknown #change to his portrait when it will be ready
 
 			allowed = {
 				always = no
@@ -3511,7 +3512,7 @@ ideas = {
 		}
 
 		MAI_funds_from_duckburg = {
-			picture = spr_seize_the_gold_reserves
+			picture = SPR_seize_the_gold_reserves
 			allowed = {
 				always = no
 			}
@@ -3522,12 +3523,47 @@ ideas = {
 		}
 
 		MAI_investments_boom = {
-			picture = idea_generic_political_support
+			picture = generic_political_support
 			allowed = {
 				always = no
 			}
 			modifier = {
 				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		MAI_volunteer_law = {
+			picture = MEX_politicised_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				send_volunteer_size = 2
+				send_volunteer_divisions_required = -0.15
+				send_volunteers_tension = -0.1
+				conscription_factor = 0.05
+			}
+		}
+
+		MAI_queen_kluklu = {
+			picture = kluklu_older
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		MAI_queen_zofia = {
+			picture = sofia_older
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				consumer_goods_factor = -0.05
 			}
 		}
 	}
@@ -3543,13 +3579,42 @@ ideas = {
 #			picture = MAI_felix_p
 
 			allowed = {
-				original_tag = MAI
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = children_revolution_underway
+						}
+					}
+					tag = CLD
+				}
 			}
 		
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_macius_is_king
-					has_global_flag = stephen_is_dead
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_macius_is_king
+						AND = {
+							tag = MAI
+							has_global_flag = stephen_is_dead
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
 				}
 			}
 		
@@ -3585,35 +3650,46 @@ ideas = {
 #			picture = MAI_anton_p
 
 			allowed = {
-				original_tag = MAI
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = children_revolution_underway
+						}
+					}
+					tag = CLD
+				}
 			}
 		
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_macius_is_king
-					has_global_flag = stephen_is_dead
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_macius_is_king
+						AND = {
+							tag = MAI
+							has_global_flag = stephen_is_dead
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
 				}
 			}
 		
 			traits = { the_engineer }
-
-			ai_will_do = {
-				factor = 1
-			}
-		}
-
-		MAI_spion = {
-#			picture = MAI_spion_p
-
-			allowed = {
-				original_tag = MAI
-			}
-		
-			available = {
-				has_completed_focus = MAI_general_proposal
-			}
-		
-			traits = { leader_of_spies }
 
 			ai_will_do = {
 				factor = 1
@@ -3925,7 +4001,7 @@ ideas = {
 			}
 		}
 
-		SLD_marian = {
+		SLD_marian = { #press F
 
 			allowed = {
 				original_tag = SLD
@@ -3959,7 +4035,7 @@ ideas = {
 			}
 		}
 
-		SLD_boczek = {
+		SLD_boczek = { #press F
 
 			allowed = {
 				original_tag = SLD
@@ -4660,11 +4736,39 @@ ideas = {
 			ledger = army
 
 			allowed = {
-				original_tag = MAI
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
 			}
 		
 			available = {
-				#nothing yet.
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
 			}
 		
 			traits = { prince_of_terror }

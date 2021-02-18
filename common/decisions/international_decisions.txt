@@ -1136,6 +1136,139 @@ international_policy_dec_category = {
 			factor = 100
 		}
 	}
+
+	mai_join_eastern_continent_treaty = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			has_completed_focus = MAI_establish_relations_with_greenland
+			has_completed_focus = MAI_towards_a_stable_world
+			is_in_faction = no
+			GRN = {
+				exists = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			GRN = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	mai_join_western_alliance = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			has_completed_focus = MAI_aid_japanifornia
+			has_completed_focus = MAI_towards_a_stable_world
+			is_in_faction = no
+			JPN = {
+				exists = yes
+				is_puppet = no
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			JPN = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	mai_join_avalor_pact = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			has_completed_focus = MAI_send_ambassador_to_avalor
+			has_completed_focus = MAI_towards_a_stable_world
+			is_in_faction = no
+			AVA = {
+				exists = yes
+				is_faction_leader = yes
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			AVA = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}
+	}
+
+	mai_join_danville_alliance = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			has_completed_focus = MAI_send_ambassador_to_avalor
+			has_completed_focus = MAI_towards_a_stable_world
+			is_in_faction = no
+			TSA = {
+				exists = yes
+				is_puppet = no
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			TSA = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}
+	}
 }
 
 integration_of_lands_dec_category = {
@@ -2056,4 +2189,427 @@ integration_of_lands_dec_category = {
 			factor = 100
 		}
 	}
+}
+
+royal_convention_dec_category = {
+
+	time_left_until_the_end_of_convention = {
+		icon = generic_political_rally
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		activation = { always = no }
+
+		selectable_mission = no
+
+		days_remove = 1
+
+		days_mission_timeout = 14
+
+		timeout_effect = {
+			country_event = {
+				id = royalconvention.14
+				days = 0
+			}
+		}
+	}
+
+	macius_negotiate_sea_access_with_friedewalt_decision = {
+		icon = generic_political_rally
+
+		visible = {
+			tag = MAI
+			has_country_flag = royal_convention_online
+			NOT = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			FRI = {
+				NOT = {
+					has_country_flag = denied_macius_sea
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = you_can_ask_only_one_person_at_a_time
+				check_variable = {
+					macius_is_asking < 1
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			FRI = {
+				country_event = {
+					id = royalconvention.8
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					macius_is_asking = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	macius_negotiate_sea_access_with_otto_decision = {
+		icon = generic_political_rally
+
+		visible = {
+			tag = MAI
+			has_country_flag = royal_convention_online
+			NOT = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			WEK = {
+				NOT = {
+					has_country_flag = denied_macius_sea
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = you_can_ask_only_one_person_at_a_time
+				check_variable = {
+					macius_is_asking < 1
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			WEK = {
+				country_event = {
+					id = royalconvention.9
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					macius_is_asking = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	macius_negotiate_sea_access_with_spalding_decision = {
+		icon = generic_political_rally
+
+		visible = {
+			tag = MAI
+			has_country_flag = royal_convention_online
+			NOT = {
+				any_owned_state = {
+					is_coastal = yes
+				}
+			}
+			SLD = {
+				NOT = {
+					has_government = fascism
+					has_government = communism
+				}
+				is_puppet = no
+				has_country_flag = will_attend_royal_convention
+				NOT = {
+					has_country_flag = denied_macius_sea
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = you_can_ask_only_one_person_at_a_time
+				check_variable = {
+					macius_is_asking < 1
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			SLD = {
+				country_event = {
+					id = royalconvention.10
+					days = 0
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					macius_is_asking = 1
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	hold_speech_about_enchancian_question = {
+		icon = generic_political_rally
+
+		visible = {
+			tag = AVA
+			MAI = {
+				has_country_flag = royal_convention_online
+			}
+			has_country_flag = will_attend_royal_convention
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			hidden_effect = {
+				set_variable = {
+					countries_declared_to_help_ava = 0
+				}
+				set_global_flag = held_the_speech_enchancian_question
+			}
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = will_attend_royal_convention
+						tag = MAI
+					}
+				}
+				country_event = {
+					id = royalconvention.15
+					days = 0
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 100
+		}
+	}
+
+	hold_speech_about_eastern_continent_situation = {
+		icon = generic_political_rally
+
+		visible = {
+			tag = GRN
+			MAI = {
+				has_country_flag = royal_convention_online
+			}
+			has_country_flag = will_attend_royal_convention
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			hidden_effect = {
+				set_variable = {
+					countries_declared_to_help_ava = 0
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						has_country_flag = will_attend_royal_convention
+						tag = MAI
+					}
+				}
+				country_event = {
+					id = royalconvention.16
+					days = 0
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+			modifier = {
+				OR = {
+					has_global_flag = held_the_speech_enchancian_question
+					AVA = {
+						NOT = {
+							has_country_flag = will_attend_royal_convention
+						}
+					}
+				}
+				add = 100
+			}
+		}
+	}
+
+}
+
+stabilization_pact_dec_category = {
+
+	debug_faction_points = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			is_in_faction = yes
+			is_debug = yes
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				mai_faction_points = 25000
+			}
+		}
+	}
+
+	mai_evolve_into_stabilization_pact = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			is_in_faction = yes
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = can_suggest_the_stabilization_pact
+				check_variable = {
+					mai_faction_points > faction_leader_points
+				}
+				NOT = {
+					has_country_flag = proposed_stabilization_pact
+				}
+			}
+			has_war = no
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = MAI
+					is_faction_leader = yes
+				}
+				country_event = {
+					id = centralkingdom.72
+					days = 1
+				}
+			}
+			hidden_effect = {
+				set_country_flag = proposed_stabilization_pact
+			}
+		}
+	}
+
+	
+
+}
+
+stabilization_pact_2_dec_category = {
+
+	time_left_until_the_voting_over_capital = {
+		icon = generic_political_rally
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		activation = { always = no }
+
+		selectable_mission = no
+
+		days_remove = 1
+
+		days_mission_timeout = 4
+
+		timeout_effect = {
+			country_event = {
+				id = centralkingdom.77
+				days = 0
+			}
+		}
+	}
+
+	fusion_with_danville_alliance = {
+		icon = generic_operation
+
+		visible = {
+			tag = MAI
+			is_in_faction = yes
+			TSA = {
+				is_faction_leader = yes
+			}
+			NOT = {
+				is_in_faction_with = TSA
+			}
+			NOT = {
+				has_variable = only_one_fusion_in_this_version
+			}
+			has_country_flag = stabilization_pact_online
+		}
+
+		available = {
+			has_war = no
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			TSA = {
+				country_event = {
+					id = centralkingdom.78
+					days = 1
+				}
+			}
+			hidden_effect = {
+				set_variable = {
+					only_one_fusion_in_this_version = 1
+				}
+			}
+		}
+	}
+
 }

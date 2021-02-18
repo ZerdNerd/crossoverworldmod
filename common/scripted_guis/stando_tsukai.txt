@@ -10,4 +10,16 @@ scripted_gui = {
             always = no
         }
     }
+
+    supreme_leader_portrait = {
+        window_name = "supreme_leader_geumsaegi_portrait"
+        parent_window_token = top_bar
+ 
+        context_type = player_context
+ 
+        visible = {
+            tag = FLO
+            has_country_flag = geumsaegi_elected
+        }
+    }
 }

@@ -782,33 +782,9 @@ country_event = { #Cedric becomes Great
 			ENC = {
 				load_oob = ENC_civil_war
 			}
-			ENC = {
-				if = {
-					limit = {
-						has_country_flag = ENC_artisans_unhappy
-					}
-					country_event = {
-						id = enchancia.41
-						days = 7
-					}
-				}
-			}
-			ENC = {
-				if = {
-					limit = {
-						NOT = {
-							has_country_flag = ENC_artisans_unhappy
-						}
-					}
-					country_event = {
-						id = enchancia.12
-						days = 21
-					}
-					news_event = {
-						id = worldnews.95
-						hours = 2
-					}
-				}
+			country_event = {
+				id = enchancia.41
+				days = 7
 			}
 			if = {
 				limit = {
@@ -829,33 +805,9 @@ country_event = { #Cedric becomes Great
 			ENC = {
 				load_oob = ENC_civil_war
 			}
-			ENC = {
-				if = {
-					limit = {
-						has_country_flag = ENC_artisans_unhappy
-					}
-					country_event = {
-						id = enchancia.41
-						days = 7
-					}
-				}
-			}
-			ENC = {
-				if = {
-					limit = {
-						NOT = {
-							has_country_flag = ENC_artisans_unhappy
-						}
-					}
-					country_event = {
-						id = enchancia.12
-						days = 21
-					}
-					news_event = {
-						id = worldnews.95
-						hours = 2
-					}
-				}
+			country_event = {
+				id = enchancia.41
+				days = 7
 			}
 			if = {
 				limit = {
@@ -897,6 +849,18 @@ country_event = { #Enchancian Civil War begins
 		}
 		custom_effect_tooltip = ENC_civil_war_tooltip
 		hidden_effect = {
+			every_country = {
+				limit = {
+					is_ai = no
+				}
+				set_country_flag = big_event_enchancian_civil_war
+				if = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_enchancian_civil_war_sound
+				}
+			}
 			EN1 = { 
 				declare_war_on = { 
 					target = ENC 
@@ -1114,6 +1078,62 @@ country_event = { #End of Enchancian Civil War
 		name = enchancia.16.a
 		hidden_effect = {
 			set_global_flag = enchancian_civil_war_over
+			if = {
+				limit = {
+					ROOT = {
+						OR = {
+							tag = ENC
+							tag = EN1
+							tag = EN2
+						}
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_enchancian_civil_war_monarchist_win
+					if = {
+						limit = {
+							has_variable = cr_superevent_music_status
+						}
+						sound_effect = cr_bigevent_enchancian_civil_war_monarchist_sound
+					}
+				}
+				else_if = {
+					limit = {
+						ROOT = {
+							tag = EN3
+						}
+					}
+					every_country = {
+						limit = {
+							is_ai = no
+						}
+						set_country_flag = big_event_enchancian_civil_war_cedric_wins
+						if = {
+							limit = {
+								has_variable = cr_superevent_music_status
+							}
+							sound_effect = cr_bigevent_enchancian_civil_war_cedric_sound
+						}
+					}
+					else = {
+						every_country = {
+							limit = {
+								is_ai = no
+							}
+							set_country_flag = big_event_enchancian_civil_war_equalists_win
+							if = {
+								limit = {
+									has_variable = cr_superevent_music_status
+								}
+								sound_effect = cr_bigevent_enchancian_civil_war_equalists_sound
+							}
+						}
+					}
+				}
+			}
 			add_ideas = {
 				ENC_aftermath_of_civil_war
 			}

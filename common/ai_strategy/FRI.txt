@@ -119,7 +119,7 @@ if_flower_hill_declares_then_fight_ffs = {
 against_macius = {
 	enable = {
 		tag = FRI
-		has_country_flag = hartmut_crisis_started
+		has_cosmetic_tag = HAR
 	}
 	abort_when_not_enabled = yes
 
@@ -133,5 +133,36 @@ against_macius = {
 		type = invade
 		id = "MAI"			
 		value = 7000
+	}
+}
+
+support_general_in_civil_war = {
+	enable = {
+		OR = {
+			AND = {
+				tag = FRI
+				has_cosmetic_tag = HAR
+			}
+			AND = {
+				tag = FLE
+				has_cosmetic_tag = Hartmut_in_exile
+			}
+		}
+		GEN = {
+			has_war_with = MAI
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = "GEN"			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = "GEN"			
+		value = 100
 	}
 }

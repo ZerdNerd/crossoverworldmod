@@ -525,90 +525,6 @@ children_parliament_dec_category = {
 		}
 	}
 
-	MAI_adjusting_economy_decision = {
-		icon = ger_mefo_bills
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_chp_atleast_one_topic_free
-				has_country_flag = MAI_chp_topic_1_not_taken
-			}
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_already_submitted
-					has_country_flag = MAI_adjustment_proposed
-				}
-			}
-			has_idea = MAI_the_great_switcheroo
-			NOT = {
-				has_completed_focus = MAI_adjusting_the_economy
-			} 
-			has_completed_focus = MAI_first_elections
-		}
-		visible = {
-			has_completed_focus = MAI_first_elections
-			NOT = {
-				has_country_flag = adjusting_the_economy_yay
-			}
-		}
-		cost = 0
-		days_remove = 1
-		days_re_enable = 14
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				clr_country_flag = MAI_chp_topic_1_not_taken
-				set_country_flag = MAI_chp_topic_1_taken_option_3
-				set_country_flag = MAI_adjustment_proposed
-				set_country_flag = MAI_chp_sub_1_mac
-				MAI_chp_calculate_bill_support = yes
-			}
-		}
-	}
-
-	MAI_children_in_leadership_decision = {
-		icon = ger_mefo_bills
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_chp_atleast_one_topic_free
-				has_country_flag = MAI_chp_topic_1_not_taken
-			}
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_already_submitted
-					has_country_flag = MAI_army_amendment_proposed
-				}
-			}
-			has_idea = MAI_the_great_switcheroo
-			NOT = {
-				has_completed_focus = MAI_children_in_army_leadership
-			}
-			has_completed_focus = MAI_first_elections 
-		}
-		visible = {
-			has_completed_focus = MAI_first_elections
-			NOT = {
-				has_country_flag = children_in_army_leadership_yay
-			} 
-		}
-		cost = 0
-		days_remove = 1
-		days_re_enable = 14
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-				clr_country_flag = MAI_chp_topic_1_not_taken
-				set_country_flag = MAI_chp_topic_1_taken_option_4
-				set_country_flag = MAI_army_amendment_proposed
-				set_country_flag = MAI_chp_sub_1_mac
-				MAI_chp_calculate_bill_support = yes
-			}
-		}
-	}
-
 	MAI_saving_greenland_decision = {
 		icon = ger_mefo_bills
 		available = {
@@ -622,16 +538,15 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_liberation_greenland_proposed
 				}
 			}
-			
-			GRN = {
-				exists = no
-			} 
 		}
 		visible = {  
 			has_completed_focus = MAI_a_look_to_the_east
 			NOT = {
 				has_country_flag = MAI_parliament_passed_grn_flag
 			}
+			GRN = {
+				exists = no
+			} 
 		}
 		cost = 0
 		days_remove = 1
@@ -701,23 +616,21 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_unity_proposed
 				}
 			}
-			FLO = {
-				exists = yes
-			} 
+			
 		}
 		visible = { 
-			has_completed_focus = MAI_menaces_in_the_north
+			has_completed_focus = MAI_a_look_to_the_east
 			AND = {
 				NOT = {
 					has_country_flag = MAI_parliament_passed_unity_flag
 				}
 				NOT = {
-					has_country_flag = MAI_parliament_passed_quarrel_flag
-				}
-				NOT = {
 					has_country_flag = MAI_parliament_passed_shen_flag
 				}
 			}
+			FLO = {
+				exists = yes
+			} 
 		}
 		cost = 0
 		days_remove = 1
@@ -730,57 +643,6 @@ children_parliament_dec_category = {
 					clr_country_flag = MAI_chp_topic_1_not_taken
 					set_country_flag = MAI_chp_topic_1_taken_option_7
 					set_country_flag = MAI_unity_proposed
-					set_country_flag = MAI_chp_sub_1_mac
-				MAI_chp_calculate_bill_support = yes
-			}
-		}
-	}
-
-	MAI_quarrel_decision = {
-		icon = ger_mefo_bills
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_chp_atleast_one_topic_free
-				has_country_flag = MAI_chp_topic_1_not_taken
-			}
-			NOT = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_already_submitted
-					has_country_flag = MAI_quarrel_proposed
-				}
-			}
-			FLO = {
-				exists = yes
-			}
-			GON = {
-				exists = yes
-			} 
-		}
-		visible = { 
-			has_completed_focus = MAI_menaces_in_the_north
-			AND = {
-				NOT = {
-					has_country_flag = MAI_parliament_passed_unity_flag
-				}
-				NOT = {
-					has_country_flag = MAI_parliament_passed_quarrel_flag
-				}
-				NOT = {
-					has_country_flag = MAI_parliament_passed_shen_flag
-				}
-			}
-		}
-		cost = 0
-		days_remove = 1
-		days_re_enable = 14
-		ai_will_do = {
-			factor = 1
-		}
-		complete_effect = {
-			hidden_effect = {
-					clr_country_flag = MAI_chp_topic_1_not_taken
-					set_country_flag = MAI_chp_topic_1_taken_option_8
-					set_country_flag = MAI_quarrel_proposed
 					set_country_flag = MAI_chp_sub_1_mac
 				MAI_chp_calculate_bill_support = yes
 			}
@@ -800,22 +662,20 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_shen_proposed
 				}
 			}
-			GON = {
-				exists = yes
-			}
+			
 		}
 		visible = { 
-			has_completed_focus = MAI_menaces_in_the_north 
+			has_completed_focus = MAI_a_look_to_the_east 
 			AND = {
 				NOT = {
 					has_country_flag = MAI_parliament_passed_unity_flag
 				}
 				NOT = {
-					has_country_flag = MAI_parliament_passed_quarrel_flag
-				}
-				NOT = {
 					has_country_flag = MAI_parliament_passed_shen_flag
 				}
+			}
+			GON = {
+				exists = yes
 			}
 		}
 		cost = 0
@@ -835,6 +695,175 @@ children_parliament_dec_category = {
 		}
 	}
 
+	MAI_bill_aid_japanifornia = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_chp_atleast_one_topic_free
+				has_country_flag = MAI_chp_topic_1_not_taken
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_already_submitted
+					has_country_flag = MAI_japanifornia_support_proposed
+				}
+			}
+			
+		}
+		visible = { 
+			has_completed_focus = MAI_look_west
+			NOT = {
+				has_country_flag = MAI_parliament_passed_japanifornia_support_flag
+			}
+			JPN = {
+				exists = yes
+				has_war_with = LEC
+			}
+		}
+		cost = 0
+		days_remove = 1
+		days_re_enable = 14
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+					clr_country_flag = MAI_chp_topic_1_not_taken
+					set_country_flag = MAI_chp_topic_1_taken_option_16
+					set_country_flag = MAI_japanifornia_support_proposed
+					set_country_flag = MAI_chp_sub_1_mac
+				MAI_chp_calculate_bill_support = yes
+			}
+		}
+	}
+
+	MAI_bill_aid_lechina = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_chp_atleast_one_topic_free
+				has_country_flag = MAI_chp_topic_1_not_taken
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_already_submitted
+					has_country_flag = MAI_lechina_support_proposed
+				}
+			}
+			
+		}
+		visible = { 
+			has_completed_focus = MAI_look_west
+			NOT = {
+				has_country_flag = MAI_parliament_passed_lechina_support_flag
+			}
+			LEC = {
+				exists = yes
+				has_war_with = JPN
+			}
+		}
+		cost = 0
+		days_remove = 1
+		days_re_enable = 14
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+					clr_country_flag = MAI_chp_topic_1_not_taken
+					set_country_flag = MAI_chp_topic_1_taken_option_17
+					set_country_flag = MAI_lechina_support_proposed
+					set_country_flag = MAI_chp_sub_1_mac
+				MAI_chp_calculate_bill_support = yes
+			}
+		}
+	}
+
+	MAI_bill_democracy_red = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_chp_atleast_one_topic_free
+				has_country_flag = MAI_chp_topic_1_not_taken
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_already_submitted
+					has_country_flag = MAI_liberation_of_danville_proposed
+				}
+			}
+			
+		}
+		visible = { 
+			has_completed_focus = MAI_look_west
+			NOT = {
+				has_country_flag = MAI_parliament_passed_liberation_of_danville_flag
+			}
+			TSA = {
+				exists = yes
+				is_puppet = no
+				has_government = fascism
+			}
+		}
+		cost = 0
+		days_remove = 1
+		days_re_enable = 14
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+					clr_country_flag = MAI_chp_topic_1_not_taken
+					set_country_flag = MAI_chp_topic_1_taken_option_18
+					set_country_flag = MAI_liberation_of_danville_proposed
+					set_country_flag = MAI_chp_sub_1_mac
+				MAI_chp_calculate_bill_support = yes
+			}
+		}
+	}
+
+	MAI_bill_attack_dio = {
+		icon = ger_mefo_bills
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_chp_atleast_one_topic_free
+				has_country_flag = MAI_chp_topic_1_not_taken
+			}
+			NOT = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_already_submitted
+					has_country_flag = MAI_attack_dio_proposed
+				}
+			}
+			
+		}
+		visible = { 
+			has_completed_focus = MAI_look_west
+			NOT = {
+				has_country_flag = MAI_parliament_passed_attack_dio_flag
+			}
+			DIO = {
+				exists = yes
+				has_war = yes
+			}
+		}
+		cost = 0
+		days_remove = 1
+		days_re_enable = 14
+		ai_will_do = {
+			factor = 1
+		}
+		complete_effect = {
+			hidden_effect = {
+					clr_country_flag = MAI_chp_topic_1_not_taken
+					set_country_flag = MAI_chp_topic_1_taken_option_19
+					set_country_flag = MAI_attack_dio_proposed
+					set_country_flag = MAI_chp_sub_1_mac
+				MAI_chp_calculate_bill_support = yes
+			}
+		}
+	}
+
 	MAI_enchancian_freedom_decision = {
 		icon = ger_mefo_bills
 		available = {
@@ -848,6 +877,13 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_enchancian_freedom_proposed
 				}
 			}
+			
+		}
+		visible = { 
+			has_completed_focus = MAI_look_west
+			NOT = {
+				has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+			}
 			OR = {
 				EN3 = {
 					exists = yes
@@ -856,12 +892,6 @@ children_parliament_dec_category = {
 					exists = yes
 				}
 			} 
-		}
-		visible = { 
-			has_completed_focus = MAI_everrealm_sphere
-			NOT = {
-				has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
-			}
 		}
 		cost = 0
 		days_remove = 1
@@ -893,15 +923,16 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_khaldoun_proposed
 				}
 			}
-			KHA = {
-				has_government = fascism
-			} 
+			
 		}
 		visible = {  
-			has_completed_focus = MAI_everrealm_sphere
+			has_completed_focus = MAI_look_west
 			NOT = {
 				has_country_flag = MAI_parliament_passed_khaldoun_flag
 			}
+			KHA = {
+				has_government = fascism
+			} 
 		}
 		cost = 0
 		days_remove = 1
@@ -934,15 +965,16 @@ children_parliament_dec_category = {
 				}
 			}
 			
-			RUD = {
-				has_government = fascism
-			}  
+			
 		}
 		visible = { 
-			has_completed_focus = MAI_everrealm_sphere
+			has_completed_focus = MAI_look_west
 			NOT = {
 				has_country_flag = MAI_parliament_passed_rudistan_flag
 			}
+			RUD = {
+				has_government = fascism
+			}  
 		}
 		cost = 0
 		days_remove = 1
@@ -974,15 +1006,16 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_corinthia_proposed
 				}
 			}
-			COR = {
-				has_government = communism
-			}  
+			 
 		}
 		visible = { 
-			has_completed_focus = MAI_everrealm_sphere
+			has_completed_focus = MAI_look_west
 			NOT = {
 				has_country_flag = MAI_parliament_passed_corinthia_flag
 			}
+			COR = {
+				has_government = communism
+			} 
 		}
 		cost = 0
 		days_remove = 1
@@ -1014,15 +1047,16 @@ children_parliament_dec_category = {
 					has_country_flag = MAI_trufflandia_proposed
 				}
 			}
-			TRU = {
-				has_government = communism
-			} 
+			
 		}
 		visible = { 
-			has_completed_focus = MAI_everrealm_sphere
+			has_completed_focus = MAI_look_west
 			NOT = {
 				has_country_flag = MAI_parliament_passed_trufflandia_flag
 			}
+			TRU = {
+				has_government = communism
+			} 
 		}
 		cost = 0
 		days_remove = 1
@@ -1083,7 +1117,11 @@ children_parliament_dec_category = {
 	MAI_next_seating_of_children_parliament = {
 		icon = generic_political_discourse
 		available = {
-			always = no
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = children_parliament
+				}
+			}
 		}
 		activation = { always = no }
 		selectable_mission = no
@@ -1223,6 +1261,44 @@ children_parliament_dec_category = {
 					}
 					country_event = {
 						id = childrenparliament.46
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = MAI_japanifornia_support_proposed
+							has_country_flag = MAI_liberation_of_danville_proposed
+							has_country_flag = MAI_attack_dio_proposed
+							has_country_flag = MAI_lechina_support_proposed
+						}
+					}
+					country_event = {
+						id = childrenparliament.49
+						days = 0
+					}
+				}
+				if = {
+					limit = {
+						OR = {
+							has_country_flag = deputies_bill_1_submitted
+							has_country_flag = deputies_bill_2_submitted
+							has_country_flag = deputies_bill_3_submitted
+							has_country_flag = deputies_bill_4_submitted
+							has_country_flag = deputies_bill_5_submitted
+							has_country_flag = deputies_bill_6_submitted
+							has_country_flag = deputies_bill_7_submitted
+							has_country_flag = deputies_bill_8_submitted
+							has_country_flag = deputies_bill_9_submitted
+							has_country_flag = deputies_bill_10_submitted
+							has_country_flag = deputies_bill_11_submitted
+							has_country_flag = deputies_bill_12_submitted
+							has_country_flag = deputies_bill_13_submitted
+							has_country_flag = deputies_bill_14_submitted
+						}
+					}
+					country_event = {
+						id = childrenparliament.52
 						days = 0
 					}
 				}

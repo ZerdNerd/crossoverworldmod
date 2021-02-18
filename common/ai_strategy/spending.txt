@@ -22,6 +22,7 @@ black_monday_tactic = { #This is, however, original. It prioritizes cleaning up 
 		OR = {
 			has_idea = TCWMod_black_monday
 			has_idea = TCWMod_black_monday_2
+			has_idea = TCWMod_black_monday_nondev
 		}
 	}
 
@@ -30,13 +31,13 @@ black_monday_tactic = { #This is, however, original. It prioritizes cleaning up 
 	ai_strategy = {
 		type = pp_spend_amount
 		id = idea
-		value = -100
+		value = -1000
 	}
 
 	ai_strategy = {
 		type = pp_spend_amount
 		id = decision
-		value = 100
+		value = 1000
 	}
 }
 

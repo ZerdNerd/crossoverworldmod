@@ -45,10 +45,34 @@ conflict_for_influence_dec_category = {
 	visible = {
 		has_global_flag = stephen_is_dead
 		NOT = {
-			has_country_flag = general_has_rebelled
+			has_country_flag = general_moved_to_second_stage
 			has_country_flag = macius_reached_adulthood
+			has_country_flag = general_rebelled
+			has_completed_focus = MAI_betrayal_in_my_country
+			has_completed_focus = MAI_abdication
 		}
 	}
 	
-	priority = 50
+	priority = 100
+}
+
+road_to_central_civil_war_dec_category = {
+	icon = generic_political_actions
+	visible_when_empty = yes
+
+	picture = GFX_decision_cat_conflict_for_influence
+
+	allowed = {
+		tag = MAI
+	}
+
+	visible = {
+		has_global_flag = stephen_is_dead
+		has_country_flag = general_moved_to_second_stage
+		NOT = {
+			has_country_flag = general_rebelled
+		}
+	}
+	
+	priority = 100
 }

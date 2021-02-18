@@ -507,8 +507,60 @@ country_event = { #Neland Republic declares independence!
 	id = spalding.13
 	immediate = {
 		log = "[GetDateText]: [Root.GetName]: event spalding.13"
+	}
+	title = spalding.13.t
+	desc = {
+		text = spalding.13.d.nrl.communist
+		trigger = {
+			SLD = {
+				has_government = democratic
+			}
+		}
+	}
+	desc = {
+		text = spalding.13.d.nrl.democratic
+		trigger = {
+			SLD = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+	}
+	picture = GFX_report_event_generic_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SLD
+		OR = {
+			has_government = democratic
+			has_government = communism
+			has_government = fascism
+		}
+		NOT = {
+			has_war = yes
+		}
+		AND = {
+			has_country_flag = gave_macius_shore
+			MAI = {
+				owns_state = 736
+				owns_state = 773
+				owns_state = 767
+				owns_state = 776
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 7
+	}
+
+	option = { #We cannot declare on them yet, let them be
+		name = spalding.13.a
 		hidden_effect = {
-		NRL = {
+			NRL = {
 			transfer_state = 734
 			transfer_state = 774
 			transfer_state = 786
@@ -583,63 +635,6 @@ country_event = { #Neland Republic declares independence!
 				}
 			}
 		}
-		}
-	}
-	title = spalding.13.t
-	desc = {
-		text = spalding.13.d.nrl.communist
-		trigger = {
-			SLD = {
-				has_government = democratic
-			}
-		}
-	}
-	desc = {
-		text = spalding.13.d.nrl.democratic
-		trigger = {
-			SLD = {
-				OR = {
-					has_government = communism
-					has_government = fascism
-				}
-			}
-		}
-	}
-	picture = GFX_report_event_generic_parliament
-
-	fire_only_once = yes
-
-	trigger = {
-		tag = SLD
-		OR = {
-			has_government = democratic
-			has_government = communism
-			has_government = fascism
-		}
-		OR = {
-			AND = {
-				has_country_flag = gave_macius_shore
-				MAI = {
-					owns_state = 736
-					owns_state = 773
-					owns_state = 767
-					owns_state = 776
-				}
-			}
-			AND = {
-				has_war = yes
-				surrender_progress > 0.5
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 7
-	}
-
-	option = { #We cannot declare on them yet, let them be
-		name = spalding.13.a
-		hidden_effect = {
 			news_event = {
 				id = worldnews.52
 				hours = 6
@@ -661,6 +656,81 @@ country_event = { #Neland Republic declares independence!
 			type = annex_everything
 		}
 		hidden_effect = {
+			NRL = {
+			transfer_state = 734
+			transfer_state = 774
+			transfer_state = 786
+			transfer_state = 768
+			transfer_state = 777
+			set_capital = 734
+			if = {
+				limit = {
+					SLD = {
+						has_government = democratic
+					}
+				}
+				create_country_leader = {
+					name = "Marian Paździoch"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SLD/marian.dds"
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+						#
+					}
+				}
+				set_politics = {
+					ruling_party = communism
+					last_election = "1930.7.1"
+					election_frequency = 72
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 14
+					fascism = 6
+					communism = 80		
+					monarchism = 0
+				}
+				hidden_effect = {
+					load_oob = NRL_communist_ind
+				}
+			}
+			if = {
+				limit = {
+					SLD = {
+						OR = {
+							has_government = communism
+							has_government = fascism
+						}
+					}
+				}
+				create_country_leader = {
+					name = "Ferdynand Kiepski"
+					desc = "POLITICS_TBD_DESC"
+					picture = "gfx/leaders/SLD/ferdek.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						#
+					}
+				}
+				set_politics = {
+					ruling_party = democratic
+					last_election = "1930.7.1"
+					election_frequency = 72
+					elections_allowed = no
+				}
+				set_popularities = {
+					democratic = 86
+					fascism = 6
+					communism = 8		
+					monarchism = 0
+				}
+				hidden_effect = {
+					load_oob = NRL_democratic_ind
+				}
+			}
+		}
 			news_event = {
 				id = worldnews.53
 				hours = 6

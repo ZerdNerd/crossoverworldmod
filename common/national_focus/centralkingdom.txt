@@ -81,6 +81,10 @@ focus_tree = {
 			factor = 1
 		}
 
+		allow_branch = {
+			has_country_flag = unlock_second_stage_focuses
+		}
+
 		completion_reward = {
 			country_event = {
 				id = centralkingdom.40
@@ -93,6 +97,22 @@ focus_tree = {
 			add_popularity = {
    				ideology = monarchism
    	 			popularity = 0.05
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 1
+				}
 			}
 		}
 	}
@@ -120,6 +140,29 @@ focus_tree = {
 			add_ideas = {
 				MAI_new_ministers
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -2
+				}
+			}
 		}
 	}
 
@@ -143,6 +186,22 @@ focus_tree = {
 
 		completion_reward = {
 			add_country_leader_trait = the_reformer
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
 		}
 	}
 
@@ -159,6 +218,9 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		allow_branch = {
+			has_country_flag = unlock_second_stage_focuses
+		}
 
 		completion_reward = {
 			country_event = {
@@ -166,6 +228,22 @@ focus_tree = {
 				days = 0
 			}
 			add_political_power = -50
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -3
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -3
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 3
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 3
+				}
+			}
 		}
 	}
 
@@ -202,6 +280,22 @@ focus_tree = {
     			popularity = 0.1
 			}
 			add_stability = -0.1
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
+			}
 		}
 	}
 
@@ -238,6 +332,22 @@ focus_tree = {
     			popularity = 0.05
 			}
 			add_stability = -0.05
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -1
+				}
+			}
 		}
 	}
 
@@ -264,6 +374,22 @@ focus_tree = {
 			country_event = {
 				id = centralkingdom.44
 				days = 0
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_north_grows_south_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -1
+				}
 			}
 		}
 	}
@@ -303,6 +429,22 @@ focus_tree = {
 					modifier = MAI_expelled_commies
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 1
+				}
+			}
 		}
 	}
 
@@ -322,6 +464,15 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = -50
 			add_stability = 0.1
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
 		}
 	}
 
@@ -345,6 +496,26 @@ focus_tree = {
 			add_ideas = {
 				MAI_pro_rege_lege_et_grege
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 1
+				}
+				country_event = {
+					id = centralkingdom.62
+					days = 8
+				}
+			}
 		}
 	}
 
@@ -366,6 +537,26 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = {
 				MAI_king_of_children
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_north_grows_south_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 5
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -5
+				}
+				country_event = {
+					id = centralkingdom.62
+					days = 8
+				}
 			}
 		}
 	}
@@ -390,6 +581,15 @@ focus_tree = {
 			add_ideas = {
 				MAI_the_chocolate_and_carousels
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
 		}
 	}
 
@@ -412,6 +612,14 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = {
 				MAI_audience_for_children_idea
+			}
+			hidden_effect = {
+				FRI = {
+					country_event = {
+						id = centralkingdom.63
+						days = 7
+					}
+				}
 			}
 		}
 	}
@@ -437,6 +645,22 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = {
 				MAI_the_constitution
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 3
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 3
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 3
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 3
+				}
 			}
 		}
 	}
@@ -486,6 +710,29 @@ focus_tree = {
 			add_ideas = {
 				MAI_pioneer_camps
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -3
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -3
+				}
+			}
 		}
 	}
 
@@ -496,16 +743,30 @@ focus_tree = {
 		x = 12
 		y = 5
 		cost = 7.25
-		available_if_capitulated = yes 
+		available_if_capitulated = yes
+
+		allow_branch = {
+			MAI_there_is_no_gold_in_treasury = yes
+		}
+
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = will_fire_automatically
 				always = no
 			}
 		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				MAI_there_is_no_gold_in_treasury = yes
+			}
+		}
+
 		ai_will_do = { 
 			factor = 5
 		} 
+
 		completion_reward = { 
 			custom_effect_tooltip = will_fire_automatically
 		}
@@ -586,14 +847,6 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = MAI_ecw_broke
 				has_global_flag = enchancian_civil_war
-			}
-		} 
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_ecw_didnt_broke
-				ENC = {
-					has_country_flag = civil_war_avoided
-				}
 			}
 		}
 
@@ -769,8 +1022,18 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = MAI_winslow_exiled
 				any_country = {
+					NOT = {
+						tag = MAI
+					}
 					has_country_flag = winslow_on_exile
 				}
+			}
+		}
+
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_winslow_exiled_to_us
+				has_country_flag = winslow_on_exile
 			}
 		}
 
@@ -788,6 +1051,41 @@ focus_tree = {
 					}
 				}
 			add_political_power = 100
+		}
+	}
+
+	focus = { 
+		id = MAI_volunteer_bill
+		icon = GFX_focus_focus_fra_maquis
+		x = -2
+		y = 1
+		relative_position_id = MAI_thewayofdiplomacy
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_thewayofdiplomacy } 
+		ai_will_do = { 
+			factor = 5
+		}
+
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_volunteer_law
+			}
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_MIL_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 1
+				}
+			}
 		}
 	}
 
@@ -866,7 +1164,7 @@ focus_tree = {
 			DCB = {
 				OR = {
 					exists = no
-					is_pupept = yes
+					is_puppet = yes
 				}
 			}
 		}
@@ -928,7 +1226,7 @@ focus_tree = {
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = gold_needed_mlord
-				has_country_flag = gold_needed
+				MAI_there_is_no_gold_in_treasury = yes
 			}
 			TUG = {
 				exists = yes
@@ -939,6 +1237,22 @@ focus_tree = {
 			country_event = {
 				id = centralkingdom.46
 				days = 7
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -5
+				}
 			}
 		}
 	}
@@ -1013,6 +1327,26 @@ focus_tree = {
 						id = royalconvention.6
 						days = 0
 					}
+					country_event = {
+						id = centralkingdom.66
+						days = 30
+					}
+				}
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
 				}
 			}
 		}
@@ -1030,9 +1364,11 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = we_have_enough_gold
-				has_country_flag = gold_needed
 				has_country_flag = MAI_visited_tungupungu
 			}
+		}
+		allow_branch = {
+			MAI_there_is_no_gold_in_treasury = yes
 		}
 		ai_will_do = { 
 			factor = 5
@@ -1061,6 +1397,22 @@ focus_tree = {
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_north_grows_south_falls
+			custom_effect_tooltip = MAI_macius_influence_industry_north_grows_south_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 5
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = 5
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = -5
+				}
 			}
 		}		
 	}
@@ -1450,6 +1802,22 @@ focus_tree = {
 				bonus = 0.5
 				uses = 1
 				category = industry
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			custom_effect_tooltip = MAI_macius_influence_industry_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 5
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 5
+				}
 			}
 		}		
 	}
@@ -1927,6 +2295,15 @@ focus_tree = {
 					hours = 6
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_MIL_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -5
+				}
+			}
 		}
 	}
 
@@ -1942,8 +2319,6 @@ focus_tree = {
 		prerequisite = { focus = MAI_royal_convention }
 		ai_will_do = { 
 			factor = 1
-		} 
-		available = { 
 		}
 
 		completion_reward = {
@@ -1971,6 +2346,10 @@ focus_tree = {
 			factor = 1
 		} 
 
+		allow_branch = {
+			has_country_flag = role_change_law_passed
+		}
+
 		available = { 
 			custom_trigger_tooltip = {
 				tooltip = role_change_law_has_been_passed
@@ -1990,8 +2369,31 @@ focus_tree = {
 				FRI = {
 					country_event = {
 						id = centralkingdom.29
-						days = 14
+						days = 3
 					}
+				}
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_falls
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -5
+				}
+				add_to_variable = {
+					MAI_NCK_IND_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = -5
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = -5
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = -5
 				}
 			}
 		}
@@ -2018,6 +2420,10 @@ focus_tree = {
 			EN1 = {
 				exists = yes
 			}
+		}
+
+		allow_branch = {
+			has_country_flag = MAI_talks_with_james_yay
 		}
 
 		bypass = {
@@ -2109,6 +2515,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MAI_parliament_reforms
 			hidden_effect = {
+				clear_variable = days_since_deputies_submitted_bill
 				set_country_flag = parliament_reformed
 				set_country_flag = national_children_party_formed
 				FRI = {
@@ -2126,6 +2533,15 @@ focus_tree = {
 					days = 5
 				}
 				remove_mission = MAI_next_seating_of_children_parliament
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
 			}
 		}
 	}
@@ -2150,11 +2566,109 @@ focus_tree = {
 				has_country_flag = time_for_kids_formed
 				has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_formed
 			}
-			has_war = no
+		}
+
+		allow_branch = {
+			FRI = {
+				has_country_flag = hartmut_received_the_reply
+				has_country_flag = macius_folded
+			}
 		}
 
 		completion_reward = {
 			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_1_submitted
+					}
+					clr_country_flag = deputies_bill_1_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_2_submitted
+					}
+					clr_country_flag = deputies_bill_2_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_3_submitted
+					}
+					clr_country_flag = deputies_bill_3_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_4_submitted
+					}
+					clr_country_flag = deputies_bill_4_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_5_submitted
+					}
+					clr_country_flag = deputies_bill_5_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_6_submitted
+					}
+					clr_country_flag = deputies_bill_6_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_7_submitted
+					}
+					clr_country_flag = deputies_bill_7_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_8_submitted
+					}
+					clr_country_flag = deputies_bill_8_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_9_submitted
+					}
+					clr_country_flag = deputies_bill_9_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_10_submitted
+					}
+					clr_country_flag = deputies_bill_10_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_11_submitted
+					}
+					clr_country_flag = deputies_bill_11_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_12_submitted
+					}
+					clr_country_flag = deputies_bill_12_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_13_submitted
+					}
+					clr_country_flag = deputies_bill_13_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_14_submitted
+					}
+					clr_country_flag = deputies_bill_14_submitted
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = MAI_chp_topic_1_not_taken
+						}
+					}
+					set_country_flag = MAI_chp_topic_1_not_taken
+				}
 				another_elections_script = yes
 				every_owned_state = {
 					execute_dhondt_method = yes
@@ -2238,6 +2752,15 @@ focus_tree = {
 				remove_idea = MAI_aftermath_of_role_change_law_2
 				add_idea = MAI_aftermath_of_role_change_law_3
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
 		}
 	}
 
@@ -2263,6 +2786,15 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = {
 				MAI_central_zloty
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
 			}
 		}
 	}
@@ -2304,6 +2836,16 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
 			}
 		}
 	}
@@ -2380,6 +2922,15 @@ focus_tree = {
 				remove_idea = MAI_aftermath_of_role_change_law_2
 				add_idea = MAI_aftermath_of_role_change_law_3
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
 		}
 	}
 
@@ -2405,6 +2956,12 @@ focus_tree = {
 		completion_reward = {
 			add_ideas = {
 				MAI_expanding_the_navy
+			}
+			custom_effect_tooltip = MAI_macius_influence_military_south_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
 			}
 		}
 	}
@@ -2446,6 +3003,16 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
 			}
 		}
 	}
@@ -2496,6 +3063,15 @@ focus_tree = {
 			swap_ideas = {
 				remove_idea = MAI_aftermath_of_role_change_law_1
 				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = -2
+				}
 			}
 		}
 	}
@@ -2562,6 +3138,15 @@ focus_tree = {
 			add_ideas = {
 				MAI_new_pioneer_camps
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
 		}
 	}
 
@@ -2582,6 +3167,16 @@ focus_tree = {
 		completion_reward = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
 			}
 		}
 	}
@@ -2633,6 +3228,15 @@ focus_tree = {
 				remove_idea = MAI_aftermath_of_role_change_law_1
 				add_idea = MAI_aftermath_of_role_change_law_2
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
 		}
 	}
 
@@ -2682,6 +3286,15 @@ focus_tree = {
 			}
 			add_stability = 0.05
 			add_political_power = 50
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = -1
+				}
+			}
 		}
 	}
 
@@ -2722,6 +3335,16 @@ focus_tree = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -2761,6 +3384,16 @@ focus_tree = {
 					hours = 6
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_MIL_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -2776,6 +3409,19 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+
+		allow_branch = {
+			OR = {
+				has_completed_focus = MAI_we_wont_give_in
+				AND = {
+					has_completed_focus = MAI_reform_the_parliament
+					FRI = {
+						has_country_flag = macius_folded_yet_hartmut_declared
+					}
+				}
+			}
+		}
+
 		available = {
 			has_war_with = FRI
 			OR = {
@@ -2876,6 +3522,17 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+		allow_branch = {
+			OR = {
+				has_completed_focus = MAI_we_wont_give_in
+				AND = {
+					has_completed_focus = MAI_reform_the_parliament
+					FRI = {
+						has_country_flag = macius_folded_yet_hartmut_declared
+					}
+				}
+			}
+		}
 		available = {
 			has_war_with = FRI
 			surrender_progress > 0.3
@@ -2921,6 +3578,17 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+		allow_branch = {
+			OR = {
+				has_completed_focus = MAI_we_wont_give_in
+				AND = {
+					has_completed_focus = MAI_reform_the_parliament
+					FRI = {
+						has_country_flag = macius_folded_yet_hartmut_declared
+					}
+				}
+			}
+		}
 		available = {
 			has_war_with = FRI
 		}
@@ -2994,6 +3662,11 @@ focus_tree = {
 			has_war_with = FRI
 			surrender_progress > 0.5
 		}
+		bypass = {
+			FRI = {
+				surrender_progress > 0.0
+			}
+		}
 
 		completion_reward = {
 			add_timed_idea = {
@@ -3015,6 +3688,18 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+
+		allow_branch = {
+			OR = {
+				has_completed_focus = MAI_we_wont_give_in
+				AND = {
+					has_completed_focus = MAI_reform_the_parliament
+					FRI = {
+						has_country_flag = macius_folded_yet_hartmut_declared
+					}
+				}
+			}
+		}
 
 		available = {
 			OR = {
@@ -3050,6 +3735,22 @@ focus_tree = {
 					}
 				}
 				custom_trigger_tooltip = {
+					tooltip = if_at_war_with_fri_and_sld
+					AND = {
+						has_war_with = FRI
+						has_war_with = SLD
+						NOT = {
+							has_war_with = WEK
+						}
+						FRI = {
+							surrender_progress > 0.00
+						}
+						SLD = {
+							surrender_progress > 0.00
+						}
+					}
+				}
+				custom_trigger_tooltip = {
 					tooltip = if_at_war_with_the_triumvirate
 					AND = {
 						has_war_with = FRI
@@ -3071,6 +3772,22 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.15
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_MIL_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
+			}
 		}
 	}
 
@@ -3177,6 +3894,16 @@ focus_tree = {
 					days = 0
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -3192,11 +3919,24 @@ focus_tree = {
 			focus = MAI_seashore_in_exchange_for_peace 
 			focus = MAI_exile_him_to_the_colony
 		}
+		mutually_exclusive = {
+			focus = MAI_we_won_whats_next
+		}
 		ai_will_do = { 
 			factor = 1
-		} 
-		available = {
-			has_war = no
+		}
+
+		allow_branch = {
+			NOT = {
+				has_war_with = FRI
+			}
+			NOT = {
+				has_idea = MAI_aftermath_of_role_change_law_1
+				has_idea = MAI_aftermath_of_role_change_law_2
+				has_idea = MAI_aftermath_of_role_change_law_3
+				has_idea = MAI_the_great_switcheroo
+				has_completed_focus = MAI_reform_the_parliament
+			}
 		}
 
 		completion_reward = {
@@ -3262,7 +4002,8 @@ focus_tree = {
 			factor = 1
 		} 
 		available = {
-			has_war = yes
+			has_war_with = CLD
+			has_war_with = GEN
 		}
 
 		completion_reward = {
@@ -3293,6 +4034,16 @@ focus_tree = {
 				id = centralkingdom.53
 				days = 0
 			}
+			hidden_effect = {
+				every_owned_state = {
+					remove_core_of = CLD
+					remove_core_of = GEN
+				}
+				add_ideas = {
+					MAI_aftermath_of_civil_war_1
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -3312,6 +4063,8 @@ focus_tree = {
 			custom_trigger_tooltip = {
 				tooltip = MAI_cleanup_after_civil_war_finished
 				NOT = {
+					has_idea = MAI_aftermath_of_civil_war_1
+					has_idea = MAI_aftermath_of_civil_war_2
 					has_idea = MAI_aftermath_of_civil_war_3
 				}
 			}
@@ -3362,6 +4115,16 @@ focus_tree = {
 					days = 0
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -3373,6 +4136,9 @@ focus_tree = {
 		relative_position_id = MAI_exile_him_to_the_colony
 		cost = 1.5
 		available_if_capitulated = no
+		mutually_exclusive = {
+			focus = MAI_we_were_on_the_verge_of_greatness
+		}
 		prerequisite = { 
 			focus = MAI_seashore_in_exchange_for_peace 
 			focus = MAI_exile_him_to_the_colony 
@@ -3381,8 +4147,17 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
-		available = {
-			has_war = no
+		allow_branch = {
+			NOT = {
+				has_war_with = FRI
+			}
+			NOT = {
+				has_idea = MAI_aftermath_of_role_change_law_1
+				has_idea = MAI_aftermath_of_role_change_law_2
+				has_idea = MAI_aftermath_of_role_change_law_3
+				has_idea = MAI_the_great_switcheroo
+				has_completed_focus = MAI_reform_the_parliament
+			}
 		}
 
 		completion_reward = {
@@ -3436,6 +4211,7 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = MAI_children_parliament_withdrawn_tooltip
 			hidden_effect = {
+				clr_country_flag = children_parliament
 				retire_country_leader = yes
 				create_country_leader = {
 					name = "Macius I"
@@ -3501,6 +4277,108 @@ focus_tree = {
 
 		completion_reward = {
 			custom_effect_tooltip = MAI_partification_additional_info
+			hidden_effect = {
+				clear_variable = days_since_deputies_submitted_bill
+				set_country_flag = parliament_reformed
+				set_country_flag = national_children_party_formed
+				country_event = {
+					id = childrenparliament.15
+					days = 5
+				}
+				remove_mission = MAI_next_seating_of_children_parliament
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_1_submitted
+					}
+					clr_country_flag = deputies_bill_1_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_2_submitted
+					}
+					clr_country_flag = deputies_bill_2_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_3_submitted
+					}
+					clr_country_flag = deputies_bill_3_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_4_submitted
+					}
+					clr_country_flag = deputies_bill_4_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_5_submitted
+					}
+					clr_country_flag = deputies_bill_5_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_6_submitted
+					}
+					clr_country_flag = deputies_bill_6_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_7_submitted
+					}
+					clr_country_flag = deputies_bill_7_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_8_submitted
+					}
+					clr_country_flag = deputies_bill_8_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_9_submitted
+					}
+					clr_country_flag = deputies_bill_9_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_10_submitted
+					}
+					clr_country_flag = deputies_bill_10_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_11_submitted
+					}
+					clr_country_flag = deputies_bill_11_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_12_submitted
+					}
+					clr_country_flag = deputies_bill_12_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_13_submitted
+					}
+					clr_country_flag = deputies_bill_13_submitted
+				}
+				if = {
+					limit = {
+						has_country_flag = deputies_bill_14_submitted
+					}
+					clr_country_flag = deputies_bill_14_submitted
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = MAI_chp_topic_1_not_taken
+						}
+					}
+					set_country_flag = MAI_chp_topic_1_not_taken
+				}
+			}
 		}
 	}
 
@@ -3549,6 +4427,9 @@ focus_tree = {
 				elections_allowed = no
 				election_frequency = 24
 			}
+			hidden_effect = {
+				clr_country_flag = children_parliament
+			}
 		}
 	}
 
@@ -3591,6 +4472,16 @@ focus_tree = {
 					add_claim_by = MAI
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_MIL_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -3606,8 +4497,18 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
-		available = {
-			has_war = no
+		allow_branch = {
+			always = no
+			NOT = {
+				has_war_with = FRI
+			}
+			NOT = {
+				has_idea = MAI_aftermath_of_role_change_law_1
+				has_idea = MAI_aftermath_of_role_change_law_2
+				has_idea = MAI_aftermath_of_role_change_law_3
+				has_idea = MAI_the_great_switcheroo
+				has_completed_focus = MAI_reform_the_parliament
+			}
 		}
 
 		completion_reward = {
@@ -3895,6 +4796,14 @@ focus_tree = {
 		available = {
 			always = no
 		}
+
+		allow_branch = {
+			OR = {
+				has_idea = MAI_aftermath_of_civil_war_1
+				has_idea = MAI_aftermath_of_civil_war_2
+				has_idea = MAI_aftermath_of_civil_war_3
+			}
+		}
 		
 		completion_reward = {
 			custom_effect_tooltip = will_fire_automatically
@@ -4089,9 +4998,23 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		} 
+
+		allow_branch = {
+			OR = {
+				has_country_flag = agreed_to_reform_parliament
+				has_country_flag = denied_reforming_parliament
+			}
+			NOT = {
+				has_idea = MAI_aftermath_of_role_change_law_1
+				has_idea = MAI_aftermath_of_role_change_law_2
+				has_idea = MAI_aftermath_of_role_change_law_3
+				has_idea = MAI_the_great_switcheroo
+			}
+		}
+
 		available = {
 			OR = {
-				AND = {
+				OR = {
 					has_completed_focus = MAI_we_still_have_work_to_do
 					has_completed_focus = MAI_return_to_sole_monarchy
 					has_completed_focus = MAI_partification_of_parliament
@@ -4111,6 +5034,7 @@ focus_tree = {
 					}
 				}
 			}
+			has_war = no
 		}
 	
 		completion_reward = {
@@ -4127,6 +5051,19 @@ focus_tree = {
 		cost = 3.70
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_a_new_foreign_policy }
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = children_parliament_does_not_exist
+				NOT = {
+					has_country_flag = children_parliament
+				}
+			}
+		}
+		available = {
+			NOT = {
+				has_war_with = GEN
+			}
+		}
 		ai_will_do = { 
 			factor = 1
 		}
@@ -4148,9 +5085,17 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		bypass = {
+			TUG = {
+				exists = no
+			}
+		}
 		available = {
 			TUG = {
 				exists = yes
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 	
@@ -4188,9 +5133,22 @@ focus_tree = {
 			factor = 1
 		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_colonies
-				has_country_flag = MAI_parliament_passed_colonies_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_colonies
+					has_country_flag = MAI_parliament_passed_colonies_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
+		}
+		available = {
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 	
@@ -4220,6 +5178,9 @@ focus_tree = {
 				NOT = {
 					has_government = fascism
 				}
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 
@@ -4284,9 +5245,17 @@ focus_tree = {
 			NOT = {
 				has_war_with = 439.Owner
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_grn
-				has_country_flag = MAI_parliament_passed_grn_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_grn
+					has_country_flag = MAI_parliament_passed_grn_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
 			}
 			has_war = no
 		}
@@ -4344,6 +5313,9 @@ focus_tree = {
 			GRN = {
 				exists = yes
 			}
+			NOT = {
+				has_war_with = GEN
+			}
 		}
 	
 		completion_reward = {
@@ -4381,11 +5353,27 @@ focus_tree = {
 			TSA = {
 				has_government = fascism
 			}
+			OR = {
+				has_country_flag = MAI_parliament_passed_liberation_of_danville_flag
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
 			has_war = no
 		}
 
 		bypass = {
-			has_war_with = TSA
+			OR = {
+				has_war_with = TSA
+				TSA = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+			}
 		}
 	
 		completion_reward = {
@@ -4413,9 +5401,17 @@ focus_tree = {
 				exists = yes
 				has_war_with = GRN
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_unity
-				has_country_flag = MAI_parliament_passed_unity_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_unity
+					has_country_flag = MAI_parliament_passed_unity_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
 			}
 			has_war = no
 		}
@@ -4445,9 +5441,17 @@ focus_tree = {
 				exists = yes
 				has_war_with = GRN
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_shen
-				has_country_flag = MAI_parliament_passed_shen_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_shen
+					has_country_flag = MAI_parliament_passed_shen_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
 			}
 			has_war = no
 		}
@@ -4477,6 +5481,15 @@ focus_tree = {
 				exists = yes
 				has_war = yes
 			}
+			OR = {
+				has_country_flag = MAI_parliament_passed_attack_dio_flag
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
 			has_war = no
 		}
 	
@@ -4499,6 +5512,14 @@ focus_tree = {
 		prerequisite = { focus = MAI_a_new_foreign_policy }
 		ai_will_do = { 
 			factor = 1
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = children_parliament_does_not_exist
+				NOT = {
+					has_country_flag = children_parliament
+				}
+			}
 		}
 	
 		completion_reward = {
@@ -4523,7 +5544,27 @@ focus_tree = {
 				exists = yes
 				has_war_with = JPN
 			}
+			OR = {
+				has_country_flag = MAI_parliament_passed_lechina_support_flag
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
 			has_war = no
+		}
+		bypass = {
+			LEC = {
+				exists = yes
+			}
+			JPN = {
+				OR = {
+					exists = no
+					is_puppet = yes
+				}
+			}
 		}
 		ai_will_do = { 
 			factor = 1
@@ -4561,7 +5602,24 @@ focus_tree = {
 				}
 				has_war_with = LEC
 			}
+			OR = {
+				has_country_flag = MAI_parliament_passed_japanifornia_support_flag
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
 			has_war = no
+		}
+		bypass = {
+			JPN = {
+				exists = yes
+			}
+			LEC = {
+				exists = no
+			}
 		}
 		ai_will_do = { 
 			factor = 1
@@ -4594,6 +5652,9 @@ focus_tree = {
 		available = {
 			AVA = {
 				exists = yes
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 		ai_will_do = { 
@@ -4638,9 +5699,17 @@ focus_tree = {
 					exists = yes
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_enchancian_freedom
-				has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_enchancian_freedom
+					has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
 			}
 			has_war = no
 		}
@@ -4713,6 +5782,9 @@ focus_tree = {
 					exists = yes
 				}
 			}
+			NOT = {
+				has_war_with = GEN
+			}
 		}
 		ai_will_do = { 
 			factor = 1
@@ -4742,9 +5814,20 @@ focus_tree = {
 			KHA = {
 				has_government = fascism
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_khaldoun
-				has_country_flag = MAI_parliament_passed_khaldoun_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_khaldoun
+					has_country_flag = MAI_parliament_passed_khaldoun_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 		bypass = {
@@ -4782,9 +5865,20 @@ focus_tree = {
 			RUD = {
 				has_government = fascism
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_rudistan
-				has_country_flag = MAI_parliament_passed_rudistan_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_rudistan
+					has_country_flag = MAI_parliament_passed_rudistan_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 		bypass = {
@@ -4822,9 +5916,20 @@ focus_tree = {
 			COR = {
 				has_government = communism
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_corinthia
-				has_country_flag = MAI_parliament_passed_corinthia_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_corinthia
+					has_country_flag = MAI_parliament_passed_corinthia_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 		bypass = {
@@ -4862,9 +5967,20 @@ focus_tree = {
 			TRU = {
 				has_government = communism
 			}
-			custom_trigger_tooltip = {
-				tooltip = MAI_parliament_passed_trufflandia
-				has_country_flag = MAI_parliament_passed_trufflandia_flag
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_parliament_passed_trufflandia
+					has_country_flag = MAI_parliament_passed_trufflandia_flag
+				}
+				custom_trigger_tooltip = {
+					tooltip = children_parliament_does_not_exist
+					NOT = {
+						has_country_flag = children_parliament
+					}
+				}
+			}
+			NOT = {
+				has_war_with = GEN
 			}
 		}
 		bypass = {
@@ -4911,8 +6027,9 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-			create_faction = stabilization_pact
-			custom_effect_tooltip = MAI_invitations_to_the_pact_in_decisions
+			custom_effect_tooltip = MAI_decisions_to_join_factions_will_be_available
+		#	create_faction = stabilization_pact
+		#	custom_effect_tooltip = MAI_invitations_to_the_pact_in_decisions
 		}
 	}
 
@@ -4979,7 +6096,10 @@ focus_tree = {
 		}
 	
 		completion_reward = {
-			#event
+			country_event = {
+				id = centralkingdom.81
+				days = 0
+			}
 		}
 	}
 
@@ -5193,8 +6313,8 @@ focus_tree = {
 	focus = { 
 		id = MAI_aftermath_of_the_ten_days
 		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 37
-		y = 21
+		x = 2
+		y = 9
 		cost = 10
 		available_if_capitulated = yes 
 		ai_will_do = { 
@@ -5202,6 +6322,15 @@ focus_tree = {
 		} 
 		available = {
 			always = no
+		}
+
+		allow_branch = {
+			OR = {
+				has_idea = MAI_aftermath_of_role_change_law_1
+				has_idea = MAI_aftermath_of_role_change_law_2
+				has_idea = MAI_aftermath_of_role_change_law_3
+			}
+			has_country_flag = denied_reforming_parliament
 		}
 
 		completion_reward = {
@@ -5218,21 +6347,12 @@ focus_tree = {
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_aftermath_of_the_ten_days }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
-			}
-		}
+		
 		ai_will_do = { 
 			factor = 1
 		}
 
 		completion_reward = {
-			add_ideas = {
-				MAI_technological_bureau
-			}
-			add_research_slot = 1
 			swap_ideas = {
 				remove_idea = MAI_aftermath_of_role_change_law_1
 				add_idea = MAI_aftermath_of_role_change_law_2
@@ -5258,6 +6378,15 @@ focus_tree = {
 				remove_idea = MAI_aftermath_of_role_change_law_2
 				add_idea = MAI_aftermath_of_role_change_law_3
 			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
 		}
 	}
 
@@ -5270,18 +6399,22 @@ focus_tree = {
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_aftermath_of_the_ten_days }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
-			}
-		}
+		
 		ai_will_do = { 
 			factor = 1
 		}
 
 		completion_reward = {
 			add_manpower = -5000
+			custom_effect_tooltip = MAI_macius_influence_military_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_MIL_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_MIL_support = 2
+				}
+			}
 		}
 	}
 
@@ -5321,6 +6454,16 @@ focus_tree = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -5347,6 +6490,10 @@ focus_tree = {
 				tooltip = MAI_macius_crowned
 				has_global_flag = stephen_is_dead
 			}
+		}
+
+		allow_branch = {
+			MAI_there_is_no_gold_in_treasury = yes
 		}
 
 		available_if_capitulated = yes
@@ -5691,6 +6838,9 @@ focus_tree = {
 				add = 2
 			}
 		} 
+		allow_branch = {
+			MAI_there_is_no_gold_in_treasury = yes
+		}
 		icon = GFX_goal_generic_occupy_states_coastal
 		x = 40
 		y = 0
@@ -6075,6 +7225,9 @@ focus_tree = {
 				add = 2
 			}
 		} 
+		allow_branch = {
+			MAI_there_is_no_gold_in_treasury = yes
+		}
 		icon = GFX_goal_generic_build_airforce
 		x = 40
 		y = 11
