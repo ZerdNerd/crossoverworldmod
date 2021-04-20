@@ -5,3 +5,24 @@ passione_revolt_dec_category = {
 	
 	priority = 100
 }
+
+dio_heaven_campaign_dec_category = {
+	icon = military_operation
+	visible_when_empty = yes
+
+	allowed = {
+		tag = DIO
+	}
+
+	visible = {
+	#	JOJ = {
+	#		exists = no
+	#	}
+	#	owns_state = 642
+		always = yes
+	}
+
+	scripted_gui = heaven_requirements
+	
+	priority = 101
+}

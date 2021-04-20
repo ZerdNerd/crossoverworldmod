@@ -6,6 +6,234 @@ defined_text = { #KR
 	}
 }
 
+defined_text = { 
+	name = REQ4_STATUS
+	text = {
+		trigger = { owns_state = 642 JOJ = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 642 } JOJ = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ5_STATUS
+	text = {
+		trigger = { owns_state = 625 MOR = { exists = no } MO2 = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 625 } OR = { MOR = { exists = yes } MO2 = { exists = yes } } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ6_STATUS
+	text = {
+		trigger = { owns_state = 439 GRN = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 439 } GRN = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ8_STATUS
+	text = {
+		trigger = { owns_state = 705 SIO = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 705 } SIO = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ9_STATUS
+	text = {
+		trigger = { owns_state = 325 FLO = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 325 } FLO = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ14_STATUS
+	text = {
+		trigger = { owns_state = 698 TSA = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 698 } TSA = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ15_STATUS
+	text = {
+		trigger = { owns_state = 647 DCB = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 647 } DCB = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ16_STATUS
+	text = {
+		trigger = { owns_state = 812 MAI = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 812 } MAI = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ17_STATUS
+	text = {
+		trigger = { owns_state = 770 SLD = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 770 } SLD = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ18_STATUS
+	text = {
+		trigger = { owns_state = 401 UND = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 401 } UND = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ19_STATUS
+	text = {
+		trigger = { owns_state = 859 JPN = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 859 } JPN = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ20_STATUS
+	text = {
+		trigger = { owns_state = 286 DUL = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 286 } DUL = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ21_STATUS
+	text = {
+		trigger = { owns_state = 428 SWA = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 428 } SWA = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ24_STATUS
+	text = {
+		trigger = { owns_state = 187 }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 187 } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ26_STATUS
+	text = {
+		trigger = { owns_state = 815 AVA = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 815 } AVA = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ28_STATUS
+	text = {
+		trigger = { owns_state = 740 PAT = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 740 } PAT = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ31_STATUS
+	text = {
+		trigger = { owns_state = 476 MUS = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 476 } MUS = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ33_STATUS
+	text = {
+		trigger = { owns_state = 440 TIG = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 440 } TIG = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
+defined_text = { 
+	name = REQ35_STATUS
+	text = {
+		trigger = { owns_state = 24 TUG = { exists = no } }
+		localization_key = "HEAVEN_REQ_YES"
+	}
+    text = {
+		trigger = { NOT = { owns_state = 24 } TUG = { exists = yes } }
+		localization_key = "HEAVEN_REQ_NO"
+	}
+}
+
 defined_text = {
 	name = MAI_state_control_status
     text = {

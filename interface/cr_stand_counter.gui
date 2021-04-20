@@ -36,4 +36,30 @@ guiTypes = {
       pdx_tooltip = "SUPREME_PORTRAIT_TOOLTIP"
     }
 	}
+
+  containerWindowType = {
+		name = "heaven_requirements_container"
+		position = { x = 0 y = 0 }
+		size = { width=436 height=600 }
+
+		instantTextBoxType = {
+			name ="heaven_requirements_container_header"
+			position = { x = 0 y = 0 }
+			font = "hoi_30header"
+			text = "HEAVEN_REQ_HEADER"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+
+    instantTextBoxType = {
+			name ="heaven_requirements_container_requirements_list"
+			position = { x = 10 y = 50 }
+			font = "hoi_24header"
+			text = "HEAVEN_LIST"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+	}
 }

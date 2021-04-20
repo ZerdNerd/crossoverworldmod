@@ -1253,3 +1253,21 @@ country_event = { #Stroheim denies
 		name = jojo.44.a
 	}
 }
+
+country_event = { #Final Heaven event
+	id = jojo.45
+	title = jojo.45.t
+	desc = jojo.45.d
+	
+	picture = GFX_report_event_soviet_german_soldier_handshake
+
+	is_triggered_only = yes
+
+	option = {
+		name = jojo.45.a
+		custom_effect_tooltip = GAME_OVER_MATE
+		hidden_effect = {
+			UNC = { change_tag_from = DIO }
+		}
+	}
+}
