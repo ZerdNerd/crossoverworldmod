@@ -1722,11 +1722,28 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
-			release = GON
 			GON = {
 				hidden_effect = {
 					retire_country_leader = yes
 				}
+				transfer_state = 190
+				transfer_state = 167
+				transfer_state = 181
+				transfer_state = 192
+				transfer_state = 163
+				transfer_state = 213
+				transfer_state = 199
+				transfer_state = 236
+				transfer_state = 268
+				transfer_state = 251
+				transfer_state = 249
+				transfer_state = 231
+				transfer_state = 194
+				transfer_state = 177
+				transfer_state = 158
+				transfer_state = 172
+				transfer_state = 217
+				load_focus_tree = generic_focus
 				set_cosmetic_tag = GongmenRepublic
 				ROOT = {
 					puppet = PREV
@@ -3704,6 +3721,9 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+				NOT = {
+					has_variable = puppet_of_friedewalt_before_war
+				}
 			}
 			NOT = {
 				tag = GRN
@@ -3967,6 +3987,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = GRN
+			}
+			NOT = {
+				tag = FLE
 			}
 			NOT = {
 				GR3 = {
@@ -6257,6 +6280,22 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = MAI
+				AND = {
+					tag = FRI
+					has_cosmetic_tag = HAR
+				}
+				AND = {
+					tag = WEK
+					FRI = {
+						has_country_flag = wek_accepted
+					}
+				}
+				AND = {
+					tag = SLD
+					FRI = {
+						has_country_flag = sld_accepted
+					}
+				}
 			}
 		}
 
@@ -6386,7 +6425,7 @@ occupation_dec_category = {
 		cost = 0
 
 		ai_will_do = {
-			factor = 0.0000001
+			factor = 1.0
 		}
 
 		visible = {
@@ -6422,6 +6461,38 @@ occupation_dec_category = {
 								is_on_continent = africa
 							}
 							is_on_continent = africa
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = europe
+							}
+							NOT = {
+								is_on_continent = europe
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = north_america
+							}
+							NOT = {
+								is_on_continent = north_america
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = south_america
+							}
+							NOT = {
+								is_on_continent = south_america
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = africa
+							}
+							NOT = {
+								is_on_continent = africa
+							}
 						}
 					}
 					any_neighbor_state = {
@@ -6463,6 +6534,38 @@ occupation_dec_category = {
 								is_on_continent = africa
 							}
 							is_on_continent = africa
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = europe
+							}
+							NOT = {
+								is_on_continent = europe
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = north_america
+							}
+							NOT = {
+								is_on_continent = north_america
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = south_america
+							}
+							NOT = {
+								is_on_continent = south_america
+							}
+						}
+						AND = {
+							capital_scope = {
+								is_on_continent = africa
+							}
+							NOT = {
+								is_on_continent = africa
+							}
 						}
 					}
 					is_owned_by = ROOT

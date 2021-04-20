@@ -63,16 +63,11 @@ country_event = { #Fate of Winslow Family
 				id = worldnews.97
 				hours = 6
 			}
-			every_owned_state = {
-				remove_core_of = ENC
-			}
-			every_country = {
+			every_state = {
 				limit = {
-					owns_state = 330
+					is_core_of = ENC
 				}
-				every_owned_state = {
-					remove_core_of = ENC
-				}
+				remove_core_of = ENC
 			}
 		}
 	}

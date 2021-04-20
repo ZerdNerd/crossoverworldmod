@@ -383,12 +383,12 @@ default_peace = {
 			rule_take_bordering_first = yes
 		}
 
-		# take only acceptable states
-		modifier = {
-			factor = 0
-			set_temp_variable = { global.eval_state = FROM.id }
-			is_willing_to_take_state_ROOT = no
-		}
+	#	# take only acceptable states
+	#	modifier = {
+	#		factor = 0
+	#		set_temp_variable = { global.eval_state = FROM.id }
+	#		is_willing_to_take_state_ROOT = no
+	#	}
 
 		### PRIORITY
 
@@ -414,7 +414,6 @@ default_peace = {
 				OR = {
 					is_core_of = WOL
 					is_core_of = WEA
-					is_claimed_by = FLO
 				}
 			}
 		}

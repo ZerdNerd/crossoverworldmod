@@ -4,9 +4,16 @@ state={
 	provinces={
 		5820 
 	}
-	manpower=0
+	manpower=500
 	buildings_max_level_factor=1.000
 	history = {
-		owner = UNC
+		owner = FRI
+		buildings = {
+			infrastructure = 1
+			5820 = {
+				naval_base = 1
+			}
+		}
 	}
+	state_category = small_island
 }

@@ -922,6 +922,9 @@ country_event = { #Enchancian Civil War begins
 				transfer_state = 330
 				add_state_core = 330
 			}
+			AVA = {
+				transfer_state = 29
+			}
 			news_event = {
 				id = worldnews.6
 				hours = 7
@@ -1195,7 +1198,7 @@ country_event = { #End of Enchancian Civil War
 						tag = EN1
 					}
 					delete_unit_template_and_units = {
-    					division_template = "Eastern Regiment"
+    					division_template = "Eastern Militia"
 					}
 				}
 				if = {
@@ -1203,7 +1206,7 @@ country_event = { #End of Enchancian Civil War
 						tag = EN2
 					}
 					delete_unit_template_and_units = {
-    					division_template = "Northern Regiment"
+    					division_template = "Northern Militia"
 					}
 				}
 			}

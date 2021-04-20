@@ -105,10 +105,12 @@ scripted_gui = {
 			}
 
 			tab_5_on_visible = {
+				OR = { original_tag = GRN original_tag = DES original_tag = ICW original_tag = DRG original_tag = OUT original_tag = MAI original_tag = FRI original_tag = WEK original_tag = FLE original_tag = TUG original_tag = KLU original_tag = TSA original_tag = SLD original_tag = LEC original_tag = SAN original_tag = JPN original_tag = KHU original_tag = GON original_tag = FLO original_tag = WOL original_tag = WEA original_tag = SQU original_tag = DUC original_tag = TRL original_tag = DUL original_tag = FFA original_tag = SWA original_tag = WOR original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = KHU original_tag = WEI original_tag = ZUM original_tag = TRU original_tag = COR original_tag = RUD original_tag = MAR original_tag = ISL original_tag = SKO original_tag = KPT original_tag = SIO original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2}
 				check_variable = { cr_welcome_screen = 5 }
 			}
 
 			tab_5_off_visible = {
+				OR = { original_tag = GRN original_tag = DES original_tag = ICW original_tag = DRG original_tag = OUT original_tag = MAI original_tag = FRI original_tag = WEK original_tag = FLE original_tag = TUG original_tag = KLU original_tag = TSA original_tag = SLD original_tag = LEC original_tag = SAN original_tag = JPN original_tag = KHU original_tag = GON original_tag = FLO original_tag = WOL original_tag = WEA original_tag = SQU original_tag = DUC original_tag = TRL original_tag = DUL original_tag = FFA original_tag = SWA original_tag = WOR original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = KHU original_tag = WEI original_tag = ZUM original_tag = TRU original_tag = COR original_tag = RUD original_tag = MAR original_tag = ISL original_tag = SKO original_tag = KPT original_tag = SIO original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2}
 				NOT = { check_variable = { cr_welcome_screen = 5 } }
 			}
 
@@ -129,6 +131,7 @@ scripted_gui = {
 			}
 
 			tab_5_header_visible = {
+				OR = { original_tag = GRN original_tag = DES original_tag = ICW original_tag = DRG original_tag = OUT original_tag = MAI original_tag = FRI original_tag = WEK original_tag = FLE original_tag = TUG original_tag = KLU original_tag = TSA original_tag = SLD original_tag = LEC original_tag = SAN original_tag = JPN original_tag = KHU original_tag = GON original_tag = FLO original_tag = WOL original_tag = WEA original_tag = SQU original_tag = DUC original_tag = TRL original_tag = DUL original_tag = FFA original_tag = SWA original_tag = WOR original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = KHU original_tag = WEI original_tag = ZUM original_tag = TRU original_tag = COR original_tag = RUD original_tag = MAR original_tag = ISL original_tag = SKO original_tag = KPT original_tag = SIO original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2}
 				check_variable = { cr_welcome_screen = 5 }
 			}
 		}

@@ -1,30 +1,32 @@
+
 state={
 	id=797
 	name="STATE_797"
-	provinces={
-		67 111 768 785 1467 2174 2545 2725 2861 3006 4048 4122 4649 4755 5258 5576 10039 10070 10076 10115 10144 10236 10282 10306 10307 10315 10335 10414 
-	}
-	state_category = rural
-	manpower=120000
-	buildings_max_level_factor=1.000
-	history = {
+
+	history={
 		owner = FLE
 		add_core_of = FLE
 		buildings = {
 			infrastructure = 2
 			air_base = 2
-			10144 = {
-				naval_base = 2
-			}
+			
 			10315 = {
 				naval_base = 2
+
 			}
+
 		}
+		
 		victory_points = {
-			10144 10
+			10315 10 
 		}
-		victory_points = {
-			10315 10
-		}
+
 	}
+
+	provinces={
+		10282 10307 10315 
+	}
+	manpower=120000
+	buildings_max_level_factor=1.000
+	state_category=rural
 }

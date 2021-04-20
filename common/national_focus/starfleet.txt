@@ -2986,6 +2986,9 @@ focus_tree = {
 		} 
 		completion_reward = {
 			custom_effect_tooltip = KPT_will_enable_colonization
+			hidden_effect = {
+				set_country_flag = colonies_enabled
+			}
 		} 
 	}
 
@@ -3004,9 +3007,12 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = {
-			transfer_state = 71
+			transfer_state = 999
 			transfer_state = 72
-			71 = {
+			999 = {
+				hidden_effect = {
+					rename_colonized_state_polish = yes
+				}
 				add_manpower = 50000
 				add_building_construction = {
 					type = infrastructure
@@ -3022,6 +3028,9 @@ focus_tree = {
 				set_state_category = town
 			}
 			72 = {
+				hidden_effect = {
+					rename_colonized_state_polish = yes
+				}
 				add_manpower = 50000
 				add_building_construction = {
 					type = infrastructure
@@ -3086,6 +3095,9 @@ focus_tree = {
 		available_if_capitulated = yes 
 		prerequisite = {
 			focus = KPT_colonization_campaign
+		}
+		bypass = {
+			always = yes
 		}
 		ai_will_do = { 
 			factor = 1

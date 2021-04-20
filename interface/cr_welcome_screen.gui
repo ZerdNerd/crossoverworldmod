@@ -92,13 +92,15 @@ guiTypes = {
 		}
 
 		instantTextboxType = {
-			name = "tab_3_text_header_1"
-			position = { x=0 y=70 }
-			font = "hoi_24header"
-			text = "CR_WS_TAB_1_IN_THE_MOD"
-			maxWidth = 1090
-			maxHeight = 432
+			name = "tab_1_text_notifiaction"
+			position = { x=10 y=100 }
+			font = "hoi_36header"
+			text = "CR_WS_TAB_1_NO_CONTENT_MESSAGE"
+			maxWidth = 1115
+			maxHeight = 200
 			#fixedsize = yes
+			format = centre
+			scrollbartype = "standardtext_slider"
 		}
 	}
 
@@ -180,7 +182,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_3_text_header_4"
-			position = { x=0 y=410 }
+			position = { x=0 y=390 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_3_TXT_HEADER_4"
 			maxWidth = 1090
@@ -190,7 +192,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_3_text_header_5"
-			position = { x=0 y=510 }
+			position = { x=0 y=490 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_3_TXT_HEADER_5"
 			maxWidth = 1090
@@ -243,7 +245,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_4_text_header_1"
-			position = { x=0 y=0 }
+			position = { x=0 y=625 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_4_TXT_HEADER_1"
 			maxWidth = 1090
@@ -253,7 +255,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_4_text_header_2"
-			position = { x=0 y=1620 }
+			position = { x=0 y=0 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_4_TXT_HEADER_2"
 			maxWidth = 1090
@@ -263,7 +265,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_4_text_header_3"
-			position = { x=0 y=1020 }
+			position = { x=0 y=1620 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_4_TXT_HEADER_3"
 			maxWidth = 1090
@@ -273,7 +275,7 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "tab_4_text_header_4"
-			position = { x=0 y=1840 }
+			position = { x=0 y=1835 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_4_TXT_HEADER_4"
 			maxWidth = 1090
@@ -496,6 +498,17 @@ guiTypes = {
 			position = { x = -550 y = 160 }
 			font = "hoi_24header"
 			text = "CR_WS_TAB_4_HEADER"
+			Orientation = center_up
+			format = center
+			maxWidth = 1100
+			maxHeight = 30
+		}
+
+		instantTextboxType = {
+			name = "tab_5_header"
+			position = { x = -550 y = 160 }
+			font = "hoi_24header"
+			text = "CR_WS_TAB_5_HEADER"
 			Orientation = center_up
 			format = center
 			maxWidth = 1100

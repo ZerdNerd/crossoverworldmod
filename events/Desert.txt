@@ -1646,6 +1646,18 @@ country_event = { #Yakari about rejoining Sioux
 			SIO = {
 				set_country_flag = rainbow_not_returning_too
 			}
+			GRN = {
+				create_corps_commander = {
+					name = "Rainbow"
+					portrait_path = "gfx/leaders/SIO/rainbow.dds"
+					skill = 3
+   					attack_skill = 2
+    				defense_skill = 3
+   					planning_skill = 3
+    				logistics_skill = 3
+    				id = 90001
+				}
+			}
 		}
 	}
 }

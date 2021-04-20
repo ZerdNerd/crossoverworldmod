@@ -670,6 +670,7 @@ focus_tree = {
 			add_political_power = -250
 			transfer_state = 888
 			888 = {
+				set_state_name = "New Glasstown"
 				set_state_category = town
 				add_building_construction = {
 					type = naval_base
@@ -683,6 +684,13 @@ focus_tree = {
 					instant_build = yes
 				}
 				add_manpower = 150000
+				add_victory_points = {
+					province = 2251
+					value = 10
+				}
+			}
+			hidden_effect = {
+				set_country_flag = colonies_enabled
 			}
 		} 
 	}
@@ -701,10 +709,10 @@ focus_tree = {
 			factor = 1
 		} 
 		available = {
+			owns_state = 989
+			owns_state = 988
+			owns_state = 987
 			owns_state = 894
-			owns_state = 891
-			owns_state = 871
-			owns_state = 51
 		}
 		completion_reward = {
 			add_political_power = 50

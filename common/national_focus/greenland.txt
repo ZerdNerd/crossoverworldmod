@@ -2455,9 +2455,16 @@ focus_tree = {
 		prerequisite = { focus = GRN_help_for_joestars }
 
 		available = {
-			MIC = {
-				exists = no
-			}
+		#	MIC = {
+		#		exists = no
+		#	}
+		}
+
+		bypass = {
+			always = yes
+		#	MIC = {
+		#		exists = yes
+		#	}
 		}
 
 		available_if_capitulated = no

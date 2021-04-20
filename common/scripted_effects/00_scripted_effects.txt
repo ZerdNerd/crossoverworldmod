@@ -444,6 +444,53 @@ general_strzelcy_divisions = { #I tried playing with the code first, but it retu
 	}
 }
 
+set_variables_in_friedewalt_puppets = {
+	every_country = {
+		limit = {
+			OR = {
+				is_puppet_of = FRI
+				AND = {
+					tag = FLE
+					NOT = {
+						has_country_flag = flensburg_declared_independence
+					}
+				}
+			}
+		}
+		FRI = {
+			end_puppet = PREV
+		}
+		set_variable = { puppet_of_friedewalt_before_war = 1 }
+	}
+}
+
+set_new_central_alliance_leader = {
+	random_country = {
+		limit = {
+			has_variable = puppet_of_friedewalt_before_war
+		}
+		create_faction = central_alliance
+		set_variable = { is_temporal_central_alliance_leader = 1 }
+	}
+}
+
+adjust_new_central_alliance = {
+	every_country = {
+		limit = {
+			has_variable = puppet_of_friedewalt_before_war
+			NOT = {
+				has_variable = is_temporal_central_alliance_leader
+			}
+		}
+		random_country = {
+			limit = {
+				has_variable = is_temporal_central_alliance_leader
+			}
+			add_to_faction = PREV
+		}
+	}
+}
+
 abandon_colony_tag = {
 	
 }

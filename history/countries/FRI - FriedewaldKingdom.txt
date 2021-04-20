@@ -160,10 +160,21 @@ create_country_leader = {
 	}
 }
 
+create_field_marshal = {
+	name = "Friedewalt III"
+	portrait_path = "gfx/leaders/FRI/friedewalt.dds"
+	traits = { inspirational_leader }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 3
+    id = 9996
+}
+
 create_corps_commander = {
 	name = "Hartmut"
 	portrait_path = "gfx/leaders/FRI/hartmut.dds"
-	desc = "POLITICS_HARTMUT_DESC"
 	traits = { harsh_leader politically_connected }
 	skill = 2
     attack_skill = 2
@@ -176,7 +187,6 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Hanz Speidel"
 	portrait_path = "gfx/leaders/FRI/speidel.dds"
-	desc = "POLITICS_SPEIDEL_DESC"
 	traits = { }
 	skill = 3
     attack_skill = 3
@@ -189,7 +199,6 @@ create_corps_commander = {
 create_corps_commander = {
 	name = "Adolf Heusinger"
 	portrait_path = "gfx/leaders/FRI/heusinger.dds"
-	desc = "POLITICS_HEUSINGER_DESC"
 	traits = { }
 	skill = 4
     attack_skill = 3
@@ -197,6 +206,42 @@ create_corps_commander = {
     planning_skill = 3
     logistics_skill = 3
     id = 9997
+}
+
+create_corps_commander = {
+	name = "Heinrich Scheuch"
+	portrait_path = "gfx/leaders/FRI/heinrich_scheuch.dds"
+	traits = { }
+	skill = 4
+    attack_skill = 4
+    defense_skill = 4
+    planning_skill = 3
+    logistics_skill = 3
+    id = 9995
+}
+
+create_corps_commander = {
+	name = "William Balck"
+	portrait_path = "gfx/leaders/FRI/william_balck.dds"
+	traits = { }
+	skill = 4
+    attack_skill = 3
+    defense_skill = 3
+    planning_skill = 3
+    logistics_skill = 2
+    id = 9994
+}
+
+create_corps_commander = {
+	name = "Hermann Balck"
+	portrait_path = "gfx/leaders/FRI/hermann_balck.dds"
+	traits = { panzer_leader }
+	skill = 5
+    attack_skill = 4
+    defense_skill = 3
+    planning_skill = 4
+    logistics_skill = 3
+    id = 9993
 }
 
 country_event = {

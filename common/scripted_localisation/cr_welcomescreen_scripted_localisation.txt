@@ -67,6 +67,22 @@ defined_text = { # Country
 		localization_key = CR_WS_ENC
 	}
 	text = {
+		trigger = { original_tag = EN1 }
+		localization_key = CR_WS_EN1
+	}
+	text = {
+		trigger = { original_tag = EN2 }
+		localization_key = CR_WS_EN2
+	}
+	text = {
+		trigger = { original_tag = EN3 }
+		localization_key = CR_WS_EN3
+	}
+	text = {
+		trigger = { original_tag = EN4 }
+		localization_key = CR_WS_EN4
+	}
+	text = {
 		trigger = { original_tag = AVA }
 		localization_key = CR_WS_AVA
 	}
@@ -79,7 +95,23 @@ defined_text = { # Country
 		localization_key = CR_WS_KPT
 	}
 	text = {
-		localization_key = "[Root.GetNameDef]"
+		trigger = { original_tag = JOJ }
+		localization_key = CR_WS_JOJ
+	}
+	text = {
+		trigger = { original_tag = DIO }
+		localization_key = CR_WS_DIO
+	}
+	text = {
+		trigger = { original_tag = SIO }
+		localization_key = CR_WS_SIO
+	}
+	text = {
+		trigger = { original_tag = TIG }
+		localization_key = CR_WS_TIG
+	}
+	text = {
+		localization_key = ""
 	}
 }
 
@@ -142,6 +174,22 @@ defined_text = {
 		localization_key = CR_WS_ENC_desc
 	}
 	text = {
+		trigger = { original_tag = EN1 }
+		localization_key = CR_WS_EN1_desc
+	}
+	text = {
+		trigger = { original_tag = EN2 }
+		localization_key = CR_WS_EN2_desc
+	}
+	text = {
+		trigger = { original_tag = EN3 }
+		localization_key = CR_WS_EN3_desc
+	}
+	text = {
+		trigger = { original_tag = EN4 }
+		localization_key = CR_WS_EN4_desc
+	}
+	text = {
 		trigger = { original_tag = AVA }
 		localization_key = CR_WS_AVA_desc
 	}
@@ -154,7 +202,34 @@ defined_text = {
 		localization_key = CR_WS_KPT_desc
 	}
 	text = {
-		localization_key = "[Root.GetNameDef]"
+		trigger = { original_tag = JOJ }
+		localization_key = CR_WS_JOJ_desc
+	}
+	text = {
+		trigger = { original_tag = DIO }
+		localization_key = CR_WS_DIO_desc
+	}
+	text = {
+		trigger = { original_tag = SIO }
+		localization_key = CR_WS_SIO_desc
+	}
+	text = {
+		trigger = { original_tag = TIG }
+		localization_key = CR_WS_TIG_desc
+	}
+	text = {
+		localization_key = ""
+	}
+}
+
+defined_text = {
+	name = GetNotReadyMessage
+	text = {
+		trigger = { NOT = { original_tag = GRN original_tag = MAI original_tag = FRI original_tag = DES original_tag = TSA original_tag = SLD original_tag = JPN original_tag = LEC original_tag = SAN original_tag = ICW original_tag = GON original_tag = FLO original_tag = DUL original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = SKO original_tag = KPT original_tag = JOJ original_tag = DIO original_tag = SIO original_tag = TIG } }
+		localization_key = CR_WS_THIS_COUNTRY_IS_NOT_READY
+	}
+	text = {
+		localization_key = ""
 	}
 }
 
@@ -201,6 +276,102 @@ defined_text = { # Country
 	}
 	text = {
 		localization_key = "[Root.GetNameDef]"
+	}
+}
+
+defined_text = { # Universe tab
+	name = GetUniverseName
+	text = {
+		trigger = { OR = { original_tag = GRN original_tag = DES original_tag = ICW original_tag = DRG original_tag = OUT } }
+		localization_key = CR_WS_UNIVERSE_TABALUGA
+	}
+	text = {
+		trigger = { OR = { original_tag = MAI original_tag = FRI original_tag = WEK original_tag = FLE original_tag = TUG original_tag = KLU } }
+		localization_key = CR_WS_UNIVERSE_KING_MACIUS
+	}
+	text = {
+		trigger = { original_tag = TSA }
+		localization_key = CR_WS_UNIVERSE_PAF
+	}
+	text = {
+		trigger = { OR = { original_tag = SLD original_tag = LEC original_tag = SAN } }
+		localization_key = CR_WS_UNIVERSE_ORIGINAL_MASHUP
+	}
+	text = {
+		trigger = { OR = { original_tag = JPN original_tag = KHU } }
+		localization_key = CR_WS_UNIVERSE_ACE_ATTORNEY
+	}
+	text = {
+		trigger = { OR = { original_tag = FLO original_tag = WOL original_tag = WEA original_tag = SQU original_tag = DUC original_tag = TRL } }
+		localization_key = CR_WS_UNIVERSE_SQUIRREL_AND_HEDGEHOG
+	}
+	text = {
+		trigger = { OR = { original_tag = DUL original_tag = FFA original_tag = SWA original_tag = WOR } }
+		localization_key = CR_WS_UNIVERSE_SHREK
+	}
+	text = {
+		trigger = { OR = { original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = KHU original_tag = WEI original_tag = ZUM original_tag = TRU original_tag = COR original_tag = RUD original_tag = MAR original_tag = ISL } }
+		localization_key = CR_WS_UNIVERSE_SOFIA_THE_FIRST
+	}
+	text = {
+		trigger = { OR = { original_tag = SKO original_tag = KPT } }
+		localization_key = CR_WS_UNIVERSE_KAPITAN_BOMBA
+	}
+	text = {
+		trigger = { original_tag = SIO }
+		localization_key = CR_WS_UNIVERSE_YAKARI
+	}
+	text = {
+		trigger = { OR = { original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2 } }
+		localization_key = CR_WS_UNIVERSE_JOJO
+	}
+}
+
+defined_text = { # Universe tab
+	name = GetUniverseDesc
+	text = {
+		trigger = { OR = { original_tag = GRN original_tag = DES original_tag = ICW original_tag = DRG original_tag = OUT } }
+		localization_key = CR_WS_UNIVERSE_TABALUGA_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = MAI original_tag = FRI original_tag = WEK original_tag = FLE original_tag = TUG original_tag = KLU } }
+		localization_key = CR_WS_UNIVERSE_KING_MACIUS_DESC
+	}
+	text = {
+		trigger = { original_tag = TSA }
+		localization_key = CR_WS_UNIVERSE_PAF_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = SLD original_tag = LEC original_tag = SAN } }
+		localization_key = CR_WS_UNIVERSE_ORIGINAL_MASHUP_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = JPN original_tag = KHU } }
+		localization_key = CR_WS_UNIVERSE_ACE_ATTORNEY_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = FLO original_tag = WOL original_tag = WEA original_tag = SQU original_tag = DUC original_tag = TRL } }
+		localization_key = CR_WS_UNIVERSE_SQUIRREL_AND_HEDGEHOG_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = DUL original_tag = FFA original_tag = SWA original_tag = WOR } }
+		localization_key = CR_WS_UNIVERSE_SHREK_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = KHU original_tag = WEI original_tag = ZUM original_tag = TRU original_tag = COR original_tag = RUD original_tag = MAR original_tag = ISL } }
+		localization_key = CR_WS_UNIVERSE_SOFIA_THE_FIRST_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = SKO original_tag = KPT } }
+		localization_key = CR_WS_UNIVERSE_KAPITAN_BOMBA_DESC
+	}
+	text = {
+		trigger = { original_tag = SIO }
+		localization_key = CR_WS_UNIVERSE_YAKARI_DESC
+	}
+	text = {
+		trigger = { OR = { original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2 } }
+		localization_key = CR_WS_UNIVERSE_JOJO_DESC
 	}
 }
 

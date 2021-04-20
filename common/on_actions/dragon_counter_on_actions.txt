@@ -6,20 +6,87 @@ on_actions = {
 				limit = { 
                     tag = GRN
                 }
-                set_variable = { dragon_counter = 0.001 }
+                set_variable = { dragon_counter = 0.01 }
                 set_variable = { dragon_counter_rate = 0.000 }
+				set_variable = { days_since_portal_open = 0 }
             }
 		}
 	}
 
 	on_daily = {
 		effect = {
-			if = {
-				limit = { 
-                    has_country_flag = dragon_immigration
-                }
+			GRN = {
+				if = {
+					limit = { 
+               	    	has_country_flag = dragon_immigration
+						NOT = {
+							has_country_flag = setting_1_on
+						}
+               		}
                 
-                add_to_variable = { dragon_counter = dragon_counter_rate }
+               		add_to_variable = { dragon_counter = dragon_counter_rate }
+					add_to_variable = { days_since_portal_open = 1 }
+				}
+				if = {
+					limit = { 
+               	    	has_country_flag = dragon_immigration
+						has_country_flag = setting_1_on
+						NOT = {
+							has_country_flag = setting_2_on
+						}
+               		}
+                
+               		add_to_variable = { dragon_counter = dragon_counter_rate }
+					add_to_variable = { days_since_portal_open = 1 }
+				}
+				if = {
+					limit = {
+						check_variable = { dragon_counter > 5.0 }
+						NOT = {
+							has_country_flag = setting_1_on
+						}
+					}
+					set_country_flag = setting_1_on
+					set_variable = { dragon_counter_rate = 0.055 }
+				}
+				if = {
+					limit = {
+						check_variable = { dragon_counter > 10.0 }
+						NOT = {
+							has_country_flag = setting_2_on
+						}
+					}
+					set_country_flag = setting_2_on
+					set_variable = { dragon_counter_rate = 0.08 }
+				}
+				if = {
+					limit = {
+						check_variable = { dragon_counter > 15.0 }
+						NOT = {
+							has_variable = dragon_republic_independence_path
+						}
+					}
+					set_variable = { dragon_republic_independence_path = 1 }
+					country_event = {
+						id = greenland.649
+						days = 0
+					}
+				}
+			}
+			DRG = {
+				if = {
+					limit = {
+						exists = yes
+					}
+					set_temp_variable = { new_dragons_in_states_temp = dragon_counter_rate@GRN }
+					multiply_temp_variable = { new_dragons_in_states_temp = 1000 }
+					divide_temp_variable = { new_dragons_in_states_temp = num_owned_states }
+					set_variable = { new_dragons_in_states_stable = new_dragons_in_states_temp }
+					every_owned_state = {
+						add_manpower = var:new_dragons_in_states
+					}
+					clear_variable = new_dragons_in_states_stable
+				}
 			}
 		}
 	}

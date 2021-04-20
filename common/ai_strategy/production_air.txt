@@ -10,14 +10,83 @@
 # protect
 # influence
 
-no_air_for_small_countries = {
+smol_countries_air_production = {
+	enable = {
+		num_of_military_factories > 3
+		num_of_military_factories < 10
+		NOT = {
+			has_idea = middleage_tech
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 80 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 20 }
+}
+
+medium_countries_air_production = {
+	enable = {
+		num_of_military_factories > 9
+		num_of_military_factories < 20
+		NOT = {
+			has_idea = middleage_tech
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 50 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 30 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 20 }
+}
+
+big_countries_air_production = {
+	enable = {
+		num_of_military_factories > 19
+		NOT = {
+			has_idea = middleage_tech
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 50 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 20 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 20 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 10 }
+}
+
+no_air_for_middleage_and_very_smol_countries = {
 	enable = {
 		OR = {
 			has_idea = middleage_tech
-			num_of_military_factories < 3
+			num_of_military_factories < 4
 		}
-		stop_infantry_prod = no
-		slow_artillery_prod = no
 	}
 
 	abort_when_not_enabled = yes
@@ -32,97 +101,6 @@ no_air_for_small_countries = {
 	ai_strategy = { type = equipment_production_factor id = suicide value = -1000 }
 }
 
-we_need_guns_not_planes = {
-	enable = {
-		num_of_military_factories > 2
-		num_of_military_factories < 7
-		has_war = no
-		slow_infantry_prod = no
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = air_factory_balance
-		value = -25
-	}
-}
-
-diversify_air_production_1 = {
-	enable = {
-		num_of_military_factories > 6
-		OR = {
-			has_tech = air_superiority
-			has_tech = force_rotation
-			has_tech = formation_flying
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = tactical_bomber
-		value = 10
-	}
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = -10
-	}
-}
-
-diversify_air_production_2 = {
-	enable = {
-		num_of_military_factories > 10
-		OR = {
-			has_tech = air_superiority
-			has_tech = force_rotation
-			has_tech = formation_flying
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = cas
-		value = 10
-	}
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = -10
-	}
-}
-
-diversify_air_production_3 = {
-	enable = {
-		num_of_naval_factories > 5
-		OR = {
-			num_of_military_factories > 20
-			check_variable = { num_ships_with_type@carrier > 0 }
-		}
-		OR = {
-			has_tech = air_superiority
-			has_tech = force_rotation
-			has_tech = formation_flying
-		}
-	}
-
-	abort_when_not_enabled = yes
-
-	ai_strategy = {
-		type = unit_ratio
-		id = naval_bomber
-		value = 5
-	}
-	ai_strategy = {
-		type = unit_ratio
-		id = fighter
-		value = -5
-	}
-}
 
 strategic_bombers_strategy1 = {
 	enable = {

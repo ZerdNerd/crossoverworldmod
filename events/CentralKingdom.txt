@@ -1050,6 +1050,10 @@ country_event = { #Hartmut is crowned
 		}
 		set_cosmetic_tag = HAR
 		hidden_effect = {
+			FLE = {
+				set_cosmetic_tag = FLE_HAR
+			}
+			complete_national_focus = FRI_hartmut_rules
 			news_event = {
 				id = worldnews.24
 				hours = 6
@@ -1174,6 +1178,134 @@ country_event = { #Macius rejects ultimatum
 	option = { #It's war, then!
 		name = centralkingdom.32.a
 		add_political_power = 100
+		hidden_effect = {
+			create_faction = central_alliance
+			if = {
+				limit = {
+					has_country_flag = wek_accepted
+				}
+				add_to_faction = WEK
+				803 = {
+					add_claim_by = WEK
+				}
+				814 = {
+					add_claim_by = WEK
+				}
+				822 = {
+					add_claim_by = WEK
+				}
+				812 = {
+					add_claim_by = WEK
+				}
+				824 = {
+					add_claim_by = WEK
+				}
+				817 = {
+					add_claim_by = WEK
+				}
+				852 = {
+					add_claim_by = WEK
+				}
+				WEK = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = sld_accepted
+				}
+				if = {
+					limit = {
+						SLD = {
+							NOT = {
+								is_in_faction = yes
+							}
+						}
+					}
+					add_to_faction = SLD
+				}
+				789 = {
+					add_claim_by = SLD
+				}
+				798 = {
+					add_claim_by = SLD
+				}
+				796 = {
+					add_claim_by = SLD
+				}
+				792 = {
+					add_claim_by = SLD
+				}
+				799 = {
+					add_claim_by = SLD
+				}
+				SLD = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = sld_accepted
+						has_country_flag = wek_accepted
+					}
+				}
+				803 = {
+					add_claim_by = FRI
+				}
+				814 = {
+					add_claim_by = FRI
+				}
+				822 = {
+					add_claim_by = FRI
+				}
+				812 = {
+					add_claim_by = FRI
+				}
+				824 = {
+					add_claim_by = FRI
+				}
+				817 = {
+					add_claim_by = FRI
+				}
+				789 = {
+					add_claim_by = FRI
+				}
+				798 = {
+					add_claim_by = FRI
+				}
+				796 = {
+					add_claim_by = FRI
+				}
+				792 = {
+					add_claim_by = FRI
+				}
+				799 = {
+					add_claim_by = FRI
+				}
+				852 = {
+					add_claim_by = FRI
+				}
+			}
+			858 = {
+				add_claim_by = FRI
+			}
+			843 = {
+				add_claim_by = FRI
+			}
+			831 = {
+				add_claim_by = FRI
+			}
+			808 = {
+				add_claim_by = FRI
+			}
+		}
 		declare_war_on = { 
 			target = MAI
 			type = annex_everything	
@@ -1235,6 +1367,134 @@ country_event = { #Macius agrees to the ultimatum
 		name = centralkingdom.33.a
 		add_political_power = -150
 		add_stability = -0.15
+		hidden_effect = {
+			create_faction = central_alliance
+			if = {
+				limit = {
+					has_country_flag = wek_accepted
+				}
+				add_to_faction = WEK
+				803 = {
+					add_claim_by = WEK
+				}
+				814 = {
+					add_claim_by = WEK
+				}
+				822 = {
+					add_claim_by = WEK
+				}
+				812 = {
+					add_claim_by = WEK
+				}
+				824 = {
+					add_claim_by = WEK
+				}
+				817 = {
+					add_claim_by = WEK
+				}
+				852 = {
+					add_claim_by = WEK
+				}
+				WEK = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = sld_accepted
+				}
+				if = {
+					limit = {
+						SLD = {
+							NOT = {
+								is_in_faction = yes
+							}
+						}
+					}
+					add_to_faction = SLD
+				}
+				789 = {
+					add_claim_by = SLD
+				}
+				798 = {
+					add_claim_by = SLD
+				}
+				796 = {
+					add_claim_by = SLD
+				}
+				792 = {
+					add_claim_by = SLD
+				}
+				799 = {
+					add_claim_by = SLD
+				}
+				SLD = {
+					declare_war_on = {
+						target = MAI
+						type = annex_everything
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = sld_accepted
+						has_country_flag = wek_accepted
+					}
+				}
+				803 = {
+					add_claim_by = FRI
+				}
+				814 = {
+					add_claim_by = FRI
+				}
+				822 = {
+					add_claim_by = FRI
+				}
+				812 = {
+					add_claim_by = FRI
+				}
+				824 = {
+					add_claim_by = FRI
+				}
+				817 = {
+					add_claim_by = FRI
+				}
+				789 = {
+					add_claim_by = FRI
+				}
+				798 = {
+					add_claim_by = FRI
+				}
+				796 = {
+					add_claim_by = FRI
+				}
+				792 = {
+					add_claim_by = FRI
+				}
+				799 = {
+					add_claim_by = FRI
+				}
+				852 = {
+					add_claim_by = FRI
+				}
+			}
+			858 = {
+				add_claim_by = FRI
+			}
+			843 = {
+				add_claim_by = FRI
+			}
+			831 = {
+				add_claim_by = FRI
+			}
+			808 = {
+				add_claim_by = FRI
+			}
+		}
 		declare_war_on = { 
 			target = MAI
 			type = annex_everything	
@@ -1617,6 +1877,7 @@ country_event = { #Macius wants to sign peace in exchange for broader shore
 		MAI = {
 			transfer_state = 869
 			transfer_state = 853
+			transfer_state = 1048
 			transfer_state = 835
 			transfer_state = 884
 			transfer_state = 905
@@ -1627,6 +1888,7 @@ country_event = { #Macius wants to sign peace in exchange for broader shore
 			add_state_core = 884
 			add_state_core = 905
 			add_state_core = 911
+			add_state_core = 1048
 			if = {
 				limit = {
 					872 = {
@@ -1681,6 +1943,7 @@ country_event = { #Macius wants to sign peace in exchange for broader shore
 							state = 884
 							state = 905
 							state = 911
+							state = 1048
 						}
 					}
 					set_variable = {
@@ -1710,6 +1973,7 @@ country_event = { #Macius wants to sign peace in exchange for broader shore
 							state = 884
 							state = 905
 							state = 911
+							state = 1048
 						}
 					}
 					set_variable = {

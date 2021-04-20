@@ -1,21 +1,28 @@
+
 state={
 	id=763
 	name="STATE_763"
-	state_category = rural
-	history = {
+
+	history={
 		add_core_of = FRI
 		owner = FRI
 		buildings = {
 			infrastructure = 4
 			air_base = 3
+			2897 = {
+				naval_base = 2
+			}
 		}
 		victory_points = {
-			4959 10
+			4959 15 
 		}
+
 	}
+
 	provinces={
-		789 1134 1333 1774 2897 2931 3564 4959 5522 9785 9787 9847 9868 9900 9917 9982 1517 9970 
+		2897 3564 4959 5522 9785 9787 9847 
 	}
-	manpower=500000
+	manpower=950000
 	buildings_max_level_factor=1.000
+	state_category=city
 }

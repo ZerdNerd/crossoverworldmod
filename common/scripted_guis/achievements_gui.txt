@@ -35,7 +35,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
             Achievement_Completed_visible = {
 				OR = {
 					AND = {
-						check_variable = { v = 1 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 1 }
+						}
 						ROOT = {
 							tag = GRN
 							is_ai = no
@@ -101,7 +104,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 					
 					AND = {
-						check_variable = { v = 2 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 2 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes
@@ -113,7 +119,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 3 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 3 }
+						}
 						ROOT = {
 							tag = DES
 							is_ai = no
@@ -209,7 +218,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 4 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 4 }
+						}
 						ROOT = {
 							tag = SIO
 							is_ai = no
@@ -251,7 +263,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 5 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 5 }
+						}
 						ROOT = {
 							tag = TSA
 							has_government = fascism
@@ -345,16 +360,16 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 6 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 6 }
+						}
 						ROOT = {
 							tag = MAI
 							is_ai = no
 							is_ironman = yes
 							FRI = {
-								OR = {
-									exists = no
-									has_completed_focus = FRI_prepare_to_destroy_macius
-								}
+								exists = no
 							}
 							any_owned_state = {
 								is_core_of = FRI
@@ -394,7 +409,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 7 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 7 }
+						}
 						ROOT = {
 							tag = SLD
 							is_ai = no
@@ -446,7 +464,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 8 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 8 }
+						}
 						ROOT = {
 							tag = SAN
 							is_ai = no
@@ -464,7 +485,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 9 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 9 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes
@@ -481,7 +505,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 10 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 10 }
+						}
 						ROOT = {
 							tag = ENC
 							is_ai = no
@@ -521,7 +548,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 11 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 11 }
+						}
 						ROOT = {
 							tag = SWA
 							is_ai = no
@@ -555,7 +585,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 12 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 12 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes
@@ -571,7 +604,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 13 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 13 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes
@@ -585,7 +621,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 14 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 14 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes
@@ -601,7 +640,10 @@ scripted_gui = { #yes, its from pax custom achievements shit
 					}
 
 					AND = {
-						check_variable = { v = 15 }
+						any_of_scopes = {
+							array = PB_achievement_array
+							check_variable = { v = 15 }
+						}
 						ROOT = {
 							is_ai = no
 							is_ironman = yes

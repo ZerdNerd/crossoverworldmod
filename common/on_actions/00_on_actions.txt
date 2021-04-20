@@ -3591,6 +3591,7 @@ on_actions = {
 							}
 						}
 					}
+					has_war = no
 				}
 				country_event = {
 					id = centralkingdom.67
@@ -3698,7 +3699,7 @@ on_actions = {
 					ROOT = {
 						any_owned_state = {
 							has_state_flag = state_is_being_colonized
-							state_population > 120000
+							state_population > 50000
 						}
 					}
 				}
@@ -4623,6 +4624,38 @@ on_actions = {
 					}
 					sound_effect = cr_bigevent_hartmut_wins_sound
 				}
+				FRI = {
+					country_event = {
+						id = friedewalt.36
+						days = 24
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = FRI
+					}
+					FROM = {
+						tag = MAI
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = wek_accepted
+					}
+					ROOT = {
+						clr_country_flag = wek_accepted
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = sld_accepted
+					}
+					ROOT = {
+						clr_country_flag = sld_accepted
+					}
+				}
 			}
 			if = {
 				limit = {
@@ -5051,6 +5084,37 @@ on_actions = {
 				set_country_flag = { flag = won_ideology_civil_war value = 1 days = 365 }
 				country_event = { id = generic.11 days = 1 }
 			}
+			if = {
+				limit = {
+					tag = FRI
+					OR = {
+						has_government = fascism
+						has_government = monarchism
+					}
+				}
+				random_country = {
+					limit = {
+						has_variable = is_temporal_central_alliance_leader
+					}
+					dismantle_faction = yes
+				}
+				create_faction = central_alliance
+				every_country = {
+					limit = {
+						has_variable = puppet_of_friedewalt_before_war
+					}
+					FRI = {
+						add_to_faction = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = FRI
+					has_government = monarchism
+				}
+				complete_national_focus = FRI_return_of_friedewalt
+			}
 		}
 	}
 
@@ -5092,7 +5156,7 @@ on_actions = {
 						has_state_category = town
 					}
 				}
-				add_manpower = 250000
+				add_manpower = 750000
 			}
 			every_state = {
 				limit = {
@@ -5101,7 +5165,16 @@ on_actions = {
 					}
 					has_state_category = large_town
 				}
-				add_manpower = 350000
+				add_manpower = 900000
+			}
+			every_state = {
+				limit = {
+					NOT = {
+						is_owned_by = MAI
+					}
+					has_state_category = city
+				}
+				add_manpower = 1400000
 			}
 			every_state = {
 				limit = {
@@ -5109,12 +5182,11 @@ on_actions = {
 						is_owned_by = MAI
 					}
 					OR = {
-						has_state_category = city
 						has_state_category = large_city
 						has_state_category = metropolis
 					}
 				}
-				add_manpower = 600000
+				add_manpower = 1750000
 			}
 			every_state = {
 				limit = {
@@ -5125,7 +5197,7 @@ on_actions = {
 						has_state_category = megalopolis
 					}
 				}
-				add_manpower = 800000
+				add_manpower = 2750000
 			}
 			every_country = {
 				if = {

@@ -97,11 +97,6 @@ political_actions = {
 				add = 1
 				has_stability < 0.6
 			}
-			modifier = {
-				factor = 0
-				original_tag = SPR
-				NOT = { has_global_flag = spanish_civil_war }
-			}
 		}
 	}
 
@@ -146,11 +141,6 @@ political_actions = {
 			modifier = {
 				add = 1
 				has_stability < 0.4
-			}
-			modifier = {
-				factor = 0
-				original_tag = SPR
-				NOT = { has_global_flag = spanish_civil_war }
 			}
 		}
 	}

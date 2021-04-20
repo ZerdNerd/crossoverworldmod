@@ -246,6 +246,55 @@ scripted_gui = {
                 THIS = {
                     clear_variable = colonization_enabled_for_state
                     set_state_flag = state_is_being_colonized
+                    if = {
+                        limit = {
+                            ROOT = {
+                                OR = {
+                                    tag = FRI
+                                    tag = GRN
+                                    tag = FLE
+                                    tag = ICW
+                              }
+                            }
+                        }
+                        rename_colonized_state_german = yes
+                    }
+                    if = {
+                        limit = {
+                            ROOT = {
+                                OR = {
+                                    tag = MAI
+                                    tag = SLD
+                                    tag = LEC
+                                    tag = KPT
+                                    tag = SKO
+                                }
+                            }
+                        }
+                        rename_colonized_state_polish = yes
+                    }
+                    if = {
+                        limit = {
+                            tag = GON
+                        }
+                        rename_colonized_state_chinese = yes
+                    }
+                    if = {
+                        limit = {
+                            ROOT = {
+                                NOT = {
+                                    tag = GON
+                                    tag = FRI
+                                    tag = GRN
+                                    tag = FLE
+                                    tag = MAI
+                                    tag = SLD
+                                    tag = LEC
+                                }
+                            }
+                        }
+                        rename_colonized_state_english = yes
+                    }
                     add_manpower = 100
                     if = {
                         limit = {
@@ -308,7 +357,19 @@ scripted_gui = {
         ai_check = {
             OR = {
                 has_country_flag = limited_colonies_enabled
-                has_country_flag = colonies_enabled
+                AND = {
+                    has_country_flag = colonies_enabled
+                    OR = {
+                        AND = {
+                            tag = FRI
+                            has_completed_focus = FRI_colonize_southern_luvland
+                        }
+                        tag = ICW
+                        tag = KPT
+                        tag = DUL
+                        tag = MAI
+                    }
+                }
             }
             has_political_power > 50
         }

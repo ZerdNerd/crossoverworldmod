@@ -1993,6 +1993,22 @@ country_event = { #Council of Elders meeting - international matters
 	}
 }
 
+country_event = { #Tyria the Younger arrives, and dragons start demanding their own country
+	id = greenland.649
+	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.64"}
+	title = greenland.649.t
+	desc = greenland.649.d
+	picture = GFX_report_greenland
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Acknowledge the fact
+		name = greenland.649.a
+	}
+}
+
 country_event = { #Dragon Immigration Question
 	id = greenland.65
 	immediate = {log = "[GetDateText]: [Root.GetName]: event greenland.65"}
@@ -2004,73 +2020,362 @@ country_event = { #Dragon Immigration Question
 
 	is_triggered_only = yes
 
-	option = { #Grant them these empty lands in the northeast
+	option = { #Sparky
 		name = greenland.65.a
 		if = {
 			limit = {
 				owns_state = 283
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 283
+				add_state_core = 283
+			}
+			remove_state_core = 283
 		}
 		if = {
 			limit = {
 				owns_state = 237
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 237
+				add_state_core = 237
+			}
+			remove_state_core = 237
 		}
 		if = {
 			limit = {
 				owns_state = 206
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 206
+				add_state_core = 206
+			}
+			remove_state_core = 206
 		}
 		if = {
 			limit = {
 				owns_state = 273
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 273
+				add_state_core = 273
+			}
+			remove_state_core = 273
 		}
 		if = {
 			limit = {
 				owns_state = 241
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 241
+				add_state_core = 241
+			}
+			remove_state_core = 241
 		}
 		if = {
 			limit = {
 				owns_state = 196
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 196
+				add_state_core = 196
+			}
+			remove_state_core = 196
 		}
 		if = {
 			limit = {
 				owns_state = 173
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 173
+				add_state_core = 173
+			}
+			remove_state_core = 173
 		}
 		if = {
 			limit = {
 				owns_state = 285
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 285
+				add_state_core = 285
+			}
+			remove_state_core = 285
 		}
 		if = {
 			limit = {
 				owns_state = 254
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 254
+				add_state_core = 254
+			}
+			remove_state_core = 254
 		}
 		if = {
 			limit = {
 				owns_state = 276
 			}
-			#DRG is the country tag for Dragon Republic
+			DRG = {
+				transfer_state = 276
+				add_state_core = 276
+			}
+			remove_state_core = 276
 		}
+		DRG = {
+			create_country_leader = {
+				name = "Sparky"
+				desc = "POLITICS_TBD_DESC"
+				picture = "gfx/leaders/GRN/sparky.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+				}
+			}
+			create_country_leader = {
+				name = "Sparky"
+				desc = "POLITICS_TBD_DESC"
+				picture = "gfx/leaders/GRN/sparky.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				}
+			}
+		}
+		add_to_faction = DRG
 	}
 
-	option = { #Grant them more rights
-		name = greenland.65.b
-		add_political_power = -50
+	option = { #Tyria
+		name = greenland.65.a
+		if = {
+			limit = {
+				owns_state = 283
+			}
+			DRG = {
+				transfer_state = 283
+				add_state_core = 283
+			}
+			remove_state_core = 283
+		}
+		if = {
+			limit = {
+				owns_state = 237
+			}
+			DRG = {
+				transfer_state = 237
+				add_state_core = 237
+			}
+			remove_state_core = 237
+		}
+		if = {
+			limit = {
+				owns_state = 206
+			}
+			DRG = {
+				transfer_state = 206
+				add_state_core = 206
+			}
+			remove_state_core = 206
+		}
+		if = {
+			limit = {
+				owns_state = 273
+			}
+			DRG = {
+				transfer_state = 273
+				add_state_core = 273
+			}
+			remove_state_core = 273
+		}
+		if = {
+			limit = {
+				owns_state = 241
+			}
+			DRG = {
+				transfer_state = 241
+				add_state_core = 241
+			}
+			remove_state_core = 241
+		}
+		if = {
+			limit = {
+				owns_state = 196
+			}
+			DRG = {
+				transfer_state = 196
+				add_state_core = 196
+			}
+			remove_state_core = 196
+		}
+		if = {
+			limit = {
+				owns_state = 173
+			}
+			DRG = {
+				transfer_state = 173
+				add_state_core = 173
+			}
+			remove_state_core = 173
+		}
+		if = {
+			limit = {
+				owns_state = 285
+			}
+			DRG = {
+				transfer_state = 285
+				add_state_core = 285
+			}
+			remove_state_core = 285
+		}
+		if = {
+			limit = {
+				owns_state = 254
+			}
+			DRG = {
+				transfer_state = 254
+				add_state_core = 254
+			}
+			remove_state_core = 254
+		}
+		if = {
+			limit = {
+				owns_state = 276
+			}
+			DRG = {
+				transfer_state = 276
+				add_state_core = 276
+			}
+			remove_state_core = 276
+		}
+		DRG = {
+			create_country_leader = {
+				name = "Tyria the Younger"
+				desc = "POLITICS_TBD_DESC"
+				picture = "gfx/leaders/GRN/tyria_younger.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+				}
+			}
+			create_country_leader = {
+				name = "Tyria the Younger"
+				desc = "POLITICS_TBD_DESC"
+				picture = "gfx/leaders/GRN/tyria_younger.dds"
+				expire = "1965.1.1"
+				ideology = centrism
+				traits = {
+				}
+			}
+		}
+		add_to_faction = DRG
+	}
+
+	option = { #Tyria
+		name = greenland.65.a
+		if = {
+			limit = {
+				owns_state = 283
+			}
+			DRG = {
+				transfer_state = 283
+				add_state_core = 283
+			}
+			remove_state_core = 283
+		}
+		if = {
+			limit = {
+				owns_state = 237
+			}
+			DRG = {
+				transfer_state = 237
+				add_state_core = 237
+			}
+			remove_state_core = 237
+		}
+		if = {
+			limit = {
+				owns_state = 206
+			}
+			DRG = {
+				transfer_state = 206
+				add_state_core = 206
+			}
+			remove_state_core = 206
+		}
+		if = {
+			limit = {
+				owns_state = 273
+			}
+			DRG = {
+				transfer_state = 273
+				add_state_core = 273
+			}
+			remove_state_core = 273
+		}
+		if = {
+			limit = {
+				owns_state = 241
+			}
+			DRG = {
+				transfer_state = 241
+				add_state_core = 241
+			}
+			remove_state_core = 241
+		}
+		if = {
+			limit = {
+				owns_state = 196
+			}
+			DRG = {
+				transfer_state = 196
+				add_state_core = 196
+			}
+			remove_state_core = 196
+		}
+		if = {
+			limit = {
+				owns_state = 173
+			}
+			DRG = {
+				transfer_state = 173
+				add_state_core = 173
+			}
+			remove_state_core = 173
+		}
+		if = {
+			limit = {
+				owns_state = 285
+			}
+			DRG = {
+				transfer_state = 285
+				add_state_core = 285
+			}
+			remove_state_core = 285
+		}
+		if = {
+			limit = {
+				owns_state = 254
+			}
+			DRG = {
+				transfer_state = 254
+				add_state_core = 254
+			}
+			remove_state_core = 254
+		}
+		if = {
+			limit = {
+				owns_state = 276
+			}
+			DRG = {
+				transfer_state = 276
+				add_state_core = 276
+			}
+			remove_state_core = 276
+		}
+		DRG = {
+			retire_country_leader = yes
+		}
+		add_to_faction = DRG
 	}
 }
 

@@ -1769,6 +1769,7 @@ ideas = {
 				production_speed_buildings_factor = 0.15
 				consumer_goods_factor = -0.05
 				political_power_gain = 0.25
+				training_time_army_factor = 0.25
 			}
 		}
 
@@ -2325,6 +2326,25 @@ ideas = {
 				consumer_goods_factor = 0.1
 				min_export = -0.2
 				political_power_factor = -0.1
+			}
+		}
+
+		TCWMod_black_monday_3 = {
+			
+			picture = great_depression
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				stability_factor = -0.07
+				production_factory_max_efficiency_factor = -0.05
+				production_factory_efficiency_gain_factor = -0.05
+				industrial_capacity_factory = -0.1
+				consumer_goods_factor = 0.05
+				min_export = -0.1
+				political_power_factor = -0.05
 			}
 		}
 
@@ -3566,6 +3586,92 @@ ideas = {
 				consumer_goods_factor = -0.05
 			}
 		}
+
+		FRI_the_new_mark = {
+			picture = generic_political_support
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		FRI_agriculture_reform = {
+			picture = generic_agrarian_reform
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_resources_factor = 0.05
+			}
+		}
+
+		FRI_public_works = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		FRI_national_investment_fund = {
+			picture = generic_war_preparation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		FRI_national_workfront = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		FRI_central_bank = {
+			picture = idea_rom_carol_emptied_accounts
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				political_power_gain = 0.05
+			}
+		}
+
+		FRI_transition_to_autarky = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_synthetic_refinery_factor = 0.1
+				production_speed_infrastructure_factor = 0.1
+			}
+		}
+
+		FRI_second_hartmuts_program = {
+			picture = generic_exploit_mines
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
 	}
 
 	##############################################################################################################################
@@ -4683,6 +4789,121 @@ ideas = {
 				factor = 1
 			}
 		}
+
+		FRI_bernhard_dernburg = {
+
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				OR = {
+					has_country_flag = accepted_dernburg_plan
+					AND = {
+						has_country_leader = {
+    						name = "Hartmut II"
+   							ruling_only = yes
+						}
+						has_country_flag = accepted_hartmuts_plan
+					}
+				}
+			}
+		
+			traits = { economist financial_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FRI_joseph_wirth = {
+
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				OR = {
+					has_country_flag = accepted_dernburg_plan
+					has_country_flag = accepted_hartmuts_plan
+				}
+			}
+		
+			traits = { war_profiteer }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		FRI_matthias_erzberger = {
+
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				has_country_flag = accepted_hartmuts_plan
+			}
+		
+			traits = { captain_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		DIO_wang_chan = {
+
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { prince_of_terror }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		DIO_enrico_pucci = {
+
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { army_chief_morale_2 pucci_faster }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		DIO_enya = {
+
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { financial_expert }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
+
+		DIO_darby_gamer = {
+
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { captain_of_industry }
+
+			ai_will_do = {
+				factor = 1
+			}
+		}
 	}
 
 	high_command = {
@@ -5110,6 +5331,26 @@ ideas = {
 
 			cost = 200
 
+		}
+
+		FRI_nkw = {
+			picture = bra_monarchist_uprising
+			allowed = {
+				original_tag = FRI
+			}
+			available = {
+				has_completed_focus = FRI_neue_konigliche_werke
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				consumer_goods_factor = -0.05
+			}
+
+			research_bonus = {
+				industry = 0.15
+			}
+
+			traits = { industrial_concern }
 		}
 
 	}

@@ -11,59 +11,192 @@ focus_tree = {
 	default = no
 
 	focus = { 
-		id = FRI_economic_expansion
-		icon = GFX_goal_generic_consumer_goods
-		x = 2
+		id = FRI_black_monday_hits
+		icon = GFX_focus_generic_industry_3
+		x = 24
 		y = 0
 		cost = 5
 		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FRI_draft_recovery_plan
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_black_monday_hits
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_black_monday_hits
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.22
+				days = 0
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_royal_highway
-		icon = GFX_goal_generic_construct_infrastructure
+		id = FRI_devalue_the_mark
+		icon = GFX_focus_fra_devalue_the_franc
+		x = -4
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_draft_recovery_plan
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_draft_recovery_plan
+		}
+		mutually_exclusive = {
+			focus = FRI_militarize_faster
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FRI_establish_mark_as_fiat_currency
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_devalue_the_mark
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_devalue_the_mark
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FRI_the_new_mark
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_close_unprofitable_factories
+		icon = GFX_goal_generic_forceful_treaty
+		x = -2
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_establish_mark_as_fiat_currency
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_establish_mark_as_fiat_currency
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			add_stability = -0.1
+		}		
+	}
+
+	focus = { 
+		id = FRI_landwirtschaftgesetz
+		icon = GFX_focus_generic_agriculture
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_close_unprofitable_factories
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_close_unprofitable_factories
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FRI_agriculture_reform
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_die_neue_sozialprogramm
+		icon = GFX_focus_generic_concessions
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_establish_mark_as_fiat_currency
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_establish_mark_as_fiat_currency
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday
+				add_idea = TCWMod_black_monday_2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_der_arbeitsprogramm
+		icon = GFX_goal_generic_construct_civilian
 		x = 2
 		y = 1
-		cost = 5
-		prerequisite = { focus = FRI_economic_expansion }
+		cost = 7.25
+		relative_position_id = FRI_devalue_the_mark
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_devalue_the_mark
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			805 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
+			add_timed_idea = {
+				idea = FRI_public_works
+				days = 400
 			}
-			753 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			758 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			838 = {
+		}		
+	}
+
+	focus = { 
+		id = FRI_pantmawr_u_bahn
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_der_arbeitsprogramm
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_der_arbeitsprogramm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			811 = {
 				add_building_construction = {
 					type = infrastructure
 					level = 1
@@ -74,54 +207,263 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_colonial_growth
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 2
-		y = 2
-		cost = 5
-		prerequisite = { focus = FRI_royal_highway }
+		id = FRI_reopen_the_banks
+		icon = GFX_goal_generic_intelligence_exchange
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_pantmawr_u_bahn
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_pantmawr_u_bahn
+		}
+		prerequisite = {
+			focus = FRI_die_neue_sozialprogramm
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			632 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday_2
+				add_idea = TCWMod_black_monday_3
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_status_of_neu_flensburg
+		icon = GFX_goal_generic_position_armies
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_pantmawr_u_bahn
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_pantmawr_u_bahn
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.23
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_recovery_complete
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = FRI_reopen_the_banks
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_reopen_the_banks
+		}
+		prerequisite = {
+			focus = FRI_landwirtschaftgesetz
+		}
+		prerequisite = {
+			focus = FRI_status_of_neu_flensburg
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			remove_ideas = {
+				TCWMod_black_monday_3
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_militarize_faster
+		icon = GFX_focus_generic_combined_arms
+		x = 4
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_draft_recovery_plan
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_draft_recovery_plan
+		}
+		mutually_exclusive = {
+			focus = FRI_devalue_the_mark
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FRI_national_investitionsfonds
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_militarize_faster
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_militarize_faster
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FRI_national_investment_fund
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_cut_down_social_spendings
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_national_investitionsfonds
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_national_investitionsfonds
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability = -0.1
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday
+				add_idea = TCWMod_black_monday_2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_neue_konigliche_werke
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_national_investitionsfonds
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_national_investitionsfonds
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					NOT = {
+						has_idea = generic_industrial_concern
+						has_idea = generic_electronics_concern
+					}
 				}
+				add_ideas = {
+					FRI_nkw
+				}
+			}
+			if = {
+				limit = {
+					has_idea = generic_industrial_concern
+				}
+				swap_ideas = {
+					remove_idea = generic_industrial_concern
+					add_idea = FRI_nkw
+				}
+			}
+			if = {
+				limit = {
+					has_idea = generic_electronics_concern
+				}
+				swap_ideas = {
+					remove_idea = generic_electronics_concern
+					add_idea = FRI_nkw
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_south_the_kingdom_granary
+		icon = GFX_focus_generic_agriculture
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_neue_konigliche_werke
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_neue_konigliche_werke
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			884 = {
 				add_building_construction = {
-					type = naval_base
+					type = industrial_complex
 					level = 2
 					instant_build = yes
-					province = 9036
 				}
-				add_extra_state_shared_building_slots = 5
+				add_extra_state_shared_building_slots = 2
 			}
-			634 = {
+			911 = {
 				add_building_construction = {
-					type = infrastructure
+					type = industrial_complex
 					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_new_military_works
+		id = FRI_national_arbeitsfront
+		icon = GFX_goal_generic_production
+		x = -2
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_militarize_faster
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_militarize_faster
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FRI_national_workfront
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_kronprinz_hartmut_werke
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 0
 		y = 1
-		cost = 5
-		prerequisite = { focus = FRI_economic_expansion }
+		cost = 7.25
+		relative_position_id = FRI_national_arbeitsfront
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_national_arbeitsfront
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			794 = {
+			830 = {
 				add_building_construction = {
 					type = arms_factory
 					level = 2
@@ -133,18 +475,442 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_prince_hartmut_arms_factory
-		icon = GFX_goal_generic_construct_mil_factory
+		id = FRI_establish_zentralbank
+		icon = GFX_focus_generic_self_management
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_cut_down_social_spendings
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_cut_down_social_spendings
+		}
+		prerequisite = {
+			focus = FRI_kronprinz_hartmut_werke
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday_2
+				add_idea = TCWMod_black_monday_3
+			}
+			add_ideas = {
+				FRI_central_bank
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_cut_funds_for_neu_flensburg
+		icon = GFX_goal_generic_dangerous_deal
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_kronprinz_hartmut_werke
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_kronprinz_hartmut_werke
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			add_political_power = 100 
+			FLE = {
+				country_event = {
+					id = friedewalt.26
+					days = 0
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_hartmuts_report
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		cost = 10
+		relative_position_id = FRI_establish_zentralbank
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_establish_zentralbank
+		}
+		prerequisite = {
+			focus = FRI_cut_funds_for_neu_flensburg
+		}
+		prerequisite = {
+			focus = FRI_south_the_kingdom_granary
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			remove_ideas = {
+				TCWMod_black_monday_3
+			}
+		}		
+	}
+
+	#
+	#
+	#
+	#
+	#
+
+	focus = { 
+		id = FRI_industrializing_auenstein
+		icon = GFX_goal_generic_construct_civ_factory
 		x = 0
 		y = 2
-		cost = 5
-		prerequisite = { focus = FRI_new_military_works }
+		cost = 5.72
+		relative_position_id = FRI_recovery_complete
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_recovery_complete
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
 			884 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_improving_central_road_network
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -2
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_industrializing_auenstein
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_industrializing_auenstein
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			819 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_industry_in_853
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_industrializing_auenstein
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_industrializing_auenstein
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			853 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_private_investments
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_improving_central_road_network
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_improving_central_road_network
+		}
+		prerequisite = {
+			focus = FRI_industry_in_853
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			838 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_urbanization_of_794
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_private_investments
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_private_investments
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			794 = {
+				set_state_category = city
+				add_victory_points = {
+					province = 10011 
+					value = 10
+				}
+				add_manpower = 100000
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_hartmuts_central_factory
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 3
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_industrializing_auenstein
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_industrializing_auenstein
+			focus = FRI_zweites_hartmut_programm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			763 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_neue_konigliche_werft
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_industry_in_853
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_industry_in_853
+		}
+		prerequisite = {
+			focus = FRI_hartmuts_central_factory
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			838 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			794 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_national_werft_lehre
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_neue_konigliche_werft
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_neue_konigliche_werft
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			911 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	#
+	#
+	#
+	#
+	#
+
+	focus = { 
+		id = FRI_zweites_hartmut_programm
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 2
+		cost = 5.72
+		relative_position_id = FRI_hartmuts_report
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_hartmuts_report
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FRI_second_hartmuts_program
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_central_armament_zone
+		icon = GFX_goal_generic_small_arms
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_zweites_hartmut_programm
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_zweites_hartmut_programm
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			830 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			819 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			805 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			838 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
 				add_building_construction = {
 					type = arms_factory
 					level = 1
@@ -156,151 +922,366 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_pantmawr_complex
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 4
+		id = FRI_konigliche_autobahn
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 3
 		y = 1
-		cost = 5
-		prerequisite = { focus = FRI_economic_expansion }
+		cost = 5.72
+		relative_position_id = FRI_zweites_hartmut_programm
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_zweites_hartmut_programm
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_begin_trasition_to_autarky
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_konigliche_autobahn
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_central_armament_zone
+		}
+		prerequisite = {
+			focus = FRI_konigliche_autobahn
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_timed_idea = {
+				idea = FRI_transition_to_autarky
+				days = 550
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_830_complex
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_begin_trasition_to_autarky
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_begin_trasition_to_autarky
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_resource = {
+    			type = tungsten
+    			amount = 20
+   				state = 830
+			}
+			add_resource = {
+    			type = aluminium
+    			amount = 15
+   				state = 830
+			}
+			add_resource = {
+    			type = chromium
+    			amount = 15
+   				state = 830
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_great_naval_masterplan
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 2
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_hartmuts_central_factory
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_central_armament_zone
+		}
+		prerequisite = {
+			focus = FRI_hartmuts_central_factory
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			838 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
 			811 = {
 				add_building_construction = {
-					type = industrial_complex
+					type = dockyard
 					level = 2
 					instant_build = yes
 				}
-				add_extra_state_shared_building_slots = 2
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_sawadden_complex
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 4
-		y = 2
-		cost = 5
-		prerequisite = { focus = FRI_pantmawr_complex }
-		available = {
-			872 = {
-				is_owned_by = FRI
-			}
-		}
-		bypass = {
-			872 = {
-				is_owned_by = MAI
-			}
-		}
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			872 = {
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_extra_state_shared_building_slots = 2
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_fund_new_cities
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 3
-		y = 3
-		cost = 5
-		prerequisite = { focus = FRI_colonial_growth }
-		prerequisite = { focus = FRI_sawadden_complex }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			835 = {
-				set_state_category = city
-			}
-			763 = {
-				set_state_category = city
 			}
 			794 = {
-				set_state_category = town
-			}
-			add_political_power = -100
-		}		
-	}
-
-	focus = { 
-		id = FRI_trade_with_starfleet
-		icon = GFX_goal_generic_positive_trade_relations
-		x = 3
-		y = 4
-		cost = 5
-		prerequisite = { focus = FRI_fund_new_cities }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			add_opinion_modifier = {
-				target = KPT
-				modifier = TCWmod_generic_relations
-			}
-			KPT = {
-				add_opinion_modifier = {
-					target = FRI
-					modifier = TCWmod_generic_relations
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 2
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_naval_expansion
+		id = FRI_modernization_of_southern_docks
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 1
-		y = 3
-		cost = 5
-		prerequisite = { focus = FRI_colonial_growth }
-		prerequisite = { focus = FRI_prince_hartmut_arms_factory }
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_great_naval_masterplan
 		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_great_naval_masterplan
+		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			763 = {
-				add_extra_state_shared_building_slots = 2
+			911 = {
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
 				}
+				add_extra_state_shared_building_slots = 1
 			}
-			869 = {
-				add_extra_state_shared_building_slots = 2
+			905 = {
 				add_building_construction = {
 					type = dockyard
-					level = 2
+					level = 1
 					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_westwall
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_hartmuts_central_factory
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_hartmuts_central_factory
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			819 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+			}
+			835 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+			}
+			853 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+			}
+			1048 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+			}
+			872 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+			}
+			884 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = {
+     				   all_provinces = yes
+     				   limit_to_border = yes
+    				}
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3608
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10558
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10581
 				}
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_expeditions_for_resources
+		id = FRI_nordwall
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		cost = 5.72
+		relative_position_id = FRI_westwall
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FRI_westwall
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			819 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3056
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10090
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10047
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 4680
+				}
+			}
+			805 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 3728
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 5495
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 5228
+				}
+			}
+			794 = {
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10035
+				}
+				add_building_construction = {
+					type = bunker
+					level = 5
+					instant_build = yes
+					province = 10011
+				}
+			}
+		}		
+	}
+
+	#############################################################################################################################################
+	#
+	#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
+	#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
+	#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
+	#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
+	#
+	#############################################################################################################################################   
+
+	focus = { 
+		id = FRI_expeditions_for_resources #THIS HAS TO BE MOVED TO FLENSBURGS TREE
 		icon = GFX_goal_generic_positive_trade_relations
 		x = 1
 		y = 4
 		cost = 5
-		prerequisite = { focus = FRI_naval_expansion }
+	#	prerequisite = { focus = FRI_naval_expansion }
+		available = {
+			always = no
+		}
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -316,13 +1297,22 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_continue_colonization
+		id = FRI_a_new_start_for_diplomacy
 		icon = GFX_goal_generic_navy_battleship
-		x = 2
-		y = 6
+		x = 8
+		y = 0
 		cost = 5
-		prerequisite = { focus = FRI_expeditions_for_resources }
-		prerequisite = { focus = FRI_trade_with_starfleet }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = black_monday_has_been_dealt_with
+				has_completed_focus = FRI_draft_recovery_plan
+				NOT = {
+					has_idea = TCWMod_black_monday
+					has_idea = TCWMod_black_monday_2
+					has_idea = TCWMod_black_monday_3
+				}
+			}
+		}
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -345,44 +1335,13 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_western_outpost
-		icon = GFX_goal_generic_position_armies
-		x = 0
-		y = 7
-		cost = 11.5
-		prerequisite = { focus = FRI_continue_colonization }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = {
-			transfer_state = 29
-			29 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 1420
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = rural
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 50000
-			}
-		}		
-	}
-
-	focus = { 
 		id = FRI_form_ties_with_avalor
 		icon = GFX_goal_generic_improve_relations
-		x = 0
-		y = 8
+		x = -4
+		y = 1
+		relative_position_id = FRI_a_new_start_for_diplomacy
 		cost = 5
-		prerequisite = { focus = FRI_western_outpost }
+		prerequisite = { focus = FRI_a_new_start_for_diplomacy }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -403,235 +1362,37 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_assuming_control_on_central_islands
+		id = FRI_buy_birk_balthazars_island
 		icon = GFX_goal_generic_position_armies
-		x = 2
-		y = 7
-		cost = 7.25
-		prerequisite = { focus = FRI_continue_colonization }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		bypass = {
-			always = yes
-		}
-		completion_reward = {
-			transfer_state = 38
-			38 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 1949
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = town
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 150000
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_control_the_chokepoint
-		icon = GFX_goal_generic_occupy_states_coastal
-		x = 2
-		y = 8
-		cost = 7.25
-		prerequisite = { focus = FRI_assuming_control_on_central_islands }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		bypass = {
-			always = yes
-		}
-		completion_reward = {
-			transfer_state = 35
-			transfer_state = 40
-			transfer_state = 840
-			35 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 10242
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = town
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 100000
-			}
-			40 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 10333
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = town
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 150000
-			}
-			840 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = rural
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 50000
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_southern_colony
-		icon = GFX_goal_generic_position_armies
-		x = 4
-		y = 7
-		cost = 7.25
-		prerequisite = { focus = FRI_continue_colonization }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = {
-			transfer_state = 901
-			901 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 4033
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = town
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 75000
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_far_east
-		icon = GFX_goal_generic_position_armies
-		x = 4
-		y = 8
-		cost = 11.5
-		prerequisite = { focus = FRI_southern_colony }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			base = 0
-			modifier = {
-				AND = {
-					has_completed_focus = FRI_control_the_chokepoint
-					has_completed_focus = FRI_form_ties_with_avalor
-				}
-				add = 1
-			}
-		} 
-		completion_reward = {
-			transfer_state = 36
-			36 = {
-				add_building_construction = {
-					type = naval_base
-					level = 2
-					instant_build = yes
-					province = 10322
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				set_state_category = town
-				add_extra_state_shared_building_slots = 1
-				add_manpower = 75000
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_our_colonial_empire
-		icon = GFX_goal_generic_position_armies
-		x = 2
-		y = 9
-		cost = 7.25
-		prerequisite = { focus = FRI_form_ties_with_avalor }
-		prerequisite = { focus = FRI_control_the_chokepoint }
-		prerequisite = { focus = FRI_far_east }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		available = {
-			num_of_controlled_states > 25
-		}
-		completion_reward = {
-			swap_ideas = {
-				remove_idea = FRI_colonial_beginnings
-				add_idea = FRI_colonial_empire
-			}
-		}		
-	}
-
-#############################################################################################################################################
-#	IIIII NN   NN TTTTTTT EEEEEEE RRRRRR  NN   NN   AAA   TTTTTTT IIIII  OOOOO  NN   NN   AAA   LL         TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
-#	 III  NNN  NN   TTT   EE      RR   RR NNN  NN  AAAAA    TTT    III  OO   OO NNN  NN  AAAAA  LL           TTT   RR   RR EE      EE      
-#	 III  NN N NN   TTT   EEEEE   RRRRRR  NN N NN AA   AA   TTT    III  OO   OO NN N NN AA   AA LL           TTT   RRRRRR  EEEEE   EEEEE   
-#	 III  NN  NNN   TTT   EE      RR  RR  NN  NNN AAAAAAA   TTT    III  OO   OO NN  NNN AAAAAAA LL           TTT   RR  RR  EE      EE      
-#	IIIII NN   NN   TTT   EEEEEEE RR   RR NN   NN AA   AA   TTT   IIIII  OOOO0  NN   NN AA   AA LLLLLLL      TTT   RR   RR EEEEEEE EEEEEEE 
-#############################################################################################################################################                                                
-	
-	focus = { 
-		id = FRI_look_into_international_sphere
-		icon = GFX_goal_generic_alliance
-		x = 10
-		y = 0
+		x = 0
+		y = 1
+		relative_position_id = FRI_form_ties_with_avalor
 		cost = 5
+		prerequisite = { focus = FRI_form_ties_with_avalor }
 		available_if_capitulated = yes
-		available = {
-			date > 1937.1.1
-		}
 		ai_will_do = { 
 			factor = 1
-			modifier = {
-				has_global_flag = enchancian_civil_war
-				factor = 5
-			}
 		} 
-		completion_reward = { 
-			add_political_power = 50
+		completion_reward = {
+			29 = {
+				owner = {	
+					country_event = {
+						id = friedewalt.27
+						days = 1
+					}
+				}
+			}
 		}		
 	}
 
 	focus = { 
 		id = FRI_enchancian_civil_war
 		icon = GFX_focus_enchancia
-		x = 6
+		relative_position_id = FRI_buy_birk_balthazars_island
+		x = 0
 		y = 1
-		cost = 5
-		prerequisite = { focus = FRI_look_into_international_sphere }
+		cost = 2.9
+		prerequisite = { focus = FRI_buy_birk_balthazars_island }
 		available_if_capitulated = yes
 		available = { 
 			custom_trigger_tooltip = {
@@ -665,9 +1426,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_modern_boom
 		icon = GFX_goal_generic_national_unity
-		x = 7
-		y = 3
-		cost = 10
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_enchancian_civil_war
 		prerequisite = { focus = FRI_enchancian_civil_war }
 		available_if_capitulated = yes
 		available = {
@@ -755,9 +1517,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_our_companies_in_enchancia
 		icon = GFX_goal_generic_construction2
-		x = 7
-		y = 4
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_modern_boom
 		prerequisite = { focus = FRI_modern_boom }
 		available_if_capitulated = yes
 		available = {
@@ -836,9 +1599,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_organise_guerillas_in_enchancia
 		icon = GFX_goal_generic_more_territorial_claims
-		x = 5
-		y = 3
-		cost = 15
+		x = -1
+		y = 1
+		relative_position_id = FRI_enchancian_civil_war
+		cost = 14.4
 		available_if_capitulated = yes 
 		prerequisite = { focus = FRI_enchancian_civil_war } 
 		ai_will_do = { 
@@ -893,23 +1657,19 @@ focus_tree = {
 	focus = { 
 		id = FRI_support_exiled_family
 		icon = GFX_goal_generic_alliance
-		x = 5
-		y = 4
-		cost = 10
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FRI_organise_guerillas_in_enchancia
 		available_if_capitulated = yes
-		bypass = {
+		available = {
 			OR = {
-				EN3 = {
-					custom_trigger_tooltip = {
-						tooltip = EN3_royal_stripped
-						has_country_flag = royal_family_not_royal
-					}
+				ENC = {
+					exists = yes
+					has_cosmetic_tag = WIN
 				}
-				EN4 = {
-					custom_trigger_tooltip = {
-						tooltip = EN3_royal_stripped
-						has_country_flag = royal_family_not_royal
-					}
+				any_country = {
+					has_country_flag = winslow_on_exile
 				}
 			}
 		}
@@ -953,12 +1713,120 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = FRI_renegotiate_treaties_with_neu_flensburg
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = FRI_a_new_start_for_diplomacy
+		cost = 5.75
+		prerequisite = { focus = FRI_a_new_start_for_diplomacy }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			FLE = {
+				country_event = {
+					id = friedewalt.30
+					days = 0
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_colonize_southern_luvland
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 0
+		y = 1
+		relative_position_id = FRI_renegotiate_treaties_with_neu_flensburg
+		cost = 7.25
+		prerequisite = { focus = FRI_renegotiate_treaties_with_neu_flensburg }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = first_state_in_luvland_will_be_colonized
+			hidden_effect = {
+				transfer_state = 971
+				971 = {
+					set_state_name = "Neu Sawadden"
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 10604
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					set_state_category = town
+					add_manpower = 250000
+					add_victory_points = {
+						province = 10604
+						value = 10
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_far_east
+		icon = GFX_goal_generic_position_armies
+		x = -2
+		y = 1
+		relative_position_id = FRI_colonize_southern_luvland
+		cost = 11.5
+		prerequisite = { focus = FRI_colonize_southern_luvland }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			base = 1
+		} 
+		completion_reward = {
+			custom_effect_tooltip = neu_friesland_colony_will_be_established
+			hidden_effect = {
+				transfer_state = 36
+				36 = {
+					set_state_name = "Neu Friesland"
+					add_building_construction = {
+						type = naval_base
+						level = 2
+						instant_build = yes
+						province = 10290
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+					set_state_category = town
+					add_extra_state_shared_building_slots = 1
+					add_manpower = 75000
+					add_victory_points = {
+						province = 10290
+						value = 10
+					}
+				}
+				swap_ideas = {
+					remove_idea = FRI_colonial_beginnings
+					add_idea = FRI_colonial_empire
+				}
+			}
+		}		
+	}                                             
+
+	focus = { 
 		id = FRI_monarchies_stay_together
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
-		x = 10
+		relative_position_id = FRI_a_new_start_for_diplomacy
+		x = 3
 		y = 1
-		cost = 10
-		prerequisite = { focus = FRI_look_into_international_sphere }
+		cost = 7.25
+		prerequisite = { focus = FRI_a_new_start_for_diplomacy }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -991,9 +1859,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_economic_agreement_with_spalding
 		icon = GFX_goal_generic_improve_relations
-		x = 9
-		y = 2
-		cost = 10
+		relative_position_id = FRI_monarchies_stay_together
+		x = -1
+		y = 1
+		cost = 5.75
 		available = {
 			SLD = {
 				OR = {
@@ -1003,7 +1872,7 @@ focus_tree = {
 			}
 		}
 		prerequisite = { focus = FRI_monarchies_stay_together }
-		mutually_exclusive = { focus = FRI_isolate_spalding }
+		mutually_exclusive = { focus = FRI_close_the_border_with_spalding }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1019,11 +1888,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_isolate_spalding
+		id = FRI_close_the_border_with_spalding
 		icon = GFX_goal_generic_political_pressure
-		x = 11
-		y = 2
-		cost = 10
+		relative_position_id = FRI_monarchies_stay_together
+		x = 1
+		y = 1
+		cost = 5.75
 		available = {
 			SLD = {
 				OR = {
@@ -1058,10 +1928,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_reach_to_duckburg
 		icon = GFX_goal_generic_improve_relations
-		x = 9
+		x = 10
 		y = 3
-		cost = 10
-		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_isolate_spalding }
+		cost = 7.25
+		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_close_the_border_with_spalding }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1081,16 +1951,48 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_reach_to_danville
+		id = FRI_reach_to_moomins
 		icon = GFX_goal_generic_improve_relations
-		x = 11
+		x = 8
 		y = 3
-		cost = 10
-		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_isolate_spalding }
+		cost = 7.25
+		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_close_the_border_with_spalding }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		completion_reward = { 
+			add_opinion_modifier = {
+				target = MOO
+				modifier = TCWmod_generic_relations
+			}
+			MOO = {
+				add_opinion_modifier = {
+					target = FRI
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_reach_to_danville
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 3
+		cost = 7.25
+		prerequisite = { focus = FRI_economic_agreement_with_spalding focus = FRI_close_the_border_with_spalding }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			TSA = {
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
 		completion_reward = { 
 			add_opinion_modifier = {
 				target = TSA
@@ -1106,131 +2008,76 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_dangerous_desert
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 14
+		id = FRI_send_arms_to_starfleet
+		icon = GFX_focus_focus_fra_maquis
+		relative_position_id = FRI_far_east
+		x = 1
 		y = 1
-		cost = 10
-		prerequisite = { focus = FRI_look_into_international_sphere }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			if = {
-				limit = {
-					SIO = {
-						exists = yes
-					}
-				}
-				SIO = {
-					add_equipment_to_stockpile = {
-    					type = infantry_equipment_0
-    					amount = 5000
-    					producer = FRI
-					}
-					add_manpower = 5000
-				}
+		cost = 7.25
+		prerequisite = { focus = FRI_reach_to_moomins }
+		prerequisite = { focus = FRI_far_east }
+		available = {
+			KPT = {
+				has_war_with = SKO
 			}
-			add_political_power = 50
-		}		
-	}
-
-	focus = { 
-		id = FRI_fortifying_colony
-		icon = GFX_goal_generic_fortify_city
-		x = 14
-		y = 2
-		cost = 10
-		prerequisite = { focus = FRI_dangerous_desert }
+		}
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			634 = {
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 1162
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 9064
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 9072
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 5778
-				}
-				add_building_construction = {
-    				type = bunker
-    				level = 1
-    				instant_build = yes
-    				province = 3678
-				}
+			send_equipment = {
+    			equipment = infantry_equipment
+   				amount = 2500
+   				target = KPT
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_isolate_humsin
-		icon = GFX_goal_generic_political_pressure
-		x = 14
-		y = 3
-		cost = 10
-		prerequisite = { focus = FRI_fortifying_colony }
+		id = FRI_establish_embassy_in_greenland
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FRI_reach_to_moomins
+		x = 1
+		y = 1
+		cost = 7.25
+		prerequisite = { focus = FRI_reach_to_moomins }
+		prerequisite = { focus = FRI_reach_to_duckburg }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
+			custom_effect_tooltip = will_be_able_to_send_volunteers_there
 			add_opinion_modifier = {
-				target = DES
-				modifier = TCWmod_generic_isolation
+				target = GRN
+				modifier = TCWmod_generic_relations
 			}
-			DES = {
+			GRN = {
 				add_opinion_modifier = {
 					target = FRI
-					modifier = TCWmod_generic_isolation
-				}
-				add_ideas = {
-					TCWmod_isolation
+					modifier = TCWmod_generic_relations
 				}
 			}
 		}		
 	}
+
+	#
+	#
+	#
+	#
+	#
 
 	focus = { 
 		id = FRI_hartmut_rules
 		icon = GFX_goal_generic_attack_allies
-		x = 10
-		y = 5
+		x = 8
+		y = 6
 		cost = 10
-		prerequisite = { focus = FRI_support_exiled_family focus = FRI_our_companies_in_enchancia }
-		prerequisite = { focus = FRI_reach_to_duckburg }
-		prerequisite = { focus = FRI_reach_to_danville }
-		prerequisite = { focus = FRI_isolate_humsin }
 		available = {
-			has_country_leader = {
-    			name = "Hartmut II"
-    			ruling_only = yes
-			}
-		}
-		bypass = {
-			has_country_leader = {
-    			name = "Hartmut II"
-    			ruling_only = yes
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
 			}
 		}
 		available_if_capitulated = yes
@@ -1238,26 +2085,21 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			add_political_power = 50
-			set_rule = {
-				can_create_factions = yes
-			}
+			custom_effect_tooltip = will_fire_automatically
 		}		
 	}
 
 	focus = { 
-		id = FRI_convince_western_kingdom
+		id = FRI_side_otto_with_us
 		icon = GFX_goal_generic_forceful_treaty
-		x = 8
-		y = 6
-		cost = 10
+		x = -1
+		y = 1
+		relative_position_id = FRI_hartmut_rules
+		cost = 0.15
 		prerequisite = { focus = FRI_hartmut_rules }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
-		} 
-		bypass = {
-			always = yes
 		}
 		completion_reward = { 
 			WEK = {
@@ -1270,11 +2112,12 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_convince_spalding
+		id = FRI_side_spalding_with_us
 		icon = GFX_goal_generic_forceful_treaty
-		x = 10
-		y = 6
-		cost = 10
+		x = 1
+		y = 1
+		cost = 0.15
+		relative_position_id = FRI_hartmut_rules
 		available = {
 			SLD = {
 				OR = {
@@ -1284,10 +2127,14 @@ focus_tree = {
 			}
 		}
 		bypass = {
-			always = yes
+			SLD = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
 		}
 		prerequisite = { focus = FRI_hartmut_rules }
-		mutually_exclusive = { focus = FRI_attack_spalding }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1303,193 +2150,28 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_attack_spalding
-		icon = GFX_goal_generic_major_war
-		x = 12
-		y = 6
-		cost = 10
-		available = {
-			SLD = {
-				OR = {
-					has_government = communism
-					has_government = fascism
-				}
-			}
-		}
-		bypass = {
-			always = yes
-		}
-		prerequisite = { focus = FRI_hartmut_rules }
-		mutually_exclusive = { focus = FRI_convince_spalding }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			every_state = {
-				limit = {
-					is_owned_by = SLD
-				}
-				add_claim_by = FRI
-			}
-			declare_war_on = {
-				target = SLD
-				type = annex_everything	
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_prepare_to_destroy_macius
-		icon = GFX_goal_generic_major_war
-		x = 10
-		y = 7
-		cost = 10
-		prerequisite = { focus = FRI_convince_western_kingdom }
-		prerequisite = { focus = FRI_convince_spalding focus = FRI_attack_spalding }
+		id = FRI_organize_peace_conference
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 2
+		relative_position_id = FRI_hartmut_rules
+		cost = 0.75
+		prerequisite = { focus = FRI_side_otto_with_us }
+		prerequisite = { focus = FRI_side_spalding_with_us}
 		available_if_capitulated = no
 		available = {
-			has_war = no
+			has_country_flag = lord_pux_proposed_a_way_out
 		}
 		bypass = {
-			always = yes
+			has_country_flag = hartmut_did_not_resign
 		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			army_experience = 20
-			create_faction = central_alliance
-			if = {
-				limit = {
-					has_country_flag = wek_accepted
-				}
-				add_to_faction = WEK
-				803 = {
-					add_claim_by = WEK
-				}
-				814 = {
-					add_claim_by = WEK
-				}
-				822 = {
-					add_claim_by = WEK
-				}
-				812 = {
-					add_claim_by = WEK
-				}
-				824 = {
-					add_claim_by = WEK
-				}
-				817 = {
-					add_claim_by = WEK
-				}
-				852 = {
-					add_claim_by = WEK
-				}
-				WEK = {
-					declare_war_on = {
-						target = MAI
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
-					has_country_flag = sld_accepted
-				}
-				if = {
-					limit = {
-						SLD = {
-							NOT = {
-								is_in_faction = yes
-							}
-						}
-					}
-					add_to_faction = SLD
-				}
-				789 = {
-					add_claim_by = SLD
-				}
-				798 = {
-					add_claim_by = SLD
-				}
-				796 = {
-					add_claim_by = SLD
-				}
-				792 = {
-					add_claim_by = SLD
-				}
-				799 = {
-					add_claim_by = SLD
-				}
-				SLD = {
-					declare_war_on = {
-						target = MAI
-						type = annex_everything
-					}
-				}
-			}
-			if = {
-				limit = {
-					NOT = {
-						has_country_flag = sld_accepted
-						has_country_flag = wek_accepted
-					}
-				}
-				803 = {
-					add_claim_by = FRI
-				}
-				814 = {
-					add_claim_by = FRI
-				}
-				822 = {
-					add_claim_by = FRI
-				}
-				812 = {
-					add_claim_by = FRI
-				}
-				824 = {
-					add_claim_by = FRI
-				}
-				817 = {
-					add_claim_by = FRI
-				}
-				789 = {
-					add_claim_by = FRI
-				}
-				798 = {
-					add_claim_by = FRI
-				}
-				796 = {
-					add_claim_by = FRI
-				}
-				792 = {
-					add_claim_by = FRI
-				}
-				799 = {
-					add_claim_by = FRI
-				}
-				852 = {
-					add_claim_by = FRI
-				}
-			}
-			858 = {
-				add_claim_by = FRI
-			}
-			843 = {
-				add_claim_by = FRI
-			}
-			831 = {
-				add_claim_by = FRI
-			}
-			808 = {
-				add_claim_by = FRI
-			}
-			FRI = {
-				declare_war_on = {
-					target = MAI
-					type = annex_everything
-				}
+			country_event = {
+				id = friedewalt.39
+				days = 2
 			}
 		}		
 	}
@@ -1497,20 +2179,28 @@ focus_tree = {
 	focus = { 
 		id = FRI_march_to_the_north
 		icon = GFX_goal_generic_major_war
-		x = 9
-		y = 8
+		x = -3
+		y = 1
 		cost = 10
-		prerequisite = { focus = FRI_prepare_to_destroy_macius }
+		relative_position_id = FRI_organize_peace_conference
+		prerequisite = { focus = FRI_organize_peace_conference }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		mutually_exclusive = {
+			focus = FRI_revive_international_relations
+		}
 		available = {
 			has_war = no
+			has_country_flag = hartmut_did_not_resign
 		}
 		bypass = {
 			SLD = {
-				exists = no
+				OR = {
+					exists = no
+					is_puppet_of = FRI
+				}
 			}
 		}
 		completion_reward = { 
@@ -1525,7 +2215,7 @@ focus_tree = {
 					remove_from_faction = central_alliance
 				}
 			}
-			declare_war_on = {
+			create_wargoal = {
 				target = SLD
 				type = annex_everything	
 			}
@@ -1535,13 +2225,11 @@ focus_tree = {
 	focus = { 
 		id = FRI_all_your_shrooms_belong_to_us
 		icon = GFX_goal_generic_major_war
-		x = 11
-		y = 8
+		x = 0
+		y = 1
 		cost = 10
-		prerequisite = { focus = FRI_prepare_to_destroy_macius }
-		mutually_exclusive = {
-			focus = FRI_lets_tackle_totalitarism
-		}
+		relative_position_id = FRI_march_to_the_north
+		prerequisite = { focus = FRI_march_to_the_north }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1561,11 +2249,11 @@ focus_tree = {
 					add_claim_by = FRI
 				}
 			}
-			declare_war_on = {
+			create_wargoal = {
 				target = VIS
 				type = annex_everything	
 			}
-			declare_war_on = {
+			create_wargoal = {
 				target = MUS
 				type = annex_everything	
 			}
@@ -1575,10 +2263,10 @@ focus_tree = {
 	focus = { 
 		id = FRI_declaration_of_hartmut_empire
 		icon = GFX_goal_generic_demand_territory
-		x = 10
-		y = 9
+		x = 0
+		y = 1
 		cost = 10
-		prerequisite = { focus = FRI_march_to_the_north }
+		relative_position_id = FRI_all_your_shrooms_belong_to_us
 		prerequisite = { focus = FRI_all_your_shrooms_belong_to_us }
 		available_if_capitulated = yes
 		ai_will_do = { 
@@ -1608,197 +2296,36 @@ focus_tree = {
 				set_popularities = {
 					democratic = 0
 					
-					fascism = 51
+					fascism = 55
 					communism = 0
-					monarchism = 49
+					monarchism = 45
 				}
 				set_politics = {
 					ruling_party = fascism
 				}
+				random_list = {
+					50 = {
+
+					}
+					50 = {
+						country_event = {
+							id = friedewalt.13
+							days = 5
+						}
+					}
+				}
 			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_return_of_friedewalt
-		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 5
-		y = 10
-		cost = 10
-		mutually_exclusive = { focus = FRI_invasion_of_san_escobar }
-		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		bypass = {
-			has_country_leader = {
-    			name = "Friedewalt III"
-   				ruling_only = yes
-			}
-			has_civil_war = no
-		}
-		completion_reward = { 
-			custom_effect_tooltip = will_fire_automatically
-		}		
-	}
-
-	focus = { 
-		id = FRI_regain_control_in_the_army
-		icon = GFX_focus_generic_little_entente
-		x = 5
-		y = 11
-		cost = 10
-		prerequisite = { focus = FRI_return_of_friedewalt }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			remove_ideas = FRI_disloyal_army
-		}		
-	}
-
-	focus = { 
-		id = FRI_fix_errors_in_economy
-		icon = GFX_goal_generic_consumer_goods
-		x = 7
-		y = 12
-		cost = 10
-		prerequisite = { focus = FRI_regain_control_in_the_army }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			swap_ideas = {
-				remove_idea = FRI_economy_on_downhill
-				add_idea = FRI_economy_on_downhill2
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_redenomination_of_mark
-		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 7
-		y = 13
-		cost = 10
-		prerequisite = { focus = FRI_fix_errors_in_economy }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			remove_ideas = FRI_economy_on_downhill2
-		}		
-	}
-
-	focus = { 
-		id = FRI_give_central_kingdom_independence
-		icon = GFX_goal_generic_major_alliance
-		x = 5
-		y = 12
-		cost = 10
-		prerequisite = { focus = FRI_regain_control_in_the_army }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			release = MAI
-			add_political_power = 50
-			add_stability = 0.05
-		}		
-	}
-
-	focus = { 
-		id = FRI_future_of_spalding
-		icon = GFX_focus_renounce_the_treaty_of_trianon
-		x = 5
-		y = 13
-		cost = 10
-		prerequisite = { focus = FRI_give_central_kingdom_independence }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			country_event = {
-				id = friedewalt.17
-				days = 0
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_what_to_do_with_hartmut
-		icon = GFX_focus_rom_abdicate
-		x = 3
-		y = 12
-		cost = 10
-		prerequisite = { focus = FRI_regain_control_in_the_army }
-		available_if_capitulated = yes
-		available = {
-			NOT = {
-				has_war_with = HAR
-			}
-		}
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			country_event = {
-				id = friedewalt.16
-				days = 0
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_reunite_local_governments
-		icon = GFX_goal_generic_improve_relations
-		x = 3
-		y = 13
-		cost = 10
-		prerequisite = { focus = FRI_what_to_do_with_hartmut }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			remove_ideas = FRI_divided_local_governments
-		}		
-	}
-
-	focus = { 
-		id = FRI_united_once_more
-		icon = GFX_focus_rom_royal_dictatorship
-		x = 5
-		y = 14
-		cost = 10
-		prerequisite = { focus = FRI_reunite_local_governments }
-		prerequisite = { focus = FRI_future_of_spalding }
-		prerequisite = { focus = FRI_redenomination_of_mark }
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			add_stability = 0.1
-			add_war_support = 0.1
-			add_political_power = 50
 		}		
 	}
 
 	focus = { 
 		id = FRI_invasion_of_san_escobar
 		icon = GFX_goal_generic_major_war
-		x = 10
-		y = 10
+		x = -2
+		y = 1
+		relative_position_id = FRI_declaration_of_hartmut_empire
 		cost = 10
 		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
-		mutually_exclusive = { focus = FRI_return_of_friedewalt }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1813,11 +2340,11 @@ focus_tree = {
 		}
 		completion_reward = { 
 			SAN = {
-				every_state = {
+				every_owned_state = {
 					add_claim_by = FRI
 				}
 			}
-			declare_war_on = {
+			create_wargoal = {
 				target = SAN
 				type = annex_everything	
 			}
@@ -1827,10 +2354,11 @@ focus_tree = {
 	focus = { 
 		id = FRI_someone_gonna_have_bad_time
 		icon = GFX_goal_generic_major_war
-		x = 10
-		y = 11
+		x = 0
+		y = 1
+		relative_position_id = FRI_declaration_of_hartmut_empire
 		cost = 10
-		prerequisite = { focus = FRI_invasion_of_san_escobar }
+		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1840,11 +2368,11 @@ focus_tree = {
 		}
 		completion_reward = { 
 			UND = {
-				every_state = {
+				every_owned_state = {
 					add_claim_by = FRI
 				}
 			}
-			declare_war_on = {
+			create_wargoal = {
 				target = UND
 				type = annex_everything	
 			}
@@ -1854,10 +2382,11 @@ focus_tree = {
 	focus = { 
 		id = FRI_expand_further_west
 		icon = GFX_goal_generic_major_war
-		x = 10
-		y = 12
+		x = 2
+		y = 1
+		relative_position_id = FRI_declaration_of_hartmut_empire
 		cost = 10
-		prerequisite = { focus = FRI_someone_gonna_have_bad_time }
+		prerequisite = { focus = FRI_declaration_of_hartmut_empire }
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1918,14 +2447,15 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FRI_lets_tackle_totalitarism
-		icon = GFX_goal_anti_comintern_pact
-		x = 18
-		y = 8
+		id = FRI_revive_international_relations
+		icon = GFX_focus_generic_self_management
+		x = 3
+		y = 1
+		relative_position_id = FRI_organize_peace_conference
 		cost = 10
-		prerequisite = { focus = FRI_prepare_to_destroy_macius }
+		prerequisite = { focus = FRI_organize_peace_conference }
 		mutually_exclusive = {
-			focus = FRI_all_your_shrooms_belong_to_us
+			focus = FRI_march_to_the_north
 		}
 		available_if_capitulated = yes
 		ai_will_do = { 
@@ -1933,20 +2463,15 @@ focus_tree = {
 		}
 		available = {
 			has_war = no
+			OR = {
+				has_country_flag = hartmut_did_not_resign
+				has_country_flag = hartmut_did_resign
+			}
 		}
 		completion_reward = { 
-			if = {
-				limit = {
-					GRN = {
-						is_faction_leader = yes
-						NOT = {
-							has_war_with = FRI
-						}
-					}
-				}
-				GRN = {
-					add_to_faction = FRI
-				}
+			country_event = {
+				id = friedewalt.45
+				days = 0
 			}
 		}		
 	}
@@ -1954,14 +2479,61 @@ focus_tree = {
 	focus = { 
 		id = FRI_saving_danville_dreams
 		icon = GFX_focus_usa_guarantee_the_american_dream
-		x = 16
-		y = 9
+		x = -3
+		y = 1
 		cost = 10
-		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		relative_position_id = FRI_revive_international_relations
+		prerequisite = { focus = FRI_revive_international_relations }
 		available_if_capitulated = yes
 		available = {
 			TSA = {
 				has_government = fascism
+			}
+			has_war = no
+			is_in_faction = yes
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = TSA
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_pacify_the_aliens
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = -2
+		y = 2
+		cost = 10
+		relative_position_id = FRI_revive_international_relations
+		prerequisite = { focus = FRI_revive_international_relations }
+		available_if_capitulated = yes
+		available = {
+			OR = {
+				AND = {
+					SKO = {
+						exists = yes
+					}
+					KPT = {
+						exists = no
+					}
+				}
+				AND = {
+					SKO = {
+						exists = no
+					}
+					KPT = {
+						exists = yes
+						OR = {
+							has_government = communism
+							has_government = fascism
+						}
+					}
+				}
 			}
 			has_war = no
 		}
@@ -1969,9 +2541,31 @@ focus_tree = {
 			factor = 1
 		}
 		completion_reward = { 
-			declare_war_on = {
-				target = TSA
-				type = topple_government
+			if = {
+				limit = {
+					SKO = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = SKO
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					KPT = {
+						exists = yes
+						OR = {
+							has_government = communism
+							has_government = fascism
+						}
+					}
+				}
+				create_wargoal = {
+					target = KPT
+					type = annex_everything
+				}
 			}
 		}		
 	}
@@ -1979,10 +2573,11 @@ focus_tree = {
 	focus = { 
 		id = FRI_war_on_commies
 		icon = GFX_goal_anti_comintern_pact
-		x = 18
-		y = 9
+		x = -1
+		y = 1
+		relative_position_id = FRI_revive_international_relations
 		cost = 10
-		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		prerequisite = { focus = FRI_revive_international_relations }
 		mutually_exclusive = { focus = FRI_war_on_wolves }
 		available_if_capitulated = yes
 		available = {
@@ -1990,15 +2585,22 @@ focus_tree = {
 				exists = yes
 				has_government = communism
 			}
+			WOL = {
+				exists = no
+			}
+			OR = {
+				is_in_faction_with = TSA
+				is_in_faction_with = GRN
+			}
 			has_war = no
 		}
 		ai_will_do = { 
 			factor = 1
 		}
 		completion_reward = { 
-			declare_war_on = {
+			create_wargoal = {
 				target = FLO
-				type = liberate_wargoal
+				type = annex_everything
 			}
 		}		
 	}
@@ -2006,137 +2608,60 @@ focus_tree = {
 	focus = { 
 		id = FRI_war_on_wolves
 		icon = GFX_focus_generic_anti_fascist_diplomacy
-		x = 20
-		y = 9
+		x = 1
+		y = 1
+		relative_position_id = FRI_revive_international_relations
 		cost = 10
-		prerequisite = { focus = FRI_lets_tackle_totalitarism }
+		prerequisite = { focus = FRI_revive_international_relations }
 		mutually_exclusive = { focus = FRI_war_on_commies }
 		available_if_capitulated = yes
 		available = {
 			WOL = {
 				exists = yes
 			}
+			FLO = {
+				exists = no
+			}
+			OR = {
+				is_in_faction_with = TSA
+				is_in_faction_with = GRN
+			}
 			has_war = no
 		}
 		ai_will_do = { 
 			factor = 1
 		}
 		completion_reward = { 
-			declare_war_on = {
+			create_wargoal = {
 				target = FLO
-				type = liberate_wargoal
+				type = annex_everything
 			}
 		}		
 	}
 
 	focus = { 
-		id = FRI_prepare_to_liberate_everrealm
-		icon = GFX_goal_generic_national_unity
-		x = 19
-		y = 10
+		id = FRI_attack_the_vampire_empire
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 2
+		y = 2
 		cost = 10
-		prerequisite = { focus = FRI_war_on_commies focus = FRI_war_on_wolves }
+		relative_position_id = FRI_revive_international_relations
+		prerequisite = { focus = FRI_revive_international_relations }
 		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			#event about Avalor in faction
-		}		
-	}
-
-	focus = { 
-		id = FRI_liberation_of_trufflandia
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 17
-		y = 11
-		cost = 10
-		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
 		available = {
-			TRL = {
-				has_government = communism
+			DIO = {
+				exists = yes
+				has_war = yes
 			}
 			has_war = no
 		}
-		bypass = {
-			TRL = {
-				NOT = {
-					has_government = communism
-				}
-			}
-		}
-		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		}
 		completion_reward = { 
 			declare_war_on = {
-				target = KHA
-				type = topple_government
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_liberation_of_khaldoun
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 19
-		y = 11
-		cost = 10
-		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
-		available = {
-			KHA = {
-				has_government = fascism
-			}
-			has_war = no
-		}
-		bypass = {
-			KHA = {
-				NOT = {
-					has_government = fascism
-				}
-			}
-		}
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			declare_war_on = {
-				target = KHA
-				type = topple_government
-			}
-		}		
-	}
-
-	focus = { 
-		id = FRI_liberation_of_corinthia
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 21
-		y = 11
-		cost = 10
-		prerequisite = { focus = FRI_prepare_to_liberate_everrealm }
-		available = {
-			COR = {
-				has_government = communism
-			}
-			has_war = no
-		}
-		bypass = {
-			COR = {
-				NOT = {
-					has_government = communism
-				}
-			}
-		}
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			declare_war_on = {
-				target = COR
-				type = topple_government
+				target = DIO
+				type = annex_everything
 			}
 		}		
 	}
@@ -2144,10 +2669,11 @@ focus_tree = {
 	focus = { 
 		id = FRI_winslows_return_to_homeland
 		icon = GFX_focus_enchancia
-		x = 19
-		y = 12
+		x = 3
+		y = 1
+		relative_position_id = FRI_revive_international_relations
 		cost = 10
-		prerequisite = { focus = FRI_liberation_of_trufflandia focus = FRI_liberation_of_khaldoun focus = FRI_liberation_of_corinthia }
+		prerequisite = { focus = FRI_revive_international_relations }
 		available = {
 			OR = {
 				EN3 = {
@@ -2225,7 +2751,7 @@ focus_tree = {
 					}
 				}
 				ENC = {
-					declare_war_on = {
+					create_wargoal = {
 						target = EN3
 						type = annex_everything
 					}
@@ -2238,7 +2764,7 @@ focus_tree = {
 					}
 				}
 				ENC = {
-					declare_war_on = {
+					create_wargoal = {
 						target = EN4
 						type = annex_everything
 					}
@@ -2247,8 +2773,230 @@ focus_tree = {
 		}		
 	}
 
+	focus = { 
+		id = FRI_return_of_friedewalt
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 13
+		y = 13
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FRI_regain_control_in_the_army
+		icon = GFX_focus_generic_little_entente
+		relative_position_id = FRI_return_of_friedewalt
+		x = -1
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_return_of_friedewalt }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_disloyal_army
+		}		
+	}
+
+	focus = { 
+		id = FRI_nullify_hartmuts_treaties
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FRI_return_of_friedewalt
+		x = 1
+		y = 1
+		cost = 1.5
+		prerequisite = { focus = FRI_return_of_friedewalt }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					NOT = {
+						is_faction_leader = yes
+					}
+					is_in_faction = yes
+				}
+				leave_faction = yes
+			}
+			if = {
+				limit = {
+					is_faction_leader = yes
+				}
+				dismantle_faction = yes
+			}
+			add_stability = 0.05
+		}		
+	}
+
+	focus = { 
+		id = FRI_fix_errors_in_economy
+		icon = GFX_goal_generic_consumer_goods
+		relative_position_id = FRI_regain_control_in_the_army
+		x = 3
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_nullify_hartmuts_treaties }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FRI_economy_on_downhill
+				add_idea = FRI_economy_on_downhill2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_redenomination_of_mark
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		relative_position_id = FRI_fix_errors_in_economy
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_fix_errors_in_economy }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_economy_on_downhill2
+		}		
+	}
+
+	focus = { 
+		id = FRI_give_central_kingdom_independence
+		icon = GFX_goal_generic_major_alliance
+		relative_position_id = FRI_regain_control_in_the_army
+		x = 1
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_regain_control_in_the_army }
+		prerequisite = { focus = FRI_nullify_hartmuts_treaties }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			release = MAI
+			add_political_power = 50
+			add_stability = 0.05
+		}		
+	}
+
+	focus = { 
+		id = FRI_future_of_spalding
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FRI_give_central_kingdom_independence
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_give_central_kingdom_independence }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.17
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_what_to_do_with_hartmut
+		icon = GFX_focus_rom_abdicate
+		relative_position_id = FRI_regain_control_in_the_army
+		x = -1
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_regain_control_in_the_army }
+		available_if_capitulated = yes
+		available = {
+			NOT = {
+				has_war_with = HAR
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			country_event = {
+				id = friedewalt.16
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FRI_reunite_local_governments
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FRI_what_to_do_with_hartmut
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_what_to_do_with_hartmut }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			remove_ideas = FRI_divided_local_governments
+		}		
+	}
+
+	focus = { 
+		id = FRI_united_once_more
+		icon = GFX_focus_rom_royal_dictatorship
+		relative_position_id = FRI_future_of_spalding
+		x = 0
+		y = 1
+		cost = 10
+		prerequisite = { focus = FRI_reunite_local_governments }
+		prerequisite = { focus = FRI_future_of_spalding }
+		prerequisite = { focus = FRI_redenomination_of_mark }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = { 
+			add_stability = 0.1
+			add_war_support = 0.1
+			add_political_power = 50
+		}		
+	}
+
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+	#
+
 	focus = {
-		id = FRI_army_effort
+		id = FRI_generic_army_effort
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -2257,9 +3005,9 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 20
-		y = 0
-		cost = 10
+		x = 24
+		y = 13
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -2267,7 +3015,7 @@ focus_tree = {
 			army_experience = 5
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 1.0
 				uses = 1
 				category = land_doctrine
 			}
@@ -2275,19 +3023,27 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FRI_equipment_effort
+		id = FRI_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = FRI_army_effort }
-		x = 19
+		prerequisite = { focus = FRI_generic_army_effort }
+		x = -3
 		y = 1
-		cost = 10
+		relative_position_id = FRI_generic_army_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
+				name = infantry_bonus
+				bonus = 1.0
 				uses = 1
 				category = infantry_weapons
 			}
@@ -2295,7 +3051,64 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FRI_motorization_effort
+		id = FRI_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FRI_generic_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = FRI_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = FRI_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_motorization_effort
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -2304,25 +3117,26 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = FRI_army_effort }
+		prerequisite = { focus = FRI_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
-		x = 21
+		x = 3
 		y = 1
-		cost = 10
+		relative_position_id = FRI_generic_army_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				bonus = 0.75
+				bonus = 1.0
 				technology = motorised_infantry
 			}
 		}
 	}
 
 	focus = {
-		id = FRI_doctrine_effort
+		id = FRI_generic_doctrine_effort
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -2331,10 +3145,11 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = FRI_army_effort }
-		x = 20
-		y = 2
-		cost = 10
+		prerequisite = { focus = FRI_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_army_effort
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -2342,7 +3157,7 @@ focus_tree = {
 			army_experience = 5
 			add_tech_bonus = {
 				name = land_doc_bonus
-				bonus = 0.5
+				bonus = 1.0
 				uses = 1
 				category = land_doctrine
 			}
@@ -2350,103 +3165,69 @@ focus_tree = {
 	}
 
 	focus = {
-		id = FRI_equipment_effort_2
+		id = FRI_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
 		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = FRI_equipment_effort }
-		x = 18
-		y = 2
-		cost = 10
+		prerequisite = { focus = FRI_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = FRI_generic_weapon_development
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
-				uses = 1
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = FRI_mechanization_effort
-		ai_will_do = { 
-			base = 0
-			modifier = {
-				has_war = yes
-				add = 2
-			}
-		} 
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = FRI_motorization_effort }
-		x = 22
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 0.5
-				uses = 1
-				category = motorized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = FRI_doctrine_effort_2
-		ai_will_do = { 
-			base = 0
-			modifier = {
-				has_war = yes
-				add = 2
-			}
-		} 
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = FRI_doctrine_effort }
-		x = 20
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 20
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.1
-				uses = 2
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = FRI_equipment_effort_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = FRI_equipment_effort_2 }
-		x = 18
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 1
+				name = infantry_bonus
+				bonus = 1.0
 				uses = 1
 				category = infantry_weapons
-				category = artillery
 			}
 		}
 	}
 
 	focus = {
-		id = FRI_armor_effort
+		id = FRI_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = FRI_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = FRI_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_study_foreign_tanks
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -2455,25 +3236,166 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = FRI_mechanization_effort }
-		x = 22
-		y = 3
-		cost = 10
+		prerequisite = { focus = FRI_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_practice_reverse_engineering
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = armor_bonus
-				bonus = 0.5
-				uses = 2
+				bonus = 1.0
+				uses = 1
 				category = armor
 			}
 		}
 	}
 
 	focus = {
-		id = FRI_special_forces
+		id = FRI_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = FRI_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = FRI_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FRI_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = land_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = FRI_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FRI_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FRI_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_special_forces
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -2482,12 +3404,15 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = FRI_equipment_effort_3 }
-		prerequisite = { focus = FRI_doctrine_effort_2 }
-		prerequisite = { focus = FRI_armor_effort }  
-		x = 20
-		y = 4
-		cost = 10
+		prerequisite = { focus = FRI_generic_weapon_development_3 }
+		prerequisite = { focus = FRI_generic_military_academy }
+		prerequisite = { focus = FRI_generic_armor_effort }
+		prerequisite = { focus = FRI_generic_new_officer_corps }
+		prerequisite = { focus = FRI_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = FRI_generic_weapon_development_3
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -2495,16 +3420,684 @@ focus_tree = {
 			add_ideas = special_forces
 			add_tech_bonus = {
 				name = special_forces_bonus
-				bonus = 0.5
+				bonus = 1.0
 				uses = 1
 				technology = paratroopers
 				technology = paratroopers2
-				technology = marines
-				technology = marines2
 				technology = tech_mountaineers
 				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = FRI_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 38
+		y = 13
+		cost = 7.25
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = FRI_generic_naval_effort }
+		mutually_exclusive = { focus = FRI_generic_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = FRI_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = FRI_generic_naval_effort }
+		mutually_exclusive = { focus = FRI_generic_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = FRI_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FRI_generic_flexible_navy focus = FRI_generic_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = FRI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = FRI_generic_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = FRI_generic_flexible_navy focus = FRI_generic_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = FRI_generic_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = FRI_generic_large_navy focus = FRI_generic_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = FRI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = FRI_generic_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = FRI_generic_large_navy focus = FRI_generic_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = FRI_generic_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = FRI_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_airforce
+		x = 38
+		y = 5
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_tech_bonus = {
+				name = air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FRI_generic_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = FRI_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FRI_generic_fighter_focus }
+		prerequisite = { focus = FRI_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FRI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = FRI_generic_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FRI_generic_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = FRI_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FRI_generic_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = FRI_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_research
+		prerequisite = { focus = FRI_generic_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
 			}
 			add_research_slot = 1
 		}
 	}
+
+	focus = {
+		id = FRI_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FRI_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FRI_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FRI_generic_heavy_fighter_focus }
+		prerequisite = { focus = FRI_generic_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = FRI_generic_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = FRI_generic_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = FRI_generic_heavy_fighter_focus }
+		prerequisite = { focus = FRI_generic_CAS_effort }
+		prerequisite = { focus = FRI_generic_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = FRI_generic_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				name =  air_doc_bonus
+				bonus = 1.0
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FRI_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = FRI_generic_aviation_effort_2 }
+		prerequisite = { focus = FRI_generic_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = FRI_generic_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	
 }

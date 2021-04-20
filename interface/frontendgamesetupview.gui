@@ -127,33 +127,33 @@ guiTypes = {
 	### country entry
 	containerWindowType = {
 		name = "country_entry"
-			
+
 		buttonType = {
 			name = "country_leader"
 			quadTextureSprite ="GFX_leader_unknown"
-			position = { x = 17 y = 22 }
+			position = { x = 2500 y = 2500 }
 			scale=0.75
 			clicksound = click_checkbox
-		}
-	
+		}		
+			
 		iconType = {
 			name = "country_flag"
 			quadTextureSprite ="GFX_shield_medium"
-			position = { x = 33 y = 186 }
+			position = { x = 28 y = 21 }
 			Orientation = "UPPER_LEFT"
 			alwaystransparent = yes
 		}		
-	
+		
 		buttonType = {
 			name = "country"	
-			quadTextureSprite = "GFX_country_selection_entry"
-			position = { x=0 y =0 }
+			quadTextureSprite = "GFX_large_flag_frame_menu"
+			position = { x=23 y =20 }
 			clicksound = click_checkbox
-		}		
-		
+		}	
+
 		instantTextBoxType = {
 			name = "country_name"
-			position = { x = 8 y = 248 }
+			position = { x = 2500 y = 2500 }
 			font = "hoi_18mbs"
 			borderSize = {x = 0 y = 0}
 			maxWidth = 131
@@ -161,7 +161,47 @@ guiTypes = {
 			fixedsize = yes	
 			format = center		
 			Orientation = "UPPER_LEFT"
-		}
+		}	
+	}
+
+	### country entry
+	containerWindowType = {
+		name = "country_big_entry"
+
+		buttonType = {
+			name = "country_leader"
+			quadTextureSprite ="GFX_leader_unknown"
+			position = { x = 2500 y = 2500 }
+			scale=0.75
+			clicksound = click_checkbox
+		}		
+			
+		iconType = {
+			name = "country_flag"
+			quadTextureSprite ="GFX_shield_medium"
+			position = { x = 28 y = 21 }
+			Orientation = "UPPER_LEFT"
+			alwaystransparent = yes
+		}		
+		
+		buttonType = {
+			name = "country"	
+			quadTextureSprite = "GFX_large_flag_frame_menu"
+			position = { x=23 y =20 }
+			clicksound = click_checkbox
+		}	
+
+		instantTextBoxType = {
+			name = "country_name"
+			position = { x = 2500 y = 2500 }
+			font = "hoi_18mbs"
+			borderSize = {x = 0 y = 0}
+			maxWidth = 131
+			maxHeight = 20
+			fixedsize = yes	
+			format = center		
+			Orientation = "UPPER_LEFT"
+		}	
 	}
 	
 	### country entry
@@ -179,8 +219,8 @@ guiTypes = {
 		
 		buttonType = {
 			name = "country"	
-			quadTextureSprite = "GFX_country_selection_minor_entry"
-			position = { x=0 y =0 }
+			quadTextureSprite = "GFX_large_flag_frame_menu"
+			position = { x=22 y =22 }
 			clicksound = click_checkbox
 		}		
 	}
@@ -649,16 +689,16 @@ guiTypes = {
 
 		containerWindowType = {
 			name ="countries"
-			position = { x = 15 y = 45 }
-			size = { width = -15 height = 120}
+			position = { x = 66 y = 290 }
+			size = { width = 10 height = 120}
 			
 			gridboxType = {
 				name ="countries_grid"
 				position = { x = 0 y = 0 }
 				size = { width = 100% height = 100% }
-				slotsize = { width = 150 height = 275 }
+				slotsize = { width = 120 height = 249 }
 				add_horizontal = yes
-				max_slots_horizontal = 8
+				max_slots_horizontal = 9
 				max_slots_vertical = 2
 				format = "UPPER_LEFT"
 			}	
@@ -676,25 +716,265 @@ guiTypes = {
 				size = { width = 100% height = 100% }
 				slotsize = { width = 150 height = 0 }
 				add_horizontal = yes
-				max_slots_vertical = 1
+				max_slots_horizontal = 9
+				max_slots_vertical = 2
 				format = "UPPER_LEFT"
 			}
 		}
 
 		containerWindowType = {
 			name ="countries_mini"
-			position = { x = 15 y = 614 }
+			position = { x = 11 y = 360 }
 			size = { width = -15 height = 240 }
 			
 			gridboxType = {
 				name ="countries_grid"
 				position = { x = 0 y = 0 }
-				size = { width = 100% height = 100% }
-				slotsize = { width = 53 height = 40 }
+				size = { width = 90% height = 100% }
+				slotsize = { width = 48 height = 305 }
 				add_horizontal = yes
+				max_slots_horizontal = 25
 				max_slots_vertical = 2
 				format = "UPPER_LEFT"
 			}
+		}
+
+		iconType = {
+			name = "country_selection_cover"
+			position = { x = 1 y = 0 }
+			scale=0.9999999999999999999999999999999
+			spriteType = "GFX_country_selection_cover"
+			alwaystransparent = yes
+		}
+
+		#top row
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_1"
+			position = { x = 11 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_2"
+			position = { x = 51 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_4"
+			position = { x = 152 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_5"
+			position = { x = 191 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_6"
+			position = { x = 241 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_8"
+			position = { x = 342 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_9"
+			position = { x = 440 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_10"
+			position = { x = 480 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_11"
+			position = { x = 530 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_12"
+			position = { x = 580 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_13"
+			position = { x = 630 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_14"
+			position = { x = 680 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_15"
+			position = { x = 730 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_16"
+			position = { x = 770 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_18"
+			position = { x = 872 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_19"
+			position = { x = 930 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_20"
+			position = { x = 970 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_21"
+			position = { x = 1010 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_23"
+			position = { x = 1112 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_1_entry_25"
+			position = { x = 1170 y = 360 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		#Down row
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_1"
+			position = { x = 11 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_2"
+			position = { x = 51 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_3"
+			position = { x = 91 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_4"
+			position = { x = 131 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_5"
+			position = { x = 185 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_6"
+			position = { x = 235 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_7"
+			position = { x = 285 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_8"
+			position = { x = 335 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		iconType = {
+			name = "countries_clickcover_row_2_entry_9"
+			position = { x = 384 y = 665 }
+			spriteType = "GFX_country_selection_clickcover_single"		
+		}
+
+		#big top
+
+		iconType = {
+			name = "countries_big_clickcover_row_1_entry_2"
+			position = { x = 205 y = 307 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_1_entry_4"
+			position = { x = 445 y = 307 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_1_entry_6"
+			position = { x = 685 y = 307 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_1_entry_8"
+			position = { x = 925 y = 307 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		#big down
+
+		iconType = {
+			name = "countries_big_clickcover_row_2_entry_2"
+			position = { x = 205 y = 556 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_2_entry_4"
+			position = { x = 445 y = 556 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_2_entry_6"
+			position = { x = 685 y = 556 }
+			spriteType = "GFX_country_selection_clickcover_big"		
+		}
+
+		iconType = {
+			name = "countries_big_clickcover_row_2_entry_8"
+			position = { x = 925 y = 556 }
+			spriteType = "GFX_country_selection_clickcover_big"		
 		}
 		
 		iconType = {
@@ -709,98 +989,6 @@ guiTypes = {
 				name ="minor_portrait_overlay"
 				spriteType = "GFX_minor_portrait_overlay"
 				position = { x= 280 y = 704 }
-		}
-
-		#OVERLAYS GO HERE
-		#BIG ONES FIRST ROW
-		iconType = {
-			name = "country_big_no_1_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 13 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_2_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 163 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_3_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 313 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_4_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_new_ov"
-			position = { x = 463 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_5_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_new_ov"
-			position = { x = 613 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_7_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 913 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_8_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 1063 y = 45 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		#BIG ONES SECOND ROW
-		iconType = {
-			name = "country_big_no_9_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 13 y = 320 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_big_no_15_ov"
-			quadTextureSprite ="GFX_cr_country_selection_entry_reworked_ov"
-			position = { x = 913 y = 320 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		#SMOL ONES
-		iconType = {
-			name = "country_smol_5_ov"
-			quadTextureSprite ="GFX_cr_country_selection_minor_entry_reworked_ov"
-			position = { x = 618 y = 609 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
-		}
-
-		iconType = {
-			name = "country_smol_6_ov"
-			quadTextureSprite ="GFX_cr_country_selection_minor_entry_new_ov"
-			position = { x = 768 y = 609 }
-			Orientation = "UPPER_LEFT"
-			alwaystransparent = yes
 		}
 		
 		
@@ -1582,7 +1770,6 @@ guiTypes = {
 					name = "name_textbox"
 					position = { x = 15 y = 6 }
 					font = "hoi_18mbs"
-					maxWidth = 300
 					fixedsize = yes
 					format = left
 					alwaystransparent = yes

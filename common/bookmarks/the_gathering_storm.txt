@@ -15,9 +15,14 @@ bookmarks = {
 				MAI_landlocked
 			}
 			focuses = {
+				
 				MAI_royal_convention
 				MAI_children_parliament_focus
 			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
 		}
 		
 		"GRN"={
@@ -33,38 +38,28 @@ bookmarks = {
 			}
 		}
 
-		"DES"={
-			history = "DES_GATHERING_STORM_DESC"
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		"FLO"={
+			history = "FLO_GATHERING_STORM_DESC"
 			ideas = {
-				pre-industrial_tech
+				modern_tech_idea
+				FLO_country_divided
+				FLO_medium_production_quotas
 			}
 			focuses = {
-				DES_open_for_international_relations
-				DES_take_care_of_sioux_tribe
-				DES_demand_reclaimed_fields
+				FLO_so_goesumdochi_wins
+				FLO_so_darami_wins
+				FLO_so_geumsaegi_wins
 			}
 		}
 
-		"DIO"={
-			history = "DIO_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-			}
-			focuses = {
-			
-			}
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
 		}
 
-		"JOJ"={
-			history = "JOJ_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-			}
-			focuses = {
-			
-			}
-		}
-		
 		"ENC"={
 			history = "ENC_GATHERING_STORM_DESC"
 			ideas = {
@@ -77,61 +72,18 @@ bookmarks = {
 				ENC_the_dunwiddie_miracle
 			}
 		}
-		
-		"FLO"={
-			history = "FLO_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-				FLO_country_divided
-				FLO_second_agrarian_reform_underway
-				FLO_medium_production_quotas
-			}
-			focuses = {
-				FLO_so_goesumdochi_wins
-				FLO_so_darami_wins
-				FLO_so_geumsaegi_wins
-			}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
 		}
 
-		"GON"={
+		"DIO"={
+			history = "DIO_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
 			
-			history = "GON_GATHERING_STORM_DESC"
-			ideas = {
-				pre-industrial_tech
-				GON_closed_country
-				GON_monarchist_guerillas
-			}
-			focuses = {
-				GON_start_prosecuting_monarchists
-				GON_year_of_peacock_shall_begin
-				GON_deeper_into_the_continent
-			}
-		}
-
-		"FRI"={
-			history = "FRI_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-				FRI_colonial_beginnings
-			}
-			focuses = {
-				FRI_expeditions_for_resources
-				FRI_continue_colonization
-				FRI_hartmut_rules
-			}
-		}
-
-		"AVA"={
-			history = "AVA_GATHERING_STORM_DESC"
-			ideas = {
-				middleage_tech
-				AVA_legacy_of_kingdom_of_maru
-				AVA_shuriki_dark_legacy_idea_1
-			}
-			focuses = {
-				AVA_shuriki_dark_legacy
-				AVA_economic_legacy_of_maru
-				AVA_clear_the_remnants_of_shuriki_rule
 			}
 		}
 
@@ -148,28 +100,22 @@ bookmarks = {
 			}
 		}
 
-		"LEC"={
-			history = "LEC_GATHERING_STORM_DESC"
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		"SIO"={
+			history = "SIO_GATHERING_STORM_DESC"
 			ideas = {
 				middleage_tech
 			}
 			focuses = {
-				LEC_state_of_the_empire
-				LEC_found_karlino_axis
-				LEC_demand_southern_lechia_lands
+			
 			}
 		}
 
-		"SLD"={
-			history = "SLD_GATHERING_STORM_DESC"
-			ideas = {
-				modern_tech_idea
-			}
-			focuses = {
-				SLD_the_great_elections
-				SLD_operation_major_ear
-				SLD_peaceful_negotiations
-			}
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
 		}
 
 		"TSA"={
@@ -184,24 +130,11 @@ bookmarks = {
 			}
 		}
 
-		"SIO"={
-			history = "SIO_GATHERING_STORM_DESC"
-			ideas = {
-				middleage_tech
-			}
-			focuses = {
-			
-			}
-		}
-
-		"---"={
+		"UNC"={
 			history = "OTHER_GATHERING_STORM_DESC_TCW"
 		}
 
-		#HERE COME THE MINORS
-
 		"DUL"={
-			minor = yes
 			history = "DUL_GATHERING_STORM_DESC"
 			ideas = {
 				middleage_tech
@@ -210,6 +143,277 @@ bookmarks = {
 				DUL_fund_colonial_expedition
 				DUL_demand_everrealm_gate
 				DUL_apply_the_antidote
+			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+		}
+
+		"GON"={
+			history = "GON_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+				GON_closed_country
+				GON_monarchist_guerillas
+			}
+			focuses = {
+				GON_start_prosecuting_monarchists
+				GON_year_of_peacock_shall_begin
+				GON_deeper_into_the_continent
+			}
+		}
+
+		#HERE COME THE MINORS
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"FRI"={
+			minor = yes
+			history = "FRI_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+				FRI_colonial_beginnings
+			}
+			focuses = {
+				FRI_a_new_start_for_diplomacy
+				FRI_draft_recovery_plan
+				FRI_hartmut_rules
+			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"DES"={
+			minor = yes
+			history = "DES_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+			}
+			focuses = {
+				DES_open_for_international_relations
+				DES_take_care_of_sioux_tribe
+				DES_demand_reclaimed_fields
+			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"ICW"={
+			minor = yes
+			history = "ICW_GATHERING_STORM_DESC"
+			ideas = {
+				pre-industrial_tech
+				ICW_frozen_dragon_idea
+			}
+			focuses = {
+				ICW_leftovers_of_an_empire
+				ICW_try_second_time
+				ICW_versus_greenland
+			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+	#	"WOL"={
+	#		minor = yes
+	#		history = "WOL_GATHERING_STORM_DESC"
+	#		ideas = {
+	#			modern_tech_idea
+	#		}
+	#		focuses = {
+	#			
+	#		}
+	#	}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"AVA"={
+			minor = yes
+			history = "AVA_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+				AVA_legacy_of_kingdom_of_maru
+				AVA_shuriki_dark_legacy_idea_1
+			}
+			focuses = {
+				AVA_shuriki_dark_legacy
+				AVA_economic_legacy_of_maru
+				AVA_clear_the_remnants_of_shuriki_rule
+			}
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"JOJ"={
+			minor = yes
+			history = "JOJ_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+			
+			}
+		}
+
+		# BOTTOM ROW
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"UNC"={
+			history = "OTHER_GATHERING_STORM_DESC_TCW"
+			minor = yes
+		}
+
+		"LEC"={
+			minor = yes
+			history = "LEC_GATHERING_STORM_DESC"
+			ideas = {
+				middleage_tech
+			}
+			focuses = {
+				LEC_state_of_the_empire
+				LEC_found_karlino_axis
+				LEC_demand_southern_lechia_lands
+			}
+		}
+
+		"SLD"={
+			minor = yes
+			history = "SLD_GATHERING_STORM_DESC"
+			ideas = {
+				modern_tech_idea
+			}
+			focuses = {
+				SLD_the_great_elections
+				SLD_operation_major_ear
+				SLD_peaceful_negotiations
 			}
 		}
 
@@ -253,20 +457,6 @@ bookmarks = {
 			}
 		}
 
-		"ICW"={
-			minor = yes
-			history = "ICW_GATHERING_STORM_DESC"
-			ideas = {
-				pre-industrial_tech
-				ICW_frozen_dragon_idea
-			}
-			focuses = {
-				ICW_leftovers_of_an_empire
-				ICW_try_second_time
-				ICW_versus_greenland
-			}
-		}
-
 		"TIG"={
 			minor = yes
 			history = "TIG_GATHERING_STORM_DESC"
@@ -279,7 +469,17 @@ bookmarks = {
 			}
 		}
 
-		
+	#	"FLE"={
+	#		minor = yes
+	#		history = "FLE_GATHERING_STORM_DESC"
+	#		ideas = {
+	#			modern_tech_idea
+	#			
+	#		}
+	#		focuses = {
+	#			
+	#		}
+	#	}
 		
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !

@@ -334,21 +334,19 @@ country_event = { #Economy goes shit
 	desc = friedewalt.13.d
 	picture = GFX_report_macius_palace
 
-	fire_only_once = yes
-
-	trigger = {
-		tag = FRI
-		has_completed_focus = FRI_all_your_shrooms_belong_to_us
-	}
-
-	mean_time_to_happen = { days = 65 }
+	is_triggered_only = yes
 
 	option = { #I am King, not you, fools!
 		name = friedewalt.13.a
 		add_ideas = {
 			FRI_economy_on_downhill
 		}
-		add_political_power = -100
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.14
+				days = 3
+			}
+		}
 	}
 }
 
@@ -359,40 +357,47 @@ country_event = { #Local governments go wild
 	desc = friedewalt.14.d
 	picture = GFX_report_macius_palace
 
-	fire_only_once = yes
-
-	trigger = {
-		tag = FRI
-		has_completed_focus = FRI_all_your_shrooms_belong_to_us
-		has_idea = FRI_economy_on_downhill
-	}
-
-	mean_time_to_happen = { days = 21 }
+	is_triggered_only = yes
 
 	option = { #Whatever!
 		name = friedewalt.14.a
 		add_ideas = {
 			FRI_divided_local_governments
 		}
-		add_political_power = -100
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.15
+				days = 3
+			}
+		}
 	}
 }
 
-country_event = { #Friedewalt demands giving back the crown
+country_event = { #Friedewalt demands immediate return of the crown
 	id = friedewalt.15
 	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.15"}
 	title = friedewalt.15.t
 	desc = friedewalt.15.d
 	picture = GFX_report_macius_palace
 
-	fire_only_once = yes
+	is_triggered_only = yes
 
-	trigger = {
-		tag = FRI
-		has_completed_focus = FRI_declaration_of_hartmut_empire
+	immediate = {
+		hidden_effect = {
+			dismantle_faction = yes
+			set_variables_in_friedewalt_puppets = yes
+			set_new_central_alliance_leader = yes
+			adjust_new_central_alliance = yes
+			FLE = {
+				if = {
+					limit = {
+						is_puppet_of = FRI
+					}
+					drop_cosmetic_tag = yes
+				}
+			}
+		}
 	}
-
-	mean_time_to_happen = { days = 1 }
 
 	option = { #You went too far, Hartmut!
 		name = friedewalt.15.a
@@ -410,36 +415,23 @@ country_event = { #Friedewalt demands giving back the crown
 		add_ideas = {
 			FRI_disloyal_army
 		}
-		set_politics = {
-			ruling_party = monarchism
+		start_civil_war = {
+    		ruling_party = monarchism
+			ideology = fascism
+    		size = 0.5
+    		capital = 763
+    		states = { 
+        		758 763 1046 1047 790 794 805 819 1044 1045 830 838 1043 1042 835 748 780 808 843 719 770 713 681 656 659 658 672
+    		}
+			keep_unit_leaders = { 9997 9996 9995 9994 9993 }
 		}
-		remove_unit_leader = 9999
 		random_other_country = {
 			limit = {
 				original_tag = FRI
 				has_government = fascism
 			}
+			set_cosmetic_tag = HAR
 			load_oob = HAR_uprising
-			create_corps_commander = {
-				name = "Hartmut"
-				portrait_path = "gfx/leaders/FRI/hartmut.dds"
-				desc = "POLITICS_HARTMUT_DESC"
-				traits = { harsh_leader politically_connected }
-				skill = 2
-    			attack_skill = 2
-    			defense_skill = 2
-    			planning_skill = 1
-    			logistics_skill = 3
-    			id = 9999
-			}
-		}
-		start_civil_war = {
-    		ruling_party = fascism
-    		size = 0.5
-    		capital = 763
-    		states = { 
-        		758 763 790 794 805 819 830 838 835 748 780 808 843 719 770 713 681 656 659 658 672
-    		}
 		}
 	}
 
@@ -463,29 +455,6 @@ country_event = { #Friedewalt demands giving back the crown
 			add_ideas = {
 				FRI_disloyal_army
 			}
-			set_politics = {
-				ruling_party = monarchism
-			}
-			remove_unit_leader = 9999
-		}
-		random_other_country = {
-			limit = {
-				original_tag = FRI
-				has_government = fascism
-			}
-			load_oob = HAR_uprising
-			create_corps_commander = {
-				name = "Hartmut"
-				portrait_path = "gfx/leaders/FRI/hartmut.dds"
-				desc = "POLITICS_HARTMUT_DESC"
-				traits = { harsh_leader politically_connected }
-				skill = 2
-    			attack_skill = 2
-    			defense_skill = 2
-    			planning_skill = 1
-    			logistics_skill = 3
-    			id = 9999
-			}
 		}
 		start_civil_war = {
     		ruling_party = fascism
@@ -493,8 +462,17 @@ country_event = { #Friedewalt demands giving back the crown
     		size = 0.5
     		capital = 763
     		states = { 
-        		758 763 790 794 805 819 830 838 835 748 780 808 843 719 770 713 681 656 659 658 672
+        		758 763 1046 1047 790 794 805 819 1044 1045 830 838 1043 1042 835 748 780 808 843 719 770 713 681 656 659 658 672
     		}
+			keep_unit_leaders = { 9999 9998 }
+		}
+		random_other_country = {
+			limit = {
+				original_tag = FRI
+				has_government = fascism
+			}
+			set_cosmetic_tag = HAR
+			load_oob = HAR_uprising
 		}
 	}
 }
@@ -513,6 +491,12 @@ country_event = { #What to do with Hartmut?
 	option = { #Send him to govern our colonies
 		name = friedewalt.16.a
 		set_country_flag = FRI_hartmut_in_colonies
+		FLE = {
+			country_event = {
+				id = centralkingdom.70
+				days = 0
+			}
+		}
 		add_political_power = 50
 	}
 
@@ -810,6 +794,723 @@ country_event = { #They will fight till death
 		name = friedewalt.21.a
 		add_war_support = 0.05
 		add_political_power = 50
+	}
+}
+
+country_event = { #Drafting Recovery Plan
+	id = friedewalt.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.22"}
+	title = friedewalt.22.t
+	desc = friedewalt.22.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Accept Dernburgs Plan
+		name = friedewalt.22.a
+		hidden_effect = {
+			set_country_flag = accepted_dernburg_plan
+			complete_national_focus = FRI_devalue_the_mark
+		}
+		add_ideas = {
+			FRI_bernhard_dernburg
+		}
+	}
+
+	option = { #Accept Prince Hartmuts Plan
+		name = friedewalt.22.b
+		hidden_effect = {
+			set_country_flag = accepted_hartmuts_plan
+			complete_national_focus = FRI_militarize_faster
+		}
+	}
+}
+
+country_event = { #Status of Neu Flensburg
+	id = friedewalt.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.23"}
+	title = friedewalt.23.t
+	desc = friedewalt.23.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Increase their autonomy in internal affairs
+		name = friedewalt.23.a
+		add_political_power = 50
+		FLE = {
+			country_event = {
+				id = friedewalt.24
+				days = 1
+			}
+		}
+	}
+
+	option = { #Increase their overall autonomy
+		name = friedewalt.23.b
+		FLE = {
+			country_event = {
+				id = friedewalt.25
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Pantmawr grants us larger autonomy in internal affairs
+	id = friedewalt.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.24"}
+	title = friedewalt.24.t
+	desc = friedewalt.24.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #A surprise, to be sure, but a welcome one.
+		name = friedewalt.24.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #Pantmawr grants us larger autonomy
+	id = friedewalt.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.25"}
+	title = friedewalt.25.t
+	desc = friedewalt.25.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #A step closer to independence!
+		name = friedewalt.25.a
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+
+country_event = { #Pantmawr cuts funding
+	id = friedewalt.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.26"}
+	title = friedewalt.26.t
+	desc = friedewalt.26.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #This is outrageous!
+		name = friedewalt.26.a
+		add_political_power = -50
+		add_stability = -0.1
+		add_war_support = 0.1
+	}
+}
+
+country_event = { #Friedewalt's Kingdom wants to buy Birk Balthazar's Island
+	id = friedewalt.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.27"}
+	title = friedewalt.27.t
+	desc = friedewalt.27.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Agree for complete sale
+		name = friedewalt.27.a
+		FRI = {
+			country_event = {
+				id = friedewalt.28
+				days = 1
+			}
+		}
+	}
+
+	option = { #Agree but retain docking rights
+		name = friedewalt.27.b
+		FRI = {
+			country_event = {
+				id = friedewalt.29
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Island owner agrees for complete sale
+	id = friedewalt.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.28"}
+	title = friedewalt.28.t
+	desc = friedewalt.28.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great
+		name = friedewalt.28.a
+		add_political_power = -100
+		29 = {
+			owner = {
+				add_political_power = 100
+			}
+		}
+		transfer_state = 29
+	}
+}
+
+country_event = { #Island owner agrees for sale but wants to retain docking rights
+	id = friedewalt.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.29"}
+	title = friedewalt.29.t
+	desc = friedewalt.29.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #No worries, they won't use it at all.
+		name = friedewalt.29.a
+		add_political_power = -80
+		29 = {
+			owner = {
+				add_political_power = 80
+			}
+		}
+		diplomatic_relation = {
+    		country = FROM
+    		relation = docking_rights
+    		active = yes
+		}
+		transfer_state = 29
+		
+	}
+}
+
+country_event = { #Pantmawr wants to renegotiate treaties with us
+	id = friedewalt.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.30"}
+	title = friedewalt.30.t
+	desc = friedewalt.30.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Agree to renegotiate
+		name = friedewalt.30.a
+		FRI = {
+			country_event = {
+				id = friedewalt.32
+				days = 1
+			}
+		}
+	}
+
+	option = { #We are satisfied with treaties as they are now.
+		name = friedewalt.30.b
+		FRI = {
+			country_event = {
+				id = friedewalt.31
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Neu Flensburg refuses to negotiate
+	id = friedewalt.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.31"}
+	title = friedewalt.31.t
+	desc = friedewalt.31.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #This is clear insubordination!
+		name = friedewalt.31.a
+		
+	}
+}
+
+country_event = { #Negotiations with Neu Flensburg
+	id = friedewalt.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.32"}
+	title = friedewalt.32.t
+	desc = friedewalt.32.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Increase funding
+		name = friedewalt.32.a
+		FLE = {
+			country_event = {
+				id = friedewalt.33
+				days = 0
+			}
+		}
+	}
+
+	option = { #Guarantee to give them Tungu-Pungu
+		name = friedewalt.32.b
+		FLE = {
+			country_event = {
+				id = friedewalt.34
+				days = 0
+			}
+		}
+	}
+
+	option = { #Grant independence in internal affairs
+		name = friedewalt.32.c
+		FLE = {
+			country_event = {
+				id = friedewalt.35
+				days = 0
+			}
+		}
+	}
+}
+
+country_event = { #Pantmawr increases funding
+	id = friedewalt.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.33"}
+	title = friedewalt.33.t
+	desc = friedewalt.33.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Interesting.
+		name = friedewalt.33.a
+		
+	}
+}
+
+country_event = { #Pantmawr promises us Tungu-Pungu
+	id = friedewalt.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.34"}
+	title = friedewalt.34.t
+	desc = friedewalt.34.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Interesting.
+		name = friedewalt.34.a
+		24 = {
+			add_claim_by = FLE
+		}
+	}
+}
+
+country_event = { #Pantmawr grants us independence in internal affairs
+	id = friedewalt.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.35"}
+	title = friedewalt.35.t
+	desc = friedewalt.35.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = friedewalt.35.a
+		
+	}
+
+	option = { #Organize elections right away!
+		name = friedewalt.35.b
+		
+	}
+}
+
+country_event = { #Macius runs from custody [a message from Dormesko?]
+	id = friedewalt.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.36"}
+	title = friedewalt.36.t
+	desc = friedewalt.36.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Bounty of 5 milions! Find him!
+		name = friedewalt.36.a
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.37
+				days = 2
+			}
+		}
+	}
+
+	option = { #These idiots betrayed me and rescued him! They'll pay for this!
+		name = friedewalt.36.b
+		hidden_effect = {
+			set_country_flag = hartmut_did_not_resign
+		}
+		declare_war_on = {
+			target = WEK
+			type = annex_everything
+		}
+		declare_war_on = {
+			target = SLD
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #The Green Revolution
+	id = friedewalt.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.37"}
+	title = friedewalt.37.t
+	desc = friedewalt.37.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #What the hell is going on?!
+		name = friedewalt.37.a
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.38
+				days = 21
+			}
+		}
+	}
+
+	option = { #This is Klu-Klu's fault! Find her!
+		name = friedewalt.37.b
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.44
+				days = 12
+			}
+		}
+	}
+}
+
+country_event = { #A proposal from Lord Pux
+	id = friedewalt.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.38"}
+	title = friedewalt.38.t
+	desc = friedewalt.38.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Great idea, let's sort this out quickly!
+		name = friedewalt.38.a
+		hidden_effect = {
+			set_country_flag = lord_pux_proposed_a_way_out
+		}
+	}
+}
+
+country_event = { #The Conference, day 1 [and Macius appears]
+	id = friedewalt.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.39"}
+	title = friedewalt.39.t
+	desc = friedewalt.39.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Votum Separatum, you fools.
+		name = friedewalt.39.a
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.40
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #The Conference, day 2 [Klu-Klu's forces attack]
+	id = friedewalt.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.40"}
+	title = friedewalt.40.t
+	desc = friedewalt.40.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #what the fuck?
+		name = friedewalt.40.a
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.41
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #The Conference, day 3 [Macius decision]
+	id = friedewalt.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.41"}
+	title = friedewalt.41.t
+	desc = friedewalt.41.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Finally!
+		name = friedewalt.41.a
+		hidden_effect = {
+			country_event = {
+				id = friedewalt.42
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #People demand the return of Friedewalt
+	id = friedewalt.42
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.42"}
+	title = friedewalt.42.t
+	desc = friedewalt.42.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Foolish fools who foolishly dream of foolish dreams!
+		name = friedewalt.42.a
+		hidden_effect = {
+			set_country_flag = hartmut_did_not_resign
+		}
+	}
+
+	option = {
+		name = friedewalt.42.b
+		hidden_effect = {
+			set_country_flag = hartmut_did_resign
+			retire_country_leader = yes
+			country_event = {
+				id = friedewalt.43
+				days = 311
+			}
+			drop_cosmetic_tag = yes
+			FLE = {
+				drop_cosmetic_tag = yes
+			}
+		}
+		create_country_leader = {
+			name = "Friedewalt III"
+			desc = "POLITICS_FRIEDEWALT_I_DESC"
+			picture = "friedewalt.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+	}
+}
+
+country_event = { #Death of King Friedewalt
+	id = friedewalt.43
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.43"}
+	title = friedewalt.43.t
+	desc = friedewalt.43.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Foolish fools who foolishly dream of foolish dreams!
+		name = friedewalt.43.a
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Hartmut II"
+			desc = "POLITICS_HARTMUT_DESC"
+			picture = "hartmut.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				warmonger
+			}
+		}
+		hidden_effect = {
+			set_cosmetic_tag = HAR
+			FLE = {
+				if = {
+					limit = {
+						is_puppet_of = FRI
+					}
+					set_cosmetic_tag = FLE_HAR
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
+	id = friedewalt.44
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.44"}
+	title = friedewalt.44.t
+	desc = friedewalt.44.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					TUG = {
+						exists = no
+					}
+				}
+				KLU = {
+					transfer_state = 802
+					transfer_state = 1018
+					transfer_state = 797
+					transfer_state = 1026
+					transfer_state = 1033
+					transfer_state = 1020
+					transfer_state = 795
+					transfer_state = 745
+					transfer_state = 1039
+					transfer_state = 699
+					transfer_state = 1040
+					transfer_state = 37
+					transfer_state = 38
+					transfer_state = 33
+					transfer_state = 34
+					add_state_core = 24
+					set_capital = 802
+					load_oob = KLU_native_uprising
+				}
+				every_state = {
+					limit = {
+						is_core_of = FLE
+						NOT = {
+							state = 632
+							state = 634
+							state = 638
+						}
+					}
+					add_core_of = KLU
+				}
+				KLU = {
+					declare_war_on = {
+						target = FLE
+						type = annex_everything
+					}
+				}
+				else = {
+					TUG = {
+						transfer_state = 802
+						transfer_state = 1018
+						transfer_state = 797
+						transfer_state = 1026
+						transfer_state = 1033
+						transfer_state = 1020
+						transfer_state = 795
+						transfer_state = 745
+						transfer_state = 1039
+						transfer_state = 699
+						transfer_state = 1040
+						transfer_state = 37
+						transfer_state = 38
+						transfer_state = 33
+						transfer_state = 34
+						add_state_core = 24
+						load_oob = KLU_native_uprising
+					}
+					every_state = {
+						limit = {
+							is_core_of = FLE
+							NOT = {
+								state = 632
+								state = 634
+								state = 638
+							}
+						}
+						add_core_of = TUG
+					}
+					TUG = {
+						declare_war_on = {
+							target = FLE
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = { #I knew they were up to something!
+		name = friedewalt.44.a
+		hidden_effect = {
+			set_country_flag = hartmut_did_not_resign
+		}
+		declare_war_on = {
+			target = KLU
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Return to international politics [choosing who will we ally]
+	id = friedewalt.45
+	immediate = {log = "[GetDateText]: [Root.GetName]: event friedewalt.45"}
+	title = friedewalt.45.t
+	desc = friedewalt.45.d
+	picture = GFX_report_macius_palace
+
+	is_triggered_only = yes
+
+	option = { #Ally Greenland
+		name = friedewalt.45.a
+		trigger = {
+			GRN = {
+				exists = yes
+			}
+		}
+		GRN = {
+			country_event = {
+				id = factionjoin.1
+				days = 1
+			}
+		}
+	}
+
+	option = { #Ally Japanifornia
+		name = friedewalt.45.b
+		trigger = {
+			JPN = {
+				exists = yes
+				is_puppet = no
+				NOT = {
+					has_government = fascism
+				}
+			}
+		}
+		JPN = {
+			country_event = {
+				id = factionjoin.1
+				days = 1
+			}
+		}
+	}
+
+	option = { #Ally Lechina Empire
+		name = friedewalt.45.c
+		trigger = {
+			LEC = {
+				exists = yes
+				is_faction_leader = yes
+			}
+		}
+		LEC = {
+			country_event = {
+				id = factionjoin.1
+				days = 1
+			}
+		}
+	}
+
+	option = { #Create own faction
+		name = friedewalt.45.e
+		create_faction = central_alliance
 	}
 }
 

@@ -136,6 +136,73 @@ against_macius = {
 	}
 }
 
+watch_out_macius = {
+	enable = {
+		tag = MAI
+		FRI = {
+			has_country_flag = hartmut_crisis_started
+			has_cosmetic_tag = HAR
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "FRI"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "FRI"			
+		value = 7000
+	}
+}
+
+watch_out_macius_wek = {
+	enable = {
+		tag = MAI
+		FRI = {
+			has_country_flag = wek_accepted
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "WEK"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "WEK"			
+		value = 7000
+	}
+}
+
+watch_out_macius_sld = {
+	enable = {
+		tag = MAI
+		FRI = {
+			has_country_flag = sld_accepted
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = alliance
+		id = "SLD"			
+		value = -7000
+	}
+
+	ai_strategy = {
+		type = invade
+		id = "SLD"			
+		value = 7000
+	}
+}
+
 support_general_in_civil_war = {
 	enable = {
 		OR = {

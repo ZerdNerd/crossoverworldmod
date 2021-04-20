@@ -1,0 +1,79 @@
+# befriend
+# conquer
+# antagonize
+# build_ship
+# build_army
+# unit_ratio
+# build_building
+# research_tech
+# garrison
+# protect
+# influence
+
+smol_countries_air_production_fix = {
+	enable = {
+		OR = {
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+		num_of_military_factories > 3
+		num_of_military_factories < 10
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 80 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 20 }
+}
+
+medium_countries_air_production_fix = {
+	enable = {
+		OR = {
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+		num_of_military_factories > 9
+		num_of_military_factories < 20
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 50 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 30 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 20 }
+}
+
+big_countries_air_production_fix = {
+	enable = {
+		OR = {
+			tag = MAI
+			tag = JPN
+			tag = DES
+			tag = ICW
+			tag = DCB
+			tag = TSA
+			tag = WOL
+			tag = WEA
+		}
+		num_of_military_factories > 19
+	}
+
+	abort_when_not_enabled = yes
+
+	ai_strategy = { type = equipment_production_factor id = fighter value = 50 }
+	ai_strategy = { type = equipment_production_factor id = cas value = 20 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 20 }
+	ai_strategy = { type = equipment_production_factor id = strategic_bomber value = 10 }
+}
