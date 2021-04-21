@@ -325,6 +325,10 @@ defined_text = { # Universe tab
 		trigger = { OR = { original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2 } }
 		localization_key = CR_WS_UNIVERSE_JOJO
 	}
+	text = {
+		trigger = { original_tag = TIG }
+		localization_key = CR_WS_UNIVERSE_TIB
+	}
 }
 
 defined_text = { # Universe tab
@@ -372,6 +376,10 @@ defined_text = { # Universe tab
 	text = {
 		trigger = { OR = { original_tag = DIO original_tag = JOJ original_tag = PIL original_tag = MOR original_tag = MO2 } }
 		localization_key = CR_WS_UNIVERSE_JOJO_DESC
+	}
+	text = {
+		trigger = { original_tag = TIG }
+		localization_key = CR_WS_UNIVERSE_TIB_DESC
 	}
 }
 
