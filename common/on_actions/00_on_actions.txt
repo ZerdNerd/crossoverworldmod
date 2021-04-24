@@ -4730,6 +4730,8 @@ on_actions = {
 						MAI_aftermath_of_civil_war_1
 					}
 					mark_focus_tree_layout_dirty = yes
+					complete_national_focus = MAI_the_reconstruction
+					set_country_flag = general_capitulated
 				}
 			}
 			#Other things.
@@ -4830,6 +4832,7 @@ on_actions = {
 					}
 					SIO = {
 						has_capitulated = no
+						has_war_with = DES
 					}
 				}
 				SIO = {

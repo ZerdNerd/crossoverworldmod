@@ -5267,20 +5267,10 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					DES = {
-						exists = yes
-					}
-				}
-				create_wargoal = {
-					target = DES
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
 					ICW = {
-						exists = yes
-						is_puppet = no
+						any_owned_state = {
+							is_core_of = GRN
+						}
 					}
 				}
 				create_wargoal = {

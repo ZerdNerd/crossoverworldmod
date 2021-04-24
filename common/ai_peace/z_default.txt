@@ -75,7 +75,7 @@ default_peace = {
 			FROM = {
 				is_claim_or_core_of_ROOT = no
 				is_ambition_area_of_ROOT = yes
-				is_occupation_zone = no
+			#	is_occupation_zone = no
 			}
 		}
 
@@ -407,7 +407,7 @@ default_peace = {
 			}
 		}
 
-		modifier = { # Flower Hill has to get all Wolves and Weasels lands
+		modifier = { # Flower Hill takes all of Wolves and Weasels
 			factor = 10
 			tag = FLO
 			FROM = {
@@ -971,31 +971,6 @@ default_peace = {
 					state = 954
 					state = 947
 					state = 59
-				}
-			}
-		}
-
-		modifier = { # Flower Hill takes all of Wolves and Weasels
-			factor = 10
-			tag = FLO
-			FROM = {
-				OR = {
-					state = 295
-					state = 275
-					state = 257
-					state = 246
-					state = 261
-					state = 222
-					state = 238
-					state = 184
-					state = 204
-					state = 205
-					state = 164
-					state = 168
-					state = 317
-					state = 284
-					state = 270
-					state = 309
 				}
 			}
 		}

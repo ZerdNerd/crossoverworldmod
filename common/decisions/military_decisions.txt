@@ -1541,6 +1541,9 @@ road_to_central_civil_war_dec_category = {
 		activation = { 
 			has_war = no
 			has_country_flag = general_moved_to_second_stage
+			NOT = {
+				has_country_flag = general_capitulated
+			}
 		}
 
 		selectable_mission = no
@@ -1551,6 +1554,21 @@ road_to_central_civil_war_dec_category = {
 
 		timeout_effect = {
 			hidden_effect = {
+				if = {
+					limit = {
+						SLD = {
+							has_guaranteed = MAI
+						}
+					}
+					SLD = {
+						set_variable = { has_guaranteed_macius = 1 }
+						diplomatic_relation = {
+   							country = MAI
+    						relation = guarantee
+  							active = no
+						}
+					}
+				}
 				every_state = {
 					limit = {
 						is_owned_by = MAI
@@ -1690,6 +1708,16 @@ road_to_central_civil_war_dec_category = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_central_civil_war_beginning_sound
+				}
+				if = {
+					limit = {
+						SLD = {
+							has_variable = has_guaranteed_macius
+						}
+					}
+					SLD = {
+						give_guarantee = MAI
+					}
 				}
 			}
 		}
