@@ -2193,7 +2193,13 @@ focus_tree = {
 		}
 		available = {
 			has_war = no
-			has_country_flag = hartmut_did_not_resign
+			custom_trigger_tooltip = {
+				tooltip = hartmut_did_not_resign
+				has_country_leader = {
+    				name = "Hartmut II"
+   					ruling_only = yes
+				}
+			}
 		}
 		bypass = {
 			SLD = {
@@ -2464,8 +2470,20 @@ focus_tree = {
 		available = {
 			has_war = no
 			OR = {
-				has_country_flag = hartmut_did_not_resign
-				has_country_flag = hartmut_did_resign
+				custom_trigger_tooltip = {
+					tooltip = hartmut_did_not_resign
+					has_country_leader = {
+    					name = "Hartmut II"
+   						ruling_only = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = hartmut_did_resign
+					has_country_leader = {
+    					name = "Friedewalt III"
+   						ruling_only = yes
+					}
+				}
 			}
 		}
 		completion_reward = { 
