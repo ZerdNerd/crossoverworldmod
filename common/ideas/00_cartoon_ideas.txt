@@ -3672,6 +3672,104 @@ ideas = {
 				consumer_goods_factor = 0.05
 			}
 		}
+
+		FLE_ostgesetz = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.55
+				trade_opinion_factor = -0.25
+				stability_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		FLE_ostgesetz_2 = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				trade_opinion_factor = -0.15
+				stability_factor = 0.05
+				war_support_factor = -0.05
+				political_power_factor = -0.15
+			}
+		}
+
+		FLE_ostgesetz_modified = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.55
+				trade_opinion_factor = -0.3
+				stability_factor = 0.1
+				war_support_factor = -0.1
+			}
+		}
+
+		FLE_ordnungsdepartment = {
+			picture = boot_2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.01
+				stability_factor = 0.05
+				political_power_factor = -0.1
+			}
+		}
+
+		FLE_high_funding_from_pantmawr = {
+			picture = chi_hyper_inflation3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.1
+				stability_factor = 0.1
+				autonomy_gain = -0.0001
+			}
+		}
+
+		FLE_medium_funding_from_pantmawr = {
+			picture = chi_hyper_inflation2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		FLE_low_funding_from_pantmawr = {
+			picture = chi_hyper_inflation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.05
+				stability_factor = -0.05
+				autonomy_gain = 0.0001
+			}
+		}
+
+		FLE_cut_funding_from_pantmawr = {
+			picture = chi_wargaming_division
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.1
+				stability_factor = -0.1
+				autonomy_gain = 0.005
+			}
+		}
 	}
 
 	##############################################################################################################################

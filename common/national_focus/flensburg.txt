@@ -8,6 +8,1223 @@ focus_tree = {
 			tag = FLE
 		} 
 	} 
+
+	focus = { 
+		id = FLE_black_monday_first_phase
+		icon = GFX_focus_generic_industry_3
+		x = 3
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = black_monday_occured
+				has_idea = TCWMod_black_monday
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event
+		}		
+	}
+
+	focus = { 
+		id = FLE_increase_natives_exploitation
+		icon = GFX_focus_CZE_german_puppet
+		relative_position_id = FLE_black_monday_first_phase
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_close_unprofiatble_sectors
+		}
+		prerequisite = {
+			focus = FLE_black_monday_first_phase
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_ost_mark
+		icon = GFX_focus_fra_devalue_the_franc
+		relative_position_id = FLE_increase_natives_exploitation
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_increase_natives_exploitation
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_close_unprofiatble_sectors
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FLE_black_monday_first_phase
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_increase_natives_exploitation
+		}
+		prerequisite = {
+			focus = FLE_black_monday_first_phase
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_issue_new_banknotes
+		icon = GFX_focus_generic_concessions
+		relative_position_id = FLE_close_unprofiatble_sectors
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_close_unprofiatble_sectors
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_tighten_control_over_national_market
+		icon = GFX_focus_generic_treaty
+		relative_position_id = FLE_ost_mark
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_ost_mark
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_agricultural_reform
+		icon = GFX_focus_generic_agriculture
+		relative_position_id = FLE_ost_mark
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_ost_mark
+			focus = FLE_issue_new_banknotes
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_reopen_the_markets
+		icon = GFX_focus_generic_self_management
+		relative_position_id = FLE_issue_new_banknotes
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_issue_new_banknotes
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_begin_armament
+		icon = GFX_focus_generic_tank_production
+		relative_position_id = FLE_agricultural_reform
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_agricultural_reform
+		}
+		prerequisite = {
+			focus = FLE_tighten_control_over_national_market
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_open_competition_with_metropole
+		icon = GFX_focus_rom_royal_dictatorship
+		relative_position_id = FLE_agricultural_reform
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_agricultural_reform
+		}
+		prerequisite = {
+			focus = FLE_reopen_the_markets
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_metropole_increases_autonomy
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 18
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = our_autonomy_as_colony_has_been_increased
+				OR = {
+					has_country_flag = FLE_autonomy_increased_internal
+					has_country_flag = FLE_autonomy_increased_overall
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_a_new_governor
+		icon = GFX_focus_generic_elections
+		relative_position_id = FLE_metropole_increases_autonomy
+		x = -5
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_metropole_increases_autonomy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event
+		}		
+	}
+
+	focus = { 
+		id = FLE_sekai_ichi
+		icon = GFX_focus_stroheim
+		relative_position_id = FLE_a_new_governor
+		x = -4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			has_country_leader = {
+				name = "Rudolf von Stroheim"
+   				ruling_only = yes
+			}
+		}
+		bypass = {
+			has_country_leader = {
+				name = "Rudolf von Stroheim"
+   				ruling_only = yes
+			}
+		}
+		prerequisite = {
+			focus = FLE_a_new_governor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_move_capital_to_reitze
+		icon = GFX_goal_generic_dangerous_deal
+		relative_position_id = FLE_sekai_ichi
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_sekai_ichi
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			hidden_effect = {
+				set_capital = 782
+			}
+			add_political_power = -50
+			custom_effect_tooltip = capital_will_be_moved_to_reitze
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_secret_weapon_shipments_to_joestars
+		icon = GFX_focus_focus_fra_maquis
+		relative_position_id = FLE_move_capital_to_reitze
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_move_capital_to_reitze
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#send equimpent to joestars
+			#event for joestars with idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_industriegesetz
+		icon = GFX_focus_generic_industry_2
+		relative_position_id = FLE_secret_weapon_shipments_to_joestars
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_secret_weapon_shipments_to_joestars
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			#buildings
+		}		
+	}
+
+	focus = { 
+		id = FLE_tighten_ostgesetz
+		icon = GFX_focus_hol_the_foundations_of_defense
+		relative_position_id = FLE_sekai_ichi
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_sekai_ichi
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#modify ostgesetz idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_centralize_government
+		icon = GFX_focus_generic_treaty
+		relative_position_id = FLE_tighten_ostgesetz
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_tighten_ostgesetz
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_promote_local_industrialists
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		relative_position_id = FLE_centralize_government
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_centralize_government
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea boosting production and factory construction while lowering pp gain
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_rapid_militarization
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = FLE_promote_local_industrialists
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_promote_local_industrialists
+		}
+		prerequisite = {
+			focus = FLE_industriegesetz
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea boosting factory construction for 100 days
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_stick_with_wissmann
+		icon = GFX_focus_wissmann
+		relative_position_id = FLE_a_new_governor
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_a_new_governor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_lower_internal_tariffs
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		relative_position_id = FLE_stick_with_wissmann
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_stick_with_wissmann
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea for lowered tariffs
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_permit_paramilitary_units
+		icon = GFX_focus_mex_caudillo_private_armies
+		relative_position_id = FLE_lower_internal_tariffs
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_lower_internal_tariffs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			#gain militia-based template
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_university_in_reitze
+		icon = GFX_focus_research
+		relative_position_id = FLE_permit_paramilitary_units
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_permit_paramilitary_units
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea with research boost
+			add_research_slot = 1
+		}		
+	}
+
+	focus = { 
+		id = FLE_liquidate_ordnungsdepartment
+		icon = GFX_focus_spa_save_the_alcazar
+		relative_position_id = FLE_stick_with_wissmann
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_stick_with_wissmann
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#remove OD idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_invite_natives_to_politics
+		icon = GFX_focus_generic_military_academy
+		relative_position_id = FLE_liquidate_ordnungsdepartment
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_liquidate_ordnungsdepartment
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#remove idea which gives nerf to recruitable population
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_revoke_ostgesetz
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FLE_invite_natives_to_politics
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_invite_natives_to_politics
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#remove OG idea
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_neu_flensburger_boerse
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = FLE_revoke_ostgesetz
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_pantmawr_stock_exchange_colony_branch
+		}
+		prerequisite = {
+			focus = FLE_revoke_ostgesetz
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			custom_effect_tooltip = FLE_metropole_will_not_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_pantmawr_stock_exchange_colony_branch #A reward for Loyalty
+		icon = GFX_goal_generic_national_unity
+		relative_position_id = FLE_university_in_reitze
+		x = 0
+		y = 1
+		cost = 7.25
+		mutually_exclusive = {
+			focus = FLE_neu_flensburger_boerse
+		}
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_university_in_reitze
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_declare_independence
+		icon = GFX_goal_support_democracy
+		relative_position_id = FLE_neu_flensburger_boerse
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_rapid_militarization
+			focus = FLE_neu_flensburger_boerse
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event for ROOT and FRI
+		}		
+	}
+
+	focus = { 
+		id = FLE_a_third_option
+		icon = GFX_focus_hmmmm
+		relative_position_id = FLE_a_new_governor
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_a_new_governor
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_open_trade_routes_to_eastern_countries
+		icon = GFX_goal_generic_positive_trade_relations
+		relative_position_id = FLE_metropole_increases_autonomy
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = our_overall_autonomy_has_been_increased
+				has_country_flag = FLE_autonomy_increased_overall
+			}
+		}
+		prerequisite = {
+			focus = FLE_metropole_increases_autonomy
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = FLE_armament_deal_with_greenland
+		icon = GFX_goal_generic_military_sphere
+		relative_position_id = FLE_open_trade_routes_to_eastern_countries
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_open_trade_routes_to_eastern_countries
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event for greenland
+		}		
+	}
+
+	focus = { 
+		id = FLE_supply_joestar_war_effort
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = FLE_armament_deal_with_greenland
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_armament_deal_with_greenland
+		}
+		mutually_exclusive = {
+			focus = FLE_break_the_embargo_blockade_on_dio
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#send equipment
+			#event for joestars
+			#buildings
+		}		
+	}
+
+	focus = { 
+		id = FLE_luvlandrohstoffe_gesellschaft
+		icon = GFX_goal_generic_oil_refinery
+		relative_position_id = FLE_supply_joestar_war_effort
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_supply_joestar_war_effort
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			#resources
+		}		
+	}
+
+	focus = { 
+		id = FRI_expeditions_for_resources #MOVED FROM FRIEDEWALT TREE
+		icon = GFX_goal_generic_forceful_treaty
+		relative_position_id = FLE_open_trade_routes_to_eastern_countries
+		x = 1
+		y = 1
+		cost = 5
+		prerequisite = { focus = FLE_open_trade_routes_to_eastern_countries }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			SIO = {
+				country_event = {
+					id = friedewalt.10
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_break_the_embargo_blockade_on_dio
+		icon = GFX_focus_spr_crush_the_revolution
+		relative_position_id = FRI_expeditions_for_resources
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_supply_joestar_war_effort
+		}
+		prerequisite = {
+			focus = FRI_expeditions_for_resources
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			#event for joestars
+			#event for Dio
+			#buildings
+		}		
+	}
+
+	focus = { 
+		id = FLE_ost_autobahn
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = FLE_break_the_embargo_blockade_on_dio
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_break_the_embargo_blockade_on_dio
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 802
+						state = 1023
+						state = 1021
+						state = 1024
+						state = 795
+						state = 791
+						state = 1034
+						state = 769
+						state = 1037
+						state = 1038
+						state = 733
+						state = 782
+						state = 1041
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_we_are_on_our_own
+		icon = GFX_goal_tfv_sever_ties_with_uk
+		x = 30
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = pantmawr_has_cut_funds
+				has_country_flag = FLE_funds_were_cut
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_redirect_food_exports
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		relative_position_id = FLE_we_are_on_our_own
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_we_are_on_our_own
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_focus_on_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		relative_position_id = FLE_redirect_food_exports
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_redirect_food_exports
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_reopen_border_with_sioux
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FLE_focus_on_industrialization
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_focus_on_industrialization
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#remove_negative relation_modifier_with_sioux
+		}		
+	}
+
+	focus = { 
+		id = FLE_the_colonial_granary
+		icon = GFX_focus_generic_agriculture
+		relative_position_id = FLE_reopen_border_with_sioux
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_reopen_border_with_sioux
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#civilian factories construction in some states
+		}		
+	}
+
+	focus = { 
+		id = FLE_industrialize_islands
+		icon = GFX_goal_generic_construct_civilian
+		relative_position_id = FLE_reopen_border_with_sioux
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_reopen_border_with_sioux
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#factories construction in some states, 1 civs 1 state per small island + 2 civ in one state on big islands
+		}		
+	}
+
+	focus = { 
+		id = FLE_focus_on_armament
+		icon = GFX_goal_generic_construct_mil_factory
+		relative_position_id = FLE_redirect_food_exports
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_redirect_food_exports
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+			#2 mils in 1 state per big island and 1 mil in 1 state per smaller island
+		}		
+	}
+
+	focus = { 
+		id = FLE_privatisation_of_ost_kolonie_lloyd
+		icon = GFX_focus_generic_navy_battleship2
+		relative_position_id = FLE_focus_on_armament
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_focus_on_armament
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = FLE_ost_bahn
+		icon = GFX_focus_generic_railroad
+		relative_position_id = FLE_privatisation_of_ost_kolonie_lloyd
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_privatisation_of_ost_kolonie_lloyd
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#infrastructure
+		}		
+	}
+
+	focus = { 
+		id = FLE_attracting_investors
+		icon = GFX_focus_mex_privatisation
+		relative_position_id = FLE_ost_bahn
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_the_colonial_granary
+		}
+		prerequisite = {
+			focus = FLE_industrialize_islands
+		}
+		prerequisite = {
+			focus = FLE_ost_bahn
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event
+		}		
+	}
+
+	focus = { 
+		id = FLE_from_danville
+		icon = GFX_focus_generic_the_giant_wakes
+		relative_position_id = FLE_attracting_investors
+		x = -4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_attracting_investors
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_integrate_tri_state_industrial_technology
+		icon = GFX_focus_research
+		relative_position_id = FLE_from_danville
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_danville
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea with boost to research & democratic popularity
+		}		
+	}
+
+	focus = { 
+		id = FLE_expand_northwestern_ports
+		icon = GFX_focus_generic_destroyer
+		relative_position_id = FLE_from_danville
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_danville
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#naval bases expansion
+		}		
+	}
+
+	focus = { 
+		id = FLE_from_flower_hill
+		icon = GFX_focus_prc_agrarian_socialism
+		relative_position_id = FLE_attracting_investors
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_attracting_investors
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_integrate_flower_technology
+		icon = GFX_focus_generic_socialist_science
+		relative_position_id = FLE_from_flower_hill
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_flower_hill
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea with boost to research& equalist popularity
+		}		
+	}
+
+	focus = { 
+		id = FLE_expand_islands_infrastructure_and_ports
+		icon = GFX_goal_generic_construct_infrastructure
+		relative_position_id = FLE_from_flower_hill
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_flower_hill
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#infrastrucutre and ports on islands
+		}		
+	}
+
+	focus = { 
+		id = FLE_from_dio
+		icon = GFX_focus_ger_reichskommisariats
+		relative_position_id = FLE_attracting_investors
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_attracting_investors
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_direct_to_luvland
+		icon = GFX_goal_generic_intelligence_exchange
+		relative_position_id = FLE_from_dio
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_dio
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea with increase of strengthenist popularity
+		}		
+	}
+
+	focus = { 
+		id = FLE_allow_to_go_where_they_please
+		icon = GFX_focus_generic_cruiser2
+		relative_position_id = FLE_from_dio
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_from_dio
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			give_military_access = DIO
+			diplomatic_relation = {
+    			country = DIO
+   				relation = docking_rights
+    			active = yes
+			}
+		}		
+	}
 	
 	default = no
 }

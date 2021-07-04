@@ -1273,30 +1273,6 @@ focus_tree = {
 	#############################################################################################################################################   
 
 	focus = { 
-		id = FRI_expeditions_for_resources #THIS HAS TO BE MOVED TO FLENSBURGS TREE
-		icon = GFX_goal_generic_positive_trade_relations
-		x = 1
-		y = 4
-		cost = 5
-	#	prerequisite = { focus = FRI_naval_expansion }
-		available = {
-			always = no
-		}
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			SIO = {
-				country_event = {
-					id = friedewalt.10
-					days = 1
-				}
-			}
-		}		
-	}
-
-	focus = { 
 		id = FRI_a_new_start_for_diplomacy
 		icon = GFX_goal_generic_navy_battleship
 		x = 8

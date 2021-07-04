@@ -82,6 +82,9 @@ set_research_slots = 5
 
 add_ideas = {
 	modern_tech_idea
+	FLE_ostgesetz
+	FLE_ordnungsdepartment
+	FLE_medium_funding_from_pantmawr
 }
 
 set_convoys = 50
@@ -111,6 +114,17 @@ create_country_leader = {
 	picture = "wissman.dds"
 	expire = "1965.1.1"
 	ideology = administrative_monarchy
+	traits = {
+		#
+	}
+}
+
+create_country_leader = {
+	name = "Rudolf von Stroheim"
+	desc = "POLITICS_STROHEIM_DESC"
+	picture = "wissman.dds"
+	expire = "1965.1.1"
+	ideology = fascism_ideology
 	traits = {
 		#
 	}

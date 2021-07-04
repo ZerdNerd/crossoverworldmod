@@ -266,7 +266,7 @@ country_event = { #Expeditions for resources - Sioux are asked
 
 	option = { #OK
 		name = friedewalt.10.a
-		FRI = {
+		FLE = {
 			country_event = {
 				id = friedewalt.11
 				days = 1
@@ -279,7 +279,7 @@ country_event = { #Expeditions for resources - Sioux are asked
 
 	option = { #We don't want white people here
 		name = friedewalt.10.b
-		FRI = {
+		FLE = {
 			country_event = {
 				id = friedewalt.12
 				days = 1
@@ -869,6 +869,11 @@ country_event = { #Pantmawr grants us larger autonomy in internal affairs
 	option = { #A surprise, to be sure, but a welcome one.
 		name = friedewalt.24.a
 		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = FLE_autonomy_increased_internal
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = FLE_metropole_increases_autonomy
+		}
 	}
 }
 
@@ -885,6 +890,11 @@ country_event = { #Pantmawr grants us larger autonomy
 		name = friedewalt.25.a
 		add_political_power = 50
 		add_stability = 0.05
+		hidden_effect = {
+			set_country_flag = FLE_autonomy_increased_overall
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = FLE_metropole_increases_autonomy
+		}
 	}
 }
 
@@ -902,6 +912,11 @@ country_event = { #Pantmawr cuts funding
 		add_political_power = -50
 		add_stability = -0.1
 		add_war_support = 0.1
+		hidden_effect = {
+			set_country_flag = FLE_funds_were_cut
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = FLE_we_are_on_our_own
+		}
 	}
 }
 
@@ -1111,11 +1126,6 @@ country_event = { #Pantmawr grants us independence in internal affairs
 
 	option = { #Great!
 		name = friedewalt.35.a
-		
-	}
-
-	option = { #Organize elections right away!
-		name = friedewalt.35.b
 		
 	}
 }

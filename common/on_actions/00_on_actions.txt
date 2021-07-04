@@ -3591,6 +3591,9 @@ on_actions = {
 							}
 						}
 					}
+					NOT = {
+						has_country_flag = general_moved_to_second_stage
+					}
 					has_war = no
 				}
 				country_event = {
@@ -3628,6 +3631,11 @@ on_actions = {
 					NOT = {
 						has_country_flag = general_moved_to_second_stage
 					}
+					OR = {
+						has_idea = MAI_aftermath_of_role_change_law_1
+						has_idea = MAI_aftermath_of_role_change_law_2
+						has_idea = MAI_aftermath_of_role_change_law_3
+					}
 					has_variable = days_countdown_macius_come_on
 					check_variable = {
 						days_countdown_macius_come_on < 30
@@ -3643,6 +3651,11 @@ on_actions = {
 						}
 						NOT = {
 							has_country_flag = general_moved_to_second_stage
+						}
+						OR = {
+							has_idea = MAI_aftermath_of_role_change_law_1
+							has_idea = MAI_aftermath_of_role_change_law_2
+							has_idea = MAI_aftermath_of_role_change_law_3
 						}
 						has_variable = days_countdown_macius_come_on
 						check_variable = {
