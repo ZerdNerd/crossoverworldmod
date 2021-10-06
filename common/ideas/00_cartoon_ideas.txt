@@ -3770,6 +3770,373 @@ ideas = {
 				autonomy_gain = 0.005
 			}
 		}
+
+		FLE_exploitation_of_natives = {
+			picture = generic_oppression
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.05
+				stability_factor = -0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		FLE_ostmark_idea = {
+			picture = coins
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				political_power_factor = 0.05
+			}
+		}
+
+		FLE_unprofitable_sectors_closed = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_new_banknotes = {
+			picture = coins
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = -0.025
+				stability_factor = 0.05
+				political_power_factor = -0.05
+			}
+		}
+
+		FLE_agro_reform = {
+			picture = generic_agrarian_reform
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		FLE_armament_process = {
+			picture = idea_mex_callistas
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.1
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		FLE_competition_with_metropole = {
+			picture = idea_mex_callistas
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		FLE_help_to_joestars = {
+			picture = spr_collectivized_society
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = 20 
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		FLE_industrie_gesetz = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		FLE_centralization = {
+			picture = hol_aloof_neutrality
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				production_factory_max_efficiency_factor = -0.025
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		FLE_promotion_of_local_industrialists = {
+			picture = generic_local_self_management
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				production_speed_industrial_complex_factor = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		FLE_grosse_aufrustungsprogramm = {
+			picture = generic_war_preparation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.15
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				stability_factor = -0.15
+			}
+		}
+
+		FLE_lowered_internal_tariffs = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				industrial_capacity_factory = 0.05
+				trade_opinion_factor = 0.05
+			}
+		}
+
+		FLE_flensburgian_militia = {
+			picture = chi_army_corruption3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				army_core_defence_factor = 0.1
+				industry_repair_factor = 0.15
+				political_power_gain = -0.1
+			}
+		}
+
+		FLE_reitze_university = {
+			picture = office_of_strategic_services
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+
+		FLE_new_flensburg_stock_exchange = {
+			picture = generic_foreign_capital
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = 0.05
+				autonomy_gain = 0.1
+			}
+		}
+
+		FLE_pantmawr_stock_exchange_neu_flensburg_branch = {
+			picture = generic_flexible_foreign_policy
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.025
+				stability_factor = -0.05
+				autonomy_gain = -0.05
+			}
+		}
+
+		FLE_raised_taxes = {
+			picture = coins
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_raised_taxes_2 = {
+			picture = coins
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.1
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_ordnungsdepartment_2 = {
+			picture = boot_2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.01
+				political_power_factor = -0.1
+			}
+		}
+
+		FLE_ostgesetz_modified_2_opt_1 = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.55
+				trade_opinion_factor = -0.3
+				war_support_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_ostgesetz_modified_2_opt_2 = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.45
+				trade_opinion_factor = -0.3
+				war_support_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_citizen_surveillance = {
+			picture = prc_low_popular_support3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		FLE_ostgesetz_modified_3_opt_1 = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.45
+				trade_opinion_factor = -0.25
+				stability_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		FLE_ostgesetz_modified_3_opt_2 = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription_factor = -0.45
+				trade_opinion_factor = -0.3
+				war_support_factor = -0.1
+				stability_factor = -0.05
+			}
+		}
+
+		FLE_eastern_trade_routes_opened = {
+			picture = generic_political_support
+			allowed = {
+				always = no
+			}
+			modifier = {
+				trade_opinion_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = DIO
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = JOJ
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = ARE
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = PIL
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = MOR
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = MO2
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = MIC
+				trade_cost_for_target_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = RAB
+				trade_cost_for_target_factor = -0.05
+			}
+		}
+
+		FLE_flensburg_greenland_deal = {
+			picture = generic_license_production
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = 0.05
+				consumer_goods_factor = 0.05
+			}
+			targeted_modifier = {
+				tag = GRN mic_to_target_factor = 0.1 cic_to_target_factor = 0.1
+			}
+		}
+
+		FLE_GRN_flensburg_greenland_deal = {
+			picture = generic_license_production
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				consumer_goods_factor = -0.05
+			}
+			targeted_modifier = {
+				tag = FLE trade_cost_for_target_factor = -0.15
+			}
+		}
 	}
 
 	##############################################################################################################################

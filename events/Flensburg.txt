@@ -1,0 +1,191 @@
+﻿###########################
+# Neu Flensburg Events
+###########################
+
+add_namespace = flensburg
+
+country_event = { #Landscape after Black Monday
+	id = flensburg.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.1"}
+	title = flensburg.1.t
+	desc = flensburg.1.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #The colonial council starts the debate
+		name = flensburg.1.a
+		country_event = {
+			id = flensburg.2
+			days = 5
+		}
+	}
+}
+
+country_event = { #The End of Endless Debate
+	id = flensburg.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.2"}
+	title = flensburg.2.t
+	desc = flensburg.2.d
+	picture = GFX_report_event_hitler_handshake
+
+	is_triggered_only = yes
+
+	option = { #Left side of tree
+		name = flensburg.2.a
+		custom_effect_tooltip = FLE_left_side_will_be_available
+		hidden_effect = {
+			set_country_flag = FLE_left_side_bm
+		}
+	}
+
+	option = { #Right side of tree
+		name = flensburg.2.b
+		custom_effect_tooltip = FLE_left_side_will_be_available
+		hidden_effect = {
+			set_country_flag = FLE_right_side_bm
+		}
+	}
+}
+
+country_event = { #First Governor Elections
+	id = flensburg.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.3"}
+	title = flensburg.3.t
+	desc = flensburg.3.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #Wissman stays
+		name = flensburg.3.a
+		hidden_effect = {
+			complete_national_focus = FLE_stick_with_wissmann
+		}
+	}
+
+	option = { #Time to make the colony great!
+		name = flensburg.3.a
+		set_politics = {
+			ruling_party = fascism
+		}
+		hidden_effect = {
+			complete_national_focus = FLE_sekai_ichi
+		}
+	}
+
+	option = { #The man from overseas will change our country
+		name = flensburg.3.a
+		create_country_leader = {
+			name = "Gustaw Kramer"
+			desc = "POLITICS_KRAMER_DESC"
+			picture = "kramer.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		hidden_effect = {
+			complete_national_focus = FLE_a_shady_banker
+		}
+	}
+}
+
+country_event = { #Equipment from Neu Flensburg
+	id = flensburg.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.4"}
+	title = flensburg.4.t
+	desc = flensburg.4.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #What a surprise
+		name = flensburg.4.a
+		trigger = {
+			tag = JOJ
+		}
+		add_ideas = {
+			FLE_help_to_joestars
+		}
+	}
+
+	option = { #Uh... thanks, I guess?
+		name = flensburg.4.b
+		trigger = {
+			tag = DES
+		}
+		add_ideas = {
+			FLE_help_to_joestars
+		}
+	}
+}
+
+country_event = { #Neu Flensburg proposes us an economic deal
+	id = flensburg.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.5"}
+	title = flensburg.5.t
+	desc = flensburg.5.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #Accept
+		name = flensburg.5.a
+		add_ideas = {
+			FLE_GRN_flensburg_greenland_deal
+		}
+		FLE = {
+			country_event = {
+				id = flensburg.6
+				days = 1
+			}
+		}
+	}
+
+	option = { #Reject
+		name = flensburg.5.b
+		FLE = {
+			country_event = {
+				id = flensburg.7
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Greenland accepted our economic proposal
+	id = flensburg.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.6"}
+	title = flensburg.6.t
+	desc = flensburg.6.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #aw yiss
+		name = flensburg.6.a
+		add_ideas = {
+			FLE_flensburg_greenland_deal
+		}
+	}
+}
+
+country_event = { #Greenland rejected our economic proposal
+	id = flensburg.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.7"}
+	title = flensburg.7.t
+	desc = flensburg.7.d
+	picture = GFX_report_event_iww_demonstration
+
+	is_triggered_only = yes
+
+	option = { #damn
+		name = flensburg.7.a
+		add_political_power = -20
+	}
+}

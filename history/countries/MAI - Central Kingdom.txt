@@ -228,3 +228,19 @@ create_corps_commander = {
     planning_skill = 2
     logistics_skill = 2
 }
+
+if = {
+	limit = {
+		has_dlc = "La Resistance"
+	}
+	create_operative_leader = {
+		name = "Henryk Kwinto"
+		GFX = GFX_portrait_kwinto
+		traits = { just_a_musician }
+		bypass_recruitment = yes
+		available_to_spy_master = yes
+		nationalities = { MAI }
+	}
+}
+
+create_intelligence_agency = yes #only for debug

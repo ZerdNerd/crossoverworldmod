@@ -26,7 +26,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#event
+			country_event = {
+				id = flensburg.1
+				days = 0
+			}
 		}		
 	}
 
@@ -38,6 +41,9 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		available = {
+			has_country_flag = FLE_left_side_bm
+		}
 		mutually_exclusive = {
 			focus = FLE_close_unprofiatble_sectors
 		}
@@ -48,7 +54,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_exploitation_of_natives
+			}
 		}		
 	}
 
@@ -67,7 +75,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_ostmark_idea
+			}
 		}		
 	}
 
@@ -79,6 +89,9 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		available = {
+			has_country_flag = FLE_right_side_bm
+		}
 		mutually_exclusive = {
 			focus = FLE_increase_natives_exploitation
 		}
@@ -89,7 +102,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_timed_idea = {
+				idea = FLE_unprofitable_sectors_closed
+				days = 250
+			}
 		}		
 	}
 
@@ -108,7 +124,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_new_banknotes
+			}
 		}		
 	}
 
@@ -127,7 +145,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday
+				add_idea = TCWMod_black_monday_2
+			}
 		}		
 	}
 
@@ -147,7 +168,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_agro_reform
+			}
 		}		
 	}
 
@@ -166,7 +189,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			swap_ideas = {
+				remove_idea = TCWMod_black_monday
+				add_idea = TCWMod_black_monday_2
+			}
 		}		
 	}
 
@@ -176,7 +202,7 @@ focus_tree = {
 		relative_position_id = FLE_agricultural_reform
 		x = -1
 		y = 1
-		cost = 7.25
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = FLE_agricultural_reform
@@ -188,7 +214,39 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			custom_effect_tooltip = FLE_neighbors_on_eastern_continent_will_not_receive_this_well
+			remove_ideas = {
+				TCWMod_black_monday_2
+			}
+			add_ideas = {
+				FLE_armament_process
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							tag = SIO
+							tag = TUG
+							tag = GRN
+							tag = DES
+							tag = BEE
+							tag = HOR
+							tag = MIC
+							tag = JOJ
+							tag = MOR
+							tag = MO2
+							tag = DIO
+							tag = ARE
+							tag = TIG
+							tag = ICW
+						}
+					}
+					add_opinion_modifier = {
+    					target = FLE
+    					modifier = TCWMod_they_see_us_as_danger
+					}
+				}
+			}
 		}		
 	}
 
@@ -198,7 +256,7 @@ focus_tree = {
 		relative_position_id = FLE_agricultural_reform
 		x = 1
 		y = 1
-		cost = 7.25
+		cost = 10
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = FLE_agricultural_reform
@@ -210,7 +268,13 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			custom_effect_tooltip = FLE_the_metropole_will_not_receive_this_well
+			remove_ideas = {
+				TCWMod_black_monday_2
+			}
+			add_ideas = {
+				FLE_competition_with_metropole
+			}
 		}		
 	}
 
@@ -253,7 +317,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#event
+			country_event = {
+				id = flensburg.3
+				days = 0
+			}
 		}		
 	}
 
@@ -266,12 +333,6 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes
 		available = {
-			has_country_leader = {
-				name = "Rudolf von Stroheim"
-   				ruling_only = yes
-			}
-		}
-		bypass = {
 			has_country_leader = {
 				name = "Rudolf von Stroheim"
    				ruling_only = yes
@@ -327,8 +388,18 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#send equimpent to joestars
-			#event for joestars with idea
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 2500
+    			target = JOJ
+			}
+			JOJ = {
+				add_manpower = 5000
+				country_event = {
+					id = flensburg.4
+					days = 0
+				}
+			}
 		}		
 	}
 
@@ -347,8 +418,30 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
-			#buildings
+			add_ideas = {
+				FLE_industrie_gesetz
+			}
+			1031 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			733 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1030 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -367,7 +460,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#modify ostgesetz idea
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz
+				add_idea = FLE_ostgesetz_modified
+			}
 		}		
 	}
 
@@ -386,7 +482,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_centralization
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -406,7 +504,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea boosting production and factory construction while lowering pp gain
+			add_ideas = {
+				FLE_promotion_of_local_industrialists
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -429,7 +529,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea boosting factory construction for 100 days
+			add_timed_idea = {
+				idea = FLE_grosse_aufrustungsprogramm
+				days = 100
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -468,7 +571,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea for lowered tariffs
+			add_ideas = {
+				FLE_lowered_internal_tariffs
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -488,7 +593,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_flensburgian_militia
+			}
 			#gain militia-based template
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
@@ -509,7 +616,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea with research boost
+			add_ideas = {
+				FLE_reitze_university
+			}
 			add_research_slot = 1
 		}		
 	}
@@ -529,7 +638,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#remove OD idea
+			remove_ideas = {
+				FLE_ordnungsdepartment
+			}
 		}		
 	}
 
@@ -548,7 +659,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#remove idea which gives nerf to recruitable population
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz
+				add_idea = FLE_ostgesetz_2
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -559,7 +673,7 @@ focus_tree = {
 		relative_position_id = FLE_invite_natives_to_politics
 		x = 0
 		y = 1
-		cost = 7.25
+		cost = 14.4
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = FLE_invite_natives_to_politics
@@ -568,7 +682,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#remove OG idea
+			remove_ideas = {
+				FLE_ostgesetz_2
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -591,7 +707,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_new_flensburg_stock_exchange
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -614,7 +732,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_pantmawr_stock_exchange_neu_flensburg_branch
+			}
 		}		
 	}
 
@@ -622,13 +742,14 @@ focus_tree = {
 		id = FLE_declare_independence
 		icon = GFX_goal_support_democracy
 		relative_position_id = FLE_neu_flensburger_boerse
-		x = -1
+		x = 1
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
 		prerequisite = {
 			focus = FLE_rapid_militarization
 			focus = FLE_neu_flensburger_boerse
+			focus = FLE_the_other_kind_of_deal
 		}
 		ai_will_do = { 
 			factor = 1
@@ -639,8 +760,8 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLE_a_third_option
-		icon = GFX_focus_hmmmm
+		id = FLE_a_shady_banker
+		icon = GFX_focus_kramer
 		relative_position_id = FLE_a_new_governor
 		x = 4
 		y = 1
@@ -654,6 +775,231 @@ focus_tree = {
 		} 
 		completion_reward = { 
 			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_raise_taxes
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		relative_position_id = FLE_a_shady_banker
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_a_shady_banker
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FLE_raised_taxes
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_improve_tax_collection_methods
+		icon = GFX_focus_generic_military_mission
+		relative_position_id = FLE_raise_taxes
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_raise_taxes
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FLE_raised_taxes
+				add_idea = FLE_raised_taxes_2
+			}
+			swap_ideas = {
+				remove_idea = FLE_ordnungsdepartment
+				add_idea = FLE_ordnungsdepartment_2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_maximize_exploitation_of_natives
+		icon = GFX_focus_CZE_german_puppet
+		relative_position_id = FLE_improve_tax_collection_methods
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_improve_tax_collection_methods
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = FLE_ostgesetz
+				}
+				swap_ideas = {
+					remove_idea = FLE_ostgesetz
+					add_idea = FLE_ostgesetz_modified_2_opt_1
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = FLE_ostgesetz_modified_3_opt_1
+						add_idea = FLE_ostgesetz_modified_2_opt_2
+					}
+				}
+			}
+			custom_effect_tooltip = FLE_natives_and_their_compatriots_wont_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_the_art_of_the_deal
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FLE_maximize_exploitation_of_natives
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_the_other_kind_of_deal
+		}
+		prerequisite = {
+			focus = FLE_raise_colonial_legions
+		}
+		prerequisite = {
+			focus = FLE_maximize_exploitation_of_natives
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = FLE_kramer_receives_personal_bodyguards
+			hidden_effect = {
+				set_country_flag = kramer_has_bodyguards
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_expand_citizens_surveillance
+		icon = GFX_focus_TUR_the_sun_language_theory
+		relative_position_id = FLE_a_shady_banker
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_a_shady_banker
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_ideas = {
+				FLE_citizen_surveillance
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_fuel_the_desert_conflict
+		icon = GFX_goal_generic_small_arms
+		relative_position_id = FLE_expand_citizens_surveillance
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_expand_citizens_surveillance
+		}
+		bypass = {
+			DES = {
+				exists = no
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			send_equipment = {
+    			equipment = infantry_equipment
+    			amount = 1000
+    			target = DES
+			}
+			DES = {
+				add_manpower = 2500
+				country_event = {
+					id = flensburg.4
+					days = 0
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_raise_colonial_legions
+		icon = GFX_focus_generic_manpower
+		relative_position_id = FLE_fuel_the_desert_conflict
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_fuel_the_desert_conflict
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					has_idea = FLE_ostgesetz
+				}
+				swap_ideas = {
+					remove_idea = FLE_ostgesetz
+					add_idea = FLE_ostgesetz_modified_3_opt_1
+				}
+				else = {
+					swap_ideas = {
+						remove_idea = FLE_ostgesetz_modified_2_opt_1
+						add_idea = FLE_ostgesetz_modified_3_opt_2
+					}
+				}
+			}
+			custom_effect_tooltip = FLE_natives_and_their_compatriots_wont_like_this
+		}		
+	}
+
+	focus = { 
+		id = FLE_the_other_kind_of_deal
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FLE_raise_colonial_legions
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_raise_colonial_legions
+		}
+		prerequisite = {
+			focus = FLE_maximize_exploitation_of_natives
+		}
+		mutually_exclusive = {
+			focus = FLE_the_art_of_the_deal
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_stability = -0.15
+			custom_effect_tooltip = FLE_kramer_will_turn_the_metropole_against_him
 		}		
 	}
 
@@ -678,7 +1024,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			
+			add_ideas = {
+				FLE_eastern_trade_routes_opened
+			}
 		}		
 	}
 
@@ -697,7 +1045,12 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#event for greenland
+			GRN = {
+				country_event = {
+					id = flensburg.5
+					days = 1
+				}
+			}
 		}		
 	}
 
@@ -1003,7 +1356,29 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#infrastructure
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 802
+						state = 1022
+						state = 1031
+						state = 1020
+						state = 1033
+						state = 1032
+						state = 1035
+						state = 1036
+						state = 1038
+						state = 733
+						state = 1041
+						state = 27
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -1223,6 +1598,519 @@ focus_tree = {
    				relation = docking_rights
     			active = yes
 			}
+		}		
+	}
+
+	### INDEPENDENCE PART
+
+	focus = { 
+		id = FLE_the_path_of_freedom
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 10
+		y = 9
+		cost = 7.25
+		available_if_capitulated = yes
+		available = {
+			is_puppet = no
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FLE_abolish_ostgesetz
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FLE_the_path_of_freedom
+		x = -4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_the_path_of_freedom
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			remove_ideas = { #change to swap ideas
+				FLE_ostgesetz
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_allow_natives_to_form_their_own_government
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		relative_position_id = FLE_abolish_ostgesetz
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_one_country_one_nation
+		}
+		prerequisite = {
+			focus = FLE_abolish_ostgesetz
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#swap ideas
+		}		
+	}
+
+	focus = { 
+		id = FLE_bringing_us_closer_policy
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FLE_allow_natives_to_form_their_own_government
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_allow_natives_to_form_their_own_government
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#add ideas
+		}		
+	}
+
+	focus = { 
+		id = FLE_one_country_one_nation
+		icon = GFX_goal_generic_national_unity
+		relative_position_id = FLE_abolish_ostgesetz
+		x = 2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FLE_allow_natives_to_form_their_own_government
+		}
+		prerequisite = {
+			focus = FLE_abolish_ostgesetz
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#swap ideas
+		}		
+	}
+
+	focus = { 
+		id = FLE_introduce_social_benefits
+		icon = GFX_focus_generic_treaty
+		relative_position_id = FLE_one_country_one_nation
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_one_country_one_nation
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#add ideas
+		}		
+	}
+
+	focus = { 
+		id = FLE_abolish_segregation
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		relative_position_id = FLE_one_country_one_nation
+		x = -2
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_allow_natives_to_form_their_own_government
+			focus = FLE_one_country_one_nation
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#remove ideas
+		}		
+	}
+
+	focus = { 
+		id = FLE_open_investments_programs
+		icon = GFX_goal_generic_consumer_goods
+		relative_position_id = FLE_the_path_of_freedom
+		x = 4
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_the_path_of_freedom
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = FLE_new_investment_decisions_will_be_available
+		}		
+	}
+
+	focus = { 
+		id = FLE_the_pearl_of_our_nation
+		icon = GFX_focus_spa_save_the_alcazar
+		relative_position_id = FLE_open_investments_programs
+		x = 1
+		y = 1
+		cost = 8.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_open_investments_programs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			782 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 2664
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_trans_luvland_bahn
+		icon = GFX_focus_generic_railroad
+		relative_position_id = FLE_open_investments_programs
+		x = -1
+		y = 1
+		cost = 8.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_open_investments_programs
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 802
+						state = 1023
+						state = 1028
+						state = 797
+						state = 1030
+						state = 1029
+						state = 788
+						state = 769
+						state = 1040
+						state = 745
+						state = 699
+						state = 1041
+						state = 27
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_eight_island_country
+		icon = GFX_focus_generic_industry_2
+		relative_position_id = FLE_trans_luvland_bahn
+		x = 1
+		y = 1
+		cost = 8.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_trans_luvland_bahn
+		}
+		prerequisite = {
+			focus = FLE_the_pearl_of_our_nation
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					OR = {
+						state = 30
+						state = 31
+						state = 35
+						state = 37
+						state = 38
+						state = 40
+						state = 49
+					}
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_where_west
+		icon = GFX_focus_generic_navy_battleship2
+		relative_position_id = FLE_trans_luvland_bahn
+		x = -1
+		y = 1
+		cost = 8.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_trans_luvland_bahn
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			797 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 10315
+				}
+			}
+			1030 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 10144
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_new_towns_for_natives
+		icon = GFX_goal_generic_improve_relations
+		relative_position_id = FLE_where_west
+		x = 1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_where_west
+		}
+		prerequisite = {
+			focus = FLE_eight_island_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			1026 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1021 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1034 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1039 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_meets_the_east
+		icon = GFX_focus_generic_destroyer
+		relative_position_id = FLE_the_pearl_of_our_nation
+		x = 1
+		y = 1
+		cost = 8.6
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_the_pearl_of_our_nation
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			1031 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 4618
+				}
+			}
+			733 = {
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 9635
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_raise_builders_wages
+		icon = GFX_goal_generic_production
+		relative_position_id = FLE_meets_the_east
+		x = -1
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_meets_the_east
+		}
+		prerequisite = {
+			focus = FLE_eight_island_country
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
 		}		
 	}
 	
