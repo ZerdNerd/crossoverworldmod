@@ -1140,6 +1140,26 @@ focus_tree = {
 			factor = 1
 		} 
 
+		available = {
+			FLE = {
+				NOT = {
+					has_country_leader = {
+						name = "Rudolf von Stroheim"
+    					ruling_only = yes
+					}
+				}
+			}
+		}
+
+		bypass = {
+			FLE = {
+				has_country_leader = {
+					name = "Rudolf von Stroheim"
+    				ruling_only = yes
+				}
+			}
+		}
+
 		prerequisite = {
 			focus = JOJ_joseph_path
 		}

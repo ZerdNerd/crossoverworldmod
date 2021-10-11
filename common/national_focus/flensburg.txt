@@ -285,6 +285,12 @@ focus_tree = {
 		y = 0
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			OR = {
+				has_country_flag = FLE_autonomy_increased_overall
+				has_country_flag = FLE_autonomy_increased_internal
+			}
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = our_autonomy_as_colony_has_been_increased
@@ -317,6 +323,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
+			hidden_effect = {
+				set_country_flag = FLE_elections_incoming
+				mark_focus_tree_layout_dirty = yes
+			}
 			country_event = {
 				id = flensburg.3
 				days = 0
@@ -332,6 +342,13 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = FLE_elections_incoming
+			has_country_leader = {
+				name = "Rudolf von Stroheim"
+   				ruling_only = yes
+			}
+		}
 		available = {
 			has_country_leader = {
 				name = "Rudolf von Stroheim"
@@ -370,6 +387,12 @@ focus_tree = {
 			add_political_power = -50
 			custom_effect_tooltip = capital_will_be_moved_to_reitze
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -486,6 +509,12 @@ focus_tree = {
 				FLE_centralization
 			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -508,6 +537,12 @@ focus_tree = {
 				FLE_promotion_of_local_industrialists
 			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -534,6 +569,12 @@ focus_tree = {
 				days = 100
 			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 10
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -545,6 +586,13 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = FLE_elections_incoming
+			has_country_leader = {
+				name = "Herman von Wismann"
+   				ruling_only = yes
+			}
+		}
 		prerequisite = {
 			focus = FLE_a_new_governor
 		}
@@ -574,6 +622,12 @@ focus_tree = {
 			add_ideas = {
 				FLE_lowered_internal_tariffs
 			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -596,7 +650,29 @@ focus_tree = {
 			add_ideas = {
 				FLE_flensburgian_militia
 			}
-			#gain militia-based template
+			custom_effect_tooltip = FLE_will_unlock_colonial_militia
+			hidden_effect = {
+				division_template = {
+   					name = "Colonial Militia"
+    				is_locked = yes
+    				priority = 0
+    				template_counter = 0
+    				regiments = {
+        				militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+    				}
+				}
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -663,6 +739,12 @@ focus_tree = {
 				remove_idea = FLE_ostgesetz
 				add_idea = FLE_ostgesetz_2
 			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -682,8 +764,15 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			remove_ideas = {
-				FLE_ostgesetz_2
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz_2
+				add_idea = FLE_ostgesetz_aftermath
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
 			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
@@ -710,6 +799,12 @@ focus_tree = {
 			add_ideas = {
 				FLE_new_flensburg_stock_exchange
 			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 			custom_effect_tooltip = FLE_metropole_will_not_like_this
 		}		
 	}
@@ -732,6 +827,12 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = -35
+    				localization = FLE_colonial_developments
+				}
+			}
 			add_ideas = {
 				FLE_pantmawr_stock_exchange_neu_flensburg_branch
 			}
@@ -739,23 +840,64 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = FLE_declare_independence
+		id = FLE_declare_independence_1
 		icon = GFX_goal_support_democracy
 		relative_position_id = FLE_neu_flensburger_boerse
-		x = 1
+		x = 0
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
 		prerequisite = {
-			focus = FLE_rapid_militarization
 			focus = FLE_neu_flensburger_boerse
-			focus = FLE_the_other_kind_of_deal
+		}
+		available = {
+			compare_autonomy_progress_ratio > 0.99
 		}
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			#event for ROOT and FRI
+			country_event = {
+				id = flensburg.10
+				days = 0
+			}
+			FRI = {
+				country_event = {
+					id = flensburg.11
+					days = 3
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FLE_declare_independence_2
+		icon = GFX_goal_support_democracy
+		relative_position_id = FLE_rapid_militarization
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_rapid_militarization
+		}
+		available = {
+			compare_autonomy_progress_ratio > 0.99
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			country_event = {
+				id = flensburg.10
+				days = 0
+			}
+			FRI = {
+				country_event = {
+					id = flensburg.11
+					days = 3
+				}
+			}
 		}		
 	}
 
@@ -767,6 +909,10 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = FLE_elections_incoming
+			has_country_flag = kramer_in_the_colony
+		}
 		prerequisite = {
 			focus = FLE_a_new_governor
 		}
@@ -973,6 +1119,23 @@ focus_tree = {
 					}
 				}
 			}
+			custom_effect_tooltip = FLE_will_unlock_colonial_militia
+			hidden_effect = {
+				division_template = {
+   					name = "Colonial Militia"
+    				is_locked = yes
+    				priority = 0
+    				template_counter = 0
+    				regiments = {
+        				militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+    				}
+				}
+			}
 			custom_effect_tooltip = FLE_natives_and_their_compatriots_wont_like_this
 		}		
 	}
@@ -1000,6 +1163,34 @@ focus_tree = {
 		completion_reward = { 
 			add_stability = -0.15
 			custom_effect_tooltip = FLE_kramer_will_turn_the_metropole_against_him
+		}		
+	}
+
+	focus = { 
+		id = FLE_declare_independence_3
+		icon = GFX_goal_support_democracy
+		relative_position_id = FLE_the_other_kind_of_deal
+		x = 0
+		y = 1
+		cost = 7.25
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = FLE_the_other_kind_of_deal
+		}
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			country_event = {
+				id = flensburg.10
+				days = 0
+			}
+			FRI = {
+				country_event = {
+					id = flensburg.11
+					days = 3
+				}
+			}
 		}		
 	}
 
@@ -1072,9 +1263,55 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#send equipment
-			#event for joestars
-			#buildings
+			custom_effect_tooltip = FLE_openly_supporting_joestars
+			JOJ = {
+				country_event = {
+					id = flensburg.8
+					days = 1
+				}
+				add_opinion_modifier = {
+					target = FLE
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			DIO = {
+				add_opinion_modifier = {
+					target = FLE
+    				modifier = TCWMod_supports_enemy_cause
+				}
+			}
+			606 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			27 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1037 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -1093,8 +1330,88 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
-			#resources
+			every_owned_state = {
+				limit = {
+					NOT = {
+						state = 632
+						state = 638
+						state = 634
+						state = 30
+						state = 31
+						state = 801
+						state = 35
+						state = 40
+						state = 840
+						state = 38
+						state = 37
+						state = 49
+						state = 856
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources = 0.5
+						state_production_speed_buildings_factor = 0.15
+					}
+				}
+			}
+			random_owned_state = {
+				limit = {
+					OR = {
+						state = 1039
+						state = 1038
+						state = 1037
+					}
+				}
+				add_resource = {
+					type = oil
+    				amount = 4
+				}
+			}
+			random_owned_state = {
+				limit = {
+					OR = {
+						state = 769
+						state = 1035
+						state = 1032
+						state = 699
+					}
+				}
+				add_resource = {
+					type = oil
+    				amount = 3
+				}
+			}
+			random_owned_state = {
+				limit = {
+					OR = {
+						state = 1026
+						state = 1023
+					}
+				}
+				add_resource = {
+					type = oil
+    				amount = 3
+				}
+			}
+			802 = {
+				add_resource = {
+					type = aluminium
+    				amount = 6
+				}
+			}
+			1025 = {
+				add_resource = {
+					type = rubber
+    				amount = 6
+				}
+			}
+			1031 = {
+				add_resource = {
+					type = steel
+    				amount = 6
+				}
+			}
 		}		
 	}
 
@@ -1138,9 +1455,57 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = {
-			#event for joestars
-			#event for Dio
-			#buildings
+			custom_effect_tooltip = FLE_openly_supporting_dio
+			DIO = {
+				country_event = {
+					id = flensburg.8
+					days = 1
+				}
+				add_opinion_modifier = {
+					target = FLE
+    				modifier = TCWMod_supports_our_cause
+				}
+			}
+			JOJ = {
+				add_opinion_modifier = {
+					target = FLE
+    				modifier = TCWMod_supports_enemy_cause
+				}
+			}
+			442 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			733 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			1036 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -1182,6 +1547,11 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_buildings_factor = 0.25
+					}
+				}
 			}
 		}		
 	}
@@ -1189,10 +1559,13 @@ focus_tree = {
 	focus = { 
 		id = FLE_we_are_on_our_own
 		icon = GFX_goal_tfv_sever_ties_with_uk
-		x = 30
+		x = 18
 		y = 0
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = FLE_funds_were_cut
+		}
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = pantmawr_has_cut_funds
@@ -1222,7 +1595,15 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_food_redirected
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -1241,7 +1622,15 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_colonial_industrialization
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -1260,7 +1649,16 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#remove_negative relation_modifier_with_sioux
+			add_opinion_modifier = {
+				target = SIO
+				modifier = TCWmod_generic_relations
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -1279,7 +1677,49 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#civilian factories construction in some states
+			1026 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1022 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1029 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1040 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			1036 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			remove_ideas = {
+				FLE_food_redirected
+			}
 		}		
 	}
 
@@ -1298,7 +1738,52 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#factories construction in some states, 1 civs 1 state per small island + 2 civ in one state on big islands
+			35 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			40 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			856 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			37 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			31 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -1317,13 +1802,92 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
-			#2 mils in 1 state per big island and 1 mil in 1 state per smaller island
+			add_ideas = {
+				FLE_colonial_armament
+			}
+			35 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			40 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			856 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			37 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			31 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			797 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			782 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+			}
+			733 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			632 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 15
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
 	focus = { 
-		id = FLE_privatisation_of_ost_kolonie_lloyd
+		id = FLE_nationalization_of_ost_kolonie_lloyd
 		icon = GFX_focus_generic_navy_battleship2
 		relative_position_id = FLE_focus_on_armament
 		x = 0
@@ -1337,20 +1901,28 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_ostkolonielloyd
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 5
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
 	focus = { 
 		id = FLE_ost_bahn
 		icon = GFX_focus_generic_railroad
-		relative_position_id = FLE_privatisation_of_ost_kolonie_lloyd
+		relative_position_id = FLE_nationalization_of_ost_kolonie_lloyd
 		x = 0
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
 		prerequisite = {
-			focus = FLE_privatisation_of_ost_kolonie_lloyd
+			focus = FLE_nationalization_of_ost_kolonie_lloyd
 		}
 		ai_will_do = { 
 			factor = 1
@@ -1378,6 +1950,11 @@ focus_tree = {
 					level = 2
 					instant_build = yes
 				}
+				add_state_modifier = {
+					modifier = {
+						state_production_speed_buildings_factor = 0.15
+					}
+				}
 			}
 		}		
 	}
@@ -1403,7 +1980,19 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#event
+			country_event = {
+				id = flensburg.9
+				days = 0
+			}
+			remove_ideas = {
+				FLE_on_our_own
+			}
+			hidden_effect = {
+				add_autonomy_score = {
+    				value = 15
+    				localization = FLE_colonial_developments
+				}
+			}
 		}		
 	}
 
@@ -1415,6 +2004,9 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+	    allow_branch = {
+			has_country_flag = investors_from_danville
+		}
 		prerequisite = {
 			focus = FLE_attracting_investors
 		}
@@ -1447,7 +2039,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea with boost to research & democratic popularity
+			add_ideas = {
+				FLE_technology_from_tsa
+			}
 		}		
 	}
 
@@ -1466,7 +2060,48 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#naval bases expansion
+			30 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 3695
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			31 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5138
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
+			40 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 10274
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -1478,6 +2113,9 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = investors_from_flower_hill
+		}
 		prerequisite = {
 			focus = FLE_attracting_investors
 		}
@@ -1510,7 +2148,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea with boost to research& equalist popularity
+			add_ideas = {
+				FLE_technology_from_fh
+			}
 		}		
 	}
 
@@ -1529,7 +2169,71 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#infrastrucutre and ports on islands
+			30 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 3695
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			31 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5138
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			40 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 10274
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			38 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 1949
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			37 = {
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 10347
+				}
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -1541,6 +2245,9 @@ focus_tree = {
 		y = 1
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			has_country_flag = investors_from_dio
+		}
 		prerequisite = {
 			focus = FLE_attracting_investors
 		}
@@ -1573,7 +2280,25 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea with increase of strengthenist popularity
+			add_ideas = {
+				FLE_bag_of_tricks_from_dio
+			}
+			custom_effect_tooltip = FLE_will_unlock_zombie_units
+			hidden_effect = {
+				division_template = {
+   					name = "Zombie Unit"
+    				is_locked = yes
+    				priority = 0
+    				template_counter = 0
+    				regiments = {
+        				infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+    				}
+				}
+			}
 		}		
 	}
 
@@ -1610,6 +2335,10 @@ focus_tree = {
 		y = 9
 		cost = 7.25
 		available_if_capitulated = yes
+		allow_branch = {
+			is_puppet = no
+			has_government = democratic
+		}
 		available = {
 			is_puppet = no
 		}
@@ -1636,8 +2365,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			remove_ideas = { #change to swap ideas
-				FLE_ostgesetz
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz
+				add_idea = FLE_ostgesetz_aftermath
 			}
 		}		
 	}
@@ -1660,7 +2390,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#swap ideas
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz_aftermath
+				add_idea = FLE_two_governments
+			}
 		}		
 	}
 
@@ -1679,7 +2412,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#add ideas
+			add_ideas = {
+				FLE_bringing_citizens_closer
+			}
 		}		
 	}
 
@@ -1701,7 +2436,10 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#swap ideas
+			swap_ideas = {
+				remove_idea = FLE_ostgesetz_aftermath
+				add_idea = FLE_one_nation_one_government
+			}
 		}		
 	}
 
@@ -1720,7 +2458,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#add ideas
+			add_ideas = {
+				FLE_social_benefits
+			}
 		}		
 	}
 
@@ -1740,7 +2480,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#remove ideas
+			add_ideas = {
+				FLE_segregation_abolished
+			}
 		}		
 	}
 
@@ -2110,7 +2852,9 @@ focus_tree = {
 			factor = 1
 		} 
 		completion_reward = { 
-			#idea
+			add_ideas = {
+				FLE_raised_wages
+			}
 		}		
 	}
 	

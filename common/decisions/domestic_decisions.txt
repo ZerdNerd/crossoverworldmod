@@ -129,3 +129,134 @@ domestic_politics_dec_category = {
         }
     }
 }
+
+flensburgian_road_to_independence = {
+    organize_meetings_with_citizens = {
+        icon = generic_political_discourse
+
+		cost = 15
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        visible = {
+            tag = FLE
+            OR = {
+                has_completed_focus = FLE_sekai_ichi
+                AND = {
+                    has_completed_focus = FLE_stick_with_wissmann
+                    NOT = {
+                        has_completed_focus = FLE_pantmawr_stock_exchange_colony_branch
+                    }
+                }
+                AND = {
+                    has_completed_focus = FLE_a_shady_banker
+                    NOT = {
+                        has_completed_focus = FLE_the_art_of_the_deal
+                    }
+                }
+                has_completed_focus = FLE_we_are_on_our_own
+            }
+            is_puppet = yes
+        }
+
+        modifier = {
+            autonomy_gain = 0.25
+        }
+
+        days_remove = 30
+
+        days_re_enable = 2
+
+        complete_effect = {
+            custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+        }
+    }
+
+    propagate_liberty_values_in_schools = {
+        icon = generic_political_discourse
+
+		cost = 10
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        visible = {
+            tag = FLE
+            OR = {
+                has_completed_focus = FLE_sekai_ichi
+                AND = {
+                    has_completed_focus = FLE_stick_with_wissmann
+                    NOT = {
+                        has_completed_focus = FLE_pantmawr_stock_exchange_colony_branch
+                    }
+                }
+                AND = {
+                    has_completed_focus = FLE_a_shady_banker
+                    NOT = {
+                        has_completed_focus = FLE_the_art_of_the_deal
+                    }
+                }
+                has_completed_focus = FLE_we_are_on_our_own
+            }
+            is_puppet = yes
+        }
+
+        modifier = {
+            autonomy_gain = 0.2
+        }
+
+        days_remove = 30
+
+        days_re_enable = 2
+
+        complete_effect = {
+            custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+        }
+    }
+
+    show_the_workers_positive_sides_of_independence = {
+        icon = generic_political_discourse
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        visible = {
+            tag = FLE
+            OR = {
+                has_completed_focus = FLE_sekai_ichi
+                AND = {
+                    has_completed_focus = FLE_stick_with_wissmann
+                    NOT = {
+                        has_completed_focus = FLE_pantmawr_stock_exchange_colony_branch
+                    }
+                }
+                AND = {
+                    has_completed_focus = FLE_a_shady_banker
+                    NOT = {
+                        has_completed_focus = FLE_the_art_of_the_deal
+                    }
+                }
+                has_completed_focus = FLE_we_are_on_our_own
+            }
+            is_puppet = yes
+        }
+
+        modifier = {
+            autonomy_gain = 0.1
+        }
+
+        days_remove = 30
+
+        days_re_enable = 2
+
+        complete_effect = {
+            custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+        }
+    }
+}

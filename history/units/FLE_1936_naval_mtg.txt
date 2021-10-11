@@ -1,0 +1,28 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Kolonie Marine"			
+		naval_base = 9036
+		task_force = {				
+			name = "Nordflotte"
+			location = 9036
+			ship = { name = "Neu Flensburg" definition = heavy_cruiser  equipment = { ship_hull_cruiser_panzerschiff = { amount = 1 owner = FLE } } }	
+			ship = { name = "Koloniereider" pride_of_the_fleet = yes definition = heavy_cruiser equipment = { ship_hull_cruiser_2 = { amount = 1 owner = FLE } } }
+			ship = { name = "Ostdrache" definition = light_cruiser equipment = { ship_hull_light_1 = { amount = 1 owner = FLE } } } 		
+			ship = { name = "Jaguar" definition = light_cruiser equipment = { ship_hull_light_1 = { amount = 1 owner = FLE } } }	
+		}	
+		task_force = {
+			name = "Ostflotte"
+			location = 2664
+			ship = { name = "Reitze" definition = light_cruiser equipment = { ship_hull_cruiser_1 = { amount = 1 owner = FLE } } }
+			ship = { name = "Leopard" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLE } } }
+			
+		}
+		task_force = {
+			name = "Westflotte"
+			location = 10242
+			ship = { name = "Kondor" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLE } } }
+			ship = { name = "Wolf" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = FLE } } }
+		}
+	}
+}

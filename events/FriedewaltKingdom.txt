@@ -870,6 +870,10 @@ country_event = { #Pantmawr grants us larger autonomy in internal affairs
 		name = friedewalt.24.a
 		add_political_power = 50
 		hidden_effect = {
+			add_autonomy_score = {
+    			value = 75
+    			localization = FLE_pantmawr_granted_larger_autonomy
+			}
 			set_country_flag = FLE_autonomy_increased_internal
 			mark_focus_tree_layout_dirty = yes
 			complete_national_focus = FLE_metropole_increases_autonomy
@@ -891,6 +895,10 @@ country_event = { #Pantmawr grants us larger autonomy
 		add_political_power = 50
 		add_stability = 0.05
 		hidden_effect = {
+			add_autonomy_score = {
+    			value = 100
+    			localization = FLE_pantmawr_granted_larger_autonomy
+			}
 			set_country_flag = FLE_autonomy_increased_overall
 			mark_focus_tree_layout_dirty = yes
 			complete_national_focus = FLE_metropole_increases_autonomy
@@ -912,7 +920,14 @@ country_event = { #Pantmawr cuts funding
 		add_political_power = -50
 		add_stability = -0.1
 		add_war_support = 0.1
+		add_ideas = {
+			FLE_on_our_own
+		}
 		hidden_effect = {
+			add_autonomy_score = {
+    			value = 70
+    			localization = FLE_pantmawr_cut_funding
+			}
 			set_country_flag = FLE_funds_were_cut
 			mark_focus_tree_layout_dirty = yes
 			complete_national_focus = FLE_we_are_on_our_own
