@@ -113,6 +113,31 @@ FLO_1936_election_result = {
 	}
 }
 
+FRI_black_monday_toward_flensburg = {
+	name = "FRI_FLENSBURG_BM"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FRI_BIGGER_AUTONOMY
+		text = "RULE_FRI_BIGGER_AUTONOMY"
+		allow_achievements = yes
+	}
+	option = {
+		name = FRI_BIT_BIGGER_AUTONOMY
+		text = "RULE_FRI_BIT_BIGGER_AUTONOMY"
+		allow_achievements = yes
+	}
+	option = {
+		name = FRI_CUT_FUNDS
+		text = "RULE_FRI_CUT_FUNDS"
+		allow_achievements = yes
+	}
+}
+
 FLO_unification_process = {
 	name = "FLO_UNIFICATION_FIRST_COUNTRY"
 	group = "RULE_GROUP_AI_BEHAVIOR"

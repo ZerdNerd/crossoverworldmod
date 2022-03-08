@@ -812,6 +812,23 @@ country_event = { #Drafting Recovery Plan
 			set_country_flag = accepted_dernburg_plan
 			complete_national_focus = FRI_devalue_the_mark
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FRI_black_monday_toward_flensburg
+					option = FRI_BIGGER_AUTONOMY
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FRI_black_monday_toward_flensburg
+					option = FRI_BIT_BIGGER_AUTONOMY
+				}
+				add = 99
+			}
+		}
 		add_ideas = {
 			FRI_bernhard_dernburg
 		}
@@ -819,6 +836,16 @@ country_event = { #Drafting Recovery Plan
 
 	option = { #Accept Prince Hartmuts Plan
 		name = friedewalt.22.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FRI_black_monday_toward_flensburg
+					option = FRI_CUT_FUNDS
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			set_country_flag = accepted_hartmuts_plan
 			complete_national_focus = FRI_militarize_faster
@@ -837,6 +864,16 @@ country_event = { #Status of Neu Flensburg
 
 	option = { #Increase their autonomy in internal affairs
 		name = friedewalt.23.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FRI_black_monday_toward_flensburg
+					option = FRI_BIT_BIGGER_AUTONOMY
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		FLE = {
 			country_event = {
@@ -848,6 +885,16 @@ country_event = { #Status of Neu Flensburg
 
 	option = { #Increase their overall autonomy
 		name = friedewalt.23.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FRI_black_monday_toward_flensburg
+					option = FRI_BIGGER_AUTONOMY
+				}
+				add = 99
+			}
+		}
 		FLE = {
 			country_event = {
 				id = friedewalt.25
