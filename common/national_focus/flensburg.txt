@@ -3236,8 +3236,7 @@ focus_tree = {
 			focus = FLE_international_way
 		}
 		available = {
-			TSA = {
-				has_government = fascism
+			JOJ = {
 				is_puppet = no
 				has_war = yes
 			}
@@ -3415,6 +3414,7 @@ focus_tree = {
 		}
 		allow_branch = {
 			is_puppet = no
+			has_completed_focus = FLE_we_will_march_forward
 			NOT = {
 				has_country_leader = {
 					name = "Gustaw Kramer"
@@ -3463,6 +3463,7 @@ focus_tree = {
 		}
 		allow_branch = {
 			is_puppet = no
+			has_completed_focus = FLE_we_will_march_forward
 			NOT = {
 				has_country_leader = {
 					name = "Gustaw Kramer"
