@@ -125,7 +125,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name ="ingamemenu_load"
-		position = { x = -210 y = -250 }	
+		position = { x = -236 y = -270 }
 		size = { width = 420 height = 500}
 		Orientation = center
 
@@ -136,7 +136,8 @@ guiTypes = {
 			position = { x = 75 y = 126 }	
 			size = { width = 350 height = 370}
 			verticalScrollbar = "right_vertical_slider"
-			vertical_scroll_step = 5
+			scroll_wheel_factor = 55
+			smooth_scrolling = yes
 			
 			background = {
 				name = "Background"		
@@ -255,7 +256,7 @@ guiTypes = {
 	
 	containerWindowType = {
 		name ="ingamemenu_save"
-		position = { x=-210 y =-250 }	
+		position = { x = -236 y = -270 }
 		size = { width = 420 height = 500}
 		Orientation = center
 		
@@ -427,14 +428,14 @@ guiTypes = {
 		iconType = {
 			name ="player_shield"
 			quadTextureSprite = "GFX_flag_small2_not_masked"
-			position = { x= 5 y = 12 }
+			position = { x= 6 y = 14 }
 			alwaystransparent = yes
 		}
 
 		iconType = {
 			name ="player_shield_overlay"
 			quadTextureSprite = "GFX_flag_small2_not_masked"
-			position = { x= 5 y = 12 }
+			position = { x= 6 y = 14 }
 			alwaystransparent = yes
 		}
 
@@ -446,7 +447,7 @@ guiTypes = {
 		}
 		
 		instantTextBoxType={
-			position = {x = 53 y = 5 }
+			position = {x = 55 y = 5 }
 			name = "name"
 			font = "hoi_18mbs"
 			maxWidth = 224
@@ -457,7 +458,7 @@ guiTypes = {
 		}
 		
 		instantTextBoxType={
-			position = {x = 50 y = 24 }
+			position = {x = 52 y = 24 }
 			name = "date"
 			font = "hoi_18mbs"
 			maxWidth = 217

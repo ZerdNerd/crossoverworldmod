@@ -53,17 +53,27 @@ technologies = {
 		enable_equipments = {
 			infantry_equipment_0
 		}
+
+		enable_equipment_modules = {
+			tank_heavy_machine_gun
+			secondary_turret_hmg
+			additional_machine_guns
+		}
+		
+		enable_subunits = {
+			infantry
+		}
 		
 		path = {
 			leads_to_tech = infantry_weapons1
 			research_cost_coeff = 1
-		}
+		}		
 
-		research_cost = 15
+		research_cost = 1.5
 		start_year = 1918
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = -1 }
+			position = { x = 0 y = -1 }
 		}
 		
 		categories = {
@@ -90,7 +100,7 @@ technologies = {
 		start_year = 1936
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1936 }
+			position = { x = 0 y = @1936 }
 		}
 		
 		categories = {
@@ -99,6 +109,11 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 10
+				date > "1937.1.1"
+			}
 			
 			modifier = {
 				factor = 10
@@ -137,7 +152,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1938 }
+			position = { x = 0 y = @1938 }
 		}
 		
 		categories = {
@@ -146,8 +161,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
-			
-			
 
 			modifier = {
 				factor = 5
@@ -175,7 +188,7 @@ technologies = {
 		start_year = 1939
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1939 }
+			position = { x = 0 y = @1939 }
 		}
 		
 		categories = {
@@ -192,7 +205,7 @@ technologies = {
 			modifier = {
 				num_of_military_factories < 50
 				factor = 0.5
-			}		
+			}
 		}
 	}
 	improved_infantry_weapons_2 = {
@@ -225,7 +238,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1940 }
+			position = { x = 0 y = @1940 }
 		}
 		
 		categories = {
@@ -268,7 +281,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = 3 y = @1942 }
+			position = { x = 2 y = @1942 }
 		}
 		
 		categories = {
@@ -306,7 +319,7 @@ technologies = {
 		start_year = 1943
 		folder = {
 			name = infantry_folder
-			position = { x = 3 y = @1943 }
+			position = { x = 2 y = @1943 }
 		}
 		
 		categories = {
@@ -348,7 +361,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1942 }
+			position = { x = 0 y = @1942 }
 		}
 		
 		categories = {
@@ -357,7 +370,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.8
-			
 			
 			
 			modifier = {
@@ -396,7 +408,7 @@ technologies = {
 		start_year = 1944
 		folder = {
 			name = infantry_folder
-			position = { x = 1 y = @1944 }
+			position = { x = 0 y = @1944 }
 		}
 		
 		categories = {
@@ -459,12 +471,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
-			
-			
-			
-			
-			
-			
 		}
 	}
 	
@@ -493,12 +499,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
-			
-			
-			
-			
-			
-			
 		}
 	}
 
@@ -522,12 +522,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
-			
-			
-			
-			
-			
-			
 		}
 	}
 	
@@ -567,10 +561,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
-			
-			
-			
-			
 		}
 	}
 	
@@ -599,10 +589,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
-			
-			
-			
-			
 		}
 	}
 	
@@ -625,10 +611,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
-			
-			
-			
-			
 		}
 	}	
 	
@@ -988,6 +970,49 @@ technologies = {
 		}
 	}
 
+	mountain_warfare = {
+
+		research_cost = 1
+
+		# only from focus!
+		allow = {
+			always = no
+		}
+
+
+		#If you change these
+		#Change the custom tooltip too: GRE_mountain_training_effect
+		infantry = {
+			mountain = {
+				defence = 0.05
+				movement = 0.05
+			}
+		}
+
+		marine = {
+			mountain = {
+				attack = 0.05 
+				movement = 0.1
+			}
+		}
+
+		mountaineers = {
+			mountain = {
+				attack = 0.05
+				defence = 0.05
+				movement = 0.1
+			}
+		}
+
+		paratrooper = {
+			mountain = {
+				attack = 0.05
+				movement = 0.1
+			}
+		}
+
+	}
+
 	night_vision = {
 
 		land_night_attack = 0.1
@@ -1116,7 +1141,7 @@ technologies = {
 		start_year = 1918
 		folder = {
 			name = infantry_folder
-			position = { x = -1 y = @1936 }
+			position = { x = -2 y = 1 }
 		}
 		
 		categories = {
@@ -1125,7 +1150,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
 			modifier = {
 				factor = 2
 				date > "1937.1.1"
@@ -1195,7 +1219,7 @@ technologies = {
 		start_year = 1938
 		folder = {
 			name = infantry_folder
-			position = { x = -1 y = @1938 }
+			position = { x = -2 y = @1938 }
 		}
 		
 		categories = {
@@ -1204,8 +1228,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			
 			modifier = {
 				factor = 2
 				date > "1938.1.6"
@@ -1280,7 +1302,7 @@ technologies = {
 		start_year = 1940
 		folder = {
 			name = infantry_folder
-			position = { x = -1 y = @1940 }
+			position = { x = -2 y = @1940 }
 		}
 		
 		categories = {
@@ -1359,7 +1381,7 @@ technologies = {
 		start_year = 1942
 		folder = {
 			name = infantry_folder
-			position = { x = -1 y = @1942 }
+			position = { x = -2 y = @1942 }
 		}
 		
 		categories = {
@@ -1403,6 +1425,10 @@ technologies = {
 
 		enable_equipments = {
 			motorized_equipment_1
+		}
+
+		enable_equipment_modules = {
+			tank_wheeled_suspension
 		}
 
 		on_research_complete_limit = {
@@ -1485,8 +1511,6 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 1
-			
-			
 		}
 		
 		categories = {
@@ -1682,6 +1706,10 @@ technologies = {
 		enable_equipments = {
 			mechanized_equipment_1
 		}
+
+		enable_equipment_modules = {
+			tank_half_track_suspension
+		}
 		
 		motorized = {
 			hardness = 1.0
@@ -1862,6 +1890,35 @@ technologies = {
 
 		enable_subunits = {
 			bicycle_battalion
+		}
+	}
+
+	camelry = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			camelry
 		}		
+	}
+
+	######### FROM SOVIET FOCUS ##########
+	penal_infantry = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			penal_battalion
+		}
 	}
 }

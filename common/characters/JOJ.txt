@@ -1,0 +1,479 @@
+characters={
+	JOJ_jonathan_joestar={
+		name="Jonathan Joestar"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_jonathan"
+			}
+			civilian={
+				large="gfx/leaders/JOJ/jonathan.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JOJ_jonathan_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { popular_figurehead2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = JOJ_jonathan_2_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { army_logistics_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ hamon_user }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8000
+		}
+		country_leader={
+			desc="POLITICS_JONATHAN_DESC"
+			ideology=centrism
+			traits={ connected_citizen }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_JONATHAN_DESC"
+			ideology=marxism
+			traits={ connected_citizen }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_JONATHAN_DESC"
+			ideology=nazism
+			traits={ connected_citizen }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_JONATHAN_DESC"
+			ideology=administrative_monarchy
+			traits={ connected_citizen }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	JOJ_joseph_joestar={
+		name="Joseph Joestar"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_joseph"
+			}
+			army={
+				large="gfx/leaders/JOJ/joseph.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JOJ_joseph_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { head_of_intelligence }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		advisor={
+			ledger = air
+			idea_token = JOJ_joseph_2_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { air_close_air_support_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ stand_user hamon_user }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=8001
+		}
+	}
+	JOJ_lisa_lisa={
+		name="Lisa Lisa"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/lisalisa.dds"
+			}
+		}
+		field_marshal={
+			traits={ hamon_user }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=8005
+		}
+	}
+	JOJ_jotaro_kujo={
+		name="Jotaro Kujo"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_jotaro"
+			}
+			army={
+				large="gfx/leaders/JOJ/jotaro.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JOJ_jotaro_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { financial_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=8002
+		}
+	}
+	JOJ_josuke_higashikata={
+		name="Josuke Higashikata"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/josuke.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8003
+		}
+	}
+	JOJ_jolyne_cujoh={
+		name="Jolyne Cujoh"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_jolyne"
+			}
+			army={
+				large="gfx/leaders/JOJ/jolyne.dds"
+			}
+		}
+		advisor={
+			ledger = navy
+			idea_token = JOJ_jolyne_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { navy_amphibious_assault_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8004
+		}
+	}
+	JOJ_caesar_zeppeli={
+		name="Caesar Zeppeli"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/caesar.dds"
+			}
+		}
+		corps_commander={
+			traits={ hamon_user }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=8006
+		}
+	}
+	JOJ_will_zeppeli={
+		name="Will A. Zeppeli"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_zeppeli"
+			}
+			army={
+				large="gfx/leaders/JOJ/will_zeppeli.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = JOJ_zeppeli_2_i
+			allowed = {
+				original_tag = JOJ
+			}
+		
+			traits = { army_commando_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = JOJ_zeppeli_i
+			ledger = army
+			allowed = {
+				original_tag = JOJ
+			}
+
+			traits = { council_of_theorists }
+		}
+		field_marshal={
+			traits={ hamon_user }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=8007
+		}
+	}
+	JOJ_noriaki_kakyoin={
+		name="Noriaki Kakyoin"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/kakyoin.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=8008
+		}
+	}
+	JOJ_koichi_hirose={
+		name="Koichi Hirose"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/koichi.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=8009
+		}
+	}
+	JOJ_okuyasu_nijimura={
+		name="Okuyasu Nijimura"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/okuyasu.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8010
+		}
+	}
+	JOJ_jean_pierre_polnareff={
+		name="Jean Pierre Polnareff"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/polnareff.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=8011
+		}
+	}
+	JOJ_rohan_kishibe={
+		name="Rohan Kishibe"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JOJ/rohan.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8012
+		}
+	}
+	JOJ_robert_e.o._speedwagon={
+		name="Robert E.O. Speedwagon"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_speedwagon"
+			}
+			army={
+				large="gfx/leaders/JOJ/speedwagon.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JOJ_speedwagon_i
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_leave_everything_to_speedwagon
+			}
+		
+			traits = { lieutenant_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=8013
+		}
+	}
+	JOJ_cyril_moresby={
+		name="Cyril Moresby"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ quartermaster_general }
+			expire="1942.1.1.12"
+			id=-1
+		}
+	}
+	JOJ_smokey_brown={
+		name="Smokey Brown"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_smokey"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JOJ_smokey_i
+			allowed = {
+				original_tag = JOJ
+			}
+
+			available = {
+				has_completed_focus = JOJ_let_smokey_design_it
+			}
+		
+			traits = { lieutenant_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	JOJ_avdol={
+		name="Muhammad Avdol"
+		portraits={
+			army={
+				small="GFX_idea_JOJ_avdol"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = JOJ_avdol_2_i
+			allowed = {
+				original_tag = JOJ
+			}
+
+			research_bonus = {
+				stands = 0.1
+			}
+		
+			traits = { army_infantry_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = JOJ_avdol_i
+			ledger = army
+			allowed = {
+				original_tag = JOJ
+			}
+
+			research_bonus = {
+				stands = 0.1
+			}
+		
+			traits = { superior_firepower_expert }
+		}
+	}
+}

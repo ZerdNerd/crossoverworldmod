@@ -33,92 +33,9 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Obsolete technology"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Aron"
-	desc = "POLITICS_TBD_DESC"
-	picture = "aron.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Nak"
-	desc = "POLITICS_TBD_DESC"
-	picture = "nak.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Tib"
-	desc = "POLITICS_TBD_DESC"
-	picture = "tib.dds"
-	expire = "1965.1.1"
-	ideology = paidocracy_sub
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Obsolete technology"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Tom"
-	portrait_path = "gfx/leaders/TIG/tom.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-	id = 5200
-}
-
-create_corps_commander = {
-	name = "Nak"
-	portrait_path = "gfx/leaders/TIG/nak.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 5
-    defense_skill = 4
-    planning_skill = 2
-    logistics_skill = 2
-	id = 5203
-}
-
-create_corps_commander = {
-	name = "Krum"
-	portrait_path = "gfx/leaders/TIG/krum.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 4
-    planning_skill = 2
-    logistics_skill = 1
-}
+recruit_character = TIG_NAK
+recruit_character = TIG_TOM
+recruit_character = TIG_obsolete_technology
+recruit_character = TIG_aron
+recruit_character = TIG_tib
+recruit_character = TIG_krum

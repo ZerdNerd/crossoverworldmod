@@ -24,6 +24,16 @@ country_event = { #elections
 
 	option = {
 		name = japanifornia.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JPN_election_1936
+					option = JPN_WRIGHT
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = JPN_wright_will_be_president
 		hidden_effect = { 
 			kill_country_leader = yes
@@ -113,6 +123,16 @@ country_event = { #elections
 
 	option = {
 		name = japanifornia.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JPN_election_1936
+					option = JPN_EDGEWORTH
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = JPN_edgeworth_will_be_president
 		hidden_effect = { 
 			kill_country_leader = yes

@@ -1,0 +1,255 @@
+characters={
+	FLO_bamsaegi={
+		name="Bamsaegi"
+		portraits={
+			army={
+				small="GFX_idea_FLO_bamsaegi"
+			}
+			army={
+				large="gfx/leaders/FLO/bamsaegi.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FLO_bamsaegi_i
+			allowed = {
+				original_tag = FLO
+			}
+
+			available = {
+				OR = {
+					has_completed_focus = FLO_adopt_songun
+					has_completed_focus = FLO_the_act_of_unity
+				}
+			}
+		
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=7004
+		}
+	}
+	FLO_darami={
+		name="Darami"
+		portraits={
+			army={
+				small="GFX_idea_FLO_darami"
+			}
+			army={
+				large="gfx/leaders/FLO/darami.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = FLO_darami_i
+			allowed = {
+				original_tag = FLO
+			}
+			traits = { socialite_connections }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=4
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=7001
+		}
+	}
+	FLO_geumsaegi={
+		name="Geumsaegi"
+		portraits={
+			army={
+				small="GFX_idea_FLO_geumsaegi"
+			}
+			army={
+				large="gfx/leaders/FLO/Geumsaegi.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = FLO_geumsaegi_i
+			allowed = {
+				original_tag = FLO
+			}
+			traits = {
+				army_chief_reform_2 army_chief_defensive_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = FLO_geumsaegi_2_i
+			ledger = army
+			allowed = {
+				original_tag = FLO
+			}
+
+			traits = { army_artillery_1 army_infantry_1 }
+		}
+		corps_commander={
+			traits={ war_hero commando }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=7002
+		}
+	}
+	FLO_goseumdochi={
+		name="Goseumdochi"
+		portraits={
+			army={
+				small="GFX_idea_FLO_goseumdochi"
+			}
+			army={
+				large="gfx/leaders/FLO/goseumdochi.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = FLO_goseumdochi_i
+			allowed = {
+				original_tag = FLO
+			}
+			traits = {
+				army_chief_offensive_1 army_chief_defensive_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		field_marshal={
+			traits={ inflexible_strategist }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=7000
+		}
+	}
+	FLO_juldarami={
+		name="Juldarami"
+		portraits={
+			army={
+				small="GFX_idea_FLO_juldarami"
+			}
+			army={
+				large="gfx/leaders/FLO/juldarami.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = FLO_juldarami_i
+			allowed = {
+				original_tag = FLO
+			}
+			traits = {
+				army_chief_maneuver_1 army_chief_morale_1
+			}
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=7003
+		}
+	}
+	FLO_murori={
+		name="Murori"
+		portraits={
+			army={
+				small="GFX_idea_FLO_murori"
+			}
+			army={
+				large="gfx/leaders/FLO/murori.dds"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = FLO_murori_i
+			ledger = navy
+			allowed = {
+				original_tag = FLO
+			}
+
+			traits = { naval_theorist army_infantry_1 }
+		}
+		navy_leader={
+			traits={ superior_tactician }
+			skill=3
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=-1
+		}
+	}
+	FLO_high_military_council={
+		name="High Military Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/FLO/highcouncil.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FLO_yang_ye={
+		name="Yang Ye"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ smooth_talking_charmer captain_of_industry }
+			expire="1943.1.1.12"
+			id=-1
+		}
+	}
+}

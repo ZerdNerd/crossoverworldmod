@@ -1,0 +1,223 @@
+characters={
+	SAN_zbigniew_stonoga={
+		name="Zbigniew Stonoga"
+		portraits={
+			civilian={
+				large="gfx/leaders/SAN/stonoga.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SAN_tadeusz_sznuk={
+		name="Tadeusz Sznuk"
+		portraits={
+			civilian={
+				large="gfx/leaders/SAN/sznuk.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=technocracy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SAN_paweł_kozioł={
+		name="Paweł Kozioł"
+		portraits={
+			civilian={
+				large="gfx/leaders/SAN/nasz_senator.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SAN_marcin_kowalski={
+		name="Marcin Kowalski"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_6.dds"
+			}
+		}
+		country_leader={
+			ideology=parliamentary_monarchy
+			traits={ ideological_crusader }
+			expire="1952.1.1.12"
+			id=-1
+		}
+	}
+	SAN_piotr_wojciechowski={
+		name="Piotr Wojciechowski"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ editor }
+			expire="1949.1.1.12"
+			id=-1
+		}
+	}
+	SAN_michalowa={
+		name="Michałowa"
+		portraits={
+			army={
+				small="GFX_idea_SAN_michalowa"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_michalowa_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				has_completed_focus = SAN_the_one_and_only
+			}
+			traits = {
+				thats_my_role_to_know
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SAN_czerepach={
+		name="Arkadiusz Czerepach"
+		portraits={
+			army={
+				small="GFX_idea_SAN_czerepach"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_czerepach_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+			traits = {
+				compassionate_gentleman financial_expert
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SAN_solejuk={
+		name="Maciej Solejuk"
+		portraits={
+			army={
+				small="GFX_idea_SAN_solejuk"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_solejuk_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+			traits = {
+				war_industrialist ideological_crusader
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SAN_polakowski={
+		name="Ryszard Polakowski"
+		portraits={
+			army={
+				small="GFX_idea_SAN_polakowski"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_polakowski_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				has_completed_focus = SAN_ppu_takes_the_reign
+			}
+			traits = {
+				economist reluctant_interventionist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SAN_fabian={
+		name="Fabian Duda"
+		portraits={
+			army={
+				small="GFX_idea_SAN_fabian"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_fabian_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				OR = {
+					has_completed_focus = SAN_the_one_and_only
+					has_completed_focus = SAN_senderos_agreement
+				}
+			}
+			traits = {
+				silent_mule fortification_armchair_general
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SAN_jedrzej={
+		name="Jędrzej Kowalski"
+		portraits={
+			army={
+				small="GFX_idea_SAN_jedrzej"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SAN_jedrzej_i
+			allowed = {
+				original_tag = SAN
+			}
+			available = {
+				OR = {
+					has_completed_focus = SAN_ppu_takes_the_reign
+					has_completed_focus = SAN_senderos_agreement
+				}
+			}
+			traits = {
+				baron_of_terror
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

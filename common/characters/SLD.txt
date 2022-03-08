@@ -1,0 +1,305 @@
+characters={
+	SLD_jan_paweł_ii={
+		name="Jan Paweł II"
+		portraits={
+			army={
+				small="GFX_idea_SLD_pope"
+			}
+			civilian={
+				large="gfx/leaders/SLD/pope.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_pope_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_empower_cardinals
+			}
+			traits = {
+				the_sacred_king war_industrialist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=despotic_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SLD_sejm={
+		name="Sejm"
+		portraits={
+			civilian={
+				large="gfx/leaders/SLD/sejm.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SLD_wyszynski={
+		name="Stefan Wyszyński"
+		portraits={
+			army={
+				small="GFX_idea_SLD_wyszynski"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_wyszynski_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_empower_cardinals
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_dziwisz={
+		name="Stanisław Dziwisz"
+		portraits={
+			army={
+				small="GFX_idea_SLD_dziwisz"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_dziwisz_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_empower_cardinals
+			}
+			traits = {
+				financial_expert
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_janusz_tracz={
+		name="Janusz Tracz"
+		portraits={
+			army={
+				small="GFX_idea_SLD_tracz"
+			}
+		}
+		portraits={
+			civilian={
+				large="gfx/leaders/SLD/tracz.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_tracz_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_new_order_in_the_army
+			}
+			traits = {
+				the_director
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SLD_marian_paździoch={
+		name="Marian Paździoch"
+		portraits={
+			army={
+				small="GFX_idea_SLD_marian"
+			}
+		}
+		portraits={
+			civilian={
+				large="gfx/leaders/SLD/marian.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_marian_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_eliminating_the_opposition
+			}
+			traits = {
+				war_profiteer
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SLD_wojciech_piotrowski={
+		name="Wojciech Piotrowski"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1955.1.1.12"
+			id=-1
+		}
+	}
+	SLD_helena={
+		name="Helena Paździoch"
+		portraits={
+			army={
+				small="GFX_idea_SLD_helena"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_helena_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_eliminating_the_opposition
+			}
+			traits = {
+				baron_of_terror
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_boczek={
+		name="Arnold Boczek"
+		portraits={
+			army={
+				small="GFX_idea_SLD_boczek"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_boczek_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				OR = {
+					has_completed_focus = SLD_eliminating_the_opposition
+					has_completed_focus = SLD_restoration_of_democratic_order
+				}
+			}
+			traits = {
+				ideological_crusader captain_of_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_ferdek={
+		name="Ferdynand Kiepski"
+		portraits={
+			army={
+				small="GFX_idea_SLD_ferdek"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_ferdek_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_restoration_of_democratic_order
+			}
+			traits = {
+				popular_figurehead compassionate_gentleman
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_halina={
+		name="Halina Kiepska"
+		portraits={
+			army={
+				small="GFX_idea_SLD_halina"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_halina_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_restoration_of_democratic_order
+			}
+			traits = {
+				quartermaster_general
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SLD_waldek={
+		name="Waldemar Kiepski"
+		portraits={
+			army={
+				small="GFX_idea_SLD_waldek"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SLD_waldek_i
+			allowed = {
+				original_tag = SLD
+			}
+			available = {
+				has_completed_focus = SLD_restoration_of_democratic_order
+			}
+			traits = {
+				war_industrialist
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

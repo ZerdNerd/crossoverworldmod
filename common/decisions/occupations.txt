@@ -327,7 +327,7 @@ occupation_dec_category = {
 					}
 					transfer_state = 835
 				}
-				set_capital = 858
+				set_capital = { state = 858 }
 				SKO = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
@@ -1233,7 +1233,7 @@ occupation_dec_category = {
 					}
 					transfer_state = 735
 				}
-				set_capital = 751
+				set_capital = { state = 751 }
 				SKO = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = autonomy_integrated_puppet }
@@ -3068,7 +3068,7 @@ occupation_dec_category = {
 					add_state_core = 758
 					transfer_state = 758
 				}
-				set_capital = 811
+				set_capital = { state = 811 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3163,7 +3163,7 @@ occupation_dec_category = {
 					}
 					transfer_state = 911
 				}
-				set_capital = 858
+				set_capital = { state = 858 }
 				every_owned_state = {
 					add_core_of = SKP
 				}
@@ -3256,7 +3256,7 @@ occupation_dec_category = {
 				add_state_core = 879
 				add_state_core = 883
 				add_state_core = 877
-				set_capital = 907
+				set_capital = { state = 907 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3350,7 +3350,7 @@ occupation_dec_category = {
 					transfer_state = 851
 					add_state_core = 851
 				}
-				set_capital = 845
+				set_capital = { state = 845 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3425,7 +3425,7 @@ occupation_dec_category = {
 					transfer_state = 804
 					transfer_state = 784
 				}
-				set_capital = 762
+				set_capital = { state = 762 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -3481,7 +3481,7 @@ occupation_dec_category = {
 				transfer_state = 585
 				transfer_state = 667
 				transfer_state = 644
-				set_capital = 621
+				set_capital = { state = 621 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4537,7 +4537,7 @@ occupation_dec_category = {
 				transfer_state = 182
 				transfer_state = 150
 				transfer_state = 128
-				set_capital = 166
+				set_capital = { state = 166 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4618,7 +4618,7 @@ occupation_dec_category = {
 				add_state_core = 151
 				add_state_core = 141
 				add_state_core = 165
-				set_capital = 242
+				set_capital = { state = 242 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4699,7 +4699,7 @@ occupation_dec_category = {
 				transfer_state = 197
 				transfer_state = 234
 				transfer_state = 259
-				set_capital = 187
+				set_capital = { state = 187 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4768,7 +4768,7 @@ occupation_dec_category = {
 				add_state_core = 112
 				add_state_core = 104
 				add_state_core = 124
-				set_capital = 131
+				set_capital = { state = 131 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -4843,7 +4843,7 @@ occupation_dec_category = {
 				transfer_state = 95
 				transfer_state = 8
 				transfer_state = 80
-				set_capital = 114
+				set_capital = { state = 114 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -5210,7 +5210,7 @@ occupation_dec_category = {
 						transfer_state = 258
 					}
 				}
-				set_capital = 325
+				set_capital = { state = 325 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -5314,7 +5314,7 @@ occupation_dec_category = {
 					}
 					transfer_state = 261
 				}
-				set_capital = 164
+				set_capital = { state = 164 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -5428,7 +5428,7 @@ occupation_dec_category = {
 					transfer_state = 246
 					add_state_core = 246
 				}
-				set_capital = 309
+				set_capital = { state = 309 }
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -5634,7 +5634,7 @@ occupation_dec_category = {
 				add_state_core = 491
 				add_state_core = 472
 				add_state_core = 498
-				set_capital = 537
+				set_capital = { state = 537 }
 				ROOT = {
 					puppet = PREV
 				}
@@ -6841,7 +6841,7 @@ occupation_dec_category = {
 				ROOT = {
 					puppet = PREV
 				}
-				set_capital = 334
+				set_capital = { state = 334 }
 				if = {
 					limit = {
 						ROOT = {
@@ -6925,7 +6925,7 @@ occupation_dec_category = {
 				ROOT = {
 					puppet = PREV
 				}
-				set_capital = 219
+				set_capital = { state = 219 }
 				if = {
 					limit = {
 						ROOT = {

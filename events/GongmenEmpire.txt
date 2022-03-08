@@ -178,6 +178,16 @@ country_event = { #Lord Shen proposes us a non-aggression pact and dividing terr
 
 	option = { #Interesting proposal, we'll sign it
 		name = gongmenempire.8.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = GON_approach_to_west
+					option = GON_PACT_WITH_FLOWER_HILL
+				}
+				add = 99
+			}
+		}
 		GON = {
 			country_event = {
 				id = gongmenempire.9

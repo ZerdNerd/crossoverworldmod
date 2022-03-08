@@ -61,6 +61,16 @@ country_event = {
 
 	option = {
 		name = flowerhill.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FLO_1936_election_result
+					option = FLO_WINNER_GOSEUMDOCHI
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			retire_country_leader = yes
 			set_country_flag = goseumdochi_elected
@@ -85,6 +95,16 @@ country_event = {
 
 	option = {
 		name = flowerhill.3.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FLO_1936_election_result
+					option = FLO_WINNER_DARAMI
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			retire_country_leader = yes
 			set_country_flag = darami_elected
@@ -121,6 +141,16 @@ country_event = {
 
 	option = {
 		name = flowerhill.3.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FLO_1936_election_result
+					option = FLO_WINNER_GEUMSAEGI
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			retire_country_leader = yes
 			set_country_flag = geumsaegi_elected

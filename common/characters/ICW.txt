@@ -1,0 +1,80 @@
+characters={
+	ICW_james={
+		name="James"
+		portraits={
+			army = {
+				small = "GFX_idea_ICW_james"
+			}
+			civilian={
+				large="gfx/leaders/ICW/james.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=-1
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ICW_james_i
+			allowed = {
+				original_tag = ICW
+			}
+			traits = {
+				the_thinker 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ICW_arktos={
+		name="Arktos"
+		portraits={
+			civilian={
+				large="gfx/leaders/ICW/arktos.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ICW_gerhard__={
+		name="Gerhard  "
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ dealbroker ideological_crusader }
+			expire="1941.1.1.12"
+			id=-1
+		}
+	}
+}

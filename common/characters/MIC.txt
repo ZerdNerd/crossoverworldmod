@@ -1,0 +1,64 @@
+characters={
+	MIC_placeholder={
+		name="Placeholder"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_4.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MIC_der_maus={
+		name="Der Maus"
+		portraits={
+			civilian={
+				large="gfx/leaders/MIC/maus.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MIC_obsolete_technology={
+		name="Obsolete technology"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_5"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MIC_lucas_taylor={
+		name="Lucas Taylor"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ retired_officer silent_workhorse }
+			expire="1941.1.1.12"
+			id=-1
+		}
+	}
+}

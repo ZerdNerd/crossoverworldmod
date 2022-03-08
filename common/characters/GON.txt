@@ -1,0 +1,64 @@
+characters={
+	GON_regency_council={
+		name="Regency Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_4.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GON_vacant={
+		name="Vacant"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_4"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GON_lord_shen={
+		name="Lord Shen"
+		portraits={
+			civilian={
+				large="gfx/leaders/GON/shen.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			traits={ cannons_fanatic warmonger }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GON_hsia_ting={
+		name="Hsia Ting"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1943.1.1.12"
+			id=-1
+		}
+	}
+}

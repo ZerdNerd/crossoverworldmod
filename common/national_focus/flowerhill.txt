@@ -2033,8 +2033,11 @@ focus_tree = {
 		ai_will_do = { 
 			base = 0
 			modifier = {
-				has_completed_focus = FLO_ragwon_complex
-				add = 50
+				has_game_rule = {
+					rule = FLO_unification_process
+					option = FLO_DUCKS
+				}
+				add = 99
 			}
 		} 
 
@@ -2045,6 +2048,7 @@ focus_tree = {
 		available = {
 			has_war = no
 			has_government = communism
+			has_completed_focus = FLO_ragwon_complex
 		}
 
 		completion_reward = {
@@ -2073,8 +2077,11 @@ focus_tree = {
 		ai_will_do = { 
 			base = 0
 			modifier = {
-				has_completed_focus = FLO_ragwon_complex
-				add = 25
+				has_game_rule = {
+					rule = FLO_unification_process
+					option = FLO_TURTLES
+				}
+				add = 99
 			}
 			modifier = {
 				has_completed_focus = FLO_operation_namjjog
@@ -2100,6 +2107,7 @@ focus_tree = {
 		available = {
 			has_war = no
 			has_government = communism
+			has_completed_focus = FLO_ragwon_complex
 		}
 
 		prerequisite = {
@@ -2132,6 +2140,13 @@ focus_tree = {
 		ai_will_do = { 
 			base = 0
 			modifier = {
+				has_game_rule = {
+					rule = FLO_unification_process
+					option = FLO_SQUIRRELS
+				}
+				add = 99
+			}
+			modifier = {
 				has_completed_focus = FLO_operation_dongjjog
 				add = 25
 			}
@@ -2147,6 +2162,7 @@ focus_tree = {
 		available = {
 			has_war = no
 			has_government = communism
+			has_completed_focus = FLO_ragwon_complex
 		} 
 
 		prerequisite = {

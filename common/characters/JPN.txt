@@ -1,0 +1,239 @@
+characters={
+	JPN_???={
+		name="???"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_4"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	JPN_the_bar_association={
+		name="The Bar Association"
+		portraits={
+			civilian={
+				large="gfx/leaders/JPN/bar.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	JPN_dick_gumshoe={
+		name="Dick Gumshoe"
+		portraits={
+			
+			army={
+				large="gfx/leaders/JPN/gumshoe.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	JPN_jubal_doubleday={
+		name="Jubal Doubleday"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_6"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			traits={ dealbroker }
+			expire="1956.1.1.12"
+			id=-1
+		}
+	}
+	JPN_daniel_sibley={
+		name="Daniel Sibley"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_6.dds"
+			}
+		}
+		country_leader={
+			ideology=administrative_monarchy
+			expire="1942.1.1.12"
+			id=-1
+		}
+	}
+	JPN_lawrence_foster={
+		name="Lawrence Foster"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ hawk }
+			expire="1945.1.1.12"
+			id=-1
+		}
+	}
+	JPN_franziska={
+		name="Franziska von Karma"
+		portraits={
+			army={
+				small="GFX_idea_JPN_franziska"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = JPN_franziska_i
+			allowed = {
+				original_tag = JPN
+			}
+			available = {
+				has_completed_focus = JPN_the_dead_speak
+			}
+			traits = {
+				financial_expert baron_of_terror
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	JPN_apollo={
+		name="Apollo Justice"
+		portraits={
+			army={
+				small="GFX_idea_JPN_apollo"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JPN_apollo_i
+			allowed = {
+				original_tag = JPN
+			}
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+			traits = {
+				captain_of_industry
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	JPN_maya={
+		name="Maya Fey"
+		portraits={
+			army={
+				small="GFX_idea_JPN_maya"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = JPN_maya_i
+			allowed = {
+				original_tag = JPN
+			}
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+			traits = {
+				princess_of_terror
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	JPN_trucy={
+		name="Trucy Wright"
+		portraits={
+			army={
+				small="GFX_idea_JPN_trucy"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = JPN_trucy_i
+			allowed = {
+				original_tag = JPN
+			}
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					AND = {
+						has_completed_focus = JPN_president_edgeworth
+						NOT = {
+							has_completed_focus = JPN_the_dead_speak
+						}
+					}
+				}
+			}
+			traits = {
+				army_regrouping_2 head_of_intelligence
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	JPN_gumshoe={
+		name="Dick Gumshoe"
+		portraits={
+			army={
+				small="GFX_idea_JPN_gumshoe"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = JPN_gumshoe_i
+			allowed = {
+				original_tag = JPN
+			}
+			available = {
+				OR = {
+					has_completed_focus = JPN_president_wright
+					has_completed_focus = JPN_president_edgeworth
+					has_completed_focus = JPN_the_dead_speak
+				}
+			}
+			traits = {
+				connected_citizen resistance_banker
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

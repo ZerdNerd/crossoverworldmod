@@ -1662,7 +1662,14 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DIO_approach_to_pillar_men
+					option = DIO_PACT
+				}
+				add = 99
+			}
 		} 
 
 		completion_reward = {
@@ -1960,6 +1967,9 @@ focus_tree = {
     			type = annex_everything
     			target = JOJ
 			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
 		} 
 	}
 
@@ -1980,7 +1990,14 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 1
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DIO_approach_to_pillar_men
+					option = DIO_ANTAGONIZE
+				}
+				add = 99
+			}
 		} 
 
 		completion_reward = {
@@ -2407,6 +2424,9 @@ focus_tree = {
 					type = annex_everything
 				}
 			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
 		} 
 	}
 
@@ -2422,9 +2442,9 @@ focus_tree = {
 			focus = DIO_a_bit_closer_to_heaven
 		}
 
-	#	allow_branch = {
-	#		has_completed_focus = DIO_heaven_is_close
-	#	}
+		allow_branch = {
+			has_completed_focus = DIO_a_bit_closer_to_heaven
+		}
 
 		available = {
 			custom_trigger_tooltip = {
@@ -2487,11 +2507,11 @@ focus_tree = {
 			focus = DIO_heaven_is_close
 		}
 
-	#	allow_branch = {
-	#		all_state = {
-	#			is_owned_by = DIO
-	#		}
-	#	}
+		allow_branch = {
+			all_state = {
+				is_owned_by = DIO
+			}
+		}
 
 		available = {
 			custom_trigger_tooltip = {

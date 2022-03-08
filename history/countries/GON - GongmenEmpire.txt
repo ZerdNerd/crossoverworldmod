@@ -74,47 +74,7 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Regency Council"
-	desc = "POLITICS_TBD_DESC"
-	picture = "regency.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "humsin.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Lord Shen"
-	desc = "POLITICS_TBD_DESC"
-	picture = "shen.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		cannons_fanatic
-		warmonger
-	}
-}
-
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "humsin.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
+recruit_character = GON_regency_council
+recruit_character = GON_vacant
+recruit_character = GON_lord_shen
+recruit_character = GON_hsia_ting

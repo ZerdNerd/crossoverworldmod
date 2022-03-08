@@ -7,7 +7,7 @@ guiTypes = {
 		show_animation_type = decelerated
 		hide_animation_type = accelerated
 		animation_time = 300	
-		size = { width=805 height=100%% } #550
+		size = { width=805 height=100%% }
 		
 		#hide_sound = menu_close_window
 		show_sound = menu_open_window
@@ -287,6 +287,8 @@ guiTypes = {
 			position = { x = 15 y = 427 }	
 			size = { width = 775 height = 100%% }
 			verticalScrollbar = "right_vertical_slider"
+			scroll_wheel_factor = 45
+			smooth_scrolling = yes
 			margin = {top = 1 bottom = 13 }			
 				
 			background = {
@@ -306,7 +308,7 @@ guiTypes = {
 		
 		buttonType = {
 			name = "close_button"
-			position = { x = -42 y = 9 }
+		    position = { x = -42 y = 9 }
 			quadTextureSprite ="GFX_closebutton"
 			buttonFont = "Main_14_black"
 			shortcut = "ESCAPE"

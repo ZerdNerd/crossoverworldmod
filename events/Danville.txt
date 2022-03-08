@@ -445,6 +445,16 @@ country_event = { #1936 Elections
 
 	option = { #Roger
 		name = danville.6.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = TSA_1936_ELECTIONS
+					option = TSA_ROGER
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		hidden_effect = {
 			set_country_flag = TSA_roger_won_1936
@@ -457,6 +467,16 @@ country_event = { #1936 Elections
 
 	option = { #Heinz
 		name = danville.6.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = TSA_1936_ELECTIONS
+					option = TSA_HEINZ
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		hidden_effect = {
 			set_politics = {

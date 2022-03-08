@@ -1,0 +1,102 @@
+characters={
+	MUS_princess_peach={
+		name="Princess Peach"
+		portraits={
+			civilian={
+				large="gfx/leaders/MUS/peach.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MUS_mario={
+		name="Mario"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MUS/mario.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MUS_luigi={
+		name="Luigi"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MUS/luigi.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MUS_benito_garibaldi={
+		name="Benito Garibaldi"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_6"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	MUS_enrico_zupelli={
+		name="Enrico Zupelli"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_5"
+			}
+		}
+		country_leader={
+			ideology=leninism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	MUS_pasquale_filomarino={
+		name="Pasquale Filomarino"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_5"
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	MUS_oreste_zupelli={
+		name="Oreste Zupelli"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+}

@@ -46,6 +46,20 @@ on_actions = {
 
 	on_daily = {
 		effect = {
+			if = {
+				limit = {
+					all_state = {
+						is_owned_by = DIO
+					}
+					NOT = {
+						has_global_flag = dio_conquered_the_world
+					}
+				}
+				DIO = {
+					mark_focus_tree_layout_dirty = yes
+				}
+				set_global_flag = dio_conquered_the_world
+			}
 			#Check for big events - normal circumstances!
 			SIO = {
 				if = {

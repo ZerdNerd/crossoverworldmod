@@ -1133,6 +1133,16 @@ country_event = { #Macius receives ultimatum
 
 	option = {
 		name = centralkingdom.31.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = MAI_hartmut_crisis_ai_behavior
+					option = MAI_AGREE_TO_REFORM
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			set_country_flag = hartmut_demands
 			set_country_flag = agreed_to_reform_parliament
@@ -1150,6 +1160,16 @@ country_event = { #Macius receives ultimatum
 
 	option = {
 		name = centralkingdom.31.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = MAI_hartmut_crisis_ai_behavior
+					option = MAI_REFUSE
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			set_country_flag = hartmut_demands
 			set_country_flag = denied_reforming_parliament
@@ -2321,7 +2341,7 @@ country_event = { #We were on the verge of greatness! We were this close!
 						#
 					}
 				}
-				set_capital = 792
+				set_capital = { state = 792 }
 				inherit_technology = MAI
 				load_oob = CLD_rebellion
 				change_tag_from = MAI
@@ -2424,7 +2444,7 @@ country_event = { #We were on the verge of greatness! We were this close!
 						#
 					}
 				}
-				set_capital = 792
+				set_capital = { state = 792 }
 				inherit_technology = MAI
 				load_oob = CLD_rebellion
 				declare_war_on = {
@@ -3269,7 +3289,7 @@ country_event = { #General declares open rebellion against Macius (Children Revo
 						}
 					}
 				load_oob = GEN_civil_war_basic_templates
-				set_capital = 872
+				set_capital = { state = 872 }
 				inherit_technology = MAI
 				every_owned_state = {
 					general_strzelcy_divisions = yes
@@ -3471,7 +3491,7 @@ country_event = { #General declares open rebellion against Macius (Children Revo
 				every_owned_state = {
 					general_strzelcy_divisions = yes
 				}
-				set_capital = 872
+				set_capital = { state = 872 }
 				declare_war_on = {
 					target = MAI
 					type = annex_everything

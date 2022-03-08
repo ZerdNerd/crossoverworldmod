@@ -62,68 +62,13 @@ set_politics = {
 set_stability = 0.6
 set_war_support = 0.4
 
-create_country_leader = {
-	name = "Princesa Elena Castillo Flores"
-	desc = "POLITICS_TBD_DESC"
-	picture = "elena.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		underage_monarch
-	}
-}
-
-create_country_leader = {
-	name = "Princesa Elena Castillo Flores"
-	desc = "POLITICS_TBD_DESC"
-	picture = "elena.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		underage_monarch
-	}
-}
-
-create_country_leader = {
-	name = "Vacant...?"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Gabriel Núñez"
-	portrait_path = "gfx/leaders/AVA/gabe.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 4
-    logistics_skill = 5
-}
-
-create_corps_commander = {
-	name = "Esteban"
-	portrait_path = "gfx/leaders/AVA/esteban.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-}
+recruit_character = AVA_esteban
+recruit_character = AVA_princesa_elena_castillo_flores
+recruit_character = AVA_vacant...?
+recruit_character = AVA_vacant
+recruit_character = AVA_gabriel_núñez
+recruit_character = AVA_raimundo_de_albornoz
+recruit_character = AVA_mateo
+recruit_character = AVA_naomi
+recruit_character = AVA_francisco
+recruit_character = AVA_luisa

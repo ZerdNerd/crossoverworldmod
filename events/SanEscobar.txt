@@ -17,6 +17,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = sanescobar.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_SZNUK
+				}
+				add = 99
+			}
+		}
 		set_politics = {
 			ruling_party = democratic
 		}
@@ -64,6 +74,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = sanescobar.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_KOZIOL
+				}
+				add = 99
+			}
+		}
 		set_politics = {
 			ruling_party = communism
 		}
@@ -218,6 +238,23 @@ country_event = { #People gather near the National Assembly to hear the decision
 
 	option = { #Agree to organize the elections
 		name = sanescobar.5.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_KOZIOL
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_SZNUK
+				}
+				add = 99
+			}
+		}
 		add_political_power = -50
 		add_stability = 0.1
 		add_popularity = {
@@ -231,6 +268,23 @@ country_event = { #People gather near the National Assembly to hear the decision
 
 	option = { #Refuse to announce the decision
 		name = sanescobar.5.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_STONOGA_REFUSE
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_STONOGA_AGREEMENT
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		add_stability = -0.25
 		hidden_effect = {
@@ -282,6 +336,16 @@ country_event = { #Democrats march on Santo Subito!
 
 	option = { #Deploy the army!
 		name = sanescobar.7.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_STONOGA_REFUSE
+				}
+				add = 99
+			}
+		}
 		add_political_power = -100
 		add_stability = -0.25
 		hidden_effect = {
@@ -294,6 +358,16 @@ country_event = { #Democrats march on Santo Subito!
 
 	option = { #Negotiate with them
 		name = sanescobar.7.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_STONOGA_AGREEMENT
+				}
+				add = 99
+			}
+		}
 		add_political_power = -100
 		add_stability = -0.25
 		hidden_effect = {
@@ -396,6 +470,16 @@ country_event = { #Democrats demand to free Sznuk and organize elections
 
 	option = { #...but in exchange there won't be any elections organized.
 		name = sanescobar.10.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SAN_election_1936
+					option = SAN_STONOGA_AGREEMENT
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		add_stability = 0.05
 		add_popularity = {

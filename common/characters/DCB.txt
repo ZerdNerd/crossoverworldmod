@@ -1,0 +1,88 @@
+characters={
+	DCB_flintheart_glomgold={
+		name="Flintheart Glomgold"
+		portraits={
+			civilian={
+				large="gfx/leaders/DCB/flintheart.dds"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9501
+		}
+		country_leader={
+			desc="POLITICS_FLINTHEART_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	DCB_scrooge_mcduck={
+		name="Scrooge McDuck"
+		portraits={
+			civilian={
+				large="gfx/leaders/DCB/scrooge.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=9500
+		}
+		country_leader={
+			desc="POLITICS_SCROOGE_DESC"
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	DCB_richard_cleburne={
+		name="Richard Cleburne"
+		portraits={
+			civilian={
+				large="GFX_portrait_europe_generic_8"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1952.1.1.12"
+			id=-1
+		}
+	}
+	DCB_louis_stuart={
+		name="Louis Stuart"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_6.dds"
+			}
+		}
+		country_leader={
+			ideology=despotic_monarchy
+			traits={ editor }
+			expire="1945.1.1.12"
+			id=-1
+		}
+	}
+	DCB_joseph_sibley={
+		name="Joseph Sibley"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ economist quartermaster_general }
+			expire="1954.1.1.12"
+			id=-1
+		}
+	}
+}

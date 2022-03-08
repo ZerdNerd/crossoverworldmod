@@ -1,0 +1,236 @@
+characters={
+	AVA_esteban={
+		name="Esteban"
+		portraits={
+			army={
+				small="GFX_idea_AVA_esteban"
+			}
+			army={
+				large="gfx/leaders/AVA/esteban.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AVA_esteban_i
+			allowed = {
+				original_tag = AVA
+			}
+			available = {
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+			traits = {
+				member_of_grand_council_of_avalor chancellor_of_avalor 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	AVA_luisa={
+		name="Luisa Flores"
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_AVA_luisa"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AVA_luisa_i
+			allowed = {
+				original_tag = AVA
+			}
+			available = {
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+			traits = {
+				member_of_grand_council_of_avalor member_of_avalor_royal_family 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AVA_francisco={
+		name="Francisco Flores"
+		portraits={
+			army={
+				small="GFX_idea_AVA_francisco"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AVA_francisco_i
+			allowed = {
+				original_tag = AVA
+			}
+			available = {
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+			traits = {
+				member_of_grand_council_of_avalor member_of_avalor_royal_family 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AVA_naomi={
+		name="Naomi Turner"
+		portraits={
+			army={
+				small="GFX_idea_AVA_naomi"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = AVA_naomi_i
+			allowed = {
+				original_tag = AVA
+			}
+			available = {
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+			traits = {
+				member_of_grand_council_of_avalor representative_of_commoners 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AVA_mateo={
+		name="Mateo de Alva"
+		portraits={
+			army={
+				small="GFX_idea_AVA_mateo"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AVA_mateo_i
+			allowed = {
+				original_tag = AVA
+			}
+			available = {
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+			traits = {
+				member_of_grand_council_of_avalor royal_wizard_of_avalor 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	AVA_princesa_elena_castillo_flores={
+		name="Princesa Elena Castillo Flores"
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/AVA/elena.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			traits={ underage_monarch }
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			traits={ underage_monarch }
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	AVA_vacant...?={
+		name="Vacant...?"
+		portraits={
+			civilian={
+				large="GFX_Portrait_South_America_Generic_3"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	AVA_vacant={
+		name="Vacant"
+		portraits={
+			civilian={
+				large="GFX_Portrait_South_America_Generic_1"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	AVA_gabriel_núñez={
+		name="Gabriel Núñez"
+		portraits={
+			army={
+				small="GFX_idea_AVA_gabe"
+			}
+			army={
+				large="gfx/leaders/AVA/gabe.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = AVA_gabe_i
+			allowed = {
+				original_tag = AVA
+			}
+		
+			available = {
+				has_completed_focus = AVA_revise_the_high_command
+				has_completed_focus = AVA_restore_royal_advisors
+			}
+		
+			traits = { member_of_royal_guard_of_avalor }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=5
+			legacy_id=-1
+		}
+	}
+	AVA_raimundo_de_albornoz={
+		name="Raimundo de Albornoz"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ smooth_talking_charmer }
+			expire="1953.1.1.12"
+			id=-1
+		}
+	}
+}

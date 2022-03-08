@@ -182,7 +182,7 @@ country_event = { #Flensburgians demand Tungu-Pungu in exchange for our lands
 	option = { #Agree
 		name = sioux.7.a
 		FLE = {
-			set_capital = 782
+			set_capital = { state = 782 }
 		}
 		transfer_state = 634
 		transfer_state = 638
@@ -215,7 +215,7 @@ country_event = { #Flensburgians demand the rest of Luvlandia in exchange for ou
 	option = { #Agree
 		name = sioux.8.a
 		FLE = {
-			set_capital = 782
+			set_capital = { state = 782 }
 		}
 		transfer_state = 634
 		transfer_state = 638
@@ -245,7 +245,7 @@ country_event = { #Neu Flensburg or War
 	option = { #Fold
 		name = sioux.9.a
 		FLE = {
-			set_capital = 782
+			set_capital = { state = 782 }
 		}
 		add_stability = -0.25
 		add_political_power = -150
@@ -446,7 +446,14 @@ country_event = { #1937 Red Ribbon Race
 			}
 		}
 		ai_chance = {
-			factor = 20
+			base = 20
+			modifier = {
+				has_game_rule = {
+					rule = SIO_yakari_status
+					option = SIO_YAKARI_NOT_PRESENT
+				}
+				add = -20
+			}
 		}
 	}
 
@@ -460,17 +467,58 @@ country_event = { #1937 Red Ribbon Race
 						id = sioux.20
 						days = 2
 					}
+					modifier = {
+						has_game_rule = {
+							rule = SIO_yakari_status
+							option = SIO_YAKARI_PRESENT
+						}
+						factor = 100
+					}
+					modifier = {
+						has_game_rule = {
+							rule = SIO_yakari_status
+							option = SIO_YAKARI_NOT_PRESENT
+						}
+						factor = 0
+					}
 				}
 				50 = {
 					country_event = {
 						id = sioux.21
 						days = 2
 					}
+					modifier = {
+						has_game_rule = {
+							rule = SIO_yakari_status
+							option = SIO_YAKARI_PRESENT
+						}
+						factor = 0
+					}
+					modifier = {
+						has_game_rule = {
+							rule = SIO_yakari_status
+							option = SIO_YAKARI_NOT_PRESENT
+						}
+						factor = 100
+					}
 				}
 			}
 		}
 		ai_chance = {
-			factor = 80
+			base = 80
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = SIO_yakari_status
+						option = SIO_YAKARI_PRESENT
+					}
+					has_game_rule = {
+						rule = SIO_yakari_status
+						option = SIO_YAKARI_NOT_PRESENT
+					}
+				}
+				add = 20
+			}
 		}
 	}
 }
@@ -1246,6 +1294,16 @@ country_event = { #Which way to go
 				has_country_flag = yakari_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_after_sandstorm_vote
+					option = SIO_YAKARI_STAYS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1259,6 +1317,16 @@ country_event = { #Which way to go
 		trigger = {
 			NOT = {
 				has_country_flag = buffalo_branch_vote_lost
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_after_sandstorm_vote
+					option = SIO_BUFFALO_SEED_WINS
+				}
+				add = 99
 			}
 		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
@@ -1276,6 +1344,16 @@ country_event = { #Which way to go
 				has_country_flag = rainbow_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_after_sandstorm_vote
+					option = SIO_RAINBOW_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1291,6 +1369,16 @@ country_event = { #Which way to go
 				has_country_flag = braid_night_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_after_sandstorm_vote
+					option = SIO_BRAID_NIGHT_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1301,6 +1389,16 @@ country_event = { #Which way to go
 
 	option = { #Council stays
 		name = sioux_vote.9.f
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_after_sandstorm_vote
+					option = SIO_UNITED_COUNCIL_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_united_council_will_prevail
 		hidden_effect = {
 			set_country_flag = SIO_council_voted_to_stay
@@ -1465,6 +1563,16 @@ country_event = { #Which way to go
 				has_country_flag = republic_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_no_sandstorm_vote
+					option = SIO_REPUBLIC_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1478,6 +1586,16 @@ country_event = { #Which way to go
 		trigger = {
 			NOT = {
 				has_country_flag = monarchy_branch_vote_lost
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_no_sandstorm_vote
+					option = SIO_BOLD_GAZE_WINS
+				}
+				add = 99
 			}
 		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
@@ -1495,6 +1613,16 @@ country_event = { #Which way to go
 				has_country_flag = fascist_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_no_sandstorm_vote
+					option = SIO_PROUDEST_CLOUD_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1510,6 +1638,16 @@ country_event = { #Which way to go
 				has_country_flag = braid_night_branch_vote_lost
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_no_sandstorm_vote
+					option = SIO_BRAID_NIGHT_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_chceck_the_decisions_tab
 		hidden_effect = {
 			calculate_the_council_votes = yes
@@ -1520,6 +1658,16 @@ country_event = { #Which way to go
 
 	option = { #Council stays
 		name = sioux_vote.12.f
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_no_sandstorm_vote
+					option = SIO_UNITED_COUNCIL_WINS
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = SIO_united_council_will_prevail
 		hidden_effect = {
 			set_country_flag = SIO_council_voted_to_stay
@@ -1740,6 +1888,97 @@ country_event = { #Convince council member - demands option 1
 
 	option = { #Accept
 		name = sioux_convince.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				OR = {
+					AND = {
+						has_country_flag = operation_sandstorm_vote
+						has_game_rule = {
+							rule = SIO_sandstorm_rejection
+							option = SIO_REJECT
+						}
+					}
+					AND = {
+						has_country_flag = yakari_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_YAKARI_STAYS
+						}
+					}
+					AND = {
+						has_country_flag = buffalo_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BUFFALO_SEED_WINS
+						}
+					}
+					AND = {
+						has_country_flag = rainbow_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_RAINBOW_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+					AND = {
+						has_country_flag = monarchy_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BOLD_GAZE_WINS
+						}
+					}
+					AND = {
+						has_country_flag = fascist_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_PROUDEST_CLOUD_WINS
+						}
+					}
+					AND = {
+						has_country_flag = republic_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_REPUBLIC_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+				}
+				add = 99
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = 99
+			}
+		}
 		add_stability = -0.05
 		add_political_power = -10
 		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
@@ -1815,6 +2054,37 @@ country_event = { #Convince council member - demands option 1
 
 	option = { #Refuse
 		name = sioux_convince.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_REJECT
+				}
+				add = -1
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = -1
+			}
+		}
 		add_political_power = 10
 		hidden_effect = {
 			clear_variable = sioux_council_which_member_is_being_convinced
@@ -1863,6 +2133,97 @@ country_event = { #Convince council member - demands option 2
 
 	option = { #Accept
 		name = sioux_convince.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				OR = {
+					AND = {
+						has_country_flag = operation_sandstorm_vote
+						has_game_rule = {
+							rule = SIO_sandstorm_rejection
+							option = SIO_REJECT
+						}
+					}
+					AND = {
+						has_country_flag = yakari_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_YAKARI_STAYS
+						}
+					}
+					AND = {
+						has_country_flag = buffalo_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BUFFALO_SEED_WINS
+						}
+					}
+					AND = {
+						has_country_flag = rainbow_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_RAINBOW_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+					AND = {
+						has_country_flag = monarchy_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BOLD_GAZE_WINS
+						}
+					}
+					AND = {
+						has_country_flag = fascist_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_PROUDEST_CLOUD_WINS
+						}
+					}
+					AND = {
+						has_country_flag = republic_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_REPUBLIC_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+				}
+				add = 99
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = 99
+			}
+		}
 		add_political_power = -25
 		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
 		hidden_effect = {
@@ -1937,6 +2298,37 @@ country_event = { #Convince council member - demands option 2
 
 	option = { #Refuse
 		name = sioux_convince.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_REJECT
+				}
+				add = -1
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = -1
+			}
+		}
 		add_political_power = 25
 		hidden_effect = {
 			clear_variable = sioux_council_which_member_is_being_convinced
@@ -1985,6 +2377,97 @@ country_event = { #Convince council member - demands option 3
 
 	option = { #Accept
 		name = sioux_convince.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				OR = {
+					AND = {
+						has_country_flag = operation_sandstorm_vote
+						has_game_rule = {
+							rule = SIO_sandstorm_rejection
+							option = SIO_REJECT
+						}
+					}
+					AND = {
+						has_country_flag = yakari_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_YAKARI_STAYS
+						}
+					}
+					AND = {
+						has_country_flag = buffalo_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BUFFALO_SEED_WINS
+						}
+					}
+					AND = {
+						has_country_flag = rainbow_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_RAINBOW_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_after_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+					AND = {
+						has_country_flag = braid_night_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BRAID_NIGHT_WINS
+						}
+					}
+					AND = {
+						has_country_flag = monarchy_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_BOLD_GAZE_WINS
+						}
+					}
+					AND = {
+						has_country_flag = fascist_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_PROUDEST_CLOUD_WINS
+						}
+					}
+					AND = {
+						has_country_flag = republic_branch_vote
+						has_game_rule = {
+							rule = SIO_no_sandstorm_vote
+							option = SIO_REPUBLIC_WINS
+						}
+					}
+				}
+				add = 99
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = 99
+			}
+		}
 		add_war_support = -0.05
 		add_manpower = 1000
 		custom_effect_tooltip = SIO_member_will_vote_as_you_wish
@@ -2060,6 +2543,37 @@ country_event = { #Convince council member - demands option 3
 
 	option = { #Refuse
 		name = sioux_convince.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 1 }
+					check_variable = { sioux_council_member_2_vote_status = 1 }
+					check_variable = { sioux_council_member_3_vote_status = 1 }
+					check_variable = { sioux_council_member_4_vote_status = 1 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_REJECT
+				}
+				add = -1
+			}
+			modifier = {
+				OR = {
+					check_variable = { sioux_council_member_1_vote_status = 2 }
+					check_variable = { sioux_council_member_2_vote_status = 2 }
+					check_variable = { sioux_council_member_3_vote_status = 2 }
+					check_variable = { sioux_council_member_4_vote_status = 2 }
+				}
+				has_country_flag = operation_sandstorm_vote
+				has_game_rule = {
+					rule = SIO_sandstorm_rejection
+					option = SIO_DONT_REJECT
+				}
+				add = -1
+			}
+		}
 		add_political_power = 10
 		hidden_effect = {
 			clear_variable = sioux_council_which_member_is_being_convinced

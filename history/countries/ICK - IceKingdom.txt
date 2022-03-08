@@ -54,57 +54,6 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Ice King"
-	desc = "POLITICS_TBD_DESC"
-	picture = "iceking.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "commie_council.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Ice King"
-	portrait_path = "gfx/leaders/ICK/iceking.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 2
-    planning_skill = 3
-    logistics_skill = 2
-}
+recruit_character = ICK_ice_king
+recruit_character = ICK_placeholder
+recruit_character = ICK_jim_taylor

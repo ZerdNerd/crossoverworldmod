@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -116,133 +136,18 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Friedewalt III"
-	desc = "POLITICS_FRIEDEWALT_I_DESC"
-	picture = "friedewalt.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
+recruit_character = FRI_friedewalt_iii
+recruit_character = FRI_hartmut
+recruit_character = FRI_hanz_speidel
+recruit_character = FRI_adolf_heusinger
+recruit_character = FRI_heinrich_scheuch
+recruit_character = FRI_william_balck
+recruit_character = FRI_hermann_balck
+recruit_character = FRI_marco_kirschner
+recruit_character = FRI_bernhard_dernburg
+recruit_character = FRI_joseph_wirth
+recruit_character = FRI_matthias_erzberger
 
-create_country_leader = {
-	name = "Friedewalt III"
-	desc = "POLITICS_FRIEDEWALT_I_DESC"
-	picture = "friedewalt.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Friedewalt III"
-	desc = "POLITICS_FRIEDEWALT_I_DESC"
-	picture = "friedewalt.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Friedewalt III"
-	desc = "POLITICS_FRIEDEWALT_I_DESC"
-	picture = "friedewalt.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_field_marshal = {
-	name = "Friedewalt III"
-	portrait_path = "gfx/leaders/FRI/friedewalt.dds"
-	traits = { inspirational_leader }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-    id = 9996
-}
-
-create_corps_commander = {
-	name = "Hartmut"
-	portrait_path = "gfx/leaders/FRI/hartmut.dds"
-	traits = { harsh_leader politically_connected }
-	skill = 2
-    attack_skill = 2
-    defense_skill = 2
-    planning_skill = 1
-    logistics_skill = 3
-    id = 9999
-}
-
-create_corps_commander = {
-	name = "Hanz Speidel"
-	portrait_path = "gfx/leaders/FRI/speidel.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 2
-    planning_skill = 2
-    logistics_skill = 3
-    id = 9998
-}
-
-create_corps_commander = {
-	name = "Adolf Heusinger"
-	portrait_path = "gfx/leaders/FRI/heusinger.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 3
-    id = 9997
-}
-
-create_corps_commander = {
-	name = "Heinrich Scheuch"
-	portrait_path = "gfx/leaders/FRI/heinrich_scheuch.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-    id = 9995
-}
-
-create_corps_commander = {
-	name = "William Balck"
-	portrait_path = "gfx/leaders/FRI/william_balck.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 2
-    id = 9994
-}
-
-create_corps_commander = {
-	name = "Hermann Balck"
-	portrait_path = "gfx/leaders/FRI/hermann_balck.dds"
-	traits = { panzer_leader }
-	skill = 5
-    attack_skill = 4
-    defense_skill = 3
-    planning_skill = 4
-    logistics_skill = 3
-    id = 9993
-}
 
 country_event = {
 	id = blackmonday.1

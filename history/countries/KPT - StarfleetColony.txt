@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -105,94 +125,11 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "No Such Position Exists"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Admirał Gwiezdnej Floty"
-	desc = "POLITICS_TBD_DESC"
-	picture = "first_admiral.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Generał Kuj"
-	desc = "POLITICS_TBD_DESC"
-	picture = "kuj.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Dominik Jachaś"
-	desc = "POLITICS_TBD_DESC"
-	picture = "zdominoniebianskaskurwoalacienieomino.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Tytus Bomba"
-	portrait_path = "gfx/leaders/KPT/bombardiero.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 5
-    defense_skill = 5
-    planning_skill = 5
-    logistics_skill = 4
-    id = 9550
-}
-
-create_corps_commander = {
-	name = "JJ Torpeda"
-	portrait_path = "gfx/leaders/KPT/torpeda.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-    id = 9551
-}
-
-create_corps_commander = {
-	name = "Michał Głuś"
-	portrait_path = "gfx/leaders/KPT/glus.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 2
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 2
-    id = 9552
-}
-
-create_corps_commander = {
-	name = "Generał Kuj"
-	portrait_path = "gfx/leaders/KPT/kuj.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-    id = 9553
-}
+recruit_character = KPT_no_such_position_exists
+recruit_character = KPT_admirał_gwiezdnej_floty
+recruit_character = KPT_generał_kuj
+recruit_character = KPT_dominik_jachaś
+recruit_character = KPT_tytus_bomba
+recruit_character = KPT_jj_torpeda
+recruit_character = KPT_michał_głuś
+recruit_character = KPT_grzegorz_lewandowski

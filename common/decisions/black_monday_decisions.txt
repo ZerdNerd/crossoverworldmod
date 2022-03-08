@@ -3,7 +3,7 @@ black_monday_dec_category = {
 	########## PART ONE OF FIXING THE STOCK CRASH
 	currency_denomination = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI tag = FLE }}
 		fire_only_once = yes
 		cost = 100
 		ai_will_do = {
@@ -32,7 +32,7 @@ black_monday_dec_category = {
 
 	close_unnessecary_factories = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI tag = FLE }}
 		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
@@ -61,7 +61,7 @@ black_monday_dec_category = {
 
 	tax_break = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI tag = FLE }}
 		cost = 50
 		fire_only_once = yes
 		ai_will_do = {
@@ -90,7 +90,7 @@ black_monday_dec_category = {
 
 	freeze_currency_exchange_rate = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI tag = FLE }}
 		cost = 100
 		fire_only_once = yes
 		ai_will_do = {
@@ -131,7 +131,7 @@ black_monday_dec_category = {
 				has_country_flag = can_only_one_bm_reform
 			}
 		}
-		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday NOT = { tag = FRI tag = FLE }}
 		cost = 150
 		fire_only_once = yes
 		ai_will_do = {
@@ -158,7 +158,7 @@ black_monday_dec_category = {
 	########## PART TWO OF FIXING THE STOCK CRASH
 	cut_the_spendings = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI tag = FLE }}
 		cost = 100
 		fire_only_once = yes
 		ai_will_do = {
@@ -190,7 +190,7 @@ black_monday_dec_category = {
 
 	establish_relief_agencies = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI tag = FLE }}
 		cost = 100
 		fire_only_once = yes
 		ai_will_do = {
@@ -218,7 +218,7 @@ black_monday_dec_category = {
 
 	help_national_businesses = {
 		icon = ger_mefo_bills
-		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI tag = FLE }}
 		cost = 100
 		fire_only_once = yes
 		ai_will_do = {
@@ -257,7 +257,7 @@ black_monday_dec_category = {
 				has_country_flag = can_only_one_bm_reform
 			}
 		}
-		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI }}
+		visible = { has_idea = TCWMod_black_monday_2 NOT = { tag = FRI tag = FLE }}
 		cost = 150
 		fire_only_once = yes
 		ai_will_do = {

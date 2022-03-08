@@ -1400,7 +1400,7 @@ country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
 					transfer_state = 33
 					transfer_state = 34
 					add_state_core = 24
-					set_capital = 802
+					set_capital = { state = 802 }
 					load_oob = KLU_native_uprising
 				}
 				every_state = {

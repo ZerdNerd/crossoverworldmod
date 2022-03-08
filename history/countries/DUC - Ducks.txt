@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -103,46 +123,6 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Parliament of Ducks"
-	desc = "POLITICS_TBD_DESC"
-	picture = "sejm.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
+recruit_character = DUC_placeholder
+recruit_character = DUC_parliament_of_ducks
+recruit_character = DUC_bob_walker

@@ -1,0 +1,56 @@
+characters={
+	GLO_placeholder={
+		name="Placeholder"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_4.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GLO_wilderness={
+		name="Wilderness"
+		portraits={
+			civilian={
+				large="gfx/leaders/DOF/Placeholder.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_WILDERNESS_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GLO_alexander_wilson={
+		name="Alexander Wilson"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ silent_workhorse }
+			expire="1946.1.1.12"
+			id=-1
+		}
+	}
+}

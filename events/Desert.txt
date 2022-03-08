@@ -663,7 +663,7 @@ country_event = { #Sioux refugees exiled to Greenland
 			add_state_core = 23
 			transfer_state = 22
 			transfer_state = 23
-			set_capital = 22
+			set_capital = { state = 22 }
 			add_manpower = 20000
 			add_ideas = {
 				modern_tech_idea
@@ -1561,6 +1561,23 @@ country_event = { #Kayo vs Sioux - Final event
 
 	option = { #Launch an investigation into this matter
 		name = desert.45.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_yakari_status
+					option = SIO_YAKARI_PRESENT
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SIO_yakari_status
+					option = SIO_YAKARI_NOT_PRESENT
+				}
+				add = -1
+			}
+		}
 		add_political_power = -50
 		hidden_effect = {
 			country_event = {
@@ -1575,6 +1592,23 @@ country_event = { #Kayo vs Sioux - Final event
 
 	option = { #Order Yakari to leave the country
 		name = desert.45.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SIO_yakari_status
+					option = SIO_YAKARI_PRESENT
+				}
+				add = -1
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SIO_yakari_status
+					option = SIO_YAKARI_NOT_PRESENT
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		add_stability = -0.25
 		hidden_effect = {

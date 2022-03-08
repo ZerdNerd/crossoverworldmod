@@ -71,57 +71,6 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Arktos"
-	desc = "POLITICS_TBD_DESC"
-	picture = "arktos.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "James"
-	desc = "POLITICS_TBD_DESC"
-	picture = "james.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Arktos"
-	desc = "POLITICS_TBD_DESC"
-	picture = "arktos.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "James"
-	desc = "POLITICS_TBD_DESC"
-	picture = "james.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "James"
-	portrait_path = "gfx/leaders/ICW/james.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 5
-    logistics_skill = 4
-}
+recruit_character = ICW_james
+recruit_character = ICW_arktos
+recruit_character = ICW_gerhard__

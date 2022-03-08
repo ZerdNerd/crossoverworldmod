@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -87,6 +107,11 @@ add_ideas = {
 	FLE_medium_funding_from_pantmawr
 }
 
+country_event = {
+	id = flensburg.21
+	days = 140
+}
+
 set_convoys = 50
 
 set_popularities = {
@@ -108,96 +133,12 @@ set_politics = {
 
 set_stability = 0.65
 
-create_country_leader = {
-	name = "Herman von Wismann"
-	desc = "POLITICS_WISMANN_DESC"
-	picture = "wissman.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Rudolf von Stroheim"
-	desc = "POLITICS_STROHEIM_DESC"
-	picture = "wissman.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Herman von Wismann"
-	portrait_path = "gfx/leaders/FLE/wissman.dds"
-	traits = { inflexible_strategist }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 2
-    planning_skill = 2
-    logistics_skill = 3
-    id = 9950
-}
-
-create_corps_commander = {
-	name = "Otto von Below"
-	portrait_path = "gfx/leaders/FLE/below.dds"
-	traits = { }
-	skill = 2
-    attack_skill = 2
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-    id = 9951
-}
-
-create_corps_commander = {
-	name = "Rudolf von Stroheim"
-	portrait_path = "gfx/leaders/FLE/stroheim.dds"
-	traits = { }
-	skill = 2
-    attack_skill = 4
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-    id = 9952
-}
-
-create_corps_commander = {
-	name = "Moriz von Lyncker"
-	portrait_path = "gfx/leaders/FLE/moriz_von_lyncker.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-    id = 9953
-}
-
-create_corps_commander = {
-	name = "Kurt von Hammerstein"
-	portrait_path = "gfx/leaders/FLE/kurt_von_hammerstein.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 2
-    planning_skill = 3
-    logistics_skill = 2
-    id = 9954
-}
-
-create_corps_commander = {
-	name = "Wilhelm Heye"
-	portrait_path = "gfx/leaders/FLE/wilhelm_heye.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 3
-    id = 9955
-}
+recruit_character = FLE_herman_von_wismann
+recruit_character = FLE_rudolf_von_stroheim
+recruit_character = FLE_otto_von_below
+recruit_character = FLE_moriz_von_lyncker
+recruit_character = FLE_kurt_von_hammerstein
+recruit_character = FLE_wilhelm_heye
+recruit_character = FLE_karl_duttmann
+recruit_character = FLE_peter_hoffmann
+recruit_character = FLE_staffan_kirschner

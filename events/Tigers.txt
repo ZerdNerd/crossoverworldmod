@@ -15,6 +15,16 @@ country_event = { #Aron dies
 
 	option = {
 		name = tigers.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = TIG_new_leader
+					option = TIG_TOM
+				}
+				add = 99
+			}
+		}
 		kill_country_leader = yes
 		create_country_leader = {
 			name = "Tom"
@@ -34,6 +44,16 @@ country_event = { #Aron dies
 
 	option = {
 		name = tigers.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = TIG_new_leader
+					option = TIG_NAK
+				}
+				add = 99
+			}
+		}
 		kill_country_leader = yes
 		set_politics = {
 			ruling_party = fascism

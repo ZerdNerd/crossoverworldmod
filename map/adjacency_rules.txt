@@ -9,7 +9,7 @@
 #Name is how you refer to the rule in adjecencies.csv
 
 #Suez Canal
-adjacency_rule
+adjacency_rule =
 {
 	name = "DANVILLE_CANAL"
 
@@ -44,8 +44,8 @@ adjacency_rule
 
 	required_provinces = { 2797 2135 9665 9616 243 9486 }
 
-	is_disabled {
-		OR {
+	is_disabled = {
+		OR = {
 			has_global_flag = DANVILLE_CANAL_BLOCKED
 			has_country_flag = DANVILLE_CANAL_BLOCKED_FOR_COUNTRY
 		}
@@ -57,7 +57,7 @@ adjacency_rule
 	offset = { -3 0 4 }
 }
 
-adjacency_rule
+adjacency_rule =
 {
 	name = "SOUTHERN_CANAL"
 
@@ -92,8 +92,8 @@ adjacency_rule
 
 	required_provinces = { 1160 4881 1053 }
 
-	is_disabled {
-		OR {
+	is_disabled = {
+		OR = {
 			has_global_flag = DANVILLE_CANAL_BLOCKED
 			has_country_flag = DANVILLE_CANAL_BLOCKED_FOR_COUNTRY
 		}
@@ -105,7 +105,7 @@ adjacency_rule
 	offset = { -3 0 4 }
 }
 
-adjacency_rule
+adjacency_rule =
 {
 	name = "EVERREALM_GATE_CANAL"
 
@@ -140,8 +140,8 @@ adjacency_rule
 
 	required_provinces = { 3363 7035 7081 }
 
-	is_disabled {
-		OR {
+	is_disabled = {
+		OR = {
 			has_global_flag = DANVILLE_CANAL_BLOCKED
 			has_country_flag = DANVILLE_CANAL_BLOCKED_FOR_COUNTRY
 		}

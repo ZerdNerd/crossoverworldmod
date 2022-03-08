@@ -1186,7 +1186,14 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 5
+			base = 5
+			modifier = {
+				has_game_rule = {
+					rule = GON_approach_to_west
+					option = GON_PACT_WITH_FLOWER_HILL
+				}
+				add = 95
+			}
 		} 
 		completion_reward = { 
 			FLO = {
@@ -1239,7 +1246,14 @@ focus_tree = {
 		}
 
 		ai_will_do = { 
-			factor = 5
+			base = 5
+			modifier = {
+				has_game_rule = {
+					rule = GON_approach_to_west
+					option = GON_NO_PACT_WITH_FLOWER_HILL
+				}
+				add = 95
+			}
 		} 
 		completion_reward = { 
 			create_wargoal = {

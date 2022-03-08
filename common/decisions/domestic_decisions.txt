@@ -140,6 +140,12 @@ flensburgian_road_to_independence = {
 			factor = 100
 		}
 
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
         visible = {
             tag = FLE
             OR = {
@@ -171,6 +177,15 @@ flensburgian_road_to_independence = {
 
         complete_effect = {
             custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                clr_country_flag = FLE_only_one_campaign_at_once
+            }
         }
     }
 
@@ -182,6 +197,12 @@ flensburgian_road_to_independence = {
 		ai_will_do = {
 			factor = 100
 		}
+
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
 
         visible = {
             tag = FLE
@@ -214,6 +235,15 @@ flensburgian_road_to_independence = {
 
         complete_effect = {
             custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                clr_country_flag = FLE_only_one_campaign_at_once
+            }
         }
     }
 
@@ -225,6 +255,12 @@ flensburgian_road_to_independence = {
 		ai_will_do = {
 			factor = 100
 		}
+
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
 
         visible = {
             tag = FLE
@@ -257,6 +293,251 @@ flensburgian_road_to_independence = {
 
         complete_effect = {
             custom_effect_tooltip = FLE_our_liberty_desire_will_rise
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            hidden_effect = {
+                clr_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+    }
+
+    declare_independence = {
+        icon = generic_political_discourse
+
+		cost = 5
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        available = {
+			compare_autonomy_progress_ratio > 0.99
+		}
+
+        visible = {
+            tag = FLE
+            has_completed_focus = FLE_we_are_on_our_own
+            is_puppet = yes
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = {
+                id = flensburg.10
+                days = 0
+            }
+            FRI = {
+				country_event = {
+					id = flensburg.11
+					days = 3
+				}
+			}
+        }
+    }
+}
+
+flensburgian_war_of_independence = {
+    countdown_to_peace_proposal = {
+        icon = generic_political_discourse
+
+        available = {
+			hidden_trigger = {
+				is_puppet = yes
+			}
+		}
+
+        allowed = {
+            tag = FLE
+        }
+
+        activation = {
+            has_war_with = FRI
+            is_puppet = no
+            surrender_progress < 0.2
+        }
+
+        selectable_mission = no
+
+        is_good = yes
+
+        days_mission_timeout = 90
+
+        timeout_effect = {
+            FRI = {
+				country_event = {
+					id = flensburg.15
+					days = 3
+				}
+			}
+        }
+    }
+
+    time_left_to_subjugate_flensburg = {
+        icon = generic_political_discourse
+
+        available = {
+            NOT = {
+                has_war_with = FLE
+            }
+        }
+
+        allowed = {
+            tag = FRI
+        }
+
+        selectable_mission = no
+
+        activation = {
+            has_war_with = FLE
+            has_variable = FRI_start_the_countdown
+        }
+
+        days_mission_timeout = 180
+
+        timeout_effect = {
+			country_event = {
+				id = flensburg.19
+				days = 0
+			}
+            hidden_effect = {
+                clear_variable = FRI_start_the_countdown
+            }
+        }
+    }
+}
+
+luvland_investment_projects = {
+    invest_in_civilian_sector = {
+        icon = generic_political_discourse
+
+		cost = 125
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        visible = {
+            tag = FLE
+            has_completed_focus = FLE_open_investments_programs
+        }
+
+        days_remove = 120
+
+        days_re_enable = 5
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            random_owned_state = {
+                add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    invest_in_arms_sector = {
+        icon = generic_political_discourse
+
+		cost = 125
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        visible = {
+            tag = FLE
+            has_completed_focus = FLE_open_investments_programs
+        }
+
+        days_remove = 120
+
+        days_re_enable = 5
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            random_owned_state = {
+                add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 1
+            }
+        }
+    }
+
+    invest_in_naval_sector = {
+        icon = generic_political_discourse
+
+		cost = 125
+
+		ai_will_do = {
+			factor = 100
+		}
+
+        available = {
+            NOT = {
+                has_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        visible = {
+            tag = FLE
+            has_completed_focus = FLE_open_investments_programs
+        }
+
+        days_remove = 120
+
+        days_re_enable = 5
+
+        complete_effect = {
+            hidden_effect = {
+                set_country_flag = FLE_only_one_campaign_at_once
+            }
+        }
+
+        remove_effect = {
+            random_owned_state = {
+                limit = {
+                    is_coastal = yes
+                }
+                add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+                add_extra_state_shared_building_slots = 1
+            }
         }
     }
 }

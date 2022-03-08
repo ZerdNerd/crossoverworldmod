@@ -1,0 +1,492 @@
+characters={
+	SIO_vacant={
+		name="Vacant"
+		portraits={
+			civilian={
+				large="gfx/leaders/SIO/council.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SIO_council_of_tribes={
+		name="Council of Tribes"
+		portraits={
+			civilian={
+				large="gfx/leaders/SIO/council.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	SIO_bold_gaze={
+		name="Bold Gaze"
+		portraits={
+			
+			army={
+				large="gfx/leaders/SIO/bold_gaze.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=8750
+		}
+	}
+	SIO_impatient_squirrel={
+		name="Impatient Squirrel"
+		portraits={
+			army={
+				small="GFX_idea_SIO_impatientsquirrel"
+			}
+			army={
+				large="gfx/leaders/SIO/impatient_squirrel.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = SIO_impatientsquirrel
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { army_concealment_1 army_logistics_1 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	SIO_quick_bow={
+		name="Quick Bow"
+		portraits={
+			
+			army={
+				large="gfx/leaders/SIO/quick_bow.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	SIO_proudest_cloud={
+		name="Proudest Cloud"
+		portraits={
+			army={
+				small="GFX_idea_SIO_proudestcloud"
+			}
+			army={
+				large="gfx/leaders/SIO/proudest_cloud.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = SIO_proudestcloud
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { army_cavalry_2 }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=8751
+		}
+	}
+	SIO_restful_wolf={
+		name="Restful Wolf"
+		portraits={
+			army={
+				small="GFX_idea_SIO_restfulwolf"
+			}
+			army={
+				large="gfx/leaders/SIO/restful_wolf.dds"
+			}
+		}
+		advisor={
+			slot = theorist
+			idea_token = SIO_restfulwolf
+			ledger = army
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { council_of_theorists }
+		}
+		corps_commander={
+			skill=4
+			attack_skill=3
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	SIO_kokomako_sisithunwan={
+		name="Kokomako Sisithunwan"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1944.1.1.12"
+			id=-1
+		}
+	}
+	SIO_rainbow={
+		name="Rainbow"
+		portraits={
+			army={
+				small="GFX_idea_SIO_rainbow"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_rainbow
+			allowed = {
+				OR = {
+					original_tag = SIO
+					original_tag = GRN
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+							has_country_flag = rainbow_not_returning_too
+						}
+					}
+				}
+			}
+
+			available = {
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+							has_country_flag = rainbow_not_returning_too
+						}
+					}
+				}
+			}
+		
+			traits = { our_right_to_survive compassionate_commoner }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_littleleaf={
+		name="Little Leaf"
+		portraits={
+			army={
+				small="GFX_idea_SIO_littleleaf"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_littleleaf
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { great_survivor }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_buffaloseed={
+		name="Buffalo Seed"
+		portraits={
+			army={
+				small="GFX_idea_SIO_buffaloseed"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_buffaloseed
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				has_global_flag = sioux_are_returning
+			}
+
+			available = {
+				has_global_flag = sioux_are_returning
+			}
+		
+			traits = { the_director empire_builder }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_shaman={
+		name="Shaman"
+		portraits={
+			army={
+				small="GFX_idea_SIO_shaman"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_shaman
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { popular_figurehead2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_restfulrock={
+		name="Restful Rock"
+		portraits={
+			army={
+				small="GFX_idea_SIO_restfulrock"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_restfulrock
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { great_war_hero }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_boldgaze={
+		name="Bold Gaze"
+		portraits={
+			army={
+				small="GFX_idea_SIO_boldgaze"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_boldgaze
+			allowed = {
+				original_tag = SIO
+			}
+
+			visible = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+
+			available = {
+				NOT = {
+					has_country_flag = SIO_sandstorm_fired
+				}
+			}
+		
+			traits = { lieutenant_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	SIO_yakari={
+		name="Yakari"
+		portraits={
+			army={
+				small="GFX_idea_SIO_yakari"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SIO_yakari
+			allowed = {
+				OR = {
+					original_tag = SIO
+					original_tag = GRN
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						has_country_flag = yakari_arrived
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+				}
+			}
+
+			available = {
+				OR = {
+					AND = {
+						tag = SIO
+						has_global_flag = sioux_are_returning
+						NOT = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+					AND = {
+						tag = GRN
+						has_country_flag = yakari_arrived
+						SIO = {
+							has_country_flag = SIO_yakari_left_the_country
+						}
+					}
+				}
+			}
+		
+			traits = { army_chief_morale_2 }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

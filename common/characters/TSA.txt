@@ -1,0 +1,105 @@
+characters={
+	TSA_heinz_doofenshmirtz={
+		name="Heinz Doofenshmirtz"
+		portraits={
+			civilian={
+				large="gfx/leaders/TSA/heinz.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	TSA_roger_doofenshmirtz={
+		name="Roger Doofenshmirtz"
+		portraits={
+			civilian={
+				large="gfx/leaders/TSA/roger.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	TSA_francis_monogram={
+		name="Francis Monogram"
+		portraits={
+			
+			army={
+				large="gfx/leaders/TSA/monobrow.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=2137
+		}
+	}
+	TSA_colonel_contraction={
+		name="Colonel Contraction"
+		portraits={
+			
+			army={
+				large="gfx/leaders/TSA/col_contraction.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=2138
+		}
+	}
+	TSA_samuel_gregg={
+		name="Samuel Gregg"
+		portraits={
+			civilian={
+				large="GFX_Portrait_europe_generic_7"
+			}
+		}
+		country_leader={
+			ideology=anti_revisionism
+			traits={ financial_expert reluctant_interventionist }
+			expire="1952.1.1.12"
+			id=-1
+		}
+	}
+	TSA_ambrose_rosencrans={
+		name="Ambrose Rosencrans"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_6.dds"
+			}
+		}
+		country_leader={
+			ideology=parliamentary_monarchy
+			traits={ economist reluctant_interventionist }
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	TSA_john_barksdale={
+		name="John Barksdale"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1944.1.1.12"
+			id=-1
+		}
+	}
+}

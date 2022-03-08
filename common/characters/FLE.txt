@@ -1,0 +1,156 @@
+characters={
+	FLE_herman_von_wismann={
+		name="Herman von Wismann"
+		portraits={
+			civilian={
+				large="gfx/leaders/FLE/wissman.dds"
+			}
+		}
+		corps_commander={
+			traits={ inflexible_strategist }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=9950
+		}
+		country_leader={
+			desc="POLITICS_WISMANN_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FLE_rudolf_von_stroheim={
+		name="Rudolf von Stroheim"
+		portraits={
+			civilian={
+				large="gfx/leaders/FLE/stroheim.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=9952
+		}
+		country_leader={
+			desc="POLITICS_STROHEIM_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FLE_otto_von_below={
+		name="Otto von Below"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FLE/below.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=9951
+		}
+	}
+	FLE_moriz_von_lyncker={
+		name="Moriz von Lyncker"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FLE/moriz_von_lyncker.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=9953
+		}
+	}
+	FLE_kurt_von_hammerstein={
+		name="Kurt von Hammerstein"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FLE/kurt_von_hammerstein.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=9954
+		}
+	}
+	FLE_wilhelm_heye={
+		name="Wilhelm Heye"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FLE/wilhelm_heye.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9955
+		}
+	}
+	FLE_karl_duttmann={
+		name="Karl Duttmann"
+		portraits={
+			civilian={
+				large="GFX_Portrait_Europe_Generic_2"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1950.1.1.12"
+			id=-1
+		}
+	}
+	FLE_peter_hoffmann={
+		name="Peter Hoffmann"
+		portraits={
+			civilian={
+				large="GFX_Portrait_europe_generic_7"
+			}
+		}
+		country_leader={
+			ideology=stalinism
+			traits={ reluctant_interventionist fortification_engineer }
+			expire="1944.1.1.12"
+			id=-1
+		}
+	}
+	FLE_staffan_kirschner={
+		name="Staffan Kirschner"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ appeaser }
+			expire="1954.1.1.12"
+			id=-1
+		}
+	}
+}

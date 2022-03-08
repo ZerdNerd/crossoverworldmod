@@ -1,0 +1,245 @@
+characters={
+	FRI_friedewalt_iii={
+		name="Friedewalt III"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRI/friedewalt.dds"
+			}
+		}
+		field_marshal={
+			traits={ inspirational_leader }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9996
+		}
+		country_leader={
+			desc="POLITICS_FRIEDEWALT_I_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_FRIEDEWALT_I_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_FRIEDEWALT_I_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_FRIEDEWALT_I_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FRI_hartmut={
+		name="Hartmut"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/hartmut.dds"
+			}
+		}
+		corps_commander={
+			traits={ harsh_leader politically_connected }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=9999
+		}
+	}
+	FRI_hanz_speidel={
+		name="Hanz Speidel"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/speidel.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=9998
+		}
+	}
+	FRI_adolf_heusinger={
+		name="Adolf Heusinger"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/heusinger.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9997
+		}
+	}
+	FRI_heinrich_scheuch={
+		name="Heinrich Scheuch"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/heinrich_scheuch.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9995
+		}
+	}
+	FRI_william_balck={
+		name="William Balck"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/william_balck.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=9994
+		}
+	}
+	FRI_hermann_balck={
+		name="Hermann Balck"
+		portraits={
+			
+			army={
+				large="gfx/leaders/FRI/hermann_balck.dds"
+			}
+		}
+		corps_commander={
+			traits={ panzer_leader }
+			skill=5
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=9993
+		}
+	}
+	FRI_marco_kirschner={
+		name="Marco Kirschner"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ smooth_talking_charmer dealbroker }
+			expire="1951.1.1.12"
+			id=-1
+		}
+	}
+	FRI_bernhard_dernburg={
+		name="Bernhard Dernburg"
+		portraits={
+			army={
+				small="GFX_idea_FRI_bernhard_dernburg"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRI_bernhard_dernburg_i
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				OR = {
+					has_country_flag = accepted_dernburg_plan
+					AND = {
+						has_country_leader = {
+    						name = "Hartmut II"
+   							ruling_only = yes
+						}
+						has_country_flag = accepted_hartmuts_plan
+					}
+				}
+			}
+		
+			traits = { economist financial_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	FRI_joseph_wirth={
+		name="Joseph Wirth"
+		portraits={
+			army={
+				small="GFX_idea_FRI_joseph_wirth"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRI_joseph_wirth_i
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				OR = {
+					has_country_flag = accepted_dernburg_plan
+					has_country_flag = accepted_hartmuts_plan
+				}
+			}
+		
+			traits = { war_profiteer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	FRI_matthias_erzberger={
+		name="Matthias Erzberger"
+		portraits={
+			army={
+				small="GFX_idea_FRI_matthias_erzberger"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRI_matthias_erzberger_i
+			allowed = {
+				original_tag = FRI
+			}
+
+			available = {
+				has_country_flag = accepted_hartmuts_plan
+			}
+		
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}

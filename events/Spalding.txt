@@ -17,6 +17,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = spalding.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_DEMOCRATS
+				}
+				add = 99
+			}
+		}
 		trigger = {
 			democratic > 0.24
 		}
@@ -49,6 +59,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = spalding.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_FASCISTS
+				}
+				add = 99
+			}
+		}
 		trigger = {
 			fascism > 0.24
 		}
@@ -70,6 +90,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = spalding.1.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+		}
 		trigger = {
 			communism > 0.24
 		}
@@ -91,6 +121,16 @@ country_event = { #Elections 1936
 
 	option = {
 		name = spalding.1.e
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_MONARCHISTS
+				}
+				add = 99
+			}
+		}
 		trigger = {
 			monarchism > 0.24
 		}
@@ -160,6 +200,23 @@ country_event = { #Tracz wants to buy Pazdzioch's shop
 
 	option = { #Ask Kiepski for help
 		name = spalding.3.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_DEMOCRATS
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_MONARCHISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = fascism
     		popularity = 0.05
@@ -178,6 +235,16 @@ country_event = { #Tracz wants to buy Pazdzioch's shop
 
 	option = { #Give in and sell the shop
 		name = spalding.3.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_FASCISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = fascism
     		popularity = 0.1
@@ -204,6 +271,16 @@ country_event = { #Pazdzioch asks Kiepski for help
 
 	option = { #Kiepski refuses
 		name = spalding.4.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_DEMOCRATS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = democratic
     		popularity = 0.1
@@ -218,6 +295,16 @@ country_event = { #Pazdzioch asks Kiepski for help
 
 	option = { #Kiepski agrees
 		name = spalding.4.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_MONARCHISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = democratic
     		popularity = -0.15
@@ -270,6 +357,16 @@ country_event = { #Tracz and Kiepski raid Pazdzioch's radio station
 
 	option = { #Tracz and Pazdzioch Arrested
 		name = spalding.6.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_DEMOCRATS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = communism
     		popularity = -1.0
@@ -282,6 +379,16 @@ country_event = { #Tracz and Kiepski raid Pazdzioch's radio station
 
 	option = { #Tracz and Kiepski Arrested
 		name = spalding.6.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = democratic
     		popularity = -1.0
@@ -294,6 +401,16 @@ country_event = { #Tracz and Kiepski raid Pazdzioch's radio station
 
 	option = { #Pazdzioch and Kiepski Arrested
 		name = spalding.6.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_FASCISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = democratic
     		popularity = -1.0
@@ -332,6 +449,23 @@ country_event = { #Wojtyla proposes mediations
 
 	option = { #Let him do it
 		name = spalding.7.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_MONARCHISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = monarchism
     		popularity = 0.1
@@ -380,6 +514,16 @@ country_event = { #Tracz and Pazdzioch both want Pazdzioch's shop
 
 	option = { #Wojtyla sides with Pazdzioch
 		name = spalding.9.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			country_event = {
 				id = spalding.10
@@ -390,6 +534,16 @@ country_event = { #Tracz and Pazdzioch both want Pazdzioch's shop
 
 	option = { #Propose compromise - Tracz gets the shop and Pazdzioch gets the money
 		name = spalding.9.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = fascism
     		popularity = -0.35
@@ -406,6 +560,16 @@ country_event = { #Tracz and Pazdzioch both want Pazdzioch's shop
 
 	option = { #Military comes in, uninvited!
 		name = spalding.9.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_MONARCHISTS
+				}
+				add = 99
+			}
+		}
 		hidden_effect = {
 			country_event = {
 				id = spalding.11
@@ -439,7 +603,7 @@ country_event = { #Tracz tries to rebel, but is overpowered
 	}
 }
 
-country_event = { #Door are opened, military arrests Tracz and Pazdzioch
+country_event = { #Doors are opened, military arrests Tracz and Pazdzioch
 	id = spalding.11
 	immediate = {log = "[GetDateText]: [Root.GetName]: event spalding.11"}
 	title = spalding.11.t
@@ -492,6 +656,16 @@ country_event = { #Tracz and Pazdzioch men begin fighting, police rushes in to a
 
 	option = { #Awwww, why?
 		name = spalding.12.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SLD_election_1936
+					option = SLD_COMMUNISTS
+				}
+				add = 99
+			}
+		}
 		add_popularity = {
     		ideology = fascism
     		popularity = 0.05
@@ -566,7 +740,7 @@ country_event = { #Neland Republic declares independence!
 			transfer_state = 786
 			transfer_state = 768
 			transfer_state = 777
-			set_capital = 734
+			set_capital = { state = 734 }
 			if = {
 				limit = {
 					SLD = {
@@ -662,7 +836,7 @@ country_event = { #Neland Republic declares independence!
 			transfer_state = 786
 			transfer_state = 768
 			transfer_state = 777
-			set_capital = 734
+			set_capital = { state = 734 }
 			if = {
 				limit = {
 					SLD = {

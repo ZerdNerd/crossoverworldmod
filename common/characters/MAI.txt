@@ -1,0 +1,353 @@
+characters={
+	MAI_felix={
+		name="Felix"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/felix.dds"
+			}
+			army={
+				small="GFX_idea_MAI_felix"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_felix_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = children_revolution_underway
+						}
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_macius_is_king
+						AND = {
+							tag = MAI
+							has_global_flag = stephen_is_dead
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				} 
+			}
+			traits = {
+				friend_of_the_king 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=paidocracy_sub
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_hanna={
+		name="Hanna"
+		portraits={
+			army={
+				small="GFX_idea_MAI_hanna"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_hanna_i
+			allowed = {
+				original_tag = MAI
+			}
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = MAI_macius_is_king
+					has_global_flag = stephen_is_dead
+				}
+			}
+			traits = {
+				friend_of_the_king 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MAI_anton={
+		name="Anton"
+		portraits={
+			army={
+				small="GFX_idea_MAI_anton"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_anton_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = children_revolution_underway
+						}
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_macius_is_king
+						AND = {
+							tag = MAI
+							has_global_flag = stephen_is_dead
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				}
+			}
+			traits = { the_engineer }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MAI_general={
+		name="General"
+		portraits={
+			army={
+				small="GFX_idea_MAI_general"
+			}
+			army={
+				large="gfx/leaders/MAI/general.dds"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = MAI_general_i
+			allowed = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
+			}
+
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
+			}
+		
+			available = {
+				OR = {
+					AND = {
+						tag = MAI
+						NOT = {
+							has_country_flag = general_rebelled
+						}
+					}
+					tag = GEN
+				}
+			}
+		
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+		corps_commander={
+			traits={ harsh_leader politically_connected }
+			skill=5
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=7312
+		}
+	}
+	MAI_stephen_i={
+		name="Stephen I"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/stefan_I.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_STEPHEN_I_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_ambroży_kasprzak={
+		name="Ambroży Kasprzak"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_robert_makłowicz={
+		name="Robert Makłowicz"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/eeee_dzwig.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_franciszek_stasiuk={
+		name="Franciszek Stasiuk"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_dormesko={
+		name="Dormesko"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MAI/dormesko.dds"
+			}
+		}
+		corps_commander={
+			traits={ adaptable }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	MAI_konstanty_plisowski={
+		name="Konstanty Plisowski"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MAI/plisowski.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	MAI_franciszek_wład={
+		name="Franciszek Wład"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MAI/franciszek_wlad.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	MAI_daniel_konarzewski={
+		name="Daniel Konarzewski"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MAI/daniel_konarzewski.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	MAI_bolesław_roja={
+		name="Bolesław Roja"
+		portraits={
+			
+			army={
+				large="gfx/leaders/MAI/boleslaw_roja.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+}

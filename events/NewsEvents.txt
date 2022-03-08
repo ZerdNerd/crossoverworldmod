@@ -4013,3 +4013,38 @@ news_event = { #The Central Wedding (Klu-Klu variant)
 		}
 	}
 }
+
+news_event = { #Republic of Luvland becomes independent
+	id = worldnews.105
+	title = worldnews.105.t
+	desc = worldnews.105.d
+	picture = GFX_news_event_south_africa_patrol
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.105.a
+		trigger = {
+			tag = FLE
+		}
+	}
+
+	option = {
+		name = worldnews.105.b
+		trigger = {
+			tag = FRI
+		}
+	}
+
+	option = {
+		name = worldnews.105.c
+		trigger = {
+			NOT = {
+				tag = FLE
+				tag = FRI
+			}
+		}
+	}
+}

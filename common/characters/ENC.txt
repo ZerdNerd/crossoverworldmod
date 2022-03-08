@@ -1,0 +1,142 @@
+characters={
+	ENC_cedric={
+		name="Cedric"
+		portraits={
+			army={
+				small="GFX_idea_ENC_cedric"
+			}
+			civilian={
+				large="gfx/leaders/ENC/cedric.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENC_cedric_i
+			allowed = {
+				original_tag = ENC
+			}
+			available = {
+				EN3 = {
+					exists = no
+				}
+			}
+			traits = {
+				royal_sorcerer_of_enchancia 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		country_leader={
+			desc="POLITICS_CEDRIC_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ENC_gwen={
+		name="Gwen"
+		portraits={
+			army={
+				small="GFX_idea_ENC_gwen"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = ENC_gwen_i
+			allowed = {
+				OR = {
+					original_tag = ENC
+					original_tag = EN1
+					original_tag = EN2
+				}
+			}
+			available = {
+				OR = {
+					NOT = {
+						custom_trigger_tooltip = {
+							tooltip = MAI_ecw_broke
+							has_global_flag = enchancian_civil_war
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAI_ecw_ended
+						has_global_flag = enchancian_civil_war_over
+					}
+				}
+			}
+			traits = {
+				the_thinker 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	ENC_roland_ii={
+		name="Roland II"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENC/roland.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_ROLAND_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_ROLAND_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ENC_council_of_artisans={
+		name="Council of Artisans"
+		portraits={
+			civilian={
+				large="GFX_portrait_south_america_generic_9"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ENC_lord_gilbert={
+		name="Lord Gilbert"
+		portraits={
+			
+			army={
+				large="gfx/leaders/ENC/lordgilbert.dds"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ENC_leopold_murphy={
+		name="Leopold Murphy"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ smooth_talking_charmer }
+			expire="1951.1.1.12"
+			id=-1
+		}
+	}
+}

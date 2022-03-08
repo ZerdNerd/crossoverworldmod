@@ -1,0 +1,212 @@
+characters={
+	GRN_shouhu={
+		name="Shouhu"
+		portraits={
+			army={
+				small="GFX_idea_GRN_shouhu"
+			}
+			army={
+				large="gfx/leaders/GRN/shouhu.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRN_shouhu_i
+			allowed = {
+				original_tag = GRN
+			}
+			traits = {
+				the_thinker 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits={ greenlander }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	GRN_prinz_tabaluga={
+		name="Prinz Tabaluga"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRN/tabaluga.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_PTABALUGA_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GRN_council_of_elders={
+		name="Council of Elders"
+		portraits={
+			civilian={
+				large="GFX_Portrait_europe_generic_7"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GRN_placeholder={
+		name="Placeholder"
+		portraits={
+			civilian={
+				large="gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	GRN_tabaluga={
+		name="Tabaluga"
+		portraits={
+			
+			army={
+				large="gfx/leaders/GRN/tabaluga.dds"
+			}
+		}
+		corps_commander={
+			traits={ greenlander }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GRN_happy_the_rabbit={
+		name="Happy the Rabbit"
+		gender = female
+		portraits={
+			army={
+				small="GFX_idea_GRN_happy"
+			}
+			army={
+				large="gfx/leaders/GRN/happy.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRN_happy_i
+			allowed = {
+				original_tag = GRN
+			}
+			traits = {
+				greenlander_from_iceworld 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits={ greenlander }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	GRN_digby={
+		name="Digby"
+		portraits={
+			army={
+				small="GFX_idea_GRN_digby"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRN_digby_i
+			allowed = {
+				original_tag = GRN
+			}
+			traits = {
+				the_engineer 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	GRN_leo={
+		name="Leo"
+		portraits={
+			army={
+				small="GFX_idea_GRN_leo"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRN_leo_i
+			allowed = {
+				original_tag = GRN
+			}
+			available = {
+				has_completed_focus = GRN_establish_relations_with_neu_flensburg
+			}
+			traits = {
+				human_greenlander 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	GRN_ranger_rabbit={
+		name="Ranger Rabbit"
+		gender = female
+		portraits={
+			
+			army={
+				large="gfx/leaders/GRN/ranger_rabbit.dds"
+			}
+		}
+		corps_commander={
+			skill=4
+			attack_skill=5
+			defense_skill=4
+			planning_skill=5
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	GRN_patrick__={
+		name="Patrick"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			traits={ hawk war_industrialist }
+			expire="1946.1.1.12"
+			id=-1
+		}
+	}
+}

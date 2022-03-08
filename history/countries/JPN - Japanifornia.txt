@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 add_opinion_modifier = {
@@ -115,36 +135,14 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "???"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "The Bar Association"
-	desc = "POLITICS_TBD_DESC"
-	picture = "bar.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Dick Gumshoe"
-	portrait_path = "gfx/leaders/JPN/gumshoe.dds"
-	traits = {
-	}
-	skill = 2
-    attack_skill = 2
-    defense_skill = 2
-    planning_skill = 3
-    logistics_skill = 2
-}
+recruit_character = JPN_???
+recruit_character = JPN_the_bar_association
+recruit_character = JPN_dick_gumshoe
+recruit_character = JPN_jubal_doubleday
+recruit_character = JPN_daniel_sibley
+recruit_character = JPN_lawrence_foster
+recruit_character = JPN_franziska
+recruit_character = JPN_apollo
+recruit_character = JPN_maya
+recruit_character = JPN_trucy
+recruit_character = JPN_gumshoe

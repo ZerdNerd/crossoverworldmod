@@ -67,57 +67,9 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Roland II"
-	desc = "POLITICS_ROLAND_DESC"
-	picture = "roland.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Roland II"
-	desc = "POLITICS_ROLAND_DESC"
-	picture = "roland.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Cedric"
-	desc = "POLITICS_CEDRIC_DESC"
-	picture = "cedric.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Council of Artisans"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Lord Gilbert"
-	portrait_path = "gfx/leaders/ENC/lordgilbert.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 2
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 3
-}
+recruit_character = ENC_cedric
+recruit_character = ENC_roland_ii
+recruit_character = ENC_council_of_artisans
+recruit_character = ENC_lord_gilbert
+recruit_character = ENC_leopold_murphy
+recruit_character = ENC_gwen

@@ -54,57 +54,6 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Flame Princess"
-	desc = "POLITICS_TBD_DESC"
-	picture = "fireprincess.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "commie_council.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Flame Princess"
-	portrait_path = "gfx/leaders/FRK/fireprincess.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 3
-}
+recruit_character = FRK_flame_princess
+recruit_character = FRK_placeholder
+recruit_character = FRK_peter_white

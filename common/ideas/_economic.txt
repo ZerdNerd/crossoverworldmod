@@ -33,7 +33,6 @@ ideas = {
 				OR = {
 					has_war_support > 0.5
 					has_war = yes
-					tag = USA
 				}
 			}
 			
@@ -67,8 +66,7 @@ ideas = {
 			allowed_to_remove = {
 				OR = {
 					has_war_support > 0.75
-					has_war = yes
-					tag = USA			
+					has_war = yes	
 				}
 			}
 			
@@ -129,12 +127,6 @@ ideas = {
 				modifier = {
 					has_war_support > 0.25
 					factor = 0 #don't even look at it if you could be taking partial mob
-				}
-				modifier = {
-					tag = ENG
-					has_war = no
-					date < 1937.6.1
-					factor = 0
 				}
    			}
 		}
@@ -256,16 +248,12 @@ ideas = {
 				# Germany needs to be careful
 				modifier = {
 					factor = 0
-
-					tag = GER
 					NOT = { has_tech = volkssturm }
 					has_war = yes
 					date < 1944.01.01
 				}
 				modifier = {
 					factor = 0
-
-					tag = SOV
 					has_war = yes
 					OR = {
 						has_manpower < 2000000
@@ -341,25 +329,7 @@ ideas = {
    				modifier = {
 					factor = 300
 
-					OR = {
-						tag = PER
-						tag = IRQ
-					}
 					is_in_faction = no
-				}
-
-				modifier = {
-					factor = 300
-
-					tag = BRA
-					date > 1943.1.1 # at this point we can probably cash in on rubber lack in the world
-				}
-
-				# Oil for hitlers oil throne!
-				modifier = {
-					factor = 600
-					tag = ROM
-					is_in_faction_with = GER
 				}
    			}
 		}

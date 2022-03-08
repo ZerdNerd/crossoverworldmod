@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -110,46 +130,15 @@ set_politics = {
 
 set_stability = 0.5
 
-create_country_leader = {
-	name = "Jan Paweł II"
-	desc = "POLITICS_TBD_DESC"
-	picture = "pope.dds"
-	expire = "1965.1.1"
-	ideology = despotic_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Sejm"
-	desc = "POLITICS_TBD_DESC"
-	picture = "sejm.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Janusz Tracz"
-	desc = "POLITICS_TBD_DESC"
-	picture = "tracz.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Marian Paździoch"
-	desc = "POLITICS_TBD_DESC"
-	picture = "marian.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
+recruit_character = SLD_jan_paweł_ii
+recruit_character = SLD_sejm
+recruit_character = SLD_janusz_tracz
+recruit_character = SLD_marian_paździoch
+recruit_character = SLD_wojciech_piotrowski
+recruit_character = SLD_wyszynski
+recruit_character = SLD_dziwisz
+recruit_character = SLD_helena
+recruit_character = SLD_boczek
+recruit_character = SLD_halina
+recruit_character = SLD_waldek
+recruit_character = SLD_ferdek

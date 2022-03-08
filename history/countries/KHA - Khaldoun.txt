@@ -54,46 +54,7 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Khaldoun Regency Council"
-	desc = "POLITICS_TBD_DESC"
-	picture = "rcouncil.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Morgana"
-	desc = "POLITICS_TBD_DESC"
-	picture = "morgana.dds"
-	expire = "1965.1.1"
-	ideology = fascism_ideology
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
+recruit_character = KHA_khaldoun_regency_council
+recruit_character = KHA_placeholder
+recruit_character = KHA_morgana
+recruit_character = KHA_marcus_evans

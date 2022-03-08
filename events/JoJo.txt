@@ -23,11 +23,31 @@ country_event = { #Choosing the plan
 
 	option = {
 		name = jojo.1.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DIO_which_plan
+					option = DIO_PLAN_PUCCI
+				}
+				add = 99
+			}
+		}
 		complete_national_focus = DIO_pucci_plan
 	}
 
 	option = {
 		name = jojo.1.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DIO_which_plan
+					option = DIO_PLAN_ENYA
+				}
+				add = 99
+			}
+		}
 		complete_national_focus = DIO_enya_plan
 	}
 }
@@ -43,6 +63,16 @@ country_event = { #Dio proposes pact to Pillar Men
 
 	option = {
 		name = jojo.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DIO_approach_to_pillar_men
+					option = DIO_PACT
+				}
+				add = 99
+			}
+		}
 		DIO = {
 			country_event = {
 				id = jojo.3
@@ -542,6 +572,16 @@ country_event = { #Which path to take?
 
 	option = { #Joseph
 		name = jojo.21.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JOJ_election_time
+					option = JOJ_JOSEPH
+				}
+				add = 99
+			}
+		}
 		create_country_leader = {
 			name = "Joseph Joestar"
 			desc = "POLITICS_JOSEPH_DESC"
@@ -561,6 +601,16 @@ country_event = { #Which path to take?
 
 	option = { #Jotaro
 		name = jojo.21.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JOJ_election_time
+					option = JOJ_JOTARO
+				}
+				add = 99
+			}
+		}
 		create_country_leader = {
 			name = "Jotaro Kujo"
 			desc = "POLITICS_JOTARO_DESC"
@@ -579,6 +629,16 @@ country_event = { #Which path to take?
 
 	option = { #Jolyne
 		name = jojo.21.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JOJ_election_time
+					option = JOJ_JOLYNE
+				}
+				add = 99
+			}
+		}
 		create_country_leader = {
 			name = "Jolyne Cujoh"
 			desc = "POLITICS_JOLYNE_DESC"
@@ -972,7 +1032,7 @@ country_event = { #Uprising in Morioh!
 		MO2 = {
 			transfer_state = 629
 			transfer_state = 635
-			set_capital = 629
+			set_capital = { state = 629 }
 			hidden_effect = {
 				load_oob = MO2_uprising
 			}
@@ -1168,6 +1228,16 @@ country_event = { #Voting on Jonathan's resignation
 
 	option = {
 		name = jojo.41.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = JOJ_election_time
+					option = JOJ_JONATHAN
+				}
+				add = 99
+			}
+		}
 		add_political_power = 50
 		add_stability = 0.1
 		hidden_effect = {
@@ -1177,6 +1247,26 @@ country_event = { #Voting on Jonathan's resignation
 
 	option = {
 		name = jojo.41.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = JOJ_election_time
+						option = JOJ_JOSEPH
+					}
+					has_game_rule = {
+						rule = JOJ_election_time
+						option = JOJ_JOTARO
+					}
+					has_game_rule = {
+						rule = JOJ_election_time
+						option = JOJ_JOLYNE
+					}
+				}
+				add = 99
+			}
+		}
 		country_event = {
 			id = jojo.21
 			days = 0

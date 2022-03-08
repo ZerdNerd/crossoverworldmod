@@ -11,17 +11,37 @@ set_technology = {
 	tech_support = 1		
 	tech_engineers = 1
 	tech_mountaineers = 1
-	gwtank = 1
 	gw_artillery = 1
-	basic_light_tank = 1
-	improved_light_tank = 1
-	basic_heavy_tank = 1
 	early_fighter = 1
 	fighter1 = 1
 	early_bomber = 1
 	tactical_bomber1 = 1
 	strategic_bomber1 = 1
 	CAS1 = 1
+	basic_train = 1
+}
+if = {
+	limit = {
+		NOT = { has_dlc = "No Step Back" }
+	}
+	set_technology = {
+		gwtank = 1
+		basic_light_tank = 1
+		improved_light_tank = 1
+		basic_heavy_tank = 1
+	}
+}
+if = {
+	limit = {
+		has_dlc = "No Step Back"
+	}
+	set_technology = {
+		gwtank_chassis = 1
+		basic_light_tank_chassis = 1
+		improved_light_tank_chassis = 1
+		basic_heavy_tank_chassis = 1
+		engine_tech_1 = 1
+	}
 }
 
 if = {
@@ -106,128 +126,21 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Stephen I"
-	desc = "POLITICS_STEPHEN_I_DESC"
-	picture = "stefan_I.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
+recruit_character = MAI_felix
+recruit_character = MAI_general
+recruit_character = MAI_stephen_i
+recruit_character = MAI_ambroży_kasprzak
+recruit_character = MAI_robert_makłowicz
+recruit_character = MAI_franciszek_stasiuk
+recruit_character = MAI_dormesko
+recruit_character = MAI_konstanty_plisowski
+recruit_character = MAI_franciszek_wład
+recruit_character = MAI_daniel_konarzewski
+recruit_character = MAI_bolesław_roja
+recruit_character = MAI_hanna
+recruit_character = MAI_anton
 
-create_country_leader = {
-	name = "Ambroży Kasprzak"
-	desc = "POLITICS_TBD_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
 
-create_country_leader = {
-	name = "Robert Makłowicz"
-	desc = "POLITICS_TBD_DESC"
-	picture = "gfx/leaders/MAI/eeee_dzwig.dds"
-	expire = "1965.1.1"
-	ideology = conservatism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Franciszek Stasiuk"
-	desc = "POLITICS_TBD_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Felix"
-	desc = "POLITICS_TBD_DESC"
-	picture = "felix.dds"
-	expire = "1965.1.1"
-	ideology = paidocracy_sub
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "General"
-	portrait_path = "gfx/leaders/MAI/general.dds"
-	desc = "POLITICS_GENERAL_DESC"
-	traits = { harsh_leader politically_connected }
-	skill = 5
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-	id = 7312
-}
-
-create_corps_commander = {
-	name = "Dormesko"
-	portrait_path = "gfx/leaders/MAI/dormesko.dds"
-	traits = { adaptable }
-	skill = 3
-    attack_skill = 2
-    defense_skill = 2
-    planning_skill = 3
-    logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Konstanty Plisowski"
-	portrait_path = "gfx/leaders/MAI/plisowski.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 3
-    logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Franciszek Wład"
-	portrait_path = "gfx/leaders/MAI/franciszek_wlad.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 2
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Daniel Konarzewski"
-	portrait_path = "gfx/leaders/MAI/daniel_konarzewski.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 4
-    defense_skill = 3
-    planning_skill = 4
-    logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Bolesław Roja"
-	portrait_path = "gfx/leaders/MAI/boleslaw_roja.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-}
 
 if = {
 	limit = {

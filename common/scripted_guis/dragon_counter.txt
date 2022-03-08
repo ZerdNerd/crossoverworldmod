@@ -11,4 +11,20 @@ scripted_gui = {
             }
         }
     }
+
+    railway_blocker = {
+        window_name = "railway_has_to_be_blocked"
+
+        parent_window_token = construction_tab
+
+        context_type = player_context
+
+        visible = {
+            ROOT = {
+                NOT = {
+                    has_idea = modern_tech_idea
+                }
+            }
+        }
+    }
 }

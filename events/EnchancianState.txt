@@ -91,7 +91,7 @@ country_event = { #Fate of Winslow Family - exile on one of the islands
 		ENC = {
 			transfer_state = 106
 			transfer_state = 12
-			set_capital = 12
+			set_capital = { state = 12 }
 			set_cosmetic_tag = WIN
 		}
 		hidden_effect = {
@@ -110,7 +110,7 @@ country_event = { #Fate of Winslow Family - exile on one of the islands
 		ENC = {
 			transfer_state = 19
 			transfer_state = 319
-			set_capital = 319
+			set_capital = { state = 319 }
 			set_cosmetic_tag = WIN
 		}
 		hidden_effect = {

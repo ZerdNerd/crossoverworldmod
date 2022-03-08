@@ -32,104 +32,18 @@ set_politics = {
 
 set_stability = 0.85
 
-create_country_leader = {
-	name = "Prinz Tabaluga"
-	desc = "POLITICS_PTABALUGA_DESC"
-	picture = "tabaluga.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Council of Elders"
-	desc = "POLITICS_TBD_DESC"
-	picture = "Placeholder.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_1.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Placeholder"
-	desc = "POLITICS_TBD_DESC"
-	picture = "gfx/leaders/Europe/Portrait_Europe_Generic_2.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Tabaluga"
-	portrait_path = "gfx/leaders/GRN/tabaluga.dds"
-	traits = { greenlander }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Happy the Rabbit"
-	portrait_path = "gfx/leaders/GRN/happy.dds"
-	desc = "POLITICS_HAPPY_DESC"
-	traits = { greenlander }
-	skill = 2
-    attack_skill = 2
-    defense_skill = 2
-    planning_skill = 2
-    logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Shouhu"
-	portrait_path = "gfx/leaders/GRN/shouhu.dds"
-	traits = { greenlander }
-	desc = "POLITICS_SHOUHU_DESC"
-	skill = 4
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 4
-    logistics_skill = 4
-}
-
-create_corps_commander = {
-	name = "Ranger Rabbit"
-	portrait_path = "gfx/leaders/GRN/ranger_rabbit.dds"
-	traits = { }
-	desc = "POLITICS_RANGERRABBIT_DESC"
-	skill = 4
-    attack_skill = 5
-    defense_skill = 4
-    planning_skill = 5
-    logistics_skill = 3
-}
+recruit_character = GRN_shouhu
+recruit_character = GRN_prinz_tabaluga
+recruit_character = GRN_council_of_elders
+recruit_character = GRN_placeholder
+recruit_character = GRN_tabaluga
+recruit_character = GRN_happy_the_rabbit
+recruit_character = GRN_ranger_rabbit
+recruit_character = GRN_patrick__
+recruit_character = GRN_leo
+recruit_character = GRN_digby
 
 
-create_navy_leader = {
-	name = "Tabaluga"
-	portrait_path = "gfx/leaders/GRN/tabaluga.dds"
-	traits = { superior_tactician greenlander }
-	skill = 3
-}
 
 if = {
 	limit = {

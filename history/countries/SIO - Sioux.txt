@@ -67,103 +67,11 @@ country_event = {
 
 set_stability = 0.55
 
-create_country_leader = {
-	name = "Vacant"
-	desc = "POLITICS_TBD_DESC"
-	picture = "council.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Council of Tribes"
-	desc = "POLITICS_TBD_DESC"
-	picture = "council.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Council of Tribes"
-	desc = "POLITICS_TBD_DESC"
-	picture = "council.dds"
-	expire = "1965.1.1"
-	ideology = nazism
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Council of Tribes"
-	desc = "POLITICS_TBD_DESC"
-	picture = "council.dds"
-	expire = "1965.1.1"
-	ideology = marxism
-	traits = {
-		#
-	}
-}
-
-create_corps_commander = {
-	name = "Bold Gaze"
-	portrait_path = "gfx/leaders/SIO/bold_gaze.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 4
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-	id = 8750
-}
-
-create_corps_commander = {
-	name = "Impatient Squirrel"
-	portrait_path = "gfx/leaders/SIO/impatient_squirrel.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 4
-    planning_skill = 3
-    logistics_skill = 3
-}
-
-create_corps_commander = {
-	name = "Quick Bow"
-	portrait_path = "gfx/leaders/SIO/quick_bow.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 3
-    defense_skill = 3
-    planning_skill = 2
-    logistics_skill = 2
-}
-
-create_corps_commander = {
-	name = "Proudest Cloud"
-	portrait_path = "gfx/leaders/SIO/proudest_cloud.dds"
-	traits = { }
-	skill = 3
-    attack_skill = 4
-    defense_skill = 3
-    planning_skill = 4
-    logistics_skill = 2
-	id = 8751
-}
-
-create_corps_commander = {
-	name = "Restful Wolf"
-	portrait_path = "gfx/leaders/SIO/restful_wolf.dds"
-	traits = { }
-	skill = 4
-    attack_skill = 3
-    defense_skill = 2
-    planning_skill = 5
-    logistics_skill = 3
-}
+recruit_character = SIO_vacant
+recruit_character = SIO_council_of_tribes
+recruit_character = SIO_bold_gaze
+recruit_character = SIO_impatient_squirrel
+recruit_character = SIO_quick_bow
+recruit_character = SIO_proudest_cloud
+recruit_character = SIO_restful_wolf
+recruit_character = SIO_kokomako_sisithunwan

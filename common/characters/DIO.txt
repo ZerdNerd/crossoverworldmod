@@ -1,0 +1,249 @@
+characters={
+	DIO_enrico_pucci={
+		name="Enrico Pucci"
+		portraits={
+			army={
+				small="GFX_idea_DIO_enrico_pucci"
+			}
+			army={
+				large="gfx/leaders/DIO/pucci.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DIO_enrico_pucci_i
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { army_chief_morale_2 pucci_faster }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		field_marshal={
+			traits={ stand_user }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=8101
+		}
+	}
+	DIO_dio_brando={
+		name="Dio Brando"
+		portraits={
+			civilian={
+				large="gfx/leaders/DIO/dio.dds"
+			}
+		}
+		field_marshal={
+			traits={ stand_user }
+			skill=3
+			attack_skill=4
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=8100
+		}
+		country_leader={
+			desc="POLITICS_DIO_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_DIO_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_DIO_DESC"
+			ideology=nazism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_DIO_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	DIO_donatello_versus={
+		name="Donatello Versus"
+		portraits={
+			
+			army={
+				large="gfx/leaders/DIO/donatello_versus.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=8102
+		}
+	}
+	DIO_steely_dan={
+		name="Steely Dan"
+		portraits={
+			
+			army={
+				large="gfx/leaders/DIO/steely_dan.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=8103
+		}
+	}
+	DIO_vanilla_ice={
+		name="Vanilla Ice"
+		portraits={
+			
+			army={
+				large="gfx/leaders/DIO/vanilla_ice.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=8104
+		}
+	}
+	DIO_daniel_j._darby={
+		name="Daniel J. D'Arby"
+		portraits={
+			
+			army={
+				large="gfx/leaders/DIO/go_ahead_mr_joestar.dds"
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=8105
+		}
+	}
+	DIO_telence_t._darby={
+		name="Telence T. D'Arby"
+		portraits={
+			army={
+				small="GFX_idea_DIO_darby_gamer"
+			}
+			army={
+				large="gfx/leaders/DIO/gamer_darby.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DIO_darby_gamer_i
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { captain_of_industry }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+		corps_commander={
+			traits={ stand_user }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=8106
+		}
+	}
+	DIO_tarkus={
+		name="Tarkus"
+		portraits={
+			
+			army={
+				large="gfx/leaders/DIO/tarkus.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=3
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=8107
+		}
+	}
+	DIO_douglas_campbell={
+		name="Douglas Campbell"
+		portraits={
+			civilian={
+				large="GFX_portrait_unknown"
+			}
+		}
+		country_leader={
+			ideology=paidocracy_sub
+			expire="1954.1.1.12"
+			id=-1
+		}
+	}
+	DIO_wang_chan={
+		name="Wang Chan"
+		portraits={
+			army={
+				small="GFX_idea_DIO_wang_chan"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DIO_wang_chan_i
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { prince_of_terror }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	DIO_enya={
+		name="Enyaba"
+		portraits={
+			army={
+				small="GFX_idea_DIO_enya"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = DIO_enya_i
+			allowed = {
+				original_tag = DIO
+			}
+		
+			traits = { financial_expert }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+}
