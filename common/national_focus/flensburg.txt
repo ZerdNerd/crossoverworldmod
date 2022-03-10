@@ -3414,7 +3414,7 @@ focus_tree = {
 		}
 		allow_branch = {
 			is_puppet = no
-			has_completed_focus = FLE_we_will_march_forward
+			has_government = fascism
 			NOT = {
 				has_country_leader = {
 					name = "Gustaw Kramer"
@@ -3463,7 +3463,7 @@ focus_tree = {
 		}
 		allow_branch = {
 			is_puppet = no
-			has_completed_focus = FLE_we_will_march_forward
+			has_government = fascism
 			NOT = {
 				has_country_leader = {
 					name = "Gustaw Kramer"
@@ -3884,6 +3884,7 @@ focus_tree = {
 			focus = FLE_we_will_march_forward
 		}
 		allow_branch = {
+			has_government = fascism
 			has_country_leader = {
 				name = "Gustaw Kramer"
    				ruling_only = yes
