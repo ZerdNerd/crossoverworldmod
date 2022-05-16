@@ -4875,6 +4875,24 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
+						tag = DES
+					}
+				}
+				DES = {
+					every_operative = {
+						limit = {
+							OR = {
+								has_trait = kayo_chameleon
+								has_trait = vultur_trait
+							}
+						}
+						kill_operative = PREV
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
 						tag = SIO
 						has_country_flag = SIO_council_not_rejected_sandstorm
 						NOT = {
