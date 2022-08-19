@@ -9,6 +9,444 @@ focus_tree = {
 	} 
 
 	focus = { 
+		id = DUL_the_road_to_crown
+		icon = GFX_focus_generic_monarchy_2
+		x = 26
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = DUL_leads_through_peoples_acceptance
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = -8
+		y = 1
+		relative_position_id = DUL_the_road_to_crown
+		prerequisite = { focus = DUL_the_road_to_crown }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_build_new_bakeries
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		relative_position_id = DUL_leads_through_peoples_acceptance
+		prerequisite = { focus = DUL_leads_through_peoples_acceptance }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#civ factories in capital and every VP
+		}		
+	}
+
+	focus = { 
+		id = DUL_introduce_asphalt_roads
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 1
+		relative_position_id = DUL_leads_through_peoples_acceptance
+		prerequisite = { focus = DUL_leads_through_peoples_acceptance }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#infrastructure in every state
+		}		
+	}
+
+	focus = { 
+		id = DUL_attract_eastern_investors
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		relative_position_id = DUL_build_new_bakeries
+		prerequisite = { focus = DUL_build_new_bakeries }
+		prerequisite = { focus = DUL_introduce_asphalt_roads }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#event for eastern investors, idea if fulfilled
+		}		
+	}
+
+	focus = { 
+		id = DUL_fulfill_infrastructural_quota
+		icon = GFX_goal_generic_construction
+		x = -1
+		y = 1
+		relative_position_id = DUL_attract_eastern_investors
+		prerequisite = { focus = DUL_attract_eastern_investors }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#infrastructure every state
+		}		
+	}
+
+	focus = { 
+		id = DUL_answer_the_population_boom
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 1
+		y = 1
+		relative_position_id = DUL_attract_eastern_investors
+		prerequisite = { focus = DUL_attract_eastern_investors }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#two new VPs, with 2 civs 1 mil +250k manpower
+		}		
+	}
+
+	focus = { 
+		id = DUL_create_civilian_industrial_sector
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = DUL_build_new_bakeries
+		prerequisite = { focus = DUL_build_new_bakeries }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#civ factories
+		}		
+	}
+
+	focus = { 
+		id = DUL_introduce_eastern_machines
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = DUL_create_civilian_industrial_sector
+		prerequisite = { focus = DUL_create_civilian_industrial_sector }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#civ factories and idea
+		}		
+	}
+
+	focus = { 
+		id = DUL_upgrade_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 3
+		y = 1
+		relative_position_id = DUL_build_new_bakeries
+		prerequisite = { focus = DUL_build_new_bakeries }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#mil factories
+		}		
+	}
+
+	focus = { 
+		id = DUL_and_the_ports_too
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		relative_position_id = DUL_upgrade_military_industry
+		prerequisite = { focus = DUL_upgrade_military_industry }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#docks
+		}		
+	}
+
+	focus = { 
+		id = DUL_open_the_first_university
+		icon = GFX_focus_research
+		x = -3
+		y = 1
+		relative_position_id = DUL_and_the_ports_too
+		prerequisite = { focus = DUL_fulfill_infrastructural_quota }
+		prerequisite = { focus = DUL_answer_the_population_boom }
+		prerequisite = { focus = DUL_introduce_eastern_machines }
+		prerequisite = { focus = DUL_and_the_ports_too }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#research slot and idea
+		}		
+	}
+
+	focus = { 
+		id = DUL_leads_through_farquaads_will
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1
+		relative_position_id = DUL_the_road_to_crown
+		prerequisite = { focus = DUL_the_road_to_crown }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_people_must_remain_stupid
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = -1
+		y = 1
+		relative_position_id = DUL_leads_through_farquaads_will
+		prerequisite = { focus = DUL_leads_through_farquaads_will }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = DUL_let_them_remain_oblivious
+		icon = GFX_goal_generic_consumer_goods
+		x = -1
+		y = 1
+		relative_position_id = DUL_people_must_remain_stupid
+		prerequisite = { focus = DUL_people_must_remain_stupid }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#civ factories
+		}		
+	}
+
+	focus = { 
+		id = DUL_increase_work_scrutiny
+		icon = GFX_goal_generic_political_pressure
+		x = -1
+		y = 1
+		relative_position_id = DUL_let_them_remain_oblivious
+		prerequisite = { focus = DUL_let_them_remain_oblivious }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea for factory output and less pp
+		}		
+	}
+
+	focus = { 
+		id = DUL_introduce_police_forces
+		icon = GFX_focus_generic_military_mission
+		x = 1
+		y = 1
+		relative_position_id = DUL_leads_through_farquaads_will
+		prerequisite = { focus = DUL_leads_through_farquaads_will }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#idea
+		}		
+	}
+
+	focus = { 
+		id = DUL_mass_production_of_weapons
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = DUL_introduce_police_forces
+		prerequisite = { focus = DUL_introduce_police_forces }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_cooperation_between_land_and_sea
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 1
+		y = 1
+		relative_position_id = DUL_mass_production_of_weapons
+		prerequisite = { focus = DUL_mass_production_of_weapons }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#docks, mil factories and research slot
+		}		
+	}
+
+	focus = { 
+		id = DUL_introduce_state_controlled_passports
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+		x = 1
+		y = 1
+		relative_position_id = DUL_people_must_remain_stupid
+		prerequisite = { focus = DUL_people_must_remain_stupid }
+		prerequisite = { focus = DUL_introduce_police_forces }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_work_on_national_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 1
+		relative_position_id = DUL_introduce_state_controlled_passports
+		prerequisite = { focus = DUL_introduce_state_controlled_passports }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_commence_the_anti_everrealm_propaganda
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 1
+		y = 1
+		relative_position_id = DUL_introduce_state_controlled_passports
+		prerequisite = { focus = DUL_introduce_state_controlled_passports }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_block_the_everrealm_gate
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = -3
+		y = 1
+		relative_position_id = DUL_cooperation_between_land_and_sea
+		prerequisite = { focus = DUL_increase_work_scrutiny }
+		prerequisite = { focus = DUL_work_on_national_infrastructure }
+		prerequisite = { focus = DUL_commence_the_anti_everrealm_propaganda }
+		prerequisite = { focus = DUL_cooperation_between_land_and_sea }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#research slot and idea
+		}		
+	}
+
+	focus = { 
+		id = DUL_leads_through_marriage_with_a_princess
+		icon = GFX_focus_generic_royal_wedding
+		x = 8
+		y = 1
+		relative_position_id = DUL_the_road_to_crown
+		prerequisite = { focus = DUL_the_road_to_crown }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	focus = { 
+		id = DUL_the_coronation
+		icon = GFX_focus_hun_elect_a_king
+		x = 0
+		y = 5
+		relative_position_id = DUL_leads_through_farquaads_will
+		prerequisite = { focus = DUL_open_the_first_university focus = DUL_block_the_everrealm_gate }
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			#
+		}		
+	}
+
+	#NON-OVERHAULED TREE
+
+	focus = { 
 		id = DUL_expansion_of_economy
 		icon = GFX_goal_generic_consumer_goods
 		x = 2
@@ -1086,12 +1524,11 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -1165,12 +1602,11 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -1244,12 +1680,11 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 

@@ -417,10 +417,10 @@ focus = {
 
 		completion_reward = { 
 			create_wargoal = {
-				target = PDX
+				target = KUY
 				type = annex_everything
 			}
-			PDX = {
+			KUY = {
 				every_owned_state = {
 					add_claim_by = SKO
 				}
@@ -723,7 +723,7 @@ focus = {
 		completion_reward = { 
 			every_owned_state = {
 				limit = {
-					is_core_of = PDX
+					is_core_of = KUY
 				}
 				add_building_construction = {
 					type = infrastructure
@@ -1520,12 +1520,11 @@ focus = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -1605,12 +1604,11 @@ focus = {
 
 		completion_reward = {
 			army_experience = 10
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -1662,12 +1660,11 @@ focus = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -1809,12 +1806,11 @@ focus = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = land_doctrine
-			}
+}
 		}
 	}
 
@@ -2305,12 +2301,11 @@ focus = {
     				instant_build = yes
 				}
 			}
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = air_doctrine
-			}
+}
 		}
 	}
 
@@ -2559,12 +2554,11 @@ focus = {
 
 		completion_reward = {
 			air_experience = 10
-			add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 1.0
-				uses = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
 				category = air_doctrine
-			}
+}
 		}
 	}
 
