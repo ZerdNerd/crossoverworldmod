@@ -3,7 +3,7 @@ guiTypes = {
 	containerWindowType = {
 		name = "ingamemenu"
 		position = { x = 0 y = 0 }	
-		size = { width = 320 height = 415}
+		size = { width = 320 height = 455}
 		Orientation = center
 		Origo = center		
 		fade_time = 500
@@ -46,6 +46,25 @@ guiTypes = {
 		}
 		
 		buttonType = {
+			name = "menu_playthrough_stats_button"
+			position = { x = 16 y = 138}
+			quadTextureSprite ="GFX_main_lobby_button"	
+			buttonText = "MENU_BAR_PLAYTHROUGH_STATS"
+			buttonFont = "hoi_24header"
+			clicksound = click_default
+			oversound = ui_menu_over
+		}
+
+		iconType = {
+			name = "menu_playthrough_stats_button_star"
+			position = { x = -37 y = 155 }
+			spriteType = "GFX_icon_best_in_career"
+			centerposition = yes
+			orientation = upper_right
+			alwaysTransparent = yes
+		}
+		
+		buttonType = {
 			name = "menu_wiki_button"
 			position = { x = 16 y = 138}
 			quadTextureSprite ="GFX_main_lobby_button"	
@@ -78,7 +97,7 @@ guiTypes = {
 				
 		buttonType = {
 			name = "menu_close_button"
-			position = { x = 16 y = 300 }
+			position = { x = 16 y = 340 }
 			quadTextureSprite ="GFX_main_lobby_button"	
 			buttonFont = "hoi_24header"
 			buttonText = "CLOSE"
@@ -87,10 +106,15 @@ guiTypes = {
 			oversound = ui_menu_over
 		}
 
+		positionType = {
+			name = "playthrough_stats_offset"
+			position = { x = 0 y = 40 }
+		}
+
 		## facebook etc.
 		ButtonType = {
 			name = "reddit_button"
-			position = { x = 100 y = 349 }
+			position = { x = 100 y = 389 }
 			quadTextureSprite ="GFX_reddit"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_REDDIT"
@@ -99,7 +123,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "steamworkshop_button"
-			position = { x = 140 y = 349 }
+			position = { x = 140 y = 389 }
 			quadTextureSprite ="GFX_steamworkshop"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_STEAMWORKSHOP"
@@ -108,7 +132,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "discord_button"
-			position = { x = 180 y = 349 }
+			position = { x = 180 y = 389 }
 			quadTextureSprite ="GFX_discord"
 			#clicksound = click_default
 			pdx_tooltip = "MENU_DISCORD"
@@ -117,7 +141,7 @@ guiTypes = {
 
 		ButtonType = {
 			name = "achievements_button"
-			position = { x = 259 y = 349 }
+			position = { x = 259 y = 389 }
 			quadTextureSprite ="achievements"
 			pdx_tooltip = "MENU_ACHIEVEMENTS"
 		}
@@ -143,10 +167,24 @@ guiTypes = {
 				name = "Background"		
 				quadTextureSprite ="GFX_no_frame_special_bg"
 			}
+
+			instantTextBoxType={
+				position = { x = 0 y = 0 }
+				name = "disk_quota"
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = { x = 8 y = 5 }
+				maxWidth = 320
+				maxHeight = 10
+				text = ""
+				orientation = "UPPER_LEFT"
+				format = centre
+				fixedsize = yes
+			}
 			
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=13 y =2}
+				position = { x=13 y =24}
 				size = { width =280 height = 400}
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
@@ -290,19 +328,7 @@ guiTypes = {
 			fixedsize = yes
 			truncate = yes
 		}
-		
-		instantTextBoxType={
-			position = { x = 275 y = 379 }
-			name = "disk_quota"
-			font = "hoi_20bs"
-			borderSize = { x = 8 y = 0 }	
-			maxWidth = 188
-			maxHeight = 18
-			text = "MENU_BAR_DISK_QUOTA"	
-			orientation = "UPPER_LEFT"
-			format = centre
-		}
-		
+
 		checkboxType = {
 			name = "localgames_tab"
 			position = { x = 105  y = 84 }
@@ -356,15 +382,30 @@ guiTypes = {
 				name = "Background"		
 				quadTextureSprite ="GFX_no_frame_special_bg"
 			}
+
+			instantTextBoxType={
+				position = { x = 0 y = 0 }
+				name = "disk_quota"
+				textureFile = ""
+				font = "hoi_16mbs"
+				borderSize = { x = 8 y = 5 }
+				maxWidth = 320
+				maxHeight = 10
+				text = "REMOTE_STORAGE_USAGE"
+				orientation = "UPPER_LEFT"
+				format = centre
+				fixedsize = yes
+			}
 			
 			gridBoxType = {
 				name = "games_grid"
-				position = { x=13 y =15}
+				position = { x=13 y=24}
 				size = { width =280 height = 400}
 				slotsize = { width = 280 height = 55 }
 				format = "UPPER_LEFT"
 				max_slots_horizontal = 1
 			}
+			
 		}
 		
 		instantTextBoxType={

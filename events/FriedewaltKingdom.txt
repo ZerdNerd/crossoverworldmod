@@ -391,7 +391,7 @@ country_event = { #Friedewalt demands immediate return of the crown
 			FLE = {
 				if = {
 					limit = {
-						is_puppet_of = FRI
+						is_in_faction_with = FRI #temporary until the problem is not solved
 					}
 					drop_cosmetic_tag = yes
 				}

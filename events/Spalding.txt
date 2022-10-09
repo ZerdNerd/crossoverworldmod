@@ -38,15 +38,14 @@ country_event = { #Elections 1936
     		popularity = 0.15
 		}
 		retire_country_leader = yes
-		create_country_leader = {
-			name = "Ferdynand Kiepski"
-			desc = "POLITICS_TBD_DESC"
-			picture = "ferdek.dds"
-			expire = "1965.1.1"
-			ideology = conservatism
-			traits = {
-				#
-			}
+		add_country_leader_role = {
+  			character = SLD_ferdek
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = conservatism
+   				expire = "1965.1.1.1"
+    			traits = {  }
+  			}
 		}
 		hidden_effect = {
 			set_country_flag = SLD_elections_done
@@ -747,16 +746,13 @@ country_event = { #Neland Republic declares independence!
 						has_government = democratic
 					}
 				}
-				create_country_leader = {
-					name = "Marian Paździoch"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/SLD/marian.dds"
-					expire = "1965.1.1"
-					ideology = marxism
-					traits = {
-						#
+				SLD = {
+					set_nationality = {
+						target_country = NRL
+						character = SLD_marian_paździoch
 					}
 				}
+				promote_character = SLD_marian_paździoch
 				set_politics = {
 					ruling_party = communism
 					last_election = "1930.7.1"
@@ -782,16 +778,13 @@ country_event = { #Neland Republic declares independence!
 						}
 					}
 				}
-				create_country_leader = {
-					name = "Ferdynand Kiepski"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/SLD/ferdek.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						#
+				SLD = {
+					set_nationality = {
+						target_country = NRL
+						character = SLD_ferdek
 					}
 				}
+				promote_character = SLD_ferdek
 				set_politics = {
 					ruling_party = democratic
 					last_election = "1930.7.1"
@@ -843,16 +836,13 @@ country_event = { #Neland Republic declares independence!
 						has_government = democratic
 					}
 				}
-				create_country_leader = {
-					name = "Marian Paździoch"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/SLD/marian.dds"
-					expire = "1965.1.1"
-					ideology = marxism
-					traits = {
-						#
+				SLD = {
+					set_nationality = {
+						target_country = NRL
+						character = SLD_marian_paździoch
 					}
 				}
+				promote_character = SLD_marian_paździoch
 				set_politics = {
 					ruling_party = communism
 					last_election = "1930.7.1"
@@ -878,16 +868,13 @@ country_event = { #Neland Republic declares independence!
 						}
 					}
 				}
-				create_country_leader = {
-					name = "Ferdynand Kiepski"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/SLD/ferdek.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						#
+				SLD = {
+					set_nationality = {
+						target_country = NRL
+						character = SLD_ferdek
 					}
 				}
+				promote_character = SLD_ferdek
 				set_politics = {
 					ruling_party = democratic
 					last_election = "1930.7.1"

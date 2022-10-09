@@ -72,7 +72,7 @@ rule_dont_break_occupation_zones = {
 		NOT = { tag = ROOT }
 		at_conference_has_war_with_owner = yes
 		NOT = { has_war_with = ROOT }
-		var:global.eval_state = { has_claimed_state_in_peace_conference = PREV }
+	#	var:global.eval_state = { has_claimed_state_in_peace_conference = PREV }
 	#	ROOT = { has_opinion = { target = PREV value > 0 } }
 		is_willing_to_take_state_PREV = yes
 		if = {

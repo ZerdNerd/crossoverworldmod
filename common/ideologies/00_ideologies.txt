@@ -60,17 +60,15 @@ ideologies = {
 			army_intel_to_others = 5.0
 			navy_intel_to_others = 20.0
 			airforce_intel_to_others = 5
-			take_states_cost_factor = -0.25
-			annex_cost_factor = -0.25
+			embargo_cost_factor = -0.5
+			embargo_threshold_factor = -0.5
 		}
-		
+		ai_neutral = yes
 		faction_modifiers = {
 			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
 		}
-
-		can_be_boosted = no
 		can_collaborate = yes
-		ai_neutral = yes
+		ai_ideology_wanted_units_factor = 1.0 # multiplies threat impact on number of desired units by this value, defaults to 1.0. If at war, the larger of this value and NDefines::NAI::WANTED_UNITS_WAR_THREAT_FACTOR will be used instead
 	}
 
 
@@ -117,6 +115,7 @@ ideologies = {
 		
 		war_impact_on_world_tension = 1		#Commie is NOT less threatening, learn that Paradox!
 		faction_impact_on_world_tension = 1
+		ai_ideology_wanted_units_factor = 1.20
 		
 		rules = {
 			can_force_government = no
@@ -124,20 +123,22 @@ ideologies = {
 			can_puppet = no
 		}
 		
+		can_collaborate = yes
+
 		modifiers = {
-			puppet_cost_factor = -0.3
+			#puppet_cost_factor = -0.3
 			civilian_intel_to_others = 10.0
 			army_intel_to_others = 7.5
 			navy_intel_to_others = 12.5
 			airforce_intel_to_others = 7.5
 			hidden_modifier = { join_faction_tension = -0.1 }
+			embargo_threshold_factor = 0.5
 		}
 		
 		faction_modifiers = {
 			
 		}
-		can_be_boosted = no
-		can_collaborate = yes
+		
 		ai_neutral = yes
 
 	}
@@ -148,7 +149,10 @@ ideologies = {
 		
 			nazism = {
 			}
-			
+
+			gen_nazism = {
+			}
+
 			fascism_ideology = {
 			}
 			
@@ -178,6 +182,8 @@ ideologies = {
 			can_puppet = no
 		}
 		
+		can_collaborate = yes
+
 		modifiers = {
 			justify_war_goal_when_in_major_war_time = -0.80
 			civilian_intel_to_others = 15.0
@@ -185,10 +191,11 @@ ideologies = {
 			navy_intel_to_others = 10.0
 			airforce_intel_to_others = 10.0
 			hidden_modifier = { join_faction_tension = -0.1 }
+			embargo_cost_factor = 1
 		}
-		can_be_boosted = no
-		can_collaborate = yes
+		
 		ai_neutral = yes
+		ai_ideology_wanted_units_factor = 1.65
 	}
 	
 	monarchism = {
@@ -233,8 +240,6 @@ ideologies = {
 		}
 		
 		modifiers = {
-			take_states_cost_factor = -0.25
-			annex_cost_factor = -0.25
 			generate_wargoal_tension = 0.3
 			join_faction_tension = 0.15
 			lend_lease_tension = 0.2
@@ -250,7 +255,6 @@ ideologies = {
 		faction_modifiers = {
 		}
 
-		can_be_boosted = no
 		can_collaborate = yes
 		ai_neutral = yes
 	}
@@ -305,7 +309,6 @@ ideologies = {
 		faction_modifiers = {
 		}
 
-		can_be_boosted = no
 		can_collaborate = yes
 		ai_neutral = yes
 	}

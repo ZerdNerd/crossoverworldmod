@@ -263,9 +263,10 @@ country_event = { #Neu Flensburgian Declaration of Independence
 		name = flensburg.10.a
 		add_political_power = 100
 		hidden_effect = {
-			FRI = {
-				end_puppet = FLE
-			}
+			#FRI = {  #has to be commented out, because any relation between FRI and FLE crashes the game
+			#	end_puppet = FLE  #temporary until the problem is not solved
+			#}
+			leave_faction = yes
 			hidden_effect = {
 				if = {
 					limit = {

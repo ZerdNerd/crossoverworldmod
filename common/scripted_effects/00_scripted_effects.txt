@@ -447,18 +447,34 @@ general_strzelcy_divisions = { #I tried playing with the code first, but it retu
 set_variables_in_friedewalt_puppets = {
 	every_country = {
 		limit = {
-			OR = {
+			#OR = {
 				is_puppet_of = FRI
-				AND = {
-					tag = FLE
-					NOT = {
-						has_country_flag = flensburg_declared_independence
-					}
-				}
-			}
+			#	AND = {
+			#		tag = FLE
+			#		is_in_faction = FRI #temporary until the problem is not solved
+			#		NOT = {
+			#			has_country_flag = flensburg_declared_independence
+			#		}
+			#	}
+			#}
 		}
 		FRI = {
 			end_puppet = PREV
+		}
+		set_variable = { puppet_of_friedewalt_before_war = 1 }
+	}
+	if = {
+		limit = {
+			AND = {
+				tag = FLE
+				is_in_faction_with = FRI #temporary until the problem is not solved - above is the primary version
+				NOT = {
+					has_country_flag = flensburg_declared_independence
+				}
+			}
+		}
+		FLE = {
+			leave_faction = yes
 		}
 		set_variable = { puppet_of_friedewalt_before_war = 1 }
 	}

@@ -981,12 +981,7 @@ war_measures = {
 			}
 		}
 		complete_effect = {
-			if = {
-				limit = {
-					tag = CAN
-				}
-				country_event = { id = canada_vanilla.1 hours = 6 } # Ronnie the Bren Gun Girl
-			}
+
         }
    }
 
@@ -1025,7 +1020,6 @@ war_measures = {
         }
         visible = {
             has_war = yes
-            NOT = { tag = SPC }
         }
 
         fire_only_once = no

@@ -32,42 +32,29 @@ country_event = {
 
 		set_global_flag = roland_is_dead
 
-		create_country_leader = {
-			name = "Miranda"
-			desc = "POLITICS_MIRANDA_DESC"
-			picture = "miranda.dds"
-			expire = "1965.1.1"
-			ideology = administrative_monarchy
-			traits = {
-				#
+		add_country_leader_role = {
+  			character = ENC_miranda_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = administrative_monarchy
+   				expire = "1965.1.1.1"
+    			traits = {  }
 			}
 		}
 
-		create_country_leader = {
-			name = "Miranda"
-			desc = "POLITICS_MIRANDA_DESC"
-			picture = "miranda.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-				#
-			}
+		add_country_leader_role = {
+  			character = ENC_miranda_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = centrism
+   				expire = "1965.1.1.1"
+    			traits = {  }
+  			}
 		}
 		
-		create_country_leader = {
-			name = "Miranda"
-			desc = "POLITICS_MIRANDA_DESC"
-			picture = "miranda.dds"
-			expire = "1965.1.1"
-			ideology = conservatism
-			traits = {
-				#
-			}
-		}
-		
-			news_event = { 
-				id = worldnews.2 days = 5
-			} 
+		news_event = { 
+			id = worldnews.2 days = 5
+		} 
 		}
 	}
 }
@@ -101,38 +88,26 @@ country_event = {
 		
 		set_country_flag = queen_amber
 
-		create_country_leader = {
-			name = "Amber I"
-			desc = "POLITICS_AMBER_DESC"
-			picture = "amber.dds"
-			expire = "1965.1.1"
-			ideology = administrative_monarchy
-			traits = {
-				underage_monarch
-			}
-		}
-		
-		create_country_leader = {
-			name = "Amber I"
-			desc = "POLITICS_AMBER_DESC"
-			picture = "amber.dds"
-			expire = "1965.1.1"
-			ideology = conservatism
-			traits = {
-				underage_monarch
+		add_country_leader_role = {
+  			character = ENC_amber_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = administrative_monarchy
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
 			}
 		}
 
-		create_country_leader = {
-			name = "Amber I"
-			desc = "POLITICS_AMBER_DESC"
-			picture = "amber.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-				underage_monarch
-			}
+		add_country_leader_role = {
+  			character = ENC_amber_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = centrism
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
+  			}
 		}
+
 			news_event = { 
 				id = worldnews.3 days = 4
 			} 
@@ -158,38 +133,26 @@ country_event = {
 		
 		set_country_flag = king_james
 
-		create_country_leader = {
-			name = "James I"
-			desc = "POLITICS_JAMES_DESC"
-			picture = "james.dds"
-			expire = "1965.1.1"
-			ideology = administrative_monarchy
-			traits = {
-				underage_monarch
+		add_country_leader_role = {
+  			character = ENC_james_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = administrative_monarchy
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
 			}
 		}
 
-		create_country_leader = {
-			name = "James I"
-			desc = "POLITICS_JAMES_DESC"
-			picture = "james.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-				underage_monarch
-			}
+		add_country_leader_role = {
+  			character = ENC_james_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = centrism
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
+  			}
 		}
-		
-		create_country_leader = {
-			name = "James I"
-			desc = "POLITICS_JAMES_DESC"
-			picture = "james.dds"
-			expire = "1965.1.1"
-			ideology = conservatism
-			traits = {
-				underage_monarch
-			}
-		}
+
 			news_event = { 
 				id = worldnews.4 days = 4
 			} 
@@ -214,38 +177,26 @@ country_event = {
 		
 		set_country_flag = queen_sofia
 
-		create_country_leader = {
-			name = "Sofia I"
-			desc = "POLITICS_SOFIA_DESC"
-			picture = "sofia.dds"
-			expire = "1965.1.1"
-			ideology = administrative_monarchy
-			traits = {
-				underage_monarch
+		add_country_leader_role = {
+  			character = ENC_sofia_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = administrative_monarchy
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
 			}
 		}
 
-		create_country_leader = {
-			name = "Sofia I"
-			desc = "POLITICS_SOFIA_DESC"
-			picture = "sofia.dds"
-			expire = "1965.1.1"
-			ideology = centrism
-			traits = {
-				underage_monarch
-			}
+		add_country_leader_role = {
+  			character = ENC_sofia_character
+  			promote_leader = yes
+  			country_leader = {
+    			ideology = centrism
+   				expire = "1965.1.1.1"
+    			traits = { underage_monarch  }
+  			}
 		}
 		
-		create_country_leader = {
-			name = "Sofia I"
-			desc = "POLITICS_SOFIA_DESC"
-			picture = "sofia.dds"
-			expire = "1965.1.1"
-			ideology = conservatism
-			traits = {
-				underage_monarch
-			}
-		}
 			news_event = { 
 				id = worldnews.5 days = 4
 			} 
@@ -3301,66 +3252,44 @@ country_event = { #Amber wants to resign due to what happened
 						has_variable = sofia_you_cannot_bring_younger_self
 					}
 				}
-				create_country_leader = {
-					name = "Sofia I"
-					desc = "POLITICS_SOFIA_DESC"
-					picture = "sofia.dds"
-					expire = "1965.1.1"
-					ideology = administrative_monarchy
-					traits = {
-						underage_monarch
+				add_country_leader_role = {
+  					character = ENC_sofia_character
+  					promote_leader = yes
+  					country_leader = {
+    					ideology = administrative_monarchy
+   						expire = "1965.1.1.1"
+    					traits = { underage_monarch }
 					}
 				}
-				create_country_leader = {
-					name = "Sofia I"
-					desc = "POLITICS_SOFIA_DESC"
-					picture = "sofia.dds"
-					expire = "1965.1.1"
-					ideology = centrism
-					traits = {
-						underage_monarch
-					}
-				}
-				create_country_leader = {
-					name = "Sofia I"
-					desc = "POLITICS_SOFIA_DESC"
-					picture = "sofia.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						underage_monarch
-					}
+
+				add_country_leader_role = {
+  					character = ENC_sofia_character
+  					promote_leader = yes
+  					country_leader = {
+    					ideology = centrism
+   						expire = "1965.1.1.1"
+    					traits = { underage_monarch }
+  					}
 				}
 				else = {
-					create_country_leader = {
-						name = "Sofia I"
-						desc = "POLITICS_SOFIA_DESC"
-						picture = "sofia_older.dds"
-						expire = "1965.1.1"
-						ideology = administrative_monarchy
-						traits = {
-							#
+					add_country_leader_role = {
+  						character = EN2_sofia_adult_character
+  						promote_leader = yes
+  						country_leader = {
+    						ideology = administrative_monarchy
+   							expire = "1965.1.1.1"
+    						traits = {  }
 						}
 					}
-					create_country_leader = {
-						name = "Sofia I"
-						desc = "POLITICS_SOFIA_DESC"
-						picture = "sofia_older.dds"
-						expire = "1965.1.1"
-						ideology = centrism
-						traits = {
-							#
-						}
-					}
-					create_country_leader = {
-						name = "Sofia I"
-						desc = "POLITICS_SOFIA_DESC"
-						picture = "sofia_older.dds"
-						expire = "1965.1.1"
-						ideology = conservatism
-						traits = {
-							#
-						}
+
+					add_country_leader_role = {
+  						character = EN2_sofia_adult_character
+  						promote_leader = yes
+  						country_leader = {
+    						ideology = centrism
+   							expire = "1965.1.1.1"
+    						traits = {  }
+  						}
 					}
 				}
 			}	
@@ -3404,38 +3333,25 @@ country_event = { #Sofia's 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = EN2_sofia_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-				#
-				}
+			add_country_leader_role = {
+  				character = EN2_sofia_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
 			}
-		
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
-			}	
 		}
 	}
 
@@ -3516,44 +3432,28 @@ country_event = { #Amber's 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = ENC_amber_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-				#
-				}
-			}
-		
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
+			add_country_leader_role = {
+  				character = ENC_amber_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
 			}	
 
-			create_corps_commander = {
-				name = "First Knight James Winslow"
-				portrait_path = "gfx/leaders/EN1/james_older.dds"
-				traits = {
-				}
+			add_corps_commander_role = {
+				character = ENC_james_adult_character
 				skill = 3
     			attack_skill = 3
     			defense_skill = 3
@@ -3572,11 +3472,8 @@ country_event = { #Amber's 17th birthday
 		}
 		name = enchancia.81.a
 		hidden_effect = {
-			create_corps_commander = {
-				name = "First Knight James Winslow"
-				portrait_path = "gfx/leaders/EN1/james_older.dds"
-				traits = {
-				}
+			add_corps_commander_role = {
+				character = ENC_james_adult_character
 				skill = 3
     			attack_skill = 3
     			defense_skill = 3
@@ -3600,44 +3497,28 @@ country_event = { #James' 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = EN1_james_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-					#
-				}
-			}
-		
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
+			add_country_leader_role = {
+  				character = EN1_james_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
 			}	
 
-			create_corps_commander = {
-				name = "James I"
-				portrait_path = "gfx/leaders/EN1/james_older.dds"
-				traits = {
-				}
+			add_corps_commander_role = {
+				character = EN1_james_adult_character
 				skill = 3
     			attack_skill = 3
     			defense_skill = 3
@@ -3683,38 +3564,25 @@ country_event = { #Winslows are found!
 		hidden_effect = {
 			ENC = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = EN1_james_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-					#
-				}
-			}
-		
-			create_country_leader = {
-				name = "James I"
-				desc = "POLITICS_JAMES_DESC"
-				picture = "james_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
-			}
+			add_country_leader_role = {
+  				character = EN1_james_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
+			}	
 			}	
 		}
 	}
@@ -3728,38 +3596,25 @@ country_event = { #Winslows are found!
 		hidden_effect = {
 			ENC = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = ENC_amber_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-				#
-				}
-			}
-		
-			create_country_leader = {
-				name = "Amber I"
-				desc = "POLITICS_AMBER_DESC"
-				picture = "amber_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
-			}
+			add_country_leader_role = {
+  				character = ENC_amber_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
+			}	
 			}	
 		}
 	}
@@ -3773,37 +3628,24 @@ country_event = { #Winslows are found!
 		hidden_effect = {
 			ENC = {
 			retire_country_leader = yes
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					#
+			add_country_leader_role = {
+  				character = EN2_sofia_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = administrative_monarchy
+   					expire = "1965.1.1.1"
+    				traits = {  }
 				}
 			}
 
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = centrism
-				traits = {
-				#
-				}
-			}
-		
-			create_country_leader = {
-				name = "Sofia I"
-				desc = "POLITICS_SOFIA_DESC"
-				picture = "sofia_older.dds"
-				expire = "1965.1.1"
-				ideology = conservatism
-				traits = {
-					#
-				}
+			add_country_leader_role = {
+  				character = EN2_sofia_adult_character
+  				promote_leader = yes
+  				country_leader = {
+    				ideology = centrism
+   					expire = "1965.1.1.1"
+    				traits = {  }
+  				}
 			}
 			}	
 		}

@@ -292,13 +292,6 @@ ideas = {
 			available = {
 				if = {
 					limit = {
-						original_tag = SPR
-						has_dlc = "La Resistance"
-					}
-#					NOT = { has_completed_focus = SPR_all_must_bear_the_torch }
-				}
-				if = {
-					limit = {
 						tag = GON
 					}
 					custom_trigger_tooltip = {
@@ -368,23 +361,6 @@ ideas = {
 
 			ai_will_do = {
    				factor = 1
-
-				modifier = {
-					factor = 0
-					
-					is_major = no
-					has_war = no
-					is_in_faction = no
-					OR = {
-						# portugal and sweden are special tungsten snowflakes
-						tag = POR
-						tag = SWE
-
-						# Iraq & Iran are special oil snowflakes
-						tag = PER
-						tag = IRQ
-					}
-				}
    			}
 		}
 		

@@ -257,21 +257,21 @@ owner_is_neighbor_of_ROOT = {
 
 is_owned_or_claimed_by_ROOT = {
 	OR = {
-		has_claimed_state_in_peace_conference = ROOT
+	#	has_claimed_state_in_peace_conference = ROOT
 		is_owned_by = ROOT
 	}
 }
 
 is_owned_or_claimed_by_PREV = {
 	OR = {
-		has_claimed_state_in_peace_conference = PREV
+	#	has_claimed_state_in_peace_conference = PREV
 		is_owned_by = PREV
 	}
 }
 
 is_owned_or_claimed_by_PREVPREV = {
 	OR = {
-		has_claimed_state_in_peace_conference = PREV.PREV
+	#	has_claimed_state_in_peace_conference = PREV.PREV
 		is_owned_by = PREV.PREV
 	}
 }
@@ -279,7 +279,7 @@ is_owned_or_claimed_by_PREVPREV = {
 is_adjacent_to_ROOT_or_coastal = {
 	OR = {
 		num_owned_neighbour_states = { count > 0 owner = ROOT }
-		num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+	#	num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 		AND = {
 			is_coastal = yes
 			ROOT = {
@@ -292,7 +292,7 @@ is_adjacent_to_ROOT_or_coastal = {
 is_adjacent_to_PREV_or_coastal = {
 	OR = {
 		num_owned_neighbour_states = { count > 0 owner = PREV }
-		num_claimed_peace_conference_neighbour_states = { count > 0 owner = PREV }
+	#	num_claimed_peace_conference_neighbour_states = { count > 0 owner = PREV }
 		AND = {
 			is_coastal = yes
 			PREV = {
@@ -676,7 +676,7 @@ can_reach_state = {
 								OR = {
 									is_in_array = { global.canreach = THIS }
 									is_owned_by = var:global.taker
-									has_claimed_state_in_peace_conference = var:global.taker
+								#	has_claimed_state_in_peace_conference = var:global.taker
 								}
 							}
 						}
@@ -730,7 +730,7 @@ can_reach_state = {
 								OR = {
 									is_in_array = { global.canreach = THIS }
 									is_owned_by = var:global.taker
-									has_claimed_state_in_peace_conference = var:global.taker
+								#	has_claimed_state_in_peace_conference = var:global.taker
 								}
 							}
 						}
@@ -785,7 +785,7 @@ can_reach_state_direct = {
 							OR = {
 								is_in_array = { global.canreach = THIS }
 								is_owned_by = var:global.taker
-								has_claimed_state_in_peace_conference = var:global.taker
+							#	has_claimed_state_in_peace_conference = var:global.taker
 							}
 						}
 					}
@@ -830,7 +830,7 @@ can_reach_state_direct = {
 							OR = {
 								is_in_array = { global.canreach = THIS }
 								is_owned_by = var:global.taker
-								has_claimed_state_in_peace_conference = var:global.taker
+							#	has_claimed_state_in_peace_conference = var:global.taker
 							}
 						}
 					}
@@ -879,20 +879,20 @@ rule_take_bordering_first = {
 		#is_important_state = no
 		NOT = {
 			num_owned_neighbour_states = { count > 0 owner = ROOT }
-			num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+		#	num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 		}
 		owner = {
 			any_owned_state = {
 				OR = {
 					num_owned_neighbour_states = { count > 0 owner = ROOT }
-					num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+				#	num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 				}
 				set_temp_variable = { global.eval_state = THIS.id }
 				NOT = {
 					owner = {
 						any_enemy_country = {
 							var:global.eval_state = {
-								has_claimed_state_in_peace_conference = PREV
+							#	has_claimed_state_in_peace_conference = PREV
 							}
 						}
 					}
@@ -1104,7 +1104,7 @@ rule_look_for_direct_connection_ROOT = {
 	var:global.eval_state = {
 		NOT = {
 			num_owned_neighbour_states = { count > 0 owner = ROOT }
-			num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
+		#	num_claimed_peace_conference_neighbour_states = { count > 0 owner = ROOT }
 			# unless it's an important state, an island, or a coastal state in an island region (like Britain)
 			#is_important_state = yes
 			AND = {

@@ -1024,6 +1024,8 @@ news_event = { #Second Flower Hill War
 	title = worldnews.37.t
 	desc = worldnews.37.d 
 	picture = GFX_news_flower_hill #to be changed
+
+	fire_only_once = yes
 	
 	major = yes
 	
@@ -1075,6 +1077,8 @@ news_event = { #World War breaks out
 	desc = worldnews.38.d 
 	picture = GFX_news_event_032
 	
+	fire_only_once = yes
+
 	major = yes
 	
 	trigger = {
@@ -1134,6 +1138,8 @@ news_event = { #Fall of Dunwiddie
 		}
 	}
 	picture = GFX_news_dunwiddie
+	
+	fire_only_once = yes
 	
 	major = yes
 	
@@ -1196,6 +1202,8 @@ news_event = { #Fall of Slaton City
 	id = worldnews.40
 	title = worldnews.40.t
 	picture = GFX_news_ENC_palace
+	
+	fire_only_once = yes
 
 	desc = {
 		text = worldnews.40.d.enc
