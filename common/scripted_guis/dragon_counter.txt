@@ -20,11 +20,12 @@ scripted_gui = {
         context_type = player_context
 
         visible = {
-            ROOT = {
-                NOT = {
-                    has_idea = modern_tech_idea
-                }
-            }
+            always = no
+        #    ROOT = {
+        #        NOT = {
+        #            has_idea = modern_tech_idea
+        #        }
+        #    }
         }
     }
 }

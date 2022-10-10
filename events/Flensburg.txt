@@ -263,17 +263,16 @@ country_event = { #Neu Flensburgian Declaration of Independence
 		name = flensburg.10.a
 		add_political_power = 100
 		hidden_effect = {
-			#FRI = {  #has to be commented out, because any relation between FRI and FLE crashes the game
-			#	end_puppet = FLE  #temporary until the problem is not solved
-			#}
-			leave_faction = yes
+			FRI = {  #has to be commented out, because any relation between FRI and FLE crashes the game
+				end_puppet = FLE
+			}
 			hidden_effect = {
 				if = {
 					limit = {
 						has_government = monarchism
 					}
 					create_country_leader = {
-						name = "Herman von Vismann"
+						name = "Herman von Wismann"
 						desc="POLITICS_WISMANN_DESC"
 						picture="gfx/leaders/FLE/wissman.dds"
 						ideology=centrism
@@ -342,7 +341,7 @@ country_event = { #Neu Flensburg breaks free
 			FLE = {
 				NOT = {
 					has_country_leader = {
-						name = "Herman von Vismann"
+						name = "Herman von Wismann"
 						ruling_only = yes
 					}
 				}
@@ -389,7 +388,6 @@ country_event = { #von Wismann rebels against the independence!
 	option = { #He's working on orders from Pantmawr! To arms!
 		name = flensburg.13.a
 		start_civil_war = {
-    		ruling_party = democratic
     		ideology = monarchism
     		size = 0.4
     		capital = 782
@@ -397,7 +395,7 @@ country_event = { #von Wismann rebels against the independence!
      		   782 791 788 1034 769 1032 802 1018 733 1038 35 40 30
     		}
     		keep_unit_leaders = {
-    		    9954 9955
+    		    9952 9954 9955
     		}
     		keep_political_leader = no
 		}		

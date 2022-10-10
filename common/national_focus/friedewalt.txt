@@ -2439,9 +2439,6 @@ focus_tree = {
 		mutually_exclusive = {
 			focus = FRI_march_to_the_north
 		}
-		bypass = { #temporary until the problem is not solved
-			is_in_faction = yes
-		}
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -2672,6 +2669,7 @@ focus_tree = {
 		cost = 10
 		prerequisite = { focus = FRI_revive_international_relations }
 		available = {
+			has_global_flag = enchancian_civil_war_over
 			OR = {
 				EN3 = {
 					exists = yes

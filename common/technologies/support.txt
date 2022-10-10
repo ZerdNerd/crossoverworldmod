@@ -1342,16 +1342,46 @@ technologies = {
 		}
 	}
 
+	horse_drawn_carriage = {
+		enable_equipments = {
+			horse_carriage
+		}
+
+		research_cost = 1.0
+		start_year = 1850
+		folder = {
+			name = support_folder
+			position = { x = 0 y = @1918 }
+		}
+
+		path = {
+			leads_to_tech = basic_train
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			train_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				has_tech = basic_train
+				factor = 0 #lol why
+			}
+		}
+	}
+
 	basic_train = {
 		enable_equipments = {
 			train_equipment_1
 		}
 
 		research_cost = 1.5
-		start_year = 1910
+		start_year = 1935
 		folder = {
 			name = support_folder
-			position = { x = 0 y = @1918 }
+			position = { x = 0 y = 3 }
 		}
 
 		path = {

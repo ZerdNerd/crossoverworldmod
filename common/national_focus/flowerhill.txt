@@ -2031,7 +2031,7 @@ focus_tree = {
 		available_if_capitulated = yes 
 
 		ai_will_do = { 
-			base = 0
+			base = 50
 			modifier = {
 				has_game_rule = {
 					rule = FLO_unification_process
@@ -2046,7 +2046,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = no
 			has_government = communism
 			has_completed_focus = FLO_ragwon_complex
 		}
@@ -2105,7 +2104,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = no
 			has_government = communism
 			has_completed_focus = FLO_ragwon_complex
 		}
@@ -2160,7 +2158,6 @@ focus_tree = {
 		}
 
 		available = {
-			has_war = no
 			has_government = communism
 			has_completed_focus = FLO_ragwon_complex
 		} 
@@ -2197,7 +2194,15 @@ focus_tree = {
 		} 
 
 		available = {
-			has_war = no
+			DUC = {
+				exists = no
+			}
+			SQU = {
+				exists = no
+			}
+			TRL = {
+				exists = no
+			}
 			has_government = communism
 		}
 

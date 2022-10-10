@@ -2,6 +2,7 @@
 
 # Starting tech
 set_technology = {
+	horse_drawn_carriage = 1
 	infantry_weapons_med = 1
 
 }
@@ -56,29 +57,6 @@ set_politics = {
 
 set_stability = 0.4
 
-
-create_country_leader = {
-	name = "Amber I"
-	desc = "POLITICS_ROLAND_DESC"
-	picture = "amber.dds"
-	expire = "1965.1.1"
-	ideology = administrative_monarchy
-	traits = {
-		#
-	}
-}
-
-create_country_leader = {
-	name = "Amber I"
-	desc = "POLITICS_ROLAND_DESC"
-	picture = "amber.dds"
-	expire = "1965.1.1"
-	ideology = centrism
-	traits = {
-		#
-	}
-}
-
 create_country_leader = {
 	name = "Cedric"
 	desc = "POLITICS_CEDRIC_DESC"
@@ -102,3 +80,8 @@ create_country_leader = {
 }
 
 recruit_character = ENC_gwen
+recruit_character = EN2_amber_character
+recruit_character = EN2_amber_older_character
+recruit_character = EN2_sofia_character
+recruit_character = EN2_sofia_older_character
+recruit_character = EN2_james_adult_prince_character

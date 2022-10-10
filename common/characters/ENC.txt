@@ -1,5 +1,13 @@
 characters={
-	ENC_james_young={
+	ENC_james_character={
+		name="James I"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENC/james.dds"
+			}
+		}
+	}
+	EN1_james_character={
 		name="James I"
 		portraits={
 			civilian={
@@ -7,99 +15,67 @@ characters={
 			}
 		}
 		country_leader={
-			desc="POLITICS_TBA_DESC"
+			desc="POLITICS_ROLAND_DESC"
 			ideology=centrism
 			expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
-			desc="POLITICS_TBA_DESC"
+			desc="POLITICS_ROLAND_DESC"
 			ideology=administrative_monarchy
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	EN2_sofia={
+	EN2_sofia_character={
 		name="Sofia I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/sofia.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
-	EN2_sofia_older={
+	EN2_sofia_older_character={
 		name="Sofia I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/sofia_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
-	ENC_sofia={
+	ENC_sofia_character={
 		name="Sofia I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/sofia.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
-	ENC_sofia_older={
+	ENC_sofia_older_character={
 		name="Sofia I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/sofia_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
+	}
+	ENC_amber_character={
+		name="Amber I"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENC/amber.dds"
+			}
 		}
 	}
-	ENC_amber={
+	ENC_amber_older_character={
+		name="Amber I"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENC/amber_older.dds"
+			}
+		}
+	}
+	EN2_amber_character={
 		name="Amber I"
 		portraits={
 			civilian={
@@ -107,79 +83,27 @@ characters={
 			}
 		}
 		country_leader={
-			desc="POLITICS_TBA_DESC"
+			desc="POLITICS_ROLAND_DESC"
 			ideology=centrism
 			expire="1965.1.1.1"
 			id=-1
 		}
 		country_leader={
-			desc="POLITICS_TBA_DESC"
+			desc="POLITICS_ROLAND_DESC"
 			ideology=administrative_monarchy
 			expire="1965.1.1.1"
 			id=-1
 		}
 	}
-	ENC_amber_older={
+	EN2_amber_older_character={
 		name="Amber I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/amber_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
-	EN2_amber={
-		name="Amber I"
-		portraits={
-			civilian={
-				large="gfx/leaders/ENC/amber.dds"
-			}
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-	EN2_amber_older={
-		name="Amber I"
-		portraits={
-			civilian={
-				large="gfx/leaders/ENC/amber_older.dds"
-			}
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
-	ENC_james_adult={
+	ENC_james_adult_character={
 		name="James I"
 		portraits={
 			army={
@@ -189,20 +113,8 @@ characters={
 				large="gfx/leaders/ENC/james_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
-		}
 	}
-	ENC_james_adult_prince={
+	ENC_james_adult_prince_character={
 		name="Prince James"
 		portraits={
 			army={
@@ -212,37 +124,32 @@ characters={
 				large="gfx/leaders/ENC/james_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
+	}
+	EN2_james_adult_prince_character={
+		name="Prince James"
+		portraits={
+			army={
+				small="GFX_idea_ENC_james_older"
+			}
+			civilian={
+				large="gfx/leaders/ENC/james_older.dds"
+			}
 		}
 	}
-	EN1_james_adult={
+	EN1_james_adult_character={
 		name="James I"
 		portraits={
 			civilian={
 				large="gfx/leaders/ENC/james_older.dds"
 			}
 		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBA_DESC"
-			ideology=administrative_monarchy
-			expire="1965.1.1.1"
-			id=-1
+	}
+	ENC_miranda_character={
+		name="Miranda"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENC/miranda.dds"
+			}
 		}
 	}
 	ENC_cedric={
