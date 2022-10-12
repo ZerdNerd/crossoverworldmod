@@ -4889,6 +4889,20 @@ on_actions = {
 						kill_operative = PREV
 					}
 				}
+				if = {
+					limit = {
+						SIO = {
+							has_war_with = ROOT
+							has_country_flag = SIO_council_not_rejected_sandstorm
+							NOT = {
+								has_country_flag = SIO_sandstorm_fired
+							}
+						}
+					}
+					SIO = {
+						unlock_national_focus = SIO_our_finest_hour
+					}
+				}
 			}
 			if = {
 				limit = {

@@ -1447,7 +1447,11 @@ focus_tree = {
 		cost = 7.25
 
 		ai_will_do = {
-			factor = 2
+			base = 2
+			modifier = {
+				date > 1937.10.1
+				factor = 50
+			}
 		}
 
 		available_if_capitulated = yes
@@ -1478,7 +1482,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			factor = 2
+			base = 2
+			modifier = {
+				date > 1938.3.1
+				factor = 50
+			}
 		}
 
 		available = {
@@ -1538,7 +1546,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			factor = 2
+			base = 2
+			modifier = {
+				date > 1937.10.1
+				factor = 50
+			}
 		}
 
 		bypass = {
@@ -1604,7 +1616,11 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		ai_will_do = {
-			factor = 2
+			base = 2
+			modifier = {
+				date > 1937.11.1
+				factor = 50
+			}
 		}
 
 		completion_reward = {

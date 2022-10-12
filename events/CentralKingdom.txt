@@ -1051,7 +1051,12 @@ country_event = { #Hartmut is crowned
 		set_cosmetic_tag = HAR
 		hidden_effect = {
 			FLE = {
-				set_cosmetic_tag = FLE_HAR
+				if = {
+					limit = {
+						is_puppet_of = FRI
+					}
+					set_cosmetic_tag = FLE_HAR
+				}
 			}
 			complete_national_focus = FRI_hartmut_rules
 			news_event = {

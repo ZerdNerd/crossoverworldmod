@@ -1361,7 +1361,12 @@ country_event = { #People demand the return of Friedewalt
 			}
 			drop_cosmetic_tag = yes
 			FLE = {
-				drop_cosmetic_tag = yes
+				if = {
+					limit = {
+						is_puppet_of = FRI
+					}
+					drop_cosmetic_tag = yes
+				}
 			}
 		}
 		create_country_leader = {
