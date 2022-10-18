@@ -1051,10 +1051,14 @@ country_event = { #Uprising in Morioh!
 			}
 		}
 		MO2 = {
-			declare_war_on = {
-				target = MOR
-				type = annex_everything
+			set_country_flag = civil_war_in_morioh_is_coming
+			set_variable = {
+				countdown_to_breakdown = 0
 			}
+		#	declare_war_on = {
+		#		target = MOR
+		#		type = annex_everything
+		#	}
 		}
 	}
 }

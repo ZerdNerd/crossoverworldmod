@@ -389,7 +389,8 @@ NCountry = {
 	GIE_MAX_LEGITIMACY = 100, 								--Legitimacy max of a GiE
 	GIE_CAPITULATE_MAX_STOCKPILE_TRANSFER = 0.1, 			-- 0-1 Transfers ratio of stockpile. from 0 to this define depending on starting legitimacy on capitulation.
 	GIE_CAPITULATE_MIN_LEGIT_FOR_TRANSFER = 5, -- 0-100 Minimum starting legitimacy to transfer any equipment at all.
-	GIE_CAPITULATION_WARSCORE_LEGITIMACY_FACTOR = 1.0, 	--Multiplies accumulated warscore with this factor for part of starting legitimacy.
+	GIE_CAPITULATION_LEGITIMACY_WARSCORE_FACTOR = 0.5,      -- Multiplies war contribution percent with this factor for part of starting legitimacy. (0.5 would mean a 50 % war contribution gives 25 more legitimacy)
+	GIE_CAPITULATION_LEGITIMACY_WARLENGTH_FACTOR = 1.0,     -- Multiplies war length (nr of weeks) with this factor for part of starting legitimacy. (1.0 would mean a war length of 30 weeks gives 30 more legitimacy)
 	GIE_WARSCORE_GAIN_LEGITIMACY_FACTOR = 1,		 		--Factor on how much legitimacy is gained from warscore earned by GiE units.
 	GIE_HOST_CIC_FROM_LEGITIMACY_MAX = 5, 					--Host will receive from 0 to this value in CIC.
 	GIE_HOST_MIC_FROM_LEGITIMACY_MAX = 5,					--Host will receive from 0 to this value in MIC.
@@ -935,7 +936,7 @@ NMilitary = {
 	PLAN_MAX_PROGRESS_TO_JOIN = 0.50,				-- If Lower progress than this, probably needs support
 
 	PLAN_COHESION_WEIGHTS = { 1.0, 40.0, 80.0 }, 	-- for each cohesion setting, how keen on relocating from distance should we be? (default 1.0), higher weight = shorter max distance
-	PLAN_COHESION_DISTANCE_MAX_WHEN_LEFT_BEHIND = 38,	--If not on the frontline and not moving, we can still be relocated if we exceed cohesion distance, but only to locations less than THIS distance. (Note: this is -actual- distance, not weighted distance)
+	PLAN_COHESION_DISTANCE_MAX_WHEN_LEFT_BEHIND = 38,	--Unused and deprecated - will be removed in next major version.
 
 	PLAN_BLITZ_OPTIMISM = 0.2,						-- Additional combat balance value in favor of blitzing side when considering targets (not a combat bonus, just offsets planning)
 	MIN_BALANCE_SCORE_TO_PROCEED_ATTACK = 0.2,		--A combat balance score of less than this will prevent auto attacking
@@ -2929,7 +2930,7 @@ NAI = {
 	NAVAL_INVADED_AREA_PRIO_MULT = 1.2,									-- fronts that belongs to recent invasions gets more prio
 	MIN_NUM_CONQUERED_PROVINCES_TO_DEPRIO_NAVAL_INVADED_FRONTS = 20,	-- if you conquer this amount of provinces after a naval invasion, it will lose its prio status and will act as a regular front
 
-	FAILED_INVASION_AVOID_DURATION = 135,                   -- after a failed invasion, AI will down-prioritize invading the same area again for this number of days
+	FAILED_INVASION_AVOID_DURATION = 60,                   -- after a failed invasion, AI will down-prioritize invading the same area again for this number of days
 	FAILED_INVASION_AREA_PRIO_FACTOR = 0.5,                 -- for every failed invasion on an area, factor that area's invasion prio with this value
 	FAILED_INVASION_PORT_PRIO_FACTOR = 0.66,                -- for every failed invasion on a target port (province), factor the chance that we try to invade that same port again (relative to other ports)
 

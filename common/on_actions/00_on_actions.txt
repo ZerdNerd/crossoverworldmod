@@ -48,6 +48,52 @@ on_actions = {
 		effect = {
 			if = {
 				limit = {
+					tag = MO2
+					MOR = {
+						exists = yes
+					}
+					has_country_flag = civil_war_in_morioh_is_coming
+					has_variable = countdown_to_breakdown
+					check_variable = {
+    					var = countdown_to_breakdown
+   						value = 0
+    					compare = greater_than_or_equals
+					}
+					check_variable = {
+    					var = countdown_to_breakdown
+   						value = 4
+    					compare = less_than
+					}
+				}
+				MO2 = {
+					add_to_variable = { countdown_to_breakdown = 1 }
+				}
+				else_if = {
+					limit = {
+						tag = MO2
+						MOR = {
+							exists = yes
+						}
+						has_country_flag = civil_war_in_morioh_is_coming
+						has_variable = countdown_to_breakdown
+						check_variable = {
+    						var = countdown_to_breakdown
+   							value = 4
+    						compare = equals
+						}
+					}
+					MO2 = {
+						declare_war_on = {
+							target = MOR
+							type = annex_everything
+						}
+						clr_country_flag = civil_war_in_morioh_is_coming
+						clear_variable = countdown_to_breakdown
+					}
+				}
+			}
+			if = {
+				limit = {
 					all_state = {
 						is_owned_by = DIO
 					}
