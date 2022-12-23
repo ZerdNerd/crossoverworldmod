@@ -9,898 +9,970 @@ focus_tree = {
 	} 
 
 	focus = { 
-		id = DUL_the_road_to_crown
-		icon = GFX_focus_generic_monarchy_2
-		x = 26
+		id = DUL_a_long_way_to_modernity
+		icon = GFX_goal_generic_consumer_goods
+		x = 43
 		y = 0
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		available = {
-			always = no
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_agricultural_reform
+		icon = GFX_goal_generic_production
+		x = -4
+		y = 1
+		relative_position_id = DUL_a_long_way_to_modernity
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_a_long_way_to_modernity
 		}
 		completion_reward = { 
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_leads_through_peoples_acceptance
-		icon = GFX_focus_generic_diplomatic_treaty
-		x = -8
+		id = DUL_land_reform
+		icon = GFX_focus_generic_agriculture
+		x = -1
 		y = 1
-		relative_position_id = DUL_the_road_to_crown
-		prerequisite = { focus = DUL_the_road_to_crown }
+		relative_position_id = DUL_agricultural_reform
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		prerequisite = {
+			focus = DUL_agricultural_reform
+		}
 		completion_reward = { 
-			#
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_build_new_bakeries
+		id = DUL_farmer_subsidies
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 1
+		relative_position_id = DUL_agricultural_reform
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_agricultural_reform
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_modern_farming_tools
+		icon = GFX_goal_generic_construction2
+		x = -1
+		y = 1
+		relative_position_id = DUL_farmer_subsidies
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_land_reform
+		}
+		prerequisite = {
+			focus = DUL_farmer_subsidies
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_improve_productivity
 		icon = GFX_goal_generic_consumer_goods
-		x = -1
-		y = 1
-		relative_position_id = DUL_leads_through_peoples_acceptance
-		prerequisite = { focus = DUL_leads_through_peoples_acceptance }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#civ factories in capital and every VP
-		}		
-	}
-
-	focus = { 
-		id = DUL_introduce_asphalt_roads
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 1
-		y = 1
-		relative_position_id = DUL_leads_through_peoples_acceptance
-		prerequisite = { focus = DUL_leads_through_peoples_acceptance }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#infrastructure in every state
-		}		
-	}
-
-	focus = { 
-		id = DUL_attract_eastern_investors
-		icon = GFX_focus_mex_privatisation
-		x = 1
-		y = 1
-		relative_position_id = DUL_build_new_bakeries
-		prerequisite = { focus = DUL_build_new_bakeries }
-		prerequisite = { focus = DUL_introduce_asphalt_roads }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#event for eastern investors, idea if fulfilled
-		}		
-	}
-
-	focus = { 
-		id = DUL_fulfill_infrastructural_quota
-		icon = GFX_goal_generic_construction
-		x = -1
-		y = 1
-		relative_position_id = DUL_attract_eastern_investors
-		prerequisite = { focus = DUL_attract_eastern_investors }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#infrastructure every state
-		}		
-	}
-
-	focus = { 
-		id = DUL_answer_the_population_boom
-		icon = GFX_focus_spa_save_the_alcazar
-		x = 1
-		y = 1
-		relative_position_id = DUL_attract_eastern_investors
-		prerequisite = { focus = DUL_attract_eastern_investors }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#two new VPs, with 2 civs 1 mil +250k manpower
-		}		
-	}
-
-	focus = { 
-		id = DUL_create_civilian_industrial_sector
-		icon = GFX_goal_generic_construct_civ_factory
-		x = -1
-		y = 1
-		relative_position_id = DUL_build_new_bakeries
-		prerequisite = { focus = DUL_build_new_bakeries }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#civ factories
-		}		
-	}
-
-	focus = { 
-		id = DUL_introduce_eastern_machines
-		icon = GFX_goal_generic_construct_civ_factory
-		x = -1
-		y = 1
-		relative_position_id = DUL_create_civilian_industrial_sector
-		prerequisite = { focus = DUL_create_civilian_industrial_sector }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#civ factories and idea
-		}		
-	}
-
-	focus = { 
-		id = DUL_upgrade_military_industry
-		icon = GFX_goal_generic_construct_mil_factory
-		x = 3
-		y = 1
-		relative_position_id = DUL_build_new_bakeries
-		prerequisite = { focus = DUL_build_new_bakeries }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#mil factories
-		}		
-	}
-
-	focus = { 
-		id = DUL_and_the_ports_too
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 1
-		y = 1
-		relative_position_id = DUL_upgrade_military_industry
-		prerequisite = { focus = DUL_upgrade_military_industry }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#docks
-		}		
-	}
-
-	focus = { 
-		id = DUL_open_the_first_university
-		icon = GFX_focus_research
-		x = -3
-		y = 1
-		relative_position_id = DUL_and_the_ports_too
-		prerequisite = { focus = DUL_fulfill_infrastructural_quota }
-		prerequisite = { focus = DUL_answer_the_population_boom }
-		prerequisite = { focus = DUL_introduce_eastern_machines }
-		prerequisite = { focus = DUL_and_the_ports_too }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#research slot and idea
-		}		
-	}
-
-	focus = { 
-		id = DUL_leads_through_farquaads_will
-		icon = GFX_focus_generic_support_the_left_right
 		x = 0
 		y = 1
-		relative_position_id = DUL_the_road_to_crown
-		prerequisite = { focus = DUL_the_road_to_crown }
+		relative_position_id = DUL_modern_farming_tools
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		prerequisite = {
+			focus = DUL_modern_farming_tools
+		}
 		completion_reward = { 
-			#
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_people_must_remain_stupid
-		icon = GFX_focus_renounce_the_treaty_of_trianon
+		id = DUL_draft_industrialization_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = DUL_a_long_way_to_modernity
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_a_long_way_to_modernity
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_prioritize_civilian_industry
+		icon = GFX_goal_generic_construct_civ_factory
 		x = -1
 		y = 1
-		relative_position_id = DUL_leads_through_farquaads_will
-		prerequisite = { focus = DUL_leads_through_farquaads_will }
+		relative_position_id = DUL_draft_industrialization_plan
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_prioritize_military_industry }
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_draft_industrialization_plan
+		}
+		completion_reward = {
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_import_manufacturing_tools
+		icon = GFX_goal_generic_production
+		x = -1
+		y = 1
+		relative_position_id = DUL_prioritize_civilian_industry
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		completion_reward = { 
-			#idea
+		prerequisite = {
+			focus = DUL_prioritize_civilian_industry
+		}
+		completion_reward = {
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_let_them_remain_oblivious
+		id = DUL_expand_workshops
 		icon = GFX_goal_generic_consumer_goods
-		x = -1
+		x = 0
 		y = 1
-		relative_position_id = DUL_people_must_remain_stupid
-		prerequisite = { focus = DUL_people_must_remain_stupid }
+		relative_position_id = DUL_import_manufacturing_tools
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		completion_reward = { 
-			#civ factories
+		prerequisite = {
+			focus = DUL_import_manufacturing_tools
+		}
+		completion_reward = {
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_increase_work_scrutiny
-		icon = GFX_goal_generic_political_pressure
-		x = -1
-		y = 1
-		relative_position_id = DUL_let_them_remain_oblivious
-		prerequisite = { focus = DUL_let_them_remain_oblivious }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#idea for factory output and less pp
-		}		
-	}
-
-	focus = { 
-		id = DUL_introduce_police_forces
-		icon = GFX_focus_generic_military_mission
-		x = 1
-		y = 1
-		relative_position_id = DUL_leads_through_farquaads_will
-		prerequisite = { focus = DUL_leads_through_farquaads_will }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#idea
-		}		
-	}
-
-	focus = { 
-		id = DUL_mass_production_of_weapons
+		id = DUL_prioritize_military_industry
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 1
 		y = 1
-		relative_position_id = DUL_introduce_police_forces
-		prerequisite = { focus = DUL_introduce_police_forces }
+		relative_position_id = DUL_draft_industrialization_plan
 		cost = 10
 		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_prioritize_civilian_industry }
 		ai_will_do = { 
 			factor = 1
 		} 
-		completion_reward = { 
-			#
+		prerequisite = {
+			focus = DUL_draft_industrialization_plan
+		}
+		completion_reward = {
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_cooperation_between_land_and_sea
-		icon = GFX_goal_tfv_generic_tech_sharing
+		id = DUL_study_armament_manufacturing
+		icon = GFX_focus_research
 		x = 1
 		y = 1
-		relative_position_id = DUL_mass_production_of_weapons
-		prerequisite = { focus = DUL_mass_production_of_weapons }
+		relative_position_id = DUL_prioritize_military_industry
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		completion_reward = { 
-			#docks, mil factories and research slot
+		prerequisite = {
+			focus = DUL_prioritize_military_industry
+		}
+		completion_reward = {
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_introduce_state_controlled_passports
+		id = DUL_makeshift_weaponry
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 1
+		relative_position_id = DUL_study_armament_manufacturing
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_study_armament_manufacturing
+		}
+		completion_reward = {
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_infrastructure_modernization
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		relative_position_id = DUL_draft_industrialization_plan
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_draft_industrialization_plan
+		}
+		completion_reward = {
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_brick_roads
+		icon = GFX_goal_generic_construct_civilian
+		x = 0
+		y = 1
+		relative_position_id = DUL_infrastructure_modernization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_infrastructure_modernization
+		}
+		completion_reward = {
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_secretary_of_economy
+		icon = GFX_goal_generic_consumer_goods
+		x = 4
+		y = 1
+		relative_position_id = DUL_a_long_way_to_modernity
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_a_long_way_to_modernity
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_economic_liberalization
+		icon = GFX_goal_generic_improve_relations
+		x = -1
+		y = 1
+		relative_position_id = DUL_secretary_of_economy
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_secretary_of_economy
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_attract_foreign_investment
 		icon = GFX_focus_TUR_ratify_the_six_arrows
 		x = 1
 		y = 1
-		relative_position_id = DUL_people_must_remain_stupid
-		prerequisite = { focus = DUL_people_must_remain_stupid }
-		prerequisite = { focus = DUL_introduce_police_forces }
+		relative_position_id = DUL_secretary_of_economy
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		prerequisite = {
+			focus = DUL_secretary_of_economy
+		}
 		completion_reward = { 
-			#
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_work_on_national_infrastructure
+		id = DUL_tax_breaks
+		icon = GFX_focus_fra_devalue_the_franc
+		x = -1
+		y = 1
+		relative_position_id = DUL_attract_foreign_investment
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_attract_foreign_investment
+		}
+		prerequisite = {
+			focus = DUL_economic_liberalization
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_bank_of_duloc
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = DUL_tax_breaks
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_tax_breaks
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_university_of_duloc
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		relative_position_id = DUL_brick_roads
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_expand_workshops
+			focus = DUL_makeshift_weaponry
+		}
+		prerequisite = {
+			focus = DUL_improve_productivity
+		}
+		prerequisite = {
+			focus = DUL_brick_roads
+		}
+		prerequisite = {
+			focus = DUL_bank_of_duloc
+		}
+		completion_reward = { 
+
+		}		
+	}
+
+	focus = { 
+		id = DUL_further_modernization
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		relative_position_id = DUL_university_of_duloc
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_university_of_duloc
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_agricultural_modernization
+		icon = GFX_focus_generic_agriculture
+		x = -6
+		y = 1
+		relative_position_id = DUL_further_modernization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_further_modernization
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_better_irrigation_system
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		relative_position_id = DUL_agricultural_modernization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_agricultural_modernization
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_introduce_tractors
+		icon = GFX_goal_generic_consumer_goods
+		x = 1
+		y = 1
+		relative_position_id = DUL_agricultural_modernization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_agricultural_modernization
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_mechanize_farming
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 2
+		relative_position_id = DUL_introduce_tractors
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}  
+		prerequisite = {
+			focus = DUL_better_irrigation_system
+		}
+		prerequisite = {
+			focus = DUL_introduce_tractors
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_breadbasket_of_the_world
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 0
+		y = 2
+		relative_position_id = DUL_mechanize_farming
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}  
+		prerequisite = {
+			focus = DUL_mechanize_farming
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_second_industrialization_plan
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 1
+		relative_position_id = DUL_further_modernization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_further_modernization
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_infrastructure_equalization
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -4
+		y = 1
+		relative_position_id = DUL_second_industrialization_plan
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_second_industrialization_plan
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_asphalt_roads
 		icon = GFX_goal_generic_construct_infrastructure
 		x = -1
 		y = 1
-		relative_position_id = DUL_introduce_state_controlled_passports
-		prerequisite = { focus = DUL_introduce_state_controlled_passports }
+		relative_position_id = DUL_infrastructure_equalization
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		prerequisite = {
+			focus = DUL_infrastructure_equalization
+		}
 		completion_reward = { 
-			#
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_commence_the_anti_everrealm_propaganda
-		icon = GFX_focus_generic_strike_at_democracy1
+		id = DUL_connect_the_countryside
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 2
+		relative_position_id = DUL_asphalt_roads
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_asphalt_roads
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_railway_networks
+		icon = GFX_focus_narrow_gauge
 		x = 1
 		y = 1
-		relative_position_id = DUL_introduce_state_controlled_passports
-		prerequisite = { focus = DUL_introduce_state_controlled_passports }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#
-		}		
-	}
-
-	focus = { 
-		id = DUL_block_the_everrealm_gate
-		icon = GFX_focus_spr_masters_of_our_own_fate
-		x = -3
-		y = 1
-		relative_position_id = DUL_cooperation_between_land_and_sea
-		prerequisite = { focus = DUL_increase_work_scrutiny }
-		prerequisite = { focus = DUL_work_on_national_infrastructure }
-		prerequisite = { focus = DUL_commence_the_anti_everrealm_propaganda }
-		prerequisite = { focus = DUL_cooperation_between_land_and_sea }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#research slot and idea
-		}		
-	}
-
-	focus = { 
-		id = DUL_leads_through_marriage_with_a_princess
-		icon = GFX_focus_generic_royal_wedding
-		x = 8
-		y = 1
-		relative_position_id = DUL_the_road_to_crown
-		prerequisite = { focus = DUL_the_road_to_crown }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#
-		}		
-	}
-
-	focus = { 
-		id = DUL_the_coronation
-		icon = GFX_focus_hun_elect_a_king
-		x = 0
-		y = 5
-		relative_position_id = DUL_leads_through_farquaads_will
-		prerequisite = { focus = DUL_open_the_first_university focus = DUL_block_the_everrealm_gate }
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			#
-		}		
-	}
-
-	#NON-OVERHAULED TREE
-
-	focus = { 
-		id = DUL_expansion_of_economy
-		icon = GFX_goal_generic_consumer_goods
-		x = 2
-		y = 0
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		completion_reward = { 
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}		
-	}
-
-	focus = { 
-		id = DUL_upgrade_dirt_roads
-		icon = GFX_goal_generic_construct_infrastructure
-		x = 0
-		y = 1
+		relative_position_id = DUL_infrastructure_equalization
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_expansion_of_economy
+			focus = DUL_infrastructure_equalization
 		}
 		completion_reward = { 
-			every_owned_state = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_direct_connections_to_borders
-		icon = GFX_goal_generic_construct_infrastructure
+		id = DUL_further_railway_expansion
+		icon = GFX_focus_narrow_gauge
 		x = 0
 		y = 2
+		relative_position_id = DUL_railway_networks
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_upgrade_dirt_roads
+			focus = DUL_railway_networks
 		}
 		completion_reward = { 
-			286 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-			256 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			301 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			353 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			374 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			423 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			436 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_invite_foreign_industries
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 2
-		y = 1
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		prerequisite = {
-			focus = DUL_expansion_of_economy
-		}
-		completion_reward = { 
-			286 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-			331 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			302 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}		
-	}
-
-	focus = { 
-		id = DUL_found_a_new_city
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 2
-		y = 2
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		} 
-		prerequisite = {
-			focus = DUL_invite_foreign_industries
-		}
-		completion_reward = { 
-			423 = {
-				set_state_category = city
-				add_manpower = 250000
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-		}		
-	}
-
-	focus = { 
-		id = DUL_intensify_militarization
+		id = DUL_factory_convertion
 		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = DUL_second_industrialization_plan
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_second_industrialization_plan
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_mass_industrialization
+		icon = GFX_goal_generic_construct_civilian
+		x = -1
+		y = 1
+		relative_position_id = DUL_factory_convertion
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_factory_convertion
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_domestic_machinery
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1
+		relative_position_id = DUL_mass_industrialization
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_mass_industrialization
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_establish_industrial_zones
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 0
+		y = 1
+		relative_position_id = DUL_domestic_machinery
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_domestic_machinery
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_the_gears_of_war
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = DUL_factory_convertion
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_factory_convertion
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_proper_weapons
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 1
+		relative_position_id = DUL_the_gears_of_war
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_the_gears_of_war
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_military_industrial_complexes
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = DUL_proper_weapons
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_proper_weapons
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_royal_metalworks
+		icon = GFX_focus_generic_steel
 		x = 4
 		y = 1
+		relative_position_id = DUL_second_industrialization_plan
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_expansion_of_economy
+			focus = DUL_second_industrialization_plan
 		}
 		completion_reward = { 
-			286 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = arms_factory
-					level = 2
-					instant_build = yes
-				}
-			}
-			331 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			302 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			423 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_local_naval_power
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 4
+		id = DUL_extraction_tools
+		icon = GFX_goal_generic_production
+		x = 0
 		y = 2
+		relative_position_id = DUL_royal_metalworks
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_intensify_militarization
+			focus = DUL_royal_metalworks
 		}
-		completion_reward = {
-			331 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
-			302 = {
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = dockyard
-					level = 2
-					instant_build = yes
-				}
-			}
+		completion_reward = { 
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_fund_colonial_expedition
-		icon = GFX_goal_generic_navy_cruiser
-		x = 2
-		y = 3
-		cost = 20
+		id = DUL_western_aluminum
+		icon = GFX_focus_generic_aluminum
+		x = -1
+		y = 1
+		relative_position_id = DUL_royal_metalworks
+		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		available = {
-			has_navy_size = {
-    			size > 19
-			}
-		}
 		prerequisite = {
-			focus = DUL_direct_connections_to_borders
-		}
-		prerequisite = {
-			focus = DUL_found_a_new_city
-		}
-		prerequisite = {
-			focus = DUL_local_naval_power
+			focus = DUL_royal_metalworks
 		}
 		completion_reward = { 
-			transfer_state = 145
-			transfer_state = 13
-			145 = {
-				set_state_category = town
-				add_manpower = 100000
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes
-					province = 5206
-				}
-				add_state_modifier = {
-   					modifier = {
-       					MONTHLY_POPULATION = 0.15
-    				}
-				}
-			}
-			13 = {
-				set_state_category = rural
-				add_manpower = 80000
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_state_modifier = {
-   					modifier = {
-       					MONTHLY_POPULATION = 0.10
-    				}
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_set_foot_on_eastern_continent
-		icon = GFX_goal_generic_navy_battleship
-		x = 2
-		y = 4
-		cost = 20
+		id = DUL_southern_tungsten
+		icon = GFX_focus_generic_tungsten
+		x = 0
+		y = 2
+		relative_position_id = DUL_western_aluminum
+		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
-		allow_branch = {
-			always = no
-		}
 		prerequisite = {
-			focus = DUL_fund_colonial_expedition
+			focus = DUL_western_aluminum
+			focus = DUL_eastern_steel
 		}
 		completion_reward = { 
-			transfer_state = 109
-			109 = {
-				set_state_category = town
-				add_manpower = 90000
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = naval_base
-					level = 1
-					instant_build = yes
-					province = 4267
-				}
-				add_state_modifier = {
-   					modifier = {
-       					MONTHLY_POPULATION = 0.07
-    				}
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_improve_the_colonies
-		icon = GFX_goal_generic_construct_civ_factory
-		x = 2
+		id = DUL_eastern_steel
+		icon = GFX_focus_generic_steel
+		x = 1
+		y = 1
+		relative_position_id = DUL_royal_metalworks
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_royal_metalworks
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_northern_rubber
+		icon = GFX_focus_generic_rubber
+		x = 0
+		y = 2
+		relative_position_id = DUL_eastern_steel
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = DUL_western_aluminum
+			focus = DUL_eastern_steel
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_industrialization_complete
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
 		y = 5
+		relative_position_id = DUL_second_industrialization_plan
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_set_foot_on_eastern_continent
+			focus = DUL_connect_the_countryside
 		}
-		available = {
-			116 = {
-				is_owned_by = DUL
-			}
-			103 = {
-				is_owned_by = DUL
-			}
-			107 = {
-				is_owned_by = DUL
-			}
+		prerequisite = {
+			focus = DUL_further_railway_expansion
+		}
+		prerequisite = {
+			focus = DUL_establish_industrial_zones
+		}
+		prerequisite = {
+			focus = DUL_military_industrial_complexes
+		}
+		prerequisite = {
+			focus = DUL_southern_tungsten
+		}
+		prerequisite = {
+			focus = DUL_northern_rubber
 		}
 		completion_reward = { 
-			13 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			109 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			103 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			116 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			107 = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			145 = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
+			
+		}		
+	}
+	
+	focus = { 
+		id = DUL_expand_the_university
+		icon = GFX_focus_research2
+		x = -2
+		y = 1
+		relative_position_id = DUL_industrialization_complete
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}    
+		prerequisite = {
+			focus = DUL_industrialization_complete
+		}
+		prerequisite = {
+			focus = DUL_breadbasket_of_the_world
+		}
+		completion_reward = { 
+			
+		}		
+	}
+	
+	focus = { 
+		id = DUL_a_modernized_country
+		icon = GFX_focus_generic_railroad
+		x = 0
+		y = 1
+		relative_position_id = DUL_expand_the_university
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}    
+		prerequisite = {
+			focus = DUL_expand_the_university
+		}
+		completion_reward = { 
+			
 		}		
 	}
 
@@ -913,450 +985,585 @@ focus_tree = {
 #############################################################################################################################################    
 
 	focus = { 
-		id = DUL_demand_referendum_in_fire_kingdom
+		id = DUL_the_affairs_of_the_state
 		icon = GFX_goal_anschluss
-		x = 9
+		x = 29
 		y = 0
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
 		} 
-		available = {
-			has_army_size = {
-    			size > 14
-			}
-		}
 		completion_reward = { 
-			FRK = {
-				country_event = {
-					id = everrealm.6
-					days = 1
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_expand_further_south
-		icon = GFX_goal_generic_military_sphere
-		x = 8
+		id = DUL_the_road_for_crown
+		icon = GFX_focus_generic_monarchy_2
+		x = -1
 		y = 1
+		relative_position_id = DUL_the_affairs_of_the_state
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		prerequisite = {
-			focus = DUL_demand_referendum_in_fire_kingdom
-		}
-		available = {
-			has_army_size = {
-    			size > 19
-			}
+			focus = DUL_the_affairs_of_the_state
 		}
 		completion_reward = { 
-			DUL = {
-				create_wargoal = {
-					target = ICK
-					type = annex_everything
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_attack_far_far_away
-		icon = GFX_goal_generic_major_war
-		x = 10
+		id = DUL_keeping_order
+		icon = GFX_goal_generic_political_pressure
+		x = 2
 		y = 1
+		relative_position_id = DUL_the_affairs_of_the_state
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
 		} 
 		prerequisite = {
-			focus = DUL_demand_referendum_in_fire_kingdom
-		}
-		available = {
-			has_army_size = {
-    			size > 19
-			}
-			has_war = no
+			focus = DUL_the_affairs_of_the_state
 		}
 		completion_reward = { 
-			FFA = {
-				every_owned_state = {
-					add_core_of = DUL
-				}
-			}
-			DUL = {
-				declare_war_on = {
-					target = FFA
-					type = annex_everything
-				}
-			}
+
 		}		
 	}
 
 	focus = { 
-		id = DUL_demand_everrealm_gate
-		icon = GFX_goal_demand_sudetenland
-		x = 8
-		y = 2
+		id = DUL_expand_the_guards
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		relative_position_id = DUL_keeping_order
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
-			base = 0
-			modifier = {
-				330 = {
-					is_owned_by = ENC
-				}
-				ENC = {
-					exists = yes
-				}
-				NOT = {
-					has_global_flag = enchancian_civil_war
-				}
-				add = 0
-			}
-			modifier = {
-				330 = {
-					is_owned_by = ISL
-				}
-				has_global_flag = enchancian_civil_war
-				add = 100
-			}
+			factor = 10
 		} 
-		mutually_exclusive = {
-			focus = DUL_fight_our_place_in_everrealm
-		}
 		prerequisite = {
-			focus = DUL_expand_further_south
-		}
-		prerequisite = {
-			focus = DUL_attack_far_far_away
-		}
-		available = {
-			has_army_size = {
-    			size > 29
-			}
-			has_war = no
+			focus = DUL_keeping_order
 		}
 		completion_reward = { 
-			if = {
-				limit = {
-					330 = {
-						is_owned_by = ENC
-					}
-				}
-				ENC = {
-					country_event = {
-						id = everrealm.7
-						days = 1
-					}
-				}
-			}
-			if = {
-				limit = {
-					330 = {
-						is_owned_by = ISL
-					}
-				}
-				ISL = {
-					country_event = {
-						id = everrealm.9
-						days = 1
-					}
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_fight_our_place_in_everrealm
-		icon = GFX_goal_rhineland
-		x = 10
-		y = 2
+		id = DUL_strengthen_the_cult
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 1
+		relative_position_id = DUL_expand_the_guards
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
-			base = 0
-			modifier = {
-				330 = {
-					is_owned_by = ENC
-				}
-				ENC = {
-					exists = yes
-				}
-				NOT = {
-					has_global_flag = enchancian_civil_war
-				}
-				add = 0
-			}
-			modifier = {
-				330 = {
-					is_owned_by = ISL
-				}
-				has_global_flag = enchancian_civil_war
-				add = 100
-			}
+			factor = 10
 		} 
-		mutually_exclusive = {
-			focus = DUL_demand_everrealm_gate
-		}
 		prerequisite = {
-			focus = DUL_expand_further_south
-		}
-		prerequisite = {
-			focus = DUL_attack_far_far_away
-		}
-		available = {
-			has_army_size = {
-    			size > 29
-			}
-			has_war = no
+			focus = DUL_expand_the_guards
 		}
 		completion_reward = { 
-			if = {
-				limit = {
-					330 = {
-						is_owned_by = ENC
-					}
-				}
-				declare_war_on = {
-					target = ENC
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					330 = {
-						is_owned_by = ISL
-					}
-				}
-				declare_war_on = {
-					target = ISL
-					type = annex_everything
-				}
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_attack_maarswik
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 6
-		y = 3
+		id = DUL_communication_and_information_act
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = DUL_strengthen_the_cult
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}  
+		prerequisite = {
+			focus = DUL_strengthen_the_cult
+		}
+		prerequisite = {
+			focus = DUL_produce_antifairytale_propaganda
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_choosing_the_princess
+		icon = GFX_goal_generic_improve_relations
+		x = -2
+		y = 1
+		relative_position_id = DUL_the_road_for_crown
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		prerequisite = {
+			focus = DUL_the_road_for_crown
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_deport_fairytale_creatures
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 1
+		relative_position_id = DUL_the_road_for_crown
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 5
 		}
 		prerequisite = {
-			focus = DUL_demand_everrealm_gate
-			focus = DUL_fight_our_place_in_everrealm
-		}
-		available = {
-			has_war = no
-		}
-		bypass = {
-			has_war_with = MAR
+			focus = DUL_the_road_for_crown
 		}
 		completion_reward = { 
-			declare_war_on = {
-				target = MAR
-				type = annex_everything
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_attack_isleworth
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 8
-		y = 3
+		id = DUL_produce_antifairytale_propaganda
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		x = 0
+		y = 1
+		relative_position_id = DUL_deport_fairytale_creatures
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
 		}
 		prerequisite = {
-			focus = DUL_demand_everrealm_gate
-			focus = DUL_fight_our_place_in_everrealm
-		}
-		available = {
-			has_war = no
-		}
-		bypass = {
-			has_war_with = ISL
+			focus = DUL_deport_fairytale_creatures
 		}
 		completion_reward = { 
-			declare_war_on = {
-				target = ISL
-				type = annex_everything
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_attack_candy_kingdom
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 10
-		y = 3
+		id = DUL_host_a_tournament
+		icon = GFX_goal_generic_military_deal
+		x = 0
+		y = 1
+		relative_position_id = DUL_choosing_the_princess
 		cost = 10
 		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
+		mutually_exclusive = { focus = DUL_exchange_embassies }
 		ai_will_do = { 
 			factor = 100
 		}
 		prerequisite = {
-			focus = DUL_demand_everrealm_gate
-			focus = DUL_fight_our_place_in_everrealm
-		}
-		available = {
-			has_war = no
+			focus = DUL_choosing_the_princess
 		}
 		completion_reward = { 
-			declare_war_on = {
-				target = CDK
-				type = annex_everything
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_attack_gummi_bears
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 12
-		y = 3
+		id = DUL_send_help_to_enchancia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 2
+		y = 1
+		relative_position_id = DUL_choosing_the_princess
 		cost = 10
 		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_exchange_embassies }
+		mutually_exclusive = { focus = DUL_host_a_tournament }
 		ai_will_do = { 
 			factor = 1
 		}
 		prerequisite = {
-			focus = DUL_demand_everrealm_gate
-			focus = DUL_fight_our_place_in_everrealm
+			focus = DUL_choosing_the_princess
 		}
 		available = {
-			has_war = no
+			has_global_flag = enchancian_civil_war
 		}
 		completion_reward = { 
-			declare_war_on = {
-				target = GUM
-				type = annex_everything
-			}
+			
 		}		
 	}
 
 	focus = { 
-		id = DUL_apply_the_antidote
+		id = DUL_exchange_embassies
 		icon = GFX_goal_generic_position_armies
-		x = 8
-		y = 4
+		x = -2
+		y = 1
+		relative_position_id = DUL_choosing_the_princess
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
+		mutually_exclusive = { focus = DUL_host_a_tournament }
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_choosing_the_princess
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_the_marriage
+		icon = GFX_focus_generic_royal_wedding
+		x = 0
+		y = 1
+		relative_position_id = DUL_host_a_tournament
 		cost = 10
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		}
 		prerequisite = {
-			focus = DUL_attack_maarswik
-		}
-		prerequisite = {
-			focus = DUL_attack_isleworth
-		}
-		prerequisite = {
-			focus = DUL_attack_candy_kingdom
-		}
-		prerequisite = {
-			focus = DUL_attack_gummi_bears
+			focus = DUL_exchange_embassies
+			focus = DUL_send_help_to_enchancia
+			focus = DUL_host_a_tournament
 		}
 		available = {
-			has_war = no
+			#everything that is needed
 		}
 		completion_reward = { 
-			if = {
-				limit = {
-					ENC = {
-						exists = yes
-						NOT = {
-							has_cosmetic_tag = WIN
-						}
-					}
-				}
-				declare_war_on = {
-					target = ENC
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					EN1 = {
-						exists = yes
-					}
-				}
-				declare_war_on = {
-					target = EN1
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					EN2 = {
-						exists = yes
-					}
-				}
-				declare_war_on = {
-					target = EN2
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					EN3 = {
-						exists = yes
-					}
-				}
-				declare_war_on = {
-					target = EN3
-					type = annex_everything
-				}
-			}
-			if = {
-				limit = {
-					EN4 = {
-						exists = yes
-					}
-				}
-				declare_war_on = {
-					target = EN4
-					type = annex_everything
-				}
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_proclaim_the_kingdom
+		icon = GFX_focus_hun_elect_a_king
+		x = 0
+		y = 1
+		relative_position_id = DUL_the_marriage
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_the_marriage
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_a_dream_of_empire
+		icon = GFX_focus_generic_army_tanks2
+		x = 0
+		y = 1
+		relative_position_id = DUL_proclaim_the_kingdom
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_proclaim_the_kingdom
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_strike_at_far_far_away
+		icon = GFX_goal_generic_military_sphere
+		x = -2
+		y = 1
+		relative_position_id = DUL_a_dream_of_empire
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		bypass = {
+			has_country_flag = DUL_married_fiona
+		}
+		prerequisite = {
+			focus = DUL_a_dream_of_empire
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = FFA
+				type = annex_everything
 			}
 		}		
 	}
+
+	focus = { 
+		id = DUL_use_the_opportunity
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 1
+		relative_position_id = DUL_strike_at_far_far_away
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_strike_at_far_far_away
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_take_out_the_colony
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 0
+		y = 1
+		relative_position_id = DUL_use_the_opportunity
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_use_the_opportunity
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_referendum_in_fire_kingdom
+		icon = GFX_goal_generic_dangerous_deal
+		x = 0
+		y = 1
+		relative_position_id = DUL_a_dream_of_empire
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_a_dream_of_empire
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_referendum_in_candy_kingdom
+		icon = GFX_goal_generic_dangerous_deal
+		x = 2
+		y = 1
+		relative_position_id = DUL_a_dream_of_empire
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_a_dream_of_empire
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_go_south
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 1
+		y = 1
+		relative_position_id = DUL_referendum_in_fire_kingdom
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_referendum_in_fire_kingdom
+			focus = DUL_referendum_in_candy_kingdom
+		}
+		completion_reward = {  
+			create_wargoal = {
+				target = ICK
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = DUL_colonize_teignmouth
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		relative_position_id = DUL_go_south
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_go_south
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_thrust_into_everrealm
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		relative_position_id = DUL_colonize_teignmouth
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_colonize_teignmouth
+		}
+		prerequisite = {
+			focus = DUL_take_out_the_colony
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_secure_smurf_lands
+		icon = GFX_goal_generic_territory_or_war
+		x = 0
+		y = 1
+		relative_position_id = DUL_thrust_into_everrealm
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_thrust_into_everrealm
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_the_two_kingdoms
+		icon = GFX_goal_generic_major_war
+		x = -2
+		y = 1
+		relative_position_id = DUL_secure_smurf_lands
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_secure_smurf_lands
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_invade_enchancia
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
+		relative_position_id = DUL_secure_smurf_lands
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_secure_smurf_lands
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_cleaning_up_the_rest
+		icon = GFX_goal_generic_major_war
+		x = 2
+		y = 1
+		relative_position_id = DUL_secure_smurf_lands
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_secure_smurf_lands
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	focus = { 
+		id = DUL_the_empire_of_duloc
+		icon = GFX_focus_generic_monarchy_2
+		x = 0
+		y = 1
+		relative_position_id = DUL_invade_enchancia
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}
+		prerequisite = {
+			focus = DUL_the_two_kingdoms
+		}
+		prerequisite = {
+			focus = DUL_cleaning_up_the_rest
+		}
+		prerequisite = {
+			focus = DUL_invade_enchancia
+		}
+		completion_reward = { 
+			
+		}		
+	}
+
+	####################################################################################################
+	####################################################################################################
+	####################################################################################################
+	####################################################################################################
+	####################################################################################################
+	####################################################################################################
 
 	focus = { 
 		id = DUL_import_the_technology
 		icon = GFX_goal_generic_scientific_exchange
-		x = 10
-		y = 4
+		x = 0
+		y = 0
 		cost = 30
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_attack_maarswik
-		}
-		prerequisite = {
-			focus = DUL_attack_isleworth
-		}
-		prerequisite = {
-			focus = DUL_attack_candy_kingdom
-		}
-		prerequisite = {
-			focus = DUL_attack_gummi_bears
 		}
 		completion_reward = { 
 			swap_ideas = {
@@ -1420,87 +1627,6 @@ focus_tree = {
 		}		
 	}
 
-	focus = { 
-		id = DUL_attack_smurfs
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 7
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_apply_the_antidote
-		}
-		prerequisite = {
-			focus = DUL_import_the_technology
-		}
-		available = {
-			has_war = no
-		}
-		completion_reward = { 
-			declare_war_on = {
-				target = SMU
-				type = annex_everything
-			}
-		}		
-	}
-
-	focus = { 
-		id = DUL_attack_underground
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 9
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_apply_the_antidote
-		}
-		prerequisite = {
-			focus = DUL_import_the_technology
-		}
-		available = {
-			has_war = no
-		}
-		completion_reward = { 
-			declare_war_on = {
-				target = UND
-				type = annex_everything
-			}
-		}		
-	}
-
-	focus = { 
-		id = DUL_attack_lechists
-		icon = GFX_goal_generic_occupy_states_ongoing_war
-		x = 11
-		y = 5
-		cost = 10
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_apply_the_antidote
-		}
-		prerequisite = {
-			focus = DUL_import_the_technology
-		}
-		available = {
-			has_war = no
-		}
-		completion_reward = { 
-			declare_war_on = {
-				target = LEC
-				type = annex_everything
-			}
-		}		
-	}
-
 	####################################################################################################
 	#
 	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
@@ -1512,7 +1638,7 @@ focus_tree = {
 	####################################################################################################
 
 	focus = {
-		id = DUL_army_effort
+		id = DUL_army_modernization
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -1521,8 +1647,8 @@ focus_tree = {
 			}
 		} 
 		icon = GFX_goal_generic_allies_build_infantry
-		x = 5
-		y = 6
+		x = 10
+		y = 0
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1533,17 +1659,17 @@ focus_tree = {
 				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
-}
+			}
 		}
 	}
 
 	focus = {
-		id = DUL_equipment_effort
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = DUL_army_effort }
-		x = -1
+		id = DUL_modern_army_training
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = DUL_army_modernization }
+		x = -3
 		y = 1
-		relative_position_id = DUL_army_effort
+		relative_position_id = DUL_army_modernization
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1560,7 +1686,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_motorization_effort
+		id = DUL_swords_to_rifles
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -1568,12 +1694,11 @@ focus_tree = {
 				add = 2
 			}
 		} 
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = DUL_army_effort }
-		bypass = { has_tech = motorised_infantry }
-		x = 1
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DUL_army_modernization }
+		x = 0
 		y = 1
-		relative_position_id = DUL_army_effort
+		relative_position_id = DUL_army_modernization
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1588,40 +1713,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_doctrine_effort
-		ai_will_do = { 
-			base = 0
-			modifier = {
-				has_war = yes
-				add = 2
-			}
-		} 
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = DUL_army_effort }
-		x = 0
-		y = 2
-		relative_position_id = DUL_army_effort
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
-				category = land_doctrine
-}
-		}
-	}
-
-	focus = {
-		id = DUL_equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = DUL_equipment_effort }
+		id = DUL_knights_to_cavalry
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = DUL_swords_to_rifles }
 		x = -1
 		y = 1
-		relative_position_id = DUL_equipment_effort
+		relative_position_id = DUL_swords_to_rifles
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1638,7 +1735,29 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_mechanization_effort
+		id = DUL_horseback_training
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = DUL_knights_to_cavalry }
+		x = 0
+		y = 1
+		relative_position_id = DUL_knights_to_cavalry
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_doctrine_effort
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -1646,11 +1765,39 @@ focus_tree = {
 				add = 2
 			}
 		} 
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = DUL_motorization_effort }
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = DUL_army_modernization }
+		x = 3
+		y = 1
+		relative_position_id = DUL_army_modernization
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = DUL_catapults_to_cannons
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = DUL_swords_to_rifles }
 		x = 1
 		y = 1
-		relative_position_id = DUL_motorization_effort
+		relative_position_id = DUL_swords_to_rifles
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1677,7 +1824,7 @@ focus_tree = {
 		icon = GFX_goal_generic_army_doctrines
 		prerequisite = { focus = DUL_doctrine_effort }
 		x = 0
-		y = 1
+		y = 2
 		relative_position_id = DUL_doctrine_effort
 		cost = 10
 
@@ -1694,12 +1841,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_equipment_effort_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = DUL_equipment_effort_2 }
+		id = DUL_study_foreign_armies
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = DUL_modern_army_training }
 		x = 0
-		y = 1
-		relative_position_id = DUL_equipment_effort_2
+		y = 2
+		relative_position_id = DUL_modern_army_training
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1716,7 +1863,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_armor_effort
+		id = DUL_cannon_mastery
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -1724,11 +1871,11 @@ focus_tree = {
 				add = 2
 			}
 		} 
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = DUL_mechanization_effort }
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = DUL_catapults_to_cannons }
 		x = 0
 		y = 1
-		relative_position_id = DUL_mechanization_effort
+		relative_position_id = DUL_catapults_to_cannons
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1744,7 +1891,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = DUL_special_forces
+		id = DUL_military_academy
 		ai_will_do = { 
 			base = 0
 			modifier = {
@@ -1752,13 +1899,13 @@ focus_tree = {
 				add = 2
 			}
 		} 
-		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = DUL_equipment_effort_3 }
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DUL_study_foreign_armies }
 		prerequisite = { focus = DUL_doctrine_effort_2 }
-		prerequisite = { focus = DUL_armor_effort }
-		x = 2
+		prerequisite = { focus = DUL_cannon_mastery focus= DUL_horseback_training }
+		x = 1
 		y = 1
-		relative_position_id = DUL_equipment_effort_3
+		relative_position_id = DUL_horseback_training
 		cost = 10
 
 		available_if_capitulated = yes
@@ -1775,6 +1922,1208 @@ focus_tree = {
 				technology = marines2
 				technology = tech_mountaineers
 				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_army_modernization_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = DUL_military_academy }
+		x = 0
+		y = 1
+		relative_position_id = DUL_military_academy
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_motorization_program
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = DUL_army_modernization_2 }
+		x = -4
+		y = 1
+		relative_position_id = DUL_army_modernization_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_infantry_mechanization
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_NZL_bob_semple_tank
+		prerequisite = { focus = DUL_motorization_program }
+		x = -1
+		y = 1
+		relative_position_id = DUL_motorization_program
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_mechanized_trucks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = DUL_infantry_mechanization }
+		x = 0
+		y = 1
+		relative_position_id = DUL_infantry_mechanization
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_knights_of_tomorrow
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = DUL_motorization_program }
+		x = 1
+		y = 1
+		relative_position_id = DUL_motorization_program
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_improve_tank_technology
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = DUL_knights_of_tomorrow }
+		x = 0
+		y = 1
+		relative_position_id = DUL_knights_of_tomorrow
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_infantry_equipment_production
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DUL_army_modernization_2 }
+		x = -1
+		y = 1
+		relative_position_id = DUL_army_modernization_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_better_guns
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = DUL_infantry_equipment_production }
+		x = 0
+		y = 1
+		relative_position_id = DUL_infantry_equipment_production
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_stronger_artillery
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = DUL_better_guns }
+		x = 0
+		y = 1
+		relative_position_id = DUL_better_guns
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_quality_first
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		mutually_exclusive = { focus = DUL_quantity_first } 
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = DUL_army_modernization_2 }
+		x = 2
+		y = 1
+		relative_position_id = DUL_army_modernization_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_quantity_first
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		}
+		mutually_exclusive = { focus = DUL_quality_first } 
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = DUL_army_modernization_2 }
+		x = 4
+		y = 1
+		relative_position_id = DUL_army_modernization_2
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_new_training_methods
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DUL_quality_first }
+		x = -1
+		y = 1
+		relative_position_id = DUL_quality_first
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_maximize_discipline
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = DUL_quality_first focus = DUL_quantity_first }
+		x = 1
+		y = 1
+		relative_position_id = DUL_quality_first
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_mixed_arms_combat
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_license_production
+		prerequisite = { focus = DUL_better_guns }
+		prerequisite = { focus = DUL_new_training_methods }
+		x = 1
+		y = 1
+		relative_position_id = DUL_new_training_methods
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_professional_army
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = DUL_mixed_arms_combat }
+		x = 0
+		y = 1
+		relative_position_id = DUL_mixed_arms_combat
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_mass_conscription
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = DUL_quantity_first }
+		x = 1
+		y = 1
+		relative_position_id = DUL_quantity_first
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_build_more_training_camps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_secret_rearmament
+		prerequisite = { focus = DUL_mass_conscription }
+		x = -1
+		y = 1
+		relative_position_id = DUL_mass_conscription
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_overwhelming_numbers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = DUL_build_more_training_camps }
+		x = 0
+		y = 1
+		relative_position_id = DUL_build_more_training_camps
+		cost = 10
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DUL_duloc_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_occupy_states_coastal
+		prerequisite = { focus = DUL_military_academy }
+		x = 9
+		y = 1
+		relative_position_id = DUL_military_academy
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_expand_the_ports
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = DUL_duloc_navy }
+		x = 0
+		y = 2
+		relative_position_id = DUL_duloc_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_smaller_and_many
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = DUL_duloc_navy }
+		mutually_exclusive = { focus = DUL_bigger_but_few }
+		x = -1
+		y = 1
+		relative_position_id = DUL_duloc_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_submarine_primacy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = DUL_smaller_and_many }
+		x = -1
+		y = 1
+		relative_position_id = DUL_smaller_and_many
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = DUL_generic_submarine_primacy focus = DUL_battleship_primacy }
+		x = 1
+		y = 1
+		relative_position_id = DUL_generic_submarine_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_cruiser2
+		prerequisite = { focus = DUL_generic_submarine_primacy focus = DUL_battleship_primacy }
+		x = 3
+		y = 1
+		relative_position_id = DUL_generic_submarine_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_bigger_but_few
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = DUL_duloc_navy }
+		mutually_exclusive = { focus = DUL_smaller_and_many }
+		x = 1
+		y = 1
+		relative_position_id = DUL_duloc_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_battleship_primacy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = DUL_bigger_but_few }
+		x = 1
+		y = 1
+		relative_position_id = DUL_bigger_but_few
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_cannon_enhancements
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = DUL_battleship_primacy }
+		x = 1
+		y = 1
+		relative_position_id = DUL_battleship_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_strong_fleet
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = DUL_battleship_primacy }
+		x = 0
+		y = 2
+		relative_position_id = DUL_battleship_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_introduce_marine_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = DUL_expand_the_ports }
+		x = 0
+		y = 2
+		relative_position_id = DUL_expand_the_ports
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_trade_interception
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = DUL_generic_submarine_primacy }
+		x = 0
+		y = 2
+		relative_position_id = DUL_generic_submarine_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_torpedo_enhancements
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = DUL_generic_submarine_primacy }
+		x = -1
+		y = 1
+		relative_position_id = DUL_generic_submarine_primacy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = DUL_duloc_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = DUL_military_academy }
+		x = -8
+		y = 1
+		relative_position_id = DUL_military_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DUL_duloc_air_force }
+		x = -2
+		y = 1
+		relative_position_id = DUL_duloc_air_force
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = DUL_fighter_focus }
+		x = 1
+		y = 1
+		relative_position_id = DUL_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = DUL_duloc_air_force }
+		x = 2
+		y = 1
+		relative_position_id = DUL_duloc_air_force
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_usa_escort_fighters
+		prerequisite = { focus = DUL_generic_bomber_focus }
+		x = -1
+		y = 1
+		relative_position_id = DUL_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_aerial_warfare_tactics
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = DUL_generic_air_force_academy focus = DUL_generic_strategic_bombing }
+		x = 1
+		y = 1
+		relative_position_id = DUL_generic_air_force_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_improve_aircraft_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_research
+		prerequisite = { focus = DUL_aerial_warfare_tactics }
+		x = 1
+		y = 1
+		relative_position_id = DUL_aerial_warfare_tactics
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = DUL_proper_pilot_training
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = DUL_aerial_warfare_tactics }
+		x = -1
+		y = 1
+		relative_position_id = DUL_aerial_warfare_tactics
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = DUL_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = DUL_duloc_air_force }
+		x = 0
+		y = 1
+		relative_position_id = DUL_duloc_air_force
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
 			}
 		}
 	}

@@ -4346,6 +4346,30 @@ ideas = {
 				defence = -0.15
 			}
 		}
+
+		DUL_ambitions_of_farquaad = {
+			picture = vittoria_mutilata
+			allowed = {
+				always = no
+			}
+			modifier = {
+				opinion_gain_monthly_factor = -0.15
+				trade_opinion_factor = -0.1
+			}
+		}
+
+		DUL_persecutions_of_magical_creatures = {
+			picture = tur_sectarian_woes
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
 	}
 
 	##############################################################################################################################

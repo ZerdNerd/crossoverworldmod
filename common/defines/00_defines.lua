@@ -88,6 +88,8 @@ NDiplomacy = {
 	INFLUENCE_RATIO_CONTROLLED = 0.5,               -- Ratio of influence based on distance to neared controlled territory (including uncontested peace conference bids)
 	INFLUENCE_DISTANCE_DIVISOR = 30.0,              -- Divide pixel distance with this when determining distance to capital / core / controlled states. Just an arbitrary way of scaling the distance numbers.
 	
+	INFLUENCE_PER_ADJACENCY = 0.05,					-- How much influence to add per uncontested adjacent state in the PC (blob, don't snake)
+	
 	INFLUENCE_MAJOR_FACTOR = 1.0,					--How much influence discount a major will get
 	INFLUENCE_MINOR_FACTOR = 0.65,					--How much influence discount a minor will get
 	
@@ -1359,6 +1361,7 @@ NNavy = {
 	WAR_SCORE_GAIN_FOR_SUNK_SHIP_PRODUCTION_COST_FACTOR = 0.04,		-- war score gained for every IC of the sunk ship
 	WAR_SCORE_GAIN_FOR_SUNK_CONVOY = 10.0,							-- war score gained for every sunk convoy
 	WAR_SCORE_DECAY_FOR_BUILT_CONVOY = 5.0,  						-- war score deducted when convoy-raided enemy produces one new convoy
+	PEACE_ACTION_TRANSFER_NAVY_EXPERIENCE_RETAINED = 0.25,			-- % of experience to retain after being transferred in a peace conference
 
 	-- Convoy Priorities START
 	NAVAL_INVASION_PRIORITY = 1,									-- Default convoy priority for naval invasions
@@ -2121,6 +2124,10 @@ NAI = {
 	DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 7;       -- Recalculate desired best template to upgrade with this many days inbetween.
 	DAYS_BETWEEN_CHECK_BEST_EQUIPMENT = 7;      -- Recalculate desired best equipment to upgrade with this many days inbetween.
 
+	UNLOCK_SPIRIT_AI_WILL_DO_FACTOR = 10,       -- Factor for scripted ai_will_do value
+	UNLOCK_SPIRIT_MODIFIER_FACTOR = 0.1,        -- Factor for AI's evaluated value of the modifiers connected to the spirit
+	UNLOCK_SPIRIT_TRUNCATION_SELECT_THRESHOLD = 0.80,  -- Valid between [0.0, 1.0]. When unlocking spirits, select randomly from all spirits with AI score >= VALUE * HighestSpiritScore. To always select the best, set this value to 1.0. To select fully randomly, set this value to 0.0.
+
 	FOCUS_TREE_CONTINUE_FACTOR = 1.5,			-- Factor for score of how likely the AI is to keep going down a focus tree rather than starting a new path.
 	PLAN_VALUE_TO_EXECUTE = -0.5,				-- AI will typically avoid carrying out a plan it below this value (0.0 is considered balanced).
 	DECLARE_WAR_NOT_NEIGHBOR_FACTOR = 0.25,		-- Multiplier applied before force factor if country is not neighbor with the one it is considering going to war
@@ -2167,7 +2174,16 @@ NAI = {
 
 	GARRISON_TEMPLATE_SCORE_IC_FACTOR = 1.0,		-- ai uses these defines while calculating garrison template score of a template.
 	GARRISON_TEMPLATE_SCORE_MANPOWER_FACTOR = 0.05,  -- formula is (template_ic * ic_factor + template_manpower * manpower_factor ) / template_supression (lower is better)
-	
+
+	ADVISOR_SCORE_TRAIT_MODIFIER_FACTOR = 0.2,     -- When scoring advisors, factor the score contribution from the advisor's trait modifiers by this value
+	ADVISOR_SCORE_CHEAPER_IS_BETTER_FACTOR = 0.1,  -- When scoring advisors, this define scales how much the AI prefers cheaper advisors over more expensive ones. 0.0 means no effect, 0.15 means a cost difference of 100 PP modifies the score by 15 %.
+	ADVISOR_SCORE_CHEAPER_IS_BETTER_MIN = 0.5,     -- Clamps the above scoring factor to at minimum this value
+
+	-- stuff related to how the AI evaluates/scores how useful modifiers are
+	EVAL_MODIFIER_NON_PERCENT_FACTOR = 0.1,                       -- Multiply non-percent-based modifiers with this to put the values in the approximately same range so they can be compared. (Why we are using 0.1 and not 0.01? No idea...)
+	EVAL_MODIFIER_UNSPECIFIED_CATEGORY_FACTOR = 0.75,             -- Arbitrary scoring factor for modifiers the AI doesn't know how to categorize
+	EVAL_MODIFIER_MAX_COMMAND_POWER_FACTOR = 0.01,                -- Increasing CP cap with x is maybe 100 times less useful than e.g. gaining x more XP per day
+
 	-- for positive values of following defines, ai weights will take over of hardcoded ai scoring system
 	MIN_AI_SCORE_TO_MOBILIZATION_LAW_OVERRIDE_HARD_CODED_SCORE = 0.0,
 	MIN_AI_SCORE_TO_ECONOMY_LAW_OVERRIDE_HARD_CODED_SCORE = 0.0,
@@ -3073,10 +3089,9 @@ NAI = {
 
 	COMMAND_POWER_BEFORE_SPEND_ON_TRAITS = 30.0,
 
+	PEACE_BID_FOLD_TURNS_AGAINST_OTHER_AI = 2,					--Resolve contests against other AIs after this many turns. Don't always contest forever, it yields the same results.
 	PEACE_BID_FOLD_AGAINST_PLAYER_CHANCE = 0.5,                 -- Likelihood that AI will fold in a bidding contest against human player.
-	PEACE_BID_FOLD_AGAINST_AI_CHANCE_UNCONTROLLED = 0.40,		-- Likelihood an AI will fold against an AI in a bidding contest where they do not control the state in question, if their own bid is take_states and there is a bidder with more points.
 	PEACE_BID_FOLD_AGAINST_LIBERATE_CONTEST = 1.0,				-- Likelihood that the AI will back down against a same-ideology country performing a contesting liberate bid ##Bordergore prevention therapy
-	PEACE_BID_FOLD_MINOR_VS_MAJOR = 1.0,						-- Likelihood that AI minors will fold against majors (majors will already try and return cores and claims, so this should not be a particularly big deal)
 	PEACE_AI_GROUP_PEACE_ACTIONS = true,                        -- Whether AI should group peace actions or greedily just select the most-desired peace actions
 	PEACE_AI_EVALUATE_FOR_SUBJECTS = true,                      -- Whether AI should include subjects when evaluating giving states to other winners (may affect performance on new conference turn)
 	PEACE_AI_EVALUATE_FOR_ALLIES = true,                        -- Whether AI should include allies when evaluating giving states to other winners (may affect performance on new conference turn)
