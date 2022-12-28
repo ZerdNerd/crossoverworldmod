@@ -13,13 +13,19 @@ focus_tree = {
 		icon = GFX_goal_generic_consumer_goods
 		x = 43
 		y = 0
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
 		completion_reward = { 
-			
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
 		}		
 	}
 
@@ -29,7 +35,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = DUL_a_long_way_to_modernity
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -38,7 +44,9 @@ focus_tree = {
 			focus = DUL_a_long_way_to_modernity
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_reforming_the_countryside
+			}
 		}		
 	}
 
@@ -48,7 +56,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_agricultural_reform
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -57,7 +65,10 @@ focus_tree = {
 			focus = DUL_agricultural_reform
 		}
 		completion_reward = { 
-
+			add_political_power = -100
+			add_ideas = {
+				DUL_land_reform_completed
+			}
 		}		
 	}
 
@@ -67,7 +78,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_agricultural_reform
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -76,7 +87,9 @@ focus_tree = {
 			focus = DUL_agricultural_reform
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_subsidizing_farmers
+			}
 		}		
 	}
 
@@ -86,7 +99,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_farmer_subsidies
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -98,7 +111,10 @@ focus_tree = {
 			focus = DUL_farmer_subsidies
 		}
 		completion_reward = { 
-
+			add_political_power = -50
+			add_ideas = {
+				DUL_introduced_modern_farming_tools
+			}
 		}		
 	}
 
@@ -108,7 +124,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_modern_farming_tools
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -117,7 +133,9 @@ focus_tree = {
 			focus = DUL_modern_farming_tools
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_improved_productivity
+			}
 		}		
 	}
 
@@ -127,7 +145,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_a_long_way_to_modernity
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -136,7 +154,9 @@ focus_tree = {
 			focus = DUL_a_long_way_to_modernity
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_industrializing
+			}
 		}		
 	}
 
@@ -146,7 +166,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_draft_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		mutually_exclusive = { focus = DUL_prioritize_military_industry }
 		ai_will_do = { 
@@ -156,7 +176,9 @@ focus_tree = {
 			focus = DUL_draft_industrialization_plan
 		}
 		completion_reward = {
-
+			add_ideas = {
+				DUL_prioritized_civilian_industry
+			}
 		}		
 	}
 
@@ -166,7 +188,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_prioritize_civilian_industry
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -175,7 +197,9 @@ focus_tree = {
 			focus = DUL_prioritize_civilian_industry
 		}
 		completion_reward = {
-
+			add_ideas = {
+				DUL_new_manufacturing_tools
+			}
 		}		
 	}
 
@@ -185,7 +209,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_import_manufacturing_tools
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -194,7 +218,22 @@ focus_tree = {
 			focus = DUL_import_manufacturing_tools
 		}
 		completion_reward = {
-
+			286 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			302 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -204,7 +243,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_draft_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		mutually_exclusive = { focus = DUL_prioritize_civilian_industry }
 		ai_will_do = { 
@@ -214,7 +253,9 @@ focus_tree = {
 			focus = DUL_draft_industrialization_plan
 		}
 		completion_reward = {
-
+			add_ideas = {
+				DUL_prioritized_military_industry
+			}
 		}		
 	}
 
@@ -224,7 +265,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_prioritize_military_industry
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -233,7 +274,9 @@ focus_tree = {
 			focus = DUL_prioritize_military_industry
 		}
 		completion_reward = {
-
+			add_ideas = {
+				DUL_studies_of_armament_production
+			}
 		}		
 	}
 
@@ -243,7 +286,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_study_armament_manufacturing
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -252,7 +295,22 @@ focus_tree = {
 			focus = DUL_study_armament_manufacturing
 		}
 		completion_reward = {
-
+			286 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			302 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -262,7 +320,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_draft_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -271,7 +329,13 @@ focus_tree = {
 			focus = DUL_draft_industrialization_plan
 		}
 		completion_reward = {
-
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -281,7 +345,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_infrastructure_modernization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -290,7 +354,13 @@ focus_tree = {
 			focus = DUL_infrastructure_modernization
 		}
 		completion_reward = {
-			
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -300,7 +370,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = DUL_a_long_way_to_modernity
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -309,7 +379,9 @@ focus_tree = {
 			focus = DUL_a_long_way_to_modernity
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_reforming_the_economy
+			}
 		}		
 	}
 
@@ -319,7 +391,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_secretary_of_economy
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -328,7 +400,11 @@ focus_tree = {
 			focus = DUL_secretary_of_economy
 		}
 		completion_reward = { 
-
+			add_political_power = -100
+			swap_ideas = {
+				remove_idea = limited_exports
+				add_idea = export_focus
+			}
 		}		
 	}
 
@@ -338,7 +414,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_secretary_of_economy
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -347,7 +423,9 @@ focus_tree = {
 			focus = DUL_secretary_of_economy
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_foreign_investors
+			}
 		}		
 	}
 
@@ -357,7 +435,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_attract_foreign_investment
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -369,7 +447,9 @@ focus_tree = {
 			focus = DUL_economic_liberalization
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_allowing_tax_breaks
+			}
 		}		
 	}
 
@@ -379,7 +459,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_tax_breaks
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -388,7 +468,9 @@ focus_tree = {
 			focus = DUL_tax_breaks
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_the_bank_of_duloc
+			}
 		}		
 	}
 
@@ -398,7 +480,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_brick_roads
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -417,7 +499,21 @@ focus_tree = {
 			focus = DUL_bank_of_duloc
 		}
 		completion_reward = { 
-
+			add_ideas = {
+				DUL_the_university_of_duloc
+			}
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+			hidden_effect = {
+				middleage_to_preindustrial = yes
+			}
+			remove_ideas = {
+				DUL_reforming_the_countryside
+				DUL_industrializing
+				DUL_reforming_the_economy
+			}
 		}		
 	}
 
@@ -427,16 +523,28 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_university_of_duloc
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		} 
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DUL_need_to_be_kingdom
+				has_country_flag = DUL_proclaimed_kingdom
+			}
+		}
 		prerequisite = {
 			focus = DUL_university_of_duloc
 		}
 		completion_reward = { 
-			
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
 		}		
 	}
 
@@ -446,7 +554,7 @@ focus_tree = {
 		x = -6
 		y = 1
 		relative_position_id = DUL_further_modernization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -455,7 +563,9 @@ focus_tree = {
 			focus = DUL_further_modernization
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_modernizing_the_countryside
+			}
 		}		
 	}
 
@@ -465,7 +575,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_agricultural_modernization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -474,7 +584,10 @@ focus_tree = {
 			focus = DUL_agricultural_modernization
 		}
 		completion_reward = { 
-			
+			add_political_power = -50
+			add_ideas = {
+				DUL_modern_irrigation_system
+			}
 		}		
 	}
 
@@ -484,7 +597,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_agricultural_modernization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -493,7 +606,10 @@ focus_tree = {
 			focus = DUL_agricultural_modernization
 		}
 		completion_reward = { 
-			
+			add_political_power = -50
+			add_ideas = {
+				DUL_mechanized_countryside_1
+			}
 		}		
 	}
 
@@ -503,7 +619,7 @@ focus_tree = {
 		x = -1
 		y = 2
 		relative_position_id = DUL_introduce_tractors
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -515,7 +631,26 @@ focus_tree = {
 			focus = DUL_introduce_tractors
 		}
 		completion_reward = { 
-			
+			swap_ideas = {
+				remove_idea = DUL_mechanized_countryside_1
+				add_idea = DUL_mechanized_countryside_2
+			}
+			356 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			265 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -525,7 +660,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_mechanize_farming
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -534,7 +669,36 @@ focus_tree = {
 			focus = DUL_mechanize_farming
 		}
 		completion_reward = { 
-			
+			random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -544,7 +708,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_further_modernization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -553,7 +717,9 @@ focus_tree = {
 			focus = DUL_further_modernization
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_second_indu_plan
+			}
 		}		
 	}
 
@@ -563,7 +729,7 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = DUL_second_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -572,7 +738,13 @@ focus_tree = {
 			focus = DUL_second_industrialization_plan
 		}
 		completion_reward = { 
-			
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -582,7 +754,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_infrastructure_equalization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -591,7 +763,41 @@ focus_tree = {
 			focus = DUL_infrastructure_equalization
 		}
 		completion_reward = { 
-			
+			286 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			256 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			302 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			301 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			331 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -601,7 +807,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_asphalt_roads
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -610,7 +816,55 @@ focus_tree = {
 			focus = DUL_asphalt_roads
 		}
 		completion_reward = { 
-			
+			353 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			356 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			374 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			390 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			423 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			436 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			392 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -620,7 +874,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_infrastructure_equalization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -629,7 +883,17 @@ focus_tree = {
 			focus = DUL_infrastructure_equalization
 		}
 		completion_reward = { 
-			
+			build_railway = {
+    			level = 1
+    			build_only_on_allied = yes
+    			controller_priority = {
+					base = 1
+    			}
+    			fallback = yes
+    			path = { 4306 5323 6954 372 7059 3954 7040 3155 3316 }
+    			start_province = 4306
+    			target_province = 3316
+			}
 		}		
 	}
 
@@ -639,7 +903,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_railway_networks
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -648,7 +912,28 @@ focus_tree = {
 			focus = DUL_railway_networks
 		}
 		completion_reward = { 
-			
+			build_railway = {
+    			level = 1
+    			build_only_on_allied = yes
+    			controller_priority = {
+					base = 1
+    			}
+    			fallback = yes
+    			path = { 4306 6862 6915 6958 7010 1472 2865 }
+    			start_province = 4306
+    			target_province = 2865
+			}
+			build_railway = {
+    			level = 1
+    			build_only_on_allied = yes
+    			controller_priority = {
+					base = 1
+    			}
+    			fallback = yes
+    			path = { 3316 2849 4008 7400 1588 5672 1282 3084 }
+    			start_province = 3316
+    			target_province = 3084
+			}
 		}		
 	}
 
@@ -658,7 +943,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_second_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -667,7 +952,9 @@ focus_tree = {
 			focus = DUL_second_industrialization_plan
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_convertion_techniques
+			}
 		}		
 	}
 
@@ -677,7 +964,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_factory_convertion
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -686,7 +973,9 @@ focus_tree = {
 			focus = DUL_factory_convertion
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_massive_industrialization
+			}
 		}		
 	}
 
@@ -696,7 +985,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_mass_industrialization
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -705,7 +994,9 @@ focus_tree = {
 			focus = DUL_mass_industrialization
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_introduce_domestic_machinery
+			}
 		}		
 	}
 
@@ -715,7 +1006,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_domestic_machinery
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -724,7 +1015,22 @@ focus_tree = {
 			focus = DUL_domestic_machinery
 		}
 		completion_reward = { 
-			
+			356 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			265 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -734,7 +1040,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_factory_convertion
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -743,6 +1049,22 @@ focus_tree = {
 			focus = DUL_factory_convertion
 		}
 		completion_reward = { 
+			356 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			265 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 			
 		}		
 	}
@@ -753,7 +1075,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_the_gears_of_war
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -762,7 +1084,9 @@ focus_tree = {
 			focus = DUL_the_gears_of_war
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_proper_weapons_for_duloc
+			}
 		}		
 	}
 
@@ -772,7 +1096,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_proper_weapons
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -781,7 +1105,38 @@ focus_tree = {
 			focus = DUL_proper_weapons
 		}
 		completion_reward = { 
-			
+			356 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			265 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			331 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			353 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 
@@ -791,7 +1146,7 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = DUL_second_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -800,7 +1155,11 @@ focus_tree = {
 			focus = DUL_second_industrialization_plan
 		}
 		completion_reward = { 
-			
+			add_resource = {
+    			type = steel
+    			amount = 10
+    			state = 301
+			}
 		}		
 	}
 
@@ -810,7 +1169,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_royal_metalworks
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -819,7 +1178,9 @@ focus_tree = {
 			focus = DUL_royal_metalworks
 		}
 		completion_reward = { 
-			
+			add_ideas = {
+				DUL_new_extraction_tools
+			}
 		}		
 	}
 
@@ -829,7 +1190,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_royal_metalworks
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -838,7 +1199,16 @@ focus_tree = {
 			focus = DUL_royal_metalworks
 		}
 		completion_reward = { 
-			
+			add_resource = {
+    			type = aluminium
+    			amount = 6
+    			state = 374
+			}
+			add_resource = {
+    			type = aluminium
+    			amount = 12
+    			state = 302
+			}
 		}		
 	}
 
@@ -848,7 +1218,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_western_aluminum
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -858,7 +1228,16 @@ focus_tree = {
 			focus = DUL_eastern_steel
 		}
 		completion_reward = { 
-			
+			add_resource = {
+    			type = tungsten
+    			amount = 5
+    			state = 423
+			}
+			add_resource = {
+    			type = tungsten
+    			amount = 10
+    			state = 390
+			}
 		}		
 	}
 
@@ -868,7 +1247,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_royal_metalworks
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -877,7 +1256,16 @@ focus_tree = {
 			focus = DUL_royal_metalworks
 		}
 		completion_reward = { 
-			
+			add_resource = {
+    			type = steel
+    			amount = 20
+    			state = 302
+			}
+			add_resource = {
+    			type = steel
+    			amount = 9
+    			state = 265
+			}
 		}		
 	}
 
@@ -887,7 +1275,7 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_eastern_steel
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -897,7 +1285,16 @@ focus_tree = {
 			focus = DUL_eastern_steel
 		}
 		completion_reward = { 
-			
+			add_resource = {
+    			type = rubber
+    			amount = 12
+    			state = 224
+			}
+			add_resource = {
+    			type = rubber
+    			amount = 7
+    			state = 256
+			}
 		}		
 	}
 
@@ -907,7 +1304,7 @@ focus_tree = {
 		x = 0
 		y = 5
 		relative_position_id = DUL_second_industrialization_plan
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -931,7 +1328,19 @@ focus_tree = {
 			focus = DUL_northern_rubber
 		}
 		completion_reward = { 
-			
+			356 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
 		}		
 	}
 	
@@ -941,7 +1350,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_industrialization_complete
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -953,7 +1362,14 @@ focus_tree = {
 			focus = DUL_breadbasket_of_the_world
 		}
 		completion_reward = { 
-			
+			swap_ideas = {
+				remove_idea = DUL_the_university_of_duloc
+				add_idea = DUL_the_university_of_duloc_1
+			}
+			remove_ideas = {
+				DUL_modernizing_the_countryside
+				DUL_second_indu_plan
+			}
 		}		
 	}
 	
@@ -963,7 +1379,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_expand_the_university
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -972,7 +1388,13 @@ focus_tree = {
 			focus = DUL_expand_the_university
 		}
 		completion_reward = { 
-			
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
 		}		
 	}
 
@@ -989,7 +1411,7 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		x = 29
 		y = 0
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1005,7 +1427,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_the_affairs_of_the_state
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1024,7 +1446,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_the_affairs_of_the_state
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1043,7 +1465,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_keeping_order
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1062,7 +1484,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_expand_the_guards
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1081,7 +1503,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_strengthen_the_cult
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1103,7 +1525,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_the_road_for_crown
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1122,7 +1544,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_the_road_for_crown
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 5
@@ -1141,7 +1563,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_deport_fairytale_creatures
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
@@ -1160,7 +1582,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
 		mutually_exclusive = { focus = DUL_exchange_embassies }
@@ -1181,7 +1603,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		mutually_exclusive = { focus = DUL_exchange_embassies }
 		mutually_exclusive = { focus = DUL_host_a_tournament }
@@ -1192,7 +1614,10 @@ focus_tree = {
 			focus = DUL_choosing_the_princess
 		}
 		available = {
-			has_global_flag = enchancian_civil_war
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
 		}
 		completion_reward = { 
 			
@@ -1205,7 +1630,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
 		mutually_exclusive = { focus = DUL_host_a_tournament }
@@ -1226,7 +1651,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_host_a_tournament
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1250,7 +1675,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_the_marriage
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1269,7 +1694,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_proclaim_the_kingdom
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1278,7 +1703,34 @@ focus_tree = {
 			focus = DUL_proclaim_the_kingdom
 		}
 		completion_reward = { 
-			
+			FFA = {
+				every_owned_state = {
+					add_claim_by = DUL
+				}
+			}
+			FRK = {
+				every_owned_state = {
+					add_claim_by = DUL
+				}
+			}
+			ICK = {
+				every_owned_state = {
+					add_claim_by = DUL
+				}
+			}
+			590 = { add_claim_by = DUL }
+			595 = { add_claim_by = DUL }
+			543 = { add_claim_by = DUL }
+			483 = { add_claim_by = DUL }
+			456 = { add_claim_by = DUL }
+			479 = { add_claim_by = DUL }
+			581 = { add_claim_by = DUL }
+			553 = { add_claim_by = DUL }
+			494 = { add_claim_by = DUL }
+			607 = { add_claim_by = DUL }
+			623 = { add_claim_by = DUL }
+			617 = { add_claim_by = DUL }
+			330 = { add_claim_by = DUL }
 		}		
 	}
 
@@ -1288,7 +1740,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_a_dream_of_empire
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1313,7 +1765,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_strike_at_far_far_away
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1332,7 +1784,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_use_the_opportunity
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1351,7 +1803,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_a_dream_of_empire
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1370,7 +1822,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_a_dream_of_empire
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1389,7 +1841,7 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_referendum_in_fire_kingdom
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1412,7 +1864,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_go_south
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1431,7 +1883,7 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_colonize_teignmouth
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1453,7 +1905,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_thrust_into_everrealm
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1472,7 +1924,7 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_secure_smurf_lands
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1491,7 +1943,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_secure_smurf_lands
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1510,7 +1962,7 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_secure_smurf_lands
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1529,7 +1981,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_invade_enchancia
-		cost = 10
+		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1549,85 +2001,6 @@ focus_tree = {
 	}
 
 	####################################################################################################
-	####################################################################################################
-	####################################################################################################
-	####################################################################################################
-	####################################################################################################
-	####################################################################################################
-
-	focus = { 
-		id = DUL_import_the_technology
-		icon = GFX_goal_generic_scientific_exchange
-		x = 0
-		y = 0
-		cost = 30
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		completion_reward = { 
-			swap_ideas = {
-				remove_idea = middleage_tech
-				add_idea = modern_tech_idea
-			}
-			hidden_effect = {
-				set_technology = {
-					gw_artillery = 1
-					early_fighter = 1
-				}
-				if = {
-					limit = {
-						not = { has_dlc = "Man the Guns" }
-					}
-					set_technology = {
-						early_submarine = 1
-		basic_submarine = 1
-		early_destroyer = 1
-		basic_destroyer = 1
-		early_light_cruiser = 1
-		basic_light_cruiser = 1
-		early_heavy_cruiser = 1
-		basic_heavy_cruiser = 1
-		early_battleship = 1
-		basic_battleship = 1
-		early_battlecruiser = 1
-		transport = 1
-					}
-				}
-				if = {
-					limit = {
-						has_dlc = "Man the Guns"
-					}
-					set_technology = {
-						basic_naval_mines = 1
-		submarine_mine_laying = 1
-		early_ship_hull_light = 1
-		basic_ship_hull_light = 1
-		early_ship_hull_cruiser = 1
-		basic_ship_hull_cruiser = 1
-		early_ship_hull_heavy = 1
-		basic_ship_hull_heavy = 1
-		panzerschiffe = 1
-		pre_dreadnoughts = 1
-		early_ship_hull_submarine = 1
-		basic_ship_hull_submarine = 1
-		mtg_transport = 1
-		basic_torpedo = 1
-		improved_ship_torpedo_launcher = 1
-		basic_battery = 1
-		basic_light_battery = 1
-		basic_medium_battery = 1
-		basic_heavy_battery = 1
-		basic_depth_charges = 1
-		sonar = 1
-		basic_cruiser_armor_scheme = 1
-					}	
-				}
-			}
-		}		
-	}
-
-	####################################################################################################
 	#
 	#	  AAA   RRRRRR  MM    MM YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
 	#	 AAAAA  RR   RR MMM  MMM YY   YY      TTT   RR   RR EE      EE      
@@ -1640,16 +2013,12 @@ focus_tree = {
 	focus = {
 		id = DUL_army_modernization
 		ai_will_do = { 
-			base = 0
-			modifier = {
-				has_war = yes
-				add = 2
-			}
+			base = 1
 		} 
 		icon = GFX_goal_generic_allies_build_infantry
 		x = 10
 		y = 0
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -1670,18 +2039,12 @@ focus_tree = {
 		x = -3
 		y = 1
 		relative_position_id = DUL_army_modernization
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
+			army_experience = 5
 		}
 	}
 
@@ -1699,15 +2062,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_army_modernization
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 3.0
-				technology = motorised_infantry
+				name = infantry_bonus
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
 			}
 		}
 	}
@@ -1719,17 +2083,13 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_swords_to_rifles
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
+			add_ideas = {
+				DUL_creation_of_cavalry
 			}
 		}
 	}
@@ -1741,18 +2101,12 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_knights_to_cavalry
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
+			army_experience = 10
 		}
 	}
 
@@ -1770,7 +2124,7 @@ focus_tree = {
 		x = 3
 		y = 1
 		relative_position_id = DUL_army_modernization
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
@@ -1778,9 +2132,9 @@ focus_tree = {
 			army_experience = 5
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
-				uses = 2
+				uses = 1
 				category = land_doctrine
-}
+			}
 		}
 	}
 
@@ -1798,16 +2152,16 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_swords_to_rifles
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
+				name = artillery_bonus
+				bonus = 0.5
 				uses = 1
-				category = motorized_equipment
+				category = artillery_equipment
 			}
 		}
 	}
@@ -1826,17 +2180,16 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_doctrine_effort
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 5
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 2
 				category = land_doctrine
-}
+			}
 		}
 	}
 
@@ -1847,17 +2200,16 @@ focus_tree = {
 		x = 0
 		y = 2
 		relative_position_id = DUL_modern_army_training
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = infantry_weapons
-				category = artillery
+			army_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.05
+				uses = 2
+				category = land_doctrine
 			}
 		}
 	}
@@ -1876,16 +2228,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_catapults_to_cannons
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 1.0
+				name = artillery_bonus
+				bonus = 0.05
 				uses = 2
-				category = armor
+				category = artillery_equipment
 			}
 		}
 	}
@@ -1906,23 +2258,12 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_horseback_training
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_ideas = special_forces
-			add_tech_bonus = {
-				name = special_forces_bonus
-				bonus = 1.0
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-			}
+			add_ideas = DUL_dulocs_military_academy
 		}
 	}
 
@@ -1940,15 +2281,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_military_academy
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			army_experience = 5
+			army_experience = 10
 			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
-				uses = 2
+				cost_reduction = 0.15
+				uses = 1
 				category = land_doctrine
 			}
 		}
@@ -1968,14 +2309,14 @@ focus_tree = {
 		x = -4
 		y = 1
 		relative_position_id = DUL_army_modernization_2
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				ahead_reduction = 2
+				bonus = 1.0
 				uses = 1
 				category = motorized_equipment
 			}
@@ -1996,14 +2337,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_motorization_program
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				ahead_reduction = 2
+				bonus = 1.0
 				uses = 1
 				category = motorized_equipment
 			}
@@ -2024,15 +2365,15 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_infantry_mechanization
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
+				bonus = 1.0
+				uses = 2
 				category = motorized_equipment
 			}
 		}
@@ -2052,16 +2393,16 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_motorization_program
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
+				name = armor_bonus
+				bonus = 1.0
 				uses = 1
-				category = motorized_equipment
+				category = armor
 			}
 		}
 	}
@@ -2080,16 +2421,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_knights_of_tomorrow
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
 			}
 		}
 	}
@@ -2101,17 +2442,21 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_army_modernization_2
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 500
+    			producer = DUL
+			}
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
+				name = infantry_bonus
 				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
-				category = artillery
 			}
 		}
 	}
@@ -2123,14 +2468,19 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_infantry_equipment_production
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
+			add_equipment_to_stockpile = {
+    			type = infantry_equipment
+    			amount = 250
+    			producer = DUL
+			}
 			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 1.0
+				name = infantry_bonus
+				bonus = 0.5
 				uses = 1
 				category = infantry_weapons
 			}
@@ -2144,14 +2494,14 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_better_guns
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
 			add_tech_bonus = {
 				name = infantry_artillery_bonus
-				bonus = 1.0
+				bonus = 0.5
 				uses = 1
 				category = artillery
 			}
@@ -2173,16 +2523,13 @@ focus_tree = {
 		x = 2
 		y = 1
 		relative_position_id = DUL_army_modernization_2
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_quality_over_quantity
 			}
 		}
 	}
@@ -2202,16 +2549,13 @@ focus_tree = {
 		x = 4
 		y = 1
 		relative_position_id = DUL_army_modernization_2
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_quantity_over_quality
 			}
 		}
 	}
@@ -2230,16 +2574,14 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_quality_first
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			swap_ideas = {
+				remove_idea = DUL_dulocs_military_academy
+				add_idea = DUL_dulocs_military_academy_1
 			}
 		}
 	}
@@ -2258,16 +2600,13 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_quality_first
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_max_discipline
 			}
 		}
 	}
@@ -2287,16 +2626,13 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_new_training_methods
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_mixed_combat
 			}
 		}
 	}
@@ -2315,16 +2651,13 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_mixed_arms_combat
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_prof_army
 			}
 		}
 	}
@@ -2343,16 +2676,13 @@ focus_tree = {
 		x = 1
 		y = 1
 		relative_position_id = DUL_quantity_first
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_mass_conscription_idea
 			}
 		}
 	}
@@ -2371,16 +2701,13 @@ focus_tree = {
 		x = -1
 		y = 1
 		relative_position_id = DUL_mass_conscription
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_training_camps
 			}
 		}
 	}
@@ -2399,16 +2726,13 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_build_more_training_camps
-		cost = 10
+		cost = 7.25
 
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 2
-				uses = 1
-				category = motorized_equipment
+			add_ideas = {
+				DUL_overwhelm_in_numbers
 			}
 		}
 	}
@@ -2446,10 +2770,10 @@ focus_tree = {
 				limit = {
 					is_coastal = yes
 				}
-				add_extra_state_shared_building_slots = 3
+				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
     				type = dockyard
-    				level = 3
+    				level = 2
     				instant_build = yes
 				}
 			}
@@ -2480,10 +2804,27 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = naval_doctrine
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = dockyard
+    				level = 2
+    				instant_build = yes
+				}
 			}
 		}
 	}
@@ -2513,10 +2854,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_tech_bonus = {
+			add_doctrine_cost_reduction = {
 				name = sub_op_bonus
-				bonus = 1.0
-				uses = 1
+				cost_reduction = 0.5
+				uses = 2
 				technology = convoy_interdiction_ti
 				technology = unrestricted_submarine_warfare
 				technology = wolfpacks
@@ -2648,10 +2989,10 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_tech_bonus = {
+			add_doctrine_cost_reduction = {
 				name = fleet_in_being_bonus
-				bonus = 1.0
-				uses = 1
+				cost_reduction = 0.25
+				uses = 2
 				category = fleet_in_being_tree
 			}
 		}
@@ -2718,7 +3059,10 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 2
-				category = naval_bomber
+				category = cl_tech
+				category = ca_tech
+				category = bc_tech
+				category = bb_tech
 			}
 		}
 	}
@@ -2751,10 +3095,14 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			navy_experience = 20
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 2
-				category = cv_tech
+				category = cl_tech
+				category = ca_tech
+				category = bc_tech
+				category = bb_tech
 			}
 		}
 	}
@@ -2823,7 +3171,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 2
-				category = cv_tech
+				category = ss_tech
 			}
 		}
 	}
@@ -2855,7 +3203,7 @@ focus_tree = {
 			add_tech_bonus = {
 				bonus = 1.0
 				uses = 2
-				category = naval_bomber
+				category = ss_tech
 			}
 		}
 	}
@@ -2955,9 +3303,9 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			air_experience = 15
+			air_experience = 10
 			add_doctrine_cost_reduction = {
-				cost_reduction = 0.5
+				cost_reduction = 0.25
 				uses = 1
 				category = air_doctrine
 			}
@@ -3037,7 +3385,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			air_experience = 15
+			air_experience = 10
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 1
@@ -3066,9 +3414,10 @@ focus_tree = {
 
 		completion_reward = {
 			add_tech_bonus = {
-				bonus = 1.0
+				name = industrial_bonus
+				bonus = 0.5
 				uses = 1
-				category = tactical_bomber
+				category = industry
 			}
 			add_research_slot = 1
 		}
@@ -3093,11 +3442,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			add_tech_bonus = {
-				bonus = 1.0
-				uses = 1
-				category = cat_heavy_fighter
-			}
+			air_experience = 10
 		}
 	}
 

@@ -68,7 +68,7 @@ ideas = {
 
 			modifier = {
 				operative_slot = 2
-				production_speed_naval_base_factor = 0.25
+				floating_harbor_duration = 0.25
 			}
 	
 			ai_will_do = {
@@ -4368,6 +4368,422 @@ ideas = {
 				war_support_factor = -0.05
 				political_power_gain = -0.05
 				consumer_goods_factor = 0.05
+			}
+		}
+
+		DUL_reforming_the_countryside = {
+			picture = hun_treaty_of_trianon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.15
+				political_power_gain = -0.1
+				consumer_goods_factor = 0.1
+			}
+		}
+
+		DUL_subsidizing_farmers = {
+			picture = spr_relocate_the_gold_reserves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_land_reform_completed = {
+			picture = generic_agrarian_reform
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_introduced_modern_farming_tools = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_improved_productivity = {
+			picture = generic_goods_red_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				production_speed_buildings_factor = 0.025
+			}
+		}
+
+		DUL_industrializing = {
+			picture = generic_central_management
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		DUL_prioritized_civilian_industry = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+			}
+		}
+
+		DUL_new_manufacturing_tools = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_prioritized_military_industry = {
+			picture = man_five_year_plan_tank
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_arms_factory_factor = 0.05
+				production_speed_air_base_factor = 0.05
+				production_speed_dockyard_factor = 0.05
+			}
+		}
+
+		DUL_studies_of_armament_production = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				research_speed_factor = 0.05
+			}
+		}
+
+		DUL_reforming_the_economy = {
+			picture = SOV_scientist_defect
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		DUL_foreign_investors = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.025
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		DUL_allowing_tax_breaks = {
+			picture = generic_flexible_foreign_policy2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+				political_power_gain = -0.05
+			}
+		}
+
+		DUL_the_bank_of_duloc = {
+			picture = spr_seize_the_gold_reserves
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		DUL_the_university_of_duloc = {
+			picture = jap_supremacy_of_technology
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.1
+			}
+		}
+
+		DUL_the_university_of_duloc_1 = {
+			picture = jap_supremacy_of_technology
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+
+		DUL_modernizing_the_countryside = {
+			picture = spr_torchbearers_of_tomorrow
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.2
+				political_power_gain = -0.15
+				production_speed_industrial_complex_factor = -0.15
+			}
+		}
+
+		DUL_modern_irrigation_system = {
+			picture = por_hydroelectric_power
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_mechanized_countryside_1 = {
+			picture = generic_flexible_foreign_policy
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+			}
+		}
+
+		DUL_mechanized_countryside_2 = {
+			picture = generic_flexible_foreign_policy
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.025
+				industrial_capacity_factory = 0.025
+			}
+		}
+
+		DUL_second_indu_plan = {
+			picture = generic_central_management
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = -0.15
+				political_power_gain = -0.15
+				production_speed_arms_factory_factor = -0.15
+			}
+		}
+
+		DUL_convertion_techniques = {
+			picture = ast_volunteer_defence_corps
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.05
+				conversion_cost_mil_to_civ_factor = -0.05
+			}
+		}
+
+		DUL_massive_industrialization = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.025
+				production_speed_arms_factory_factor = 0.025
+			}
+		}
+
+		DUL_introduce_domestic_machinery = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.01
+				industrial_capacity_factory = 0.025
+			}
+		}
+
+		DUL_proper_weapons_for_duloc = {
+			picture = ast_volunteer_defence_corps
+			allowed = {
+				always = no
+			}
+			modifier = {
+				equipment_conversion_speed = 0.05
+				production_lack_of_resource_penalty_factor = -0.05
+				production_factory_max_efficiency_factor = 0.05 
+			}
+		}
+
+		DUL_new_extraction_tools = {
+			picture = ast_all_in
+			allowed = {
+				always = no
+			}
+			modifier = {
+				local_resources_factor = 0.1
+			}
+		}
+
+		DUL_creation_of_cavalry = {
+			picture = generic_motorized_equipment_manufacturer_2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				training_time_army_factor = -0.05
+			}
+		}
+
+		DUL_dulocs_military_academy = {
+			picture = generic_license_production
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.01
+				experience_gain_navy = 0.01
+			}
+		}
+
+		DUL_dulocs_military_academy_1 = {
+			picture = generic_license_production
+			allowed = {
+				always = no
+			}
+			modifier = {
+				experience_gain_army = 0.05
+				experience_gain_navy = 0.05
+			}
+		}
+
+		DUL_quality_over_quantity = {
+			picture = chi_wargaming_division
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+			}
+		}
+
+		DUL_quantity_over_quality = {
+			picture = chi_army_corruption3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.05
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		DUL_max_discipline = {
+			picture = hun_secret_rearmament
+			allowed = {
+				always = no
+			}
+			modifier = {
+				max_command_power = 20
+				army_org_factor = 0.025
+			}
+		}
+
+		DUL_mixed_combat = {
+			picture = generic_acquire_tanks
+			allowed = {
+				always = no
+			}
+			modifier = {
+				breakthrough_factor = 0.05
+				initiative_factor = 0.05
+				land_night_attack = 0.05
+			}
+		}
+
+		DUL_prof_army = {
+			picture = eng_imperial_conscription
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 0.1
+				army_org_factor = 0.1
+			}
+		}
+
+		DUL_mass_conscription_idea = {
+			picture = generic_army_war_college
+			allowed = {
+				always = no
+			}
+			modifier = {
+				conscription = 0.25
+				army_morale_factor = -0.05
+				army_org_factor = -0.05
+				training_time_factor = 0.05
+				army_attack_factor = -0.05
+				army_defence_factor = -0.05
+			}
+		}
+
+		DUL_training_camps = {
+			picture = generic_reserve_divisions
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = 20 
+			}
+		}
+
+		DUL_overwhelm_in_numbers = {
+			picture = hol_liberation
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = 30 
+				conscription = 0.1
 			}
 		}
 	}
