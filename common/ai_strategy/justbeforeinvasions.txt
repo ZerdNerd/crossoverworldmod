@@ -5,9 +5,9 @@ duloc_invades_fire_kingdom = {
 			exists = yes
 		}
 		OR = {
-			has_completed_focus = DUL_demand_referendum_in_fire_kingdom
+			has_completed_focus = DUL_referendum_in_fire_kingdom
 			focus_progress = {
-    			focus = DUL_demand_referendum_in_fire_kingdom
+    			focus = DUL_referendum_in_fire_kingdom
     			progress > 0.01
 			}
 		}
@@ -34,9 +34,9 @@ duloc_invades_ffa = {
 			exists = yes
 		}
 		OR = {
-			has_completed_focus = DUL_attack_far_far_away
+			has_completed_focus = DUL_strike_at_far_far_away
 			focus_progress = {
-    			focus = DUL_attack_far_far_away
+    			focus = DUL_strike_at_far_far_away
     			progress > 0.01
 			}
 		}
@@ -63,9 +63,9 @@ duloc_invades_ice_kingdom = {
 			exists = yes
 		}
 		OR = {
-			has_completed_focus = DUL_expand_further_south
+			has_completed_focus = DUL_go_south
 			focus_progress = {
-    			focus = DUL_expand_further_south
+    			focus = DUL_go_south
     			progress > 0.01
 			}
 		}

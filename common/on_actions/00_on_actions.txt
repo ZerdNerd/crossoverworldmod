@@ -4811,6 +4811,19 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
+						tag = AVA
+					}
+					FROM = {
+						tag = DUL
+					}
+				}
+				DUL = {
+					set_country_flag = DUL_elena_brought_by_force
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
 						tag = TUG
 					}
 				}
@@ -5258,6 +5271,7 @@ on_actions = {
 				limit = {
 					NOT = {
 						is_owned_by = MAI
+						state = 428
 					}
 					OR = {
 						has_state_category = rural

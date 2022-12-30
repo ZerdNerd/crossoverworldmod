@@ -969,7 +969,7 @@ news_event = { #Duloc receives EverRealm Gate (not-ECW)
 	id = worldnews.35
 	title = worldnews.35.t
 	desc = worldnews.35.d
-	picture = GFX_news_ENC_palace
+	picture = GFX_news_duloc
 	
 	major = yes
 	
@@ -996,7 +996,7 @@ news_event = { #Duloc receives EverRealm Gate (ECW)
 	id = worldnews.36
 	title = worldnews.36.t
 	desc = worldnews.36.d
-	picture = GFX_news_ENC_palace
+	picture = GFX_news_duloc_2
 	
 	major = yes
 	
@@ -4054,5 +4054,136 @@ news_event = { #Republic of Luvland becomes independent
 				tag = FRI
 			}
 		}
+	}
+}
+
+news_event = { #Farquaad proclaims Kingdom of Duloc (variant: successful marriage with Fiona)
+	id = worldnews.106
+	title = worldnews.106.t
+	desc = worldnews.106.d
+	picture = GFX_news_duloc_2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.106.a
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.106.b
+		trigger = {
+			tag = FFA
+		}
+	}
+
+	option = {
+		name = worldnews.106.c
+		trigger = {
+			NOT = {
+				tag = DUL
+				tag = FFA
+			}
+		}
+	}
+}
+
+news_event = { #Farquaad proclaims Kingdom of Duloc (variant: unsuccessful marriage with Fiona, war with Swamp)
+	id = worldnews.107
+	title = worldnews.106.t
+	desc = worldnews.107.d
+	picture = GFX_news_duloc_2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.107.a
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.107.b
+		trigger = {
+			NOT = {
+				tag = DUL
+			}
+		}
+	}
+}
+
+news_event = { #Farquaad proclaims Kingdom of Duloc (variant: marriage with Elena)
+	id = worldnews.108
+	title = worldnews.106.t
+	desc = worldnews.108.d
+	picture = GFX_news_duloc_2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.108.a
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.108.b
+		trigger = {
+			NOT = {
+				tag = DUL
+			}
+		}
+	}
+}
+
+news_event = { #Farquaad proclaims Kingdom of Duloc (variant: Fiona and Shrek detained)
+	id = worldnews.109
+	title = worldnews.106.t
+	desc = worldnews.109.d
+	picture = GFX_news_duloc_2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.109.a
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.109.b
+		trigger = {
+			NOT = {
+				tag = DUL
+			}
+		}
+	}
+}
+
+news_event = { #Death of Farquaad
+	id = worldnews.110
+	title = worldnews.110.t
+	desc = worldnews.110.d
+	picture = GFX_news_duloc
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.110.a
 	}
 }

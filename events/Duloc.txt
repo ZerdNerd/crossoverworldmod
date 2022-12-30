@@ -1,0 +1,531 @@
+﻿
+add_namespace = duloc
+
+country_event = { #Plot event about the road to crown
+	id = duloc.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.1"}
+	title = duloc.1.t
+	desc = duloc.1.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = duloc.1.a
+	}
+}
+
+country_event = { #Deporting the creatures
+	id = duloc.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.2"}
+	title = duloc.2.t
+	desc = duloc.2.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Swamp
+		name = duloc.2.a
+		SWA = {
+			country_event = {
+				id = duloc.4
+				days = 1
+			}
+		}
+		remove_ideas = DUL_persecutions_of_magical_creatures
+	}
+
+	option = { #EverRealm
+		name = duloc.2.b
+		330 = {
+			owner = {
+				country_event = {
+					id = duloc.3
+					days = 1
+				}
+			}
+		}
+		custom_effect_tooltip = DUL_no_chance_to_join_everrealm
+		remove_ideas = DUL_persecutions_of_magical_creatures
+	}
+	
+	option = { #Fire Kingdom
+		name = duloc.2.c
+		FRK = {
+			country_event = {
+				id = duloc.3
+				days = 1
+			}
+		}
+		remove_ideas = DUL_persecutions_of_magical_creatures
+	}
+	
+	option = { #Across the Passage
+		name = duloc.2.e
+		GUM = {
+			country_event = {
+				id = duloc.3
+				days = 1
+			}
+		}
+		remove_ideas = DUL_persecutions_of_magical_creatures
+	}
+}
+
+country_event = { #Refugees from Duloc arrive
+	id = duloc.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.3"}
+	title = duloc.3.t
+	desc = duloc.3.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = duloc.3.a
+		add_ideas = {
+			DUL_refugees_from_duloc
+		}
+	}
+}
+
+country_event = { #Refugees from Duloc arrive to Swamp
+	id = duloc.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.4"}
+	title = duloc.4.t
+	desc = duloc.4.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = duloc.4.a
+		add_ideas = {
+			DUL_refugees_from_duloc
+		}
+		hidden_effect = {
+			DUL = {
+				set_country_flag = shrek_is_coming_to_ya
+			}
+		}
+	}
+
+	option = {
+		name = duloc.4.b
+		add_ideas = {
+			DUL_refugees_from_duloc
+		}
+		hidden_effect = {
+			set_country_flag = shrek_is_coming_to_ya_with_surprise
+			DUL = {
+				set_country_flag = shrek_is_coming_to_ya
+			}
+			load_oob = SWA_creatures
+			428 = {
+				add_manpower = 500000
+			}
+		}
+	}
+}
+
+country_event = { #Choosing the princess
+	id = duloc.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.5"}
+	title = duloc.5.t
+	desc = duloc.5.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	option = { #Princess Elena
+		name = duloc.5.a
+		AVA = {
+			country_event = {
+				id = duloc.6
+				days = 3
+			}
+		}
+	}
+
+	option = { #Princess Fiona
+		name = duloc.5.b
+		custom_effect_tooltip = DUL_need_tournament
+		hidden_effect = {
+			set_country_flag = DUL_chose_fiona
+		}
+	}
+}
+
+country_event = { #Lord Farquaad proposal to Elena
+	id = duloc.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.6"}
+	title = duloc.6.t
+	desc = duloc.6.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #everyone laughs
+		name = duloc.6.a
+		DUL = {
+			country_event = {
+				id = duloc.8
+				days = 3
+			}
+		}
+	}
+
+	option = { #surprisingly, Elena agrees
+		name = duloc.6.b
+		custom_effect_tooltip = DUL_you_will_lose_independence
+		DUL = {
+			country_event = {
+				id = duloc.9
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Elena rejects the proposal
+	id = duloc.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.8"}
+	title = duloc.8.t
+	desc = duloc.8.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			add_opinion_modifier = {
+    			target = AVA
+    			modifier = DUL_rejected_faruqaads_proposal
+			}
+		}
+	}
+
+	option = { #Stupid girl. Maybe Fiona is a better choice.
+		name = duloc.8.a
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = DUL_chose_fiona
+		}
+	}
+
+	option = { #I'll get her anyway!
+		name = duloc.8.b
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = DUL_will_take_elena_by_force
+		}
+	}
+}
+
+country_event = { #Elena accepts the proposal
+	id = duloc.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.9"}
+	title = duloc.9.t
+	desc = duloc.9.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Perfect!
+		name = duloc.9.a
+		add_political_power = 50
+		hidden_effect = {
+			AVA = {
+				set_country_flag = marriage_with_faruqaad_is_set
+			}
+		}
+	}
+}
+
+country_event = { #Elena arrives to Duloc
+	id = duloc.90
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.90"}
+	title = duloc.90.t
+	desc = duloc.90.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Perfect!
+		name = duloc.90.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = DUL_elena_fulfilled_the_promise
+		}
+	}
+}
+
+country_event = { #Duloc offers to buy Island of Birk Balthazar
+	id = duloc.91
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.91"}
+	title = duloc.91.t
+	desc = duloc.91.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Agree
+		name = duloc.91.a
+		DUL = {
+			transfer_state = 29
+		}
+	}
+
+	option = { #Reject
+		name = duloc.91.b
+	}
+}
+
+country_event = { #They rejected
+	id = duloc.92
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.92"}
+	title = duloc.92.t
+	desc = duloc.92.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Damn
+		name = duloc.92.a
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = isla_de_birk_rejected_sale
+		}
+	}
+}
+
+country_event = { #The tournament
+	id = duloc.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.12"}
+	title = duloc.12.t
+	desc = duloc.12.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Some of you may die...
+		name = duloc.12.a
+		hidden_effect = {
+			country_event = {
+				id = duloc.14
+				days = 14
+			}
+		}
+	}
+}
+
+country_event = { #The tournament (with Shrek)
+	id = duloc.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.13"}
+	title = duloc.13.t
+	desc = duloc.13.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #What kind of deal?
+		name = duloc.13.a
+		hidden_effect = {
+			country_event = {
+				id = duloc.15
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Fiona is rescued by a knight
+	id = duloc.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.14"}
+	title = duloc.14.t
+	desc = duloc.14.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Great!
+		name = duloc.14.a
+		complete_national_focus = DUL_the_marriage
+	}
+}
+
+country_event = { #Fiona is rescued by Shrek (and Donkey)
+	id = duloc.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.15"}
+	title = duloc.15.t
+	desc = duloc.15.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Great!
+		name = duloc.15.a
+		custom_effect_tooltip = DUL_can_organize_the_marriage
+		hidden_effect = {
+			set_country_flag = DUL_fiona_rescued
+		}
+	}
+}
+
+country_event = { #Marriage of Fiona and Farquaad
+	id = duloc.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.16"}
+	title = duloc.16.t
+	desc = duloc.16.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Dragoness comes and eats Farquaad, game over.
+		name = duloc.16.a
+		trigger = {
+			NOT = {
+				has_completed_focus = DUL_military_academy
+			}
+		}
+		custom_effect_tooltip = GAMEOVER
+		custom_effect_tooltip = DUL_seriously
+		hidden_effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				BIR = {
+					change_tag_from = DUL
+				}
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Infantry Division"
+    			disband = yes #will refund equipment and manpower
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Armoured Division"
+    			disband = yes #will refund equipment and manpower
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Royal Guard Division"
+    			disband = yes #will refund equipment and manpower
+			}
+			delete_unit_template_and_units = {
+    			division_template = "Cavalry Division"
+    			disband = yes #will refund equipment and manpower
+			}
+			destroy_ships = {
+    			type = destroyer
+    			count = all
+			}
+			country_lock_all_division_template = yes
+			kill_country_leader = yes
+			load_focus_tree = generic_focus
+			hidden_effect = {
+				news_event = {
+					id = worldnews.110
+					hours = 6
+				}
+			}
+		}
+	}
+
+	option = { #Farquaad successfully detains both Shrek and Fiona and becomes King
+		name = duloc.16.b
+		trigger = {
+			has_completed_focus = DUL_military_academy
+			NOT = {
+				SWA = {
+					has_country_flag = shrek_is_coming_to_ya_with_surprise
+				}
+			}
+		}
+		annex_country = {
+    		target = SWA
+		}
+		428 = {
+			add_core_of = DUL
+		}
+		hidden_effect = {
+			set_country_flag = DUL_shrek_and_fiona_detained
+		}
+	}
+
+	option = { #Shrek and Fiona escape, Farquaad becomes the King, but full blown war between Swamp and Duloc erupts
+		name = duloc.16.c
+		trigger = {
+			has_completed_focus = DUL_military_academy
+			SWA = {
+				has_country_flag = shrek_is_coming_to_ya_with_surprise
+			}
+		}
+		hidden_effect = {
+			set_country_flag = DUL_shrek_and_fiona_escaped_war
+		}
+		SWA = {
+			declare_war_on = {
+				target = DUL
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = { #Sofia escapes from Duloc
+	id = duloc.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.21"}
+	title = duloc.21.t
+	desc = duloc.21.d
+	picture = GFX_report_enchancia
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				tag = DUL
+			}
+			clr_country_flag = DUL_sofia_still_in_duloc
+		}
+	}
+
+	option = { #Good job!
+		name = duloc.21.a
+		trigger = {
+			NOT = {
+				tag = DUL
+			}
+		}
+	}
+}

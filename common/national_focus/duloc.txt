@@ -1411,13 +1411,13 @@ focus_tree = {
 		icon = GFX_goal_anschluss
 		x = 29
 		y = 0
-		cost = 7.25
+		cost = 1.5
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
 		} 
 		completion_reward = { 
-			
+			add_political_power = 25
 		}		
 	}
 
@@ -1436,7 +1436,10 @@ focus_tree = {
 			focus = DUL_the_affairs_of_the_state
 		}
 		completion_reward = { 
-			
+			country_event = {
+				id = duloc.1
+				days = 0
+			}
 		}		
 	}
 
@@ -1455,7 +1458,7 @@ focus_tree = {
 			focus = DUL_the_affairs_of_the_state
 		}
 		completion_reward = { 
-
+			add_manpower = 5000
 		}		
 	}
 
@@ -1474,7 +1477,10 @@ focus_tree = {
 			focus = DUL_keeping_order
 		}
 		completion_reward = { 
-			
+			custom_effect_tooltip = DUL_unlock_guard
+			hidden_effect = {
+				load_oob = DUL_expanded_guard
+			}
 		}		
 	}
 
@@ -1493,7 +1499,7 @@ focus_tree = {
 			focus = DUL_expand_the_guards
 		}
 		completion_reward = { 
-			
+			add_ideas = DUL_strengthening_the_cult
 		}		
 	}
 
@@ -1515,7 +1521,7 @@ focus_tree = {
 			focus = DUL_produce_antifairytale_propaganda
 		}
 		completion_reward = { 
-			
+			add_ideas = DUL_com_and_inf_act
 		}		
 	}
 
@@ -1525,16 +1531,25 @@ focus_tree = {
 		x = -2
 		y = 1
 		relative_position_id = DUL_the_road_for_crown
-		cost = 7.25
+		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DUL_deport_creatures_first
+				has_completed_focus = DUL_deport_fairytale_creatures
+			}
 		}
 		prerequisite = {
 			focus = DUL_the_road_for_crown
 		}
 		completion_reward = { 
-			
+			country_event = {
+				id = duloc.5
+				days = 0
+			}
 		}		
 	}
 
@@ -1553,7 +1568,10 @@ focus_tree = {
 			focus = DUL_the_road_for_crown
 		}
 		completion_reward = { 
-			
+			country_event = {
+				id = duloc.2
+				days = 0
+			}
 		}		
 	}
 
@@ -1572,100 +1590,124 @@ focus_tree = {
 			focus = DUL_deport_fairytale_creatures
 		}
 		completion_reward = { 
-			
+			add_ideas = DUL_anti_propaganda
 		}		
 	}
 
 	focus = { 
 		id = DUL_host_a_tournament
 		icon = GFX_goal_generic_military_deal
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
-		cost = 7.25
+		cost = 0.75
 		available_if_capitulated = yes
-		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
 		mutually_exclusive = { focus = DUL_exchange_embassies }
 		ai_will_do = { 
 			factor = 100
 		}
-		prerequisite = {
-			focus = DUL_choosing_the_princess
-		}
-		completion_reward = { 
-			
-		}		
-	}
-
-	focus = { 
-		id = DUL_send_help_to_enchancia
-		icon = GFX_goal_generic_more_territorial_claims
-		x = 2
-		y = 1
-		relative_position_id = DUL_choosing_the_princess
-		cost = 7.25
-		available_if_capitulated = yes
-		mutually_exclusive = { focus = DUL_exchange_embassies }
-		mutually_exclusive = { focus = DUL_host_a_tournament }
-		ai_will_do = { 
-			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_choosing_the_princess
-		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = MAI_ecw_broke
-				has_global_flag = enchancian_civil_war
-			}
+			has_country_flag = DUL_chose_fiona
+		}
+		prerequisite = {
+			focus = DUL_choosing_the_princess
 		}
 		completion_reward = { 
-			
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = shrek_is_coming_to_ya
+					}
+				}
+				country_event = {
+					id = duloc.12
+					days = 0
+				}
+				else = {
+					country_event = {
+						id = duloc.13
+						days = 0
+					}
+				}
+			}
 		}		
 	}
 
 	focus = { 
 		id = DUL_exchange_embassies
 		icon = GFX_goal_generic_position_armies
-		x = -2
+		x = -1
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
 		cost = 7.25
 		available_if_capitulated = yes
-		mutually_exclusive = { focus = DUL_send_help_to_enchancia }
 		mutually_exclusive = { focus = DUL_host_a_tournament }
 		ai_will_do = { 
 			factor = 1
+		}
+		available = {
+			has_country_flag = DUL_chose_elena
 		}
 		prerequisite = {
 			focus = DUL_choosing_the_princess
 		}
 		completion_reward = { 
-			
+			AVA = {
+				add_opinion_modifier = {
+    				target = DUL
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = AVA
+    			modifier = TCWmod_generic_relations
+			}
 		}		
 	}
 
 	focus = { 
 		id = DUL_the_marriage
 		icon = GFX_focus_generic_royal_wedding
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = DUL_host_a_tournament
-		cost = 7.25
+		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
 		}
 		prerequisite = {
 			focus = DUL_exchange_embassies
-			focus = DUL_send_help_to_enchancia
 			focus = DUL_host_a_tournament
 		}
 		available = {
-			#everything that is needed
+			OR = {
+				has_country_flag = DUL_fiona_rescued
+				OR = {
+					has_country_flag = DUL_elena_fulfilled_the_promise
+					has_country_flag = DUL_elena_brought_by_force
+				}
+			}
 		}
 		completion_reward = { 
-			
+			custom_effect_tooltip = DUL_faruqaad_marries_the_chosen_princess
+			if = {
+				limit = {
+					has_country_flag = DUL_fiona_rescued
+				}
+				hidden_effect = {
+					country_event = {
+						id = duloc.16
+						days = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = DUL_elena_fulfilled_the_promise
+				}
+				puppet = AVA
+			}
 		}		
 	}
 
@@ -1675,7 +1717,7 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = DUL_the_marriage
-		cost = 7.25
+		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
@@ -1683,8 +1725,61 @@ focus_tree = {
 		prerequisite = {
 			focus = DUL_the_marriage
 		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = DUL_farquaad_can_become_king
+				OR = {
+					has_country_flag = DUL_shrek_and_fiona_detained
+					has_country_flag = DUL_shrek_and_fiona_escaped_war
+					has_country_flag = DUL_elena_fulfilled_the_promise
+				}
+			}
+		}
 		completion_reward = { 
-			
+			set_cosmetic_tag = DUL_kingdom
+			remove_ideas = DUL_ambitions_of_farquaad
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = DUL_fiona_rescued
+						NOT = {
+							has_country_flag = DUL_shrek_and_fiona_detained
+							has_country_flag = DUL_shrek_and_fiona_escaped_war
+						}
+					}
+					news_event = {
+						id = worldnews.106
+						hours = 6
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = DUL_shrek_and_fiona_escaped_war
+					}
+					news_event = {
+						id = worldnews.107
+						hours = 6
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = DUL_elena_fulfilled_the_promise
+					}
+					news_event = {
+						id = worldnews.108
+						hours = 6
+					}
+				}
+				if = {
+					limit = {
+						has_country_flag = DUL_shrek_and_fiona_detained
+					}
+					news_event = {
+						id = worldnews.109
+						hours = 6
+					}
+				}
+			}
 		}		
 	}
 
@@ -1701,6 +1796,25 @@ focus_tree = {
 		}
 		prerequisite = {
 			focus = DUL_proclaim_the_kingdom
+			focus = DUL_exchange_embassies
+		}
+		available = {
+			has_war = no
+			custom_trigger_tooltip = {
+				tooltip = DUL_a_dream_of_empire_complicated_requirements
+				OR = {
+					AND = {
+						AVA = {
+							has_country_flag = marriage_with_faruqaad_is_set
+						}
+						has_completed_focus = DUL_exchange_embassies
+						NOT = {
+							has_completed_focus = DUL_proclaim_the_kingdom
+						}
+					}
+					has_completed_focus = DUL_proclaim_the_kingdom
+				}
+			}
 		}
 		completion_reward = { 
 			FFA = {
@@ -1743,7 +1857,7 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 1
+			base = 1
 		}
 		bypass = {
 			has_country_flag = DUL_married_fiona
@@ -1774,7 +1888,32 @@ focus_tree = {
 			focus = DUL_strike_at_far_far_away
 		}
 		completion_reward = { 
-			
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = ENC
+					}
+				}
+				ENC = {
+					country_event = {
+						id = everrealm.7
+						days = 1
+					}
+				}
+			}
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = ISL
+					}
+				}
+				ISL = {
+					country_event = {
+						id = everrealm.9
+						days = 1
+					}
+				}
+			}
 		}		
 	}
 
@@ -1789,11 +1928,22 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		bypass = {
+			WOR = {
+				OR = {
+					is_puppet_of = DUL
+					exists = no
+				}
+			}
+		}
 		prerequisite = {
 			focus = DUL_use_the_opportunity
 		}
 		completion_reward = { 
-			
+			create_wargoal = {
+				target = WOR
+				type = annex_everything
+			}
 		}		
 	}
 
@@ -1812,12 +1962,17 @@ focus_tree = {
 			focus = DUL_a_dream_of_empire
 		}
 		completion_reward = { 
-			
+			FRK = {
+				country_event = {
+					id = everrealm.6
+					days = 1
+				}
+			}
 		}		
 	}
 
 	focus = { 
-		id = DUL_referendum_in_candy_kingdom
+		id = DUL_invasion_of_candy_kingdom
 		icon = GFX_goal_generic_dangerous_deal
 		x = 2
 		y = 1
@@ -1831,7 +1986,10 @@ focus_tree = {
 			focus = DUL_a_dream_of_empire
 		}
 		completion_reward = { 
-			
+			create_wargoal = {
+				target = CDK
+				type = annex_everything
+			}
 		}		
 	}
 
@@ -1846,9 +2004,14 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		bypass = {
+			ICK = {
+				exists = no
+			}
+		}
 		prerequisite = {
 			focus = DUL_referendum_in_fire_kingdom
-			focus = DUL_referendum_in_candy_kingdom
+			focus = DUL_invasion_of_candy_kingdom
 		}
 		completion_reward = {  
 			create_wargoal = {
@@ -1869,11 +2032,53 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		available = {
+			has_navy_size = {
+    			size > 19
+			}
+		}
 		prerequisite = {
 			focus = DUL_go_south
 		}
 		completion_reward = { 
-			
+			transfer_state = 145
+			transfer_state = 13
+			145 = {
+				set_state_category = town
+				add_manpower = 100000
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 5206
+				}
+				add_state_modifier = {
+   					modifier = {
+       					MONTHLY_POPULATION = 0.15
+    				}
+				}
+			}
+			13 = {
+				set_state_category = rural
+				add_manpower = 80000
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				add_state_modifier = {
+   					modifier = {
+       					MONTHLY_POPULATION = 0.10
+    				}
+				}
+			}
 		}		
 	}
 
@@ -1894,8 +2099,51 @@ focus_tree = {
 		prerequisite = {
 			focus = DUL_take_out_the_colony
 		}
+		bypass = {
+			OR = {
+				AND = {
+					ISL = {
+						exists = no
+					}
+					MAR = {
+						exists = no
+					}
+				}
+				AND = {
+					has_war_with = ISL
+					has_war_with = MAR
+				}
+			}
+		}
 		completion_reward = { 
-			
+			if = {
+				limit = {
+					MAR = {
+						exists = yes
+						NOT = {
+							has_war_with = DUL
+						}
+					}
+				}
+				create_wargoal = {
+					target = MAR
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					ISL = {
+						exists = yes
+						NOT = {
+							has_war_with = DUL
+						}
+					}
+				}
+				create_wargoal = {
+					target = MAR
+					type = annex_everything
+				}
+			}
 		}		
 	}
 
@@ -1910,37 +2158,33 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		bypass = {
+			SMU = {
+				OR = {
+					exists = no
+					NOT = {
+						owns_state = 617
+						owns_state = 607
+						owns_state = 623
+					}
+				}
+			}
+		}
 		prerequisite = {
 			focus = DUL_thrust_into_everrealm
 		}
 		completion_reward = { 
-			
-		}		
-	}
-
-	focus = { 
-		id = DUL_the_two_kingdoms
-		icon = GFX_goal_generic_major_war
-		x = -2
-		y = 1
-		relative_position_id = DUL_secure_smurf_lands
-		cost = 7.25
-		available_if_capitulated = yes
-		ai_will_do = { 
-			factor = 1
-		}
-		prerequisite = {
-			focus = DUL_secure_smurf_lands
-		}
-		completion_reward = { 
-			
+			create_wargoal = {
+				target = SMU
+				type = annex_everything
+			}
 		}		
 	}
 
 	focus = { 
 		id = DUL_invade_enchancia
 		icon = GFX_goal_generic_major_war
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = DUL_secure_smurf_lands
 		cost = 7.25
@@ -1952,14 +2196,33 @@ focus_tree = {
 			focus = DUL_secure_smurf_lands
 		}
 		completion_reward = { 
-			
+			create_wargoal = {
+				target = ENC
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = EN1
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = EN2
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = EN3
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = EN4
+				type = annex_everything
+			}
 		}		
 	}
 
 	focus = { 
 		id = DUL_cleaning_up_the_rest
 		icon = GFX_goal_generic_major_war
-		x = 2
+		x = 1
 		y = 1
 		relative_position_id = DUL_secure_smurf_lands
 		cost = 7.25
@@ -1971,7 +2234,48 @@ focus_tree = {
 			focus = DUL_secure_smurf_lands
 		}
 		completion_reward = { 
-			
+			create_wargoal = {
+				target = WEI
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = WLC
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = KHA
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = COR
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = ZUM
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = TRU
+				type = annex_everything
+			}
+			create_wargoal = {
+				target = RUD
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					AVA = {
+						exists = yes
+						NOT = {
+							is_puppet_of = DUL
+						}
+					}
+				}
+				create_wargoal = {
+					target = DUL
+					type = annex_everything
+				}
+			}
 		}		
 	}
 
@@ -1987,16 +2291,13 @@ focus_tree = {
 			factor = 1
 		}
 		prerequisite = {
-			focus = DUL_the_two_kingdoms
-		}
-		prerequisite = {
 			focus = DUL_cleaning_up_the_rest
 		}
 		prerequisite = {
 			focus = DUL_invade_enchancia
 		}
 		completion_reward = { 
-			
+			set_cosmetic_tag = DUL_empire
 		}		
 	}
 
@@ -2088,6 +2389,10 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			custom_effect_tooltip = DUL_unlock_cavalry
+			hidden_effect = {
+				load_oob = DUL_cavalry
+			}
 			add_ideas = {
 				DUL_creation_of_cavalry
 			}
@@ -2161,7 +2466,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.5
 				uses = 1
-				category = artillery_equipment
+				category = artillery
 			}
 		}
 	}
@@ -2237,7 +2542,7 @@ focus_tree = {
 				name = artillery_bonus
 				bonus = 0.05
 				uses = 2
-				category = artillery_equipment
+				category = artillery
 			}
 		}
 	}
@@ -2398,6 +2703,27 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
+			custom_effect_tooltip = DUL_unlock_tanks
+			hidden_effect = {
+				load_oob = DUL_tanks
+				if = {
+					limit = {
+						NOT = { has_dlc = "No Step Back" }
+					}
+					set_technology = {
+						gwtank = 1
+					}
+				}
+				if = {
+					limit = {
+						has_dlc = "No Step Back"
+					}
+					set_technology = {
+						gwtank_chassis = 1
+						engine_tech_1 = 1
+					}
+				}
+			}
 			add_tech_bonus = {
 				name = armor_bonus
 				bonus = 1.0

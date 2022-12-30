@@ -844,6 +844,25 @@ focus = {
 			remove_ideas = {
 				AVA_shuriki_dark_legacy_idea_3
 			}
+			if = {
+				limit = {
+					has_country_flag = marriage_with_faruqaad_is_set
+				}
+				custom_effect_tooltip = AVA_marriage_with_farquaad
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						has_country_flag = marriage_with_faruqaad_is_set
+					}
+					DUL = {
+						country_event = {
+							id = duloc.90
+							days = 3
+						}
+					}
+				}
+			}
 		} 
 	}
 

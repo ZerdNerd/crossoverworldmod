@@ -1,0 +1,33 @@
+﻿division_template = {
+	name = "Royal Guard Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 1 y = 0 }
+	}
+	support = {
+		military_police = { x = 0 y = 0 }
+	}
+	template_counter = 2
+	priority = 2
+}
+
+units = {
+	division = {
+		name = "1. Royal Guard Division 'Farquaad's Best'"
+		location = 4306
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+	}
+	division = {
+		name = "2. Royal Guard Division 'Duloc's Elite'"
+		location = 4306
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+	}
+	division = {
+		name = "3. Royal Guard Division"
+		location = 4306
+		division_template = "Infantry Division"
+		start_experience_factor = 1.0
+	}
+}
