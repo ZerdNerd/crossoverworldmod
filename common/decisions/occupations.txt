@@ -2933,6 +2933,9 @@ occupation_dec_category = {
 			NOT = {
 				tag = SMU
 			}
+			SMU = {
+				exists = no
+			}
 			OR = {
 				AND = {
 					tag = SAN
@@ -3725,6 +3728,9 @@ occupation_dec_category = {
 					has_variable = puppet_of_friedewalt_before_war
 				}
 			}
+			GRN = {
+				exists = no
+			}
 			NOT = {
 				tag = GRN
 			}
@@ -3805,6 +3811,9 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+			}
+			GRN = {
+				exists = no
 			}
 			NOT = {
 				tag = GRN
@@ -3891,6 +3900,9 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+			}
+			GRN = {
+				exists = no
 			}
 			NOT = {
 				tag = GRN
@@ -5778,6 +5790,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = JPN
+					}
+					remove_state_core = JPN
+				}
+			}
 			release = JPN
 			JPN = {
 				load_focus_tree = generic_focus
@@ -5865,6 +5886,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = DUL
+					}
+					remove_state_core = DUL
+				}
+			}
 			release = DUL
 			DUL = {
 				load_focus_tree = generic_focus
@@ -6300,6 +6330,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = MAI
+					}
+					remove_state_core = MAI
+				}
+			}
 			release = MAI
 			MAI = {
 				retire_country_leader = yes
@@ -6687,6 +6726,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = ARE
+					}
+					remove_state_core = ARE
+				}
+			}
 			release = ARE
 			ARE = {
 				retire_country_leader = yes
@@ -6977,6 +7025,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = BEE
+					}
+					remove_state_core = BEE
+				}
+			}
 			release = BEE
 			BEE = {
 				load_focus_tree = generic_focus
@@ -7017,6 +7074,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = HOR
+					}
+					remove_state_core = HOR
+				}
+			}
 			release = HOR
 			HOR = {
 				load_focus_tree = generic_focus
@@ -7139,6 +7205,15 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
+			hidden_effect = {
+				every_owned_state = {
+					limit = {
+						is_core_of = ROOT
+						is_core_of = TIG
+					}
+					remove_state_core = TIG
+				}
+			}
 			release = TIG
 			TIG = {
 				load_focus_tree = generic_focus

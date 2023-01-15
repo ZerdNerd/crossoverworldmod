@@ -532,23 +532,19 @@ default_mountaineers_production = {
 }
 
 default_marines_production = {
+	allowed = {
+		tag = AVA
+	}
 	enable = {
 		ai_wants_divisions > 49
+		has_tech = marines
 	}
-	abort = {
-		ai_wants_divisions < 50
-	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
 		id = marines
-		value = 0
-	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 0
+		value = 2
 	}
 }
 
@@ -583,17 +579,10 @@ default_armored_production = {
 		id = armor
 		value = 2
 	}
-
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = 0
-	}
 }
 
 highered_armored_production = {
 	enable = {
-		
 		num_of_military_factories > 69
 	}
 	abort = {

@@ -377,6 +377,9 @@ country_event = { #Fiona is rescued by a knight
 	option = { #Great!
 		name = duloc.14.a
 		complete_national_focus = DUL_the_marriage
+		hidden_effect = {
+			set_country_flag = DUL_fiona_rescued
+		}
 	}
 }
 

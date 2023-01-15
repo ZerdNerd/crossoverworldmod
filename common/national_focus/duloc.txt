@@ -1732,6 +1732,13 @@ focus_tree = {
 					has_country_flag = DUL_shrek_and_fiona_detained
 					has_country_flag = DUL_shrek_and_fiona_escaped_war
 					has_country_flag = DUL_elena_fulfilled_the_promise
+					AND = {
+						has_country_flag = DUL_fiona_rescued
+						NOT = {
+							has_country_flag = DUL_shrek_and_fiona_detained
+							has_country_flag = DUL_shrek_and_fiona_escaped_war
+						}
+					}
 				}
 			}
 		}

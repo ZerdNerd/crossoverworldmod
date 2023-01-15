@@ -162,6 +162,8 @@ we_need_dockyards_3 = {
 	}
 }
 
+
+
 default_marine_production = {
 	enable = {
 		has_tech = marines
@@ -170,11 +172,7 @@ default_marine_production = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -2
-	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = marine
@@ -413,12 +411,7 @@ more_mobile_production = {
 	ai_strategy = {
 		type = role_ratio
 		id = mobile
-		value = 5
-	}
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -5
+		value = 2
 	}
 }
 
@@ -432,13 +425,8 @@ default_armored_production = {
 
 	ai_strategy = {
 		type = role_ratio
-		id = infantry
-		value = -5
-	}
-	ai_strategy = {
-		type = role_ratio
 		id = armor
-		value = 5
+		value = 2
 	}
 }
 
@@ -538,27 +526,23 @@ more_armor_focused_nation = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -12
-	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = armor
-		value = 12
+		value = 3
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = light_armor
-		value = 50
+		value = 3
 	}
 
 	ai_strategy = {
 		type = template_prio
 		id = medium_armor
-		value = 100
+		value = 3
 	}
 }
 
@@ -622,11 +606,7 @@ default_antitank_production = {
 
 	abort_when_not_enabled = yes
 
-	ai_strategy = {
-		type = role_ratio
-		id = infantry
-		value = -5
-	}
+
 	ai_strategy = {
 		type = role_ratio
 		id = anti_tank
