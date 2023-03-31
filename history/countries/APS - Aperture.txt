@@ -1,6 +1,4 @@
-﻿capital = 698
-
-oob = "TSA_1936"
+﻿capital = 178
 
 # Starting tech
 set_technology = {
@@ -119,20 +117,14 @@ if = {
 
 add_ideas = {
 	modern_tech_idea
-	GUP_saunders
 }
-
-set_research_slots = 5
 
 set_convoys = 50
 
 set_popularities = {
-	democratic = 85
-
-	fascism = 15
-		
+	democratic = 100
+	fascism = 0
 	communism = 0
-		
 	monarchism = 0
 }
 
@@ -143,29 +135,7 @@ set_politics = {
 	elections_allowed = no
 }
 
-if = {
-	limit = {
-		has_dlc = "By Blood Alone"
-	}
-	create_equipment_variant = {
-	#	name = "TBA"
-		type = small_plane_cas_airframe_1
-		modules = {
-			fixed_main_weapon_slot = bomb_locks
-			engine_type_slot = engine_1_1x
-			special_type_slot_1 = empty
-		}
-		icon = "GFX_USA_CAS1_medium"
-	}
-}
+set_stability = 1
+set_war_support = 1
 
-set_stability = 0.85
-
-recruit_character = TSA_heinz_doofenshmirtz
-recruit_character = TSA_roger_doofenshmirtz
-recruit_character = TSA_francis_monogram
-recruit_character = TSA_colonel_contraction
-recruit_character = TSA_samuel_gregg
-recruit_character = TSA_ambrose_rosencrans
-recruit_character = TSA_john_barksdale
-recruit_character = APS_glados
+recruit_character = APS_placeholder

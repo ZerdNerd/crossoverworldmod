@@ -300,6 +300,46 @@ infantry_generic = {
 			signal_company
 		}
 	}
+
+	# FOR APERTURE
+	APS_TURRETS_REGULAR = {
+		production_prio = {
+			base = 0
+			modifier = {
+				add = 100 #in base four, i'm fine
+				tag = APS
+			}
+		}
+		upgrade_prio = {
+			base = 0
+			modifier = {
+				add = 100 #in base four, i'm fine
+				tag = APS
+			}
+		}
+
+		can_upgrade_in_field = {
+            always = yes
+        }
+
+		target_width = 20
+		width_weight = 1.3
+		column_swap_factor = 0.5
+		reinforce_prio = 1
+
+		target_template = {
+			weight = 1.0
+			match_value = 9000.0
+
+			regiments = {
+				aps_sentry_turret = 10
+			}
+		}
+
+		allowed_types = {
+			infantry
+		}
+	}
 }
 
 # REGIMENTS:

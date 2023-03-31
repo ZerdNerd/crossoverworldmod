@@ -46,6 +46,33 @@ on_actions = {
 
 	on_daily = {
 		effect = {
+			APS = {
+				if = {
+					limit = {
+						exists = yes
+					}
+					random_country = {
+						limit = {
+							is_neighbor_of = APS
+							NOT = {
+								has_war_with = APS
+							}
+						}
+						APS = {
+							declare_war_on = {
+								target = PREV
+								type = annex_everything
+							}
+							PREV = {
+								every_owned_state = {
+									add_core_of = APS
+								}
+								set_country_flag = attacked_by_glados
+							}
+						}
+					}
+				}
+			}
 			unit_limit_calculation_effect = yes
 			if = {
 				limit = {
@@ -5183,9 +5210,27 @@ on_actions = {
 						GUP_saunders
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_saunders
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_saunders
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_saunders
+						}
 					}
 				}
 			}
@@ -5198,9 +5243,27 @@ on_actions = {
 						GUP_stgloriana
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_stgloriana
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_stgloriana
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_stgloriana
+						}
 					}
 				}
 			}
@@ -5213,9 +5276,27 @@ on_actions = {
 						GUP_pravda
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_pravda
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_pravda
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_pravda
+						}
 					}
 				}
 			}
@@ -5228,9 +5309,27 @@ on_actions = {
 						GUP_kuromorimine
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_kuromorimine
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_kuromorimine
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_kuromorimine
+						}
 					}
 				}
 			}
@@ -5243,9 +5342,27 @@ on_actions = {
 						GUP_jatkosota
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_jatkosota
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_jatkosota
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_jatkosota
+						}
 					}
 				}
 			}
@@ -5258,9 +5375,27 @@ on_actions = {
 						GUP_ooarai
 					}
 				}
-				FROM = {
-					add_ideas = {
-						GUP_ooarai
+				if = {
+					limit = {
+						FROM = {
+							is_ai = yes
+						}
+					}
+					random_country = {
+						limit = {
+							has_war_with = ROOT
+							is_ai = no
+						}
+						add_ideas = {
+							GUP_ooarai
+						}
+					}
+				}
+				else = {
+					FROM = {
+						add_ideas = {
+							GUP_ooarai
+						}
 					}
 				}
 			}
@@ -5447,6 +5582,20 @@ on_actions = {
 		effect = {
 			every_country = {
 				unit_limit_calculation_effect = yes
+			}
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = aprilfools_aperture_spawn
+						option = SPAWNING_APERTURE_SCIENCE_TRUE
+					}
+				}
+				TSA = {
+					country_event = {
+						id = game_start_event.2138
+						days = 200
+					}
+				}
 			}
 			FFA = {
 				country_event = {

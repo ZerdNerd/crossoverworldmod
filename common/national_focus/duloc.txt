@@ -531,7 +531,7 @@ focus_tree = {
 		available = {
 			custom_trigger_tooltip = {
 				tooltip = DUL_need_to_be_kingdom
-				has_country_flag = DUL_proclaimed_kingdom
+				has_completed_focus = DUL_proclaim_the_kingdom
 			}
 		}
 		prerequisite = {
@@ -2280,7 +2280,7 @@ focus_tree = {
 					}
 				}
 				create_wargoal = {
-					target = MAR
+					target = ISL
 					type = annex_everything
 				}
 			}

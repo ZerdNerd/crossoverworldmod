@@ -637,9 +637,30 @@ zero_redeeming_qualities = {
     happened = {
         date > 1936.01.02
 		has_country_leader = {
-								name = "Lud"
-								ruling_only = yes
-							}
-							has_completed_focus = TIG_kill_tumtum
+			name = "Lud"
+			ruling_only = yes
+		}
+		has_completed_focus = TIG_kill_tumtum
+    }  
+}
+
+thinking_with_portals = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+		has_game_rule = {
+			rule = aprilfools_aperture_spawn
+			option = SPAWNING_APERTURE_SCIENCE_TRUE
+		}
+        game_rules_allow_achievements = yes
+    }
+  
+    happened = {
+        date > 1936.01.02
+		has_global_flag = aps_has_spawned
+		has_country_flag = attacked_by_glados
+		APS = {
+			exists = no
+		}
     }  
 }

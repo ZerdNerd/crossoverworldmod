@@ -191,7 +191,22 @@ calculate_mobilisation_penalty = {
 }
 
 unit_limit_calculation_effect = {
-	calculate_maximum_divisions = yes
+	if = {
+		limit = {
+			not = {
+				tag = APS
+			}
+		}
+		calculate_maximum_divisions = yes
+	}
+	if = {
+		limit = {
+			tag = APS
+		}
+		set_variable = {
+			max_divisions = 10000
+		}
+	}
 
 	if = {
 		limit = {

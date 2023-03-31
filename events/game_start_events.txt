@@ -79,6 +79,88 @@ country_event = { #Woloszanski's 'Hearts Made of Iron'
 	}
 }
 
+country_event = { #April Fools content - Spawning APS
+	id = game_start_event.2138
+	immediate = {log = "[GetDateText]: [Root.GetName]: event game_start_event.2138"}
+	title = game_start_event.2138.t
+	desc = game_start_event.2138.d
+	picture = GFX_report_event_poland_rejects
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = game_start_event.2138.a
+		hidden_effect = {
+			set_global_flag = aps_has_spawned
+			every_owned_state = {
+				add_core_of = APS
+			}
+			APS = {
+				transfer_state = 678
+				678 = {
+					add_victory_points = {
+						province = 5222
+						value = 20
+					}
+					set_state_name = "Aperture Science Enrichment Center"
+				}
+				set_capital = { state = 678 } 
+				load_oob = APS_spawn
+				declare_war_on = {
+					target = TSA
+					type = annex_everything
+				}
+				retire_country_leader = yes
+				inherit_technology = TSA
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 800000
+					producer = APS
+				}
+				delete_unit_template_and_units = {
+					division_template = "Infantry Division"
+					disband = yes #will refund equipment and manpower
+				}
+				delete_unit_template_and_units = {
+					division_template = "Armored Division"
+					disband = yes #will refund equipment and manpower
+				}
+				delete_unit_template_and_units = {
+					division_template = "Mountaineer-Division"
+					disband = yes #will refund equipment and manpower
+				}
+			}
+			TSA = {
+				APS_glados = {
+					set_nationality = {
+						target_country = APS
+						character = APS_glados
+					}
+					add_country_leader_role = {
+						character = APS_glados
+						promote_leader = yes
+						country_leader = {
+							ideology=technocracy
+							expire="1965.1.1.1"
+							id=-1
+							traits = { sentient_ai }
+						}
+					}
+					add_corps_commander_role = {
+						skill=20
+						attack_skill=20
+						defense_skill=20
+						planning_skill=17
+						logistics_skill=20
+					}
+				}
+			}
+		}
+	}
+}
+
 country_event = { #Country introduction - Flower Hill
 	id = game_start_event.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event game_start_event.2"}

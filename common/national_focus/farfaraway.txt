@@ -3840,4 +3840,1164 @@ focus_tree = {
 			}
 		}		
 	}
+
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+	###############################################################################################################################
+
+	focus = {
+		id = FFA_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 31
+		y = 0
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = FFA_generic_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = FFA_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FFA_generic_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = FFA_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = FFA_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = FFA_generic_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = FFA_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 1.0
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FFA_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = FFA_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = FFA_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = FFA_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = FFA_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FFA_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = FFA_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = FFA_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = FFA_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = FFA_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FFA_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FFA_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = FFA_generic_weapon_development_3 }
+		prerequisite = { focus = FFA_generic_military_academy }
+		prerequisite = { focus = FFA_generic_armor_effort }
+		prerequisite = { focus = FFA_generic_new_officer_corps }
+		prerequisite = { focus = FFA_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = FFA_generic_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	NN   NN   AAA   VV     VV YY   YY    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	NNN  NN  AAAAA  VV     VV YY   YY      TTT   RR   RR EE      EE      
+	#	NN N NN AA   AA  VV   VV   YYYYY       TTT   RRRRRR  EEEEE   EEEEE   
+	#	NN  NNN AAAAAAA   VV VV     YYY        TTT   RR  RR  EE      EE      
+	#	NN   NN AA   AA    VVV      YYY        TTT   RR   RR EEEEEEE EEEEEEE 	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = FFA_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 31
+		y = 6
+		cost = 7.25
+
+		available_if_capitulated = yes
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = FFA_generic_naval_effort }
+		mutually_exclusive = { focus = FFA_generic_large_navy }
+		x = -3
+		y = 1
+		relative_position_id = FFA_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = FFA_generic_naval_effort }
+		mutually_exclusive = { focus = FFA_generic_flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = FFA_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FFA_generic_flexible_navy focus = FFA_generic_large_navy }
+		x = -4
+		y = 1
+		relative_position_id = FFA_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = FFA_generic_naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = FFA_generic_flexible_navy focus = FFA_generic_large_navy }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = FFA_generic_destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = FFA_generic_large_navy focus = FFA_generic_flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = FFA_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = FFA_generic_floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = FFA_generic_large_navy focus = FFA_generic_flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = FFA_generic_cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+	####################################################################################################
+	#
+	#	  AAA   VV     VV IIIII   AAA   TTTTTTT IIIII  OOOOO  NN   NN    TTTTTTT RRRRRR  EEEEEEE EEEEEEE 
+	#	 AAAAA  VV     VV  III   AAAAA    TTT    III  OO   OO NNN  NN      TTT   RR   RR EE      EE      
+	#	AA   AA  VV   VV   III  AA   AA   TTT    III  OO   OO NN N NN      TTT   RRRRRR  EEEEE   EEEEE   
+	#	AAAAAAA   VV VV    III  AAAAAAA   TTT    III  OO   OO NN  NNN      TTT   RR  RR  EE      EE      
+	#	AA   AA    VVV    IIIII AA   AA   TTT   IIIII  OOOO0  NN   NN      TTT   RR   RR EEEEEEE EEEEEEE	                                                                   
+	#
+	####################################################################################################
+
+	focus = {
+		id = FFA_generic_aviation_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_airforce
+		x = 21
+		y = 9
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+		completion_reward = {
+			air_experience = 25
+			capital_scope = {
+				add_building_construction = {
+    				type = air_base
+    				level = 4
+    				instant_build = yes
+				}
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FFA_generic_aviation_effort }
+		x = -2
+		y = 1
+		relative_position_id = FFA_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_heavy_fighter_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FFA_generic_fighter_focus }
+		prerequisite = { focus = FFA_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FFA_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_heavy_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_CAS_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = FFA_generic_fighter_focus }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_air_force_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FFA_generic_fighter_focus }
+		x = -2
+		y = 1
+		relative_position_id = FFA_generic_fighter_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 15
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_bomber_focus
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FFA_generic_aviation_effort }
+		x = 2
+		y = 1
+		relative_position_id = FFA_generic_aviation_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_reverse_engineer_foreign_bombers
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_research
+		prerequisite = { focus = FFA_generic_bomber_focus }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = tactical_bomber
+			}
+			add_research_slot = 1
+		}
+	}
+
+	focus = {
+		id = FFA_generic_strategic_bombing
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FFA_generic_bomber_focus }
+		x = 2
+		y = 1
+		relative_position_id = FFA_generic_bomber_focus
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_expand_bombing_command
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = FFA_generic_heavy_fighter_focus }
+		prerequisite = { focus = FFA_generic_reverse_engineer_foreign_bombers }
+		prerequisite = { focus = FFA_generic_strategic_bombing }
+		x = -2
+		y = 1
+		relative_position_id = FFA_generic_strategic_bombing
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cat_strategic_bomber
+				category = tactical_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_aviation_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = FFA_generic_heavy_fighter_focus }
+		prerequisite = { focus = FFA_generic_CAS_effort }
+		prerequisite = { focus = FFA_generic_air_force_academy }
+		x = 0
+		y = 1
+		relative_position_id = FFA_generic_CAS_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			air_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = FFA_generic_rocket_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_rocketry
+		prerequisite = { focus = FFA_generic_aviation_effort_2 }
+		prerequisite = { focus = FFA_generic_expand_bombing_command }
+		x = 2
+		y = 1
+		relative_position_id = FFA_generic_aviation_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = jet_rocket_bonus
+				ahead_reduction = 2
+				uses = 2
+				category = rocketry
+				category = jet_technology
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
