@@ -12,6 +12,93 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
+		corps_commander={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	FFA_fairy_godmother={
+		name="Fairy Godmother"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/fairy_godmother.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_FAIRY_GODMOTHER_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=6000
+		}
+	}
+	FFA_charming={
+		name="Prince Charming"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/charming.dds"
+			}
+		}
+	}
+	FFA_rumpel={
+		name="Rumpelstiltskin"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/rumpel.dds"
+			}
+		}
+	}
+	FFA_arthur={
+		name="Arthur"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/arthur.dds"
+			}
+		}
+	}
+	FFA_puss_in_boots={
+		name="Puss in Boots"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/puss.dds"
+			}
+		}
+	}
+	FFA_babawitch={
+		name="Baba the Witch"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/baba.dds"
+			}
+		}
+	}
+	FFA_griseldawitch={
+		name="Griselda the Witch"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/griselda.dds"
+			}
+		}
+	}
+	FFA_pumpkinwitch={
+		name="Pumpkin Witch"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/pumpkin_witch.dds"
+			}
+		}
+	}
+	FFA_meltywitch={
+		name="Melty Witch"
+		portraits={
+			civilian={
+				large="gfx/leaders/FFA/melty_witch.dds"
+			}
+		}
 	}
 	FFA_placeholder={
 		name="Placeholder"
@@ -29,12 +116,6 @@ characters={
 		country_leader={
 			desc="POLITICS_TBD_DESC"
 			ideology=marxism
-			expire="1965.1.1.1"
-			id=-1
-		}
-		country_leader={
-			desc="POLITICS_TBD_DESC"
-			ideology=nazism
 			expire="1965.1.1.1"
 			id=-1
 		}

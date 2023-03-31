@@ -1,0 +1,2517 @@
+﻿
+add_namespace = farfaraway
+
+country_event = { #Harold is not sure if Fairy's Godmother plan is good
+	id = farfaraway.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.1"}
+	title = farfaraway.1.t
+	desc = farfaraway.1.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.1.a
+		hidden_effect = {
+			set_country_flag = harold_is_not_sure_about_godmothers_plan
+		}
+	}
+}
+
+country_event = { #Harold voices his concern to Fairy Godmother
+	id = farfaraway.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.2"}
+	title = farfaraway.2.t
+	desc = farfaraway.2.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.2.a
+	}
+}
+
+country_event = { #A third option (event)
+	id = farfaraway.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.3"}
+	title = farfaraway.3.t
+	desc = farfaraway.3.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.3.a
+		kill_country_leader = yes
+		custom_effect_tooltip = FFA_rumpel_takes_over_farfaraway
+		hidden_effect = {
+			set_cosmetic_tag = rumpel_empire
+			set_politics = {
+			    ruling_party = fascism
+				last_election = "1930.7.1"
+				election_frequency = 72
+				elections_allowed = no
+			}
+			add_country_leader_role = {
+				character = FFA_rumpel
+				promote_leader = yes
+				country_leader = {
+					ideology = fascism_ideology
+					expire = "1965.1.1.1"
+					traits = { 
+						#
+					}
+				}
+			}
+			add_corps_commander_role = {
+				Character = FFA_rumpel
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+				legacy_id=652562
+			}
+			swap_ideas = {
+				remove_idea = FFA_two_decades_of_waiting
+				add_idea = FFA_a_change_on_the_throne
+			}
+			set_country_flag = harold_signed_the_document
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = FFA_a_third_option_rumpel_tree
+		}
+	}
+}
+
+country_event = { #Charming is ready to leave for Fiona
+	id = farfaraway.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.4"}
+	title = farfaraway.4.t
+	desc = farfaraway.4.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.4.a
+		hidden_effect = {
+			set_country_flag = FFA_charming_is_ready_to_leave
+		}
+	}
+}
+
+country_event = { #Fiona is rescued by Charming
+	id = farfaraway.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.5"}
+	title = farfaraway.5.t
+	desc = farfaraway.5.d
+	picture = GFX_report_ffa_2
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			OR = {
+				OR = {
+					has_completed_focus = DUL_exchange_embassies
+					focus_progress = {
+    					focus = DUL_exchange_embassies
+    					progress > 0.01
+					}
+				}
+				OR = {
+					has_completed_focus = DUL_a_visit_to_the_south
+					focus_progress = {
+    					focus = DUL_a_visit_to_the_south
+    					progress > 0.01
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 5 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.5.a
+		unlock_national_focus = FFA_charming_completes_the_plan
+	}
+}
+
+country_event = { #Charming finds only empty tower
+	id = farfaraway.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.6"}
+	title = farfaraway.6.t
+	desc = farfaraway.6.d
+	picture = GFX_report_ffa_3
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			OR = {
+				AND = {
+					has_country_flag = DUL_fiona_rescued
+					NOT = {
+						has_country_flag = DUL_by_shrek_and_donkey
+					}
+					has_completed_focus = DUL_the_marriage
+				}
+				AND = {
+					has_country_flag = DUL_fiona_rescued
+					has_country_flag = DUL_by_shrek_and_donkey
+					OR = {
+						has_country_flag = DUL_shrek_and_fiona_detained
+						has_country_flag = DUL_shrek_and_fiona_escaped_war
+					}
+					NOT = {
+						has_country_flag = farquaad_is_ded
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = { days = 5 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.6.a
+	}
+}
+
+country_event = { #Charming finds Wolf in the tower
+	id = farfaraway.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.7"}
+	title = farfaraway.7.t
+	desc = farfaraway.7.d
+	picture = GFX_report_ffa_3
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			has_country_flag = DUL_fiona_rescued
+			has_country_flag = DUL_by_shrek_and_donkey
+			has_country_flag = farquaad_is_ded
+		}
+	}
+
+	mean_time_to_happen = { days = 5 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.7.a
+		hidden_effect = {
+			country_event = {
+				id = farfaraway.16
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Fiona has been saved by Farquaad
+	id = farfaraway.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.8"}
+	title = farfaraway.8.t
+	desc = farfaraway.8.d
+	picture = GFX_report_ffa_2
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			has_country_flag = DUL_fiona_rescued
+			NOT = {
+				has_country_flag = DUL_by_shrek_and_donkey
+			}
+			has_completed_focus = DUL_the_marriage
+		}
+	}
+
+	mean_time_to_happen = { days = 4 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.8.a
+		DUL = {
+			country_event = {
+				id = farfaraway.9
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Fiona parents invite Farquaad and Fiona
+	id = farfaraway.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.9"}
+	title = farfaraway.9.t
+	desc = farfaraway.9.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.9.a
+		FFA = {
+			country_event = {
+				id = farfaraway.10
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Farquaad rejects
+	id = farfaraway.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.10"}
+	title = farfaraway.10.t
+	desc = farfaraway.10.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.10.a
+		declare_war_on = {
+			target = DUL
+			type = annex_everything
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.112
+				hours = 6
+			}
+		}
+		add_corps_commander_role = {
+			Character = FFA_charming
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+}
+
+country_event = { #Fiona and Shrek have been invaded by Farquaad
+	id = farfaraway.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.11"}
+	title = farfaraway.11.t
+	desc = farfaraway.11.d
+	picture = GFX_report_ffa_3
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			has_country_flag = DUL_fiona_rescued
+			has_country_flag = DUL_by_shrek_and_donkey
+			has_country_flag = DUL_shrek_and_fiona_escaped_war
+			has_war_with = SWA
+		}
+	}
+
+	mean_time_to_happen = { days = 3 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.11.a
+		declare_war_on = {
+			target = DUL
+			type = annex_everything
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.112
+				hours = 6
+			}
+		}
+		add_corps_commander_role = {
+			Character = FFA_charming
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+}
+
+country_event = { #Fiona and Shrek have been detained by Farquaad
+	id = farfaraway.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.12"}
+	title = farfaraway.12.t
+	desc = farfaraway.12.d
+	picture = GFX_report_ffa_3
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			has_country_flag = DUL_fiona_rescued
+			has_country_flag = DUL_by_shrek_and_donkey
+			has_country_flag = DUL_shrek_and_fiona_detained
+		}
+	}
+
+	mean_time_to_happen = { days = 3 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.12.a
+		declare_war_on = {
+			target = DUL
+			type = annex_everything
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.112
+				hours = 6
+			}
+		}
+		add_corps_commander_role = {
+			Character = FFA_charming
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+	}
+}
+
+country_event = { #Fairy Godmother wants war with Swamp
+	id = farfaraway.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.13"}
+	title = farfaraway.13.t
+	desc = farfaraway.13.d
+	picture = GFX_report_ffa_1
+
+	trigger = {
+		tag = FFA
+		has_country_flag = FFA_charming_goes_to_rescue_fiona
+		DUL = {
+			has_country_flag = DUL_fiona_rescued
+			has_country_flag = DUL_by_shrek_and_donkey
+			has_country_flag = DUL_shrek_and_fiona_escaped_war
+			has_war_with = SWA
+		}
+		has_war_with = DUL
+	}
+
+	mean_time_to_happen = { days = 3 }
+
+	fire_only_once = yes
+
+	option = { #Agree
+		name = farfaraway.13.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_YES
+				}
+				add = -1
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_NO
+				}
+				add = 99
+			}
+		}
+		declare_war_on = {
+			target = SWA
+			type = annex_everything
+		}
+		hidden_effect = {
+			set_country_flag = FFA_accepted_fairy_demand_about_shrek
+		}
+	}
+
+	option = { #Reject
+		name = farfaraway.13.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_YES
+				}
+				add = 99
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_NO
+				}
+				add = -1
+			}
+		}
+		trigger = {
+			NOT = {
+				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FFA_rejected_fairy_demand_about_shrek
+		}
+	}
+
+	option = { #Reject
+		name = farfaraway.13.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_YES
+				}
+				add = -1
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_harold_refuses_godmother
+					option = FFA_HAROLD_REFUSES_GODMOTHER_NO
+				}
+				add = 99
+			}
+		}
+		trigger = {
+			has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+		}
+		hidden_effect = {
+			FGM = {
+				add_ideas = {
+					middleage_tech
+				}
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				inherit_technology = FFA
+				set_capital = { state = 216 }
+				load_oob = FGM_rebellion
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				declare_war_on = {
+					target = FFA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_fairy_godmother = {
+				add_corps_commander_role = {
+					Character = FFA_fairy_godmother
+					skill = 5
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 4
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_fairy_godmother
+				}
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 2
+						attack_skill = 2
+						defense_skill = 2
+						planning_skill = 1
+						logistics_skill = 1
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.113
+				hours = 6
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FFA_rejected_fairy_demand_about_shrek
+			set_country_flag = FFA_fairy_launched_a_coup
+		}
+		if = {
+			limit = {
+				FFA_puss_in_boots = {
+					is_army_leader = no
+				}
+			}
+			add_corps_commander_role = {
+				Character = FFA_puss_in_boots
+				skill = 7
+				attack_skill = 8
+				defense_skill = 7
+				planning_skill = 5
+				logistics_skill = 4
+			}
+		}
+	}
+}
+
+country_event = { #Charming brings Fiona to Far Far Away after the war
+	id = farfaraway.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.14"}
+	title = farfaraway.14.t
+	desc = farfaraway.14.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.14.a
+		unlock_national_focus = FFA_charming_completes_the_plan
+		if = {
+			limit = {
+				has_idea = FFA_two_decades_of_waiting
+			}
+			remove_ideas = {
+				FFA_two_decades_of_waiting
+			}
+		}
+	}
+}
+
+country_event = { #Case of Shrek after detention and war (he wants to stay with Fiona and vice versa) - but Fairy Godmother opposes and reminds the deal
+	id = farfaraway.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.15"}
+	title = farfaraway.15.t
+	desc = farfaraway.15.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Arrest both Fairy and Charming
+		name = farfaraway.15.a
+		trigger = {
+			NOT = {
+				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FFA_arrested_fairy_and_charming
+			country_event = {
+				id = farfaraway.16
+				days = 14
+			}
+		}
+	}
+
+	option = { #Fairy Godmother rebels
+		name = farfaraway.15.b
+		trigger = {
+			has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+		}
+		hidden_effect = {
+			FGM = {
+				add_ideas = {
+					middleage_tech
+				}
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				inherit_technology = FFA
+				set_capital = { state = 216 }
+				load_oob = FGM_rebellion
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				declare_war_on = {
+					target = FFA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_fairy_godmother = {
+				add_corps_commander_role = {
+					Character = FFA_fairy_godmother
+					skill = 5
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 4
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_fairy_godmother
+				}
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 2
+						attack_skill = 2
+						defense_skill = 2
+						planning_skill = 1
+						logistics_skill = 1
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.113
+				hours = 6
+			}
+			set_country_flag = FFA_fairy_launched_a_coup
+		}
+		if = {
+			limit = {
+				FFA_puss_in_boots = {
+					is_army_leader = no
+				}
+			}
+			add_corps_commander_role = {
+				Character = FFA_puss_in_boots
+				skill = 7
+				attack_skill = 8
+				defense_skill = 7
+				planning_skill = 5
+				logistics_skill = 4
+			}
+		}
+	}
+}
+
+country_event = { #Inviting Shrek and Fiona
+	id = farfaraway.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.16"}
+	title = farfaraway.16.t
+	desc = {
+		text = farfaraway.16.d.refusedfairycoup
+		trigger = {
+			has_country_flag = FFA_rejected_fairy_demand_about_shrek
+			has_country_flag = FFA_fairy_launched_a_coup
+		}
+	}
+	desc = {
+		text = farfaraway.16.d.refusedfairynocoup
+		trigger = {
+			has_country_flag = FFA_rejected_fairy_demand_about_shrek
+			NOT = {
+				has_country_flag = FFA_fairy_launched_a_coup
+			}
+		}
+	}
+	desc = {
+		text = farfaraway.16.d.canon
+		trigger = {
+			DUL = {
+				has_country_flag = farquaad_is_ded
+			}
+		}
+	}
+	desc = {
+		text = farfaraway.16.d.arrestedfairy
+		trigger = {
+			has_country_flag = FFA_arrested_fairy_and_charming
+		}
+	}
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.16.a
+		SWA = {
+			country_event = {
+				id = farfaraway.17
+				days = 4
+			}
+		}
+	}
+}
+
+country_event = { #Invitation from Far Far Away
+	id = farfaraway.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.17"}
+	title = farfaraway.17.t
+	desc = farfaraway.17.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.17.a
+		FFA = {
+			country_event = {
+				id = farfaraway.18
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Shrek and Fiona arrive to Far Far Away
+	id = farfaraway.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.18"}
+	title = farfaraway.18.t
+	desc = {
+		text = farfaraway.18.d.warmwelcome
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					has_country_flag = FFA_fairy_launched_a_coup
+				}
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					NOT = {
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
+				}
+				has_country_flag = FFA_arrested_fairy_and_charming
+			}
+			
+		}
+	}
+	desc = {
+		text = farfaraway.18.d.canon
+		trigger = {
+			DUL = {
+				has_country_flag = farquaad_is_ded
+			}
+		}
+	}
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.18.a
+		if = {
+			limit = {
+				OR = {
+					DUL = {
+						has_country_flag = farquaad_is_ded
+					}
+					AND = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						NOT = {
+							has_country_flag = FFA_fairy_launched_a_coup
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				country_event = {
+					id = farfaraway.19
+					days = 1
+				}
+			}
+		}
+		else = {
+			hidden_effect = {
+				country_event = {
+					id = farfaraway.20
+					days = 3
+				}
+			}
+			if = {
+				limit = {
+					has_idea = FFA_two_decades_of_waiting
+				}
+				remove_ideas = {
+					FFA_two_decades_of_waiting
+				}
+			}
+			unlock_national_focus = FFA_not_ogre_yet
+		}
+	}
+}
+
+country_event = { #Fairy Godmother has a chat with Harold
+	id = farfaraway.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.19"}
+	title = farfaraway.19.t
+	desc = farfaraway.19.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.19.a
+		hidden_effect = {
+			country_event = {
+				id = farfaraway.20
+				days = 2
+			}
+		}
+		add_corps_commander_role = {
+			Character = FFA_puss_in_boots
+			skill = 7
+			attack_skill = 8
+			defense_skill = 7
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+}
+
+country_event = { #The great ball
+	id = farfaraway.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.20"}
+	title = farfaraway.20.t
+	desc = {
+		text = farfaraway.20.d.warmwelcome
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					has_country_flag = FFA_fairy_launched_a_coup
+				}
+				has_country_flag = FFA_arrested_fairy_and_charming
+			}
+		}
+	}
+	desc = {
+		text = farfaraway.20.d.secondoption
+		trigger = {
+			AND = {
+				has_country_flag = FFA_rejected_fairy_demand_about_shrek
+				NOT = {
+					has_country_flag = FFA_fairy_launched_a_coup
+				}
+			}
+		}
+	}
+	desc = {
+		text = farfaraway.20.d.canon
+		trigger = {
+			DUL = {
+				has_country_flag = farquaad_is_ded
+			}
+		}
+	}
+	picture = GFX_report_ffa_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Fairy dies
+		name = farfaraway.20.a
+		trigger = {
+			DUL = {
+				has_country_flag = farquaad_is_ded
+			}
+			NOT = {
+				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+			}
+		}
+		retire_character =  FFA_fairy_godmother
+		unlock_national_focus = FFA_not_ogre_yet
+		if = {
+			limit = {
+				has_idea = FFA_two_decades_of_waiting
+			}
+			remove_ideas = {
+				FFA_two_decades_of_waiting
+			}
+		}
+	}
+
+	option = { #Fairy launches revolt
+		name = farfaraway.20.b.rejecteddemand
+		trigger = {
+			AND = {
+				has_country_flag = FFA_rejected_fairy_demand_about_shrek
+				NOT = {
+					has_country_flag = FFA_fairy_launched_a_coup
+				}
+			}
+		}
+		unlock_national_focus = FFA_not_ogre_yet
+		if = {
+			limit = {
+				FFA_puss_in_boots = {
+					is_army_leader = no
+				}
+			}
+			add_corps_commander_role = {
+				Character = FFA_puss_in_boots
+				skill = 7
+				attack_skill = 8
+				defense_skill = 7
+				planning_skill = 5
+				logistics_skill = 4
+			}
+		}
+		if = {
+			limit = {
+				has_idea = FFA_two_decades_of_waiting
+			}
+			remove_ideas = {
+				FFA_two_decades_of_waiting
+			}
+		}hidden_effect = {
+			FGM = {
+				add_ideas = {
+					middleage_tech
+				}
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				inherit_technology = FFA
+				set_capital = { state = 216 }
+				if = {
+					limit = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						NOT = {
+							has_country_flag = FFA_fairy_launched_a_coup
+						}
+					}
+					load_oob = FGM_rebellion_v2
+				}
+				else = {
+					load_oob = FGM_rebellion
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				declare_war_on = {
+					target = FFA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_fairy_godmother = {
+				add_corps_commander_role = {
+					Character = FFA_fairy_godmother
+					skill = 5
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 4
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_fairy_godmother
+				}
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 2
+						attack_skill = 2
+						defense_skill = 2
+						planning_skill = 1
+						logistics_skill = 1
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FFA_fairy_launched_a_coup
+			news_event = {
+				id = worldnews.113
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Fairy launches revolt
+		name = farfaraway.20.b.canonrebellion
+		trigger = {
+			AND = {
+				DUL = {
+					has_country_flag = farquaad_is_ded
+				}
+				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+			}
+		}
+		if = {
+			limit = {
+				has_idea = FFA_two_decades_of_waiting
+			}
+			remove_ideas = {
+				FFA_two_decades_of_waiting
+			}
+		}
+		unlock_national_focus = FFA_not_ogre_yet
+		hidden_effect = {
+			FGM = {
+				add_ideas = {
+					middleage_tech
+				}
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				inherit_technology = FFA
+				set_capital = { state = 216 }
+				if = {
+					limit = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						NOT = {
+							has_country_flag = FFA_fairy_launched_a_coup
+						}
+					}
+					load_oob = FGM_rebellion_v2
+				}
+				else = {
+					load_oob = FGM_rebellion
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				declare_war_on = {
+					target = FFA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_fairy_godmother = {
+				add_corps_commander_role = {
+					Character = FFA_fairy_godmother
+					skill = 5
+					attack_skill = 4
+					defense_skill = 3
+					planning_skill = 5
+					logistics_skill = 4
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_fairy_godmother
+				}
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 2
+						attack_skill = 2
+						defense_skill = 2
+						planning_skill = 1
+						logistics_skill = 1
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+			}
+		}
+		hidden_effect = {
+			set_country_flag = FFA_fairy_launched_a_coup
+			news_event = {
+				id = worldnews.113
+				hours = 6
+			}
+		}
+	}
+
+	option = { #Everyone is happy
+		name = farfaraway.20.c
+		trigger = {
+			OR = {
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					has_country_flag = FFA_fairy_launched_a_coup
+				}
+				has_country_flag = FFA_arrested_fairy_and_charming
+			}
+		}
+		if = {
+			limit = {
+				FFA_puss_in_boots = {
+					is_army_leader = no
+				}
+			}
+			add_corps_commander_role = {
+				Character = FFA_puss_in_boots
+				skill = 7
+				attack_skill = 8
+				defense_skill = 7
+				planning_skill = 5
+				logistics_skill = 4
+			}
+		}
+		unlock_national_focus = FFA_not_ogre_yet
+	}
+}
+
+country_event = { #The future of Duloc event
+	id = farfaraway.21
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.21"}
+	title = farfaraway.21.t
+	desc = farfaraway.21.d
+	picture = GFX_report_ffa_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Swamp gets south, FFA north & the city
+		name = farfaraway.21.a
+		trigger = {
+			any_owned_state = {
+				OR = {
+					state = 224
+					state = 265
+					state = 256
+					state = 286
+					state = 301
+					state = 302
+					state = 353
+					state = 374
+					state = 356
+					state = 331
+					state = 296
+					state = 390
+					state = 423
+					state = 392
+					state = 436
+				}
+				is_core_of = DUL
+			}
+			SWA = {
+				any_owned_state = {
+					OR = {
+						state = 224
+						state = 265
+						state = 256
+						state = 286
+						state = 301
+						state = 302
+						state = 353
+						state = 374
+						state = 356
+						state = 331
+						state = 296
+						state = 390
+						state = 423
+						state = 392
+						state = 436
+					}
+					is_core_of = DUL
+				}
+			}
+		}
+		if = {
+			limit = {
+				302 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 302
+				302 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				353 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 353
+				353 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				356 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 356
+				356 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				374 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 374
+				374 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				423 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 423
+				423 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				436 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 436
+				436 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				390 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 390
+				390 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				392 = {
+					is_owned_by = FFA
+				}
+			}
+			SWA = {
+				transfer_state = 392
+				392 = {
+					add_core_of = SWA
+				}
+			}
+		}
+		if = {
+			limit = {
+				265 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 265
+				265 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				224 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 224
+				224 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				256 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 256
+				256 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				286 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 286
+				286 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				331 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 331
+				331 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				296 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 296
+				296 = {
+					add_core_of = FFA
+				}
+			}
+		}
+		if = {
+			limit = {
+				301 = {
+					is_owned_by = SWA
+				}
+			}
+			FFA = {
+				transfer_state = 301
+				301 = {
+					add_core_of = FFA
+				}
+			}
+		}
+	}
+
+	option = { #Swamp gets everything
+		name = farfaraway.21.b
+		trigger = {
+			any_owned_state = {
+				OR = {
+					state = 224
+					state = 265
+					state = 256
+					state = 286
+					state = 301
+					state = 302
+					state = 353
+					state = 374
+					state = 356
+					state = 331
+					state = 296
+					state = 390
+					state = 423
+					state = 392
+					state = 436
+				}
+				is_core_of = DUL
+			}
+		}
+		SWA = {
+			transfer_state = 302
+			transfer_state = 353
+			transfer_state = 356
+			transfer_state = 374
+			transfer_state = 423
+			transfer_state = 436
+			transfer_state = 390
+			transfer_state = 392
+			transfer_state = 265
+			transfer_state = 224
+			transfer_state = 256
+			transfer_state = 286
+			transfer_state = 331
+			transfer_state = 296
+			transfer_state = 301
+			302 = {
+				add_core_of = SWA
+			}
+			353 = {
+				add_core_of = SWA
+			}
+			356 = {
+				add_core_of = SWA
+			}
+			374 = {
+				add_core_of = SWA
+			}
+			423 = {
+				add_core_of = SWA
+			}
+			436 = {
+				add_core_of = SWA
+			}
+			390 = {
+				add_core_of = SWA
+			}
+			392 = {
+				add_core_of = SWA
+			}
+			265 = {
+				add_core_of = SWA
+			}
+			224 = {
+				add_core_of = SWA
+			}
+			256 = {
+				add_core_of = SWA
+			}
+			286 = {
+				add_core_of = SWA
+			}
+			331 = {
+				add_core_of = SWA
+			}
+			296 = {
+				add_core_of = SWA
+			}
+			301 = {
+				add_core_of = SWA
+			}
+		}
+	}
+
+	option = { #We take everything
+		name = farfaraway.21.c
+		trigger = {
+			SWA = {
+				any_owned_state = {
+					OR = {
+						state = 224
+						state = 265
+						state = 256
+						state = 286
+						state = 301
+						state = 302
+						state = 353
+						state = 374
+						state = 356
+						state = 331
+						state = 296
+						state = 390
+						state = 423
+						state = 392
+						state = 436
+					}
+					is_core_of = DUL
+				}
+			}
+		}
+		FFA = {
+			transfer_state = 302
+			transfer_state = 353
+			transfer_state = 356
+			transfer_state = 374
+			transfer_state = 423
+			transfer_state = 436
+			transfer_state = 390
+			transfer_state = 392
+			transfer_state = 265
+			transfer_state = 224
+			transfer_state = 256
+			transfer_state = 286
+			transfer_state = 331
+			transfer_state = 296
+			transfer_state = 301
+			302 = {
+				add_core_of = FFA
+			}
+			353 = {
+				add_core_of = FFA
+			}
+			356 = {
+				add_core_of = FFA
+			}
+			374 = {
+				add_core_of = FFA
+			}
+			423 = {
+				add_core_of = FFA
+			}
+			436 = {
+				add_core_of = FFA
+			}
+			390 = {
+				add_core_of = FFA
+			}
+			392 = {
+				add_core_of = FFA
+			}
+			265 = {
+				add_core_of = FFA
+			}
+			224 = {
+				add_core_of = FFA
+			}
+			256 = {
+				add_core_of = FFA
+			}
+			286 = {
+				add_core_of = FFA
+			}
+			331 = {
+				add_core_of = FFA
+			}
+			296 = {
+				add_core_of = FFA
+			}
+			301 = {
+				add_core_of = FFA
+			}
+		}
+	}
+
+	option = { #Swamp gets south, FFA north & the city
+		name = farfaraway.21.a
+		trigger = {
+			DUL = {
+				exists = yes
+				has_country_flag = farquaad_is_ded
+			}
+		}
+		SWA = {
+			transfer_state = 302
+			transfer_state = 353
+			transfer_state = 356
+			transfer_state = 374
+			transfer_state = 423
+			transfer_state = 436
+			transfer_state = 390
+			transfer_state = 392
+			302 = {
+				add_core_of = SWA
+			}
+			353 = {
+				add_core_of = SWA
+			}
+			356 = {
+				add_core_of = SWA
+			}
+			374 = {
+				add_core_of = SWA
+			}
+			423 = {
+				add_core_of = SWA
+			}
+			436 = {
+				add_core_of = SWA
+			}
+			390 = {
+				add_core_of = SWA
+			}
+			392 = {
+				add_core_of = SWA
+			}
+		}
+		FFA = {
+			transfer_state = 265
+			transfer_state = 224
+			transfer_state = 256
+			transfer_state = 286
+			transfer_state = 331
+			transfer_state = 296
+			transfer_state = 301
+			265 = {
+				add_core_of = FFA
+			}
+			224 = {
+				add_core_of = FFA
+			}
+			256 = {
+				add_core_of = FFA
+			}
+			286 = {
+				add_core_of = FFA
+			}
+			331 = {
+				add_core_of = FFA
+			}
+			296 = {
+				add_core_of = FFA
+			}
+			301 = {
+				add_core_of = FFA
+			}
+		}
+	}
+
+	option = { #Swamp gets everything
+		name = farfaraway.21.b
+		trigger = {
+			DUL = {
+				exists = yes
+				has_country_flag = farquaad_is_ded
+			}
+		}
+		SWA = {
+			transfer_state = 302
+			transfer_state = 353
+			transfer_state = 356
+			transfer_state = 374
+			transfer_state = 423
+			transfer_state = 436
+			transfer_state = 390
+			transfer_state = 392
+			transfer_state = 265
+			transfer_state = 224
+			transfer_state = 256
+			transfer_state = 286
+			transfer_state = 331
+			transfer_state = 296
+			transfer_state = 301
+			302 = {
+				add_core_of = SWA
+			}
+			353 = {
+				add_core_of = SWA
+			}
+			356 = {
+				add_core_of = SWA
+			}
+			374 = {
+				add_core_of = SWA
+			}
+			423 = {
+				add_core_of = SWA
+			}
+			436 = {
+				add_core_of = SWA
+			}
+			390 = {
+				add_core_of = SWA
+			}
+			392 = {
+				add_core_of = SWA
+			}
+			265 = {
+				add_core_of = SWA
+			}
+			224 = {
+				add_core_of = SWA
+			}
+			256 = {
+				add_core_of = SWA
+			}
+			286 = {
+				add_core_of = SWA
+			}
+			331 = {
+				add_core_of = SWA
+			}
+			296 = {
+				add_core_of = SWA
+			}
+			301 = {
+				add_core_of = SWA
+			}
+		}
+	}
+
+	option = { #We take everything
+		name = farfaraway.21.c
+		trigger = {
+			DUL = {
+				exists = yes
+				has_country_flag = farquaad_is_ded
+			}
+		}
+		FFA = {
+			transfer_state = 302
+			transfer_state = 353
+			transfer_state = 356
+			transfer_state = 374
+			transfer_state = 423
+			transfer_state = 436
+			transfer_state = 390
+			transfer_state = 392
+			transfer_state = 265
+			transfer_state = 224
+			transfer_state = 256
+			transfer_state = 286
+			transfer_state = 331
+			transfer_state = 296
+			transfer_state = 301
+			302 = {
+				add_core_of = FFA
+			}
+			353 = {
+				add_core_of = FFA
+			}
+			356 = {
+				add_core_of = FFA
+			}
+			374 = {
+				add_core_of = FFA
+			}
+			423 = {
+				add_core_of = FFA
+			}
+			436 = {
+				add_core_of = FFA
+			}
+			390 = {
+				add_core_of = FFA
+			}
+			392 = {
+				add_core_of = FFA
+			}
+			265 = {
+				add_core_of = FFA
+			}
+			224 = {
+				add_core_of = FFA
+			}
+			256 = {
+				add_core_of = FFA
+			}
+			286 = {
+				add_core_of = FFA
+			}
+			331 = {
+				add_core_of = FFA
+			}
+			296 = {
+				add_core_of = FFA
+			}
+			301 = {
+				add_core_of = FFA
+			}
+		}
+	}
+}
+
+country_event = { #Death of King Harold
+	id = farfaraway.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.22"}
+	title = farfaraway.22.t
+	desc = farfaraway.22.d
+	picture = GFX_report_ffa_3
+
+	trigger = {
+		tag = FFA
+		OR = {
+			has_completed_focus = FFA_not_ogre_yet
+			has_completed_focus = FFA_charming_completes_the_plan
+		}
+	}
+
+	mean_time_to_happen = { days = 450 }
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.22.a
+		trigger = {
+			has_completed_focus = FFA_charming_completes_the_plan
+		}
+		kill_country_leader = yes
+		set_character_name = {
+			character = FFA_charming
+			name = "King Charming"
+		}
+		add_country_leader_role = {
+			character = FFA_charming
+			country_leader = {
+				ideology = despotic_monarchy
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+			promote_leader = yes
+		}
+		hidden_effect = {
+			set_country_flag = harold_ded
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = FFA_harold_is_ded
+			complete_national_focus = FFA_king_charming
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.115
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = farfaraway.22.b
+		trigger = {
+			always = no
+		#	has_completed_focus = FFA_not_ogre_yet
+		}
+		kill_country_leader = yes
+		change_tag_from = SWA
+		SWA = {
+			set_nationality = {
+				target_country = FFA
+				character = SWA_shrek
+			}
+			set_nationality = {
+				target_country = FFA
+				character = SWA_donkey
+			}
+			set_nationality = {
+				target_country = FFA
+				character = SWA_fiona_ogre
+			}
+		}
+		annex_country = {
+			target = SWA
+			transfer_troops = yes
+		}
+		add_country_leader_role = {
+			character = SWA_shrek
+			country_leader = {
+				ideology = administrative_monarchy
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+			promote_leader = yes
+		}
+		hidden_effect = {
+			set_country_flag = harold_ded
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = FFA_harold_is_ded
+			complete_national_focus = FFA_shrek_accepts_the_crown
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.115
+				hours = 6
+			}
+		}
+	}
+
+	option = {
+		name = farfaraway.22.c
+		trigger = {
+			has_completed_focus = FFA_not_ogre_yet
+		}
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Interregnum"
+			desc = "POLITICS_TBD_DESC"
+			picture = "interregnum.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		custom_effect_tooltip = FFA_shrek_leaves_for_arthur
+		hidden_effect = {
+			set_country_flag = harold_ded
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = FFA_harold_is_ded
+			country_event = {
+				id = farfaraway.23
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Shrek finds Arthur
+	id = farfaraway.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.23"}
+	title = farfaraway.23.t
+	desc = farfaraway.23.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.23.a
+		hidden_effect = {
+			if = {
+				limit = {
+					DUL = {
+						has_country_flag = farquaad_is_ded
+					}
+					NOT = {
+						has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+					}
+				}
+				country_event = {
+					id = farfaraway.24
+					days = 2
+				}
+			}
+			else = {
+				country_event = {
+					id = farfaraway.25
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = { #The Great War of Prince Charming
+	id = farfaraway.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.24"}
+	title = farfaraway.24.t
+	desc = farfaraway.24.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.24.a
+		hidden_effect = {
+			retire_country_leader = yes
+		}
+		add_country_leader_role = {
+			character = FFA_arthur
+			country_leader = {
+				ideology = administrative_monarchy
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+			promote_leader = yes
+		}
+		add_corps_commander_role = {
+			Character = FFA_arthur
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		hidden_effect = {
+			FGM = {
+				set_cosmetic_tag = king_charming_domain
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				inherit_technology = FFA
+				set_capital = { state = 216 }
+				load_oob = charming_rebellion
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				add_ideas = {
+					middleage_tech
+				}
+				declare_war_on = {
+					target = FFA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 3
+						attack_skill = 3
+						defense_skill = 3
+						planning_skill = 2
+						logistics_skill = 2
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+				set_character_name = "King Charming"
+				add_country_leader_role = {
+					character = FFA_charming
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+					promote_leader = yes
+				}
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.114
+				hours = 6
+			}
+			SWA = {
+				SWA_donkey = {
+					add_corps_commander_role = {
+						Character = SWA_donkey
+						skill = 0
+						attack_skill = 1
+						defense_skill = 0
+						planning_skill = 0
+						logistics_skill = 0
+					}
+					set_nationality = {
+						target_country = FFA
+						character = SWA_donkey
+					}
+				}
+				SWA_fiona_ogre = {
+					add_corps_commander_role = {
+						Character = SWA_fiona_ogre
+						skill = 4
+						attack_skill = 4
+						defense_skill = 4
+						planning_skill = 4
+						logistics_skill = 4
+					}
+					set_nationality = {
+						target_country = FFA
+						character = SWA_fiona_ogre
+					}
+				}
+				SWA_shrek = {
+					add_corps_commander_role = {
+						Character = SWA_shrek
+						skill = 5
+						attack_skill = 4
+						defense_skill = 4
+						planning_skill = 4
+						logistics_skill = 4
+					}
+					set_nationality = {
+						target_country = FFA
+						character = SWA_shrek
+					}
+				}
+				create_country_leader = {
+					name = "Shrek"
+					desc = "POLITICS_SHREK_DESC"
+					picture = "shrek.dds"
+					expire = "1965.1.1"
+					ideology = centrism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Arthur becomes the King
+	id = farfaraway.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.25"}
+	title = farfaraway.25.t
+	desc = farfaraway.25.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.25.a
+		hidden_effect = {
+			retire_country_leader = yes
+		}
+		complete_national_focus = FFA_a_second_option
+		add_country_leader_role = {
+			character = FFA_arthur
+			country_leader = {
+				ideology = administrative_monarchy
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+			promote_leader = yes
+		}
+		add_corps_commander_role = {
+			Character = FFA_arthur
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.115
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Far Far Away wants to buy Reculver from us
+	id = farfaraway.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.26"}
+	title = farfaraway.26.t
+	desc = farfaraway.26.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Agree
+		name = farfaraway.26.a
+		FFA = {
+			country_event = {
+				id = farfaraway.27
+				days = 2
+			}
+		}
+	}
+
+	option = { #Decline
+		name = farfaraway.26.b
+		FFA = {
+			country_event = {
+				id = farfaraway.28
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Gummi Bears agree for sale
+	id = farfaraway.27
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.27"}
+	title = farfaraway.27.t
+	desc = farfaraway.27.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #great
+		name = farfaraway.27.a
+		add_political_power = -100
+		transfer_state = 244
+		244 = {
+			add_core_of = FFA
+			remove_core_of = GUM
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				instant_build = yes
+				province = 5872
+			}
+		}
+		216 = {
+			add_building_construction = {
+				type = naval_base
+				level = 1
+				instant_build = yes
+				province = 6547
+			}
+		}
+	}
+}
+
+country_event = { #Gummi Bears refuse the sale
+	id = farfaraway.28
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.28"}
+	title = farfaraway.28.t
+	desc = farfaraway.28.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Maybe it's not necessary for us after all
+		name = farfaraway.28.a
+		add_stability = -0.05
+		add_political_power = -150
+	}
+
+	option = { #We will get it later
+		name = farfaraway.28.b
+		244 = {
+			add_claim_by = FFA
+		}
+	}
+
+	option = { #This means war!
+		name = farfaraway.28.c
+		244 = {
+			add_claim_by = FFA
+		}
+		create_wargoal = {
+			target = GUM
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Far Far Away wants to establish bases on our territory
+	id = farfaraway.29
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.29"}
+	title = farfaraway.29.t
+	desc = farfaraway.29.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Agree
+		name = farfaraway.29.a
+		FFA = {
+			country_event = {
+				id = farfaraway.30
+				days = 2
+			}
+		}
+	}
+
+	option = { #Decline
+		name = farfaraway.29.b
+		FFA = {
+			country_event = {
+				id = farfaraway.31
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Gummi Bears agree for bases
+	id = farfaraway.30
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.30"}
+	title = farfaraway.30.t
+	desc = farfaraway.30.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #great
+		name = farfaraway.30.a
+		add_political_power = -100
+		GUM = {
+			give_military_access = FFA
+			diplomatic_relation = {
+				country = FFA
+				relation = docking_rights
+				active = yes
+			}
+		}
+		hidden_effect = {
+			set_country_flag = GUM_agreed_for_bases
+		}
+	}
+}
+
+country_event = { #Gummi Bears refuse the bases
+	id = farfaraway.31
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.31"}
+	title = farfaraway.31.t
+	desc = farfaraway.31.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Damn
+		name = farfaraway.31.a
+		add_political_power = -200
+	}
+}
+
+country_event = { #Far Far Away wants to establish bases on our territory
+	id = farfaraway.32
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.32"}
+	title = farfaraway.32.t
+	desc = farfaraway.32.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Agree
+		name = farfaraway.32.a
+		FFA = {
+			country_event = {
+				id = farfaraway.33
+				days = 2
+			}
+		}
+	}
+
+	option = { #Decline
+		name = farfaraway.32.b
+		FFA = {
+			country_event = {
+				id = farfaraway.34
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Elwood agrees for bases
+	id = farfaraway.33
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.33"}
+	title = farfaraway.33.t
+	desc = farfaraway.33.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #great
+		name = farfaraway.30.a
+		add_political_power = -100
+		give_guarantee = ELW
+		ELW = {
+			give_military_access = FFA
+			diplomatic_relation = {
+				country = FFA
+				relation = docking_rights
+				active = yes
+			}
+		}
+		hidden_effect = {
+			set_country_flag = ELW_agreed_for_bases
+		}
+	}
+}
+
+country_event = { #Elwood refuse the bases
+	id = farfaraway.34
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.34"}
+	title = farfaraway.34.t
+	desc = farfaraway.34.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Damn
+		name = farfaraway.31.a
+		add_political_power = -200
+	}
+}

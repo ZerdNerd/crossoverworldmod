@@ -1534,7 +1534,7 @@ focus_tree = {
 		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 10
+			factor = 100
 		}
 		available = {
 			custom_trigger_tooltip = {
@@ -1550,6 +1550,14 @@ focus_tree = {
 				id = duloc.5
 				days = 0
 			}
+			hidden_effect = {
+				FFA = {
+					country_event = {
+						id = farfaraway.4
+						days = 0
+					}
+				}
+			}
 		}		
 	}
 
@@ -1562,7 +1570,7 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 5
+			factor = 10
 		}
 		prerequisite = {
 			focus = DUL_the_road_for_crown
@@ -1595,14 +1603,46 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = DUL_host_a_tournament
-		icon = GFX_goal_generic_military_deal
-		x = 1
+		id = DUL_a_visit_to_the_south
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 2
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
 		cost = 0.75
 		available_if_capitulated = yes
-		mutually_exclusive = { focus = DUL_exchange_embassies }
+		mutually_exclusive = { focus = DUL_exchange_embassies focus = DUL_host_a_tournament }
+		ai_will_do = { 
+			factor = 100
+		}
+		available = {
+			has_country_flag = DUL_chose_bubblegum
+		}
+		prerequisite = {
+			focus = DUL_choosing_the_princess
+		}
+		completion_reward = { 
+			CDK = {
+				add_opinion_modifier = {
+    				target = DUL
+    				modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+    			target = CDK
+    			modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = DUL_host_a_tournament
+		icon = GFX_goal_generic_military_deal
+		x = 0
+		y = 1
+		relative_position_id = DUL_choosing_the_princess
+		cost = 0.75
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = DUL_exchange_embassies focus = DUL_a_visit_to_the_south }
 		ai_will_do = { 
 			factor = 100
 		}
@@ -1636,14 +1676,14 @@ focus_tree = {
 	focus = { 
 		id = DUL_exchange_embassies
 		icon = GFX_goal_generic_position_armies
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = DUL_choosing_the_princess
 		cost = 7.25
 		available_if_capitulated = yes
-		mutually_exclusive = { focus = DUL_host_a_tournament }
+		mutually_exclusive = { focus = DUL_host_a_tournament focus = DUL_a_visit_to_the_south }
 		ai_will_do = { 
-			factor = 1
+			factor = 100
 		}
 		available = {
 			has_country_flag = DUL_chose_elena
@@ -1668,17 +1708,18 @@ focus_tree = {
 	focus = { 
 		id = DUL_the_marriage
 		icon = GFX_focus_generic_royal_wedding
-		x = -1
+		x = 0
 		y = 1
 		relative_position_id = DUL_host_a_tournament
 		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 1
+			factor = 100
 		}
 		prerequisite = {
 			focus = DUL_exchange_embassies
 			focus = DUL_host_a_tournament
+			focus = DUL_a_visit_to_the_south
 		}
 		available = {
 			OR = {
@@ -1687,6 +1728,7 @@ focus_tree = {
 					has_country_flag = DUL_elena_fulfilled_the_promise
 					has_country_flag = DUL_elena_brought_by_force
 				}
+				has_country_flag = DUL_bubblegum_agreed
 			}
 		}
 		completion_reward = { 
@@ -1694,6 +1736,7 @@ focus_tree = {
 			if = {
 				limit = {
 					has_country_flag = DUL_fiona_rescued
+					has_country_flag = DUL_by_shrek_and_donkey
 				}
 				hidden_effect = {
 					country_event = {
@@ -1708,6 +1751,24 @@ focus_tree = {
 				}
 				puppet = AVA
 			}
+			if = {
+				limit = {
+					has_country_flag = DUL_bubblegum_agreed
+				}
+				transfer_state = 456
+				456 = {
+					add_core_of = DUL
+				}
+				transfer_state = 483
+				483 = {
+					add_core_of = DUL
+				}
+				transfer_state = 479
+				479 = {
+					add_core_of = DUL
+				}
+				puppet = CDK
+			}
 		}		
 	}
 
@@ -1720,7 +1781,7 @@ focus_tree = {
 		cost = 0.75
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 1
+			factor = 10
 		}
 		prerequisite = {
 			focus = DUL_the_marriage
@@ -1732,6 +1793,7 @@ focus_tree = {
 					has_country_flag = DUL_shrek_and_fiona_detained
 					has_country_flag = DUL_shrek_and_fiona_escaped_war
 					has_country_flag = DUL_elena_fulfilled_the_promise
+					has_country_flag = DUL_bubblegum_agreed
 					AND = {
 						has_country_flag = DUL_fiona_rescued
 						NOT = {
@@ -1786,6 +1848,15 @@ focus_tree = {
 						hours = 6
 					}
 				}
+				if = {
+					limit = {
+						has_country_flag = DUL_bubblegum_agreed
+					}
+					news_event = {
+						id = worldnews.111
+						hours = 6
+					}
+				}
 			}
 		}		
 	}
@@ -1824,9 +1895,28 @@ focus_tree = {
 			}
 		}
 		completion_reward = { 
-			FFA = {
-				every_owned_state = {
-					add_claim_by = DUL
+			if = {
+				limit = {
+					FFA = {
+						exists = yes
+					}
+				}
+				FFA = {
+					every_owned_state = {
+						add_claim_by = DUL
+					}
+				}
+			}
+			if = {
+				limit = {
+					FGM = {
+						exists = yes
+					}
+				}
+				FGM = {
+					every_owned_state = {
+						add_claim_by = DUL
+					}
 				}
 			}
 			FRK = {
@@ -1867,15 +1957,38 @@ focus_tree = {
 			base = 1
 		}
 		bypass = {
-			has_country_flag = DUL_married_fiona
+			OR = {
+				FFA = {
+					exists = no
+				}
+				has_war_with = FFA
+			}
 		}
 		prerequisite = {
 			focus = DUL_a_dream_of_empire
 		}
 		completion_reward = { 
-			create_wargoal = {
-				target = FFA
-				type = annex_everything
+			if = {
+				limit = {
+					FGM = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = FGM
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					FFA = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = FFA
+					type = annex_everything
+				}
 			}
 		}		
 	}
@@ -1940,6 +2053,7 @@ focus_tree = {
 				OR = {
 					is_puppet_of = DUL
 					exists = no
+					has_war_with = DUL
 				}
 			}
 		}
@@ -1965,6 +2079,14 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
+		bypass = {
+			FRK = {
+				OR = {
+					exists = no
+					has_war_with = DUL
+				}
+			}
+		}
 		prerequisite = {
 			focus = DUL_a_dream_of_empire
 		}
@@ -1988,6 +2110,17 @@ focus_tree = {
 		available_if_capitulated = yes
 		ai_will_do = { 
 			factor = 1
+		}
+		bypass = {
+			OR = {
+				has_country_flag = DUL_bubblegum_agreed
+				CDK = {
+					OR = {
+						exists = no
+						is_puppet_of = DUL
+					}
+				}
+			}
 		}
 		prerequisite = {
 			focus = DUL_a_dream_of_empire

@@ -5796,7 +5796,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = JPN
 					}
-					remove_state_core = JPN
+					remove_core_of = JPN
 				}
 			}
 			release = JPN
@@ -5880,6 +5880,12 @@ occupation_dec_category = {
 			NOT = {
 				tag = DUL
 			}
+			NOT = {
+				tag = FFA
+			}
+			NOT = {
+				tag = SWA
+			}
 			DUL = {
 				exists = no
 			}
@@ -5892,7 +5898,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = DUL
 					}
-					remove_state_core = DUL
+					remove_core_of = DUL
 				}
 			}
 			release = DUL
@@ -6336,7 +6342,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = MAI
 					}
-					remove_state_core = MAI
+					remove_core_of = MAI
 				}
 			}
 			release = MAI
@@ -6732,7 +6738,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = ARE
 					}
-					remove_state_core = ARE
+					remove_core_of = ARE
 				}
 			}
 			release = ARE
@@ -7031,7 +7037,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = BEE
 					}
-					remove_state_core = BEE
+					remove_core_of = BEE
 				}
 			}
 			release = BEE
@@ -7059,7 +7065,7 @@ occupation_dec_category = {
 				tag = DIO
 			}
 			NOT = {
-				tag = HOR
+				tag = CVA
 			}
 			NOT = {
 				tag = GON
@@ -7068,7 +7074,7 @@ occupation_dec_category = {
 				owns_state = 516
 				is_puppet = no
 			}
-			HOR = {
+			CVA = {
 				exists = no
 			}
 		}
@@ -7078,13 +7084,13 @@ occupation_dec_category = {
 				every_owned_state = {
 					limit = {
 						is_core_of = ROOT
-						is_core_of = HOR
+						is_core_of = CVA
 					}
-					remove_state_core = HOR
+					remove_core_of = CVA
 				}
 			}
-			release = HOR
-			HOR = {
+			release = CVA
+			CVA = {
 				load_focus_tree = generic_focus
 				ROOT = {
 					puppet = PREV
@@ -7211,7 +7217,7 @@ occupation_dec_category = {
 						is_core_of = ROOT
 						is_core_of = TIG
 					}
-					remove_state_core = TIG
+					remove_core_of = TIG
 				}
 			}
 			release = TIG

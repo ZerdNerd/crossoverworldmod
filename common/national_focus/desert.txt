@@ -1364,14 +1364,14 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			HOR = {
+			CVA = {
 				add_opinion_modifier = {
     				target = DES
     				modifier = TCWmod_generic_relations
 				}
 			}
 			add_opinion_modifier = {
-    			target = HOR
+    			target = CVA
     			modifier = TCWmod_generic_relations
 			}
 		}
@@ -1395,7 +1395,7 @@ focus_tree = {
 					exists = no
 				}
 				TIG = {
-					is_neighbor_of = HOR
+					is_neighbor_of = CVA
 					is_in_faction_with = GRN
 				}
 			}
@@ -1404,7 +1404,7 @@ focus_tree = {
 		available_if_capitulated = yes
 
 		completion_reward = {
-			HOR = {
+			CVA = {
 				country_event = {
 					id = desert.33
 					days = 1
@@ -1657,14 +1657,14 @@ focus_tree = {
 					has_completed_focus = SIO_maintain_operation_sandstorm
 					exists = no
 				}
-				add = 0
+				add = 1
 			}
 			modifier = {
 				SIO = {
 					has_completed_focus = SIO_get_lost_humsin
 					exists = yes
 				}
-				add = 0
+				add = 1
 			}
 		}
 
@@ -1705,14 +1705,14 @@ focus_tree = {
 					has_completed_focus = SIO_maintain_operation_sandstorm
 					exists = no
 				}
-				add = 0
+				add = 1
 			}
 			modifier = {
 				SIO = {
 					has_completed_focus = SIO_get_lost_humsin
 					exists = yes
 				}
-				add = 0
+				add = 1
 			}
 		}
 

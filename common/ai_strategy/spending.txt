@@ -106,29 +106,24 @@ do_not_waste_pp_befriend = {
 }
 
 division_limiter = { #THIS IS DIVISION LIMITER. IT IS USED FOR COUNTRIES THAT WENT >300 DIVS IN TEST PLAYTHROUGHS. MORIOH IS THERE BECAUSE ITS CRAZY NOISY BIZZARE TOWN.
+	allowed = {
+		NOT = { has_game_rule = { rule = unit_limit_options option = NONE } }
+	}
 	enable = {
-		OR = {
-			tag = GON
-			tag = DIO
-			tag = FLO
-			tag = MOR
-		}
-		is_ai = yes
 		has_reached_maximum_divisions = yes
-		NOT = { surrender_progress > 0.05 }
 	}
 
 	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = build_army
-		id = paratroopers
+		id = armor
 		value = -1000
 	}
 
 	ai_strategy = {
 		type = build_army
-		id = anti_tank
+		id = infantry
 		value = -1000
 	}
 
@@ -140,49 +135,13 @@ division_limiter = { #THIS IS DIVISION LIMITER. IT IS USED FOR COUNTRIES THAT WE
 
 	ai_strategy = {
 		type = build_army
-		id = mobile
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = armor
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
 		id = mountaineer
 		value = -1000
 	}
 
 	ai_strategy = {
 		type = build_army
-		id = bicycle
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = garrison
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = militia
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = cavalry
-		value = -1000
-	}
-
-	ai_strategy = {
-		type = build_army
-		id = infantry
+		id = suppression
 		value = -1000
 	}
 }

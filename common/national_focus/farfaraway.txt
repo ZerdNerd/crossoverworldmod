@@ -1,0 +1,3843 @@
+focus_tree = {
+	id = gloomyforest
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = FFA
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = FFA_voice_concerns_to_fairy_godmother
+		icon = GFX_goal_generic_dangerous_deal
+		x = 9
+		y = 0
+		cost = 0.75
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		allow_branch = {
+			NOT = {
+				has_country_flag = harold_signed_the_document
+				has_country_flag = harold_ded
+				has_country_flag = fairy_godmother_coup
+			}
+		}
+		available = {
+			has_country_flag = harold_is_not_sure_about_godmothers_plan
+		}
+		completion_reward = { 
+			country_event = {
+				id = farfaraway.2
+				days = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_continue_with_her_plan
+		icon = GFX_goal_generic_dangerous_deal
+		x = -4
+		y = 1
+		relative_position_id = FFA_voice_concerns_to_fairy_godmother
+		cost = 0.25
+		mutually_exclusive = {
+			focus = FFA_a_third_option
+		}
+		available = {
+			has_country_flag = FFA_charming_is_ready_to_leave
+		}
+		prerequisite = { focus = FFA_voice_concerns_to_fairy_godmother }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			base = 50
+			modifier = {
+				has_game_rule = {
+					rule = FFA_trust_the_plan_or_rumpel
+					option = FFA_TRUST_THE_PLAN
+				}
+				add = 50
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_trust_the_plan_or_rumpel
+					option = FFA_TRUST_RUMPEL
+				}
+				add = -50
+			}
+		} 
+		completion_reward = { 
+			add_stability = -0.1
+			custom_effect_tooltip = charming_goes_to_rescue_fiona
+			hidden_effect = {
+				set_country_flag = FFA_charming_goes_to_rescue_fiona
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_not_ogre_yet
+		icon = GFX_focus_shrek
+		x = -2
+		y = 1
+		relative_position_id = FFA_continue_with_her_plan
+		cost = 7.25
+		prerequisite = { focus = FFA_continue_with_her_plan }
+		mutually_exclusive = {
+			focus = FFA_charming_completes_the_plan
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_the_duloc_problem
+		icon = GFX_focus_duloc
+		x = -1
+		y = 1
+		relative_position_id = FFA_not_ogre_yet
+		cost = 7.25
+		prerequisite = { focus = FFA_not_ogre_yet }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			country_event = {
+				id = farfaraway.21
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_modernizing_worcestershire_colony
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		relative_position_id = FFA_the_duloc_problem
+		cost = 7.25
+		prerequisite = { focus = FFA_the_duloc_problem }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			91 = {
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 986
+				}
+			}
+			WOR = {
+				every_owned_state = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_timed_idea = {
+					idea = FFA_modernization_of_worcestershire
+					days = 240
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_send_envoy_to_underground
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_modernizing_worcestershire_colony
+		cost = 7.25
+		prerequisite = { focus = FFA_modernizing_worcestershire_colony }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			UND = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = UND
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_relations_with_enchancia
+		icon = GFX_focus_enchancia
+		x = 2
+		y = 1
+		relative_position_id = FFA_not_ogre_yet
+		cost = 7.25
+		prerequisite = { focus = FFA_not_ogre_yet focus = FFA_charming_completes_the_plan }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+			NOT = {
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				ENC = {
+					add_opinion_modifier = {
+						target = FFA
+						modifier = TCWmod_generic_relations
+					}
+				}
+				add_opinion_modifier = {
+					target = ENC
+					modifier = TCWmod_generic_relations
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				EN1 = {
+					add_opinion_modifier = {
+						target = FFA
+						modifier = TCWmod_generic_relations
+					}
+				}
+				add_opinion_modifier = {
+					target = EN1
+					modifier = TCWmod_generic_relations
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				EN2 = {
+					add_opinion_modifier = {
+						target = FFA
+						modifier = TCWmod_generic_relations
+					}
+				}
+				add_opinion_modifier = {
+					target = EN2
+					modifier = TCWmod_generic_relations
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_our_stance_on_enchancian_civil_war
+		icon = GFX_goal_generic_military_sphere
+		x = 1
+		y = 1
+		relative_position_id = FFA_establish_relations_with_enchancia
+		cost = 7.25
+		prerequisite = { focus = FFA_establish_relations_with_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		bypass = {
+			has_global_flag = enchancian_civil_war_over
+		}
+		available = { 
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke
+				has_global_flag = enchancian_civil_war
+			}
+		}
+		completion_reward = { 
+			country_event = {
+				id = everrealm.5
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_embassy_in_isleworth
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_our_stance_on_enchancian_civil_war
+		cost = 7.25
+		prerequisite = { focus = FFA_our_stance_on_enchancian_civil_war }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			ISL = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = ISL
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_across_the_strait
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		relative_position_id = FFA_establish_relations_with_enchancia
+		cost = 7.25
+		prerequisite = { focus = FFA_establish_relations_with_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			GUM = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = GUM
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_relations_with_elwood
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_across_the_strait
+		cost = 7.25
+		prerequisite = { focus = FFA_across_the_strait }
+		available = {
+			NOT = {
+				has_completed_focus = FFA_charming_completes_the_plan
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			ELW = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = ELW
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_charming_completes_the_plan
+		icon = GFX_focus_charming
+		x = 2
+		y = 1
+		relative_position_id = FFA_continue_with_her_plan
+		cost = 7.25
+		prerequisite = { focus = FFA_continue_with_her_plan }
+		mutually_exclusive = {
+			focus = FFA_not_ogre_yet
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_funding_for_fairy_godmother_company
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		relative_position_id = FFA_charming_completes_the_plan
+		cost = 7.25
+		prerequisite = { focus = FFA_charming_completes_the_plan }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_funding_for_fgmc
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_funding_for_worcestershire_colony
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_funding_for_fairy_godmother_company
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_funding_for_fairy_godmother_company }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_funding_for_worcestershire
+			}
+			WOR = {
+				add_ideas = {
+					FFA_funding_for_worcestershire_2
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_funding_for_army_and_navy
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_funding_for_worcestershire_colony
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_funding_for_worcestershire_colony }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_funding_for_army_and_navy
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_a_third_option
+		icon = GFX_focus_rumpel
+		x = 4
+		y = 1
+		relative_position_id = FFA_voice_concerns_to_fairy_godmother
+		cost = 0.25
+		mutually_exclusive = {
+			focus = FFA_continue_with_her_plan
+		}
+		available = {
+			has_country_flag = FFA_charming_is_ready_to_leave
+		}
+		prerequisite = { focus = FFA_voice_concerns_to_fairy_godmother }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			base = 50
+			modifier = {
+				has_game_rule = {
+					rule = FFA_trust_the_plan_or_rumpel
+					option = FFA_TRUST_THE_PLAN
+				}
+				add = -50
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_trust_the_plan_or_rumpel
+					option = FFA_TRUST_RUMPEL
+				}
+				add = 50
+			}
+		} 
+		completion_reward = { 
+			country_event = {
+				id = farfaraway.3
+				days = 0
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_start_fortifying_against_duloc
+		icon = GFX_goal_generic_fortify_city
+		x = -2
+		y = 1
+		relative_position_id = FFA_a_third_option
+		cost = 7.25
+		prerequisite = { focus = FFA_a_third_option }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			215 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4156
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6611
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6644
+				}
+			}
+			267 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 2971
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 5105
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_funding_for_navy
+		icon = GFX_focus_generic_cruiser2
+		x = 0
+		y = 1
+		relative_position_id = FFA_start_fortifying_against_duloc
+		cost = 7.25
+		prerequisite = { focus = FFA_start_fortifying_against_duloc }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = funding_for_da_navy
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_strait_blockade
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_funding_for_navy
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_funding_for_navy }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = strait_blockade
+		}		
+	}
+
+	focus = { 
+		id = FFA_take_decisive_stance_against_fairy_godmother
+		icon = GFX_focus_prc_infiltration
+		x = 2
+		y = 1
+		relative_position_id = FFA_a_third_option
+		cost = 7.25
+		prerequisite = { focus = FFA_a_third_option }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = steps_against
+		}		
+	}
+
+	focus = { 
+		id = FFA_nationalization_of_fairy_godmother_company
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = FFA_take_decisive_stance_against_fairy_godmother
+		cost = 7.25
+		prerequisite = { focus = FFA_take_decisive_stance_against_fairy_godmother }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = nationalization_fgm
+		}		
+	}
+
+	focus = { 
+		id = FFA_research_instead_of_potions
+		icon = GFX_focus_research
+		x = 0
+		y = 1
+		relative_position_id = FFA_nationalization_of_fairy_godmother_company
+		cost = 7.25
+		prerequisite = { focus = FFA_nationalization_of_fairy_godmother_company }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_research_slot = 1
+		}		
+	}
+
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+
+
+	focus = { 
+		id = FFA_harold_is_ded
+		icon = GFX_focus_generic_monarchy_1
+		x = 5
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		allow_branch = {
+			has_country_flag = harold_ded
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_king_charming
+		icon = GFX_focus_charming
+		x = -4 #-8
+		y = 1
+		relative_position_id = FFA_harold_is_ded
+		mutually_exclusive = {
+			focus = FFA_shrek_accepts_the_crown
+			focus = FFA_a_second_option
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		cost = 7.25
+		prerequisite = { focus = FFA_harold_is_ded }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_invite_eastern_businesses
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		relative_position_id = FFA_king_charming
+		cost = 7.25
+		prerequisite = { focus = FFA_king_charming }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_secret_police
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		relative_position_id = FFA_invite_eastern_businesses
+		cost = 7.25
+		prerequisite = { focus = FFA_invite_eastern_businesses }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_secret_police
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_control_flow_of_information
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		relative_position_id = FFA_establish_secret_police
+		cost = 7.25
+		prerequisite = { focus = FFA_establish_secret_police }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_censorship
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_get_closer_with_worcestershire
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 1
+		relative_position_id = FFA_king_charming
+		cost = 7.25
+		prerequisite = { focus = FFA_king_charming }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			WOR = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = WOR
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_send_spies_to_everrealm
+		icon = GFX_focus_prc_infiltration
+		x = 1
+		y = 1
+		relative_position_id = FFA_get_closer_with_worcestershire
+		cost = 7.25
+		prerequisite = { focus = FFA_get_closer_with_worcestershire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_spies_in_everrealm
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_the_danger_of_duloc
+		icon = GFX_focus_duloc
+		x = 0
+		y = 1
+		relative_position_id = FFA_send_spies_to_everrealm
+		cost = 7.25
+		prerequisite = { focus = FFA_send_spies_to_everrealm }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			215 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 4156
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6611
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6644
+				}
+			}
+			267 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 2971
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 5105
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_exchange_embassies_with_lechia_empire
+		icon = GFX_goal_generic_improve_relations
+		x = 1
+		y = 1
+		relative_position_id = FFA_invite_eastern_businesses
+		cost = 7.25
+		prerequisite = { focus = FFA_invite_eastern_businesses }
+		prerequisite = { focus = FFA_get_closer_with_worcestershire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		bypass = {
+			LEC = {
+				exists = no
+			}
+		}
+		completion_reward = { 
+			LEC = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = LEC
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_relations_with_wolves
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_exchange_embassies_with_lechia_empire
+		cost = 7.25
+		prerequisite = { focus = FFA_exchange_embassies_with_lechia_empire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			WOL = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = WOL
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_shrek_accepts_the_crown
+		icon = GFX_focus_shrek
+		x = 0
+		y = 1
+		relative_position_id = FFA_harold_is_ded
+		cost = 7.25
+		prerequisite = { focus = FFA_harold_is_ded }
+		mutually_exclusive = {
+			focus = FFA_a_second_option
+			focus = FFA_king_charming
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = FFA_option_available_since_032
+				always = no
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = FFA_option_available_since_032
+		}		
+	}
+
+	focus = { 
+		id = FFA_a_second_option
+		icon = GFX_focus_research
+		x = 4 #8
+		y = 1
+		relative_position_id = FFA_harold_is_ded
+		mutually_exclusive = {
+			focus = FFA_shrek_accepts_the_crown
+			focus = FFA_king_charming
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = will_fire_automatically
+				always = no
+			}
+		}
+		cost = 7.25
+		prerequisite = { focus = FFA_harold_is_ded }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_introduce_social_benefits
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = FFA_a_second_option
+		cost = 7.25
+		prerequisite = { focus = FFA_a_second_option }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_social_programme
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_wages
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 1
+		y = 1
+		relative_position_id = FFA_a_second_option
+		cost = 7.25
+		prerequisite = { focus = FFA_a_second_option }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_higher_wages
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_introduce_modern_money
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 1
+		y = 1
+		relative_position_id = FFA_introduce_social_benefits
+		cost = 7.25
+		prerequisite = { focus = FFA_introduce_social_benefits }
+		prerequisite = { focus = FFA_increase_wages }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_modern_currency
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_proper_education_programme
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		relative_position_id = FFA_introduce_modern_money
+		cost = 7.25
+		prerequisite = { focus = FFA_introduce_modern_money }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_new_education_programme
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_first_modern_factories
+		icon = GFX_focus_generic_industry_3
+		x = -1
+		y = 1
+		relative_position_id = FFA_introduce_social_benefits
+		cost = 7.25
+		prerequisite = { focus = FFA_introduce_social_benefits }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+		}
+	}
+
+	focus = { 
+		id = FFA_modernizing_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = FFA_first_modern_factories
+		cost = 7.25
+		prerequisite = { focus = FFA_first_modern_factories }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			every_owned_state = {
+			#	if = {
+					limit = {
+						dockyard > 0
+						is_coastal = yes
+					}
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+			#	}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_attract_eastern_investors
+		icon = GFX_focus_mex_privatisation
+		x = 1
+		y = 1
+		relative_position_id = FFA_increase_wages
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_wages }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_investors_from_east
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_open_private_sector
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = FFA_attract_eastern_investors
+		cost = 7.25
+		prerequisite = { focus = FFA_attract_eastern_investors }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_private_sector_is_open
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_into_modern_times
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 5
+		relative_position_id = FFA_harold_is_ded
+		cost = 14.3
+		available = {
+			OR = {
+				AND = {
+					has_completed_focus = FFA_open_private_sector
+					has_completed_focus = FFA_proper_education_programme
+					has_completed_focus = FFA_modernizing_dockyards
+				}
+				AND = {
+					has_completed_focus = FFA_establish_relations_with_wolves
+					has_completed_focus = FFA_control_flow_of_information
+					has_completed_focus = FFA_the_danger_of_duloc
+				}
+			}
+			has_completed_focus = FFA_create_national_university_of_farfaraway
+		}
+		prerequisite = { focus = FFA_open_private_sector focus = FFA_proper_education_programme focus = FFA_modernizing_dockyards focus = FFA_establish_relations_with_wolves focus = FFA_control_flow_of_information focus = FFA_the_danger_of_duloc }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+		}		
+	}
+
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+
+	focus = { 
+		id = FFA_proclaim_empire
+		icon = GFX_focus_generic_monarchy_2
+		x = -4
+		y = 1
+		relative_position_id = FFA_into_modern_times
+		cost = 0.25
+		available = {
+			has_completed_focus = FFA_king_charming
+		}
+		prerequisite = { focus = FFA_into_modern_times }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			set_cosmetic_tag = king_charming_empire
+		}		
+	}
+
+	focus = { 
+		id = FFA_buy_reculver_from_gummi_bears
+		icon = GFX_focus_mex_privatisation
+		x = -2
+		y = 1
+		relative_position_id = FFA_proclaim_empire
+		cost = 7.25
+		prerequisite = { focus = FFA_proclaim_empire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			GUM = {
+				country_event = {
+					id = farfaraway.26
+					days = 2
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_support_for_lechia_empire
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_buy_reculver_from_gummi_bears
+		cost = 7.25
+		prerequisite = { focus = FFA_buy_reculver_from_gummi_bears }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		bypass = {
+			LEC = {
+				exists = no
+			}
+		}
+		completion_reward = { 
+			send_equipment = {
+				equipment = infantry_equipment_old
+				amount = 4000
+				target = LEC
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_thrust_into_everrealm
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_support_for_lechia_empire
+		cost = 7.25
+		prerequisite = { focus = FFA_embargo_flower_hill }
+		prerequisite = { focus = FFA_take_control_over_everrealm_gate }
+		prerequisite = { focus = FFA_increase_support_for_lechia_empire }
+		mutually_exclusive = { focus = FFA_remain_alone focus = FFA_join_afha }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					330 = {
+						is_owned_by = ISL
+					}
+					NOT = {
+						has_war_with = ISL
+					}
+				}
+				create_wargoal = {
+					target = ISL
+					type = annex_everything
+				}
+			}
+			create_wargoal = {
+				target = MAR
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_twist_the_knife
+		icon = GFX_focus_hol_war_on_pacifism
+		x = 0
+		y = 1
+		relative_position_id = FFA_thrust_into_everrealm
+		cost = 7.25
+		prerequisite = { focus = FFA_thrust_into_everrealm }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			ISL = {
+				OR = {
+					exists = no
+					is_puppet_of = FFA
+				}
+			}
+			MAR = {
+				OR = {
+					exists = no
+					is_puppet_of = FFA
+				}
+			}
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = ENC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN1
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN2
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN3
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = EN4
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_eliminate_swamp
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1
+		relative_position_id = FFA_proclaim_empire
+		cost = 7.25
+		prerequisite = { focus = FFA_proclaim_empire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = SWA
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_take_control_over_everrealm_gate
+		icon = GFX_focus_generic_manpower
+		x = 0
+		y = 1
+		relative_position_id = FFA_eliminate_swamp
+		cost = 7.25
+		prerequisite = { focus = FFA_eliminate_swamp }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = 330.owner
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_remain_alone
+		icon = GFX_goal_generic_demand_territory
+		x = 0
+		y = 1
+		relative_position_id = FFA_take_control_over_everrealm_gate
+		cost = 7.25
+		prerequisite = { focus = FFA_embargo_flower_hill }
+		prerequisite = { focus = FFA_take_control_over_everrealm_gate }
+		prerequisite = { focus = FFA_increase_support_for_lechia_empire }
+		mutually_exclusive = { focus = FFA_thrust_into_everrealm focus = FFA_join_afha }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			hidden_effect = {
+				set_variable = { days_since_charming_decided_to_go_alone = 0 }
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_expand_south
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 1
+		relative_position_id = FFA_remain_alone
+		cost = 7.25
+		prerequisite = { focus = FFA_remain_alone }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = FRK
+				type = annex_everything
+			}
+			if = {
+				limit = {
+					ICK = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = ICK
+					type = annex_everything
+				}
+			}
+			create_wargoal = {
+				target = CDK
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_get_closer_with_wolves
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		relative_position_id = FFA_proclaim_empire
+		cost = 7.25
+		prerequisite = { focus = FFA_proclaim_empire }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			send_equipment = {
+				equipment = infantry_equipment_old
+				amount = 4000
+				target = WOL
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_embargo_flower_hill
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = FFA_get_closer_with_wolves
+		cost = 7.25
+		prerequisite = { focus = FFA_get_closer_with_wolves }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			send_embargo = FLO
+		}		
+	}
+
+	focus = { 
+		id = FFA_join_afha
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 0
+		y = 1
+		relative_position_id = FFA_embargo_flower_hill
+		cost = 7.25
+		prerequisite = { focus = FFA_embargo_flower_hill }
+		prerequisite = { focus = FFA_take_control_over_everrealm_gate }
+		prerequisite = { focus = FFA_increase_support_for_lechia_empire }
+		mutually_exclusive = { focus = FFA_thrust_into_everrealm focus = FFA_remain_alone }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			WOL = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_pacify_elwood
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 1
+		relative_position_id = FFA_join_afha
+		cost = 7.25
+		prerequisite = { focus = FFA_join_afha }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = ELW
+				type = annex_everything
+			}
+		}		
+	}
+
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+
+	focus = { 
+		id = FFA_increase_support_for_enchancia
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 4
+		y = 1
+		relative_position_id = FFA_into_modern_times
+		cost = 7.25
+		available = {
+			has_completed_focus = FFA_a_second_option
+		}
+		prerequisite = { focus = FFA_into_modern_times }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke_not_ended
+				has_global_flag = enchancian_civil_war
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+		}
+		bypass = {
+			OR = {
+				AND = {
+					has_country_flag = ECW_support_dunwiddie
+					ENC = {
+						exists = no
+					}
+				}
+				AND = {
+					has_country_flag = ECW_support_james
+					EN1 = {
+						exists = no
+					}
+				}
+				AND = {
+					has_country_flag = ECW_support_amber
+					EN2 = {
+						exists = no
+					}
+				}
+				has_global_flag = enchancian_civil_war_over
+			}
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					has_country_flag = ECW_support_dunwiddie
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 4000
+					target = ENC
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_james
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 4000
+					target = EN1
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_amber
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 4000
+					target = EN2
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_negotiate_military_bases_with_gummi_bears
+		icon = GFX_goal_generic_improve_relations
+		x = -2
+		y = 1
+		relative_position_id = FFA_increase_support_for_enchancia
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_support_for_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			GUM = {
+				country_event = {
+					id = farfaraway.30
+					days = 2
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_exchange_embassies_with_underground
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_negotiate_military_bases_with_gummi_bears
+		cost = 7.25
+		prerequisite = { focus = FFA_negotiate_military_bases_with_gummi_bears }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			UND = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = UND
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_join_met
+		icon = GFX_focus_generic_treaty
+		x = 0
+		y = 1
+		relative_position_id = FFA_exchange_embassies_with_underground
+		cost = 7.25
+		prerequisite = { focus = FFA_exchange_embassies_with_underground }
+		prerequisite = { focus = FFA_establish_relations_with_eastern_everrealm }
+		prerequisite = { focus = FFA_embargo_unity_peninsula }
+		mutually_exclusive = { focus = FFA_establish_northern_defense_pact focus = FFA_intervene_in_enchancian_civil_war }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			UND = {
+				country_event = {
+					id = factionjoin.1
+					days = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_invasion_of_unity_peninsula
+		icon = GFX_goal_demand_sudetenland
+		x = 0
+		y = 1
+		relative_position_id = FFA_join_met
+		cost = 7.25
+		prerequisite = { focus = FFA_join_met }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					WOL = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WOL
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					WEA = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = WEA
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					FLO = {
+						exists = yes
+					}
+				}
+				create_wargoal = {
+					target = FLO
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_protect_swamp
+		icon = GFX_goal_generic_defence
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_support_for_enchancia
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_support_for_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			give_guarantee = SWA
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_relations_with_eastern_everrealm
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_protect_swamp
+		cost = 7.25
+		prerequisite = { focus = FFA_protect_swamp }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			ISL = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = ISL
+				modifier = TCWmod_generic_relations
+			}
+			MAR = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = MAR
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_northern_defense_pact
+		icon = GFX_focus_generic_little_entente
+		x = 0
+		y = 1
+		relative_position_id = FFA_establish_relations_with_eastern_everrealm
+		cost = 7.25
+		prerequisite = { focus = FFA_exchange_embassies_with_underground }
+		prerequisite = { focus = FFA_establish_relations_with_eastern_everrealm }
+		prerequisite = { focus = FFA_embargo_unity_peninsula }
+		mutually_exclusive = { focus = FFA_intervene_in_enchancian_civil_war focus = FFA_join_met }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			create_faction = northern_defense_pact
+			add_to_faction = WOR
+			if = {
+				limit = {
+					has_country_flag = GUM_agreed_for_bases
+				}
+				add_to_faction = GUM
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_the_main_danger_comes_from_sea
+		icon = GFX_focus_generic_navy_battleship2
+		x = 0
+		y = 1
+		relative_position_id = FFA_establish_northern_defense_pact
+		cost = 7.25
+		prerequisite = { focus = FFA_establish_northern_defense_pact }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_the_sea_danger
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_our_presence_in_elwood
+		icon = GFX_focus_generic_manpower
+		x = 2
+		y = 1
+		relative_position_id = FFA_increase_support_for_enchancia
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_support_for_enchancia }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			ELW = {
+				country_event = {
+					id = farfaraway.32
+					days = 3
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_embargo_unity_peninsula
+		icon = GFX_focus_ger_bulwark_against_bolshevism
+		x = 0
+		y = 1
+		relative_position_id = FFA_increase_our_presence_in_elwood
+		cost = 7.25
+		prerequisite = { focus = FFA_increase_our_presence_in_elwood }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			send_embargo = FLO
+			send_embargo = WOL
+			send_embargo = WEA
+		}		
+	}
+
+	focus = { 
+		id = FFA_intervene_in_enchancian_civil_war
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 1
+		relative_position_id = FFA_embargo_unity_peninsula
+		cost = 7.25
+		prerequisite = { focus = FFA_exchange_embassies_with_underground }
+		prerequisite = { focus = FFA_establish_relations_with_eastern_everrealm }
+		prerequisite = { focus = FFA_embargo_unity_peninsula }
+		mutually_exclusive = { focus = FFA_join_met focus = FFA_establish_northern_defense_pact }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke_not_ended
+				has_global_flag = enchancian_civil_war
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+		}
+		bypass = {
+			has_global_flag = enchancian_civil_war
+			has_global_flag = enchancian_civil_war_over
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = ECW_support_dunwiddie
+						has_country_flag = ECW_support_amber
+					}
+					EN1 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN1
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = ECW_support_dunwiddie
+						has_country_flag = ECW_support_james
+					}
+					EN2 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN2
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						has_country_flag = ECW_support_amber
+						has_country_flag = ECW_support_james
+					}
+					ENC = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = ENC
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN3
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN4
+					type = topple_government
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_dunwiddie
+				}
+				ENC = {
+					give_military_access = FFA
+					diplomatic_relation = {
+						country = FFA
+						relation = docking_rights
+						active = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_james
+				}
+				EN1 = {
+					give_military_access = FFA
+					diplomatic_relation = {
+						country = FFA
+						relation = docking_rights
+						active = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_amber
+				}
+				EN2 = {
+					give_military_access = FFA
+					diplomatic_relation = {
+						country = FFA
+						relation = docking_rights
+						active = yes
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_support_for_enchancian_allies
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = FFA_intervene_in_enchancian_civil_war
+		cost = 7.25
+		prerequisite = { focus = FFA_intervene_in_enchancian_civil_war }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke_not_ended
+				has_global_flag = enchancian_civil_war
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+		}
+		bypass = {
+			custom_trigger_tooltip = {
+				tooltip = ECW_faction_died
+				OR = {
+					AND = {
+						has_country_flag = ECW_support_dunwiddie
+						ENC = {
+							exists = no
+						}
+					}
+					AND = {
+						has_country_flag = ECW_support_james
+						EN1 = {
+							exists = no
+						}
+					}
+					AND = {
+						has_country_flag = ECW_support_amber
+						EN2 = {
+							exists = no
+						}
+					}
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					has_country_flag = ECW_support_dunwiddie
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 5000
+					target = ENC
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_james
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 5000
+					target = EN1
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = ECW_support_amber
+				}
+				send_equipment = {
+					equipment = infantry_equipment_old
+					amount = 5000
+					target = EN2
+				}
+			}
+		}		
+	}
+
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+
+
+	focus = { 
+		id = FFA_a_third_option_rumpel_tree
+		icon = GFX_focus_rumpel
+		x = 9
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		allow_branch = {
+			has_country_flag = harold_signed_the_document
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = FFA_purge_the_opposition
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		x = -4
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_a_third_option_rumpel_tree
+		prerequisite = { focus = FFA_a_third_option_rumpel_tree }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_rumpels_purge
+			}
+			swap_ideas = {
+				remove_idea = FFA_a_change_on_the_throne
+				add_idea = FFA_a_change_on_the_throne_2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_empower_the_witches
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_purge_the_opposition
+		prerequisite = { focus = FFA_purge_the_opposition }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			custom_effect_tooltip = FFA_witches_become_generals
+			hidden_effect = {
+				add_corps_commander_role = {
+					Character = FFA_babawitch
+					skill = 2
+					attack_skill = 3
+					defense_skill = 2
+					planning_skill = 1
+					logistics_skill = 2
+					legacy_id=652563
+				}
+				add_corps_commander_role = {
+					Character = FFA_griseldawitch
+					skill = 1
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					legacy_id=652564
+				}
+				add_corps_commander_role = {
+					Character = FFA_pumpkinwitch
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					legacy_id=652565
+				}
+				add_corps_commander_role = {
+					Character = FFA_meltywitch
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+					legacy_id=652566
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_set_off_after_magical_creatures
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_purge_the_opposition
+		prerequisite = { focus = FFA_purge_the_opposition }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			every_owned_state = {
+				add_manpower = -20000
+			}
+			hidden_effect = {
+				FFA = {
+					end_puppet = WOR
+				}
+				WOR = {
+					retire_country_leader = yes
+				}
+				FFA_arthur = {
+					set_nationality = {
+						target_country = WOR
+						character = FFA_arthur
+					}
+					add_country_leader_role = {
+						character = FFA_arthur
+						country_leader = {
+							ideology = administrative_monarchy
+							expire = "1965.1.1.1"
+							traits = { }
+						}
+						promote_leader = yes
+					}
+					add_corps_commander_role = {
+						Character = FFA_arthur
+						skill = 1
+						attack_skill = 1
+						defense_skill = 1
+						planning_skill = 2
+						logistics_skill = 1
+					}
+				}
+				WOR = {
+					declare_war_on = {
+						target = FFA
+						type = annex_everything
+					}
+				}
+				if = {
+					limit = {
+						has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+					}
+					add_country_leader_role = {
+						character = FFA_fairy_godmother
+						promote_leader = yes
+						country_leader = {
+							ideology = despotic_monarchy
+							expire = "1965.1.1.1"
+							traits = { }
+						}
+					}
+					FFA_fairy_godmother = {
+						remove_country_leader_role = {
+							ideology = fascism_ideology
+						}
+					}
+					FGM = {
+						transfer_state = 216
+						transfer_state = 200
+						transfer_state = 233
+						transfer_state = 299
+						transfer_state = 135
+						transfer_state = 155
+						add_ideas = {
+							middleage_tech
+						}
+						inherit_technology = FFA
+						set_capital = { state = 216 }
+						set_popularities = {
+							democratic = 0
+							fascism = 0
+							communism = 0
+							monarchism = 100
+						}
+						set_politics = {
+							ruling_party = monarchism
+							last_election = "1930.7.1"
+							election_frequency = 72
+							elections_allowed = no
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_old
+							amount = 8000
+							producer = FFA
+						}
+						load_oob = FGM_rebellion_rumpel_stronk
+						declare_war_on = {
+							target = FFA
+							type = annex_everything
+						}
+					}
+					every_owned_state = {
+						add_core_of = FGM
+					}
+					FFA_fairy_godmother = {
+						add_corps_commander_role = {
+							Character = FFA_fairy_godmother
+							skill = 5
+							attack_skill = 4
+							defense_skill = 3
+							planning_skill = 5
+							logistics_skill = 4
+						}
+						set_nationality = {
+							target_country = FGM
+							character = FFA_fairy_godmother
+						}
+					}
+					FFA_charming = {
+						set_nationality = {
+							target_country = FGM
+							character = FFA_charming
+						}
+					}
+				}
+				else = {
+					add_country_leader_role = {
+						character = FFA_fairy_godmother
+						promote_leader = yes
+						country_leader = {
+							ideology = despotic_monarchy
+							expire = "1965.1.1.1"
+							traits = { }
+						}
+					}
+					FFA_fairy_godmother = {
+						remove_country_leader_role = {
+							ideology = fascism_ideology
+						}
+					}
+					FGM = {
+						transfer_state = 216
+						transfer_state = 200
+						transfer_state = 233
+						transfer_state = 299
+						transfer_state = 135
+						transfer_state = 155
+						add_ideas = {
+							middleage_tech
+						}
+						inherit_technology = FFA
+						set_capital = { state = 216 }
+						set_popularities = {
+							democratic = 0
+							fascism = 0
+							communism = 0
+							monarchism = 100
+						}
+						set_politics = {
+							ruling_party = monarchism
+							last_election = "1930.7.1"
+							election_frequency = 72
+							elections_allowed = no
+						}
+						load_oob = FGM_rebellion_rumpel
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_old
+							amount = 8000
+							producer = FFA
+						}
+						declare_war_on = {
+							target = FFA
+							type = annex_everything
+						}
+					}
+					every_owned_state = {
+						add_core_of = FGM
+					}
+					FFA_fairy_godmother = {
+						add_corps_commander_role = {
+							Character = FFA_fairy_godmother
+							skill = 5
+							attack_skill = 4
+							defense_skill = 3
+							planning_skill = 5
+							logistics_skill = 4
+						}
+						set_nationality = {
+							target_country = FGM
+							character = FFA_fairy_godmother
+						}
+					}
+					FFA_charming = {
+						set_nationality = {
+							target_country = FGM
+							character = FFA_charming
+						}
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_prosecute_the_good_magic
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_empower_the_witches
+		prerequisite = { focus = FFA_empower_the_witches }
+		prerequisite = { focus = FFA_set_off_after_magical_creatures }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = FFA_a_change_on_the_throne_2
+				add_idea = FFA_a_change_on_the_throne_3
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_witch_police
+		icon = GFX_focus_generic_military_mission
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_empower_the_witches
+		prerequisite = { focus = FFA_empower_the_witches }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_witch_police
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_rations_system
+		icon = GFX_goal_generic_forceful_treaty
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_set_off_after_magical_creatures
+		prerequisite = { focus = FFA_set_off_after_magical_creatures }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_rations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_increase_taxes
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_establish_witch_police
+		prerequisite = { focus = FFA_establish_witch_police }
+		prerequisite = { focus = FFA_prosecute_the_good_magic }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_taxes
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_start_veryfing_citizens
+		icon = GFX_focus_rom_parties_end
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_prosecute_the_good_magic
+		prerequisite = { focus = FFA_establish_rations_system }
+		prerequisite = { focus = FFA_prosecute_the_good_magic }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			add_timed_idea = {
+				idea = FFA_verifying_citizens
+				days = 600
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_pacify_the_protests
+		icon = GFX_goal_generic_small_arms
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_increase_taxes
+		prerequisite = { focus = FFA_increase_taxes }
+		prerequisite = { focus = FFA_start_veryfing_citizens }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		}
+		completion_reward = { 
+			remove_ideas = {
+				FFA_a_change_on_the_throne_3
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						DUL = {
+							NOT = {
+								has_country_flag = DUL_fiona_rescued
+							}
+						}
+					}
+					FGM = {
+						transfer_state = 185
+						transfer_state = 214
+						transfer_state = 233
+						transfer_state = 135
+						transfer_state = 155
+						add_ideas = {
+							middleage_tech
+						}
+						inherit_technology = FFA
+						set_capital = { state = 155 }
+						set_popularities = {
+							democratic = 0
+							fascism = 0
+							communism = 0
+							monarchism = 100
+						}
+						set_politics = {
+							ruling_party = monarchism
+							last_election = "1930.7.1"
+							election_frequency = 72
+							elections_allowed = no
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_old
+							amount = 8000
+							producer = FFA
+						}
+						set_cosmetic_tag = fionas_rebellion
+						load_oob = FFA_fiona_rebellion
+						declare_war_on = {
+							target = FFA
+							type = annex_everything
+						}
+					}
+					every_owned_state = {
+						add_core_of = FGM
+					}
+					FFA = {
+						FFA_puss_in_boots = {
+							if = {
+								limit = {
+									FFA_puss_in_boots = {
+										is_army_leader = no
+									}
+								}
+								add_corps_commander_role = {
+									Character = FFA_puss_in_boots
+									skill = 7
+									attack_skill = 8
+									defense_skill = 7
+									planning_skill = 5
+									logistics_skill = 4
+								}
+							}
+							set_nationality = {
+								target_country = FGM
+								character = FFA_puss_in_boots
+							}
+						}
+					}
+					SWA = {
+						SWA_fiona_ogre = {
+							add_corps_commander_role = {
+								Character = SWA_fiona_ogre
+								skill = 4
+								attack_skill = 4
+								defense_skill = 4
+								planning_skill = 4
+								logistics_skill = 4
+							}
+							add_country_leader_role = {
+								character = SWA_fiona_ogre
+								promote_leader = yes
+								country_leader = {
+									ideology = administrative_monarchy
+									expire = "1965.1.1.1"
+									traits = { }
+								}
+							}
+							set_nationality = {
+								target_country = FGM
+								character = SWA_fiona_ogre
+							}
+						}
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_build_second_wall_line_in_ffa
+		icon = GFX_goal_generic_fortify_city
+		x = 4
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_a_third_option_rumpel_tree
+		prerequisite = { focus = FFA_a_third_option_rumpel_tree }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			142 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 64
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4472
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 182
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 181
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_prepare_first_blockade_line
+		icon = GFX_goal_generic_construct_military
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_build_second_wall_line_in_ffa
+		prerequisite = { focus = FFA_build_second_wall_line_in_ffa }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			215 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4156
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6611
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6644
+				}
+			}
+			267 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 2971
+				}
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 5105
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_prepare_second_blockade_line
+		icon = GFX_goal_generic_construct_military
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_prepare_first_blockade_line
+		prerequisite = { focus = FFA_prepare_first_blockade_line }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			216 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 5385
+				}
+			}
+			202 = {
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6467
+				}
+				add_building_construction = {
+					type = bunker
+					level = 3
+					instant_build = yes
+					province = 6430
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_modify_mobilization_quotas
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_build_second_wall_line_in_ffa
+		prerequisite = { focus = FFA_build_second_wall_line_in_ffa }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_new_mobilization_quotas
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_contact_wolves
+		icon = GFX_goal_generic_national_unity
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_modify_mobilization_quotas
+		prerequisite = { focus = FFA_modify_mobilization_quotas }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			WOL = {
+				add_opinion_modifier = {
+					target = FFA
+					modifier = TCWmod_generic_relations
+				}
+			}
+			add_opinion_modifier = {
+				target = WOL
+				modifier = TCWmod_generic_relations
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_go_south
+		icon = GFX_goal_generic_military_sphere
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_contact_wolves
+		prerequisite = { focus = FFA_contact_wolves }
+		prerequisite = { focus = FFA_prepare_second_blockade_line }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					DUL = {
+						NOT = {
+							has_country_flag = farquaad_is_ded
+						}
+					}
+				}
+				create_wargoal = {
+					target = DUL
+					type = annex_everything
+				}
+				else_if = {
+					limit = {
+						DUL = {
+							exists = no
+						}
+					}
+					declare_war_on = {
+						target = 286.Owner
+						type = annex_everything
+					}
+					else = {
+						annex_country = {
+							target = DUL
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_test_naval_capabilities
+		icon = GFX_goal_generic_amphibious_assault
+		x = 0
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_go_south
+		prerequisite = { focus = FFA_go_south }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = GUM
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_campaign_against_isleworth
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_test_naval_capabilities
+		prerequisite = { focus = FFA_test_naval_capabilities }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = ISL
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_strike_fire_kingdom
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_test_naval_capabilities
+		prerequisite = { focus = FFA_test_naval_capabilities }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = FRK
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_move_against_maarswik
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_strike_fire_kingdom
+		prerequisite = { focus = FFA_campaign_against_isleworth }
+		prerequisite = { focus = FFA_strike_fire_kingdom }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = MAR
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_take_the_enchancian_crown
+		icon = GFX_focus_enchancia
+		x = -1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_move_against_maarswik
+		prerequisite = { focus = FFA_move_against_maarswik }
+		available_if_capitulated = yes
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = MAI_ecw_broke_not_ended
+				has_global_flag = enchancian_civil_war
+				NOT = {
+					has_global_flag = enchancian_civil_war_over
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		}
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN1
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN2
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN3
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN4
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_operation_finalize
+		icon = GFX_focus_everrealm_focus
+		x = 1
+		y = 1
+		cost = 7.25
+		relative_position_id = FFA_move_against_maarswik
+		prerequisite = { focus = FFA_move_against_maarswik }
+		available_if_capitulated = yes
+		available = {
+			has_war = no
+		}
+		available = {
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_ecw_broke
+						has_global_flag = enchancian_civil_war
+					}
+					custom_trigger_tooltip = {
+						tooltip = MAI_ecw_ended
+						has_global_flag = enchancian_civil_war_over
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = MAI_ecw_didnt_broke
+					ENC = {
+						has_country_flag = civil_war_avoided
+					}
+				}
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = ENC
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN1 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN1
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN2 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN2
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN3 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN3
+					type = annex_everything
+				}
+			}
+			if = {
+				limit = {
+					EN4 = {
+						exists = yes
+					}
+				}
+				declare_war_on = {
+					target = EN4
+					type = annex_everything
+				}
+			}
+		}		
+	}
+
+
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+	########################################################################################################################################
+
+	focus = { 
+		id = FFA_economic_duties
+		icon = GFX_goal_generic_consumer_goods
+		x = 21
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 50
+		} 
+		completion_reward = { 
+			add_political_power = 50
+			add_tech_bonus = {
+				name = industrial_bonus
+				bonus = 0.5
+				uses = 1
+				category = industry
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_agricultural_reform
+		icon = GFX_focus_generic_agriculture
+		x = -1
+		y = 1
+		relative_position_id = FFA_economic_duties
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FFA_subsidies_for_fairy_godmothers_company
+		}
+		ai_will_do = { 
+			base = 50
+			modifier = {
+				has_game_rule = {
+					rule = FFA_subsidizing_fairy_godmother
+					option = FFA_SUBSIDIZING_FAIRY_GODMOTHER_YES
+				}
+				add = -50
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_subsidizing_fairy_godmother
+					option = FFA_SUBSIDIZING_FAIRY_GODMOTHER_NO
+				}
+				add = 50
+			}
+		} 
+		prerequisite = {
+			focus = FFA_economic_duties
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_agricultural_reform_idea
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_subsidies_for_fairy_godmothers_company
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = FFA_economic_duties
+		cost = 7.25
+		available_if_capitulated = yes
+		mutually_exclusive = {
+			focus = FFA_agricultural_reform
+		}
+		ai_will_do = { 
+			base = 50
+			modifier = {
+				has_game_rule = {
+					rule = FFA_subsidizing_fairy_godmother
+					option = FFA_SUBSIDIZING_FAIRY_GODMOTHER_YES
+				}
+				add = 50
+			}
+			modifier = {
+				has_game_rule = {
+					rule = FFA_subsidizing_fairy_godmother
+					option = FFA_SUBSIDIZING_FAIRY_GODMOTHER_NO
+				}
+				add = -50
+			}
+		} 
+		prerequisite = {
+			focus = FFA_economic_duties
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_subsidizing_fgc
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_militarization_boost
+		icon = GFX_focus_generic_tank_production
+		x = 1
+		y = 1
+		relative_position_id = FFA_subsidies_for_fairy_godmothers_company
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_subsidies_for_fairy_godmothers_company
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_militarization
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_factories_in_the_rear
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = FFA_militarization_boost
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_militarization_boost
+		}
+		completion_reward = { 
+			155 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			135 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			113 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			200 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_closed_city_of_thorton
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 0
+		y = 3
+		relative_position_id = FFA_factories_in_the_rear
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_factories_in_the_rear
+		}
+		completion_reward = { 
+			add_victory_points = {
+				province = 6282
+				value = 15
+			}
+			155 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 6282
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_new_bread_production_technologies
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = -1
+		y = 1
+		relative_position_id = FFA_agricultural_reform
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_agricultural_reform
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_new_bakery_tech
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_great_fields_of_louth
+		icon = GFX_focus_generic_agriculture
+		x = -1
+		y = 1
+		relative_position_id = FFA_new_bread_production_technologies
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_new_bread_production_technologies
+		}
+		completion_reward = { 
+			214 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 5
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_grant_city_rights_to_saurm
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 3
+		relative_position_id = FFA_great_fields_of_louth
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_great_fields_of_louth
+		}
+		completion_reward = { 
+			add_victory_points = {
+				province = 5663
+				value = 15
+			}
+			185 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 5663
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_great_industry_program
+		icon = GFX_goal_generic_construction
+		x = 1
+		y = 1
+		relative_position_id = FFA_agricultural_reform
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		} 
+		prerequisite = {
+			focus = FFA_agricultural_reform
+			focus = FFA_subsidies_for_fairy_godmothers_company
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_industrialization
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_expand_to_south
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 1
+		relative_position_id = FFA_great_industry_program
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_great_industry_program
+		}
+		completion_reward = { 
+			299 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			215 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_national_road_no_2
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 1
+		y = 2
+		relative_position_id = FFA_expand_to_south
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_establish_eastern_resources_manufacturing
+		}
+		completion_reward = { 
+			142 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			113 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			155 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_eastern_resources_manufacturing
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1
+		relative_position_id = FFA_expand_to_south
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_expand_to_south
+		}
+		completion_reward = { 
+			add_resource = {
+				type = rubber
+				amount = 10
+				state = 155
+			}
+			add_resource = {
+				type = oil
+				amount = 10
+				state = 135
+			}
+			add_resource = {
+				type = oil
+				amount = 6
+				state = 113
+			}
+			add_resource = {
+				type = aluminium
+				amount = 6
+				state = 135
+			}
+			add_resource = {
+				type = aluminium
+				amount = 8
+				state = 155
+			}
+			add_resource = {
+				type = steel
+				amount = 13
+				state = 155
+			}
+			add_resource = {
+				type = steel
+				amount = 20
+				state = 142
+			}
+			add_resource = {
+				type = aluminium
+				amount = 15
+				state = 142
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_saurm_industrial_region
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = FFA_great_industry_program
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_great_industry_program
+		}
+		completion_reward = { 
+			185 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 4
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_national_road_no_1
+		icon = GFX_goal_generic_construct_infrastructure
+		x = -1
+		y = 2
+		relative_position_id = FFA_saurm_industrial_region
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_dockyards_of_pebmarsh_and_whalley
+		}
+		completion_reward = { 
+			142 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			185 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			200 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			216 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			202 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			195 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_dockyards_of_pebmarsh_and_whalley
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = FFA_saurm_industrial_region
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		prerequisite = {
+			focus = FFA_saurm_industrial_region
+		}
+		completion_reward = { 
+			200 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			160 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_establish_far_far_away_railway
+		icon = GFX_focus_generic_railroad
+		x = 0
+		y = 3
+		relative_position_id = FFA_great_industry_program
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 100
+		} 
+		prerequisite = {
+			focus = FFA_great_industry_program
+		}
+		completion_reward = { 
+			build_railway = {
+				level = 2
+				fallback = yes
+				path = { 2830 182 181 5229 4682 5771 1337 1424 1538 5534 365 2470 6430 742 6429 }
+				start_province = 2830
+				target_province = 6429
+			} 
+			build_railway = {
+				level = 1
+				fallback = yes
+				path = { 365 6462 816 6547 }
+				start_province = 365
+				target_province = 6547
+			}
+			build_railway = {
+				level = 1
+				fallback = yes
+				path = { 182 2993 3332 3935 6282 }
+				start_province = 182
+				target_province = 6282
+			}
+			build_railway = {
+				level = 1
+				fallback = yes
+				path = { 6429 6470 3199 3021 3054 4750 6584 6611 }
+				start_province = 6429
+				target_province = 6611
+			}
+		}		
+	}
+
+	focus = { 
+		id = FFA_create_national_university_of_farfaraway
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 2
+		relative_position_id = FFA_establish_far_far_away_railway
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		}   
+		prerequisite = {
+			focus = FFA_national_road_no_1
+		} 
+		prerequisite = {
+			focus = FFA_national_road_no_2
+		}
+		prerequisite = {
+			focus = FFA_establish_far_far_away_railway
+		}
+		prerequisite = {
+			focus = FFA_grant_city_rights_to_saurm
+			focus = FFA_establish_closed_city_of_thorton
+		}
+		completion_reward = { 
+			add_ideas = {
+				FFA_farfarawayuniversity
+			}
+		}		
+	}
+}

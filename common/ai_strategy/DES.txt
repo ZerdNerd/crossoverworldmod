@@ -1,0 +1,45 @@
+DES_you_have_wargoal_against_tigers_go_to_the_border = {
+	enable = {
+		tag = DES
+		OR = {
+			has_wargoal_against = TIG
+			focus_progress = {
+				focus = DES_take_out_tiger_clan
+				progress > 0.01
+			}
+		}
+		TIG = {
+			exists = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "TIG"			
+		value = 7000
+	}
+}
+
+DES_you_have_wargoal_against_sioux_go_to_the_border = {
+	enable = {
+		tag = DES
+		OR = {
+			has_wargoal_against = SIO
+			focus_progress = {
+				focus = DES_take_care_of_sioux_tribe
+				progress > 0.01
+			}
+		}
+		SIO = {
+			exists = yes
+		}
+	}
+	abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = prepare_for_war
+		id = "SIO"			
+		value = 7000
+	}
+}

@@ -21,6 +21,29 @@
 #	}
 # }
 
+unit_limit_options = {
+	name = RULE_UNIT_LIMIT_OPTIONS
+	group = RULE_GROUP_UNIT_LIMIT_RULES
+	icon = GFX_maximum_fort_level
+	default = {
+		name = STANDARD
+		text = RULE_OPTION_STANDARD
+		desc = RULE_UNIT_LIMIT_OPTIONS_STANDARD_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = AI_ONLY
+		text = RULE_UNIT_LIMIT_OPTIONS_AI_ONLY
+		desc = RULE_UNIT_LIMIT_OPTIONS_AI_ONLY_DESC
+		allow_achievements = yes
+	}
+	option = {
+		name = NONE
+		text = RULE_OPTION_TURN_OFF
+		desc = RULE_UNIT_LIMIT_OPTIONS_TURN_OFF_DESC
+		allow_achievements = yes
+	}
+}
 allow_wargoals = {
 	name = "RULE_ALLOW_WARGOALS"
 	group = "RULE_GROUP_GENERAL_FOREIGN_POLICY"

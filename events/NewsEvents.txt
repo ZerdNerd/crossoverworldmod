@@ -4187,3 +4187,198 @@ news_event = { #Death of Farquaad
 		name = worldnews.110.a
 	}
 }
+
+news_event = { #Farquaad proclaims Kingdom of Duloc (variant: marriage with Elena)
+	id = worldnews.111
+	title = worldnews.106.t
+	desc = worldnews.111.d
+	picture = GFX_news_duloc_2
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.111.a
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.111.b
+		trigger = {
+			NOT = {
+				tag = DUL
+			}
+		}
+	}
+}
+
+news_event = { #War for Fiona
+	id = worldnews.112
+	title = worldnews.112.t
+	desc = worldnews.112.d
+	picture = GFX_news_farfaraway
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.112.a
+		trigger = {
+			tag = FFA
+		}
+	}
+
+	option = {
+		name = worldnews.112.b
+		trigger = {
+			tag = DUL
+		}
+	}
+
+	option = {
+		name = worldnews.112.c
+		trigger = {
+			NOT = {
+				tag = DUL
+				tag = FFA
+			}
+		}
+	}
+}
+
+news_event = { #Fairy Godmother's Rebellion
+	id = worldnews.113
+	title = worldnews.113.t
+	desc = worldnews.113.d
+	picture = GFX_news_farfaraway
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.113.a
+		trigger = {
+			tag = FFA
+			NOT = {
+				has_country_leader = {
+					name = "Fairy Godmother"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.113.b
+		trigger = {
+			has_country_leader = {
+				name = "Fairy Godmother"
+				ruling_only = yes
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.113.c
+		trigger = {
+			NOT = {
+				tag = FFA
+				has_country_leader = {
+					name = "Fairy Godmother"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+}
+
+news_event = { #The War of King Charming
+	id = worldnews.114
+	title = worldnews.114.t
+	desc = worldnews.114.d
+	picture = GFX_news_farfaraway
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.114.a
+		trigger = {
+			tag = FFA
+			NOT = {
+				has_country_leader = {
+					name = "King Charming"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.114.b
+		trigger = {
+			has_country_leader = {
+				name = "King Charming"
+				ruling_only = yes
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.114.c
+		trigger = {
+			NOT = {
+				tag = FFA
+				has_country_leader = {
+					name = "King Charming"
+					ruling_only = yes
+				}
+			}
+		}
+	}
+}
+
+news_event = { #King Harold's Death
+	id = worldnews.115
+	title = worldnews.115.t
+	desc = worldnews.115.d
+	picture = GFX_news_farfaraway
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.115.a
+		trigger = {
+			tag = FFA
+		}
+	}
+	
+	option = {
+		name = worldnews.115.b
+		trigger = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.115.c
+		trigger = {
+			NOT = {
+				tag = FFA
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}

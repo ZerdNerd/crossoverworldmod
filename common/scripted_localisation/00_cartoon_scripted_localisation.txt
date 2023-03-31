@@ -6,6 +6,39 @@ defined_text = { #KR
 	}
 }
 
+### Division Limits ###
+defined_text = {
+	name = unit_limit_count_loc
+	text = {
+		trigger = {
+			check_variable = { num_actual_divisions > max_divisions }
+		}
+		localization_key = unit_limit_count_red
+	}
+	text = {
+		trigger = {
+			check_variable = { num_actual_divisions = max_divisions }
+		}
+		localization_key = unit_limit_count_yellow
+	}
+	text = {
+		localization_key = unit_limit_count_green
+	}
+}
+
+defined_text = {
+	name = above_unit_limit_desc
+	text = {
+		trigger = {
+			has_dynamic_modifier = { modifier = mobilisation_penalty_modifier }
+		}
+		localization_key = unit_limit_desc_above_limit
+	}
+	text = {
+		localization_key = empty
+	}
+}
+
 defined_text = { 
 	name = REQ4_STATUS
 	text = {

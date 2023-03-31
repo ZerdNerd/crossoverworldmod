@@ -1,0 +1,26 @@
+wagon_data = {
+	entity = horse_carriage_entity
+	scale = 0.35
+	rotation = 90
+	shift = { 0.0 0.6 0.0 }
+	length = 1.0
+}
+
+default = {
+	horse_carriage = {
+
+		wagon_0 = horse_carriage_entity
+		wagon_1 = horse_carriage_entity
+		wagon_2 = flat_wagon_entity
+		wagon_last = wagon_2_entity
+
+		wagons = {
+			horse_carriage_entity
+			wagon_1_entity
+			wagon_2_entity
+			flat_wagon_entity
+			tank_wagon_entity
+			tank_wagon_2_entity
+		}
+	}
+}

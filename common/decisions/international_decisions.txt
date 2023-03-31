@@ -720,6 +720,82 @@ international_policy_dec_category = {
 		}
 	}
 
+	DUL_buy_uffington_from_fire_kingdom = {
+		icon = generic_operation
+
+		visible = {
+			tag = DUL
+			has_country_flag = DUL_will_take_elena_by_force
+			NOT = {
+				owns_state = 469
+			}
+		}
+
+		available = {
+			FRK = {
+				owns_state = 469
+			}
+			NOT = {
+				has_war_with = FRK
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			469 = {
+				owner = {
+					country_event = {
+						id = duloc.21
+						days = 2
+					}
+				}
+			}
+		}
+	}
+
+	DUL_invade_fire_kingdom_for_elena = {
+		icon = generic_operation
+
+		visible = {
+			tag = DUL
+			has_country_flag = DUL_will_take_elena_by_force
+			NOT = {
+				owns_state = 469
+			}
+		}
+
+		available = {
+			FRK = {
+				owns_state = 469
+			}
+			NOT = {
+				has_war_with = FRK
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 50
+		}
+
+		complete_effect = {
+			declare_war_on = {
+				target = FRK
+				type = annex_everything
+			}
+		}
+	}
+
 	DUL_buy_island_of_birk_balthazar = {
 		icon = generic_operation
 

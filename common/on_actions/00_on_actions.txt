@@ -46,6 +46,19 @@ on_actions = {
 
 	on_daily = {
 		effect = {
+			unit_limit_calculation_effect = yes
+			if = {
+				limit = {
+					tag = FFA
+					has_completed_focus = FFA_remain_alone
+					check_variable = {
+    					var = days_since_charming_decided_to_go_alone
+   						value = 365
+    					compare = less_than
+					}
+				}
+				add_to_variable = { days_since_charming_decided_to_go_alone = 1 }
+			}
 			if = {
 				limit = {
 					tag = MO2
@@ -4656,6 +4669,171 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = FFA
+						has_country_flag = farquaad_down_fiona_stays_with_shrek_waiting_for_fairy
+					}
+					FROM = {
+						has_country_leader = {
+							name = "Fairy Godmother"
+							ruling_only = yes
+						}
+					}
+				}
+				country_event = {
+					id = farfaraway.16
+					days = 14
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = FFA
+					}
+					FROM = {
+						has_country_leader = {
+							name = "King Charming"
+							ruling_only = yes
+						}
+					}
+				}
+				complete_national_focus = FFA_a_second_option
+				every_unit_leader = {
+					limit = {
+						has_id = 78023
+					}
+					remove_unit_leader = yes
+				}
+				SWA = {
+					retire_country_leader = yes
+				}
+				FFA = {
+					every_possible_country = {
+						limit = { has_character = SWA_donkey }
+						random_character = {
+							limit = { is_character = SWA_donkey }
+							set_nationality = SWA
+						}
+					}
+					every_possible_country = {
+						limit = { has_character = SWA_fiona_ogre }
+						random_character = {
+							limit = { is_character = SWA_fiona_ogre }
+							set_nationality = SWA
+						}
+					}
+					every_possible_country = {
+						limit = { has_character = SWA_shrek }
+						random_character = {
+							limit = { is_character = SWA_shrek }
+							set_nationality = SWA
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						has_country_leader = {
+							name = "King Charming"
+							ruling_only = yes
+						}
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = SWA
+						transfer_troops = no
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = DUL
+					}
+					FROM = {
+						tag = FFA
+						OR = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							has_country_flag = FFA_accepted_fairy_demand_about_shrek
+						}
+						NOT = {
+							has_country_flag = farquaad_down_fiona_stays_with_shrek_waiting_for_fairy
+							has_country_flag = farquaad_down_fiona_stays_with_shrek
+							has_country_flag = farquaad_down_fiona_stays_with_charming
+						}
+					}
+				}
+				FROM = {
+					if = {
+						limit = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							any_country = {
+								has_cosmetic_tag = fairy_godmother_empire
+								has_war_with = FFA
+							}
+						}
+						set_country_flag = farquaad_down_fiona_stays_with_shrek_waiting_for_fairy
+					}
+					if = {
+						limit = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							NOT = {
+								any_country = {
+									has_cosmetic_tag = fairy_godmother_empire
+									has_war_with = FFA
+								}
+							}
+						}
+						country_event = {
+							id = farfaraway.16
+							days = 6
+						}
+					}
+					if = {
+						limit = {
+							has_country_flag = FFA_accepted_fairy_demand_about_shrek
+						}
+						set_country_flag = farquaad_down_fiona_stays_with_charming
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = DUL
+						has_country_flag = DUL_fiona_rescued
+						NOT = {
+							has_country_flag = DUL_by_shrek_and_donkey
+						}
+					}
+					FROM = {
+						tag = FFA
+					}
+				}
+				country_event = {
+					id = farfaraway.14
+					days = 6
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = SWA
+					}
+					FROM = {
+						tag = FFA
+						has_country_flag = farquaad_down_fiona_stays_with_charming
+					}
+				}
+				country_event = {
+					id = farfaraway.14
+					days = 6
+				}
+			}
 			#Check for big events - capitulation!
 			if = {
 				limit = {
@@ -5267,6 +5445,15 @@ on_actions = {
 	#Not run on a specific country.
 	on_startup = {
 		effect = {
+			every_country = {
+				unit_limit_calculation_effect = yes
+			}
+			FFA = {
+				country_event = {
+					id = farfaraway.1
+					days = 21
+				}
+			}
 			every_state = {
 				limit = {
 					NOT = {

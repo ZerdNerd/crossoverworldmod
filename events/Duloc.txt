@@ -30,6 +30,26 @@ country_event = { #Deporting the creatures
 
 	option = { #Swamp
 		name = duloc.2.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_TO_SWAMP
+				}
+				add = 99
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_NOT_SWAMP
+				}
+				add = -1
+			}
+		}
 		SWA = {
 			country_event = {
 				id = duloc.4
@@ -49,6 +69,26 @@ country_event = { #Deporting the creatures
 				}
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_TO_SWAMP
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_NOT_SWAMP
+				}
+				add = 99
+			}
+		}
 		custom_effect_tooltip = DUL_no_chance_to_join_everrealm
 		remove_ideas = DUL_persecutions_of_magical_creatures
 	}
@@ -61,6 +101,26 @@ country_event = { #Deporting the creatures
 				days = 1
 			}
 		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_TO_SWAMP
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_NOT_SWAMP
+				}
+				add = 99
+			}
+		}
 		remove_ideas = DUL_persecutions_of_magical_creatures
 	}
 	
@@ -70,6 +130,26 @@ country_event = { #Deporting the creatures
 			country_event = {
 				id = duloc.3
 				days = 1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_TO_SWAMP
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_deporting_creatures
+					option = DUL_DEPORT_NOT_SWAMP
+				}
+				add = 99
 			}
 		}
 		remove_ideas = DUL_persecutions_of_magical_creatures
@@ -108,6 +188,26 @@ country_event = { #Refugees from Duloc arrive to Swamp
 
 	option = {
 		name = duloc.4.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SWA_weaponizing_creatures
+					option = SWA_WEAPONIZING_CREATURES_CANON
+				}
+				add = 99
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SWA_weaponizing_creatures
+					option = SWA_WEAPONIZING_CREATURES_YES
+				}
+				add = -1
+			}
+		}
 		add_ideas = {
 			DUL_refugees_from_duloc
 		}
@@ -120,6 +220,26 @@ country_event = { #Refugees from Duloc arrive to Swamp
 
 	option = {
 		name = duloc.4.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SWA_weaponizing_creatures
+					option = SWA_WEAPONIZING_CREATURES_CANON
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = SWA_weaponizing_creatures
+					option = SWA_WEAPONIZING_CREATURES_YES
+				}
+				add = 99
+			}
+		}
 		add_ideas = {
 			DUL_refugees_from_duloc
 		}
@@ -129,6 +249,14 @@ country_event = { #Refugees from Duloc arrive to Swamp
 				set_country_flag = shrek_is_coming_to_ya
 			}
 			load_oob = SWA_creatures
+			add_corps_commander_role = {
+				Character = SWA_donkey
+				skill = 0
+				attack_skill = 1
+				defense_skill = 0
+				planning_skill = 0
+				logistics_skill = 0
+			}
 			428 = {
 				add_manpower = 500000
 			}
@@ -147,6 +275,36 @@ country_event = { #Choosing the princess
 
 	option = { #Princess Elena
 		name = duloc.5.a
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_FIONA
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_ELENA
+				}
+				add = 99
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_BUBBLEGUM
+				}
+				add = -1
+			}
+		}
 		AVA = {
 			country_event = {
 				id = duloc.6
@@ -155,8 +313,78 @@ country_event = { #Choosing the princess
 		}
 	}
 
-	option = { #Princess Fiona
+	option = { #Princess Bubblegum
 		name = duloc.5.b
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_FIONA
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_ELENA
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_BUBBLEGUM
+				}
+				add = 99
+			}
+		}
+		CDK = {
+			country_event = {
+				id = duloc.24
+				days = 3
+			}
+		}
+	}
+
+	option = { #Princess Fiona
+		name = duloc.5.c
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_FIONA
+				}
+				add = 99
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_ELENA
+				}
+				add = -1
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_BUBBLEGUM
+				}
+				add = -1
+			}
+		}
 		custom_effect_tooltip = DUL_need_tournament
 		hidden_effect = {
 			set_country_flag = DUL_chose_fiona
@@ -249,6 +477,7 @@ country_event = { #Elena accepts the proposal
 		name = duloc.9.a
 		add_political_power = 50
 		hidden_effect = {
+			set_country_flag = DUL_chose_elena
 			AVA = {
 				set_country_flag = marriage_with_faruqaad_is_set
 			}
@@ -376,10 +605,10 @@ country_event = { #Fiona is rescued by a knight
 
 	option = { #Great!
 		name = duloc.14.a
-		complete_national_focus = DUL_the_marriage
 		hidden_effect = {
 			set_country_flag = DUL_fiona_rescued
 		}
+		complete_national_focus = DUL_the_marriage
 	}
 }
 
@@ -399,6 +628,7 @@ country_event = { #Fiona is rescued by Shrek (and Donkey)
 		custom_effect_tooltip = DUL_can_organize_the_marriage
 		hidden_effect = {
 			set_country_flag = DUL_fiona_rescued
+			set_country_flag = DUL_by_shrek_and_donkey
 		}
 	}
 }
@@ -455,6 +685,7 @@ country_event = { #Marriage of Fiona and Farquaad
 			country_lock_all_division_template = yes
 			kill_country_leader = yes
 			load_focus_tree = generic_focus
+			set_country_flag = farquaad_is_ded
 			hidden_effect = {
 				news_event = {
 					id = worldnews.110
@@ -501,33 +732,175 @@ country_event = { #Marriage of Fiona and Farquaad
 				target = DUL
 				type = annex_everything
 			}
+			add_corps_commander_role = {
+				Character = SWA_fiona_ogre
+				skill = 4
+				attack_skill = 4
+				defense_skill = 4
+				planning_skill = 4
+				logistics_skill = 4
+			}
 		}
 	}
 }
 
-country_event = { #Sofia escapes from Duloc
+country_event = { #Farquaad wants to buy Uffington from us
 	id = duloc.21
 	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.21"}
 	title = duloc.21.t
 	desc = duloc.21.d
-	picture = GFX_report_enchancia
+	picture = GFX_report_duloc_1
 
 	is_triggered_only = yes
 
-	immediate = {
-		if = {
-			limit = {
-				tag = DUL
+	option = { #Agree
+		name = duloc.21.a
+		DUL = {
+			country_event = {
+				id = duloc.22
+				days = 2
 			}
-			clr_country_flag = DUL_sofia_still_in_duloc
+		}
+		add_stability = -0.35
+	}
+
+	option = { #Decline
+		name = duloc.21.a
+		DUL = {
+			country_event = {
+				id = duloc.23
+				days = 2
+			}
+		}
+	}
+}
+
+country_event = { #Fire Kingdom agrees
+	id = duloc.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.22"}
+	title = duloc.22.t
+	desc = duloc.22.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	option = { #Great!
+		name = duloc.22.a
+		transfer_state = 469
+		469 = {
+			add_core_of = DUL
+		}
+	}
+}
+
+country_event = { #Fire Kingdom declines
+	id = duloc.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.23"}
+	title = duloc.23.t
+	desc = duloc.23.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	option = { #Then it's war!
+		name = duloc.23.a
+		declare_war_on = {
+			target = FRK
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Lord Farquaad proposal to Bubblegum
+	id = duloc.24
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.24"}
+	title = duloc.24.t
+	desc = duloc.24.d
+	picture = GFX_report_duloc_1
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #everyone laughs
+		name = duloc.24.a
+		DUL = {
+			country_event = {
+				id = duloc.25
+				days = 3
+			}
 		}
 	}
 
-	option = { #Good job!
-		name = duloc.21.a
-		trigger = {
-			NOT = {
-				tag = DUL
+	option = { #surprisingly, Bubblegum agrees
+		name = duloc.24.b
+		custom_effect_tooltip = DUL_you_will_lose_independence
+		DUL = {
+			country_event = {
+				id = duloc.26
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = { #Bubblegum rejects the proposal
+	id = duloc.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.25"}
+	title = duloc.25.t
+	desc = duloc.25.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			add_opinion_modifier = {
+    			target = CDK
+    			modifier = DUL_rejected_faruqaads_proposal
+			}
+		}
+	}
+
+	option = { #Stupid girl. Maybe Fiona is a better choice.
+		name = duloc.25.a
+		add_political_power = -50
+		hidden_effect = {
+			set_country_flag = DUL_chose_fiona
+		}
+	}
+
+	option = { #I'll get her anyway!
+		name = duloc.25.b
+		add_political_power = -50
+		declare_war_on = {
+			target = CDK
+			type = annex_everything
+		}
+	}
+}
+
+country_event = { #Bubblegum accepts the proposal
+	id = duloc.26
+	immediate = {log = "[GetDateText]: [Root.GetName]: event duloc.26"}
+	title = duloc.26.t
+	desc = duloc.26.d
+	picture = GFX_report_duloc_2
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #Perfect!
+		name = duloc.26.a
+		add_political_power = 50
+		hidden_effect = {
+			set_country_flag = DUL_chose_bubblegum
+			set_country_flag = DUL_bubblegum_agreed
+			CDK = {
+				set_country_flag = marriage_with_faruqaad_is_set
 			}
 		}
 	}

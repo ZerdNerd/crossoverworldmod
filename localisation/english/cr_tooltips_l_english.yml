@@ -212,7 +212,7 @@
  MAINMENU_ZE_EYES_TAT:0 "If you want to see something great,\nyou need to go to the Stone Age.\n\nStatus: §YComing in Alpha 0.2.§!"
  MENU_REDDIT:0 "The Crossover World Mod §Ysubreddit§!"
  MENU_STEAMWORKSHOP:0 "The Crossover World Mod §OWorkshop page§Y"
- tcwmod_debug:0 "Excuse me, did you see Tumtum? He's big, red dinosaur. I'm searching for him together with my friend Lud.\nIf you see Tumtum, please tell me quickly!"
+ tcwmod_debug:0 "Toto, it's called debug mode. We went mod debugging."
  FE_START_FUCKING_GAME:0 "Play"
 
  #0.1.1
@@ -367,9 +367,6 @@
  jojo_will_add_5_support_points:0 "Will add §G2§! Support points."
  jojo_will_add_3_support_points:0 "Will add §G3§! Support points."
  jojo_will_add_2_support_points:0 "Will add §G5§! Support points."
- unit_limit_factory_bonus:0 "§YAI: Bonus to limit of units from factories§!"
- unit_limit_max:0 "§YAI: Limit of units§!"
- unit_limit_bonus:0 "§YAI: Bonus to limit of units§!"
  this_path_will_expand_the_foundation:0 "This path will expand Speedwagon Foundation, and Speedwagon will be available as Advisor."
  speedwagon_foundation_will_be_available_as_equipment_designer:0 "Speedwagon Foundation will be available as Equipment Designer."
  speedwagon_foundation_will_be_available_as_naval_designer:0 "Speedwagon Foundation will be available as Naval Designer."
@@ -513,7 +510,7 @@
  FLE_sphere_tooltip:0 "You §Gwill be able§! to set up puppet governments on conquered territories listed above."
  FLE_empire_tooltip:0 "You §Rwill not be able§! to set up puppet governments on conquered territories listed above."
  FLE_new_investment_decisions_will_be_available:0 "New investment decisions will be available."
- FLE_only_one_campaign_at_once:0 "There can be only one project in progress at once."
+ FLE_only_one_campaign_at_once_2:0 "There can be only one project in progress at once."
 
  DUL_need_to_be_kingdom:0 "Kingdom of Duloc has been proclaimed"
  DUL_economical_laws_info:0 "Due to Faruqaad's greatness, §RDuloc cannot change their economical laws as you wish§!. The only way to do so is completing certain focuses."
@@ -541,4 +538,39 @@
  DUL_you_will_lose_independence:0 "§RAvalor will lose its independence if Elena agrees to marry Farquaad!§!"
  DUL_can_organize_the_marriage:0 "Farquaad can now organize the wedding."
  DUL_deport_creatures_first:0 "You have to deport magical creatures first."
+ DUL_bubblegum_agreed:0 "Princess Bubblegum agreed to Farquaad's proposal"
+ DUL_chose_bubblegum:0 "Farquaad has chosen a princess"
+
+ MAI_ecw_broke_not_ended:0 "Enchancian Civil War has broken out and not ended"
+ FFA_option_available_since_032:0 "§RThis option will require playing as Swamp since the beginning - hence, it will be AI only - and will be added in v0.3.2.§!"
+ harold_is_not_sure_about_godmothers_plan:0 "Harold is not sure about Fairy Godmother's plan"
+ FFA_charming_is_ready_to_leave:0 "Prince Charming is ready to go and rescue Princess Fiona"
+ charming_goes_to_rescue_fiona:0 "Prince Charming will leave to rescue Princess Fiona."
+ strait_blockade:0 "Every ship going through the Middle-Western Passage will have its cargo checked."
+ steps_against:0 "Rumpelstiltskin will go all-out against Fairy Godmother. §RThis may go in very bad direction for him.§!"
+ nationalization_fgm:0 "Fairy Godmother's Company will be nationalized."
+ FFA_shrek_leaves_for_arthur:0 "Shrek will leave to Worcestershire Colony in order to search for Arthur."
+ ECW_faction_died:0 "Supported faction has lost"
+ FFA_witches_become_generals:0 "Rumpel's witches will be available as generals."
+
+ mobilisation_penalty_modifier: "Above Division Limit"
+
+ unit_limit_count: "[unit_limit_count_loc]/[?max_divisions|H0]"
+
+ unit_limit_count_red: "[?num_actual_divisions|R0]"
+ unit_limit_count_yellow: "[?num_actual_divisions|H0]"
+ unit_limit_count_green: "[?num_actual_divisions|G0]"
+
+ unit_limit_factory_bonus: "Division Limit"
+ unit_limit_bonus: "Division Limit"
+ unit_limit_subject_bonus: "Added Division Limit for overlord"
+
+ unit_limit_label: "§HMaximum Supported Divisions§!\nDivisions: [?max_divisions|H0]\n\nBase Value: [?base_units|G1]\n   - From Core Population: [?core_base|G1][unit_limit_noncore_population][unit_limit_subject_population_bonus]\n   - From Owned States: [?num_owned_states|G0][unit_limit_subject_state_bonus]\n\nFactory Count Multiplier: [?industry_factor_uncapped|H%][unit_limit_modifier_was_capped][unit_limit_modified_by][unit_limit_faction_leader][unit_limit_economy_law]\n\nDefault: [?5|G=0][unit_limit_bonus_used]"
+ unit_limit_desc: "Every country only has the ability to support a certain number of individual military divisions before their economy and infrastructure struggle to maintain them.\n\nThe maximum number of supported units is based on the country's §Hpopulation§! and §Hnumber of owned states§!, and is then multiplied by a ratio of this value to the §Hnumber of factories§! in the states.\n\nIn §Hcivil wars§!, the base values are calculated from the sum of all states owned by all participants.[above_unit_limit_desc]"
+
+ unit_limit_desc_fake_intel: "(§HFake Intel Divisions§! do not count towards the division limit)"
+
+ empty: ""
+
+ unit_limit_desc_above_limit: "\n\n--------------\n\n§RWe have currently exceeded our capacity, and the only way to alleviate the stress on our country will be to remove some of our divisions.§!\n\n$MODIFIER_ARMY_ORG_FACTOR$: [?mobilisation_penalty_var|+=%1]\n$MODIFIER_CONSUMER_GOODS_FACTOR$: [?mobilisation_penalty_var_positive|=%H1]\n$MODIFIER_INDUSTRIAL_CAPACITY_FACTOR$: [?mobilisation_penalty_var|+=%]\n$MODIFIER_TRAINING_TIME_ARMY_FACTOR$: [?mobilisation_penalty_var_positive|-=%]\n$MODIFIER_LAND_REINFORCE_RATE$: [?mobilisation_penalty_var|+=%1]"
  

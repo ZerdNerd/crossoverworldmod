@@ -16,6 +16,7 @@ if = {
 		early_destroyer = 1
 		transport = 1
 	}
+	set_naval_oob = FFA_1936_naval
 }
 if = {
 	limit = {
@@ -27,9 +28,11 @@ if = {
 		basic_battery = 1
 		basic_light_battery = 1
 	}
+	set_naval_oob = FFA_1936_naval_mtg
 }
 add_ideas = {
 	middleage_tech
+	FFA_two_decades_of_waiting
 }
 
 set_convoys = 50
@@ -65,3 +68,16 @@ set_stability = 0.85
 recruit_character = FFA_harold
 recruit_character = FFA_placeholder
 recruit_character = FFA_jonas_jones
+recruit_character = FFA_fairy_godmother
+recruit_character = FFA_charming
+recruit_character = FFA_rumpel
+recruit_character = FFA_puss_in_boots
+recruit_character = FFA_arthur
+recruit_character = FFA_babawitch
+recruit_character = FFA_griseldawitch
+recruit_character = FFA_pumpkinwitch
+recruit_character = FFA_meltywitch
+
+FFA_charming = {
+	set_character_flag = mommys_best
+}

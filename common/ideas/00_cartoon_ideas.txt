@@ -7,6 +7,8 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = { always = yes }
+
 			picture = generic_agrarian_society
 			
 			modifier = {
@@ -25,6 +27,8 @@ ideas = {
 			allowed = {
 				always = no
 			}
+
+			allowed_civil_war = { always = yes }
 
 			picture = jap_duplicate_research
 			
@@ -45,6 +49,8 @@ ideas = {
 				always = no
 			}
 
+			allowed_civil_war = { always = yes }
+
 			picture = fra_market_dynamism
 			
 			modifier = {
@@ -63,6 +69,8 @@ ideas = {
 			allowed = {
 				always = no
 			}
+
+			allowed_civil_war = { always = yes }
 
 			picture = modern_tech
 
@@ -2033,7 +2041,7 @@ ideas = {
 			}
 		}
 
-		SLD_tracz_air_force = {
+		SLD_tracz_air_force_idea = {
 			picture = generic_research_bonus
 			allowed = {
 				always = no
@@ -3856,7 +3864,7 @@ ideas = {
 		}
 
 		FLE_help_to_joestars = {
-			picture = spr_collectivized_society
+			picture = SPR_collectivized_society
 			allowed = {
 				always = no
 			}
@@ -3903,7 +3911,7 @@ ideas = {
 			}
 		}
 
-		FLE_grosse_aufrustungsprogramm = {
+		FLE_grosse_aufrustungSPRogramm = {
 			picture = generic_war_preparation
 			allowed = {
 				always = no
@@ -4333,7 +4341,7 @@ ideas = {
 		}
 
 		TUG_native_uprising_in_neu_flensburg = {
-			picture = spr_political_violence
+			picture = SPR_political_violence
 			allowed = {
 				always = no
 			}
@@ -4385,7 +4393,7 @@ ideas = {
 		}
 
 		DUL_subsidizing_farmers = {
-			picture = spr_relocate_the_gold_reserves
+			picture = SPR_relocate_the_gold_reserves
 			allowed = {
 				always = no
 			}
@@ -4523,7 +4531,7 @@ ideas = {
 		}
 
 		DUL_the_bank_of_duloc = {
-			picture = spr_seize_the_gold_reserves
+			picture = SPR_seize_the_gold_reserves
 			allowed = {
 				always = no
 			}
@@ -4554,7 +4562,7 @@ ideas = {
 		}
 
 		DUL_modernizing_the_countryside = {
-			picture = spr_torchbearers_of_tomorrow
+			picture = SPR_torchbearers_of_tomorrow
 			allowed = {
 				always = no
 			}
@@ -4832,6 +4840,547 @@ ideas = {
 				global_building_slots = 1
 				supply_node_range = 0.05
 				max_command_power_mult = 0.15
+			}
+		}
+
+		FFA_agricultural_reform_idea = {
+			picture = generic_agrarian_reform
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.15
+				political_power_gain = -0.05
+			}
+		}
+
+		FFA_subsidizing_fgc = {
+			picture = SPR_relocate_the_gold_reserves
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.05
+				political_power_gain = -0.15
+			}
+		}
+
+		FFA_new_bakery_tech = {
+			picture = can_wartime_prices_and_trade_board
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		FFA_militarization = {
+			picture = man_five_year_plan_tank
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+			}
+		}
+
+		FFA_industrialization = {
+			picture = man_five_year_plan_industry
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.025
+				production_factory_max_efficiency_factor = 0.025
+				production_speed_buildings_factor = 0.025
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		FFA_farfarawayuniversity = {
+			picture = generic_army_war_college
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.1
+				nuclear_production_factor = 0.15
+				local_resources_factor = 0.15
+			}
+		}
+
+		FFA_funding_for_fgmc = {
+			picture = mex_callista
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.15
+				research_speed_factor = 0.05
+				industrial_capacity_factory = 0.025
+			}
+		}
+
+		FFA_funding_for_worcestershire = {
+			picture = MAI_landlocked
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = -0.1
+			}
+		}
+
+		FFA_funding_for_worcestershire_2 = {
+			picture = MAI_landlocked
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.1
+			}
+			targeted_modifier = {
+				tag = FFA mic_to_target_factor = 0.1 cic_to_target_factor = 0.1
+			}
+		}
+
+		FFA_modernization_of_worcestershire = {
+			picture = generic_build_infrastructure
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.1
+			}
+		}
+
+		FFA_funding_for_army_and_navy = {
+			picture = generic_coastal_navy
+			allowed_civil_war = { always = yes }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_gain = -0.05
+				industrial_capacity_factory = 0.05
+				consumer_goods_factor = 0.05
+				army_defence_factor = 0.05
+				army_attack_factor = 0.05
+			}
+		}
+
+		FFA_two_decades_of_waiting = {
+			picture = generic_king_handled
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.4
+				war_support_factor = -0.4
+				political_power_gain = -0.15
+			}
+		}
+
+		FFA_secret_police = {
+			picture = tur_kemalist_officers
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.15
+				political_power_gain = -0.1
+				industrial_capacity_factory = 0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		FFA_censorship = {
+			picture = gre_schachtplan
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = 0.05
+				political_power_gain = -0.05
+				weekly_manpower = 15
+			}
+		}
+
+		FFA_spies_in_everrealm = {
+			picture = generic_reserve_divisions
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				decryption_factor = 0.15
+				encryption_factor = 0.15
+			}
+			targeted_modifier = {
+				tag = ISL
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = MAR
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = ENC
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = EN1
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = EN2
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = EN3
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = EN4
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = WEI
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = WLC
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = KHA
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = COR
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = ZUM
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = TRU
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = RUD
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+			targeted_modifier = {
+				tag = AVA
+				attack_bonus_against = 0.15
+				defense_bonus_against = 0.15
+			}
+		}
+
+		FFA_social_programme = {
+			picture = generic_flexible_foreign_policy2
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				war_support_factor = 0.05
+				political_power_gain = -0.05
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		FFA_higher_wages = {
+			picture = production_bonus
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.05
+				political_power_gain = -0.1
+			}
+		}
+
+		FFA_investors_from_east = {
+			picture = generic_foreign_capital
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_factory_efficiency_gain_factor = 0.05
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		FFA_private_sector_is_open = {
+			picture = generic_goods_red_bonus
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				local_building_slots_factor = 0.3
+			}
+		}
+
+		FFA_modern_currency = {
+			picture = seize_the_gold_reserves
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_max_efficiency_factor = 0.05
+				production_speed_buildings_factor = 0.05
+				stability_factor = 0.025
+			}
+		}
+
+		FFA_new_education_programme = {
+			picture = jap_supremacy_of_will
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				political_power_gain = 0.025
+			}
+		}
+
+		FFA_the_sea_danger = {
+			picture = generic_sea_focused_navy
+			allowed_civil_war = { always = no }
+			allowed = {
+				always = no
+			}
+			modifier = {
+				industrial_capacity_dockyard = 0.1
+				naval_doctrine_cost_factor = -0.1
+				convoy_escort_efficiency = 0.1
+				naval_coordination = 0.1
+				naval_critical_effect_factor = 0.1
+				naval_critical_score_chance_factor = 0.1
+				naval_enemy_fleet_size_ratio_penalty_factor = 0.1
+			}
+		}
+
+		FFA_a_change_on_the_throne = {
+			picture = SPR_the_popular_front
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.5
+				war_support_factor = -0.5
+				political_power_gain = -0.25
+				production_factory_efficiency_gain_factor = -0.15
+				production_factory_max_efficiency_factor = -0.15
+				fascism_drift = 0.05
+				monarchism_drift = -0.05
+			}
+		}
+
+		FFA_a_change_on_the_throne_2 = {
+			picture = SPR_the_popular_front
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.3
+				war_support_factor = -0.3
+				political_power_gain = -0.125
+				production_factory_efficiency_gain_factor = -0.095
+				production_factory_max_efficiency_factor = -0.095
+				fascism_drift = 0.05
+				monarchism_drift = -0.05
+			}
+		}
+
+		FFA_a_change_on_the_throne_3 = {
+			picture = SPR_the_popular_front
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				political_power_gain = -0.075
+				production_factory_efficiency_gain_factor = -0.05
+				production_factory_max_efficiency_factor = -0.05
+				fascism_drift = 0.05
+				monarchism_drift = -0.05
+			}
+		}
+
+		FFA_rumpels_purge = {
+			picture = tur_disorganised_armed_forces
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.15
+				army_org_factor = -0.1
+				training_time_factor = 0.1
+				political_power_factor = -0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		FFA_witch_police = {
+			picture = prc_low_popular_support3
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				supply_consumption_factor = -0.05
+				conscription = 0.05
+			}
+		}
+
+		FFA_rations = {
+			picture = generic_goods_red_bonus
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = 0.05
+				war_support_factor = -0.1
+			}
+		}
+
+		FFA_taxes = {
+			picture = generic_foreign_capital
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = 0.05
+				war_support_factor = -0.05
+			}
+		}
+
+		FFA_verifying_citizens = {
+			picture = tfv_can_conscription_crisis
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.05
+				war_support_factor = -0.05
+				weekly_manpower = 5
+			}
+		}
+
+		FFA_new_mobilization_quotas = {
+			picture = hol_liberation
+			allowed_civil_war = { 
+				has_country_leader = {
+					name = "Rumpelstiltskin"
+					ruling_only = yes
+				} 
+			}
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.1
+				conscription = 0.05
 			}
 		}
 	}

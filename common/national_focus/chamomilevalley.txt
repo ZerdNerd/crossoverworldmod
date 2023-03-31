@@ -1,0 +1,876 @@
+focus_tree = {
+	id = smesharik
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = CVA
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = CVA_bastion_of_peace
+		icon = GFX_goal_generic_national_unity
+		x = 10
+		y = 0
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			every_country = {
+				add_opinion_modifier = {
+    				target = CVA
+    				modifier = MAI_true_relations
+				} 
+			} 
+		} 
+	}
+	focus = {
+		id = CVA_capitalism
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = CVA_bastion_of_peace }
+		mutually_exclusive = {
+			focus = CVA_status_quo
+		}
+		x = 12
+		y = 1
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = communism
+    			popularity = -0.2
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+		}
+	}
+	focus = {
+		id = CVA_mysharik_reforms
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = CVA_capitalism }
+		x = 12
+		y = 2
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = CVA_economics_abc
+				add_idea = CVA_free_market
+			}
+		}
+	}
+	focus = {
+		id = CVA_electrification
+		icon = GFX_goal_generic_radar
+		prerequisite = { focus = CVA_mysharik_reforms }
+		x = 13
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+				add_tech_bonus = {
+					name = electronics_bonus
+					bonus = 1.0
+					uses = 3
+					category = electronics
+				}
+		}
+	}
+	focus = {
+		id = CVA_industrialization
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = CVA_mysharik_reforms }
+		x = 11
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+				add_tech_bonus = {
+					name = industrial_bonus
+					bonus = 1.0
+					uses = 3
+					category = industry
+				}	
+		}
+	}
+	focus = {
+		id = CVA_foreign_investments
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = CVA_industrialization }
+		prerequisite = { focus = CVA_electrification }
+		x = 12
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 5 }
+		}
+	}
+	focus = {
+		id = CVA_status_quo
+		icon = GFX_focus_prc_agrarian_socialism
+		prerequisite = { focus = CVA_bastion_of_peace }
+		mutually_exclusive = {
+			focus = CVA_capitalism
+		}
+		x = 8
+		y = 1
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = CVA_kopatych_methods
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CVA_status_quo }
+		x = 8
+		y = 2
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CVA_tractors
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = CVA_kopatych_methods }
+		x = 9
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+				add_tech_bonus = {
+					name = electronics_bonus
+					bonus = 1.0
+					uses = 1
+					category = electronics
+				}
+				add_tech_bonus = {
+					name = industrial_bonus
+					bonus = 1.0
+					uses = 1
+					category = industry
+				}
+		}
+	}
+	focus = {
+		id = CVA_fishing
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = CVA_kopatych_methods }
+		x = 7
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_state = {
+							dockyard > 0
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+					any_owned_state = {
+						is_coastal = yes
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						is_coastal = yes
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					any_owned_state = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						dockyard > 0
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+				set_country_flag = naval_effort_built
+			}
+			if = {
+				limit = {
+					NOT = { has_country_flag = naval_effort_built }
+					NOT = {
+						any_owned_state = {
+							free_building_slots = {
+								building = dockyard
+								size > 2
+								include_locked = yes
+							}
+						}
+					}
+				}
+				random_state = {
+					limit = {
+						controller = { tag = ROOT }
+						free_building_slots = {
+							building = dockyard
+							size > 2
+							include_locked = yes
+						}
+					}
+					add_extra_state_shared_building_slots = 3
+					add_building_construction = {
+						type = dockyard
+						level = 3
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = CVA_agricultural_aircraft
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = CVA_fishing }
+		prerequisite = { focus = CVA_tractors }
+		x = 8
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			if = {
+				limit = {
+					capital_scope = {
+						OR = {
+							NOT = { is_controlled_by = ROOT }
+							NOT = {
+								free_building_slots = {
+									building = air_base
+									size > 1
+								}
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						is_controlled_by = ROOT
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}				
+					ROOT = { set_country_flag = aviation_effort_2_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+}
+		}
+	}
+	focus = {
+		id = CVA_provide_for_the_citizens
+		icon = GFX_focus_generic_concessions
+		prerequisite = {
+		 focus = CVA_agricultural_aircraft 
+		 focus = CVA_foreign_investments 
+		}
+		x = 10
+		y = 5
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_country_leader_trait = caring_leader
+		}
+	}
+	focus = {
+		id = CVA_schools
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = CVA_provide_for_the_citizens }
+		x = 8
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_schools_idea
+			}
+		}
+	}
+
+	focus = {
+		id = CVA_mass_media
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = CVA_provide_for_the_citizens }
+		x = 10
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_mass_media_idea
+			}
+				add_tech_bonus = {
+					name = electronics_bonus
+					bonus = 1.0
+					uses = 1
+					category = electronics
+				}
+		}
+	}
+	focus = {
+		id = CVA_sport
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = CVA_provide_for_the_citizens }
+		x = 11
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_sport_idea
+			}
+		}
+	}
+	focus = {
+		id = CVA_medical_equipment
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = CVA_provide_for_the_citizens }
+		x = 12
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_healthcare
+			}
+		}
+	}
+	focus = {
+		id = CVA_culture
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = { focus = CVA_provide_for_the_citizens }
+		x = 9
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_culture_idea
+			}
+		}
+	}
+	focus = {
+		id = CVA_prepare_for_refugees
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		prerequisite = {
+		 focus = CVA_agricultural_aircraft 
+		 focus = CVA_foreign_investments 
+		}
+		x = 4
+		y = 5
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = dockyard
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = dockyard
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = CVA_evacuation_vessels
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = {
+		 focus = CVA_prepare_for_refugees
+		}
+		x = 3
+		y = 6
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+add_equipment_to_stockpile = {
+
+        type = convoy
+
+        amount = 100
+
+    }
+		}
+	}
+	focus = {
+		id = CVA_homes_for_refugees
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		prerequisite = {
+		 focus = CVA_prepare_for_refugees
+		}
+		x = 5
+		y = 6
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 2 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 2 
+					instant_build = yes 
+				}
+			}
+		}
+	}
+	focus = {
+		id = CVA_welcome_refugees
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = CVA_homes_for_refugees }
+		prerequisite = { focus = CVA_evacuation_vessels }
+		x = 4
+		y = 7
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_refugees
+			}
+		}
+	}
+	focus = {
+		id = CVA_jobs_for_refugees
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CVA_welcome_refugees }
+		x = 2
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 2 }
+		}
+	}
+	focus = {
+		id = CVA_knowledge_exchange
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = CVA_welcome_refugees }
+		x = 4
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+	focus = {
+		id = CVA_refugee_community
+		icon = GFX_focus_usa_union_representation_act
+		prerequisite = { focus = CVA_welcome_refugees }
+		x = 6
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+		}
+	}
+	focus = {
+		id = CVA_defending_peace
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = {
+		 focus = CVA_agricultural_aircraft 
+		 focus = CVA_foreign_investments 
+		}
+		x = 16
+		y = 5
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction= 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+	focus = {
+		id = CVA_equipment_research
+		icon = GFX_focus_generic_socialist_science
+		prerequisite = {
+		 focus = CVA_defending_peace
+		}
+		x = 17
+		y = 6
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 3
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = CVA_equipment_production
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+		 focus = CVA_defending_peace
+		}
+		x = 15
+		y = 6
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = CVA_remain_vigilant
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = CVA_equipment_production }
+		prerequisite = { focus = CVA_equipment_research }
+		x = 16
+		y = 7
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_ideas = {
+				CVA_vigilance
+			}
+		}
+	}
+	focus = {
+		id = CVA_ot_vinta
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = CVA_remain_vigilant }
+		x = 14
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 25
+
+			if = {
+				limit = {
+					capital_scope = {
+						NOT = {
+							free_building_slots = {
+								building = air_base
+								size > 1
+							}
+						}
+					}
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			if = {
+				limit = {
+					capital_scope = {
+						free_building_slots = {
+							building = air_base
+							size > 1
+						}
+					}
+				}
+				capital_scope = {
+					add_building_construction = {
+						type = air_base
+						level = 2
+						instant_build = yes
+					}
+					ROOT = { set_country_flag = aviation_effort_AB }
+				}
+			}
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = air_doctrine
+}
+		}
+	}
+	focus = {
+		id = CVA_iron_nanny
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = CVA_remain_vigilant }
+		x = 16
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = CVA_podlodka
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = CVA_remain_vigilant }
+		x = 18
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 2
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = CVA_superpower
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = CVA_schools }
+		prerequisite = { focus = CVA_mass_media }
+		prerequisite = { focus = CVA_sport }
+		prerequisite = { focus = CVA_medical_equipment }
+		prerequisite = { focus = CVA_culture }
+		prerequisite = { focus = CVA_jobs_for_refugees }
+		prerequisite = { focus = CVA_knowledge_exchange }
+		prerequisite = { focus = CVA_refugee_community }
+		prerequisite = { focus = CVA_ot_vinta }
+		prerequisite = { focus = CVA_iron_nanny }
+		prerequisite = { focus = CVA_podlodka }
+		x = 10
+		y = 9
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 1000
+			set_country_flag = limited_colonies_enabled
+			add_tech_bonus = {
+				name = secret_bonus
+				bonus = 1.0
+				uses = 5
+				category = electronics
+				category = nuclear
+				category = rocketry
+			}
+		}
+	}
+}

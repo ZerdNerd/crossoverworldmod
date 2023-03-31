@@ -2177,7 +2177,7 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			HOR = {
+			CVA = {
 				every_owned_state = {
 					add_claim_by = DIO
 				}
@@ -2305,12 +2305,12 @@ focus_tree = {
 			}
 			if = {
 				limit = {
-					HOR = {
+					CVA = {
 						exists = yes
 					}
 				}
 				create_wargoal = {
-					target = HOR
+					target = CVA
 					type = annex_everything
 				}
 			}

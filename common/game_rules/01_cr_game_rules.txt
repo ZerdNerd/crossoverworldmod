@@ -557,3 +557,141 @@ ENC_new_monarch = {
 		allow_achievements = yes
 	}
 }
+
+DUL_deporting_creatures = {
+	name = "DUL_DEPORTING_CREATURES"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DUL_DEPORT_TO_SWAMP
+		text = "RULE_DUL_DEPORT_TO_SWAMP"
+		desc = "RULE_DUL_DEPORT_TO_SWAMP_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DUL_DEPORT_NOT_SWAMP
+		text = "RULE_DEPORT_NOT_SWAMP"
+		desc = "RULE_DEPORT_NOT_SWAMP_DESC"
+		allow_achievements = yes
+	}
+}
+
+DUL_choose_the_princess = {
+	name = "DUL_CHOOSE_THE_PRINCESS"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = DUL_CHOOSE_FIONA
+		text = "RULE_CHOOSE_FIONA"
+		desc = "RULE_CHOOSE_FIONA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DUL_CHOOSE_ELENA
+		text = "RULE_CHOOSE_ELENA"
+		desc = "RULE_CHOOSE_ELENA_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = DUL_CHOOSE_BUBBLEGUM
+		text = "RULE_CHOOSE_BUBBLEGUM"
+		desc = "RULE_CHOOSE_BUBBLEGUM_DESC"
+		allow_achievements = yes
+	}
+}
+
+SWA_weaponizing_creatures = {
+	name = "SWA_WEAPONIZING_CREATURES"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = SWA_WEAPONIZING_CREATURES_CANON
+		text = "RULE_WEAPONIZING_CREATURES_CANON"
+		desc = "RULE_WEAPONIZING_CREATURES_CANON_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = SWA_WEAPONIZING_CREATURES_YES
+		text = "RULE_WEAPONIZING_CREATURES_YES"
+		desc = "RULE_WEAPONIZING_CREATURES_YES_DESC"
+		allow_achievements = yes
+	}
+}
+
+FFA_subsidizing_fairy_godmother = {
+	name = "FFA_SUBSIDIZING_FAIRY_GODMOTHER"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FFA_SUBSIDIZING_FAIRY_GODMOTHER_YES
+		text = "RULE_SUBSIDIZING_FAIRY_GODMOTHER_YES"
+		desc = "RULE_SUBSIDIZING_FAIRY_GODMOTHER_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FFA_SUBSIDIZING_FAIRY_GODMOTHER_NO
+		text = "RULE_SUBSIDIZING_FAIRY_GODMOTHER_NO"
+		desc = "RULE_SUBSIDIZING_FAIRY_GODMOTHER_NO_DESC"
+		allow_achievements = yes
+	}
+}
+
+FFA_trust_the_plan_or_rumpel = {
+	name = "FFA_TRUST_THE_PLAN_OR_RUMPEL"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FFA_TRUST_THE_PLAN
+		text = "RULE_TRUST_THE_PLAN"
+		desc = "RULE_TRUST_THE_PLAN_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FFA_TRUST_RUMPEL
+		text = "RULE_TRUST_RUMPEL"
+		desc = "RULE_TRUST_RUMPEL_DESC"
+		allow_achievements = yes
+	}
+}
+
+FFA_harold_refuses_godmother = {
+	name = "FFA_HAROLD_REFUSES_GODMOTHER"
+	group = "RULE_GROUP_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = FFA_HAROLD_REFUSES_GODMOTHER_YES
+		text = "RULE_HAROLD_REFUSES_GODMOTHER_YES"
+		desc = "RULE_HAROLD_REFUSES_GODMOTHER_YES_DESC"
+		allow_achievements = yes
+	}
+	option = {
+		name = FFA_HAROLD_REFUSES_GODMOTHER_NO
+		text = "RULE_HAROLD_REFUSES_GODMOTHER_NO"
+		desc = "RULE_HAROLD_REFUSES_GODMOTHER_NO_DESC"
+		allow_achievements = yes
+	}
+}

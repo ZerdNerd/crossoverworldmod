@@ -18,6 +18,15 @@ international_policy_dec_category = {
                 tag = NRL
                 tag = VIS
                 tag = MUS
+                AND = {
+                    tag = FFA
+                    has_completed_focus = FFA_remain_alone
+                    check_variable = {
+    					var = days_since_charming_decided_to_go_alone
+   						value = 365
+    					compare = greater_than_or_equals
+					}
+                }
             }
             NOT = {
                 has_country_flag = sent_request_to_join_faction
@@ -153,6 +162,15 @@ international_policy_dec_category = {
                 is_in_faction = yes
             }
             OR = {
+                AND = {
+                    tag = FFA
+                    has_completed_focus = FFA_remain_alone
+                    check_variable = {
+    					var = days_since_charming_decided_to_go_alone
+   						value = 365
+    					compare = greater_than_or_equals
+					}
+                }
                 tag = ICK
                 tag = FRK
                 tag = KHU
@@ -412,7 +430,16 @@ international_policy_dec_category = {
         icon = generic_operation
 		visible = {
             OR = {
-                tag = DUL
+            #    tag = DUL
+                AND = {
+                    tag = FFA
+                    has_completed_focus = FFA_remain_alone
+                    check_variable = {
+    					var = days_since_charming_decided_to_go_alone
+   						value = 365
+    					compare = greater_than_or_equals
+					}
+                }
                 AND = {
                     tag = ICK
                     is_guaranteed_by = LEC
@@ -462,13 +489,16 @@ international_policy_dec_category = {
     join_flower_hill_pact = {
         icon = generic_operation
 		visible = {
-			EN4 = {
-                OR = {
-                    exists = no
-                    is_in_faction_with = FLO
-                }
-            }
             OR = {
+                AND = {
+                    tag = FFA
+                    has_completed_focus = FFA_remain_alone
+                    check_variable = {
+    					var = days_since_charming_decided_to_go_alone
+   						value = 365
+    					compare = greater_than_or_equals
+					}
+                }
                 AND = {
                     tag = COR
                     has_government = communism
