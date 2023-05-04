@@ -12,6 +12,28 @@ ideas = {
 				opinion_gain_monthly_factor = 0.25
 			}
 		}
+		CVA_samooborona = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.75
+				defence = 0.5
+				offence = 0.5
+			}
+		}
+		CVA_chivalry = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.75
+				defence = 0.05
+				offence = 0.05
+			}
+		}
 		CVA_vigilance = {
 			picture = generic_wall_line
 			allowed = {
@@ -80,6 +102,45 @@ ideas = {
 				political_power_factor = 0.05
 			}
 		}
+		CVA_kruglaya_semya = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				MONTHLY_POPULATION = 0.01
+				political_power_factor = 0.10
+				command_power_gain = 0.5
+				surrender_limit = 0.25
+				research_speed_factor = 0.05
+				army_org_factor = 0.1
+				training_time_factor = -0.1
+			}
+		}
+		CVA_compassion_mentality = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				MONTHLY_POPULATION = 0.05
+				army_org = 10
+				attrition = -0.25
+			}
+		}
+		CVA_mood_good = {
+			picture = HUN_treaty_of_triannon
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.25
+				production_factory_max_efficiency_factor = 0.25
+				consumer_goods_factor = -0.05
+			}
+		}
 		CVA_mass_media_idea = {
 			picture = generic_political_support
 			allowed = {
@@ -102,6 +163,54 @@ ideas = {
 				research_speed_factor = 0.05
 			}
 		}
+		CVA_harmony_idea = {
+			picture = SPR_torchbearers_of_tomorrow
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+			}
+		}
+		CVA_society_idea = {
+			picture = SPR_torchbearers_of_tomorrow
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.1
+				surrender_limit = 0.1
+				political_power_gain = 0.1
+				military_leader_cost_factor = -0.1
+				consumer_goods_factor = -0.1
+				war_support_factor = 0.1
+				production_speed_buildings_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.1
+				production_factory_max_efficiency_factor = 0.1
+				army_org = 1
+				attrition = -0.1
+			}
+		}
+		CVA_loneliness_idea = {
+			picture = SPR_torchbearers_of_tomorrow
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.25
+				production_factory_max_efficiency_factor = 0.25
+			}
+		}
+		CVA_meaning_of_life_idea = {
+			picture = SPR_torchbearers_of_tomorrow
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_morale_factor = 1
+			}
+		}
 		CVA_sport_idea = {
 			picture = generic_production_bonus
 			allowed = {
@@ -111,6 +220,37 @@ ideas = {
 				consumer_goods_factor = 0.02
 				army_org_factor = 0.1
 				training_time_factor = -0.1
+			}
+		}
+		CVA_robots_idea = {
+			picture = generic_production_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.25
+				production_factory_efficiency_gain_factor = 0.25
+				production_factory_max_efficiency_factor = 0.25
+			}
+		}
+		CVA_data_idea = {
+			picture = generic_research_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				research_speed_factor = 1
+			}
+		}
+		CVA_pluto_fleet = {
+			picture = generic_victors_of_ww1
+			allowed = {
+				always = no
+			}
+			modifier = {
+				defence = 1
+				offence = 1
 			}
 		}
 	}

@@ -341,6 +341,148 @@ flensburgian_road_to_independence = {
     }
 }
 
+king_to_be_dec_category = {
+    go_to_fairy_for_help = {
+        icon = generic_political_discourse
+
+        available = {
+			
+		}
+
+        visible = {
+            has_variable = charming_decisions
+        }
+
+        allowed = {
+            tag = FFA
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = {
+                id = farfaraway.36
+                days = 0
+            }
+        }
+    }
+
+    to_the_poison_apple = {
+        icon = generic_political_discourse
+
+        available = {
+			
+		}
+
+        visible = {
+            has_variable = charming_decisions
+            has_variable = charming_knows_what_to_do
+        }
+
+        allowed = {
+            tag = FFA
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = {
+                id = farfaraway.37
+                days = 0
+            }
+        }
+    }
+
+    the_final_step = {
+        icon = generic_political_discourse
+
+        available = {
+			
+		}
+
+        visible = {
+            has_variable = charming_decisions
+            has_variable = charming_knows_what_to_do
+            has_variable = strongest_you_get
+        }
+
+        allowed = {
+            tag = FFA
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = {
+                id = farfaraway.38
+                days = 0
+            }
+        }
+    }
+
+    the_final_step_potion_countdown = {
+        icon = generic_political_discourse
+
+        available = {
+			hidden_trigger = {
+				is_puppet = yes
+			}
+		}
+
+        allowed = {
+            tag = FFA
+        }
+
+        activation = {
+            has_variable = charming_decisions
+            has_variable = fairy_gets_her_way
+        }
+
+        selectable_mission = no
+
+        is_good = yes
+
+        days_mission_timeout = 11
+
+        timeout_effect = {
+            hidden_effect = {
+                set_variable = {
+                    fairy_brew_the_potion = 1
+                }
+            }
+        }
+    }
+
+    the_final_step_potion = {
+        icon = generic_political_discourse
+
+        available = {
+			custom_trigger_tooltip = {
+                tooltip = FFA_fairy_prepared_the_potion
+                has_variable = fairy_brew_the_potion
+            }
+		}
+
+        visible = {
+            has_variable = charming_decisions
+            has_variable = fairy_gets_her_way
+        }
+
+        allowed = {
+            tag = FFA
+        }
+
+        fire_only_once = yes
+
+        complete_effect = {
+            country_event = {
+                id = farfaraway.41
+                days = 0
+            }
+        }
+    }
+}
+
 flensburgian_war_of_independence = {
     countdown_to_peace_proposal = {
         icon = generic_political_discourse

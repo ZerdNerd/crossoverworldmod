@@ -1,0 +1,106 @@
+﻿###########################
+# News Events
+###########################
+
+add_namespace = chamomilenews
+
+news_event = {
+	id = chamomilenews.1
+	title = "Krosh elected President in Chamomile Valley!"
+	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, which were won by Krosh the rabbit. Adored by Smeshariks for his positivity, kindness and enthusiasm with which he accomplishes things, he is now the new leader."
+	picture = GFX_news_CVA_krosh
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Isn't he too young?"
+		trigger = {
+			NOT = {
+				tag = CVA
+			}
+		}
+	}
+	option = {
+		name = "Onwards with our Sunny Bunny in charge!"
+		trigger = {
+				tag = CVA
+		}
+	}
+}
+news_event = {
+	id = chamomilenews.2
+	title = "Barash elected President in Chamomile Valley!"
+	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, which were won by Barash the ram. An animal with a deep appreciation of finer things in life, he is now in charge of the nation."
+	picture = GFX_news_CVA_barash
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let's see what this poet can do"
+		trigger = {
+			NOT = {
+				tag = CVA
+			}
+		}
+	}
+	option = {
+		name = "Yes, Barash! Yes, sheep's son!"
+		trigger = {
+				tag = CVA
+		}
+	}
+}
+news_event = {
+	id = chamomilenews.3
+	title = "Losyash elected President in Chamomile Valley!"
+	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, Losyash the moose, scientist known for his intelligence and eccenricity, has been elected president."
+	picture = GFX_news_CVA_losyash
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Let's see what this scientist can do"
+		trigger = {
+			NOT = {
+				tag = CVA
+			}
+		}
+	}
+	option = {
+		name = "Our greatest mind shall lead us"
+		trigger = {
+				tag = CVA
+		}
+	}
+}
+news_event = {
+	id = chamomilenews.4
+	title = "Coronation of Princess Nyusha!"
+	desc = "In an unexpected twist of events, Nyusha, an underage commoner pig girl has been crowned as princess of Chamomile Valley. This event has the international community severely confused, and partically nobody knows what to expect next."
+	picture = GFX_news_CVA_princess_nyusha
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "...What?"
+		trigger = {
+			NOT = {
+				tag = CVA
+			}
+		}
+	}
+	option = {
+		name = "Dreams come true!"
+		trigger = {
+				tag = CVA
+		}
+	}
+}

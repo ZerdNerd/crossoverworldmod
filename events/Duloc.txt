@@ -355,6 +355,24 @@ country_event = { #Choosing the princess
 
 	option = { #Princess Fiona
 		name = duloc.5.c
+		trigger = {
+			OR = {
+				AND = {
+					is_ai = no
+					OR = {
+						has_game_rule = {
+							rule = DUL_choose_the_princess
+							option = DUL_CHOOSE_FIONA
+						}
+						has_game_rule = {
+							rule = DUL_choose_the_princess
+							option = DEFAULT
+						}
+					}
+				}
+				is_ai = yes
+			}
+		}
 		ai_chance = {
 			base = 1
 			modifier = {

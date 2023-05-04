@@ -1414,7 +1414,20 @@ focus_tree = {
 		cost = 1.5
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 10
+			base = 10
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DUL_CHOOSE_FIONA
+					}
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DEFAULT
+					}
+				}
+				add = 90
+			}
 		} 
 		completion_reward = { 
 			add_political_power = 25
@@ -1430,7 +1443,20 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 1
+			base = 10
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DUL_CHOOSE_FIONA
+					}
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DEFAULT
+					}
+				}
+				add = 90
+			}
 		} 
 		prerequisite = {
 			focus = DUL_the_affairs_of_the_state
@@ -1551,10 +1577,24 @@ focus_tree = {
 				days = 0
 			}
 			hidden_effect = {
-				FFA = {
-					country_event = {
-						id = farfaraway.4
-						days = 0
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								rule = DUL_choose_the_princess
+								option = DUL_CHOOSE_FIONA
+							}
+							has_game_rule = {
+								rule = DUL_choose_the_princess
+								option = DEFAULT
+							}
+						}
+					}
+					FFA = {
+						country_event = {
+							id = farfaraway.4
+							days = 0
+						}
 					}
 				}
 			}
@@ -1570,7 +1610,20 @@ focus_tree = {
 		cost = 7.25
 		available_if_capitulated = yes
 		ai_will_do = { 
-			factor = 10
+			base = 10
+			modifier = {
+				OR = {
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DUL_CHOOSE_FIONA
+					}
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DEFAULT
+					}
+				}
+				add = 90
+			}
 		}
 		prerequisite = {
 			focus = DUL_the_road_for_crown

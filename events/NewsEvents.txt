@@ -4382,3 +4382,42 @@ news_event = { #King Harold's Death
 		}
 	}
 }
+
+news_event = { #King Harold's Death v2
+	id = worldnews.116
+	title = worldnews.116.t
+	desc = worldnews.116.d
+	picture = GFX_news_farfaraway
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = {
+		name = worldnews.116.a
+		trigger = {
+			tag = FFA
+		}
+	}
+	
+	option = {
+		name = worldnews.116.b
+		trigger = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+
+	option = {
+		name = worldnews.116.c
+		trigger = {
+			NOT = {
+				tag = FFA
+				has_government = fascism
+				has_government = communism
+			}
+		}
+	}
+}

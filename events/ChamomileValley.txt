@@ -1,0 +1,265 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = chamomilevalley
+
+country_event = {
+	id = chamomilevalley.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = "Kar-Karych retires"
+	desc = "This morning, Kar-Karych announced his retirement from politics. After dedicating an enormous amount of his heart and mind to running the nation, he now feels completely worn out."
+	picture = GFX_report_karych_retires
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "The old raven deserves a retirement."
+		hidden_effect = {
+			kill_country_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = chamomilevalley.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = "Snap Election!"
+	desc = "The election is finally here. As the voting is concluded and the results are in, the winner is..."
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Krosh!"
+		hidden_effect = {
+			complete_national_focus = CVA_krosh
+			news_event = { 
+				id = chamomilenews.1 days = 2
+			}
+			}
+	}
+	option = {
+		name = "Barash!"
+		hidden_effect = {
+			news_event = { 
+				id = chamomilenews.2 days = 2
+			}
+			complete_national_focus = CVA_barash
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Barash"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "barashregent.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		}
+	}
+	option = {
+		name = "Losyash!"
+		hidden_effect = {
+			news_event = { 
+				id = chamomilenews.3 days = 2
+			}
+			complete_national_focus = CVA_losyash
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Losyash"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "losyash.dds"
+			expire = "1965.1.1"
+			ideology = technocracy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = chamomilevalley.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.3"}
+	title = "Coronation"
+	desc = "After long preparation, today, finally, Nyusha has been crowned as the Princess of Chamomile Valley!"
+	picture = GFX_report_princess_nyusha
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Feels like one of those fairy tales."
+		hidden_effect = {
+			news_event = { 
+				id = chamomilenews.4 days = 2
+			}
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Princess Nyusha"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "princessnyusha.dds"
+			expire = "1965.1.1"
+			ideology = parliamentary_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+
+country_event = {
+	id = chamomilevalley.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.3"}
+	title = "Forum Speech"
+	desc = "The time has come for us to adopt a new system of government..."
+	picture = GFX_report_chamomile_greece
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Tyranny - where decisions are made by he who is most greek."
+		hidden_effect = {
+			retire_country_leader = yes
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Losyashos"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "losyashgreek.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = chamomilevalley.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = "Uprising!"
+	desc = "The public has had enough of our vision of the nation's future and have taken up defiant arms!"
+	picture = GFX_report_chamomile_greece
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Treason!"
+		hidden_effect = {
+start_civil_war = {
+	ideology = communism
+	size = 0.9
+}
+		}
+	}
+}
+country_event = { #Smeshariks want to join our faction
+	id = chamomilevalley.6
+	title = "Telegram from Chamomile Valley"
+	desc = "We have recieved a telegram from Chamomile Valley. They are interested in joining our faction."
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = "Welcome!"
+		CVA = {
+			country_event = {
+				id = chamomilevalley.7
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Deny
+		name = "Sorry, but no."
+		CVA = {
+			country_event = {
+				id = chamomilevalley.8
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+
+country_event = { #We have been accepted into the faction
+	id = chamomilevalley.7
+	title = "We have been accepted!"
+	desc = "They accepted us into their alliance!"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Splendid!"
+		FROM = {
+			add_to_faction = CVA
+		}
+	}
+}
+
+country_event = { #We have been refused from joining the faction
+	id = chamomilevalley.8
+	title = "They reject our offer!"
+	desc = "They won't let us join their alliance."
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Shame."
+	}
+}
+country_event = { 
+	id = chamomilevalley.9
+	title = "Losyash's connections"
+	desc = "Unbeknownst to many, Losyash is the Hero of Planet Pluto. Today, Losyash has recieved their guarantees of assistance in an event of war."
+	
+	picture = GFX_report_pluto_friends
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Wait, he wasn't joking?"
+		hidden_effect = {
+			add_ideas = {
+			CVA_pluto_fleet
+			}
+	}
+}
+

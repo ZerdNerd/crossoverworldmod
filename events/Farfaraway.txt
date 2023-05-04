@@ -33,6 +33,26 @@ country_event = { #Harold voices his concern to Fairy Godmother
 
 	option = {
 		name = farfaraway.2.a
+		hidden_effect = {
+			if = {
+				limit = {
+					OR = {
+						has_game_rule = {
+							rule = DUL_choose_the_princess
+							option = DUL_CHOOSE_ELENA
+						}
+						has_game_rule = {
+							rule = DUL_choose_the_princess
+							option = DUL_CHOOSE_BUBBLEGUM
+						}
+					}
+				}
+				country_event = {
+					id = farfaraway.4
+					days = 48
+				}
+			}
+		}
 	}
 }
 
@@ -119,21 +139,45 @@ country_event = { #Fiona is rescued by Charming
 	trigger = {
 		tag = FFA
 		has_country_flag = FFA_charming_goes_to_rescue_fiona
-		DUL = {
-			OR = {
+		OR = {
+			AND = {
 				OR = {
-					has_completed_focus = DUL_exchange_embassies
-					focus_progress = {
-    					focus = DUL_exchange_embassies
-    					progress > 0.01
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DUL_CHOOSE_FIONA
+					}
+					has_game_rule = {
+						rule = DUL_choose_the_princess
+						option = DEFAULT
 					}
 				}
-				OR = {
-					has_completed_focus = DUL_a_visit_to_the_south
-					focus_progress = {
-    					focus = DUL_a_visit_to_the_south
-    					progress > 0.01
+				DUL = {
+					OR = {
+						OR = {
+							has_completed_focus = DUL_exchange_embassies
+							focus_progress = {
+								focus = DUL_exchange_embassies
+								progress > 0.01
+							}
+						}
+						OR = {
+							has_completed_focus = DUL_a_visit_to_the_south
+							focus_progress = {
+								focus = DUL_a_visit_to_the_south
+								progress > 0.01
+							}
+						}
 					}
+				}
+			}
+			OR = {
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_ELENA
+				}
+				has_game_rule = {
+					rule = DUL_choose_the_princess
+					option = DUL_CHOOSE_BUBBLEGUM
 				}
 			}
 		}
@@ -146,6 +190,20 @@ country_event = { #Fiona is rescued by Charming
 	option = {
 		name = farfaraway.5.a
 		unlock_national_focus = FFA_charming_completes_the_plan
+		hidden_effect = {
+			country_event = {
+				id = farfaraway.35
+				days = 12
+			}
+		}
+		if = {
+			limit = {
+				has_idea = FFA_two_decades_of_waiting
+			}
+			remove_ideas = {
+				FFA_two_decades_of_waiting
+			}
+		}
 	}
 }
 
@@ -1903,6 +1961,9 @@ country_event = { #Death of King Harold
 			has_completed_focus = FFA_not_ogre_yet
 			has_completed_focus = FFA_charming_completes_the_plan
 		}
+		NOT = {
+			has_country_flag = harold_ded
+		}
 	}
 
 	mean_time_to_happen = { days = 450 }
@@ -2513,5 +2574,187 @@ country_event = { #Elwood refuse the bases
 	option = { #Damn
 		name = farfaraway.31.a
 		add_political_power = -200
+	}
+}
+
+country_event = { #A wish almost come true
+	id = farfaraway.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.35"}
+	title = farfaraway.35.t
+	desc = farfaraway.35.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #What should I do..?
+		name = farfaraway.35.a
+		hidden_effect = {
+			set_variable = {
+				charming_decisions = 1
+			}
+		}
+	}
+}
+
+country_event = { #mother knows best
+	id = farfaraway.36
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.36"}
+	title = farfaraway.36.t
+	desc = farfaraway.36.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #I know just what to do...
+		name = farfaraway.36.a
+		hidden_effect = {
+			set_variable = {
+				charming_knows_what_to_do = 1
+			}
+		}
+	}
+
+	option = { #Fairy got this under control
+		name = farfaraway.36.b
+		hidden_effect = {
+			set_variable = {
+				fairy_gets_her_way = 1
+			}
+		}
+	}
+
+	option = { #Time is on our side
+		name = farfaraway.36.c
+	}
+}
+
+country_event = { #An Apple That's Rotten to the Core
+	id = farfaraway.37
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.37"}
+	title = farfaraway.37.t
+	desc = farfaraway.37.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #What's the Strongest you've got?
+		name = farfaraway.37.a
+		hidden_effect = {
+			set_variable = {
+				strongest_you_get = 1
+			}
+		}
+	}
+
+	option = { #I changed my mind, he'll probably die soon
+		name = farfaraway.37.b
+	}
+}
+
+country_event = { #A Meal to Die For
+	id = farfaraway.38
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.38"}
+	title = farfaraway.38.t
+	desc = farfaraway.38.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #And by the end of this day, the crown will be mine
+		name = farfaraway.38.a
+		hidden_effect = {
+			country_event = {
+				id = farfaraway.39
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = { #Harold's Last Meal
+	id = farfaraway.39
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.39"}
+	title = farfaraway.39.t
+	desc = farfaraway.39.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #The Kingdom shall mourn its King
+		name = farfaraway.39.a
+		kill_country_leader = yes
+		set_character_name = {
+			character = FFA_charming
+			name = "King Charming"
+		}
+		add_country_leader_role = {
+			character = FFA_charming
+			country_leader = {
+				ideology = despotic_monarchy
+				expire = "1965.1.1.1"
+				traits = { }
+			}
+			promote_leader = yes
+		}
+		hidden_effect = {
+			set_country_flag = harold_ded
+			mark_focus_tree_layout_dirty = yes
+			unlock_national_focus = FFA_harold_is_ded
+			complete_national_focus = FFA_king_charming
+		}
+		hidden_effect = {
+			news_event = {
+				id = worldnews.116
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #King Charming, at Last
+	id = farfaraway.40
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.40"}
+	title = farfaraway.40.t
+	desc = farfaraway.40.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #The Kingdom shall mourn its King
+		name = farfaraway.40.a
+	}
+}
+
+country_event = { #Harold's Last Meal v2
+	id = farfaraway.41
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.41"}
+	title = farfaraway.41.t
+	desc = farfaraway.41.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { #That's one less loose end
+		name = farfaraway.41.a
+		hidden_effect = {
+			country_event = {
+				id = farfaraway.22
+				days = 4
+			}
+		}
 	}
 }
