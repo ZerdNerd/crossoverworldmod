@@ -4513,7 +4513,14 @@ occupation_dec_category = {
 					}
 					AND = {
 						has_government = monarchism
-						has_global_flag = winslows_are_dead
+						OR = {
+							tag = DUL
+							AND = {
+								tag = FFA
+								has_cosmetic_tag = king_charming_empire
+							}
+							has_global_flag = winslows_are_dead
+						}
 					}
 				}
 			}
@@ -4592,7 +4599,14 @@ occupation_dec_category = {
 					}
 					AND = {
 						has_government = monarchism
-						has_global_flag = winslows_are_dead
+						OR = {
+							tag = DUL
+							AND = {
+								tag = FFA
+								has_cosmetic_tag = king_charming_empire
+							}
+							has_global_flag = winslows_are_dead
+						}
 					}
 				}
 			}
@@ -4673,7 +4687,14 @@ occupation_dec_category = {
 					}
 					AND = {
 						has_government = monarchism
-						has_global_flag = winslows_are_dead
+						OR = {
+							tag = DUL
+							AND = {
+								tag = FFA
+								has_cosmetic_tag = king_charming_empire
+							}
+							has_global_flag = winslows_are_dead
+						}
 					}
 				}
 			}
@@ -4750,7 +4771,14 @@ occupation_dec_category = {
 					}
 					AND = {
 						has_government = monarchism
-						has_global_flag = winslows_are_dead
+						OR = {
+							tag = DUL
+							AND = {
+								tag = FFA
+								has_cosmetic_tag = king_charming_empire
+							}
+							has_global_flag = winslows_are_dead
+						}
 					}
 				}
 			}
@@ -4821,7 +4849,14 @@ occupation_dec_category = {
 					}
 					AND = {
 						has_government = monarchism
-						has_global_flag = winslows_are_dead
+						OR = {
+							tag = DUL
+							AND = {
+								tag = FFA
+								has_cosmetic_tag = king_charming_empire
+							}
+							has_global_flag = winslows_are_dead
+						}
 					}
 				}
 			}
@@ -4894,7 +4929,12 @@ occupation_dec_category = {
 				owns_state = 98
 				owns_state = 8
 				is_puppet = no
-				has_government = monarchism
+				AND = {
+					has_government = monarchism
+					NOT = {
+						has_cosmetic_tag = king_charming_empire
+					}
+				}
 			}
 			ENC = {
 				exists = no
@@ -4922,6 +4962,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = EN4
+			}
+			NOT = {
+				tag = DUL
 			}
 		}
 
@@ -4971,7 +5014,12 @@ occupation_dec_category = {
 				}
 				is_faction_leader = yes
 				is_puppet = no
-				has_government = monarchism
+				AND = {
+					has_government = monarchism
+					NOT = {
+						has_cosmetic_tag = king_charming_empire
+					}
+				}
 				any_controlled_state = {
 					is_core_of = ENC
 				}
@@ -5008,6 +5056,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = LEC
+			}
+			NOT = {
+				tag = DUL
 			}
 		}
 
@@ -5062,7 +5113,12 @@ occupation_dec_category = {
 				owns_state = 98
 				owns_state = 8
 				is_puppet = no
-				has_government = monarchism
+				AND = {
+					has_government = monarchism
+					NOT = {
+						has_cosmetic_tag = king_charming_empire
+					}
+				}
 			}
 			OR = {
 				has_global_flag = winslows_stripped_james
@@ -5095,6 +5151,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = EN4
+			}
+			NOT = {
+				tag = DUL
 			}
 		}
 
