@@ -107,6 +107,9 @@ country_event = { #April Fools content - Spawning APS
 					set_state_name = "Aperture Science Enrichment Center"
 				}
 				set_capital = { state = 678 } 
+				set_technology = {
+					aps_turrets_are_allowed = 1
+				}
 				load_oob = APS_spawn
 				declare_war_on = {
 					target = TSA

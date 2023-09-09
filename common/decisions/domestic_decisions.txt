@@ -128,6 +128,110 @@ domestic_politics_dec_category = {
             }
         }
     }
+
+	fulfill_the_promise = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+            always = no
+            DUL = {
+                exists = no
+            }
+            tag = SWA
+            has_completed_focus = SWA_sign_contracts_with_former_soldiers
+			owns_state = 109
+			is_puppet = no
+		}
+
+		complete_effect = {
+            custom_effect_tooltip = SWA_nation_for_magical_creatures_will_be_created
+            hidden_effect = {
+                DUL = {
+                    set_cosmetic_tag = nation_of_magical_creatures
+
+                }
+                SWA_donkey = {
+                    set_nationality = {
+                        target_country = DUL
+                        character = SWA_donkey
+                    }
+                }
+                puppet = DUL
+                DUL = {
+                    add_country_leader_role = {
+                        character = SWA_donkey
+                        country_leader = {
+                            ideology = centrism
+                            expire = "1965.1.1.1"
+                            traits = { }
+                        }
+                        promote_leader = yes
+                    }
+                }
+            }
+		}
+	}
+
+	SWA_time_left_to_create_nation_of_magical_creatures = {
+		icon = generic_political_discourse
+        visible = {
+            always = no
+        }
+		available = {
+			hidden_trigger = {
+				tag = SWA
+                has_completed_focus = SWA_sign_contracts_with_former_soldiers
+                DUL = {
+                    NOT = {
+                        is_puppet_of = SWA
+                        has_cosmetic_tag = nation_of_magical_creatures
+                    }
+                }
+			}
+		}
+		activation = { always = no }
+		selectable_mission = no
+		days_mission_timeout = 400
+		timeout_effect = {
+            #event
+        }
+    }
+}
+
+SWA_coring_the_duloc = {
+	SWA_core_the_state = {
+        visible = {
+            SWA = {
+                has_completed_focus = SWA_against_all_odds
+            }
+        }
+        state_target = yes
+		icon = generic_political_discourse
+        cost = 85
+        target_array = DUL.core_states
+        target_trigger = {
+            FROM = {
+                is_owned_by = ROOT
+                NOT = {
+                    state = 428
+                    is_core_of = ROOT
+                }
+            }
+        }
+		days_remove = 100
+		remove_effect = {
+            FROM = {
+                add_core_of = SWA
+            }
+        }
+    }
 }
 
 flensburgian_road_to_independence = {

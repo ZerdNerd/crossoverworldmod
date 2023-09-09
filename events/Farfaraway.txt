@@ -843,10 +843,13 @@ country_event = { #Inviting Shrek and Fiona
 
 	option = {
 		name = farfaraway.16.a
-		SWA = {
-			country_event = {
-				id = farfaraway.17
-				days = 4
+		hidden_effect = {
+			SWA = {
+				set_country_flag = invited_by_ffa
+			#	country_event = {
+			#		id = farfaraway.17
+			#		days = 4
+			#	}
 			}
 		}
 	}
@@ -881,20 +884,21 @@ country_event = { #Shrek and Fiona arrive to Far Far Away
 	desc = {
 		text = farfaraway.18.d.warmwelcome
 		trigger = {
-			OR = {
-				AND = {
-					has_country_flag = FFA_rejected_fairy_demand_about_shrek
-					has_country_flag = FFA_fairy_launched_a_coup
-				}
-				AND = {
-					has_country_flag = FFA_rejected_fairy_demand_about_shrek
-					NOT = {
+			FFA = {
+				OR = {
+					AND = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
 						has_country_flag = FFA_fairy_launched_a_coup
 					}
+					AND = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						NOT = {
+							has_country_flag = FFA_fairy_launched_a_coup
+						}
+					}
+					has_country_flag = FFA_arrested_fairy_and_charming
 				}
-				has_country_flag = FFA_arrested_fairy_and_charming
 			}
-			
 		}
 	}
 	desc = {
@@ -909,47 +913,63 @@ country_event = { #Shrek and Fiona arrive to Far Far Away
 
 	is_triggered_only = yes
 
-	fire_only_once = yes
+#	fire_only_once = yes
 
 	option = {
 		name = farfaraway.18.a
 		if = {
 			limit = {
-				OR = {
-					DUL = {
-						has_country_flag = farquaad_is_ded
-					}
-					AND = {
-						has_country_flag = FFA_rejected_fairy_demand_about_shrek
-						NOT = {
-							has_country_flag = FFA_fairy_launched_a_coup
+				tag = FFA
+			}
+			if = {
+				limit = {
+					OR = {
+						DUL = {
+							has_country_flag = farquaad_is_ded
+						}
+						AND = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							NOT = {
+								has_country_flag = FFA_fairy_launched_a_coup
+							}
 						}
 					}
 				}
-			}
-			hidden_effect = {
-				country_event = {
-					id = farfaraway.19
-					days = 1
+				hidden_effect = {
+					country_event = {
+						id = farfaraway.19
+						days = 1
+					}
 				}
 			}
+			else = {
+				hidden_effect = {
+					country_event = {
+						id = farfaraway.20
+						days = 3
+					}
+				}
+				if = {
+					limit = {
+						has_idea = FFA_two_decades_of_waiting
+					}
+					remove_ideas = {
+						FFA_two_decades_of_waiting
+					}
+				}
+				unlock_national_focus = FFA_not_ogre_yet
+			}
 		}
-		else = {
+		if = {
+			limit = {
+				tag = SWA
+			}
 			hidden_effect = {
 				country_event = {
 					id = farfaraway.20
 					days = 3
 				}
 			}
-			if = {
-				limit = {
-					has_idea = FFA_two_decades_of_waiting
-				}
-				remove_ideas = {
-					FFA_two_decades_of_waiting
-				}
-			}
-			unlock_national_focus = FFA_not_ogre_yet
 		}
 	}
 }
@@ -991,22 +1011,26 @@ country_event = { #The great ball
 	desc = {
 		text = farfaraway.20.d.warmwelcome
 		trigger = {
-			OR = {
-				AND = {
-					has_country_flag = FFA_rejected_fairy_demand_about_shrek
-					has_country_flag = FFA_fairy_launched_a_coup
+			FFA = {
+				OR = {
+					AND = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
+					has_country_flag = FFA_arrested_fairy_and_charming
 				}
-				has_country_flag = FFA_arrested_fairy_and_charming
 			}
 		}
 	}
 	desc = {
 		text = farfaraway.20.d.secondoption
 		trigger = {
-			AND = {
-				has_country_flag = FFA_rejected_fairy_demand_about_shrek
-				NOT = {
-					has_country_flag = FFA_fairy_launched_a_coup
+			FFA = {
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					NOT = {
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
 				}
 			}
 		}
@@ -1023,7 +1047,7 @@ country_event = { #The great ball
 
 	is_triggered_only = yes
 
-	fire_only_once = yes
+#	fire_only_once = yes
 
 	option = { #Fairy dies
 		name = farfaraway.20.a
@@ -1031,18 +1055,38 @@ country_event = { #The great ball
 			DUL = {
 				has_country_flag = farquaad_is_ded
 			}
-			NOT = {
-				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+			FFA = {
+				NOT = {
+					has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
+				}
 			}
 		}
-		retire_character =  FFA_fairy_godmother
-		unlock_national_focus = FFA_not_ogre_yet
 		if = {
 			limit = {
-				has_idea = FFA_two_decades_of_waiting
+				tag = FFA
 			}
-			remove_ideas = {
-				FFA_two_decades_of_waiting
+			retire_character =  FFA_fairy_godmother
+			unlock_national_focus = FFA_not_ogre_yet
+			if = {
+				limit = {
+					has_idea = FFA_two_decades_of_waiting
+				}
+				remove_ideas = {
+					FFA_two_decades_of_waiting
+				}
+			}
+			create_faction = swamp_ffa_alliance
+			add_to_faction = FFA
+		}
+		if = {
+			limit = {
+				tag = SWA
+			}
+			hidden_effect = {
+				country_event = {
+					id = swamp.6
+					days = 121
+				}
 			}
 		}
 	}
@@ -1050,116 +1094,141 @@ country_event = { #The great ball
 	option = { #Fairy launches revolt
 		name = farfaraway.20.b.rejecteddemand
 		trigger = {
-			AND = {
-				has_country_flag = FFA_rejected_fairy_demand_about_shrek
-				NOT = {
-					has_country_flag = FFA_fairy_launched_a_coup
-				}
-			}
-		}
-		unlock_national_focus = FFA_not_ogre_yet
-		if = {
-			limit = {
-				FFA_puss_in_boots = {
-					is_army_leader = no
-				}
-			}
-			add_corps_commander_role = {
-				Character = FFA_puss_in_boots
-				skill = 7
-				attack_skill = 8
-				defense_skill = 7
-				planning_skill = 5
-				logistics_skill = 4
-			}
-		}
-		if = {
-			limit = {
-				has_idea = FFA_two_decades_of_waiting
-			}
-			remove_ideas = {
-				FFA_two_decades_of_waiting
-			}
-		}hidden_effect = {
-			FGM = {
-				add_ideas = {
-					middleage_tech
-				}
-				transfer_state = 216
-				transfer_state = 200
-				transfer_state = 233
-				transfer_state = 299
-				transfer_state = 135
-				transfer_state = 155
-				transfer_state = 113
-				inherit_technology = FFA
-				set_capital = { state = 216 }
-				if = {
-					limit = {
-						has_country_flag = FFA_rejected_fairy_demand_about_shrek
-						NOT = {
-							has_country_flag = FFA_fairy_launched_a_coup
-						}
+			FFA = {
+				AND = {
+					has_country_flag = FFA_rejected_fairy_demand_about_shrek
+					NOT = {
+						has_country_flag = FFA_fairy_launched_a_coup
 					}
-					load_oob = FGM_rebellion_v2
-				}
-				else = {
-					load_oob = FGM_rebellion
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_old
-					amount = 8000
-					producer = FFA
-				}
-				declare_war_on = {
-					target = FFA
-					type = annex_everything
 				}
 			}
-			every_owned_state = {
-				add_core_of = FGM
+		}
+		if = {
+			limit = {
+				tag = FFA
 			}
-			FFA_fairy_godmother = {
+			unlock_national_focus = FFA_not_ogre_yet
+			if = {
+				limit = {
+					FFA_puss_in_boots = {
+						is_army_leader = no
+					}
+				}
 				add_corps_commander_role = {
-					Character = FFA_fairy_godmother
-					skill = 5
-					attack_skill = 4
-					defense_skill = 3
+					Character = FFA_puss_in_boots
+					skill = 7
+					attack_skill = 8
+					defense_skill = 7
 					planning_skill = 5
 					logistics_skill = 4
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_fairy_godmother
+			}
+			if = {
+				limit = {
+					has_idea = FFA_two_decades_of_waiting
+				}
+				remove_ideas = {
+					FFA_two_decades_of_waiting
 				}
 			}
-			FFA_charming = {
-				if = {
-					limit = {
-						NOT = {
-							is_army_leader = yes
-						}
+			create_faction = swamp_ffa_alliance
+			add_to_faction = FFA
+			hidden_effect = {
+				FGM = {
+					add_ideas = {
+						middleage_tech
 					}
-					add_corps_commander_role = {
-						Character = FFA_charming
-						skill = 2
-						attack_skill = 2
-						defense_skill = 2
-						planning_skill = 1
-						logistics_skill = 1
+					transfer_state = 216
+					transfer_state = 200
+					transfer_state = 233
+					transfer_state = 299
+					transfer_state = 135
+					transfer_state = 155
+					transfer_state = 113
+					inherit_technology = FFA
+					set_capital = { state = 216 }
+					if = {
+						limit = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							NOT = {
+								has_country_flag = FFA_fairy_launched_a_coup
+							}
+						}
+						load_oob = FGM_rebellion_v2
+					}
+					else = {
+						load_oob = FGM_rebellion
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_old
+						amount = 8000
+						producer = FFA
+					}
+					declare_war_on = {
+						target = FFA
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = SWA
+						type = annex_everything
 					}
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_charming
+				every_owned_state = {
+					add_core_of = FGM
+				}
+				FFA_fairy_godmother = {
+					add_corps_commander_role = {
+						Character = FFA_fairy_godmother
+						skill = 5
+						attack_skill = 4
+						defense_skill = 3
+						planning_skill = 5
+						logistics_skill = 4
+					}
+					set_nationality = {
+						target_country = FGM
+						character = FFA_fairy_godmother
+					}
+				}
+				FFA_charming = {
+					if = {
+						limit = {
+							NOT = {
+								is_army_leader = yes
+							}
+						}
+						add_corps_commander_role = {
+							Character = FFA_charming
+							skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 1
+						}
+					}
+					set_nationality = {
+						target_country = FGM
+						character = FFA_charming
+					}
+				}
+			}
+			hidden_effect = {
+				set_country_flag = FFA_fairy_launched_a_coup
+				news_event = {
+					id = worldnews.113
+					hours = 6
 				}
 			}
 		}
-		hidden_effect = {
-			set_country_flag = FFA_fairy_launched_a_coup
-			news_event = {
-				id = worldnews.113
-				hours = 6
+		if = {
+			limit = {
+				tag = SWA
+			}
+			hidden_effect = {
+				country_event = {
+					id = swamp.6
+					days = 121
+				}
 			}
 		}
 	}
@@ -1167,102 +1236,126 @@ country_event = { #The great ball
 	option = { #Fairy launches revolt
 		name = farfaraway.20.b.canonrebellion
 		trigger = {
-			AND = {
-				DUL = {
-					has_country_flag = farquaad_is_ded
+			FFA = {
+				AND = {
+					DUL = {
+						has_country_flag = farquaad_is_ded
+					}
+					has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
 				}
-				has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
 			}
 		}
 		if = {
 			limit = {
-				has_idea = FFA_two_decades_of_waiting
+				tag = SWA
 			}
-			remove_ideas = {
-				FFA_two_decades_of_waiting
+			hidden_effect = {
+				country_event = {
+					id = swamp.6
+					days = 121
+				}
 			}
 		}
-		unlock_national_focus = FFA_not_ogre_yet
-		hidden_effect = {
-			FGM = {
-				add_ideas = {
-					middleage_tech
+		if = {
+			limit = {
+				tag = FFA
+			}
+			if = {
+				limit = {
+					has_idea = FFA_two_decades_of_waiting
 				}
-				transfer_state = 216
-				transfer_state = 200
-				transfer_state = 233
-				transfer_state = 299
-				transfer_state = 135
-				transfer_state = 155
-				transfer_state = 113
-				inherit_technology = FFA
-				set_capital = { state = 216 }
-				if = {
-					limit = {
-						has_country_flag = FFA_rejected_fairy_demand_about_shrek
-						NOT = {
-							has_country_flag = FFA_fairy_launched_a_coup
-						}
+				remove_ideas = {
+					FFA_two_decades_of_waiting
+				}
+			}
+			unlock_national_focus = FFA_not_ogre_yet
+			create_faction = swamp_ffa_alliance
+			add_to_faction = FFA
+			hidden_effect = {
+				FGM = {
+					add_ideas = {
+						middleage_tech
 					}
-					load_oob = FGM_rebellion_v2
-				}
-				else = {
-					load_oob = FGM_rebellion
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_old
-					amount = 8000
-					producer = FFA
-				}
-				declare_war_on = {
-					target = FFA
-					type = annex_everything
-				}
-			}
-			every_owned_state = {
-				add_core_of = FGM
-			}
-			FFA_fairy_godmother = {
-				add_corps_commander_role = {
-					Character = FFA_fairy_godmother
-					skill = 5
-					attack_skill = 4
-					defense_skill = 3
-					planning_skill = 5
-					logistics_skill = 4
-				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_fairy_godmother
-				}
-			}
-			FFA_charming = {
-				if = {
-					limit = {
-						NOT = {
-							is_army_leader = yes
+					transfer_state = 216
+					transfer_state = 200
+					transfer_state = 233
+					transfer_state = 299
+					transfer_state = 135
+					transfer_state = 155
+					transfer_state = 113
+					inherit_technology = FFA
+					set_capital = { state = 216 }
+					if = {
+						limit = {
+							has_country_flag = FFA_rejected_fairy_demand_about_shrek
+							NOT = {
+								has_country_flag = FFA_fairy_launched_a_coup
+							}
 						}
+						load_oob = FGM_rebellion_v2
 					}
+					else = {
+						load_oob = FGM_rebellion
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_old
+						amount = 8000
+						producer = FFA
+					}
+					declare_war_on = {
+						target = FFA
+						type = annex_everything
+					}
+					declare_war_on = {
+						target = SWA
+						type = annex_everything
+					}
+				}
+				every_owned_state = {
+					add_core_of = FGM
+				}
+				FFA_fairy_godmother = {
 					add_corps_commander_role = {
-						Character = FFA_charming
-						skill = 2
-						attack_skill = 2
-						defense_skill = 2
-						planning_skill = 1
-						logistics_skill = 1
+						Character = FFA_fairy_godmother
+						skill = 5
+						attack_skill = 4
+						defense_skill = 3
+						planning_skill = 5
+						logistics_skill = 4
+					}
+					set_nationality = {
+						target_country = FGM
+						character = FFA_fairy_godmother
 					}
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_charming
+				FFA_charming = {
+					if = {
+						limit = {
+							NOT = {
+								is_army_leader = yes
+							}
+						}
+						add_corps_commander_role = {
+							Character = FFA_charming
+							skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 1
+						}
+					}
+					set_nationality = {
+						target_country = FGM
+						character = FFA_charming
+					}
 				}
 			}
-		}
-		hidden_effect = {
-			set_country_flag = FFA_fairy_launched_a_coup
-			news_event = {
-				id = worldnews.113
-				hours = 6
+			hidden_effect = {
+				set_country_flag = FFA_fairy_launched_a_coup
+				news_event = {
+					id = worldnews.113
+					hours = 6
+				}
 			}
 		}
 	}
@@ -1270,30 +1363,50 @@ country_event = { #The great ball
 	option = { #Everyone is happy
 		name = farfaraway.20.c
 		trigger = {
-			OR = {
-				AND = {
-					has_country_flag = FFA_rejected_fairy_demand_about_shrek
-					has_country_flag = FFA_fairy_launched_a_coup
+			FFA = {
+				OR = {
+					AND = {
+						has_country_flag = FFA_rejected_fairy_demand_about_shrek
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
+					has_country_flag = FFA_arrested_fairy_and_charming
 				}
-				has_country_flag = FFA_arrested_fairy_and_charming
 			}
 		}
 		if = {
 			limit = {
-				FFA_puss_in_boots = {
-					is_army_leader = no
+				tag = FFA
+			}
+			if = {
+				limit = {
+					FFA_puss_in_boots = {
+						is_army_leader = no
+					}
+				}
+				add_corps_commander_role = {
+					Character = FFA_puss_in_boots
+					skill = 7
+					attack_skill = 8
+					defense_skill = 7
+					planning_skill = 5
+					logistics_skill = 4
 				}
 			}
-			add_corps_commander_role = {
-				Character = FFA_puss_in_boots
-				skill = 7
-				attack_skill = 8
-				defense_skill = 7
-				planning_skill = 5
-				logistics_skill = 4
+			unlock_national_focus = FFA_not_ogre_yet
+			create_faction = swamp_ffa_alliance
+			add_to_faction = FFA
+		}
+		if = {
+			limit = {
+				tag = SWA
+			}
+			hidden_effect = {
+				country_event = {
+					id = swamp.6
+					days = 121
+				}
 			}
 		}
-		unlock_national_focus = FFA_not_ogre_yet
 	}
 }
 
@@ -2006,39 +2119,20 @@ country_event = { #Death of King Harold
 	option = {
 		name = farfaraway.22.b
 		trigger = {
-			always = no
-		#	has_completed_focus = FFA_not_ogre_yet
+			SWA = {
+				has_country_flag = SWA_agreed_to_take_the_crown
+			}
+			has_completed_focus = FFA_not_ogre_yet
 		}
 		kill_country_leader = yes
-		change_tag_from = SWA
-		SWA = {
-			set_nationality = {
-				target_country = FFA
-				character = SWA_shrek
-			}
-			set_nationality = {
-				target_country = FFA
-				character = SWA_donkey
-			}
-			set_nationality = {
-				target_country = FFA
-				character = SWA_fiona_ogre
-			}
-		}
-		annex_country = {
-			target = SWA
-			transfer_troops = yes
-		}
-		add_country_leader_role = {
-			character = SWA_shrek
-			country_leader = {
-				ideology = administrative_monarchy
-				expire = "1965.1.1.1"
-				traits = { }
-			}
-			promote_leader = yes
-		}
 		hidden_effect = {
+			SWA = {
+				inherit_technology = FFA
+				country_event = {
+					id = swamp.7
+					days = 0
+				}
+			}
 			set_country_flag = harold_ded
 			mark_focus_tree_layout_dirty = yes
 			unlock_national_focus = FFA_harold_is_ded
@@ -2055,6 +2149,9 @@ country_event = { #Death of King Harold
 	option = {
 		name = farfaraway.22.c
 		trigger = {
+			SWA = {
+				has_country_flag = SWA_rejected_the_crown
+			}
 			has_completed_focus = FFA_not_ogre_yet
 		}
 		kill_country_leader = yes
@@ -2219,55 +2316,60 @@ country_event = { #The Great War of Prince Charming
 				hours = 6
 			}
 			SWA = {
-				SWA_donkey = {
-					add_corps_commander_role = {
-						Character = SWA_donkey
-						skill = 0
-						attack_skill = 1
-						defense_skill = 0
-						planning_skill = 0
-						logistics_skill = 0
+				if = {
+					limit = {
+						is_ai = yes
 					}
-					set_nationality = {
-						target_country = FFA
-						character = SWA_donkey
+					SWA_donkey = {
+						add_corps_commander_role = {
+							Character = SWA_donkey
+							skill = 0
+							attack_skill = 1
+							defense_skill = 0
+							planning_skill = 0
+							logistics_skill = 0
+						}
+						set_nationality = {
+							target_country = FFA
+							character = SWA_donkey
+						}
 					}
-				}
-				SWA_fiona_ogre = {
-					add_corps_commander_role = {
-						Character = SWA_fiona_ogre
-						skill = 4
-						attack_skill = 4
-						defense_skill = 4
-						planning_skill = 4
-						logistics_skill = 4
+					SWA_fiona_ogre = {
+						add_corps_commander_role = {
+							Character = SWA_fiona_ogre
+							skill = 4
+							attack_skill = 4
+							defense_skill = 4
+							planning_skill = 4
+							logistics_skill = 4
+						}
+						set_nationality = {
+							target_country = FFA
+							character = SWA_fiona_ogre
+						}
 					}
-					set_nationality = {
-						target_country = FFA
-						character = SWA_fiona_ogre
+					SWA_shrek = {
+						add_corps_commander_role = {
+							Character = SWA_shrek
+							skill = 5
+							attack_skill = 4
+							defense_skill = 4
+							planning_skill = 4
+							logistics_skill = 4
+						}
+						set_nationality = {
+							target_country = FFA
+							character = SWA_shrek
+						}
 					}
-				}
-				SWA_shrek = {
-					add_corps_commander_role = {
-						Character = SWA_shrek
-						skill = 5
-						attack_skill = 4
-						defense_skill = 4
-						planning_skill = 4
-						logistics_skill = 4
-					}
-					set_nationality = {
-						target_country = FFA
-						character = SWA_shrek
-					}
-				}
-				create_country_leader = {
-					name = "Shrek"
-					desc = "POLITICS_SHREK_DESC"
-					picture = "shrek.dds"
-					expire = "1965.1.1"
-					ideology = centrism
-					traits = {
+					create_country_leader = {
+						name = "Shrek"
+						desc = "POLITICS_SHREK_DESC"
+						picture = "shrek.dds"
+						expire = "1965.1.1"
+						ideology = centrism
+						traits = {
+						}
 					}
 				}
 			}

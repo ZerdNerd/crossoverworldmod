@@ -1,0 +1,10 @@
+scripted_gui = {
+	CR_badtom = {
+		context_type = player_context
+		window_name = "saness_anticheat_window"
+
+		visible = {
+			has_country_flag = cheating_detected
+		}
+	}
+}

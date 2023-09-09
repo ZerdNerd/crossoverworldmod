@@ -40,4 +40,16 @@ spriteTypes = {
 		texturefile = "gfx//interface//icon_discord.dds"
 		noOfFrames = 1
 	}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_saness"
+		texturefile = "gfx//interface//saness.dds"
+		noOfFrames = 9
+		loadType = "INGAME"
+		alwaystransparent = no
+		animation_rate_fps = 60
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+	}
 }

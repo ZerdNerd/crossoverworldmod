@@ -188,6 +188,9 @@ country_event = { #Refugees from Duloc arrive to Swamp
 
 	option = {
 		name = duloc.4.a
+		trigger = {
+			has_completed_focus = SWA_and_being_lonely_is_the_best_way
+		}
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -220,6 +223,9 @@ country_event = { #Refugees from Duloc arrive to Swamp
 
 	option = {
 		name = duloc.4.b
+		trigger = {
+			has_completed_focus = SWA_and_being_lonely_is_the_best_way
+		}
 		ai_chance = {
 			base = 1
 			modifier = {
@@ -249,16 +255,36 @@ country_event = { #Refugees from Duloc arrive to Swamp
 				set_country_flag = shrek_is_coming_to_ya
 			}
 			load_oob = SWA_creatures
-			add_corps_commander_role = {
-				Character = SWA_donkey
-				skill = 0
-				attack_skill = 1
-				defense_skill = 0
-				planning_skill = 0
-				logistics_skill = 0
-			}
+			add_manpower = 90000
 			428 = {
-				add_manpower = 500000
+				add_manpower = 300000
+			}
+		}
+	}
+
+	option = {
+		name = duloc.4.c
+		trigger = {
+			has_completed_focus = SWA_open_swamp_for_people
+		}
+		add_ideas = {
+			DUL_refugees_from_duloc
+		}
+		if = {
+			limit = {
+				SWA = {
+					has_completed_focus = SWA_open_swamp_for_people
+				}
+			}
+			add_ideas = {
+				SWA_duloc_refugees_bonus
+			}
+		}
+		hidden_effect = {
+			load_oob = SWA_creatures
+			add_manpower = 90000
+			428 = {
+				add_manpower = 300000
 			}
 		}
 	}
@@ -597,7 +623,7 @@ country_event = { #The tournament (with Shrek)
 
 	is_triggered_only = yes
 
-	fire_only_once = yes
+	#fire_only_once = yes
 
 	option = { #What kind of deal?
 		name = duloc.13.a
@@ -639,14 +665,19 @@ country_event = { #Fiona is rescued by Shrek (and Donkey)
 
 	is_triggered_only = yes
 
-	fire_only_once = yes
+	#fire_only_once = yes
 
 	option = { #Great!
 		name = duloc.15.a
-		custom_effect_tooltip = DUL_can_organize_the_marriage
-		hidden_effect = {
-			set_country_flag = DUL_fiona_rescued
-			set_country_flag = DUL_by_shrek_and_donkey
+		if = {
+			limit = {
+				tag = DUL
+			}
+			custom_effect_tooltip = DUL_can_organize_the_marriage
+			hidden_effect = {
+				set_country_flag = DUL_fiona_rescued
+				set_country_flag = DUL_by_shrek_and_donkey
+			}
 		}
 	}
 }
@@ -660,11 +691,68 @@ country_event = { #Marriage of Fiona and Farquaad
 
 	is_triggered_only = yes
 
-	fire_only_once = yes
+	#fire_only_once = yes
 
 	option = { #Dragoness comes and eats Farquaad, game over.
 		name = duloc.16.a
 		trigger = {
+			tag = SWA
+			DUL = {
+				NOT = {
+					has_completed_focus = DUL_military_academy
+				}
+			}
+		}
+	}
+
+	option = { #Farquaad successfully detains both Shrek and Fiona and becomes King
+		name = duloc.16.b
+		trigger = {
+			tag = SWA
+			DUL = {
+				has_completed_focus = DUL_military_academy
+			}
+			NOT = {
+				SWA = {
+					has_country_flag = shrek_is_coming_to_ya_with_surprise
+				}
+			}
+		}
+		custom_effect_tooltip = GAMEOVER
+		if = {
+			limit = {
+				SWA = {
+					is_ai = no
+				}
+			}
+			DUL = {
+				annex_country = {
+					target = SWA
+				}
+			}
+			428 = {
+				add_core_of = DUL
+			}
+		}
+	}
+	
+	option = { #Shrek and Fiona escape, Farquaad becomes the King, but full blown war between Swamp and Duloc erupts
+		name = duloc.16.c
+		trigger = {
+			tag = SWA
+			DUL = {
+				has_completed_focus = DUL_military_academy
+			}
+			SWA = {
+				has_country_flag = shrek_is_coming_to_ya_with_surprise
+			}
+		}
+	}
+
+	option = { #Dragoness comes and eats Farquaad, game over.
+		name = duloc.16.a
+		trigger = {
+			tag = DUL
 			NOT = {
 				has_completed_focus = DUL_military_academy
 			}
@@ -672,6 +760,7 @@ country_event = { #Marriage of Fiona and Farquaad
 		custom_effect_tooltip = GAMEOVER
 		custom_effect_tooltip = DUL_seriously
 		hidden_effect = {
+			retire_character = DUL_thelonious
 			if = {
 				limit = {
 					is_ai = no
@@ -702,6 +791,15 @@ country_event = { #Marriage of Fiona and Farquaad
 			}
 			country_lock_all_division_template = yes
 			kill_country_leader = yes
+			add_country_leader_role = {
+				character = DUL_fallen_government
+				country_leader = {
+					ideology = administrative_monarchy
+					expire = "1965.1.1.1"
+					traits = { }
+				}
+				promote_leader = yes
+			}
 			load_focus_tree = generic_focus
 			set_country_flag = farquaad_is_ded
 			hidden_effect = {
@@ -716,6 +814,7 @@ country_event = { #Marriage of Fiona and Farquaad
 	option = { #Farquaad successfully detains both Shrek and Fiona and becomes King
 		name = duloc.16.b
 		trigger = {
+			tag = DUL
 			has_completed_focus = DUL_military_academy
 			NOT = {
 				SWA = {
@@ -723,11 +822,18 @@ country_event = { #Marriage of Fiona and Farquaad
 				}
 			}
 		}
-		annex_country = {
-    		target = SWA
-		}
-		428 = {
-			add_core_of = DUL
+		if = {
+			limit = {
+				SWA = {
+					is_ai = yes
+				}
+			}
+			annex_country = {
+				target = SWA
+			}
+			428 = {
+				add_core_of = DUL
+			}
 		}
 		hidden_effect = {
 			set_country_flag = DUL_shrek_and_fiona_detained
@@ -737,6 +843,7 @@ country_event = { #Marriage of Fiona and Farquaad
 	option = { #Shrek and Fiona escape, Farquaad becomes the King, but full blown war between Swamp and Duloc erupts
 		name = duloc.16.c
 		trigger = {
+			tag = DUL
 			has_completed_focus = DUL_military_academy
 			SWA = {
 				has_country_flag = shrek_is_coming_to_ya_with_surprise

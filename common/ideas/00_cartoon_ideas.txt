@@ -90,7 +90,9 @@
 
 ideas = {
 
-	country = {
+	technological_level_idea = {
+		law = yes
+		use_list_view = yes
 		middleage_tech = {
 		
 			allowed = {
@@ -173,6 +175,9 @@ ideas = {
 				factor = 0
 			}
 		}
+	}
+
+	country = {
 
 		MAC_helps_rebuild = {
 			allowed = {
@@ -5444,7 +5449,7 @@ ideas = {
 				has_country_leader = {
 					name = "Rumpelstiltskin"
 					ruling_only = yes
-				} 
+				}
 			}
 			allowed = {
 				always = no
@@ -5471,6 +5476,92 @@ ideas = {
 				stability_factor = -0.1
 				war_support_factor = -0.1
 				conscription = 0.05
+			}
+		}
+
+		SWA_duloc_refugees_bonus = {
+			picture = prc_low_popular_support3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = 150
+			}
+		}
+
+		SWA_swamps_first_industrial_programme = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1 
+				global_building_slots_factor = 0.05
+			}
+		}
+
+		SWA_supplying_the_food = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				always = no
+			}
+			modifier = {
+				war_support_factor = 0.025
+				consumer_goods_factor = 0.025
+			}
+		}
+
+		SWA_help_from_foreign_shipyards = {
+			picture = generic_the_london_naval_treaty
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_cost_max_ship_hull_light = 0.5
+			}
+		}
+
+		SWA_attack_from_behind = {
+			picture = eng_preparing_the_second_front
+			allowed = {
+				always = no
+			}
+			modifier = {
+				naval_invasion_prep_speed = 5
+				naval_invasion_penalty = 0.25
+			}
+		}
+
+		SWA_training_with_fiona = {
+			picture = eng_special_air_service
+			allowed = {
+				always = no
+			}
+			modifier = {
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				experience_gain_army = 0.05
+			}
+		}
+
+		SWA_emigrating_from_duloc = {
+			picture = spr_disbanded_army
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = -43
+			}
+		}
+
+		SWA_immigration_from_duloc = {
+			picture = prc_the_long_march2
+			allowed = {
+				always = no
+			}
+			modifier = {
+				weekly_manpower = 43
 			}
 		}
 	}

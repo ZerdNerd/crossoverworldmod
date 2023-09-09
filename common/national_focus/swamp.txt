@@ -1,0 +1,1574 @@
+focus_tree = {
+	id = swamp
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = SWA
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = SWA_so_you_want_to_live_here
+		icon = GFX_focus_swamp
+		x = 9
+		y = 0
+		cost = 0.75
+		allow_branch = {
+			NOT = {
+				has_country_flag = SWA_will_liberate_the_kingdom
+			}
+		}
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		 	country_event = {
+		 		id = swamp.1
+		 		days = 1
+		 	}
+		}		
+	}
+
+	focus = { 
+		id = SWA_but_the_swamp_is_kinda_empty
+		icon = GFX_focus_swamp
+		x = -6
+		y = 2
+		relative_position_id = SWA_so_you_want_to_live_here
+		cost = 9
+		prerequisite = { focus = SWA_so_you_want_to_live_here }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_country_flag = SWA_going_open
+		}
+		completion_reward = { 
+		 	country_event = {
+		 		id = swamp.2
+		 		days = 1
+		 	}
+			hidden_effect = {
+				country_event = {
+					id = swamp.4
+					days = 16
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_open_swamp_for_people
+		icon = GFX_focus_generic_military_academy
+		x = 0
+		y = 1
+		relative_position_id = SWA_but_the_swamp_is_kinda_empty
+		cost = 0.75
+		prerequisite = { focus = SWA_but_the_swamp_is_kinda_empty }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			DUL = {
+				add_ideas = {
+					SWA_emigrating_from_duloc
+				}
+			}
+			add_ideas = {
+				SWA_immigration_from_duloc
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_enter_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 1
+		relative_position_id = SWA_open_swamp_for_people
+		cost = 10
+		prerequisite = { focus = SWA_open_swamp_for_people }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			428 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 3
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_prepare_fortifications
+		icon = GFX_goal_generic_dangerous_deal
+		x = 2
+		y = 1
+		relative_position_id = SWA_open_swamp_for_people
+		cost = 10
+		prerequisite = { focus = SWA_open_swamp_for_people }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			428 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7581
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7619
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 590
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 1058
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7831
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_the_sharpest_tools_in_the_shed
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 0
+		y = 1
+		relative_position_id = SWA_open_swamp_for_people
+		cost = 10
+		prerequisite = { focus = SWA_open_swamp_for_people }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			428 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_full_fledged_army
+		icon = GFX_focus_generic_support_the_left_right
+		x = -1
+		y = 1
+		relative_position_id = SWA_the_sharpest_tools_in_the_shed
+		cost = 7.25
+		prerequisite = { focus = SWA_the_sharpest_tools_in_the_shed }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		mutually_exclusive = {
+			focus = SWA_sign_contracts_with_former_soldiers
+		}
+		completion_reward = { 
+			custom_effect_tooltip = SWA_unlock_infantry_units
+			hidden_effect = {
+				division_template = {
+					name = "Swamp Infantry Division"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_sign_contracts_with_former_soldiers
+		icon = GFX_goal_generic_dangerous_deal
+		x = 1
+		y = 1 
+		relative_position_id = SWA_the_sharpest_tools_in_the_shed
+		cost = 0.75
+		prerequisite = { focus = SWA_the_sharpest_tools_in_the_shed }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		mutually_exclusive = {
+			focus = SWA_full_fledged_army
+		}
+		completion_reward = { 
+			custom_effect_tooltip = SWA_unlock_infantry_units_and_mercenaries
+			hidden_effect = {
+				division_template = {
+					name = "Bicycle Division"
+					regiments = {
+						bicycle_battalion = { x = 0 y = 0 }
+						bicycle_battalion = { x = 0 y = 1 }
+						bicycle_battalion = { x = 0 y = 2 }
+						bicycle_battalion = { x = 1 y = 0 }
+						bicycle_battalion = { x = 1 y = 1 }
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_and_being_lonely_is_the_best_way
+		icon = GFX_focus_swamp
+		x = 6
+		y = 2
+		relative_position_id = SWA_so_you_want_to_live_here
+		cost = 9
+		prerequisite = { focus = SWA_so_you_want_to_live_here }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_country_flag = SWA_going_lonely
+		}
+		completion_reward = { 
+		 	country_event = {
+		 		id = swamp.3
+		 		days = 1
+		 	}
+			hidden_effect = {
+				country_event = {
+					id = swamp.4
+					days = 16
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_or_not
+		icon = GFX_focus_fiona
+		x = 0
+		y = 1
+		relative_position_id = SWA_and_being_lonely_is_the_best_way
+		cost = 0.75
+		prerequisite = { focus = SWA_and_being_lonely_is_the_best_way }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_country_flag = invited_by_ffa
+		}
+		completion_reward = { 
+		 	country_event = {
+		 		id = swamp.5
+		 		days = 1
+		 	}
+		}		
+	}
+
+	focus = { 
+		id = SWA_anyway_this_is_my_swamp
+		icon = GFX_focus_swamp
+		x = 0
+		y = 1
+		relative_position_id = SWA_or_not
+		cost = 0.75
+		prerequisite = { focus = SWA_or_not }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = SWA_unlock_infantry_units
+			hidden_effect = {
+				division_template = {
+					name = "Swamp Infantry Division"
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_and_there_wont_be_any_industry
+		icon = GFX_goal_generic_forceful_treaty
+		x = 0
+		y = 1
+		relative_position_id = SWA_anyway_this_is_my_swamp
+		cost = 0.75
+		prerequisite = { focus = SWA_anyway_this_is_my_swamp }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			custom_effect_tooltip = SWA_will_have_to_buy_equipment
+			hidden_effect = {
+				set_country_flag = SWA_buying_equipment_from_abroad
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_okay_some_infrastructure_will_do
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = SWA_and_there_wont_be_any_industry
+		cost = 7.25
+		prerequisite = { focus = SWA_and_there_wont_be_any_industry }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			428 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_and_all_i_got_was_this_lousy_duloc_land
+		icon = GFX_focus_duloc
+		x = -6
+		y = 1
+		relative_position_id = SWA_or_not
+		cost = 7.25
+		prerequisite = { focus = SWA_open_swamp_for_people focus = SWA_or_not }
+		available_if_capitulated = yes
+		available = {
+			any_owned_state = {
+				NOT = {
+					state = 428
+				}
+				is_core_of = DUL
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					is_core_of = DUL
+					NOT = {
+						state = 428
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources = -0.25
+						local_manpower = -0.25
+						local_factories = -0.25
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_new_workplaces
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 1
+		relative_position_id = SWA_and_all_i_got_was_this_lousy_duloc_land
+		cost = 7.25
+		prerequisite = { focus = SWA_and_all_i_got_was_this_lousy_duloc_land }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				limit = {
+					NOT = {
+						state = 428
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					NOT = {
+						state = 428
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_first_industrial_programme
+		icon = GFX_goal_generic_construction
+		x = 0
+		y = 1
+		relative_position_id = SWA_new_workplaces
+		cost = 7.25
+		prerequisite = { focus = SWA_new_workplaces }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				limit = {
+					NOT = {
+						state = 428
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			add_ideas = {
+				SWA_swamps_first_industrial_programme
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = DUL
+					NOT = {
+						state = 428
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						local_resources = -0.25
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_connect_the_dots
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1
+		relative_position_id = SWA_and_all_i_got_was_this_lousy_duloc_land
+		cost = 7.25
+		prerequisite = { focus = SWA_and_all_i_got_was_this_lousy_duloc_land }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_an_eastern_port
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1
+		relative_position_id = SWA_connect_the_dots
+		cost = 7.25
+		prerequisite = { focus = SWA_connect_the_dots }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			392 = {
+				is_owned_by = SWA
+			}
+		}
+		completion_reward = { 
+			392 = {
+				set_victory_points = {
+					province = 7524
+					value = 10
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 7524
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = DUL
+					NOT = {
+						state = 428
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						local_factories = -0.25
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_solve_overcrowding_problem
+		icon = GFX_focus_generic_industry_3
+		x = 2
+		y = 1
+		relative_position_id = SWA_and_all_i_got_was_this_lousy_duloc_land
+		cost = 7.25
+		prerequisite = { focus = SWA_and_all_i_got_was_this_lousy_duloc_land }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			if = {
+				limit = {
+					390 = {
+						is_owned_by = SWA
+					}
+				}
+				390 = {
+					set_victory_points = {
+						province = 7533
+						value = 5
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+				423 = {
+					set_victory_points = {
+						province = 3084
+						value = 5
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+				436 = {
+					set_victory_points = {
+						province = 7922
+						value = 5
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+				353 = {
+					set_victory_points = {
+						province = 4253
+						value = 5
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+				374 = {
+					set_victory_points = {
+						province = 4008
+						value = 5
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+					add_extra_state_shared_building_slots = 1
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_food_food_food
+		icon = GFX_focus_generic_agriculture
+		x = 0
+		y = 1
+		relative_position_id = SWA_solve_overcrowding_problem
+		cost = 7.25
+		prerequisite = { focus = SWA_solve_overcrowding_problem }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		}
+		completion_reward = { 
+			random_owned_state = {
+				limit = {
+					NOT = {
+						state = 428
+					}
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			every_owned_state = {
+				limit = {
+					is_core_of = DUL
+					NOT = {
+						state = 428
+					}
+				}
+				add_state_modifier = {
+					modifier = {
+						local_manpower = 0.25
+					}
+				}
+			}
+			add_ideas = {
+				SWA_supplying_the_food
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_take_warwick_and_witham
+		icon = GFX_goal_generic_major_war #change for swamp gfx
+		x = 6
+		y = 8
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_completed_focus = SWA_prepare_fortifications
+			has_completed_focus = SWA_enter_industrialization
+			OR = {
+				has_completed_focus = SWA_sign_contracts_with_former_soldiers
+				has_completed_focus = SWA_full_fledged_army
+			}
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = CDK
+				type = annex_everything
+			}
+			custom_effect_tooltip = SWA_if_pmc_control_warwick_witham
+			hidden_effect = {
+				456 = {
+					add_core_of = SWA
+				}
+				483 = {
+					add_core_of = SWA
+				}
+				if = {
+					limit = {
+						has_completed_focus = SWA_sign_contracts_with_former_soldiers
+					}
+					set_state_controller = 456
+					set_state_controller = 483
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_southern_port
+		icon = GFX_goal_generic_navy_battleship
+		x = -1
+		y = 1
+		relative_position_id = SWA_take_warwick_and_witham
+		cost = 7.25
+		prerequisite = { focus = SWA_take_warwick_and_witham }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			456 = {
+				is_owned_by = SWA
+			}
+		}
+		completion_reward = { 
+			456 = {
+				set_victory_points = {
+					province = 7887
+					value = 5
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 2
+					instant_build = yes
+					province = 7887
+				}
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_create_industrial_rear
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 1
+		y = 1
+		relative_position_id = SWA_take_warwick_and_witham
+		cost = 7.25
+		prerequisite = { focus = SWA_take_warwick_and_witham }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			456 = {
+				is_owned_by = SWA
+			}
+			483 = {
+				is_owned_by = SWA
+			}
+		}
+		completion_reward = { 
+			456 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+			483 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_liberate_oppressed_creatures
+		icon = GFX_focus_generic_manpower
+		x = 1
+		y = 1
+		relative_position_id = SWA_southern_port
+		cost = 7.25
+		prerequisite = { focus = SWA_southern_port }
+		prerequisite = { focus = SWA_create_industrial_rear }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = DUL
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_secure_uffington
+		icon = GFX_goal_generic_more_territorial_claims
+		x = -1
+		y = 1
+		relative_position_id = SWA_liberate_oppressed_creatures
+		cost = 7.25
+		prerequisite = { focus = SWA_liberate_oppressed_creatures }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_war = no
+			DUL = {
+				exists = no
+			}
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = FRK
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_a_proposal_for_ice_kingdom
+		icon = GFX_goal_generic_dangerous_deal
+		x = 1
+		y = 1
+		relative_position_id = SWA_liberate_oppressed_creatures
+		cost = 7.25
+		prerequisite = { focus = SWA_liberate_oppressed_creatures }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_war_with = FRK
+		}
+		completion_reward = { 
+			create_wargoal = {
+				target = ICK
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_take_everrealm_gate
+		icon = GFX_goal_generic_major_war
+		x = -1
+		y = 1
+		relative_position_id = SWA_a_proposal_for_ice_kingdom
+		cost = 7.25
+		prerequisite = { focus = SWA_secure_uffington }
+		prerequisite = { focus = SWA_a_proposal_for_ice_kingdom }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			has_war = no
+		}
+		completion_reward = { 
+			330 = {
+				owner = {
+					SWA = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+		}		
+	}
+
+	################################################ RUMPELSTILTSKIN REALITY, RETAKING FFA
+
+	focus = { 
+		id = SWA_against_all_odds
+		icon = GFX_focus_rom_handle_king
+		x = 9
+		y = 0
+		cost = 7.25
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		allow_branch = {
+			has_country_flag = SWA_will_liberate_the_kingdom
+		}
+		completion_reward = { 
+			custom_effect_tooltip = will_fire_automatically
+		}		
+	}
+
+	focus = { 
+		id = SWA_take_control_duloc_lands
+		icon = GFX_focus_duloc
+		x = 0
+		y = 1
+		relative_position_id = SWA_against_all_odds
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_against_all_odds
+		}
+		completion_reward = { 
+			annex_country = {
+				target = DUL
+				transfer_troops = no
+			}
+			custom_effect_tooltip = SWA_available_decisions_core_duloc
+		}		
+	}
+
+	focus = { 
+		id = SWA_organize_training_with_fiona
+		icon = GFX_focus_fiona
+		x = 2
+		y = 1
+		relative_position_id = SWA_take_control_duloc_lands
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_take_control_duloc_lands
+		}
+		completion_reward = { 
+			add_ideas = {
+				SWA_training_with_fiona
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_volunteers_from_abroad
+		icon = GFX_focus_prc_infiltration
+		x = -1
+		y = 1
+		relative_position_id = SWA_organize_training_with_fiona
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_organize_training_with_fiona
+		}
+		completion_reward = { 
+			add_manpower = 75000
+			hidden_effect = {
+				division_template = {
+					name = "Foreign Volunteers Division"
+					regiments = {
+						militia = { x = 0 y = 0 }
+						militia = { x = 0 y = 1 }
+						militia = { x = 0 y = 2 }
+						militia = { x = 1 y = 0 }
+						militia = { x = 1 y = 1 }
+						militia = { x = 1 y = 2 }
+					}
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_ask_foreign_shiyards_for_help
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 1
+		y = 1
+		relative_position_id = SWA_organize_training_with_fiona
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_organize_training_with_fiona
+		}
+		completion_reward = { 
+			add_timed_idea = {
+				idea = SWA_help_from_foreign_shipyards
+				days = 220
+			}
+			add_equipment_to_stockpile = {
+				type = convoy
+				amount = 150
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+					}
+					set_technology = {
+						early_destroyer = 1
+						transport = 1
+					}
+					set_naval_oob = FFA_1936_naval
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+					}
+					set_technology = {
+						early_ship_hull_light = 1
+						mtg_transport = 1
+						basic_battery = 1
+						basic_light_battery = 1
+					}
+					set_naval_oob = FFA_1936_naval_mtg
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_prepare_to_use_the_sea
+		icon = GFX_goal_generic_amphibious_assault
+		x = -1
+		y = 1
+		relative_position_id = SWA_ask_foreign_shiyards_for_help
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_ask_foreign_shiyards_for_help
+		}
+		prerequisite = {
+			focus = SWA_volunteers_from_abroad
+		}
+		completion_reward = { 
+			add_timed_idea = {
+				idea = SWA_attack_from_behind
+				days = 220
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_launch_the_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -2
+		y = 1
+		relative_position_id = SWA_take_control_duloc_lands
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_take_control_duloc_lands
+		}
+		available = {
+			any_owned_state = {
+				NOT = {
+					state = 428
+				}
+				is_core_of = SWA
+				is_core_of = DUL
+			}
+		}
+		completion_reward = { 
+			every_owned_state = {
+				limit = {
+					any_neighbor_state = {
+						state = 428
+					}
+				}
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_proceed_with_industrialization
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -1
+		y = 1
+		relative_position_id = SWA_launch_the_factories
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_launch_the_factories
+		}
+		available = {
+			374 = {
+				is_core_of = SWA
+			}
+			356 = {
+				is_core_of = SWA
+			}
+			353 = {
+				is_core_of = SWA
+			}
+			436 = {
+				is_core_of = SWA
+			}
+			265 = {
+				is_core_of = SWA
+			}
+		}
+		completion_reward = { 
+			374 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			356 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			353 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			436 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			265 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_feed_the_subjects
+		icon = GFX_focus_rom_handle_king
+		x = 1
+		y = 1
+		relative_position_id = SWA_launch_the_factories
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		available = {
+			423 = {
+				is_core_of = SWA
+			}
+			301 = {
+				is_core_of = SWA
+			}
+			296 = {
+				is_core_of = SWA
+			}
+			302 = {
+				is_core_of = SWA
+			}
+		}
+		prerequisite = {
+			focus = SWA_launch_the_factories
+		}
+		completion_reward = { 
+			423 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			301 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			296 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			302 = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_form_defense_lines
+		icon = GFX_goal_generic_fortify_city
+		x = -1
+		y = 1
+		relative_position_id = SWA_feed_the_subjects
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_feed_the_subjects
+		}
+		prerequisite = {
+			focus = SWA_proceed_with_industrialization
+		}
+		completion_reward = { 
+			224 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6609
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2954
+				}
+			}
+			256 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 5167
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2202
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6772
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3251
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6786
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2014
+				}
+			}
+			331 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 7010
+				}
+			}
+			296 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6915
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6958
+				}
+			}
+			286 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6862
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6830
+				}
+			}
+			265 = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 6850
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 2367
+				}
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = 3207
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_first_strike
+		icon = GFX_focus_generic_support_the_left_right
+		x = 1
+		y = 1
+		relative_position_id = SWA_form_defense_lines
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_form_defense_lines
+		}
+		prerequisite = {
+			focus = SWA_prepare_to_use_the_sea
+		}
+		available = {
+			NOT = {
+				FFA = {
+					has_war_with = FGM
+				}
+			}
+		}
+		mutually_exclusive = {
+			focus = SWA_two_birds_one_stone
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = FFA
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_two_birds_one_stone
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 3
+		y = 1
+		relative_position_id = SWA_form_defense_lines
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_form_defense_lines
+		}
+		prerequisite = {
+			focus = SWA_prepare_to_use_the_sea
+		}
+		available = {
+			FFA = {
+				has_war_with = FGM
+			}
+		}
+		mutually_exclusive = {
+			focus = SWA_first_strike
+		}
+		completion_reward = { 
+			declare_war_on = {
+				target = FFA
+				type = annex_everything
+			}
+			declare_war_on = {
+				target = FGM
+				type = annex_everything
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_crown_shrek
+		icon = GFX_focus_generic_home_defense
+		x = 0
+		y = 1
+		relative_position_id = SWA_first_strike
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_first_strike
+			focus = SWA_two_birds_one_stone
+		}
+		available = {
+			FFA = {
+				exists = no
+			}
+		}
+		mutually_exclusive = {
+			focus = SWA_search_for_another_king
+		}
+		completion_reward = { 
+			custom_effect_tooltip = SWA_shrek_crowned_king
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_shrekophone
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_shrekophone_sound
+					play_song = cisza45
+				}
+			}
+		}		
+	}
+
+	focus = { 
+		id = SWA_search_for_another_king
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 1
+		relative_position_id = SWA_first_strike
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		prerequisite = {
+			focus = SWA_first_strike
+			focus = SWA_two_birds_one_stone
+		}
+		available = {
+			FFA = {
+				exists = no
+			}
+		}
+		mutually_exclusive = {
+			focus = SWA_crown_shrek
+		}
+		completion_reward = { 
+			custom_effect_tooltip = FFA_shrek_leaves_for_arthur
+			hidden_effect = {
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_shrekophone
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_shrekophone_sound
+					play_song = cisza45
+				}
+			}
+		}		
+	}
+}

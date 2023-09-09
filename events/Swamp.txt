@@ -1,0 +1,362 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = swamp
+
+country_event = { #event for first focus
+	id = swamp.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.1"}
+	title = swamp.1.t
+	desc = swamp.1.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #going canon
+		name = swamp.1.a
+		hidden_effect = {
+			set_country_flag = SWA_going_lonely
+		}
+	}
+
+	option = { #going not canon
+		name = swamp.1.b
+		hidden_effect = {
+			set_country_flag = SWA_going_open
+		}
+	}
+}
+
+country_event = { #event for second-left focus
+	id = swamp.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.2"}
+	title = swamp.2.t
+	desc = swamp.2.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = swamp.2.a
+	}
+}
+
+country_event = { #event for second-right focus
+	id = swamp.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.3"}
+	title = swamp.3.t
+	desc = swamp.3.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = swamp.3.a
+	}
+}
+
+country_event = { #Donkey joins Shrek
+	id = swamp.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.4"}
+	title = swamp.4.t
+	desc = swamp.4.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = swamp.4.a
+		SWA_donkey = {
+			add_corps_commander_role = {
+				Character = SWA_donkey
+				skill = 1 #it cannot be zero, really paradox?
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+		}
+	}
+}
+
+country_event = { #honeymoon event
+	id = swamp.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.5"}
+	title = swamp.5.t
+	desc = swamp.5.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = swamp.5.a
+		hidden_effect = {
+			FFA = {
+				country_event = {
+					id = farfaraway.18
+					days = 7
+				}
+			}
+			country_event = {
+				id = farfaraway.18
+				days = 7
+			}
+		}
+	}
+}
+
+country_event = { #Harold asks Shrek if he can succeed him
+	id = swamp.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.6"}
+	title = swamp.6.t
+	desc = swamp.6.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #absolutely yes
+		name = swamp.6.a
+		hidden_effect = {
+			set_country_flag = SWA_agreed_to_take_the_crown
+		}
+	}
+
+	option = { #absolutely no
+		name = swamp.6.b
+		hidden_effect = {
+			set_country_flag = SWA_rejected_the_crown
+		}
+	}
+}
+
+country_event = { #Harold's dead, it's Shrek time as King
+	id = swamp.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.7"}
+	title = swamp.7.t
+	desc = swamp.7.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #here we go
+		name = swamp.7.a
+		hidden_effect = {
+			FFA_charming = {
+				set_nationality = {
+					target_country = SWA
+					character = FFA_charming
+				}
+			}
+			if = {
+				limit = {
+					FFA = {
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
+				}
+				SWA = {
+					set_country_flag = FFA_fairy_launched_a_coup
+				}
+			}
+			annex_country = {
+				target = FFA
+				transfer_troops = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = FFA_fairy_launched_a_coup
+					}
+				}
+				country_event = {
+					id = swamp.8
+					days = 3
+				}
+				else = {
+					hidden_effect = {
+						every_country = {
+							limit = {
+								is_ai = no
+							}
+							set_country_flag = big_event_shrekophone
+						}
+						every_country = {
+							limit = {
+								has_variable = cr_superevent_music_status
+							}
+							sound_effect = cr_bigevent_shrekophone_sound
+							play_song = cisza45
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #Charming launches coup
+	id = swamp.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.8"}
+	title = swamp.8.t
+	desc = swamp.8.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #here we go!
+		name = swamp.8.a
+		hidden_effect = {
+			FGM = {
+				set_cosmetic_tag = king_charming_domain
+				transfer_state = 216
+				transfer_state = 200
+				transfer_state = 233
+				transfer_state = 299
+				transfer_state = 135
+				transfer_state = 155
+				transfer_state = 113
+				transfer_state = 302
+				transfer_state = 265
+				inherit_technology = SWA
+				set_capital = { state = 216 }
+				load_oob = charming_rebellion
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 8000
+					producer = FFA
+				}
+				add_ideas = {
+					middleage_tech
+				}
+				declare_war_on = {
+					target = SWA
+					type = annex_everything
+				}
+			}
+			every_owned_state = {
+				add_core_of = FGM
+			}
+			FFA_charming = {
+				if = {
+					limit = {
+						NOT = {
+							is_army_leader = yes
+						}
+					}
+					add_corps_commander_role = {
+						Character = FFA_charming
+						skill = 3
+						attack_skill = 3
+						defense_skill = 3
+						planning_skill = 2
+						logistics_skill = 2
+					}
+				}
+				set_nationality = {
+					target_country = FGM
+					character = FFA_charming
+				}
+				set_character_name = "King Charming"
+				add_country_leader_role = {
+					character = FFA_charming
+					country_leader = {
+						ideology = fascism_ideology
+						expire = "1965.1.1.1"
+						traits = { }
+					}
+					promote_leader = yes
+				}
+			}
+			news_event = {
+				id = worldnews.114
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = { #Shrek is with Fiona but Harold and Lilian are gone
+	id = swamp.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event swamp.9"}
+	title = swamp.9.t
+	desc = swamp.9.d
+	picture = GFX_report_enchancia_palace
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWA
+		FFA = {
+			has_completed_focus = FFA_a_third_option_rumpel_tree
+		}
+		DUL = {
+			OR = {
+				has_country_flag = farquaad_is_ded
+				exists = no
+			}
+		}
+	}
+
+	option = { #unlock the tree!
+		name = swamp.9.a
+		hidden_effect = {
+			set_country_flag = SWA_will_liberate_the_kingdom
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = SWA_against_all_odds
+		}
+	}
+}
+
+country_event = { #Arthur becomes the King
+	id = swamp.25
+	immediate = {log = "[GetDateText]: [Root.GetName]: event farfaraway.25"}
+	title = farfaraway.25.t
+	desc = farfaraway.25.d
+	picture = GFX_report_ffa_3
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = {
+		name = farfaraway.25.a
+		release = FFA
+		FFA = {
+			add_country_leader_role = {
+				character = FFA_arthur
+				country_leader = {
+					ideology = administrative_monarchy
+					expire = "1965.1.1.1"
+					traits = { }
+				}
+				promote_leader = yes
+			}
+			add_corps_commander_role = {
+				Character = FFA_arthur
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 2
+				logistics_skill = 1
+			}
+		}
+		create_faction = swamp_ffa_alliance
+		add_to_faction = FFA
+	}
+}

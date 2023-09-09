@@ -2766,3 +2766,210 @@ stabilization_pact_2_dec_category = {
 	}
 
 }
+
+arms_dealer_dec_category = {
+
+	buy_weapons_from_enchancia = {
+
+		visible = {
+			tag = SWA
+			OR = {
+				ENC = {
+					exists = yes
+				}
+				EN1 = {
+					exists = yes
+				}
+				EN2 = {
+					exists = yes
+				}
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 90
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			if = {
+				limit = {
+					ENC = {
+						exists = yes
+					}
+				}
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_old
+					amount = 1000
+					producer = ENC
+				}
+				else_if = {
+					limit = {
+						EN1 = {
+							exists = yes
+						}
+					}
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_old
+						amount = 1000
+						producer = EN1
+					}
+					else_if = {
+						limit = {
+							EN2 = {
+								exists = yes
+							}
+						}
+						add_equipment_to_stockpile = {
+							type = infantry_equipment_old
+							amount = 1000
+							producer = EN2
+						}
+						else = {
+
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	buy_weapons_from_avalor = {
+
+		visible = {
+			tag = SWA
+			AVA = {
+				exists = yes
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 90
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_old
+				amount = 1000
+				producer = AVA
+			}
+		}
+	}
+	
+	buy_weapons_from_farfaraway = {
+
+		visible = {
+			tag = SWA
+			FFA = {
+				exists = yes
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 60
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_old
+				amount = 800
+				producer = FFA
+			}
+		}
+	}
+	
+	buy_weapons_from_lechia_empire = {
+
+		visible = {
+			tag = SWA
+			LEC = {
+				exists = yes
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 100
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_old
+				amount = 1500
+				producer = LEC
+			}
+		}
+	}
+	
+	buy_weapons_from_underground = {
+
+		visible = {
+			tag = SWA
+			UND = {
+				exists = yes
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 120
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = UND
+			}
+		}
+	}
+	
+	buy_weapons_from_flower_hill = {
+
+		visible = {
+			tag = SWA
+			UND = {
+				exists = yes
+			}
+			has_country_flag = SWA_buying_equipment_from_abroad
+		}
+
+		cost = 200
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		days_remove = 60
+
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment
+				amount = 1500
+				producer = FLO
+			}
+		}
+	}
+}

@@ -4116,6 +4116,17 @@ occupation_dec_category = {
 
 		complete_effect = {
 			release = CDK
+			if = {
+				limit = {
+					ROOT = {
+						tag = SWA
+					}
+				}
+				SWA = {
+					transfer_state = 456
+					transfer_state = 483
+				}
+			}
 			CDK = {
 				ROOT = {
 					puppet = PREV
@@ -6002,6 +6013,9 @@ occupation_dec_category = {
 			NOT = {
 				tag = FFA
 			}
+			NOT = {
+				tag = SWA
+			}
 			FFA = {
 				exists = no
 			}
@@ -6041,6 +6055,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = FRK
+			}
+			NOT = {
+				tag = SWA
 			}
 			FRK = {
 				exists = no
@@ -6102,8 +6119,36 @@ occupation_dec_category = {
 			if = {
 				limit = {
 					ROOT = {
+						tag = SWA
+					}
+				}
+				ICK = {
+					transfer_state = 595
+					transfer_state = 590
+					if = {
+						limit = {
+							ROOT = {
+								owns_state = 601
+							}
+						}
+						transfer_state = 601
+					}
+					if = {
+						limit = {
+							ROOT = {
+								owns_state = 604
+							}
+						}
+						transfer_state = 604
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
 						NOT = {
 							tag = LEC
+							tag = SWA
 						}
 					}
 				}

@@ -478,4 +478,28 @@ scripted_gui = {
 			}
 		}
 	}
+
+	CR_bigevent_shrekophone = {
+		context_type = player_context
+		window_name = "cr_big_event_shrekophone"
+
+		visible = {
+			has_country_flag = big_event_shrekophone
+		}
+	}
+
+	CR_bigevent_shrekophone_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_shrekophone_frame"
+
+		visible = {
+			has_country_flag = big_event_shrekophone
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_shrekophone
+			}
+		}
+	}
 }

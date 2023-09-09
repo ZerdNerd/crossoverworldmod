@@ -682,7 +682,7 @@ focus_tree = {
 				always = no
 			}
 		}
-		cost = 7.25
+		cost = 0.75
 		prerequisite = { focus = FFA_harold_is_ded }
 		available_if_capitulated = yes
 		ai_will_do = { 
@@ -910,16 +910,16 @@ focus_tree = {
 		x = 0
 		y = 1
 		relative_position_id = FFA_harold_is_ded
-		cost = 7.25
+		cost = 0.75
 		prerequisite = { focus = FFA_harold_is_ded }
 		mutually_exclusive = {
 			focus = FFA_a_second_option
 			focus = FFA_king_charming
 		}
 		available = {
-			custom_trigger_tooltip = {
-				tooltip = FFA_option_available_since_032
-				always = no
+			is_ai = yes
+			SWA = {
+				has_country_flag = SWA_agreed_to_take_the_crown
 			}
 		}
 		available_if_capitulated = yes
@@ -947,7 +947,7 @@ focus_tree = {
 				always = no
 			}
 		}
-		cost = 7.25
+		cost = 0.75
 		prerequisite = { focus = FFA_harold_is_ded }
 		available_if_capitulated = yes
 		ai_will_do = { 
@@ -3990,7 +3990,7 @@ focus_tree = {
 		completion_reward = {
 			add_tech_bonus = {
 				name = motorized_bonus
-				bonus = 1.0
+				bonus = 0.25
 				technology = motorised_infantry
 			}
 		}

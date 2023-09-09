@@ -119,6 +119,10 @@ defined_text = { # Country
 		localization_key = CR_WS_FFA
 	}
 	text = {
+		trigger = { original_tag = SWA }
+		localization_key = CR_WS_SWA
+	}
+	text = {
 		localization_key = ""
 	}
 }
@@ -234,6 +238,10 @@ defined_text = {
 		localization_key = CR_WS_FFA_desc
 	}
 	text = {
+		trigger = { original_tag = SWA }
+		localization_key = CR_WS_SWA_desc
+	}
+	text = {
 		localization_key = ""
 	}
 }
@@ -241,7 +249,7 @@ defined_text = {
 defined_text = {
 	name = GetNotReadyMessage
 	text = {
-		trigger = { NOT = { original_tag = GRN original_tag = MAI original_tag = FRI original_tag = DES original_tag = TSA original_tag = SLD original_tag = JPN original_tag = LEC original_tag = SAN original_tag = ICW original_tag = GON original_tag = FLO original_tag = DUL original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = SKO original_tag = KPT original_tag = JOJ original_tag = DIO original_tag = SIO original_tag = TIG original_tag = FLE original_tag = FFA } }
+		trigger = { NOT = { original_tag = GRN original_tag = MAI original_tag = FRI original_tag = DES original_tag = TSA original_tag = SLD original_tag = JPN original_tag = LEC original_tag = SAN original_tag = ICW original_tag = GON original_tag = FLO original_tag = DUL original_tag = ENC original_tag = EN1 original_tag = EN2 original_tag = EN3 original_tag = EN4 original_tag = AVA original_tag = SKO original_tag = KPT original_tag = JOJ original_tag = DIO original_tag = SIO original_tag = TIG original_tag = FLE original_tag = FFA original_tag = SWA } }
 		localization_key = CR_WS_THIS_COUNTRY_IS_NOT_READY
 	}
 	text = {

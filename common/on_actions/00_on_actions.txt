@@ -176,6 +176,7 @@ on_actions = {
 							has_variable = cr_superevent_music_status
 						}
 						sound_effect = cr_bigevent_sioux_liberation_sound
+					play_song = cisza30
 					}
 				}
 			}
@@ -203,6 +204,7 @@ on_actions = {
 							has_variable = cr_superevent_music_status
 						}
 						sound_effect = cr_bigevent_arktos_triumphs_sound
+						play_song = cisza30
 					}
 				}
 			}
@@ -234,6 +236,7 @@ on_actions = {
 							has_variable = cr_superevent_music_status
 						}
 						sound_effect = cr_bigevent_flower_hill_united_sound
+						play_song = cisza30
 					}
 				}
 			}
@@ -433,6 +436,52 @@ on_actions = {
 						id = centralkingdom.89
 						days = 0
 					}
+				}
+				if = {
+					limit = {
+						not = { has_dlc = "Man the Guns" }
+						ROOT = {
+							NOT = {
+								is_ai = yes
+							}
+							has_idea = middleage_tech
+							num_researched_technologies > 4
+							date < 1938.1.1
+							NOT = {
+								has_country_flag = cheating_detected
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							NOT = { is_ai = yes }
+						}
+						set_country_flag = cheating_detected
+					}
+					play_song = "mogolovonio"
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+						ROOT = {
+							NOT = {
+								is_ai = yes
+							}
+							has_idea = middleage_tech
+							num_researched_technologies > 6
+							date < 1938.1.1
+							NOT = {
+								has_country_flag = cheating_detected
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							NOT = { is_ai = yes }
+						}
+						set_country_flag = cheating_detected
+					}
+					play_song = "mogolovonio"
 				}
 				if = {
 					limit = {
@@ -4443,6 +4492,7 @@ on_actions = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_liberation_of_enchancia_sound
+					play_song = cisza45
 				}
 			}
 
@@ -4778,6 +4828,56 @@ on_actions = {
 			}
 			if = {
 				limit = {
+					FROM = {
+						tag = SWA
+					}
+					ROOT = {
+						tag = FGM
+					}
+					FFA = {
+						exists = no
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_shrekophone
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_shrekophone_sound
+					play_song = cisza45
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						tag = SWA
+					}
+					ROOT = {
+						tag = FFA
+						has_completed_focus = FFA_a_third_option_rumpel_tree
+					}
+				}
+				every_country = {
+					limit = {
+						is_ai = no
+					}
+					set_country_flag = big_event_shrekophone
+				}
+				every_country = {
+					limit = {
+						has_variable = cr_superevent_music_status
+					}
+					sound_effect = cr_bigevent_shrekophone_sound
+					play_song = cisza45
+				}
+			}
+			if = {
+				limit = {
 					ROOT = {
 						tag = DUL
 					}
@@ -4905,6 +5005,7 @@ on_actions = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_hartmut_wins_sound
+					play_song = cisza30
 				}
 				FRI = {
 					country_event = {
@@ -4960,6 +5061,7 @@ on_actions = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_victory_over_hartmut_sound
+					play_song = cisza30
 				}
 			}
 			if = {
@@ -4983,6 +5085,7 @@ on_actions = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_central_civil_war_general_wins_sound
+					play_song = cisza30
 				}
 			}
 			if = {
@@ -5006,6 +5109,7 @@ on_actions = {
 						has_variable = cr_superevent_music_status
 					}
 					sound_effect = cr_bigevent_central_civil_war_m_wins_sound
+					play_song = cisza45
 				}
 				MAI = {
 					add_ideas = {
