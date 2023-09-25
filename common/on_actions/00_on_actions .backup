@@ -439,6 +439,52 @@ on_actions = {
 				}
 				if = {
 					limit = {
+						not = { has_dlc = "Man the Guns" }
+						ROOT = {
+							NOT = {
+								is_ai = yes
+							}
+							has_idea = middleage_tech
+							num_researched_technologies > 4
+							date < 1938.1.1
+							NOT = {
+								has_country_flag = cheating_detected
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							NOT = { is_ai = yes }
+						}
+						set_country_flag = cheating_detected
+					}
+					play_song = "mogolovonio"
+				}
+				if = {
+					limit = {
+						has_dlc = "Man the Guns"
+						ROOT = {
+							NOT = {
+								is_ai = yes
+							}
+							has_idea = middleage_tech
+							num_researched_technologies > 6
+							date < 1938.1.1
+							NOT = {
+								has_country_flag = cheating_detected
+							}
+						}
+					}
+					every_country = {
+						limit = {
+							NOT = { is_ai = yes }
+						}
+						set_country_flag = cheating_detected
+					}
+					play_song = "mogolovonio"
+				}
+				if = {
+					limit = {
 						ROOT = {
 							tag = MAI
 						}
