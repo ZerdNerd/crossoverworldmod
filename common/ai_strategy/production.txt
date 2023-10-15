@@ -242,6 +242,7 @@ default_bicycle_production = {
 	enable = {
 		has_tech = bicycle_infantry
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -385,6 +386,7 @@ late_mobile_production = {
 		date > 1940.1.1
 		has_tech = motorised_infantry
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = role_ratio
@@ -555,6 +557,7 @@ halt_light_armor_production_in_transitioning = {
 			date > 1939.1.1
 		}
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = equipment_variant_production_factor
@@ -735,6 +738,7 @@ LATE_template_design = {
 		has_idea = modern_tech_idea
 		date > 1940.1.1
 	}
+	abort_when_not_enabled = yes
 
 	ai_strategy = {
 		type = template_prio
