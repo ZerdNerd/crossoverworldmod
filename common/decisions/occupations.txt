@@ -3026,18 +3026,27 @@ occupation_dec_category = {
 				transfer_state = 811
 				transfer_state = 838
 				transfer_state = 830
-				transfer_state = 835
-				transfer_state = 853
-				transfer_state = 869
 				add_state_core = 819
 				add_state_core = 805
 				add_state_core = 794
 				add_state_core = 811
 				add_state_core = 838
 				add_state_core = 830
-				add_state_core = 835
-				add_state_core = 853
-				add_state_core = 869
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								tag = MAI
+							}
+						}
+					}
+					transfer_state = 835
+					transfer_state = 853
+					transfer_state = 869
+					add_state_core = 835
+					add_state_core = 853
+					add_state_core = 869
+				}
 				if = {
 					limit = {
 						ROOT = {
@@ -3226,7 +3235,6 @@ occupation_dec_category = {
 					transfer_state = 907
 				}
 				transfer_state = 892
-				transfer_state = 897
 				if = {
 					limit = {
 						NOT = {
@@ -3238,7 +3246,6 @@ occupation_dec_category = {
 				}
 				transfer_state = 879
 				transfer_state = 883
-				transfer_state = 877
 				if = {
 					limit = {
 						NOT = {
@@ -3249,7 +3256,6 @@ occupation_dec_category = {
 					add_state_core = 907
 				}
 				add_state_core = 892
-				add_state_core = 897
 				if = {
 					limit = {
 						NOT = {
@@ -3259,9 +3265,24 @@ occupation_dec_category = {
 					}
 					add_state_core = 881
 				}
+				if = {
+					limit = {
+						NOT = {
+							877 = {
+								is_core_of = MAI
+							}
+							897 = {
+								is_core_of = MAI
+							}
+						}
+					}
+					add_state_core = 877
+					transfer_state = 877
+					add_state_core = 897
+					transfer_state = 897
+				}
 				add_state_core = 879
 				add_state_core = 883
-				add_state_core = 877
 				set_capital = { state = 907 }
 				ROOT = {
 					puppet = PREV
@@ -4183,14 +4204,23 @@ occupation_dec_category = {
 				transfer_state = 734
 				transfer_state = 774
 				transfer_state = 786
-				transfer_state = 736
-				transfer_state = 767
-				transfer_state = 773
-				transfer_state = 776
-				add_state_core = 736
-				add_state_core = 767
-				add_state_core = 773
-				add_state_core = 776
+				if = {
+					limit = {
+						NOT = {
+							736 = {
+								is_core_of = MAI
+							}
+						}
+					}
+					transfer_state = 736
+					transfer_state = 767
+					transfer_state = 773
+					transfer_state = 776
+					add_state_core = 736
+					add_state_core = 767
+					add_state_core = 773
+					add_state_core = 776
+				}
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }

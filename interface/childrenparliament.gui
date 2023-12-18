@@ -206,20 +206,20 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "MAI_children_parliament_next_session_topics_header"
-			position = { x = -25 y = 130}
+			position = { x = 30 y = 210}
 			font = "hoi_24header"
 			text = "MAI_children_parliament_next_session_topics_header_text"
-			format = center
+			format = left
 			maxWidth = 500
 			maxHeight = 24
 		}
 
 		instantTextBoxType = {
 			name = "MAI_children_parliament_next_session_topic"
-			position = { x = 25 y = 165 }
+			position = { x = 31 y = 235 }
 			font = "hoi_20bs"
 			text = "MAI_children_parliament_next_session_topic_1_text"
-			format = center
+			format = left
 			maxWidth = 400
 			maxHeight = 24
 		}
@@ -326,39 +326,39 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "mai_chp_reformed_support_status_header"
-			position = { x = 100 y = 210 }
+			position = { x = 30 y = 270 }
 			font = "hoi_24header"
 			text = "MAI_children_parliament_sup_stat_header"
 			maxWidth = 250
 			maxHeight = 20
-			format = center
+			format = left
 			vertical_alignment = center
 		}
 
 		instantTextboxType = {
 			name = "mai_chp_reformed_support_status_text"
-			position = { x = 75 y = 240 }
+			position = { x = 31 y = 295 }
 			font = "hoi_20bs"
 			text = "MAI_children_parliament_sup_stat_status"
 			maxWidth = 300
 			maxHeight = 20
-			format = center
+			format = left
 			vertical_alignment = top
 		}
 
 		instantTextboxType = {
 			name = "mai_chp_reformed_ruling_party_header"
-			position = { x = 600 y = 130 }
+			position = { x = 30 y = 70 }
 			font = "hoi_24header"
 			text = "MAI_children_parliament_ruling_header"
 			maxWidth = 450
 			maxHeight = 20
-			format = center
+			format = left
 		}
 
 		instantTextboxType = {
 			name = "mai_chp_reformed_ruling_party_status"
-			position = { x = 633 y = 160 }
+			position = { x = 32 y = 95 }
 			font = "hoi_20bs"
 			text = "MAI_children_parliament_ruling_party_status"
 			maxWidth = 500
@@ -380,7 +380,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "mai_chp_reform_party_ncp_container"
-			position = { x = 50 y = 590 }
+			position = { x = 30 y = 420 }
 			size = { width = 420	height = 260 }
 
 			instantTextBoxType = {
@@ -388,14 +388,14 @@ guiTypes = {
 				position = { x = 0 y = -30 }
 				font = "hoi_24header"
 				text = "MAI_children_parliament_ncp_name"
-				format = center
+				format = LEFT
 				maxWidth = 300
 				maxHeight = 24
 			}
 
 			instantTextBoxType = {
 				name = "MAI_children_parliament_ncp_information"
-				position = { x = 125 y = -4 }
+				position = { x = 120 y = -4 }
 				font = "hoi_20bs"
 				text = "MAI_children_parliament_ncp_info"
 				format = LEFT
@@ -405,22 +405,22 @@ guiTypes = {
 
 			iconType = {
 				name = "mai_chp_ncp_leader"
-				position = {x=0 y=0}	
+				position = {x=4 y=0}	
 				spriteType ="GFX_decision_mai_ch_par_leaders"
-				scale = 0.71
+				scale = 0.65
 			}
 
 			iconType = {
 				name = "mai_chp_ncp_leader_frame2"
 				spriteType = "GFX_pol_leader_frame"
-				position = { x = -4 y = -4 }		
+				position = { x = 0 y = -4 }		
 				allwaystransparent = yes
-				scale = 0.71
+				scale = 0.65
 			}
 
 			instantTextboxType = {
 				name = "mai_chp_ncp_leader_name"
-				position = { x = -21 y = 152 }
+				position = { x = -22 y = 138 }
 				font = "hoi_18mbs"
 				text = "MAI_children_parliament_ncp_leader_name"
 				maxWidth = 155
@@ -432,7 +432,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "mai_chp_reform_party_ffp_container"
-			position = { x = 210 y = 350 }
+			position = { x = 30 y = 620 }
 			size = { width = 420	height = 260 }
 
 			instantTextBoxType = {
@@ -440,14 +440,14 @@ guiTypes = {
 				position = { x = 0 y = -30 }
 				font = "hoi_24header"
 				text = "MAI_children_parliament_ffp_name"
-				format = center
+				format = left
 				maxWidth = 300
 				maxHeight = 24
 			}
 
 			instantTextBoxType = {
 				name = "MAI_children_parliament_ffp_information"
-				position = { x = 125 y = -4 }
+				position = { x = 120 y = -4 }
 				font = "hoi_20bs"
 				text = "MAI_children_parliament_ffp_info"
 				format = LEFT
@@ -457,22 +457,22 @@ guiTypes = {
 
 			iconType = {
 				name = "mai_chp_ffp_leader"
-				position = {x=0 y=0}	
+				position = {x=4 y=0}	
 				spriteType ="GFX_decision_mai_ch_par_leaders"
-				scale = 0.71
+				scale = 0.65
 			}
 
 			iconType = {
 				name = "mai_chp_ffp_leader_frame2"
 				spriteType = "GFX_pol_leader_frame"
-				position = { x = -4 y = -4 }		
+				position = { x = 0 y = -4 }		
 				allwaystransparent = yes
-				scale = 0.71
+				scale = 0.65
 			}
 
 			instantTextboxType = {
 				name = "mai_chp_ffp_leader_name"
-				position = { x = -21 y = 152 }
+				position = { x = -22 y = 138 }
 				font = "hoi_18mbs"
 				text = "MAI_children_parliament_ffp_leader_name"
 				maxWidth = 155
@@ -484,7 +484,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "mai_chp_reform_party_ccfrok_container"
-			position = { x = 740 y = 350 }
+			position = { x = 350 y = 420 }
 			size = { width = 420	height = 260 }
 
 			instantTextBoxType = {
@@ -492,14 +492,14 @@ guiTypes = {
 				position = { x = 0 y = -55 }
 				font = "hoi_24header"
 				text = "MAI_children_parliament_ccfrok_name"
-				format = center
+				format = left
 				maxWidth = 300
 				maxHeight = 24
 			}
 
 			instantTextBoxType = {
 				name = "MAI_children_parliament_ccfrok_information"
-				position = { x = 125 y = -4 }
+				position = { x = 120 y = -4 }
 				font = "hoi_20bs"
 				text = "MAI_children_parliament_ccfrok_info"
 				format = LEFT
@@ -509,22 +509,22 @@ guiTypes = {
 
 			iconType = {
 				name = "mai_chp_ccfrok_leader"
-				position = {x=0 y=0}	
+				position = {x=4 y=0}	
 				spriteType ="GFX_decision_mai_ch_par_leaders"
-				scale = 0.71
+				scale = 0.65
 			}
 
 			iconType = {
 				name = "mai_chp_ccfrok_leader_frame2"
 				spriteType = "GFX_pol_leader_frame"
-				position = { x = -4 y = -4 }		
+				position = { x = 0 y = -4 }		
 				allwaystransparent = yes
-				scale = 0.71
+				scale = 0.65
 			}
 
 			instantTextboxType = {
 				name = "mai_chp_ccfrok_leader_name"
-				position = { x = -21 y = 152 }
+				position = { x = -22 y = 138 }
 				font = "hoi_18mbs"
 				text = "MAI_children_parliament_ccfrok_leader_name"
 				maxWidth = 155
@@ -536,7 +536,7 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "mai_chp_reform_party_tfk_container"
-			position = { x = 890 y = 590 }
+			position = { x = 350 y = 620 }
 			size = { width = 420	height = 260 }
 
 			instantTextBoxType = {
@@ -544,7 +544,7 @@ guiTypes = {
 				position = { x = 0 y = -30 }
 				font = "hoi_24header"
 				text = "MAI_children_parliament_tfk_name"
-				format = center
+				format = left
 				maxWidth = 300
 				maxHeight = 24
 			}
@@ -561,22 +561,22 @@ guiTypes = {
 
 			iconType = {
 				name = "mai_chp_tfk_leader"
-				position = {x=0 y=0}	
+				position = {x=4 y=0}	
 				spriteType ="GFX_decision_mai_ch_par_leaders"
-				scale = 0.71
+				scale = 0.65
 			}
 
 			iconType = {
 				name = "mai_chp_tfk_leader_frame2"
 				spriteType = "GFX_pol_leader_frame"
-				position = { x = -4 y = -4 }		
+				position = { x = 0 y = -4 }		
 				allwaystransparent = yes
-				scale = 0.71
+				scale = 0.65
 			}
 
 			instantTextboxType = {
 				name = "mai_chp_tfk_leader_name"
-				position = { x = -21 y = 152 }
+				position = { x = -22 y = 138 }
 				font = "hoi_18mbs"
 				text = "MAI_children_parliament_tfk_leader_name"
 				maxWidth = 155
@@ -588,7 +588,53 @@ guiTypes = {
 	}
 
 	#CHART
-	#migrated to separate gui file
+	containerWindowType = {
+		name = "central_kingdom_chp_chart_new"
+		position = { x = 1275 y = 170 }
+		size = { width = 380 height = 234 }
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_map_header"
+			position = { x = -6 y = -10 }
+			font = "hoi_24header"
+			text = "MAI_seats_overview"
+			format = center
+			maxWidth = 380
+			maxHeight = 24
+		}
+			
+		iconType = {
+			name = "central_kingdom_chp_ccfrok_majority"
+			spriteType = "GFX_cr_mai_chp_ccfrok"
+			position = { x = 0 y = 0 }
+			scale = 0.9
+			pdx_tooltip = "mai_chp_ccfrok_ruling"
+		}
+			
+		iconType = {
+			name = "central_kingdom_chp_ncp_majority"
+			spriteType = "GFX_cr_mai_chp_ncp"
+			position = { x = 0 y = 0 }
+			scale = 0.9
+			pdx_tooltip = "mai_chp_ncp_ruling"
+		}
+			
+		iconType = {
+			name = "central_kingdom_chp_ffp_majority"
+			spriteType = "GFX_cr_mai_chp_ffp"
+			position = { x = 0 y = 0 }
+			scale = 0.9
+			pdx_tooltip = "mai_chp_ffp_ruling"
+		}
+			
+		iconType = {
+			name = "central_kingdom_chp_tfk_majority"
+			spriteType = "GFX_cr_mai_chp_tfc"
+			position = { x = 0 y = 0 }
+			scale = 0.9
+			pdx_tooltip = "mai_chp_tfk_ruling"
+		}
+	}
 
 	containerWindowType = {
 		name = "central_kingdom_chp_button_cont"
@@ -603,8 +649,498 @@ guiTypes = {
 	}
 
 	containerWindowType = {
+		name = "central_kingdom_chp_polling_window_container"
+		position = { x = 1250 y = 375 }
+		size = { width=418 height=521 }
+
+		instantTextBoxType = {
+			name = "MAI_children_parliament_map_header"
+			position = { x = 0 y = 0 }
+			font = "hoi_24header"
+			text = "MAI_districts_overview"
+			format = center
+			maxWidth = 418
+			maxHeight = 24
+		}
+
+		iconType = {
+			name = "736_voting_icon"
+			spriteType = "GFX_cr_mai_chp_736"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "767_voting_icon"
+			spriteType = "GFX_cr_mai_chp_767"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "773_voting_icon"
+			spriteType = "GFX_cr_mai_chp_773"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "776_voting_icon"
+			spriteType = "GFX_cr_mai_chp_776"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "789_voting_icon"
+			spriteType = "GFX_cr_mai_chp_789"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "792_voting_icon"
+			spriteType = "GFX_cr_mai_chp_792"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "796_voting_icon"
+			spriteType = "GFX_cr_mai_chp_796"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "798_voting_icon"
+			spriteType = "GFX_cr_mai_chp_798"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "799_voting_icon"
+			spriteType = "GFX_cr_mai_chp_799"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "803_voting_icon"
+			spriteType = "GFX_cr_mai_chp_803"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "808_voting_icon"
+			spriteType = "GFX_cr_mai_chp_808"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "812_voting_icon"
+			spriteType = "GFX_cr_mai_chp_812"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "814_voting_icon"
+			spriteType = "GFX_cr_mai_chp_814"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "817_voting_icon"
+			spriteType = "GFX_cr_mai_chp_817"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "822_voting_icon"
+			spriteType = "GFX_cr_mai_chp_822"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "824_voting_icon"
+			spriteType = "GFX_cr_mai_chp_824"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "831_voting_icon"
+			spriteType = "GFX_cr_mai_chp_831"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "835_voting_icon"
+			spriteType = "GFX_cr_mai_chp_835"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "843_voting_icon"
+			spriteType = "GFX_cr_mai_chp_843"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "852_voting_icon"
+			spriteType = "GFX_cr_mai_chp_852"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "853_voting_icon"
+			spriteType = "GFX_cr_mai_chp_853"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "858_voting_icon"
+			spriteType = "GFX_cr_mai_chp_858"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "869_voting_icon"
+			spriteType = "GFX_cr_mai_chp_869"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "872_voting_icon"
+			spriteType = "GFX_cr_mai_chp_872"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "877_voting_icon"
+			spriteType = "GFX_cr_mai_chp_877"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "884_voting_icon"
+			spriteType = "GFX_cr_mai_chp_884"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "897_voting_icon"
+			spriteType = "GFX_cr_mai_chp_897"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "905_voting_icon"
+			spriteType = "GFX_cr_mai_chp_905"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "911_voting_icon"
+			spriteType = "GFX_cr_mai_chp_911"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "1048_voting_icon"
+			spriteType = "GFX_cr_mai_chp_1048"
+			position = { x = 0 y = 0 }
+			
+		}
+
+		iconType = {
+			name = "789_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 104 y = 113 }
+			pdx_tooltip = "MAI_constituency_789"
+			scale = 2.50
+		}
+
+		iconType = {
+			name = "803_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 56 y = 140 }
+			pdx_tooltip = "MAI_constituency_803"
+			scale = 2.50
+		}
+
+		iconType = {
+			name = "812_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 122 y = 157 }
+			pdx_tooltip = "MAI_constituency_812"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "814_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 93 y = 175 }
+			pdx_tooltip = "MAI_constituency_814"
+			scale = 1.40
+		}
+
+		iconType = {
+			name = "822_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 109 y = 195 }
+			pdx_tooltip = "MAI_constituency_822"
+			scale = 1.40
+		}
+
+		iconType = {
+			name = "792_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 195 y = 105 }
+			pdx_tooltip = "MAI_constituency_792"
+			scale = 1.95
+		}
+
+		iconType = {
+			name = "796_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 178 y = 130 }
+			pdx_tooltip = "MAI_constituency_796"
+			scale = 1.90
+		}
+
+		iconType = {
+			name = "798_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 148 y = 130 }
+			pdx_tooltip = "MAI_constituency_798"
+			scale = 1.90
+		}
+
+		iconType = {
+			name = "799_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 205 y = 145 }
+			pdx_tooltip = "MAI_constituency_799"
+			scale = 1.95
+		}
+
+		iconType = {
+			name = "808_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 232 y = 158 }
+			pdx_tooltip = "MAI_constituency_808"
+			scale = 3.20
+		}
+
+		iconType = {
+			name = "817_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 155 y = 170 }
+			pdx_tooltip = "MAI_constituency_817"
+			scale = 2.20
+		}
+
+		iconType = {
+			name = "824_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 133 y = 200 }
+			pdx_tooltip = "MAI_constituency_824"
+			scale = 2.15
+		}
+
+		iconType = {
+			name = "831_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 177 y = 200 }
+			pdx_tooltip = "MAI_constituency_831"
+			scale = 3.20
+		}
+
+		iconType = {
+			name = "835_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 280 y = 215 }
+			pdx_tooltip = "MAI_constituency_835"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "843_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 232 y = 225 }
+			pdx_tooltip = "MAI_constituency_843"
+			scale = 3.45
+		}
+
+		iconType = {
+			name = "852_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 143 y = 248 }
+			pdx_tooltip = "MAI_constituency_852"
+			scale = 2.20
+		}
+
+		iconType = {
+			name = "853_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 300 y = 250 }
+			pdx_tooltip = "MAI_constituency_853"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "853_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 320 y = 260 }
+			pdx_tooltip = "MAI_constituency_853"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "858_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 175 y = 270 }
+			pdx_tooltip = "MAI_constituency_858"
+			scale = 4.20
+		}
+
+		iconType = {
+			name = "869_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 340 y = 300 }
+			pdx_tooltip = "MAI_constituency_869"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "869_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 357 y = 283 }
+			pdx_tooltip = "MAI_constituency_869"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "872_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 240 y = 320 }
+			pdx_tooltip = "MAI_constituency_872"
+			scale = 4.00
+		}
+
+		iconType = {
+			name = "872_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 270 y = 320 }
+			pdx_tooltip = "MAI_constituency_872"
+			scale = 4.00
+		}
+
+		iconType = {
+			name = "1048_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 265 y = 285 }
+			pdx_tooltip = "MAI_constituency_1048"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "1048_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 295 y = 288 }
+			pdx_tooltip = "MAI_constituency_1048"
+			scale = 2.00
+		}
+
+		iconType = {
+			name = "911_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 140 y = 350 }
+			pdx_tooltip = "MAI_constituency_911"
+			scale = 7.00
+		}
+
+		iconType = {
+			name = "877_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 125 y = 320 }
+			pdx_tooltip = "MAI_constituency_877"
+			scale = 2.20
+		}
+
+		iconType = {
+			name = "897_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 92 y = 360 }
+			pdx_tooltip = "MAI_constituency_897"
+			scale = 3.50
+		}
+
+		iconType = {
+			name = "736_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 50 y = 50 }
+			pdx_tooltip = "MAI_constituency_736"
+			scale = 1.50
+		}
+
+		iconType = {
+			name = "767_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 95 y = 65 }
+			pdx_tooltip = "MAI_constituency_767"
+			scale = 1.50
+		}
+
+		iconType = {
+			name = "773_voting_icon_tooltip_1"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 70 y = 76 }
+			pdx_tooltip = "MAI_constituency_773"
+			scale = 1.50
+		}
+
+		iconType = {
+			name = "773_voting_icon_tooltip_2"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 70 y = 96 }
+			pdx_tooltip = "MAI_constituency_773"
+			scale = 1.50
+		}
+
+		iconType = {
+			name = "776_voting_icon_tooltip"
+			spriteType = "GFX_tooltip_square"
+			position = { x = 105 y = 90 }
+			pdx_tooltip = "MAI_constituency_776"
+			scale = 1.50
+		}
+	}
+
+	containerWindowType = {
 		name = "central_kingdom_chp_state_parties_cont"
-		position = { x=436 y=-445}
+		position = { x=462 y=-445}
 		orientation = lower_left
 		size = { width=436 height=496 }
 

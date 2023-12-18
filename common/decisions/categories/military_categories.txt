@@ -64,14 +64,14 @@ road_to_central_civil_war_dec_category = {
 
 	allowed = {
 		tag = MAI
+		NOT = {
+			has_country_flag = general_rebelled
+		}
 	}
 
 	visible = {
 		has_global_flag = stephen_is_dead
 		has_country_flag = general_moved_to_second_stage
-		NOT = {
-			has_country_flag = general_rebelled
-		}
 	}
 	
 	priority = 100

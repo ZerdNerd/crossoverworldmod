@@ -531,8 +531,8 @@ country_event = { #Voting on children in army leadership - Nay
 	}
 }
 
-country_event = { #Free Future Party is formed
-	id = childrenparliament.15
+country_event = { #event to check needed states
+	id = childrenparliament.1557
 	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.15"}
 	title = childrenparliament.15.t
 	desc = childrenparliament.15.d
@@ -541,6 +541,53 @@ country_event = { #Free Future Party is formed
 	fire_only_once = yes
 
 	is_triggered_only = yes
+
+	option = {
+		name = childrenparliament.15.a
+		hidden_effect = {
+			MAI = {
+				if = {
+					limit = {
+						owns_state = 1048
+					}
+					set_country_flag = form_southernprogress
+					else = {
+						set_country_flag = form_timeforkids
+					}
+				}
+				if = {
+					limit = {
+						owns_state = 877
+					}
+					set_country_flag = form_newconfederation
+					else = {
+						set_country_flag = form_freefuture
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = { #[MAI_ffp_party_name] is formed
+	id = childrenparliament.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenparliament.15"}
+	title = childrenparliament.15.t
+	desc = childrenparliament.15.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAI
+		NOT = {
+			has_war = yes
+			has_war_with = FRI
+		}
+		has_completed_focus = MAI_reform_the_parliament
+	}
+
+	mean_time_to_happen = { days = 6 }
 
 	option = {
 		name = childrenparliament.15.a
@@ -595,10 +642,6 @@ country_event = { #CCFRoK is formed
 			if = {
 				limit = {
 					has_completed_focus = MAI_partification_of_parliament
-				}
-				another_elections_script = yes
-				every_owned_state = {
-					execute_dhondt_method = yes
 				}
 				activate_mission = MAI_next_seating_of_children_parliament
 				set_politics = {
@@ -670,8 +713,24 @@ country_event = { #Second elections
 				}
 			}
 			set_variable = { mai_chp_ncp_leader_frame = 2 }
-			set_variable = { mai_chp_ffp_leader_frame = 3 }
-			set_variable = { mai_chp_tfk_leader_frame = 4 }
+			if = {
+				limit = {
+					owns_state = 1048
+				}
+				set_variable = { mai_chp_tfk_leader_frame = 7 }
+				else = {
+					set_variable = { mai_chp_tfk_leader_frame = 4 }
+				}
+			}
+			if = {
+				limit = {
+					owns_state = 877
+				}
+				set_variable = { mai_chp_ffp_leader_frame = 8 }
+				else = {
+					set_variable = { mai_chp_ffp_leader_frame = 3 }
+				}
+			}
 			set_variable = { mai_chp_ccfrok_leader_frame = 5 }
 		}
 			clear_variable = ncp_seats_in_chp
@@ -679,7 +738,7 @@ country_event = { #Second elections
 			clear_variable = tfk_seats_in_chp
 			clear_variable = ccfrok_seats_in_chp
 			#Setting number of seats
-			set_variable = { current_seats_in_chp = 35 }
+			set_variable = { current_seats_in_chp = 38 }
 			set_variable = { half_of_the_seats_chp = current_seats_in_chp }
 			divide_variable = { half_of_the_seats_chp = 2 }
 			if = {
@@ -712,7 +771,7 @@ country_event = { #Second elections
 					owns_state = 905
 					owns_state = 884
 				}
-				add_to_variable = { current_seats_in_chp = 2 }
+				add_to_variable = { current_seats_in_chp = 3 }
 				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
 				divide_variable = { half_of_the_seats_chp = 2 }
 			}
@@ -721,8 +780,9 @@ country_event = { #Second elections
 					owns_state = 869
 					owns_state = 853
 					owns_state = 835
+					owns_state = 1048
 				}
-				add_to_variable = { current_seats_in_chp = 2 }
+				add_to_variable = { current_seats_in_chp = 8 }
 				set_variable = { half_of_the_seats_chp = current_seats_in_chp }
 				divide_variable = { half_of_the_seats_chp = 2 }
 			}
@@ -806,6 +866,46 @@ country_event = { #Second elections
         		if = {
             		limit = {
                 		911 = {
+                   		 	is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+			853 = {
+        		if = {
+            		limit = {
+                		853 = {
+                   		 	is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+			1048 = {
+        		if = {
+            		limit = {
+                		1048 = {
+                   		 	is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+			869 = {
+        		if = {
+            		limit = {
+                		869 = {
+                   		 	is_owned_and_controlled_by = MAI
+                		}
+            		}
+            		dhondt_calculate_overall_seats = yes
+        		}
+    		}
+			835 = {
+        		if = {
+            		limit = {
+                		835 = {
                    		 	is_owned_and_controlled_by = MAI
                 		}
             		}

@@ -1,0 +1,1356 @@
+focus_tree = {
+	id = bees
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = BEE
+		} 
+	} 
+	default = no
+
+	focus = { 
+		id = BEE_reign_of_the_queen
+		icon = GFX_focus_generic_monarchy_2
+		x = 10
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			add_political_power = 5
+		}		
+	}
+
+	focus = {
+		id = BEE_pollen_harvest
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = BEE_reign_of_the_queen }
+		x = 10
+		y = 1
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = BEE_speak_to_subjects
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = { focus = BEE_pollen_harvest }
+		x = 10
+		y = 2
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+	}
+
+	focus = {
+		id = BEE_queen_stays
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = BEE_speak_to_subjects }
+		mutually_exclusive = {
+			focus = BEE_queen_buzzlina
+			focus = BEE_maya_leader
+			focus = BEE_ants_win
+			focus = BEE_meadow_democracy
+		}
+		x = 10
+		y = 4
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = BEE_queen_benevolence
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = BEE_queen_stays }
+		x = 9
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = BEE_queen_advisors
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = BEE_queen_stays }
+		x = 11
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_queen_unity
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = BEE_queen_advisors }
+		prerequisite = { focus = BEE_queen_benevolence }
+		x = 10
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = {
+				BEE_divided_nation
+			}
+		}
+	}
+	focus = {
+		id = BEE_queen_buzzlina
+		icon = GFX_goal_generic_attack_allies
+		prerequisite = { focus = BEE_speak_to_subjects }
+		mutually_exclusive = {
+			focus = BEE_queen_stays
+			focus = BEE_maya_leader
+			focus = BEE_ants_win
+			focus = BEE_meadow_democracy
+		}
+		x = 6
+		y = 4
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = BEE_blame_hornets
+		icon = GFX_goal_generic_demand_territory
+		prerequisite = { focus = BEE_queen_buzzlina }
+		x = 6
+		y = 5
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_wipe_out_hornets
+		icon = GFX_goal_generic_secret_weapon
+		prerequisite = { focus = BEE_blame_hornets }
+		x = 6
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = -50000
+		}
+	}
+	focus = {
+		id = BEE_blame_tigers
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = BEE_wipe_out_hornets }
+		x = 7
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_blame_smeshariks
+		icon = GFX_goal_generic_political_pressure
+		prerequisite = { focus = BEE_wipe_out_hornets }
+		x = 5
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_hatred_unity
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = BEE_blame_tigers }
+		prerequisite = { focus = BEE_blame_smeshariks }
+		x = 6
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Buzzlina Von Beena"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "buzzlinavonbeena.dds"
+			expire = "1965.1.1"
+			ideology = falangism
+			traits = {
+				#
+			}
+		}
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.15
+			}
+			remove_ideas = {
+				BEE_divided_nation
+			}
+		}
+	}
+	focus = {
+		id = BEE_maya_leader
+		icon = GFX_goal_generic_propaganda
+		prerequisite = { focus = BEE_speak_to_subjects }
+		mutually_exclusive = {
+			focus = BEE_queen_stays
+			focus = BEE_queen_buzzlina
+			focus = BEE_ants_win
+			focus = BEE_meadow_democracy
+		}
+		x = 2
+		y = 4
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_heart_of_meadow
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = BEE_maya_leader }
+		x = 3
+		y = 5
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_liberalization_of_society
+		icon = GFX_focus_generic_the_giant_wakes
+		prerequisite = { focus = BEE_maya_leader }
+		x = 1
+		y = 5
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.15
+			}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.25
+			}
+		}
+	}
+	focus = {
+		id = BEE_discuss_unity
+		icon = GFX_goal_generic_neutrality_focus
+		prerequisite = { focus = BEE_liberalization_of_society }
+		prerequisite = { focus = BEE_heart_of_meadow }
+		x = 2
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_closer_to_hive
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = BEE_discuss_unity }
+		mutually_exclusive = {
+			focus = BEE_closer_to_meadow
+		}
+		x = 3
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.1
+			}
+		add_popularity = {
+    			ideology = monarchism
+    			popularity = 0.2
+			}
+		create_country_leader = {
+			name = "Willy"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "willythebee.dds"
+			expire = "1965.1.1"
+			ideology = paidocracy_sub
+			traits = {
+				#
+			}
+		}
+		}
+	}
+	focus = {
+		id = BEE_closer_to_meadow
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = BEE_discuss_unity }
+		mutually_exclusive = {
+			focus = BEE_closer_to_hive
+		}
+		x = 1
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.1
+			}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.2
+			}
+		}
+	}
+	focus = {
+		id = BEE_uniting_the_meadow
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = BEE_closer_to_meadow focus = BEE_closer_to_hive }
+		x = 2
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = paidocracy
+    			popularity = 0.15
+			}
+			remove_ideas = {
+				BEE_divided_nation
+			}
+		}
+	}
+	focus = {
+		id = BEE_ants_win
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = BEE_speak_to_subjects }
+		mutually_exclusive = {
+			focus = BEE_queen_stays
+			focus = BEE_queen_buzzlina
+			focus = BEE_maya_leader
+			focus = BEE_meadow_democracy
+		}
+		x = 18
+		y = 4
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_great_leap_first
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = BEE_ants_win }
+		x = 17
+		y = 5
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_great_leap_second
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = BEE_ants_win }
+		x = 19
+		y = 5
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_great_leap_third
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = BEE_great_leap_first }
+		prerequisite = { focus = BEE_great_leap_second }
+		x = 18
+		y = 6
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			every_owned_state = {
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_ant_unity
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = { focus = BEE_great_leap_third }
+		x = 18
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = {
+				BEE_divided_nation
+			}
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_meadow_democracy
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = BEE_speak_to_subjects }
+		mutually_exclusive = {
+			focus = BEE_queen_stays
+			focus = BEE_queen_buzzlina
+			focus = BEE_maya_leader
+			focus = BEE_ants_win
+		}
+		x = 14
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.15
+			}
+		}
+	}
+	focus = {
+		id = BEE_meadow_elections
+		icon = GFX_focus_generic_elections
+		prerequisite = { focus = BEE_meadow_democracy }
+		x = 14
+		y = 5
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			country_event = {
+				id = bees.9
+				days = 0
+			}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.15
+			}
+		}
+	}
+
+	focus = {
+		id = BEE_meadow_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = BEE_meadow_elections }
+		x = 15
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = BEE_meadow_reforms
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = BEE_meadow_elections }
+		x = 13
+		y = 6
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = BEE_meadow_unity_reform
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = BEE_meadow_reforms }
+		prerequisite = { focus = BEE_meadow_constitution }
+		x = 14
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			remove_ideas = {
+				BEE_divided_nation
+			}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.1
+			}
+		}
+	}
+	focus = {
+		id = BEE_good_neighbor
+		icon = GFX_focus_usa_union_representation_act
+		prerequisite = { focus = BEE_meadow_unity_reform
+				 focus = BEE_ant_unity
+				 focus = BEE_uniting_the_meadow
+				 focus = BEE_hatred_unity
+				 focus = BEE_queen_unity
+			}
+		mutually_exclusive = {
+			focus = BEE_regional_hegemon
+		}
+		x = 8
+		y = 9
+		cost = 5
+
+		available_if_capitulated = no
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = monarchism
+				has_government = paidocracy
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+
+		}
+	}
+	focus = {
+		id = BEE_greenland_alliance
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = BEE_good_neighbor }
+		x = 8
+		y = 10
+		cost = 5
+
+		available_if_capitulated = no
+
+		available = {
+			BEE = {
+				is_in_faction = no
+			}
+			GRN = {
+				exists = yes
+				is_faction_leader = yes
+			}
+		}
+
+		completion_reward = {
+			GRN = {
+				country_event = {
+					id = bees.10
+					days = 1
+				}
+			}
+		}
+	}
+	focus = {
+		id = BEE_regional_hegemon
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = BEE_meadow_unity_reform
+				 focus = BEE_ant_unity
+				 focus = BEE_uniting_the_meadow
+				 focus = BEE_hatred_unity
+				 focus = BEE_queen_unity
+			}
+		mutually_exclusive = {
+			focus = BEE_good_neighbor
+		}
+		x = 12
+		y = 9
+		cost = 5
+
+		available_if_capitulated = no
+
+		available = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+		}
+
+		completion_reward = {
+			create_faction = "Meadow Hegemony"
+		}
+	}
+	focus = {
+		id = BEE_conquest
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = BEE_regional_hegemon }
+		x = 12
+		y = 10
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+    			type = annex_everything
+    			target = CVA
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = TIG
+			}
+		}
+	}
+
+
+	focus = { 
+		id = BEE_modernization_first
+		icon = GFX_goal_generic_consumer_goods
+		x = 35
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+			hidden_effect = {
+				middleage_to_preindustrial = yes
+			}
+		}		
+	}
+	focus = {
+		id = BEE_industrialization_first
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = BEE_modernization_first }
+		x = 32
+		y = 1
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			}
+	}
+	focus = {
+		id = BEE_industrialization_second
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = BEE_modernization_first }
+		x = 34
+		y = 1
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			}
+	}
+	focus = {
+		id = BEE_industrialization_third
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = BEE_modernization_first }
+		x = 36
+		y = 1
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			}
+	}
+	focus = {
+		id = BEE_industrialization_fourth
+		icon = GFX_goal_generic_production
+		prerequisite = { focus = BEE_modernization_first }
+		x = 38
+		y = 1
+		cost = 15
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				add_building_construction= { 
+					type = arms_factory 
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction= { 
+					type = infrastructure 
+					level = 1
+					instant_build = yes 
+				}
+			}
+			}
+	}
+	focus = {
+		id = BEE_modernization_second
+		icon = GFX_focus_research
+		prerequisite = { focus = BEE_industrialization_first }
+		prerequisite = { focus = BEE_industrialization_second }
+		prerequisite = { focus = BEE_industrialization_third }
+		prerequisite = { focus = BEE_industrialization_fourth }
+		x = 35
+		y = 2
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_infantry
+		icon = GFX_goal_generic_allies_build_infantry
+		prerequisite = { focus = BEE_modernization_second }
+		x = 35
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			army_experience = 75
+		}
+	}
+	focus = {
+		id = BEE_infantry_equipment
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = BEE_study_infantry }
+		x = 33
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = BEE_infantry_equipment_second
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = BEE_infantry_equipment }
+		x = 33
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = BEE_infantry_equipment_third
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = BEE_infantry_equipment_second }
+		x = 33
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_motorized
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = BEE_study_infantry }
+		x = 37
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 3.0
+				technology = motorised_infantry
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_mechanized
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = BEE_study_motorized }
+		x = 37
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_armor
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = BEE_study_mechanized }
+		x = 37
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 2
+				category = armor
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = BEE_study_infantry }
+		x = 35
+		y = 5
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_second
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = BEE_study_tactics }
+		x = 35
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_third
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = BEE_study_tactics_second }
+		x = 35
+		y = 9
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_air
+		icon = GFX_goal_generic_build_airforce
+		prerequisite = { focus = BEE_modernization_second }
+		x = 28
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			air_experience = 75
+		}
+	}
+	focus = {
+		id = BEE_study_fighter
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = BEE_study_air }
+		x = 30
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fighter_bonus
+				bonus = 1.0
+				uses = 2
+				technology = early_fighter
+				technology = fighter1
+				technology = fighter2
+				technology = fighter3
+				technology = heavy_fighter1
+				technology = heavy_fighter2
+				technology = heavy_fighter3
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_bomber
+		icon = GFX_goal_generic_air_bomber
+		prerequisite = { focus = BEE_study_fighter }
+		x = 30
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = bomber_bonus
+				bonus = 1.0
+				uses = 2
+				technology = strategic_bomber1
+				technology = strategic_bomber2
+				technology = strategic_bomber3
+				category = tactical_bomber
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_CAS
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = BEE_study_bomber }
+		x = 30
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = CAS_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cas_bomber
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_air
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = BEE_study_air }
+		x = 28
+		y = 5
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_air_second
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = BEE_study_tactics_air }
+		x = 28
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_air_third
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = BEE_study_tactics_air_second }
+		x = 28
+		y = 9
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = air_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_navy
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = BEE_modernization_second }
+		x = 42
+		y = 3
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			navy_experience = 75
+		}
+	}
+	focus = {
+		id = BEE_study_submarine
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = BEE_study_navy }
+		x = 40
+		y = 4
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = ss_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_destroyer
+		icon = GFX_goal_generic_wolf_pack
+		prerequisite = { focus = BEE_study_submarine }
+		x = 40
+		y = 6
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = dd_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_cruiser
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = BEE_study_destroyer }
+		x = 40
+		y = 8
+		cost = 10
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = cr_bonus
+				bonus = 1.0
+				ahead_reduction = 2
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_navy
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = BEE_study_navy }
+		x = 42
+		y = 5
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_navy_second
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = BEE_study_tactics_navy }
+		x = 42
+		y = 7
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+}
+		}
+	}
+	focus = {
+		id = BEE_study_tactics_navy_third
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = BEE_study_tactics_navy_second }
+		x = 42
+		y = 9
+		cost = 5
+
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+}
+		}
+	}
+
+
+}

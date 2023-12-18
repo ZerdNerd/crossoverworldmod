@@ -2584,10 +2584,10 @@ focus_tree = {
 					id = worldnews.27
 					hours = 6
 				}
-				country_event = {
-					id = childrenparliament.15
-					days = 5
-				}
+			#	country_event = {
+			#		id = childrenparliament.15
+			#		days = 5
+			#	}
 				remove_mission = MAI_next_seating_of_children_parliament
 			}
 			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
@@ -2633,6 +2633,10 @@ focus_tree = {
 
 		completion_reward = {
 			hidden_effect = {
+				another_elections_script = yes
+				every_owned_state = {
+					execute_dhondt_method = yes
+				}
 				if = {
 					limit = {
 						has_country_flag = deputies_bill_1_submitted
@@ -2729,6 +2733,7 @@ focus_tree = {
 				every_owned_state = {
 					execute_dhondt_method = yes
 				}
+				update_polling_map = yes
 				activate_mission = MAI_next_seating_of_children_parliament
 			}
 			set_politics = {
@@ -2741,8 +2746,8 @@ focus_tree = {
 
 	focus = { 
 		id = MAI_national_children_party_won
-		icon = GFX_focus_rom_royal_dictatorship
-		x = -6
+		icon = GFX_focus_felek
+		x = -9
 		y = 1
 		relative_position_id = MAI_another_elections
 		cost = 10
@@ -2755,7 +2760,13 @@ focus_tree = {
 			always = no
 		}
 		bypass = {
-			has_country_flag = national_children_party_wins
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = national_children_party_wins
+			}
 		}
 
 		completion_reward = {
@@ -2765,19 +2776,12 @@ focus_tree = {
 	focus = { 
 		id = MAI_business_rebuilding_fund
 		icon = GFX_goal_generic_national_unity
-		x = -7
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = -1
+		y = 1
+		relative_position_id = MAI_national_children_party_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_national_children_party_won }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
-			}
-			has_idea = MAI_aftermath_of_role_change_law_1
-		}
 		ai_will_do = { 
 			factor = 1
 		}
@@ -2793,9 +2797,9 @@ focus_tree = {
 	focus = { 
 		id = MAI_promote_national_industry
 		icon = GFX_goal_generic_construct_civ_factory
-		x = -7
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = -2
+		y = 2
+		relative_position_id = MAI_national_children_party_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_business_rebuilding_fund }
@@ -2823,18 +2827,42 @@ focus_tree = {
 	focus = { 
 		id = MAI_our_currency
 		icon = GFX_focus_fra_devalue_the_franc
-		x = -5
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = 1
+		y = 1
+		relative_position_id = MAI_national_children_party_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_national_children_party_won }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_central_zloty
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
 			}
 		}
+	}
+
+	focus = { 
+		id = MAI_increase_military_spending
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 0
+		y = 2
+		relative_position_id = MAI_national_children_party_won
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_business_rebuilding_fund }
+		prerequisite = { focus = MAI_our_currency }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -2858,9 +2886,9 @@ focus_tree = {
 	focus = { 
 		id = MAI_schools_and_scouts
 		icon = GFX_focus_generic_self_management
-		x = -5
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = 2
+		y = 2
+		relative_position_id = MAI_national_children_party_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_our_currency }
@@ -2876,15 +2904,70 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_sign_final_reconstruction_bill
+		id = MAI_reshuffle_school_staff
+		icon = GFX_focus_generic_self_management
+		x = 1
+		y = 3
+		relative_position_id = MAI_national_children_party_won
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_increase_military_spending }
+		prerequisite = { focus = MAI_schools_and_scouts }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_complete_freedom_of_press
+		icon = GFX_focus_generic_self_management
+		x = -1
+		y = 3
+		relative_position_id = MAI_national_children_party_won
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_increase_military_spending }
+		prerequisite = { focus = MAI_promote_national_industry }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_amend_the_constitution
 		icon = GFX_focus_generic_treaty
-		x = -6
+		x = 0
 		y = 4
-		relative_position_id = MAI_another_elections
+		relative_position_id = MAI_national_children_party_won
 		cost = 0.25
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_promote_national_industry }
-		prerequisite = { focus = MAI_schools_and_scouts }
+		prerequisite = { focus = MAI_reshuffle_school_staff }
+		prerequisite = { focus = MAI_complete_freedom_of_press }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -2893,23 +2976,14 @@ focus_tree = {
 			remove_ideas = {
 				MAI_aftermath_of_role_change_law_3
 			}
-			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
-			hidden_effect = {
-				add_to_variable = {
-					MAI_NCK_SOC_support = 2
-				}
-				add_to_variable = {
-					MAI_SCK_SOC_support = 2
-				}
-				mark_focus_tree_layout_dirty = yes
-			}
+			mark_focus_tree_layout_dirty = yes
 		}
 	}
 
 	focus = { 
 		id = MAI_free_future_party_won
-		icon = GFX_focus_research
-		x = -2
+		icon = GFX_focus_antek
+		x = 3
 		y = 1
 		relative_position_id = MAI_another_elections
 		cost = 10
@@ -2922,7 +2996,13 @@ focus_tree = {
 			always = no
 		}
 		bypass = {
-			has_country_flag = free_future_party_wins
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = free_future_party_wins
+			}
 		}
 
 		completion_reward = {
@@ -2932,18 +3012,12 @@ focus_tree = {
 	focus = { 
 		id = MAI_creation_of_technological_bureau
 		icon = GFX_focus_research2
-		x = -3
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = -1
+		y = 1
+		relative_position_id = MAI_free_future_party_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_free_future_party_won }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
-			}
-		}
 		ai_will_do = { 
 			factor = 1
 		}
@@ -2963,9 +3037,9 @@ focus_tree = {
 	focus = { 
 		id = MAI_discounts_for_businesses
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = -3
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = -2
+		y = 2
+		relative_position_id = MAI_free_future_party_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_creation_of_technological_bureau }
@@ -2991,20 +3065,45 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = MAI_unlimited_energy_sources
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = -1
+		y = 3
+		relative_position_id = MAI_free_future_party_won
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_national_public_works_program }
+		prerequisite = { focus = MAI_discounts_for_businesses }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_2
+				add_idea = MAI_aftermath_of_role_change_law_3
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
 		id = MAI_fund_naval_expansion
 		icon = GFX_goal_generic_navy_battleship
-		x = -1
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = 1
+		y = 1
+		relative_position_id = MAI_free_future_party_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_free_future_party_won }
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = coalition_or_majority
-				has_country_flag = government_has_majority_or_coalition
-			}
-		}
 		ai_will_do = { 
 			factor = 1
 		}
@@ -3023,11 +3122,48 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_attract_investors_to_colonies
+		id = MAI_national_public_works_program
+		icon = GFX_goal_generic_navy_battleship
+		x = 0
+		y = 2
+		relative_position_id = MAI_free_future_party_won
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_creation_of_technological_bureau }
+		prerequisite = { focus = MAI_fund_naval_expansion }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_expanding_the_navy
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_attract_northern_citizens_to_south
 		icon = GFX_focus_generic_industry_3
-		x = -1
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = 2
+		y = 2
+		relative_position_id = MAI_free_future_party_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_fund_naval_expansion }
@@ -3039,19 +3175,58 @@ focus_tree = {
 			add_ideas = {
 				MAI_colonial_fund
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_grant_tax_allowance_for_investors
+		icon = GFX_focus_generic_industry_3
+		x = 1
+		y = 3
+		relative_position_id = MAI_free_future_party_won
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_national_public_works_program }
+		prerequisite = { focus = MAI_attract_northern_citizens_to_south }
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_ideas = {
+				MAI_colonial_fund
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+			}
 		}
 	}
 
 	focus = { 
 		id = MAI_trade_restoration_bill
 		icon = GFX_goal_generic_trade
-		x = -2
+		x = 0
 		y = 4
-		relative_position_id = MAI_another_elections
+		relative_position_id = MAI_free_future_party_won
 		cost = 0.25
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_discounts_for_businesses }
-		prerequisite = { focus = MAI_attract_investors_to_colonies }
+		prerequisite = { focus = MAI_unlimited_energy_sources }
+		prerequisite = { focus = MAI_grant_tax_allowance_for_investors }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -3074,9 +3249,593 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = MAI_a_southern_head
+		icon = GFX_focus_heidi
+		x = -6
+		y = 6
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = time_for_kids_wins
+				has_country_flag = form_southernprogress
+			}
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_open_rural_schools
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_a_southern_head
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_southern_head }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_road_programme_in_the_south
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_a_southern_head
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_southern_head }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_royal_shipyards_zawady
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_road_programme_in_the_south
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_road_programme_in_the_south }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_establish_healthcare_fund
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_road_programme_in_the_south
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_road_programme_in_the_south }
+		prerequisite = { focus = MAI_open_rural_schools }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_fight_the_illiteracy_in_the_south
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_open_rural_schools
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_open_rural_schools }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_food_instead_of_chocolate
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_fight_the_illiteracy_in_the_south
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_fight_the_illiteracy_in_the_south }
+		prerequisite = { focus = MAI_establish_healthcare_fund }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_new_hospitals_in_the_south
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_royal_shipyards_zawady
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_royal_shipyards_zawady }
+		prerequisite = { focus = MAI_establish_healthcare_fund }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_a_change_in_direction
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_new_hospitals_in_the_south
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_food_instead_of_chocolate }
+		prerequisite = { focus = MAI_new_hospitals_in_the_south }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_the_western_wind
+		icon = GFX_focus_geoffroy
+		x = 6
+		y = 6
+		relative_position_id = MAI_another_elections
+		cost = 10
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_another_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		bypass = {
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = free_future_party_wins
+				has_country_flag = form_newconfederation
+			}
+		}
+
+		completion_reward = {
+		}
+	}
+
+	focus = { 
+		id = MAI_a_controllable_unemployment
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_the_western_wind
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_western_wind }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_freeze_wage_levels
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_the_western_wind
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_the_western_wind }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_deregulate_domestic_market
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_freeze_wage_levels
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_freeze_wage_levels }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_minimize_social_benefits
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_freeze_wage_levels
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_freeze_wage_levels }
+		prerequisite = { focus = MAI_a_controllable_unemployment }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_minimize_work_regulations
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_a_controllable_unemployment
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_a_controllable_unemployment }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_complete_privatization
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_minimize_work_regulations
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_minimize_work_regulations }
+		prerequisite = { focus = MAI_minimize_social_benefits }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_minimize_role_of_the_country
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_deregulate_domestic_market
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_deregulate_domestic_market }
+		prerequisite = { focus = MAI_minimize_social_benefits }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_completely_free_market
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_minimize_role_of_the_country
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_complete_privatization }
+		prerequisite = { focus = MAI_minimize_role_of_the_country }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			remove_ideas = {
+				MAI_aftermath_of_role_change_law_3
+			}
+			hidden_effect = {
+				mark_focus_tree_layout_dirty = yes
+			}
+		}
+	}
+
+	focus = { 
 		id = MAI_time_for_kids_won
-		icon = GFX_focus_hol_abandon_the_gold_standard
-		x = 2
+		icon = GFX_focus_hanna
+		x = -3
 		y = 1
 		relative_position_id = MAI_another_elections
 		cost = 10
@@ -3089,7 +3848,14 @@ focus_tree = {
 			always = no
 		}
 		bypass = {
-			has_country_flag = time_for_kids_wins
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = time_for_kids_wins
+				has_country_flag = form_timeforkids
+			}
 		}
 
 		completion_reward = {
@@ -3098,10 +3864,10 @@ focus_tree = {
 
 	focus = { 
 		id = MAI_lower_the_prices
-		icon = GFX_focus_generic_treaty
-		x = 1
-		y = 2
-		relative_position_id = MAI_another_elections
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = -1
+		y = 1
+		relative_position_id = MAI_time_for_kids_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_time_for_kids_won }
@@ -3133,11 +3899,44 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = MAI_grant_funds_for_southern_farmers
+		icon = GFX_focus_generic_treaty
+		x = 1
+		y = 1
+		relative_position_id = MAI_lower_the_prices
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_lower_the_prices }
+		prerequisite = { focus = MAI_education_reform_new }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_industry_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
 		id = MAI_resume_issuing_social_benefits
 		icon = GFX_goal_generic_improve_relations
-		x = 1
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = -2
+		y = 2
+		relative_position_id = MAI_time_for_kids_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_lower_the_prices }
@@ -3156,9 +3955,9 @@ focus_tree = {
 	focus = { 
 		id = MAI_education_reform_new
 		icon = GFX_focus_generic_military_academy
-		x = 3
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = 1
+		y = 1
+		relative_position_id = MAI_time_for_kids_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_time_for_kids_won }
@@ -3180,9 +3979,9 @@ focus_tree = {
 	focus = { 
 		id = MAI_new_summer_camps_for_kids
 		icon = GFX_goal_generic_construction
-		x = 3
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = 2
+		y = 2
+		relative_position_id = MAI_time_for_kids_won
 		cost = 10
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_education_reform_new }
@@ -3191,8 +3990,9 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_ideas = {
-				MAI_new_pioneer_camps
+			swap_ideas = {
+				remove_idea = MAI_pioneer_camps
+				add_idea = MAI_new_pioneer_camps
 			}
 			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
 			hidden_effect = {
@@ -3207,15 +4007,81 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_good_old_times_bill
-		icon = GFX_focus_hol_the_foundations_of_defense
-		x = 2
-		y = 4
-		relative_position_id = MAI_another_elections
-		cost = 0.25
+		id = MAI_establish_royal_radio_and_television
+		icon = GFX_focus_generic_treaty
+		x = -3
+		y = 1
+		relative_position_id = MAI_new_summer_camps_for_kids
+		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_resume_issuing_social_benefits }
+		prerequisite = { focus = MAI_grant_funds_for_southern_farmers }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_create_second_university
+		icon = GFX_focus_generic_treaty
+		x = -1
+		y = 1
+		relative_position_id = MAI_new_summer_camps_for_kids
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_grant_funds_for_southern_farmers }
 		prerequisite = { focus = MAI_new_summer_camps_for_kids }
+		available = {
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_aftermath_of_role_change_law_1
+				add_idea = MAI_aftermath_of_role_change_law_2
+			}
+			custom_effect_tooltip = MAI_macius_influence_society_south_grows_north_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -2
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = 2
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_good_old_times_bill
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = -0
+		y = 4
+		relative_position_id = MAI_time_for_kids_won
+		cost = 0.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_establish_royal_radio_and_television }
+		prerequisite = { focus = MAI_create_second_university }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -3240,7 +4106,7 @@ focus_tree = {
 	focus = { 
 		id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		icon = GFX_focus_mex_privatisation
-		x = 6
+		x = 9
 		y = 1
 		relative_position_id = MAI_another_elections
 		cost = 10
@@ -3253,7 +4119,13 @@ focus_tree = {
 			always = no
 		}
 		bypass = {
-			has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+			AND = {
+				custom_trigger_tooltip = {
+					tooltip = coalition_or_majority
+					has_country_flag = government_has_majority_or_coalition
+				}
+				has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+			}
 		}
 
 		completion_reward = {
@@ -3261,11 +4133,11 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_privatisation
+		id = MAI_limited_privatisation
 		icon = GFX_focus_eng_concessions_to_the_trade_unions
-		x = 5
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = -1
+		y = 1
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
@@ -3293,18 +4165,27 @@ focus_tree = {
 					MAI_SCK_IND_support = 2
 				}
 			}
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_falls
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_SOC_support = -1
+				}
+				add_to_variable = {
+					MAI_SCK_SOC_support = -2
+				}
+			}
 		}
 	}
 
 	focus = { 
 		id = MAI_attract_foreign_investors
 		icon = GFX_goal_generic_intelligence_exchange
-		x = 5
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = -2
+		y = 2
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		cost = 10
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_privatisation }
+		prerequisite = { focus = MAI_limited_privatisation }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -3318,11 +4199,11 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = MAI_lift_the_limits
+		id = MAI_no_more_chocolate_and_carousels
 		icon = GFX_goal_generic_improve_relations
-		x = 7
-		y = 2
-		relative_position_id = MAI_another_elections
+		x = 1
+		y = 1
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		cost = 14.3
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_children_coalition_for_the_renewal_of_the_kingdom_won }
@@ -3355,14 +4236,48 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = MAI_expand_zoo_project
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 2
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_limited_privatisation }
+		prerequisite = { focus = MAI_no_more_chocolate_and_carousels }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_political_power = -200
+			custom_effect_tooltip = MAI_macius_influence_society_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
 		id = MAI_lower_taxes
 		icon = GFX_focus_usa_reestablish_the_gold_standard
-		x = 7
-		y = 3
-		relative_position_id = MAI_another_elections
+		x = 2
+		y = 2
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		cost = 10
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_lift_the_limits }
+		prerequisite = { focus = MAI_no_more_chocolate_and_carousels }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -3374,15 +4289,83 @@ focus_tree = {
 	}
 
 	focus = { 
+		id = MAI_reform_market_regulations
+		icon = GFX_goal_generic_improve_relations
+		x = -1
+		y = 1
+		relative_position_id = MAI_expand_zoo_project
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_expand_zoo_project }
+		prerequisite = { focus = MAI_attract_foreign_investors }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = MAI_more_private_less_public
+		icon = GFX_goal_generic_improve_relations
+		x = -1
+		y = 1
+		relative_position_id = MAI_lower_taxes
+		cost = 14.3
+		available_if_capitulated = yes 
+		prerequisite = { focus = MAI_expand_zoo_project }
+		prerequisite = { focus = MAI_lower_taxes }
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = coalition_or_majority
+				has_country_flag = government_has_majority_or_coalition
+			}
+		}
+		ai_will_do = { 
+			factor = 1
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			custom_effect_tooltip = MAI_macius_influence_industry_whole_country_grows
+			hidden_effect = {
+				add_to_variable = {
+					MAI_NCK_IND_support = 1
+				}
+				add_to_variable = {
+					MAI_SCK_IND_support = 1
+				}
+			}
+		}
+	}
+
+	focus = { 
 		id = MAI_easier_life_bill
 		icon = GFX_focus_generic_diplomatic_treaty
-		x = 6
+		x = 0
 		y = 4
-		relative_position_id = MAI_another_elections
+		relative_position_id = MAI_children_coalition_for_the_renewal_of_the_kingdom_won
 		cost = 10
 		available_if_capitulated = yes 
-		prerequisite = { focus = MAI_attract_foreign_investors }
-		prerequisite = { focus = MAI_lower_taxes }
+		prerequisite = { focus = MAI_more_private_less_public }
+		prerequisite = { focus = MAI_reform_market_regulations }
 		ai_will_do = { 
 			factor = 1
 		}
@@ -5084,10 +6067,11 @@ focus_tree = {
 						has_country_flag = government_has_majority_or_coalition
 					}
 					OR = {
-						has_completed_focus = MAI_sign_final_reconstruction_bill
+						has_completed_focus = MAI_amend_the_constitution
 						has_completed_focus = MAI_trade_restoration_bill
 						has_completed_focus = MAI_good_old_times_bill
 						has_completed_focus = MAI_easier_life_bill
+						has_completed_focus = MAI_a_change_in_direction
 					}
 				}
 			}

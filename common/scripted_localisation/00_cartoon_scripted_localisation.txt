@@ -1003,7 +1003,7 @@ defined_text = { #MAI Children Parliament Current Term Ruling Party
                 has_country_flag = free_future_party_wins
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1011,7 +1011,7 @@ defined_text = { #MAI Children Parliament Current Term Ruling Party
                 has_country_flag = time_for_kids_wins
             }
         }
-        localization_key = "Time For Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1039,7 +1039,7 @@ defined_text = { #MAI Children Parliament Current Term Coalition Party
                 has_country_flag = ffp_in_the_coalition
             }
         }
-        localization_key = ", in coalition with Free Future Party"
+        localization_key = ", in coalition with [MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1047,7 +1047,7 @@ defined_text = { #MAI Children Parliament Current Term Coalition Party
                 has_country_flag = tfk_in_the_coalition
             }
         }
-        localization_key = ", in coalition with Time For Kids"
+        localization_key = ", in coalition with [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1075,7 +1075,7 @@ defined_text = { #MAI Children Parliament Current Term Ruling Party
                 has_country_flag = free_future_party_wins
             }
         }
-        localization_key = "Anton"
+        localization_key = "[MAI_ffp_leader]"
     }
     text = {
         trigger = {
@@ -1083,7 +1083,7 @@ defined_text = { #MAI Children Parliament Current Term Ruling Party
                 has_country_flag = time_for_kids_wins
             }
         }
-        localization_key = "Hanna"
+        localization_key = "[MAI_tfk_leader]"
     }
     text = {
         trigger = {
@@ -1110,7 +1110,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 }
             }
         }
-        localization_key = "Free Future Party, Time for Kids, CCFRoK"
+        localization_key = "[MAI_ffp_party_name], [MAI_tfk_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1119,7 +1119,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ffp_in_the_coalition
             }
         }
-        localization_key = "Time for Kids, CCFRoK"
+        localization_key = "[MAI_tfk_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1128,7 +1128,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = tfk_in_the_coalition
             }
         }
-        localization_key = "Free Future Party, CCFRoK"
+        localization_key = "[MAI_ffp_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1137,7 +1137,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ccfrok_in_the_coalition
             }
         }
-        localization_key = "Free Future Party, Time for Kids"
+        localization_key = "[MAI_ffp_party_name], [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1152,7 +1152,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 }
             }
         }
-        localization_key = "National Children Party, Time for Kids, CCFRoK"
+        localization_key = "National Children Party, [MAI_tfk_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1161,7 +1161,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ncp_in_the_coalition
             }
         }
-        localization_key = "Time for Kids, CCFRoK"
+        localization_key = "[MAI_tfk_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1179,7 +1179,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ccfrok_in_the_coalition
             }
         }
-        localization_key = "National Children Party, Time for Kids"
+        localization_key = "National Children Party, [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1194,7 +1194,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 }
             }
         }
-        localization_key = "National Children Party, Free Future Party, CCFRoK"
+        localization_key = "National Children Party, [MAI_ffp_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1203,7 +1203,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ncp_in_the_coalition
             }
         }
-        localization_key = "Free Future Party, CCFRoK"
+        localization_key = "[MAI_ffp_party_name], CCFRoK"
     }
     text = {
         trigger = {
@@ -1221,7 +1221,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ccfrok_in_the_coalition
             }
         }
-        localization_key = "National Children Party, Free Future Party"
+        localization_key = "National Children Party, [MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1236,7 +1236,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 }
             }
         }
-        localization_key = "National Children Party, Free Future Party, Time for Kids"
+        localization_key = "National Children Party, [MAI_ffp_party_name], [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1245,7 +1245,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ncp_in_the_coalition
             }
         }
-        localization_key = "Free Future Party, Time for Kids"
+        localization_key = "[MAI_ffp_party_name], [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1254,7 +1254,7 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = ffp_in_the_coalition
             }
         }
-        localization_key = "National Children Party, Time for Kids"
+        localization_key = "National Children Party, [MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1263,11 +1263,351 @@ defined_text = { #MAI Children Parliament Current Term Opposition
                 has_country_flag = tfk_in_the_coalition
             }
         }
-        localization_key = "National Children Party, Free Future Party"
+        localization_key = "National Children Party, [MAI_ffp_party_name]"
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
+    name = MAI_constituency_835_script
+    text = {
+        trigger = {
+            835 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_835_own"
+    }
+    text = {
+        trigger = {
+            835 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_853_script
+    text = {
+        trigger = {
+            853 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_853_own"
+    }
+    text = {
+        trigger = {
+            853 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_869_script
+    text = {
+        trigger = {
+            869 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_869_own"
+    }
+    text = {
+        trigger = {
+            869 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_872_script
+    text = {
+        trigger = {
+            872 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_872_own"
+    }
+    text = {
+        trigger = {
+            872 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_911_script
+    text = {
+        trigger = {
+            911 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_911_own"
+    }
+    text = {
+        trigger = {
+            911 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_1048_script
+    text = {
+        trigger = {
+            1048 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_1048_own"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_736_script
+    text = {
+        trigger = {
+            736 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_736_own"
+    }
+    text = {
+        trigger = {
+            736 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_767_script
+    text = {
+        trigger = {
+            767 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_767_own"
+    }
+    text = {
+        trigger = {
+            767 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_773_script
+    text = {
+        trigger = {
+            773 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_773_own"
+    }
+    text = {
+        trigger = {
+            773 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_constituency_776_script
+    text = {
+        trigger = {
+            776 = {
+                is_owned_by = MAI
+            }
+        }
+        localization_key = "MAI_constituency_776_own"
+    }
+    text = {
+        trigger = {
+            776 = {
+                NOT = {
+                    is_owned_by = MAI
+                }
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_tfk_party_name
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_timeforkids
+            }
+        }
+        localization_key = "Time for Kids"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_southernprogress
+            }
+        }
+        localization_key = "Southern Progress"
+    }
+}
+
+defined_text = {
+    name = MAI_tfk_leader
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_timeforkids
+            }
+        }
+        localization_key = "Hanna"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_southernprogress
+            }
+        }
+        localization_key = "Heidi Meier"
+    }
+}
+
+defined_text = {
+    name = MAI_ffp_party_name
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_freefuture
+            }
+        }
+        localization_key = "Free Future Party"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_newconfederation
+            }
+        }
+        localization_key = "New Confederation"
+    }
+}
+
+defined_text = {
+    name = MAI_ffp_leader
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_freefuture
+            }
+        }
+        localization_key = "Anton"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_newconfederation
+            }
+        }
+        localization_key = "Geoffroy"
+    }
+}
+
+defined_text = {
+    name = MAI_is_hanna_friend_or_not
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_timeforkids
+            }
+        }
+        localization_key = ", king Macius' friend"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_southernprogress
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
+    name = MAI_is_anton_friend_or_not
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_freefuture
+            }
+        }
+        localization_key = ", king Macius' friend"
+    }
+    text = {
+        trigger = {
+            MAI = {
+                has_country_flag = form_newconfederation
+            }
+        }
+        localization_key = ""
+    }
+}
+
+defined_text = {
     name = 812_seat_1
     text = {
         trigger = {
@@ -1283,7 +1623,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1291,7 +1631,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1303,7 +1643,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 812_seat_2
     text = {
         trigger = {
@@ -1319,7 +1659,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1327,7 +1667,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1339,7 +1679,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 812_seat_3
     text = {
         trigger = {
@@ -1355,7 +1695,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1363,7 +1703,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1375,7 +1715,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 812_seat_4
     text = {
         trigger = {
@@ -1391,7 +1731,7 @@ defined_text = { #MAI test
                 check_variable = { seat_4 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1399,7 +1739,7 @@ defined_text = { #MAI test
                 check_variable = { seat_4 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1411,7 +1751,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 858_seat_1
     text = {
         trigger = {
@@ -1427,7 +1767,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1435,7 +1775,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1447,7 +1787,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 858_seat_2
     text = {
         trigger = {
@@ -1463,7 +1803,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1471,7 +1811,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1483,7 +1823,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 858_seat_3
     text = {
         trigger = {
@@ -1499,7 +1839,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1507,7 +1847,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1519,7 +1859,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 858_seat_4
     text = {
         trigger = {
@@ -1535,7 +1875,7 @@ defined_text = { #MAI test
                 check_variable = { seat_4 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1543,7 +1883,7 @@ defined_text = { #MAI test
                 check_variable = { seat_4 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1555,7 +1895,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 808_seat_1
     text = {
         trigger = {
@@ -1571,7 +1911,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1579,7 +1919,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1591,7 +1931,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 808_seat_2
     text = {
         trigger = {
@@ -1607,7 +1947,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1615,7 +1955,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1627,7 +1967,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 808_seat_3
     text = {
         trigger = {
@@ -1643,7 +1983,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1651,7 +1991,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1663,7 +2003,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 803_seat_1
     text = {
         trigger = {
@@ -1679,7 +2019,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1687,7 +2027,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1699,7 +2039,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 803_seat_2
     text = {
         trigger = {
@@ -1715,7 +2055,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1723,7 +2063,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1735,7 +2075,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 803_seat_3
     text = {
         trigger = {
@@ -1751,7 +2091,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1759,7 +2099,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1771,7 +2111,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 814_seat_1
     text = {
         trigger = {
@@ -1787,7 +2127,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1795,7 +2135,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1807,7 +2147,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 814_seat_2
     text = {
         trigger = {
@@ -1823,7 +2163,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1831,7 +2171,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1843,7 +2183,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 789_seat_1
     text = {
         trigger = {
@@ -1859,7 +2199,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1867,7 +2207,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1879,7 +2219,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 789_seat_2
     text = {
         trigger = {
@@ -1895,7 +2235,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1903,7 +2243,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1915,7 +2255,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 822_seat_1
     text = {
         trigger = {
@@ -1931,7 +2271,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1939,7 +2279,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1951,7 +2291,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 822_seat_2
     text = {
         trigger = {
@@ -1967,7 +2307,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -1975,7 +2315,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -1987,7 +2327,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 824_seat_1
     text = {
         trigger = {
@@ -2003,7 +2343,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2011,7 +2351,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2023,7 +2363,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 824_seat_2
     text = {
         trigger = {
@@ -2039,7 +2379,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2047,7 +2387,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2059,7 +2399,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 817_seat_1
     text = {
         trigger = {
@@ -2075,7 +2415,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2083,7 +2423,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2095,7 +2435,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 817_seat_2
     text = {
         trigger = {
@@ -2111,7 +2451,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2119,7 +2459,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2131,7 +2471,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 798_seat_1
     text = {
         trigger = {
@@ -2147,7 +2487,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2155,7 +2495,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2167,7 +2507,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 798_seat_2
     text = {
         trigger = {
@@ -2183,7 +2523,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2191,7 +2531,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2203,7 +2543,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 796_seat_1
     text = {
         trigger = {
@@ -2219,7 +2559,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2227,7 +2567,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2239,7 +2579,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 796_seat_2
     text = {
         trigger = {
@@ -2255,7 +2595,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2263,7 +2603,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2275,7 +2615,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 792_seat_1
     text = {
         trigger = {
@@ -2291,7 +2631,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2299,7 +2639,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2311,7 +2651,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 792_seat_2
     text = {
         trigger = {
@@ -2327,7 +2667,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2335,7 +2675,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2347,7 +2687,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 799_seat_1
     text = {
         trigger = {
@@ -2363,7 +2703,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2371,7 +2711,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2383,7 +2723,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 799_seat_2
     text = {
         trigger = {
@@ -2399,7 +2739,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2407,7 +2747,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2419,7 +2759,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 831_seat_1
     text = {
         trigger = {
@@ -2435,7 +2775,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2443,7 +2783,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2455,7 +2795,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 831_seat_2
     text = {
         trigger = {
@@ -2471,7 +2811,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2479,7 +2819,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2491,7 +2831,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 852_seat_1
     text = {
         trigger = {
@@ -2507,7 +2847,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2515,7 +2855,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2527,7 +2867,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 852_seat_2
     text = {
         trigger = {
@@ -2543,7 +2883,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2551,7 +2891,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2563,7 +2903,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 843_seat_1
     text = {
         trigger = {
@@ -2579,7 +2919,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2587,7 +2927,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2599,7 +2939,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 843_seat_2
     text = {
         trigger = {
@@ -2615,7 +2955,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2623,7 +2963,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2635,7 +2975,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 773_seat_1
     text = {
         trigger = {
@@ -2651,7 +2991,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2659,7 +2999,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2671,7 +3011,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 773_seat_2
     text = {
         trigger = {
@@ -2687,7 +3027,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2695,7 +3035,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2707,7 +3047,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 776_seat_1
     text = {
         trigger = {
@@ -2723,7 +3063,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2731,7 +3071,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2743,7 +3083,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 776_seat_2
     text = {
         trigger = {
@@ -2759,7 +3099,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2767,7 +3107,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2779,7 +3119,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 767_seat_1
     text = {
         trigger = {
@@ -2795,7 +3135,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2803,7 +3143,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2815,7 +3155,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 767_seat_2
     text = {
         trigger = {
@@ -2831,7 +3171,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2839,7 +3179,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2851,7 +3191,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 736_seat_1
     text = {
         trigger = {
@@ -2867,7 +3207,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2875,7 +3215,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2887,7 +3227,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 736_seat_2
     text = {
         trigger = {
@@ -2903,7 +3243,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2911,7 +3251,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2923,7 +3263,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 736_seat_3
     text = {
         trigger = {
@@ -2939,7 +3279,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2947,7 +3287,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2959,7 +3299,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 872_seat_1
     text = {
         trigger = {
@@ -2975,7 +3315,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -2983,7 +3323,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -2995,7 +3335,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 872_seat_2
     text = {
         trigger = {
@@ -3011,7 +3351,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3019,7 +3359,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3031,7 +3371,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 872_seat_3
     text = {
         trigger = {
@@ -3047,7 +3387,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3055,7 +3395,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3067,7 +3407,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 897_seat_1
     text = {
         trigger = {
@@ -3083,7 +3423,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3091,7 +3431,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3103,7 +3443,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 897_seat_2
     text = {
         trigger = {
@@ -3119,7 +3459,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3127,7 +3467,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3139,7 +3479,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 897_seat_3
     text = {
         trigger = {
@@ -3155,7 +3495,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3163,7 +3503,7 @@ defined_text = { #MAI test
                 check_variable = { seat_3 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3175,7 +3515,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 877_seat_1
     text = {
         trigger = {
@@ -3191,7 +3531,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3199,7 +3539,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3211,7 +3551,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 877_seat_2
     text = {
         trigger = {
@@ -3227,7 +3567,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3235,7 +3575,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3247,7 +3587,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 911_seat_1
     text = {
         trigger = {
@@ -3263,7 +3603,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3271,7 +3611,7 @@ defined_text = { #MAI test
                 check_variable = { seat_1 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
@@ -3283,7 +3623,7 @@ defined_text = { #MAI test
     }
 }
 
-defined_text = { #MAI test
+defined_text = {
     name = 911_seat_2
     text = {
         trigger = {
@@ -3299,7 +3639,7 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 2 }
             }
         }
-        localization_key = "Free Future Party"
+        localization_key = "[MAI_ffp_party_name]"
     }
     text = {
         trigger = {
@@ -3307,11 +3647,335 @@ defined_text = { #MAI test
                 check_variable = { seat_2 = 3 }
             }
         }
-        localization_key = "Time for Kids"
+        localization_key = "[MAI_tfk_party_name]"
     }
     text = {
         trigger = {
             911 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 911_seat_3
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_3 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_3 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_3 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            911 = {
+                check_variable = { seat_3 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 1048_seat_1
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 1048_seat_2
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            1048 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 869_seat_1
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 869_seat_2
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            869 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 853_seat_1
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 853_seat_2
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            853 = {
+                check_variable = { seat_2 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 835_seat_1
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_1 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_1 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_1 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_1 = 4 }
+            }
+        }
+        localization_key = "CCFRoK"
+    }
+}
+
+defined_text = {
+    name = 835_seat_2
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_2 = 1 }
+            }
+        }
+        localization_key = "National Children Party"
+    }
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_2 = 2 }
+            }
+        }
+        localization_key = "[MAI_ffp_party_name]"
+    }
+    text = {
+        trigger = {
+            835 = {
+                check_variable = { seat_2 = 3 }
+            }
+        }
+        localization_key = "[MAI_tfk_party_name]"
+    }
+    text = {
+        trigger = {
+            835 = {
                 check_variable = { seat_2 = 4 }
             }
         }

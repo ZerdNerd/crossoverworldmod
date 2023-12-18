@@ -1,0 +1,61 @@
+characters={
+	KAN_karla={
+		name="Karla II"
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/KAN/karla.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_KAN_KARLA_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=4000
+		}
+	}
+	KAN_gizana={
+		name="Prinzessin Gizana von Kandis"
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/KAN/gizana.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=paidocracy_sub
+			expire="1965.1.1.1"
+			id=4002
+		}
+	}
+	KAN_emmy={
+		name="Prinzessin Emmy Klara Karla von Kandis"
+		gender = female
+		portraits={
+			civilian={
+				large="gfx/leaders/KAN/emmy.dds"
+			}
+		}
+	}
+	KAN_gertrude_zwickelmeier={
+		name="Gertrude Zwickelmeier"
+		portraits={
+			civilian={
+				large="gfx/leaders/KAN/gertrude_zwickelmeier.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=marxism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		country_leader={
+			desc="POLITICS_FAIRY_GODMOTHER_DESC"
+			ideology=fascism_ideology
+			expire="1965.1.1.1"
+			id=4001
+		}
+	}
+}

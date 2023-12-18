@@ -122,6 +122,11 @@ against_macius = {
 	enable = {
 		tag = FRI
 		has_cosmetic_tag = HAR
+		NOT = {
+			has_country_flag = old_king_was_better
+			has_country_flag = player_stays_as_friedewalt
+			has_country_flag = player_plays_as_hartmut
+		}
 	}
 	abort_when_not_enabled = yes
 
@@ -144,6 +149,11 @@ watch_out_macius = {
 		FRI = {
 			has_country_flag = hartmut_crisis_started
 			has_cosmetic_tag = HAR
+			NOT = {
+				has_country_flag = old_king_was_better
+				has_country_flag = player_stays_as_friedewalt
+				has_country_flag = player_plays_as_hartmut
+			}
 		}
 	}
 	abort_when_not_enabled = yes
@@ -166,6 +176,11 @@ watch_out_macius_wek = {
 		tag = MAI
 		FRI = {
 			has_country_flag = wek_accepted
+			NOT = {
+				has_country_flag = old_king_was_better
+				has_country_flag = player_stays_as_friedewalt
+				has_country_flag = player_plays_as_hartmut
+			}
 		}
 	}
 	abort_when_not_enabled = yes
@@ -188,6 +203,11 @@ watch_out_macius_sld = {
 		tag = MAI
 		FRI = {
 			has_country_flag = sld_accepted
+			NOT = {
+				has_country_flag = old_king_was_better
+				has_country_flag = player_stays_as_friedewalt
+				has_country_flag = player_plays_as_hartmut
+			}
 		}
 	}
 	abort_when_not_enabled = yes
@@ -219,6 +239,13 @@ support_general_in_civil_war = {
 		}
 		GEN = {
 			has_war_with = MAI
+		}
+		FRI = {
+			NOT = {
+				has_country_flag = old_king_was_better
+				has_country_flag = player_stays_as_friedewalt
+				has_country_flag = player_plays_as_hartmut
+			}
 		}
 	}
 	abort_when_not_enabled = yes

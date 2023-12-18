@@ -1383,6 +1383,16 @@ country_event = { #Macius agrees to the ultimatum
 			set_country_flag = macius_folded
 			MAI = {
 				mark_focus_tree_layout_dirty = yes
+				set_country_flag = form_timeforkids
+				if = {
+					limit = {
+						owns_state = 877
+					}
+					set_country_flag = form_newconfederation
+					else = {
+						set_country_flag = form_freefuture
+					}
+				}
 			}
 			unlock_national_focus = FRI_organize_peace_conference
 		}
@@ -1950,6 +1960,12 @@ country_event = { #Macius wants to sign peace in exchange for broader shore
 				sound_effect = cr_bigevent_victory_over_hartmut_sound
 				play_song = cisza30
 			}
+			UNC = { #event to check if Macius owns needed states
+				country_event = {
+					id = childrenparliament.1557
+					days = 2
+				}
+			}
 			if = {
 				limit = {
 					MAI = {
@@ -2092,6 +2108,12 @@ country_event = { #Macius: we will take less territory but Hartmut must go to th
 				sound_effect = cr_bigevent_victory_over_hartmut_sound
 				play_song = cisza30
 			}
+			UNC = { #event to check if Macius owns needed states
+				country_event = {
+					id = childrenparliament.1557
+					days = 2
+				}
+			}
 			if = {
 				limit = {
 					MAI = {
@@ -2196,6 +2218,12 @@ country_event = { #Macius: we will take less territory but Hartmut must go to th
 			}
 		}
 		hidden_effect = {
+			UNC = { #event to check if Macius owns needed states
+				country_event = {
+					id = childrenparliament.1557
+					days = 2
+				}
+			}
 			every_country = {
 				limit = {
 					is_ai = no
@@ -2311,6 +2339,38 @@ country_event = { #We were on the verge of greatness! We were this close!
 		name = centralkingdom.52.a
 		custom_effect_tooltip = MAI_you_will_play_as_felix
 		hidden_effect = {
+			delete_unit = {
+				state = 789
+				disband = yes
+			}
+			delete_unit = {
+				state = 798
+				disband = yes
+			}
+			delete_unit = {
+				state = 796
+				disband = yes
+			}
+			delete_unit = {
+				state = 792
+				disband = yes
+			}
+			delete_unit = {
+				state = 799
+				disband = yes
+			}
+			delete_unit = {
+				state = 812
+				disband = yes
+			}
+			delete_unit = {
+				state = 817
+				disband = yes
+			}
+			delete_unit = {
+				state = 808
+				disband = yes
+			}
 			CLD = {
 				transfer_state = 789
 				transfer_state = 798
@@ -2325,9 +2385,47 @@ country_event = { #We were on the verge of greatness! We were this close!
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 2500
+					amount = 40000
 				}
-				add_manpower = 4000
+				add_manpower = 250000
+			}
+			set_nationality = {
+				target_country = CLD
+				character = MAI_felix
+			}
+			set_nationality = {
+				target_country = CLD
+				character = MAI_anton
+			}
+			remove_ideas = {
+				MAI_pro_rege_lege_et_grege
+			}
+			CLD = {
+				add_country_leader_role = {
+					character = MAI_felix
+					promote_leader = yes
+					country_leader = {
+						ideology = paidocracy_sub
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+				}
+				add_corps_commander_role = {
+					Character = MAI_felix
+					skill = 2
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				add_corps_commander_role = {
+					Character = MAI_anton
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
 				set_politics = {
 					ruling_party = paidocracy
 					election_frequency = 72
@@ -2340,28 +2438,23 @@ country_event = { #We were on the verge of greatness! We were this close!
 					paidocracy = 95
 					monarchism = 5
 				}
-				create_country_leader = {
-					name = "Felix"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/MAI/felix.dds"
-					expire = "1965.1.1"
-					ideology = paidocracy_sub
-					traits = {
-						#
-					}
+				add_ideas = {
+					the_children_revolution
+					war_economy
+					extensive_conscription
 				}
 				set_capital = { state = 792 }
 				inherit_technology = MAI
 				load_oob = CLD_rebellion
-				change_tag_from = MAI
 				declare_war_on = {
 					target = MAI
 					type = annex_everything
 				}
+				change_tag_from = MAI
 			}
 			country_event = {
 				id = centralkingdom.68
-				days = 4
+				days = 2
 			}
 			clr_country_flag = children_parliament
 			set_country_flag = children_revolution_underway
@@ -2415,6 +2508,38 @@ country_event = { #We were on the verge of greatness! We were this close!
 	option = { #Continue playing as Macius
 		name = centralkingdom.52.b
 		hidden_effect = {
+			delete_unit = {
+				state = 789
+				disband = yes
+			}
+			delete_unit = {
+				state = 798
+				disband = yes
+			}
+			delete_unit = {
+				state = 796
+				disband = yes
+			}
+			delete_unit = {
+				state = 792
+				disband = yes
+			}
+			delete_unit = {
+				state = 799
+				disband = yes
+			}
+			delete_unit = {
+				state = 812
+				disband = yes
+			}
+			delete_unit = {
+				state = 817
+				disband = yes
+			}
+			delete_unit = {
+				state = 808
+				disband = yes
+			}
 			CLD = {
 				transfer_state = 789
 				transfer_state = 798
@@ -2434,9 +2559,52 @@ country_event = { #We were on the verge of greatness! We were this close!
 				}
 				add_equipment_to_stockpile = {
 					type = infantry_equipment_1
-					amount = 2500
+					amount = 40000
 				}
-				add_manpower = 4000
+				add_manpower = 250000
+			}
+			set_nationality = {
+				target_country = CLD
+				character = MAI_felix
+			}
+			set_nationality = {
+				target_country = CLD
+				character = MAI_anton
+			}
+			remove_ideas = {
+				MAI_pro_rege_lege_et_grege
+			}
+			CLD = {
+				add_country_leader_role = {
+					character = MAI_felix
+					promote_leader = yes
+					country_leader = {
+						ideology = paidocracy_sub
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+				}
+				add_corps_commander_role = {
+					Character = MAI_felix
+					skill = 2
+					attack_skill = 2
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				add_corps_commander_role = {
+					Character = MAI_anton
+					skill = 1
+					attack_skill = 1
+					defense_skill = 1
+					planning_skill = 1
+					logistics_skill = 1
+				}
+				set_politics = {
+					ruling_party = paidocracy
+					election_frequency = 72
+					elections_allowed = no
+				}
 				set_popularities = {
 					democratic = 0
 					fascism = 0
@@ -2444,15 +2612,10 @@ country_event = { #We were on the verge of greatness! We were this close!
 					paidocracy = 95
 					monarchism = 5
 				}
-				create_country_leader = {
-					name = "Felix"
-					desc = "POLITICS_TBD_DESC"
-					picture = "gfx/leaders/MAI/felix.dds"
-					expire = "1965.1.1"
-					ideology = paidocracy_sub
-					traits = {
-						#
-					}
+				add_ideas = {
+					the_children_revolution
+					war_economy
+					extensive_conscription
 				}
 				set_capital = { state = 792 }
 				inherit_technology = MAI
@@ -2461,10 +2624,11 @@ country_event = { #We were on the verge of greatness! We were this close!
 					target = MAI
 					type = annex_everything
 				}
+				change_tag_from = MAI
 			}
 			country_event = {
 				id = centralkingdom.68
-				days = 4
+				days = 2
 			}
 			clr_country_flag = children_parliament
 			set_country_flag = children_revolution_underway

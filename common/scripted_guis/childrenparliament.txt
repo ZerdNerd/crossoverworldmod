@@ -174,6 +174,58 @@ scripted_gui = {
 		}
   }
 
+  mai_chp_chart = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_chart_new"
+    parent_window_token = central_kingdom_chp_window_container
+        
+    visible = {
+      AND = {
+        tag = MAI
+        has_variable = MAI_chp_is_visible
+        has_country_flag = parliament_reformed
+        OR = {
+          has_country_flag = national_children_party_wins
+          has_country_flag = free_future_party_wins
+          has_country_flag = time_for_kids_wins
+          has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+          has_country_flag = we_have_a_tie
+        }
+      }
+    }
+    
+    triggers = {
+      central_kingdom_chp_ccfrok_majority_visible = {
+        has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+      }
+      central_kingdom_chp_ncp_majority_visible = {
+        has_country_flag = national_children_party_wins
+      }
+      central_kingdom_chp_tfk_majority_visible = {
+        has_country_flag = time_for_kids_wins
+      }
+      central_kingdom_chp_ffp_majority_visible = {
+        has_country_flag = free_future_party_wins
+      }
+    }
+
+    properties = {
+      cr_mai_chp_ccfrok = {
+				frame = cr_mai_chp_ccfrok_frame
+      }
+      cr_mai_chp_ffp = {
+				frame = cr_mai_chp_ffp_frame
+      }
+      cr_mai_chp_tfk = {
+				frame = cr_mai_chp_tfc_frame
+      }
+      cr_mai_chp_ncp = {
+				frame = cr_mai_chp_ncp_frame
+      }
+		}
+  }
+
   mai_chp_reform_parties = {
     context_type = player_context
      	
@@ -209,1341 +261,6 @@ scripted_gui = {
 				frame = mai_chp_ccfrok_leader_frame
       }
 		}
-  }
-
-  children_parliament_seat_map_ui = {
-    context_type = player_context
-    parent_window_token = central_kingdom_chp_window_container 	
-    window_name = "central_kingdom_chp_reformed_seats_container"
-        
-    visible = {
-      tag = MAI
-      has_country_flag = parliament_reformed
-      has_variable = MAI_chp_is_visible
-      OR = {
-        has_country_flag = national_children_party_wins
-        has_country_flag = free_future_party_wins
-        has_country_flag = time_for_kids_wins
-        has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
-        has_country_flag = we_have_a_tie
-      }
-    }
-
-    triggers = {
-      812_seat_1_ncp_visible = {
-        812 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      812_seat_1_ffp_visible = {
-        812 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      812_seat_1_tfk_visible = {
-        812 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      812_seat_1_ccfrok_visible = {
-        812 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      812_seat_2_ncp_visible = {
-        812 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      812_seat_2_ffp_visible = {
-        812 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      812_seat_2_tfk_visible = {
-        812 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      812_seat_2_ccfrok_visible = {
-        812 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      812_seat_3_ncp_visible = {
-        812 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      812_seat_3_ffp_visible = {
-        812 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      812_seat_3_tfk_visible = {
-        812 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      812_seat_3_ccfrok_visible = {
-        812 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      812_seat_4_ncp_visible = {
-        812 = {
-          check_variable = { seat_4 = 1 }
-        }
-      }
-      812_seat_4_ffp_visible = {
-        812 = {
-          check_variable = { seat_4 = 2 }
-        }
-      }
-      812_seat_4_tfk_visible = {
-        812 = {
-          check_variable = { seat_4 = 3 }
-        }
-      }
-      812_seat_4_ccfrok_visible = {
-        812 = {
-          check_variable = { seat_4 = 4 }
-        }
-      }
-      858_seat_1_ncp_visible = {
-        858 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      858_seat_1_ffp_visible = {
-        858 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      858_seat_1_tfk_visible = {
-        858 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      858_seat_1_ccfrok_visible = {
-        858 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      858_seat_2_ncp_visible = {
-        858 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      858_seat_2_ffp_visible = {
-        858 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      858_seat_2_tfk_visible = {
-        858 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      858_seat_2_ccfrok_visible = {
-        858 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      858_seat_3_ncp_visible = {
-        858 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      858_seat_3_ffp_visible = {
-        858 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      858_seat_3_tfk_visible = {
-        858 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      858_seat_3_ccfrok_visible = {
-        858 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      858_seat_4_ncp_visible = {
-        858 = {
-          check_variable = { seat_4 = 1 }
-        }
-      }
-      858_seat_4_ffp_visible = {
-        858 = {
-          check_variable = { seat_4 = 2 }
-        }
-      }
-      858_seat_4_tfk_visible = {
-        858 = {
-          check_variable = { seat_4 = 3 }
-        }
-      }
-      858_seat_4_ccfrok_visible = {
-        858 = {
-          check_variable = { seat_4 = 4 }
-        }
-      }
-      808_seat_1_ncp_visible = {
-        808 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      808_seat_1_ffp_visible = {
-        808 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      808_seat_1_tfk_visible = {
-        808 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      808_seat_1_ccfrok_visible = {
-        808 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      808_seat_2_ncp_visible = {
-        808 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      808_seat_2_ffp_visible = {
-        808 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      808_seat_2_tfk_visible = {
-        808 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      808_seat_2_ccfrok_visible = {
-        808 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      808_seat_3_ncp_visible = {
-        808 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      808_seat_3_ffp_visible = {
-        808 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      808_seat_3_tfk_visible = {
-        808 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      808_seat_3_ccfrok_visible = {
-        808 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      803_seat_1_ncp_visible = {
-        803 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      803_seat_1_ffp_visible = {
-        803 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      803_seat_1_tfk_visible = {
-        803 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      803_seat_1_ccfrok_visible = {
-        803 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      803_seat_2_ncp_visible = {
-        803 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      803_seat_2_ffp_visible = {
-        803 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      803_seat_2_tfk_visible = {
-        803 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      803_seat_2_ccfrok_visible = {
-        803 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      803_seat_3_ncp_visible = {
-        803 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      803_seat_3_ffp_visible = {
-        803 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      803_seat_3_tfk_visible = {
-        803 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      803_seat_3_ccfrok_visible = {
-        803 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      789_seat_1_ncp_visible = {
-        789 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      789_seat_1_ffp_visible = {
-        789 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      789_seat_1_tfk_visible = {
-        789 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      789_seat_1_ccfrok_visible = {
-        789 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      789_seat_2_ncp_visible = {
-        789 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      789_seat_2_ffp_visible = {
-        789 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      789_seat_2_tfk_visible = {
-        789 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      789_seat_2_ccfrok_visible = {
-        789 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      814_seat_1_ncp_visible = {
-        814 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      814_seat_1_ffp_visible = {
-        814 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      814_seat_1_tfk_visible = {
-        814 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      814_seat_1_ccfrok_visible = {
-        814 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      814_seat_2_ncp_visible = {
-        814 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      814_seat_2_ffp_visible = {
-        814 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      814_seat_2_tfk_visible = {
-        814 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      814_seat_2_ccfrok_visible = {
-        814 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      798_seat_1_ncp_visible = {
-        798 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      798_seat_1_ffp_visible = {
-        798 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      798_seat_1_tfk_visible = {
-        798 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      798_seat_1_ccfrok_visible = {
-        798 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      798_seat_2_ncp_visible = {
-        798 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      798_seat_2_ffp_visible = {
-        798 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      798_seat_2_tfk_visible = {
-        798 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      798_seat_2_ccfrok_visible = {
-        798 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      817_seat_1_ncp_visible = {
-        817 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      817_seat_1_ffp_visible = {
-        817 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      817_seat_1_tfk_visible = {
-        817 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      817_seat_1_ccfrok_visible = {
-        817 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      817_seat_2_ncp_visible = {
-        817 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      817_seat_2_ffp_visible = {
-        817 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      817_seat_2_tfk_visible = {
-        817 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      817_seat_2_ccfrok_visible = {
-        817 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      824_seat_1_ncp_visible = {
-        824 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      824_seat_1_ffp_visible = {
-        824 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      824_seat_1_tfk_visible = {
-        824 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      824_seat_1_ccfrok_visible = {
-        824 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      824_seat_2_ncp_visible = {
-        824 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      824_seat_2_ffp_visible = {
-        824 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      824_seat_2_tfk_visible = {
-        824 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      824_seat_2_ccfrok_visible = {
-        824 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      796_seat_1_ncp_visible = {
-        796 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      796_seat_1_ffp_visible = {
-        796 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      796_seat_1_tfk_visible = {
-        796 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      796_seat_1_ccfrok_visible = {
-        796 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      796_seat_2_ncp_visible = {
-        796 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      796_seat_2_ffp_visible = {
-        796 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      796_seat_2_tfk_visible = {
-        796 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      796_seat_2_ccfrok_visible = {
-        796 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      792_seat_1_ncp_visible = {
-        792 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      792_seat_1_ffp_visible = {
-        792 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      792_seat_1_tfk_visible = {
-        792 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      792_seat_1_ccfrok_visible = {
-        792 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      792_seat_2_ncp_visible = {
-        792 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      792_seat_2_ffp_visible = {
-        792 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      792_seat_2_tfk_visible = {
-        792 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      792_seat_2_ccfrok_visible = {
-        792 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      799_seat_1_ncp_visible = {
-        799 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      799_seat_1_ffp_visible = {
-        799 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      799_seat_1_tfk_visible = {
-        799 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      799_seat_1_ccfrok_visible = {
-        799 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      799_seat_2_ncp_visible = {
-        799 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      799_seat_2_ffp_visible = {
-        799 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      799_seat_2_tfk_visible = {
-        799 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      799_seat_2_ccfrok_visible = {
-        799 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      843_seat_1_ncp_visible = {
-        843 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      843_seat_1_ffp_visible = {
-        843 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      843_seat_1_tfk_visible = {
-        843 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      843_seat_1_ccfrok_visible = {
-        843 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      843_seat_2_ncp_visible = {
-        843 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      843_seat_2_ffp_visible = {
-        843 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      843_seat_2_tfk_visible = {
-        843 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      843_seat_2_ccfrok_visible = {
-        843 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      852_seat_1_ncp_visible = {
-        852 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      852_seat_1_ffp_visible = {
-        852 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      852_seat_1_tfk_visible = {
-        852 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      852_seat_1_ccfrok_visible = {
-        852 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      852_seat_2_ncp_visible = {
-        852 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      852_seat_2_ffp_visible = {
-        852 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      852_seat_2_tfk_visible = {
-        852 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      852_seat_2_ccfrok_visible = {
-        852 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      822_seat_1_ncp_visible = {
-        822 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      822_seat_1_ffp_visible = {
-        822 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      822_seat_1_tfk_visible = {
-        822 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      822_seat_1_ccfrok_visible = {
-        822 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      822_seat_2_ncp_visible = {
-        822 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      822_seat_2_ffp_visible = {
-        822 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      822_seat_2_tfk_visible = {
-        822 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      822_seat_2_ccfrok_visible = {
-        822 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      843_seat_1_ncp_visible = {
-        843 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      843_seat_1_ffp_visible = {
-        843 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      843_seat_1_tfk_visible = {
-        843 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      843_seat_1_ccfrok_visible = {
-        843 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      843_seat_2_ncp_visible = {
-        843 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      843_seat_2_ffp_visible = {
-        843 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      843_seat_2_tfk_visible = {
-        843 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      843_seat_2_ccfrok_visible = {
-        843 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      831_seat_1_ncp_visible = {
-        831 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      831_seat_1_ffp_visible = {
-        831 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      831_seat_1_tfk_visible = {
-        831 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      831_seat_1_ccfrok_visible = {
-        831 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      831_seat_2_ncp_visible = {
-        831 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      831_seat_2_ffp_visible = {
-        831 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      831_seat_2_tfk_visible = {
-        831 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      831_seat_2_ccfrok_visible = {
-        831 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      773_seat_1_ncp_visible = {
-        773 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      773_seat_1_ffp_visible = {
-        773 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      773_seat_1_tfk_visible = {
-        773 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      773_seat_1_ccfrok_visible = {
-        773 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      773_seat_1_empty_visible = {
-        773 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      773_seat_2_ncp_visible = {
-        773 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      773_seat_2_ffp_visible = {
-        773 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      773_seat_2_tfk_visible = {
-        773 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      773_seat_2_ccfrok_visible = {
-        773 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      773_seat_2_empty_visible = {
-        773 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      776_seat_1_ncp_visible = {
-        776 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      776_seat_1_ffp_visible = {
-        776 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      776_seat_1_tfk_visible = {
-        776 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      776_seat_1_ccfrok_visible = {
-        776 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      776_seat_1_empty_visible = {
-        776 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      776_seat_2_ncp_visible = {
-        776 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      776_seat_2_ffp_visible = {
-        776 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      776_seat_2_tfk_visible = {
-        776 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      776_seat_2_ccfrok_visible = {
-        776 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      776_seat_2_empty_visible = {
-        776 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      767_seat_1_ncp_visible = {
-        767 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      767_seat_1_ffp_visible = {
-        767 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      767_seat_1_tfk_visible = {
-        767 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      767_seat_1_ccfrok_visible = {
-        767 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      767_seat_1_empty_visible = {
-        767 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      767_seat_2_ncp_visible = {
-        767 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      767_seat_2_ffp_visible = {
-        767 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      767_seat_2_tfk_visible = {
-        767 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      767_seat_2_ccfrok_visible = {
-        767 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      767_seat_2_empty_visible = {
-        767 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      736_seat_1_ncp_visible = {
-        736 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      736_seat_1_ffp_visible = {
-        736 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      736_seat_1_tfk_visible = {
-        736 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      736_seat_1_ccfrok_visible = {
-        736 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      736_seat_1_empty_visible = {
-        736 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      736_seat_2_ncp_visible = {
-        736 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      736_seat_2_ffp_visible = {
-        736 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      736_seat_2_tfk_visible = {
-        736 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      736_seat_2_ccfrok_visible = {
-        736 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      736_seat_2_empty_visible = {
-        736 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      736_seat_3_ncp_visible = {
-        736 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      736_seat_3_ffp_visible = {
-        736 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      736_seat_3_tfk_visible = {
-        736 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      736_seat_3_ccfrok_visible = {
-        736 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      736_seat_3_empty_visible = {
-        736 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      877_seat_1_ncp_visible = {
-        877 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      877_seat_1_ffp_visible = {
-        877 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      877_seat_1_tfk_visible = {
-        877 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      877_seat_1_ccfrok_visible = {
-        877 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      877_seat_1_empty_visible = {
-        877 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      877_seat_2_ncp_visible = {
-        877 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      877_seat_2_ffp_visible = {
-        877 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      877_seat_2_tfk_visible = {
-        877 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      877_seat_2_ccfrok_visible = {
-        877 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      877_seat_2_empty_visible = {
-        877 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      897_seat_1_ncp_visible = {
-        897 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      897_seat_1_ffp_visible = {
-        897 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      897_seat_1_tfk_visible = {
-        897 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      897_seat_1_ccfrok_visible = {
-        897 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      897_seat_1_empty_visible = {
-        897 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      897_seat_2_ncp_visible = {
-        897 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      897_seat_2_ffp_visible = {
-        897 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      897_seat_2_tfk_visible = {
-        897 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      897_seat_2_ccfrok_visible = {
-        897 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      897_seat_2_empty_visible = {
-        897 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      897_seat_3_ncp_visible = {
-        897 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      897_seat_3_ffp_visible = {
-        897 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      897_seat_3_tfk_visible = {
-        897 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      897_seat_3_ccfrok_visible = {
-        897 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      897_seat_3_empty_visible = {
-        897 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      872_seat_1_ncp_visible = {
-        872 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      872_seat_1_ffp_visible = {
-        872 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      872_seat_1_tfk_visible = {
-        872 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      872_seat_1_ccfrok_visible = {
-        872 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      872_seat_1_empty_visible = {
-        872 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      872_seat_2_ncp_visible = {
-        872 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      872_seat_2_ffp_visible = {
-        872 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      872_seat_2_tfk_visible = {
-        872 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      872_seat_2_ccfrok_visible = {
-        872 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      872_seat_2_empty_visible = {
-        872 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      872_seat_3_ncp_visible = {
-        872 = {
-          check_variable = { seat_3 = 1 }
-        }
-      }
-      872_seat_3_ffp_visible = {
-        872 = {
-          check_variable = { seat_3 = 2 }
-        }
-      }
-      872_seat_3_tfk_visible = {
-        872 = {
-          check_variable = { seat_3 = 3 }
-        }
-      }
-      872_seat_3_ccfrok_visible = {
-        872 = {
-          check_variable = { seat_3 = 4 }
-        }
-      }
-      872_seat_3_empty_visible = {
-        872 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      911_seat_1_ncp_visible = {
-        911 = {
-          check_variable = { seat_1 = 1 }
-        }
-      }
-      911_seat_1_ffp_visible = {
-        911 = {
-          check_variable = { seat_1 = 2 }
-        }
-      }
-      911_seat_1_tfk_visible = {
-        911 = {
-          check_variable = { seat_1 = 3 }
-        }
-      }
-      911_seat_1_ccfrok_visible = {
-        911 = {
-          check_variable = { seat_1 = 4 }
-        }
-      }
-      911_seat_1_empty_visible = {
-        911 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-      911_seat_2_ncp_visible = {
-        911 = {
-          check_variable = { seat_2 = 1 }
-        }
-      }
-      911_seat_2_ffp_visible = {
-        911 = {
-          check_variable = { seat_2 = 2 }
-        }
-      }
-      911_seat_2_tfk_visible = {
-        911 = {
-          check_variable = { seat_2 = 3 }
-        }
-      }
-      911_seat_2_ccfrok_visible = {
-        911 = {
-          check_variable = { seat_2 = 4 }
-        }
-      }
-      911_seat_2_empty_visible = {
-        911 = {
-          NOT = {
-            is_owned_by = MAI
-          }
-        }
-      }
-    }
   }
 
   children_parliament_state_pop_ui = {
@@ -2949,6 +1666,128 @@ scripted_gui = {
 		effects = {
 			central_kingdom_chp_button_bg_click = {
 				set_variable = { MAI_chp_is_visible = 1 }
+			}
+		}
+  }
+
+	children_parliament_polling_window_ui = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_polling_window_container"
+    parent_window_token = central_kingdom_chp_window_container
+        
+    visible = {
+      tag = MAI
+      AND = {
+        tag = MAI
+        has_variable = MAI_chp_is_visible
+        has_country_flag = parliament_reformed
+        OR = {
+          has_country_flag = national_children_party_wins
+          has_country_flag = free_future_party_wins
+          has_country_flag = time_for_kids_wins
+          has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
+          has_country_flag = we_have_a_tie
+        }
+      }
+    }
+
+    properties = {
+      736_voting_icon = {
+				frame = 736_voting_icon_frame
+      }
+      773_voting_icon = {
+				frame = 773_voting_icon_frame
+      }
+      767_voting_icon = {
+				frame = 767_voting_icon_frame
+      }
+      776_voting_icon = {
+				frame = 776_voting_icon_frame
+      }
+      803_voting_icon = {
+				frame = 803_voting_icon_frame
+      }
+      789_voting_icon = {
+				frame = 789_voting_icon_frame
+      }
+      798_voting_icon = {
+				frame = 798_voting_icon_frame
+      }
+      796_voting_icon = {
+				frame = 796_voting_icon_frame
+      }
+      792_voting_icon = {
+				frame = 792_voting_icon_frame
+      }
+      812_voting_icon = {
+				frame = 812_voting_icon_frame
+      }
+      814_voting_icon = {
+				frame = 814_voting_icon_frame
+      }
+      822_voting_icon = {
+				frame = 822_voting_icon_frame
+      }
+      824_voting_icon = {
+				frame = 824_voting_icon_frame
+      }
+      817_voting_icon = {
+				frame = 817_voting_icon_frame
+      }
+      799_voting_icon = {
+				frame = 799_voting_icon_frame
+      }
+      808_voting_icon = {
+				frame = 808_voting_icon_frame
+      }
+      831_voting_icon = {
+				frame = 831_voting_icon_frame
+      }
+      852_voting_icon = {
+				frame = 852_voting_icon_frame
+      }
+      858_voting_icon = {
+				frame = 858_voting_icon_frame
+      }
+      843_voting_icon = {
+				frame = 843_voting_icon_frame
+      }
+      835_voting_icon = {
+				frame = 835_voting_icon_frame
+      }
+      853_voting_icon = {
+				frame = 853_voting_icon_frame
+      }
+      869_voting_icon = {
+				frame = 869_voting_icon_frame
+      }
+      1048_voting_icon = {
+				frame = 1048_voting_icon_frame
+      }
+      872_voting_icon = {
+				frame = 872_voting_icon_frame
+      }
+      884_voting_icon = {
+				frame = 884_voting_icon_frame
+      }
+      905_voting_icon = {
+				frame = 905_voting_icon_frame
+      }
+      911_voting_icon = {
+				frame = 911_voting_icon_frame
+      }
+      877_voting_icon = {
+				frame = 877_voting_icon_frame
+      }
+      897_voting_icon = {
+				frame = 897_voting_icon_frame
+      }
+		}
+
+    effects = {
+			central_kingdom_chp_polling_button_bg_exit_click = {
+				clear_variable = MAI_chp_polls_visible
 			}
 		}
   }

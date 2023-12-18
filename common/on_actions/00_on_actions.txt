@@ -5004,6 +5004,12 @@ on_actions = {
 						has_completed_focus = MAI_only_a_total_victory
 					}
 				}
+				UNC = { #event to check if Macius owns needed states
+					country_event = {
+						id = childrenparliament.1557
+						days = 2
+					}
+				}
 				every_country = {
 					limit = {
 						is_ai = no

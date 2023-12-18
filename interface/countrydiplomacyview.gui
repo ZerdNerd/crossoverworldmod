@@ -2647,11 +2647,11 @@ guiTypes = {
 
 		containerWindowType = {
 			name = "create_faction"
-			position = { x = -263 y = -157}	
-			size = { width = 527 height = 315 }
+			position = { x = -263 y = -157}
+			size = { width = 527 height = 404 }
 			moveable = yes
 			click_to_front = yes
-			orientation= center				
+			orientation= center		
 
 			background = {
 				name = "Background"		
@@ -2724,26 +2724,26 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "diplo_reply"
-				position = { x = 117 y = 220 }
+				position = { x = 117 y = 263 }
 				textureFile = ""
 				font = "hoi_24header"
 				borderSize = {x = 0 y = 0}
-				text = "REPLYTEXT"	
+				text = "REPLYTEXT"
 				maxWidth = 315
-				maxHeight = 40	
+				maxHeight = 40
 
 				format = centre
-			}					
+			}
 			
 			iconType = {
 				name = "accept_icon"
-				position = { x = 432 y = 225 }
+				position = { x = 432 y = 268 }
 				spriteType ="GFX_accept_decline_icon"
 			}
-			
+
 			buttonType = {
 				name = "send_button"
-				position = { x = 350 y = -60 }
+				position = { x = 350 y = -53 }
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
 				Orientation = "LOWER_LEFT"
@@ -2752,10 +2752,10 @@ guiTypes = {
 				clicksound = click_send
 				shortcut = "RETURN"
 			}
-			
+
 			buttonType = {
 				name = "cancel_button"
-				position = { x = 70 y = -60 }
+				position = { x = 70 y = -53 }
 				shortcut = "ESCAPE"
 				quadTextureSprite ="GFX_button_123x34"
 				buttonFont = "hoi_16mbs"
@@ -2999,9 +2999,8 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "title"
-				position = { x = 0 y = 29 }
+				position = { x = -3 y = 29 }
 				font = "hoi_24header"
-				text = "Maus"
 				maxWidth = 530
 				maxHeight = 20
 				format = center
@@ -3018,7 +3017,6 @@ guiTypes = {
 				name = "time_text"
 				position = { x = 110 y = 93 }
 				font = "hoi_18mbs"
-				text = "Maus"
 				maxWidth = 100
 				maxHeight = 50		
 			}
@@ -3042,30 +3040,30 @@ guiTypes = {
 			
 			containerWindowType = {
 				name = "groups"
-				position = { x = 0 y = 121 }	
-				size = { width = 100%% height = -280 }
-				margin = { top = 13 left = 13 bottom = 15 right = 25}
+				position = { x = 0 y = 121 }
+				size = { width = 100%% height = -275 }
+				margin = { top = 13 left = 13 bottom = 13 }
 				verticalScrollbar = "right_vertical_slider"
-		
+				scroll_wheel_factor = 38
+				smooth_scrolling = yes
+
 				background = {
 					name = "Background"
 					spriteType ="GFX_tiled_window_1b_border"
 				}
-				
+
 				instantTextboxType = {
 					name = "empty"
-					position = { x = 20 y = 30 }
+					position = { x = 15 y = 30 }
 					font = "hoi_18mbs"
-					text = "Maus"
 					maxWidth = 470
-					maxHeight = 300
-					format = center	
+					maxHeight = 200
+					format = center
 				}
 				gridboxtype = {
 					name = "group_grid"
-					position = { x = 3 y = 5}
-					size = { width = 100%% height = 95%% }
-					slotsize = { width = 200 height = 36 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 489 height = 38 }
 					max_slots_horizontal = 1
 					format = "UPPER_LEFT"
 				}
@@ -3075,7 +3073,6 @@ guiTypes = {
 				name = "description"
 				position = { x = 28 y = -270 }
 				font = "hoi_18mbs"
-				text = "Maus"
 				maxWidth = 470
 				maxHeight = 300
 				format = center	
@@ -3120,40 +3117,39 @@ guiTypes = {
 			
 			instantTextboxType = {
 				name = "title"
-				position = { x = 0 y = 29 }
+				position = { x = -3 y = 29 }
 				font = "hoi_24header"
-				text = "Maus"
 				maxWidth = 530
 				maxHeight = 20
 				format = center
 			}
-			
+
 			containerWindowType = {
 				name = "groups"
-				position = { x = 0 y = 80 }	
-				size = { width = 100%% height = -285 }
-				margin = { top = 13 left = 13 bottom = 15 right = 25}
+				position = { x = 0 y = 80 }
+				size = { width = 100%% height = -280 }
+				margin = { top = 13 left = 13 bottom = 13 }
 				verticalScrollbar = "right_vertical_slider"
-		
+				scroll_wheel_factor = 38
+				smooth_scrolling = yes
+
 				background = {
 					name = "Background"
 					spriteType ="GFX_tiled_window_1b_border"
 				}
-				
+
 				instantTextboxType = {
 					name = "empty"
-					position = { x = 20 y = 30 }
+					position = { x = 15 y = 30 }
 					font = "hoi_18mbs"
-					text = "Maus"
 					maxWidth = 470
-					maxHeight = 300
-					format = center	
+					maxHeight = 200
+					format = center
 				}
 				gridboxtype = {
 					name = "group_grid"
-					position = { x = 3 y = 5}
-					size = { width = 100%% height = 95%% }
-					slotsize = { width = 200 height = 36 }
+					size = { width = 100%% height = 100%% }
+					slotsize = { width = 489 height = 38 }
 					max_slots_horizontal = 1
 					format = "UPPER_LEFT"
 				}
@@ -3163,7 +3159,6 @@ guiTypes = {
 				name = "description"
 				position = { x = 28 y = -270 }
 				font = "hoi_18mbs"
-				text = "Maus"
 				maxWidth = 470
 				maxHeight = 300
 				format = center	
@@ -3802,8 +3797,8 @@ guiTypes = {
 
 		OverlappingElementsBoxType = {
 			name = "relations"
-			position = { x = 420 y = 8 }
-			size = { x = 80 y = 32 }
+			position = { x = 350 y = 8 }
+			size = { x = 155 y = 32 }
 			format = left
 			spacing = 1.0
 		}		
@@ -4776,14 +4771,13 @@ guiTypes = {
 	containerWindowType = {
 		name = "diplomacy_send_units_group_entry"
 		size = { width=489 height=38 }
-		clipping = no
-			
-			
-		background = {
+
+		buttonType = {
 			name = "background_button"
 			spriteType = "GFX_send_units_entry_bg"
 			clicksound = click_default
 		}
+
 		containerWindowType = {
 			name = "unassigned_divisions"
 

@@ -6,15 +6,6 @@ characters={
 				large="gfx/leaders/DCB/flintheart.dds"
 			}
 		}
-		corps_commander={
-			traits={ desert_fox }
-			skill=3
-			attack_skill=3
-			defense_skill=3
-			planning_skill=3
-			logistics_skill=3
-			legacy_id=9501
-		}
 		country_leader={
 			desc="POLITICS_FLINTHEART_DESC"
 			ideology=fascism_ideology
@@ -29,14 +20,6 @@ characters={
 				large="gfx/leaders/DCB/scrooge.dds"
 			}
 		}
-		corps_commander={
-			skill=4
-			attack_skill=4
-			defense_skill=4
-			planning_skill=4
-			logistics_skill=4
-			legacy_id=9500
-		}
 		country_leader={
 			desc="POLITICS_SCROOGE_DESC"
 			ideology=conservatism
@@ -44,17 +27,68 @@ characters={
 			id=-1
 		}
 	}
-	DCB_richard_cleburne={
-		name="Richard Cleburne"
+	DCB_mayor_pig={
+		name="Mayor Pig"
 		portraits={
 			civilian={
-				large="GFX_portrait_europe_generic_8"
+				large="gfx/leaders/DCB/mayorpig.dds"
 			}
 		}
 		country_leader={
-			ideology=socialism
+			ideology=liberalism
 			expire="1952.1.1.12"
 			id=-1
+		}
+	}
+	DCB_launchpad={
+		name="Launchpad McQuack"
+		portraits={
+			civilian={
+				large="gfx/leaders/DCB/launchpad.dds"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=9501
+		}
+	}
+	DCB_darkwing={
+		name="Darkwing Duck"
+		portraits={
+			civilian={
+				large="gfx/leaders/DCB/darkwing.dds"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=9501
+		}
+	}
+	DCB_gizmoduck={
+		name="Gizmoduck"
+		portraits={
+			civilian={
+				large="gfx/leaders/DCB/gizmoduck.dds"
+			}
+		}
+		corps_commander={
+			traits={ desert_fox }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=9501
 		}
 	}
 	DCB_louis_stuart={

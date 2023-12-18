@@ -1,0 +1,325 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = bees
+
+country_event = {
+	id = bees.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event bees.1"}
+	title = "Queen departs for the meadows"
+	desc = "There's only one way to truly unite our nation under authority of the Queen - the Queen will personally go to the Meadows and speak with the people."
+	picture = GFX_report_BEE_hive
+
+	fire_only_once = yes
+
+	trigger = {
+		focus_progress = {
+			focus = BEE_speak_to_subjects
+    		progress > 0.1
+		}
+	}
+
+	option = {
+		name = "Safe travels, Your Majesty."
+		hidden_effect = {
+		country_event = {
+				id = bees.2 days = 14
+			}
+			}
+		}
+	}
+
+country_event = {
+	id = bees.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event bees.2"}
+	title = "Queen attacked by a bird!"
+	desc = "As she was giving a speech to residents of the meadows, suddenly, a bird descended on the area where Queen was!"
+	picture = GFX_report_BEE_bird
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Luckily, the Queen managed to escape just in time."
+
+		hidden_effect = {
+			news_event = { 
+				id = bees.3 days = 2
+			}
+			}
+	}
+	option = {
+		name = "The Queen tried to escape, but it was too late!"
+			kill_country_leader = yes
+		hidden_effect = {
+			news_event = { 
+				id = bees.4 days = 2
+			}
+		create_country_leader = {
+			name = "Buzzlina Von Beena"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "buzzlinavonbeena.dds"
+			expire = "1965.1.1"
+			ideology = despotic_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = bees.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event bees.3"}
+	title = "Queen returns safely"
+	desc = "Queen is now back in the hive, and has put together a list of her subjects' demands. After thinking for a while, she decides..."
+	picture = GFX_report_BEE_hive
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "She will have no issue whatsoever completing these demands."
+		hidden_effect = {
+			complete_national_focus = BEE_queen_stays
+			complete_national_focus = BEE_speak_to_subjects
+		}
+	}
+	option = {
+		name = "By this point, it's better if she abdicates and the nation is reformed into a democratic republic."
+		hidden_effect = {
+			complete_national_focus = BEE_meadow_democracy
+			complete_national_focus = BEE_speak_to_subjects
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Judge Beeswax"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "judgebeeswax.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}
+		}
+	}
+	option = {
+		name = "They are asking for way too much. It's better to force them into submission instead."
+		hidden_effect = {
+			news_event = { 
+				id = bees.5 days = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = bees.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.3"}
+	title = "The Queen is dead!"
+	desc = "The Queen has tragically died during her visit to the Meadows! In the aftermath of her death, Buzzlina Von Beena has proclaimed herself Queen!"
+	picture = GFX_report_BEE_buzzlina_coup
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Long Live the new Queen!"
+			complete_national_focus = BEE_speak_to_subjects
+			complete_national_focus = BEE_queen_buzzlina
+	}
+	option = {
+		name = "The Bees won't stand for this!"
+		hidden_effect = {
+			news_event = { 
+				id = bees.6 days = 2
+			}
+		}
+	}
+}
+country_event = {
+	id = bees.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event bees.5"}
+	title = "Ants launch a coup!!"
+	desc = "Queen's refusal to accept demands has resulted in the Ants launching a coup!"
+	picture = GFX_report_BEE_ant_coup
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Down with the monarchy!"
+		hidden_effect = {
+			complete_national_focus = BEE_ants_win
+			complete_national_focus = BEE_speak_to_subjects
+			retire_country_leader = yes
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Colonel Paul"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "colonelpaul.dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = { 
+	id = bees.6
+	title = "Maya's coup!"
+	desc = "There was much opposition to Buzzlina becoming queen, all of it resulting in a coup led by the little bee named Maya, who is very popular with residents of Meadows."
+	
+	picture = GFX_report_BEE_maya_coup
+
+	is_triggered_only = yes
+
+	option = {
+		name = "...How?"
+		hidden_effect = {
+			complete_national_focus = BEE_maya_leader
+			complete_national_focus = BEE_speak_to_subjects
+			retire_country_leader = yes
+			set_politics = {
+				ruling_party = paidocracy
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "Maya"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "mayathebee.dds"
+			expire = "1965.1.1"
+			ideology = paidocracy_sub
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+
+
+country_event = { #We have been accepted into the faction
+	id = bees.7
+	title = "We have been accepted!"
+	desc = "They accepted us into their alliance!"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Splendid!"
+		FROM = {
+			add_to_faction = BEE
+		}
+	}
+}
+
+country_event = { #We have been refused from joining the faction
+	id = bees.8
+	title = "They reject our offer!"
+	desc = "They won't let us join their alliance."
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Shame."
+	}
+}
+country_event = {
+	id = bees.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = "Meadow Election!"
+	desc = "Time to elect our prime minister. The candidates are Judge Beeswax, Miss Cassandra and Flip the Grasshopper. The winner is..."
+	picture = GFX_report_BEE_hive
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Beeswax"
+	}
+	option = {
+		name = "Miss Cassandra"
+		hidden_effect = {
+		create_country_leader = {
+			name = "Miss Cassandra"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "misscassandra.dds"
+			expire = "1965.1.1"
+			ideology = moderatism
+			traits = {
+				#
+			}
+		}
+		}
+	}
+	option = {
+		name = "Flip"
+		hidden_effect = {
+		create_country_leader = {
+			name = "Flip"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "flip.dds"
+			expire = "1965.1.1"
+			ideology = technocracy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = { #Bees want to join our faction
+	id = bees.10
+	title = "Telegram from Bees"
+	desc = "We have recieved a telegram from the Meadows south of the Gloomy forest. Their government is interested in joining our faction."
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = { #Agree
+		name = "Welcome!"
+		BEE = {
+			country_event = {
+				id = bees.7
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+
+	option = { #Deny
+		name = "Sorry, but no."
+		BEE = {
+			country_event = {
+				id = bees.8
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
