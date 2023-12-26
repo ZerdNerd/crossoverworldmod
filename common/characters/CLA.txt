@@ -1,0 +1,97 @@
+characters={
+	CLA_santa={
+		name="Santa Claus"
+		portraits={
+			civilian={
+				large="gfx/leaders/CLA/santa.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_TBD_DESC"
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=10504
+		}
+	}
+	CLA_balbo={
+		name="Balbo"
+		portraits={
+			civilian={
+				large="gfx/leaders/CLA/balbo.dds"
+			}
+		}
+		corps_commander={
+			skill=1
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=10500
+		}
+	}
+	CLA_guilfi={
+		name="Guilfi"
+		portraits={
+			civilian={
+				large="gfx/leaders/CLA/guilfi.dds"
+			}
+			army={
+				small="GFX_idea_CLA_guilfi"
+			}
+		}
+		corps_commander={
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=6
+			legacy_id=10501
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CLA_guilfi_i
+			allowed = {
+				original_tag = CLA
+			}
+			traits = {
+				the_elvish_engineer 
+			}
+			can_be_fired = no
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	CLA_jordi={
+		name="Jordi"
+		portraits={
+			civilian={
+				large="gfx/leaders/CLA/jordi.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=10502
+		}
+	}
+	CLA_toren={
+		name="Toren"
+		portraits={
+			civilian={
+				large="gfx/leaders/CLA/toren.dds"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=10503
+		}
+	}
+}

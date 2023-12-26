@@ -1,0 +1,20 @@
+﻿units= {
+	##### NAVAL UNITS #####
+	fleet = {
+		name = "Santa's Navy"			
+		naval_base = 3776
+		task_force = {				
+			name = "1. Santa's Fleet"
+			location = 4310
+			ship = { name = "Santa Claus" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CLA } } }
+			ship = { name = "Transport of Coal" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CLA } } }
+			ship = { name = "Destroyer of Bad Kids' Dreams" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CLA } } }
+		}
+		task_force = {				
+			name = "2. Santa's Fleet"
+			location = 1526
+			ship = { name = "Rewarder of Good Kids' Wishes" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CLA } } }
+			ship = { name = "The Workshop's Elf" definition = destroyer equipment = { destroyer_1 = { amount = 1 owner = CLA } } }
+		}
+	}
+}

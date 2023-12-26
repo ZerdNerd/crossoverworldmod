@@ -4387,6 +4387,17 @@ on_actions = {
 	#FROM is war target
 	on_declare_war = {
 		effect = {
+			if = {
+				limit = {
+					FROM = {
+						tag = FLE
+						has_war_with = CLA
+					}
+				}
+				ROOT = {
+					set_country_flag = oh_no_do_not_cheat
+				}
+			}
 			#################### BIG WAR EVENTS
 			if = {
 				limit = {
@@ -4700,6 +4711,22 @@ on_actions = {
 	# ROOT is capitulated country, FROM is winner
 	on_capitulation = {
 		effect = {
+			if = {
+				limit = {
+					ROOT = {
+						tag = FLE
+					}
+					FROM = {
+						tag = CLA
+					}
+				}
+				CLA = {
+					white_peace = {
+						tag = FLE
+						message = second_convention_of_santas_immunity
+					}
+				}
+			}
 			if = {
 				limit = {
 					ROOT = {
@@ -5787,6 +5814,18 @@ on_actions = {
 				country_event = {
 					id = enchancia.81
 					days = 2835
+				}
+			}
+			FLE = {
+				country_event = {
+					id = flensburg_christmas.1
+					days = 244
+				}
+			}
+			ARE = {
+				country_event = {
+					id = blackmonday.35
+					days = 200
 				}
 			}
 			random_country = {

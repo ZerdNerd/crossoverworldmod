@@ -793,3 +793,51 @@ hey_shen_dont_be_stoopid_against_sooty = {
 		value = -1000
 	}
 }
+
+help_santa = {
+	allowed = {
+		NOT = { original_tag = CLA }
+	}
+	enable = {
+		has_country_flag = helped_santa
+		CLA = {
+			has_war = yes
+		}
+	}
+    abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_volunteers_desire
+		id = CLA			
+		value = 100
+	}
+
+	ai_strategy = {
+		type = support
+		id = CLA			
+		value = 100
+	}
+}
+
+santa_helps_everyone_who_helped_him = {
+	allowed = {
+		NOT = { original_tag = CLA }
+	}
+	enable = {
+		has_country_flag = helped_santa
+	}
+    reversed = yes
+    abort_when_not_enabled = yes
+
+	ai_strategy = {
+		type = send_lend_lease_desire
+		id = CLA			
+		value = 1000
+	}
+
+	ai_strategy = {
+		type = support
+		id = CLA			
+		value = 1000
+	}
+}

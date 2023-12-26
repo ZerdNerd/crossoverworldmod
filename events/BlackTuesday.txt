@@ -311,3 +311,44 @@ country_event = { #Black Monday hits modern countries and we're hurt too!
         }
 	}
 }
+
+country_event = { #placing huey here
+	id = blackmonday.35
+	immediate = {log = "[GetDateText]: [Root.GetName]: event blackmonday.35"}
+	title = blackmonday.35.t
+	desc = blackmonday.35.d
+	picture = GFX_report_event_crowd_in_prague
+
+	is_triggered_only = yes
+
+	option = { #Oh no!
+		name = blackmonday.35.a
+		start_civil_war = {
+			ideology = democratic
+			# Breakaway gets old ideology of ROOT
+			size = 0.5
+			capital = 970
+			states = {
+				970 196 235 207 254 169 149
+			}
+			keep_political_leader = no
+		}
+	}
+
+	option = { #Oh no!
+		name = blackmonday.35.b
+		trigger = { is_ai = no }
+		start_civil_war = {
+			ruling_party = democratic
+			# Original country's ideology changes to communism
+			ideology = monarchism
+			# Breakaway gets old ideology of ROOT
+			size = 0.5
+			capital = 178
+			states = {
+				154 178 208 226 232 263
+			}
+			keep_political_leader = no
+		}
+	}
+}

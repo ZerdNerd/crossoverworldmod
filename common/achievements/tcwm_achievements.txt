@@ -664,3 +664,30 @@ thinking_with_portals = {
 		}
     }  
 }
+
+the_santas_apprentice = {
+    possible = {
+        difficulty > 1
+        has_start_date < 1936.01.02
+		CLA = {
+			exists = yes
+		}
+        game_rules_allow_achievements = yes
+    }
+  
+    happened = {
+        date > 1936.01.02
+		CLA = {
+			exists = yes
+			NOT = {
+				has_war_with = FLE
+			}
+		}
+		ROOT = {
+			NOT = {
+				has_country_flag = oh_no_do_not_cheat
+			}
+			has_country_flag = helped_santa
+		}
+    }  
+}

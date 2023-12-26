@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = flensburg
+add_namespace = flensburg_christmas
 
 country_event = { #Landscape after Black Monday
 	id = flensburg.1
@@ -622,7 +623,7 @@ country_event = { #Pantmawr proposes status quo ante bellum peace
 
 country_event = { #Kramer starting event
 	id = flensburg.21
-	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.20"}
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg.21"}
 	title = flensburg.21.t
 	desc = flensburg.21.d
 	picture = GFX_report_event_gre_political_upheaval
@@ -633,6 +634,80 @@ country_event = { #Kramer starting event
 		name = flensburg.21.a
 		hidden_effect = {
 			set_country_flag = kramer_in_the_colony
+		}
+	}
+}
+
+country_event = { #Flensburg invasion of Santa's Workshop
+	id = flensburg_christmas.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg_christmas.1"}
+	title = flensburg_christmas.1.t
+	desc = flensburg_christmas.1.d
+	picture = GFX_report_event_gre_political_upheaval
+
+	is_triggered_only = yes
+
+	option = {
+		name = flensburg_christmas.1.a
+		declare_war_on = {
+			target = CLA
+			type = annex_everything
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_government = democratic
+						has_government = monarchism
+					}
+					NOT = {
+						tag = FRI
+						tag = FLE
+					}
+				}
+				country_event = {
+					id = flensburg_christmas.2
+					days = 1
+				}
+			}
+			add_named_threat = {
+				threat = 5
+				name = attack_on_santa
+			}
+		}
+	}
+}
+
+country_event = { #Santa Needs Our Help
+	id = flensburg_christmas.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event flensburg_christmas.2"}
+	title = flensburg_christmas.2.t
+	desc = flensburg_christmas.2.d
+	picture = GFX_report_event_gre_political_upheaval
+
+	is_triggered_only = yes
+
+	option = {
+		ai_chance = {
+			base = 25
+		}
+		name = flensburg_christmas.2.a
+		hidden_effect = {
+			set_country_flag = helped_santa
+		}
+
+	}
+
+	option = {
+		ai_chance = {
+			base = 75
+		}
+		name = flensburg_christmas.2.b
+		if = {
+			limit = {
+				is_ai = no
+			}
+			add_political_power = -100
 		}
 	}
 }
