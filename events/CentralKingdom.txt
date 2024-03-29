@@ -3,6 +3,7 @@
 ###########################
 
 add_namespace = centralkingdom
+add_namespace = childrenrepublic
 
 country_event = {
 	id = centralkingdom.1
@@ -1114,7 +1115,7 @@ country_event = { #Start of Hartmut Crisis
 	option = {
 		name = centralkingdom.30.b
 		trigger = {
-			has_offensive_war = yes
+			has_war = yes
 		}
 		custom_effect_tooltip = FRI_not_yet_hartmut
 		hidden_effect = {
@@ -1340,23 +1341,6 @@ country_event = { #Macius rejects ultimatum
 			MAI = {
 				mark_focus_tree_layout_dirty = yes
 			}
-		}
-		ai_chance = {
-			factor = 70
-		}
-	}
-
-	option = { #It's his playground, we won't interfere with this crap
-		name = centralkingdom.32.a
-		add_political_power = -50
-		hidden_effect = {
-			MAI = {
-				mark_focus_tree_layout_dirty = yes
-			}
-			complete_national_focus = FRI_organize_peace_conference
-		}
-		ai_chance = {
-			factor = 30
 		}
 	}
 }
@@ -2335,128 +2319,55 @@ country_event = { #We were on the verge of greatness! We were this close!
 
 	is_triggered_only = yes
 
-	option = { #Play as Felix' Children Republic
-		name = centralkingdom.52.a
-		custom_effect_tooltip = MAI_you_will_play_as_felix
+	option = { #The Republican Guard enters and arrests Macius on Felix' orders
+		name = centralkingdom.52.c
 		hidden_effect = {
-			delete_unit = {
-				state = 789
-				disband = yes
-			}
-			delete_unit = {
-				state = 798
-				disband = yes
-			}
-			delete_unit = {
-				state = 796
-				disband = yes
-			}
-			delete_unit = {
-				state = 792
-				disband = yes
-			}
-			delete_unit = {
-				state = 799
-				disband = yes
-			}
-			delete_unit = {
-				state = 812
-				disband = yes
-			}
-			delete_unit = {
-				state = 817
-				disband = yes
-			}
-			delete_unit = {
-				state = 808
-				disband = yes
-			}
-			CLD = {
-				transfer_state = 789
-				transfer_state = 798
-				transfer_state = 796
-				transfer_state = 792
-				transfer_state = 799
-				every_state = {
-					limit = {
-						is_core_of = MAI
-					}
-					add_core_of = CLD
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
-					amount = 40000
-				}
-				add_manpower = 250000
-			}
-			set_nationality = {
-				target_country = CLD
-				character = MAI_felix
-			}
-			set_nationality = {
-				target_country = CLD
-				character = MAI_anton
-			}
 			remove_ideas = {
 				MAI_pro_rege_lege_et_grege
+				MAI_audience_for_children_idea
+				MAI_king_of_children
 			}
-			CLD = {
-				add_country_leader_role = {
-					character = MAI_felix
-					promote_leader = yes
-					country_leader = {
-						ideology = paidocracy_sub
-						expire = "1965.1.1.1"
-						traits = {  }
-					}
+			set_cosmetic_tag = CLD
+			load_focus_tree = childrenrepublic
+			retire_country_leader = yes
+			add_country_leader_role = {
+				character = MAI_felix
+				promote_leader = yes
+				country_leader = {
+					ideology = paidocracy_sub
+					expire = "1965.1.1.1"
+					traits = {  }
 				}
-				add_corps_commander_role = {
-					Character = MAI_felix
-					skill = 2
-					attack_skill = 2
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-				}
-				add_corps_commander_role = {
-					Character = MAI_anton
-					skill = 1
-					attack_skill = 1
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-				}
-				set_politics = {
-					ruling_party = paidocracy
-					election_frequency = 72
-					elections_allowed = no
-				}
-				set_popularities = {
-					democratic = 0
-					fascism = 0
-					communism = 0
-					paidocracy = 95
-					monarchism = 5
-				}
-				add_ideas = {
-					the_children_revolution
-					war_economy
-					extensive_conscription
-				}
-				set_capital = { state = 792 }
-				inherit_technology = MAI
-				load_oob = CLD_rebellion
-				declare_war_on = {
-					target = MAI
-					type = annex_everything
-				}
-				change_tag_from = MAI
 			}
-			country_event = {
-				id = centralkingdom.68
-				days = 2
+			add_corps_commander_role = {
+				Character = MAI_felix
+				skill = 2
+				attack_skill = 2
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
 			}
-			clr_country_flag = children_parliament
+			add_corps_commander_role = {
+				Character = MAI_anton
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+			}
+			set_politics = {
+				ruling_party = paidocracy
+				election_frequency = 72
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+				fascism = 5
+				communism = 0
+				paidocracy = 70
+				monarchism = 25
+			}
+			remove_mission = MAI_next_seating_of_children_parliament
 			set_country_flag = children_revolution_underway
 			complete_national_focus = MAI_i_see_through_your_lies_macius
 			every_country = {
@@ -2472,210 +2383,9 @@ country_event = { #We were on the verge of greatness! We were this close!
 				sound_effect = cr_bigevent_children_revolution_sound
 				play_song = cisza30
 			}
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Macius I"
-				desc = "POLITICS_MACIUS_I_DESC"
-				picture = "macius.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					underage_monarch
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = MAI_the_reformer
-				}
-				add_country_leader_trait = the_reformer
-			}
-			create_country_leader = {
-				name = "Hanna"
-				desc = "POLITICS_TBD_DESC"
-				picture = "hanna.dds"
-				expire = "1965.1.1"
-				ideology = paidocracy_sub
-				traits = {
-					#
-				}
-			}
 		}
 		ai_chance = {
 			factor = 0
-		}
-	}
-
-	option = { #Continue playing as Macius
-		name = centralkingdom.52.b
-		hidden_effect = {
-			delete_unit = {
-				state = 789
-				disband = yes
-			}
-			delete_unit = {
-				state = 798
-				disband = yes
-			}
-			delete_unit = {
-				state = 796
-				disband = yes
-			}
-			delete_unit = {
-				state = 792
-				disband = yes
-			}
-			delete_unit = {
-				state = 799
-				disband = yes
-			}
-			delete_unit = {
-				state = 812
-				disband = yes
-			}
-			delete_unit = {
-				state = 817
-				disband = yes
-			}
-			delete_unit = {
-				state = 808
-				disband = yes
-			}
-			CLD = {
-				transfer_state = 789
-				transfer_state = 798
-				transfer_state = 796
-				transfer_state = 792
-				transfer_state = 799
-				every_state = {
-					limit = {
-						is_core_of = MAI
-					}
-					add_core_of = CLD
-				}
-				set_politics = {
-					ruling_party = paidocracy
-					election_frequency = 72
-					elections_allowed = no
-				}
-				add_equipment_to_stockpile = {
-					type = infantry_equipment_1
-					amount = 40000
-				}
-				add_manpower = 250000
-			}
-			set_nationality = {
-				target_country = CLD
-				character = MAI_felix
-			}
-			set_nationality = {
-				target_country = CLD
-				character = MAI_anton
-			}
-			remove_ideas = {
-				MAI_pro_rege_lege_et_grege
-			}
-			CLD = {
-				add_country_leader_role = {
-					character = MAI_felix
-					promote_leader = yes
-					country_leader = {
-						ideology = paidocracy_sub
-						expire = "1965.1.1.1"
-						traits = {  }
-					}
-				}
-				add_corps_commander_role = {
-					Character = MAI_felix
-					skill = 2
-					attack_skill = 2
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-				}
-				add_corps_commander_role = {
-					Character = MAI_anton
-					skill = 1
-					attack_skill = 1
-					defense_skill = 1
-					planning_skill = 1
-					logistics_skill = 1
-				}
-				set_politics = {
-					ruling_party = paidocracy
-					election_frequency = 72
-					elections_allowed = no
-				}
-				set_popularities = {
-					democratic = 0
-					fascism = 0
-					communism = 0
-					paidocracy = 95
-					monarchism = 5
-				}
-				add_ideas = {
-					the_children_revolution
-					war_economy
-					extensive_conscription
-				}
-				set_capital = { state = 792 }
-				inherit_technology = MAI
-				load_oob = CLD_rebellion
-				declare_war_on = {
-					target = MAI
-					type = annex_everything
-				}
-				change_tag_from = MAI
-			}
-			country_event = {
-				id = centralkingdom.68
-				days = 2
-			}
-			clr_country_flag = children_parliament
-			set_country_flag = children_revolution_underway
-			complete_national_focus = MAI_dont_lecture_me_felix
-			every_country = {
-				limit = {
-					is_ai = no
-				}
-				set_country_flag = big_event_children_revolution
-			}
-			every_country = {
-				limit = {
-					has_variable = cr_superevent_music_status
-				}
-				sound_effect = cr_bigevent_children_revolution_sound
-				play_song = cisza30
-			}
-			retire_country_leader = yes
-			create_country_leader = {
-				name = "Macius I"
-				desc = "POLITICS_MACIUS_I_DESC"
-				picture = "macius.dds"
-				expire = "1965.1.1"
-				ideology = administrative_monarchy
-				traits = {
-					underage_monarch
-				}
-			}
-			if = {
-				limit = {
-					has_completed_focus = MAI_the_reformer
-				}
-				add_country_leader_trait = the_reformer
-			}
-			create_country_leader = {
-				name = "Hanna"
-				desc = "POLITICS_TBD_DESC"
-				picture = "hanna.dds"
-				expire = "1965.1.1"
-				ideology = paidocracy_sub
-				traits = {
-					#
-				}
-			}
-		}
-		ai_chance = {
-			factor = 100
 		}
 	}
 }
@@ -5322,5 +5032,794 @@ country_event = { #Army unit revolts against
 		ai_chance = {
 			factor = 50
 		}
+	}
+}
+
+#############################################################
+
+country_event = { #Secret Supergirls Club joins the Children Parliament
+	id = childrenrepublic.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.1"}
+	title = childrenrepublic.1.t
+	desc = childrenrepublic.1.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAI
+		focus_progress = {
+			focus = CLD_the_first_free_elections
+			progress > 0.10
+		}
+		focus_progress = {
+			focus = CLD_the_first_free_elections
+			progress < 0.25
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = childrenrepublic.1.a
+		hidden_effect = {
+			hidden_effect = {
+				set_country_flag = ssgc_active
+			} 
+			country_event = {
+				id = childrenrepublic.2
+				days = 25
+			}
+		}
+	}
+}
+
+country_event = { #Felek tells Hanna and Anton his plan
+	id = childrenrepublic.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.2"}
+	title = childrenrepublic.2.t
+	desc = childrenrepublic.2.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenrepublic.2.a
+		country_event = {
+			id = childrenrepublic.3
+			days = 25
+		}
+	}
+}
+
+country_event = { #Jan Odkrywca sides Geoffroy and Lou/Bolek and Lolek with him
+	id = childrenrepublic.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.3"}
+	title = childrenrepublic.3.t
+	desc = {
+		text = childrenrepublic.3.dbl
+		trigger = {
+			MAI = {
+				NOT = {
+					owns_state = 897
+				}
+			}
+		}
+	}
+	desc = {
+		text = childrenrepublic.3.dblgl
+		trigger = {
+			MAI = {
+				owns_state = 897
+			}
+		}
+	}
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenrepublic.3.a
+		hidden_effect = {
+			if = {
+				limit = {
+					MAI = {
+						owns_state = 897
+					}
+				}
+				set_country_flag = has_geoffroy_and_lou
+			}
+		}
+	}
+}
+
+country_event = { #First free elections
+	id = childrenrepublic.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.4"}
+	title = childrenrepublic.4.t
+	desc = childrenrepublic.4.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = chp_work_suspended
+		}
+	}
+
+	option = { #Playing as Felix
+		name = childrenrepublic.4.a
+		hidden_effect = {
+			set_country_flag = playing_as_felix
+		}
+	}
+
+	option = { #Playing as Odkrywca
+		name = childrenrepublic.4.b
+		hidden_effect = {
+			set_country_flag = playing_as_odkrywca
+		}
+	}
+
+	option = { #Playing as Gacek
+		name = childrenrepublic.4.c
+		hidden_effect = {
+			set_country_flag = playing_as_emi
+		}
+	}
+}
+
+country_event = { #First Session - creating the Constitution
+	id = childrenrepublic.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.5"}
+	title = childrenrepublic.5.t
+	desc = childrenrepublic.5.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenrepublic.5.a
+		hidden_effect = {
+			set_variable = { constitution_odkrywca_points = 0 }
+			set_variable = { constitution_felix_points = 0 }
+			set_variable = { constitution_gacek_points = 0 }
+		}
+		country_event = {
+			id = childrenrepublic.6
+			days = 0
+		}
+	}
+}
+
+country_event = { #Creating the Constitution - Head of State
+	id = childrenrepublic.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.6"}
+	title = childrenrepublic.6.t
+	desc = childrenrepublic.6.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #The President with Head of Parliament as his second-in-command having edge over Parliament will be enough (Odkrywca)
+		name = childrenrepublic.6.a
+		custom_effect_tooltip = option_helps_odkrywca
+		hidden_effect = {
+			add_to_variable = { constitution_odkrywca_points = 1 }
+			set_country_flag = president_with_hop
+		}
+		country_event = {
+			id = childrenrepublic.7
+			days = 0
+		}
+	}
+
+	option = { #The President should be the sole HoS, be able to issue degrees bypassing Parliament; HoP will only preside over Parliament (Felix)
+		name = childrenrepublic.6.b
+		custom_effect_tooltip = option_helps_felix
+		hidden_effect = {
+			add_to_variable = { constitution_felix_points = 1 }
+			set_country_flag = president_sole_auth
+		}
+		country_event = {
+			id = childrenrepublic.7
+			days = 0
+		}
+	}
+
+	option = { #The President should act as Prime Minister, but cannot be no-confidenced by Parliament (Gacek)
+		name = childrenrepublic.6.c
+		custom_effect_tooltip = option_helps_gacek
+		hidden_effect = {
+			add_to_variable = { constitution_gacek_points = 1 }
+			set_country_flag = president_cooperation
+		}
+		country_event = {
+			id = childrenrepublic.7
+			days = 0
+		}
+	}
+}
+
+country_event = { #Creating the Constitution - Elections
+	id = childrenrepublic.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.7"}
+	title = childrenrepublic.7.t
+	desc = childrenrepublic.7.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Elections should be secret, with only direct voting at schools (Odkrywca and Gacek)
+		name = childrenrepublic.7.a
+		custom_effect_tooltip = option_helps_odkrywca_and_gacek
+		hidden_effect = {
+			add_to_variable = { constitution_odkrywca_points = 1 }
+			add_to_variable = { constitution_gacek_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.8
+			days = 0
+		}
+	}
+
+	option = { #No secret elections as everyone quickly reveals who votes for whom, voting at poll stations in and outside the schools, can delegate others (Felix)
+		name = childrenrepublic.7.b
+		custom_effect_tooltip = option_helps_felix
+		hidden_effect = {
+			add_to_variable = { constitution_felix_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.8
+			days = 0
+		}
+	}
+}
+
+country_event = { #Creating the Constitution - Parliament size
+	id = childrenrepublic.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.8"}
+	title = childrenrepublic.8.t
+	desc = childrenrepublic.8.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Parliament should stay as is (Odkrywca)
+		name = childrenrepublic.8.a
+		custom_effect_tooltip = option_helps_odkrywca
+		hidden_effect = {
+			add_to_variable = { constitution_odkrywca_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.9
+			days = 0
+		}
+	}
+
+	option = { #Parliament should be bigger (Felix and Gacek)
+		name = childrenrepublic.8.b
+		custom_effect_tooltip = option_helps_felix_and_gacek
+		hidden_effect = {
+			set_country_flag = chp_250_seats
+			add_to_variable = { constitution_felix_points = 1 }
+			add_to_variable = { constitution_gacek_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.9
+			days = 0
+		}
+	}
+}
+
+country_event = { #Creating the Constitution - Juidicary System
+	id = childrenrepublic.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.9"}
+	title = childrenrepublic.9.t
+	desc = childrenrepublic.9.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { #Judges should be accountable only to the Parliament (Odkrywca)
+		name = childrenrepublic.9.a
+		custom_effect_tooltip = option_helps_odkrywca
+		hidden_effect = {
+			add_to_variable = { constitution_odkrywca_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.10
+			days = 0
+		}
+	}
+
+	option = { #Judges should be accountable only to the President (Felix)
+		name = childrenrepublic.9.b
+		custom_effect_tooltip = option_helps_felix_and_gacek
+		hidden_effect = {
+			add_to_variable = { constitution_felix_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.10
+			days = 0
+		}
+	}
+
+	option = { #Judges should remain separate from President and Parliament (Gacek)
+		name = childrenrepublic.9.b
+		custom_effect_tooltip = option_helps_gacek
+		hidden_effect = {
+			add_to_variable = { constitution_gacek_points = 1 }
+		}
+		country_event = {
+			id = childrenrepublic.10
+			days = 0
+		}
+	}
+}
+
+country_event = { #First Session - Constitution Created
+	id = childrenrepublic.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.10"}
+	title = childrenrepublic.10.t
+	desc = childrenrepublic.10.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = childrenrepublic.10.a
+		add_political_power = 50
+	}
+}
+
+country_event = { #Jan Odkrywca's running mate
+	id = childrenrepublic.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.11"}
+	title = childrenrepublic.11.t
+	desc = childrenrepublic.11.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAI
+		focus_progress = {
+			focus = CLD_choosing_new_government
+			progress > 0.05
+		}
+		focus_progress = {
+			focus = CLD_choosing_new_government
+			progress < 0.45
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Geoffroy
+		name = childrenrepublic.11.a
+		trigger = {
+			has_country_flag = has_geoffroy_and_lou
+		}
+		hidden_effect = {
+			set_country_flag = geoffroy_running_mate
+		}
+	}
+
+	option = { #Lou
+		name = childrenrepublic.11.b
+		trigger = {
+			has_country_flag = has_geoffroy_and_lou
+		}
+		hidden_effect = {
+			set_country_flag = lou_running_mate
+		}
+	}
+
+	option = { #Bolek and Lolek
+		name = childrenrepublic.11.c
+		hidden_effect = {
+			set_country_flag = bolek_and_lolek_running_mate
+		}
+	}
+}
+
+country_event = { #Felix running mate
+	id = childrenrepublic.110
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.110"}
+	title = childrenrepublic.110.t
+	desc = childrenrepublic.110.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAI
+		focus_progress = {
+			focus = CLD_choosing_new_government
+			progress > 0.45
+		}
+		focus_progress = {
+			focus = CLD_choosing_new_government
+			progress < 0.75
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { #Hanna
+		name = childrenrepublic.110.a
+		hidden_effect = {
+			set_country_flag = hanna_running_mate
+			set_country_flag = form_timeforkids
+		}
+	}
+
+	option = { #Anton
+		name = childrenrepublic.110.b
+		hidden_effect = {
+			set_country_flag = anton_running_mate
+			set_country_flag = form_freefuture
+		}
+	}
+}
+
+country_event = { #Choosing the Government
+	id = childrenrepublic.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event childrenrepublic.12"}
+	title = childrenrepublic.12.t
+	desc = childrenrepublic.12.d
+	picture = GFX_report_children_parliament
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_temp_variable = {
+				gacek_supporters = 0
+			}
+			set_temp_variable = {
+				odkrywca_supporters = 0
+			}
+			set_temp_variable = {
+				felix_supporters = 0
+			}
+			set_temp_variable = {
+				all_points = 0
+			}
+			if = {
+				limit = {
+					has_country_flag = chp_250_seats
+				}
+				add_to_temp_variable = { all_points = constitution_odkrywca_points }
+				add_to_temp_variable = { all_points = constitution_felix_points }
+				add_to_temp_variable = { all_points = constitution_gacek_points }
+				add_to_temp_variable = { odkrywca_supporters = constitution_odkrywca_points }
+				add_to_temp_variable = { felix_supporters = constitution_felix_points }
+				add_to_temp_variable = { gacek_supporters = constitution_gacek_points }
+				divide_temp_variable = { odkrywca_supporters = all_points }
+				divide_temp_variable = { felix_supporters = all_points }
+				divide_temp_variable = { gacek_supporters = all_points }
+				set_variable = { MAI_gacek_supporting_deputies = 250 }
+				set_variable = { MAI_felix_supporting_deputies = 250 }
+				set_variable = { MAI_odkrywca_supporting_deputies = 250 }
+				multiply_variable = { MAI_gacek_supporting_deputies = gacek_supporters }
+				multiply_variable = { MAI_felix_supporting_deputies = felix_supporters }
+				multiply_variable = { MAI_odkrywca_supporting_deputies = odkrywca_supporters }
+				else = {
+					add_to_temp_variable = { all_points = constitution_odkrywca_points }
+					add_to_temp_variable = { all_points = constitution_felix_points }
+					add_to_temp_variable = { all_points = constitution_gacek_points }
+					add_to_temp_variable = { odkrywca_supporters = constitution_odkrywca_points }
+					add_to_temp_variable = { felix_supporters = constitution_felix_points }
+					add_to_temp_variable = { gacek_supporters = constitution_gacek_points }
+					divide_temp_variable = { odkrywca_supporters = all_points }
+					divide_temp_variable = { felix_supporters = all_points }
+					divide_temp_variable = { gacek_supporters = all_points }
+					set_variable = { MAI_gacek_supporting_deputies = 100 }
+					set_variable = { MAI_felix_supporting_deputies = 100 }
+					set_variable = { MAI_odkrywca_supporting_deputies = 100 }
+					multiply_variable = { MAI_gacek_supporting_deputies = gacek_supporters }
+					multiply_variable = { MAI_felix_supporting_deputies = felix_supporters }
+					multiply_variable = { MAI_odkrywca_supporting_deputies = odkrywca_supporters }
+				}
+			}
+		}
+	}
+
+	option = { #Odkrywca/running mate
+		name = childrenrepublic.12.a
+		trigger = {
+			OR = {
+				OR = {
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_felix_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_gacek_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_felix_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_gacek_points
+						compare = greater_than
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_felix_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_gacek_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_felix_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_odkrywca_points
+						value = constitution_gacek_points
+						compare = greater_than
+					}
+				}
+			}
+		}
+		promote_character = MAI_odkrywca
+		if = {
+			limit = {
+				has_country_flag = geoffroy_running_mate
+			}
+			custom_effect_tooltip = geoffroy_becomes_hop
+			hidden_effect = {
+				set_variable = { chp_leader_icon_temp_number = 8 }
+				recalc_children_parliament_leader_icon = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = lou_running_mate
+			}
+			custom_effect_tooltip = lou_becomes_hop
+			hidden_effect = {
+				set_variable = { chp_leader_icon_temp_number = 6 }
+				recalc_children_parliament_leader_icon = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = bolek_and_lolek_running_mate
+			}
+			custom_effect_tooltip = bolek_and_lolek_becomes_hop
+			hidden_effect = {
+				set_variable = { chp_leader_icon_temp_number = 10 }
+				recalc_children_parliament_leader_icon = yes
+			}
+		}
+		complete_national_focus = CLD_compromise_candidate
+	}
+
+	option = { #Felix/running mate
+		name = childrenrepublic.12.b
+		trigger = {
+			OR = {
+				OR = {
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_odkrywca_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_gacek_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_odkrywca_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_gacek_points
+						compare = greater_than
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_odkrywca_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_gacek_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_odkrywca_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_felix_points
+						value = constitution_gacek_points
+						compare = greater_than
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = hanna_running_mate
+			}
+			custom_effect_tooltip = hanna_becomes_hop
+			if = {
+				limit = {
+					has_idea = MAI_hanna_i
+				}
+				remove_ideas = {
+					MAI_hanna_i
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = MAI_anton_i
+					}
+				}
+				add_ideas = {
+					MAI_anton_i
+				}
+			}
+			hidden_effect = {
+				set_variable = { chp_leader_icon_temp_number = 4 }
+				recalc_children_parliament_leader_icon = yes
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = anton_running_mate
+			}
+			if = {
+				limit = {
+					has_idea = MAI_anton_i
+				}
+				remove_ideas = {
+					MAI_anton_i
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_idea = MAI_hanna_i
+					}
+				}
+				add_ideas = {
+					MAI_hanna_i
+				}
+			}
+			custom_effect_tooltip = anton_becomes_hop
+			hidden_effect = {
+				set_variable = { chp_leader_icon_temp_number = 3 }
+				recalc_children_parliament_leader_icon = yes
+			}
+		}
+		complete_national_focus = CLD_unlimited_power
+	}
+
+	option = { #Gacek/Czapla
+		name = childrenrepublic.12.c
+		trigger = {
+			OR = {
+				OR = {
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_odkrywca_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_felix_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_odkrywca_points
+						compare = greater_than_or_equals
+					}
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_felix_points
+						compare = greater_than
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_odkrywca_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_felix_points
+						compare = greater_than_or_equals
+					}
+				}
+				AND = {
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_odkrywca_points
+						compare = greater_than
+					}
+					check_variable = {
+						var = constitution_gacek_points
+						value = constitution_felix_points
+						compare = greater_than
+					}
+				}
+			}
+		}
+		promote_character = MAI_emi
+		custom_effect_tooltip = czapla_becomes_hop
+		hidden_effect = {
+			set_variable = { chp_leader_icon_temp_number = 9 }
+			recalc_children_parliament_leader_icon = yes
+		}
+		add_ideas = {
+			MAI_flora_i
+			MAI_franek_i
+			MAI_faustyna_i
+		}
+		complete_national_focus = CLD_the_most_dangerous_secret_mission
 	}
 }

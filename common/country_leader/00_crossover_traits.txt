@@ -233,4 +233,43 @@ leader_traits = {
             factor = 1
         }
     }
+	
+	MAI_foreign_minister = {
+		random = no
+		sprite = 13
+		improve_relations_maintain_cost_factor = -0.2
+		opinion_gain_monthly_factor = 0.1
+		trade_opinion_factor = 0.05
+	}
+
+	MAI_minister_of_agriculture = {
+		random = no
+		sprite = 13
+		paidocracy_drift = 0.05
+		consumer_goods_factor = -0.05
+		economy_cost_factor = -0.05
+	}
+
+	MAI_minister_of_war = {
+		random = no
+		sprite = 5
+		production_speed_arms_factory_factor = 0.05
+		production_speed_dockyard_factor = 0.05
+		production_speed_air_base_factor = 0.05
+		production_speed_naval_base_factor = 0.05
+	}
+
+	MAI_minister_of_education_and_technology = {
+		random = no
+		sprite = 13
+		research_speed_factor = 0.1
+	}
+
+	MAI_minister_of_finance = {
+		random = no
+		sprite = 13
+		consumer_goods_factor = -0.1
+		economy_cost_factor = -0.1
+		stability_factor = 0.05
+	}
 }

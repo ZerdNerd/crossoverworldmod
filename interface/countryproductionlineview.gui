@@ -1992,6 +1992,7 @@ guiTypes = {
 		iconType = {
 			name = "has_mio_background"
 			quadTextureSprite ="GFX_production_item_has_mio"
+			alwaystransparent = yes
 		}
 
 		iconType = {
@@ -3012,25 +3013,6 @@ guiTypes = {
 			alwaystransparent = yes
 		}
 
-		iconType = {
-			name = "need_state_icon"
-			position = { x=245 y=78 }
-			quadTextureSprite = "GFX_prod_line_target_strip"
-		}
-
-		instantTextboxType = {
-			name = "total_need"
-			position = { x = 145 y = 86 }
-			textureFile = ""
-			font = "hoi_16mbs"
-			borderSize = {x = 0 y = 0}
-			maxWidth = 100
-			maxHeight = 20
-			text = "Total need: 200"
-			format = right
-			#alwaystransparent = yes
-		}
-
 		#iconType = {
 		#	name ="equipment_designer"
 		#	spriteType = "GFX_tech_idea_bg"
@@ -3309,7 +3291,7 @@ guiTypes = {
 
 		iconType = {
 			name ="production_line_selected"
-			spriteType = "GFX_production_line_selected"
+			spriteType = "GFX_naval_production_line_selected"
 			position = { x= 2 y = 0 }
 		}
 

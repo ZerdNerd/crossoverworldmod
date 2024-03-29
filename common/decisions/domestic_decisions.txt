@@ -122,6 +122,16 @@ domestic_politics_dec_category = {
             }
             hidden_effect = {
                 unlock_national_focus = MAI_aftermath_of_the_ten_days
+                if = {
+                    limit = {
+                        NOT = {
+                            has_completed_focus = MAI_reform_the_parliament
+                        }
+                    }
+                    set_country_flag = chp_work_suspended
+				    clear_variable = days_since_deputies_submitted_bill
+				    remove_mission = MAI_next_seating_of_children_parliament
+                }
                 set_variable = {
                     days_countdown_macius_come_on = 0
                 }

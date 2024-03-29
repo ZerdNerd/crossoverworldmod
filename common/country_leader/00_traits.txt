@@ -260,7 +260,7 @@ leader_traits = {
 		political_power_factor = -0.1
 		stability_factor = 0.05
 		paidocracy_drift = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_factor = -0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -291,7 +291,7 @@ leader_traits = {
 	humble = {
 		random = no
 		paidocracy_drift = 0.05
-		consumer_goods_factor = -0.05
+		consumer_goods_factor = -0.15
 		
 		ai_will_do = {
 			factor = 1
@@ -887,6 +887,15 @@ leader_traits = {
 			factor = 1
 		}
 	}
+
+	popular_figurehead3 = {
+		sprite = 13
+		stability_factor = 0.1
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 	american_caesar = {
 		random = no
 		high_command_cost_factor = -0.25
@@ -946,7 +955,7 @@ leader_traits = {
 	red_army_organizer = { # Trotsky's trait if invited to join the Mexican government. Combines effects of Genius Army Organizer and Communist Revolutionary
 		sprite = 12
 		army_org_factor = 0.12
-		experience_gain_army = 0.12
+		experience_gain_army = @chief_experience_gain_high
 		communism_drift = 0.1
 
 		command_cap = @tier3
@@ -990,14 +999,14 @@ leader_traits = {
 		random = no
 		trade_laws_cost_factor = -0.33
 		economy_cost_factor = -0.33
-		consumer_goods_factor = -0.05
+		consumer_goods_factor = -0.15
 	}
 
 	strict_austerity_adherent = {
 		random = no
 		stability_factor = -0.15
 		economy_cost_factor = 0.5
-		consumer_goods_factor = -0.1
+		consumer_goods_factor = -0.30
 	}
 
 	defeatist = {
@@ -4747,6 +4756,7 @@ leader_traits = {
 			factor = 1
 		}
 	}
+############
 
 	inventive_genius = {
 		random = no
@@ -4772,6 +4782,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4784,6 +4798,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4796,6 +4814,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -4809,6 +4831,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4821,6 +4847,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4833,6 +4863,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -4842,7 +4876,11 @@ leader_traits = {
 		max_command_power = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0.5
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4855,6 +4893,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4867,6 +4909,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4879,6 +4925,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -4892,6 +4942,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4904,6 +4958,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4916,6 +4974,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -4929,6 +4991,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4941,6 +5007,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4953,6 +5023,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -4965,6 +5039,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -4977,6 +5055,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -4989,6 +5071,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5001,6 +5087,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5013,6 +5103,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5025,6 +5119,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5037,7 +5135,11 @@ leader_traits = {
 		command_cap = @tier1
 
 		ai_will_do = {
-			factor = 1
+			factor = 0.5
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5049,7 +5151,11 @@ leader_traits = {
 		command_cap = @tier2
 
 		ai_will_do = {
-			factor = 2
+			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5061,7 +5167,11 @@ leader_traits = {
 		command_cap = @tier3
 
 		ai_will_do = {
-			factor = 3
+			factor = 1.5
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5075,6 +5185,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5087,7 +5201,11 @@ leader_traits = {
 		command_cap = @tier2
 
 		ai_will_do = {
-			factor = 1
+			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5100,7 +5218,11 @@ leader_traits = {
 		command_cap = @tier3
 
 		ai_will_do = {
-			factor = 1
+			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5114,6 +5236,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5126,6 +5252,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5138,6 +5268,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5152,6 +5286,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5165,6 +5303,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5178,6 +5320,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5192,6 +5338,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5205,6 +5355,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5218,6 +5372,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5232,6 +5390,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5245,6 +5407,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5258,46 +5424,62 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
 	army_commando_1 = { # +4 paratrooper/marine/mountain efficiency
 		sprite = 5
-		special_forces_attack_factor = 0.1
-	    special_forces_defence_factor = 0.1
+		special_forces_attack_factor = 0.05
+		special_forces_cap_flat = 3
 		#experience_gain_army = @experience_gain_low
 
 		command_cap = @tier1
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
 	army_commando_2 = { # +8 paratrooper/marine/mountain efficiency
 		sprite = 5
-		special_forces_attack_factor = 0.15
-	    special_forces_defence_factor = 0.15
+		special_forces_attack_factor = 0.10
+		special_forces_cap_flat = 6
 		#experience_gain_army = @experience_gain_medium
 
 		command_cap = @tier2
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
 	army_commando_3 = { # +12 paratrooper/marine/mountain efficiency
 		sprite = 5
-		special_forces_attack_factor = 0.2
-	    special_forces_defence_factor = 0.2
+		special_forces_attack_factor = 0.15
+		special_forces_cap_flat = 10
 		#experience_gain_army = @experience_gain_high
 
 		command_cap = @tier3
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5312,6 +5494,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5325,6 +5511,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5338,6 +5528,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5353,6 +5547,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5368,6 +5566,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5383,6 +5585,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5396,6 +5602,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5408,6 +5618,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5420,6 +5634,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5433,6 +5651,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5445,6 +5667,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5457,6 +5683,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5470,6 +5700,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5482,6 +5716,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 4
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5494,6 +5732,97 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 6
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
+		}
+	}
+
+
+	army_radio_intelligence_1 = {
+		random = no
+		sprite = 15
+		civilian_intel_factor = 0.03
+		army_intel_factor = 0.03
+		navy_intel_factor = 0.03
+		airforce_intel_factor = 0.03		
+		initiative_factor = 0.02
+
+		#experience_gain_army = @experience_gain_low
+
+		command_cap = @tier1
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
+		}
+	}
+
+	army_radio_intelligence_2 = {
+		random = no
+		sprite = 15
+		civilian_intel_factor = 0.06
+		army_intel_factor = 0.06
+		navy_intel_factor = 0.06
+		airforce_intel_factor = 0.06		
+		initiative_factor = 0.04
+
+		#experience_gain_army = @experience_gain_medium
+
+		command_cap = @tier2
+
+		ai_will_do = {
+			factor = 4
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
+		}
+	}
+
+	army_radio_intelligence_3 = {
+		random = no
+		sprite = 15
+		civilian_intel_factor = 0.09
+		army_intel_factor = 0.09
+		navy_intel_factor = 0.09
+		airforce_intel_factor = 0.09		
+		initiative_factor = 0.06
+
+		#experience_gain_army = @experience_gain_high
+
+		command_cap = @tier3
+
+		ai_will_do = {
+			factor = 6
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
+		}
+	}
+
+	army_german_ground_commander = { #FIN-specific, considered Genius (tier 3)
+		sprite = 5
+		amphibious_invasion = 0.1
+		paradrop_organization_factor = 0.1
+		army_infantry_attack_factor = 0.05
+		max_command_power = 60
+
+		#experience_gain_army = @experience_gain_high
+
+		command_cap = @tier3
+
+		ai_will_do = {
+			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5507,6 +5836,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5519,6 +5852,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5531,6 +5868,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5544,6 +5885,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5556,6 +5901,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5568,6 +5917,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5577,7 +5930,11 @@ leader_traits = {
 		max_command_power = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0.25
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5590,6 +5947,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5602,6 +5963,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5614,6 +5979,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5627,6 +5996,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5639,6 +6012,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5651,6 +6028,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5665,6 +6046,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5677,6 +6062,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5689,6 +6078,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -5702,6 +6095,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -5714,6 +6111,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -5726,11 +6127,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
-	# Guesstimation of what % increased efficiency might look like
-	air_naval_strike_1 = { # Naval Strike mission efficiency increased by 4%
+	air_naval_strike_1 = {
 		sprite = 2
 		naval_strike_attack_factor = 0.02
 		naval_strike_targetting_factor = 0.02
@@ -5741,10 +6145,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_naval_strike_2 = { # Naval Strike mission efficiency increased by 8%
+	air_naval_strike_2 = {
 		sprite = 2
 		naval_strike_attack_factor = 0.03
 		naval_strike_targetting_factor = 0.03
@@ -5755,10 +6163,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_naval_strike_3 = { # Naval Strike mission efficiency increased by 12%
+	air_naval_strike_3 = {
 		sprite = 2
 		naval_strike_attack_factor = 0.05
 		naval_strike_targetting_factor = 0.05
@@ -5769,144 +6181,167 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
-	air_bomber_interception_1 = { # Bomber Interception mission efficiency increased by 4%
+	air_bomber_interception_1 = {
 		sprite = 1
-		air_interception_attack_factor = 0.02
-		air_interception_defence_factor = 0.02
-		air_interception_agility_factor = 0.02
+		air_intercept_efficiency = 0.05
 		#experience_gain_air = @experience_gain_low
 
 		command_cap = @tier1
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_bomber_interception_2 = { # Bomber Interception mission efficiency increased by 8%
+	air_bomber_interception_2 = {
 		sprite = 1
-		air_interception_attack_factor = 0.03
-		air_interception_defence_factor = 0.03
-		air_interception_agility_factor = 0.03
+		air_intercept_efficiency = 0.10
 		#experience_gain_air = @experience_gain_medium
 
 		command_cap = @tier2
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_bomber_interception_3 = { # Bomber Interception mission efficiency increased by 12%
+	air_bomber_interception_3 = {
 		sprite = 1
-		air_interception_attack_factor = 0.05
-		air_interception_defence_factor = 0.05
-		air_interception_agility_factor = 0.05
+		air_intercept_efficiency = 0.15
 		#experience_gain_air = @experience_gain_high
 
 		command_cap = @tier3
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
-	air_air_superiority_1 = { # Air Superiority mission efficiency increased by 4%
+	air_air_superiority_1 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.02
-		air_air_superiority_defence_factor = 0.02
-		air_air_superiority_agility_factor = 0.02
+		air_superiority_efficiency = 0.05
 		#experience_gain_air = @experience_gain_low
 
 		command_cap = @tier1
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_air_superiority_2 = { # Air Superiority mission efficiency increased by 8%
+	air_air_superiority_2 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.03
-		air_air_superiority_defence_factor = 0.03
-		air_air_superiority_agility_factor = 0.03
+		air_superiority_efficiency = 0.1
 		#experience_gain_air = @experience_gain_medium
 
 		command_cap = @tier2
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_air_superiority_3 = { # Air Superiority mission efficiency increased by 12%
+	air_air_superiority_3 = {
 		sprite = 1
-		air_air_superiority_attack_factor = 0.05
-		air_air_superiority_defence_factor = 0.05
-		air_air_superiority_agility_factor = 0.05
+		air_superiority_efficiency = 0.15
 		#experience_gain_air = @experience_gain_high
 
 		command_cap = @tier3
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
-	air_close_air_support_1 = { # Close Air Support mission efficiency increased by 4%
+	air_close_air_support_1 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.02
-		air_close_air_support_defence_factor = 0.02
-		air_close_air_support_agility_factor = 0.02
+		air_cas_efficiency = 0.05
+		ground_attack_factor = 0.03
 		#experience_gain_air = @experience_gain_low
 
 		command_cap = @tier1
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_close_air_support_2 = { # Close Air Support mission efficiency increased by 8%
+	air_close_air_support_2 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.03
-		air_close_air_support_defence_factor = 0.03
-		air_close_air_support_agility_factor = 0.03
+		air_cas_efficiency = 0.1
+		ground_attack_factor = 0.05
 		#experience_gain_air = @experience_gain_medium
 
 		command_cap = @tier2
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_close_air_support_3 = { # Close Air Support mission efficiency increased by 12%
+	air_close_air_support_3 = {
 		sprite = 1
-		air_close_air_support_attack_factor = 0.05
-		air_close_air_support_defence_factor = 0.05
-		air_close_air_support_agility_factor = 0.05
+		air_cas_efficiency = 0.15
+		ground_attack_factor = 0.08
 		#experience_gain_air = @experience_gain_high
 
 		command_cap = @tier3
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
-	air_strategic_bombing_1 = { # Strategic Bombing mission efficiency increased by 4%
+	air_strategic_bombing_1 = {
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.01
 		air_strategic_bomber_defence_factor = 0.01
-		air_strategic_bomber_agility_factor = 0.01
 		air_strategic_bomber_bombing_factor = 0.03
 		#experience_gain_air = @experience_gain_low
 
@@ -5914,14 +6349,16 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_strategic_bombing_2 = { # Strategic Bombing mission efficiency increased by 8%
+	air_strategic_bombing_2 = {
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.02
 		air_strategic_bomber_defence_factor = 0.02
-		air_strategic_bomber_agility_factor = 0.02
 		air_strategic_bomber_bombing_factor = 0.05
 		#experience_gain_air = @experience_gain_medium
 
@@ -5929,14 +6366,16 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_strategic_bombing_3 = { # Strategic Bombing mission efficiency increased by 12%
+	air_strategic_bombing_3 = {
 		sprite = 2
-		air_strategic_bomber_attack_factor = 0.03
 		air_strategic_bomber_defence_factor = 0.03
-		air_strategic_bomber_agility_factor = 0.03
 		air_strategic_bomber_bombing_factor = 0.09
 		#experience_gain_air = @experience_gain_high
 
@@ -5944,11 +6383,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
-	# Removed?
-	air_tactical_bombing_1 = { # Tactical Bombing mission efficiency increased
+	air_tactical_bombing_1 = {
 		sprite = 2
 		air_cas_present_factor = 0.1
 		#experience_gain_air = @experience_gain_low
@@ -5957,10 +6399,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_tactical_bombing_2 = { # Tactical Bombing mission efficiency increased
+	air_tactical_bombing_2 = {
 		sprite = 2
 		air_cas_present_factor = 0.15
 		#experience_gain_air = @experience_gain_medium
@@ -5969,10 +6415,14 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_tactical_bombing_3 = { # Tactical Bombing mission efficiency increased
+	air_tactical_bombing_3 = {
 		sprite = 2
 		air_cas_present_factor = 0.2
 		#experience_gain_air = @experience_gain_high
@@ -5981,49 +6431,62 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
 
-	air_airborne_1 = { # Paratrooper drop efficiency increased by 4%
+	air_airborne_1 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.01
-		air_paradrop_defence_factor = 0.03
-		air_paradrop_agility_factor = 0.03
+		paradrop_organization_factor = 1.2
+		paratrooper_aa_defense = 0.1
 		#experience_gain_air = @experience_gain_low
 
 		command_cap = @tier1
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
-	air_airborne_2 = { # Paratrooper drop efficiency increased by 8%
+	air_airborne_2 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.02
-		air_paradrop_defence_factor = 0.05
-		air_paradrop_agility_factor = 0.05
+		paradrop_organization_factor = 1.5
+		paratrooper_aa_defense = 0.15
 		#experience_gain_air = @experience_gain_medium
 
 		command_cap = @tier2
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
-	air_airborne_3 = { # Paratrooper drop efficiency increased by 12%
+	air_airborne_3 = {
 		sprite = 1
-		air_paradrop_attack_factor = 0.03
-		air_paradrop_defence_factor = 0.07
-		air_paradrop_agility_factor = 0.07
+		paradrop_organization_factor = 1.8
+		paratrooper_aa_defense = 0.25
 		#experience_gain_air = @experience_gain_high
 
 		command_cap = @tier3
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6036,6 +6499,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 	air_pilot_training_2 = {
@@ -6047,6 +6514,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 	air_pilot_training_3 = {
@@ -6058,6 +6529,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6073,6 +6548,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6087,6 +6566,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6101,6 +6584,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6117,6 +6604,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6132,6 +6623,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6147,6 +6642,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6160,6 +6659,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6172,6 +6675,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6184,6 +6691,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6194,7 +6705,11 @@ leader_traits = {
 		max_command_power = 10
 
 		ai_will_do = {
-			factor = 1
+			factor = 0.25
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6207,6 +6722,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6219,6 +6738,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6231,6 +6754,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6243,6 +6770,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6255,6 +6786,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6267,6 +6802,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6280,6 +6819,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6292,6 +6835,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6304,6 +6851,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6317,6 +6868,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6329,6 +6884,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6341,6 +6900,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6354,6 +6917,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6366,6 +6933,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6378,6 +6949,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6391,6 +6966,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6403,6 +6982,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6415,6 +6998,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6429,6 +7016,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6442,6 +7033,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6455,6 +7050,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6469,6 +7068,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6482,6 +7085,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6495,6 +7102,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6509,6 +7120,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6522,6 +7137,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6535,6 +7154,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 3
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
@@ -6547,6 +7170,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 1
+			modifier = {
+				factor = 0
+				command_power < @tier1
+			}
 		}
 	}
 
@@ -6559,6 +7186,10 @@ leader_traits = {
 
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
 		}
 	}
 
@@ -6566,17 +7197,103 @@ leader_traits = {
 		sprite = 3
 		sortie_efficiency = 0.2
 		#experience_gain_navy = @experience_gain_high
-		
+
 		command_cap = @tier3
-		
+
 		ai_will_do = {
 			factor = 3
 			modifier = {
 				factor = 0
 				has_navy_size = { unit = carrier size < 1 }
 			}
+			modifier = {
+				factor = 0
+				command_power < @tier3
+			}
 		}
 	}
 
+	evans_deakin_trait = { #at end for save compat
+		random = no
+		equipment_bonus = {
+			carrier = {
+				naval_range = 0.25
+			}
+			capital_ship = {
+				naval_range = 0.25
+			}
+			screen_ship = {
+				naval_range = 0.25
+			}
+			submarine = {
+				naval_range = 0.25
+				build_cost_ic = -0.1
+			}
+			convoy = {
+				build_cost_ic = -0.1
+			}
+		}
 
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cockatoo_trait = { #at end for save compat
+		random = no
+		equipment_bonus = {
+			ship_hull_cruiser = { #CLs & CAs
+				naval_range = 0.3 
+				sub_detection = 0.1 
+				naval_speed = 0.1
+			}
+			ship_hull_light = { #DDs
+				naval_range = 0.3 
+				sub_detection = 0.1 
+				naval_speed = 0.1
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cautious_arbiter = {
+		random = no
+		political_power_factor = 0.10
+		war_support_factor = -0.05
+		communism_acceptance = 30
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	viceroy_emeritus = {
+		random = no
+		generate_wargoal_tension = 0.1
+		
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	surveyor = { 
+		sprite = 5
+		army_speed_factor = 0.1
+		initiative_factor = 0.08
+		land_reinforce_rate = 0.02
+		#experience_gain_army = @experience_gain_medium
+
+		command_cap = @tier2
+
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				command_power < @tier2
+			}
+		}
+	}
 }

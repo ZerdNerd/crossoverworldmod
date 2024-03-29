@@ -46,7 +46,13 @@ scripted_gui = {
         
     visible = {
       tag = MAI
-      has_country_flag = parliament_reformed
+      OR = {
+        has_country_flag = parliament_reformed
+        has_cosmetic_tag = CLD
+      }
+      NOT = {
+        has_country_flag = chp_work_suspended
+      }
       has_variable = MAI_chp_is_visible
     }
 
@@ -98,6 +104,8 @@ scripted_gui = {
         has_variable = MAI_chp_is_visible
         NOT = {
           has_country_flag = parliament_reformed
+          has_country_flag = chp_work_suspended
+          has_cosmetic_tag = CLD
         }
       }
     }
@@ -122,6 +130,24 @@ scripted_gui = {
             has_country_flag = children_coalition_for_the_renewal_of_the_kingdom_wins
             has_country_flag = we_have_a_tie
           }
+        }
+      }
+    }
+  }
+
+  mai_chp_suspended = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_noreform_suspended_container"
+    parent_window_token = central_kingdom_chp_window_container
+        
+    visible = {
+      AND = {
+        tag = MAI
+        has_variable = MAI_chp_is_visible
+        has_country_flag = chp_work_suspended
+        NOT = {
+          has_country_flag = parliament_reformed
         }
       }
     }
@@ -163,12 +189,38 @@ scripted_gui = {
         has_variable = MAI_chp_is_visible
         NOT = {
           has_country_flag = parliament_reformed
+          has_country_flag = chp_work_suspended
+          has_cosmetic_tag = CLD
         }
       }
     }
 
     properties = {
       mai_chp_united_parliament_leader = {
+				frame = current_children_parliament_leader_icon_frame
+      }
+		}
+  }
+
+  mai_chp_childrenrepublic_mode = {
+    context_type = player_context
+     	
+    window_name = "central_kingdom_chp_childrenrepublic_container"
+    parent_window_token = central_kingdom_chp_window_container
+        
+    visible = {
+      AND = {
+        tag = MAI
+        has_variable = MAI_chp_is_visible
+        has_cosmetic_tag = CLD
+        NOT = {
+          has_country_flag = chp_work_suspended
+        }
+      }
+    }
+
+    properties = {
+      mai_chp_childrenrepublic_parliament_leader = {
 				frame = current_children_parliament_leader_icon_frame
       }
 		}

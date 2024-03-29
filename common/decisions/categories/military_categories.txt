@@ -44,6 +44,10 @@ conflict_for_influence_dec_category = {
 
 	visible = {
 		has_global_flag = stephen_is_dead
+		has_country_leader = {
+			name = "Macius I"
+			ruling_only = yes
+		}
 		NOT = {
 			has_country_flag = general_moved_to_second_stage
 			has_country_flag = macius_reached_adulthood

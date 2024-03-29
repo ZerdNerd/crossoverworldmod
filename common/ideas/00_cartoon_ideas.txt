@@ -2950,8 +2950,8 @@ ideas = {
 		JOJ_practicing_jumps = {
 			allowed = { always = no }
 			modifier = {
-				air_paradrop_attack_factor = 0.05
-				air_paradrop_defence_factor = 0.05
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
 			}
 			picture = air_war_plans_division_focus
 		}
@@ -2959,8 +2959,8 @@ ideas = {
 		JOJ_coming_from_the_skies = {
 			allowed = { always = no }
 			modifier = {
-				air_paradrop_attack_factor = 0.05
-				air_paradrop_defence_factor = 0.05
+				special_forces_attack_factor = 0.05
+				special_forces_defence_factor = 0.05
 				out_of_supply_factor = -0.1
 			}
 			picture = generic_air_bonus
@@ -5566,6 +5566,119 @@ ideas = {
 			}
 			modifier = {
 				weekly_manpower = 43
+			}
+		}
+
+		CLD_public_works_idea = {
+			picture = ARG_public_works_investment
+			allowed = {
+				always = no
+			}
+			modifier = {
+				production_speed_industrial_complex_factor = 0.05
+				production_speed_infrastructure_factor = 0.05
+				production_speed_rail_way_factor = 0.05
+			}
+		}
+
+		CLD_farmers_subsidies = {
+			picture = generic_agrarian_reform
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_buildings_factor = 0.15
+				political_power_gain = -0.05
+			}
+		}
+
+		CLD_pioneer_camps = {
+			
+			picture = SPR_torchbearers_of_tomorrow
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.1
+				political_power_factor = -0.1
+				production_factory_efficiency_gain_factor = 0.10
+			}
+		}
+
+		CLD_investments = {
+			
+			picture = generic_foreign_capital
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = 0.025
+				production_speed_buildings_factor = 0.05
+			}
+		}
+
+		CLD_benefits_needful = {
+			
+			picture = denbts
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = 0.05
+				stability_factor = 0.05
+			}
+		}
+
+		CLD_lower_level_of_taxation = {
+			
+			picture = MAI_landlocked
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+
+		CLD_a_healthy_democracy = {
+			
+			picture = generic_democratic_drift_bonus
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				consumer_goods_factor = -0.05
+				political_power_gain = -0.05
+			}
+		}
+
+		CLD_the_great_rebuilding_idea = {
+			
+			picture = man_five_year_plan_industry
+
+			allowed = {
+				always = no
+			}
+	
+			modifier = {
+				production_factory_efficiency_gain_factor = 0.025
+				production_factory_max_efficiency_factor = 0.025
+				production_speed_buildings_factor = 0.025
+				consumer_goods_factor = 0.05
 			}
 		}
 

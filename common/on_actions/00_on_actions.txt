@@ -3732,6 +3732,9 @@ on_actions = {
 						tag = MAI
 					}
 					NOT = {
+						has_war = yes
+					}
+					NOT = {
 						has_country_flag = general_moved_to_second_stage
 					}
 					OR = {
@@ -3751,6 +3754,9 @@ on_actions = {
 					limit = {
 						ROOT = {
 							tag = MAI
+						}
+						NOT = {
+							has_war = yes
 						}
 						NOT = {
 							has_country_flag = general_moved_to_second_stage

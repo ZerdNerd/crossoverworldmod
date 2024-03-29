@@ -108,7 +108,7 @@ guiTypes = {
 			name = "mai_chp_headline"
 			position = {x=45 y=15}
 			font = "hoi_36header"
-			text = "The Children Parliament of Central Kingdom"
+			text = "The Children Parliament of [MAI_CHP_COSMETIC]"
 			maxWidth = 500
 			maxHeight = 23
 			format = center
@@ -142,7 +142,7 @@ guiTypes = {
 			name = "mai_chp_headline"
 			position = {x=0 y=15}
 			font = "hoi_36header"
-			text = "The Children Parliament of Central Kingdom"
+			text = "The Children Parliament of [MAI_CHP_COSMETIC]"
 			maxWidth = 1165
 			maxHeight = 23
 			format = center
@@ -244,6 +244,263 @@ guiTypes = {
 			format = center
 			maxWidth = 1165
 			maxHeight = 24
+		}
+	}
+
+	#SUSPENDED
+
+	containerWindowType = {
+		name = "central_kingdom_chp_noreform_suspended_container"
+		position = { x = 539 y = 80 }
+		size = { width = 600 height = 600 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		instantTextBoxType = {
+			name ="MAI_children_parliament_suspended_info"
+			position = { x = 50 y = 276 }
+			font = "hoi_24header"
+			text = "MAI_children_parliament_suspended_info_text"
+			format = center
+			maxWidth = 500
+			maxHeight = 24
+		}
+	}
+
+	#CHILDREN REPUBLIC PARLIAMENT
+
+	containerWindowType = {
+		name = "central_kingdom_chp_childrenrepublic_container"
+		position = { x = 539 y = 80 }
+		size = { width = 600 height = 600 }
+		fade_time = 100
+		fade_type = linear
+		show_animation_type = decelerated
+		hide_animation_type = accelerated
+
+		containerWindowType = {
+			name = "mai_chp_childrenrepublic_leader_container"
+			position = { x = -150 y = -100 }
+			size = { width = 300	height = 300 }
+
+			instantTextBoxType = {
+				name ="MAI_children_parliament_childrenrepublic_current_leader_header"
+				position = { x = 0 y = 210 }
+				font = "hoi_24header"
+				text = "MAI_children_parliament_current_leader_header"
+				format = center
+				maxWidth = 600
+				maxHeight = 24
+			}
+
+			iconType = {
+				name = "mai_chp_childrenrepublic_parliament_leader"
+				position = { x = 230 y = 250 }	
+				spriteType ="GFX_decision_mai_ch_par_leaders"
+				scale = 0.9
+			}
+
+			iconType = {
+				name = "mai_chp_childrenrepublic_leader_frame2"
+				spriteType = "GFX_pol_leader_frame"
+				position = { x = 224 y = 244 }		
+				allwaystransparent = yes
+				scale = 0.9
+			}
+
+			instantTextboxType = {
+				name = "mai_chp_childrenrepublic_leader_name"
+				position = { x = 0 y = 445 }
+				font = "hoi_18mbs"
+				text = "MAI_children_parliament_current_leader_name"
+				maxWidth = 600
+				maxHeight = 20
+				format = center
+				vertical_alignment = center
+			}
+		}
+
+		containerWindowType = {
+			name = "mai_chp_childrenrepublic_factions_container"
+			position = { x = 280 y = 200 }
+			size = { width = 1280	height = 800 }
+
+			instantTextBoxType = {
+				name ="MAI_children_parliament_childrenrepublic_factions_header"
+				position = { x = -230 y = 230 }
+				font = "hoi_24header"
+				text = "Factions in the Parliament"
+				format = center
+				maxWidth = 600
+				maxHeight = 24
+			}
+
+			containerWindowType = {
+				name = "mai_chp_childrenrepublic_faction_odkrywca_container"
+				position = { x = -400 y = 75 }
+				size = { width = 300	height = 300 }
+				scale = 0.9
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_odkrywca_leader"
+					position = { x = 230 y = 250 }	
+					spriteType ="GFX_portrait_odkrywca"
+					scale = 0.9
+				}
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_odkrywca_leader_frame2"
+					spriteType = "GFX_pol_leader_frame"
+					position = { x = 224 y = 244 }		
+					allwaystransparent = yes
+					scale = 0.9
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_odkrywca_leader_name"
+					position = { x = 0 y = 445 }
+					font = "hoi_18mbs"
+					text = "Jan Odkrywca"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_odkrywca_deputies_supporting"
+					position = { x = 0 y = 490 }
+					font = "hoi_18mbs"
+					text = "Number of deputies:"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_odkrywca_deputies_supporting_amount"
+					position = { x = 0 y = 510 }
+					font = "hoi_18mbs"
+					text = "[?MAI_odkrywca_supporting_deputies]"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+			}
+
+			containerWindowType = {
+				name = "mai_chp_childrenrepublic_faction_felix_container"
+				position = { x = -200 y = 75 }
+				size = { width = 300	height = 300 }
+				scale = 0.9
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_felix_leader"
+					position = { x = 230 y = 250 }	
+					spriteType ="GFX_portrait_felix"
+					scale = 0.9
+				}
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_felix_leader_frame2"
+					spriteType = "GFX_pol_leader_frame"
+					position = { x = 224 y = 244 }		
+					allwaystransparent = yes
+					scale = 0.9
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_felix_leader_name"
+					position = { x = 0 y = 445 }
+					font = "hoi_18mbs"
+					text = "Felix"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_felix_deputies_supporting"
+					position = { x = 0 y = 490 }
+					font = "hoi_18mbs"
+					text = "Number of deputies:"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_felix_deputies_supporting_amount"
+					position = { x = 0 y = 510 }
+					font = "hoi_18mbs"
+					text = "[?MAI_felix_supporting_deputies]"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+			}
+
+			containerWindowType = {
+				name = "mai_chp_childrenrepublic_faction_gacek_container"
+				position = { x = 0 y = 75 }
+				size = { width = 300	height = 300 }
+				scale = 0.9
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_gacek_leader"
+					position = { x = 230 y = 250 }	
+					spriteType ="GFX_portrait_emi"
+					scale = 0.9
+				}
+
+				iconType = {
+					name = "mai_chp_childrenrepublic_faction_gacek_leader_frame2"
+					spriteType = "GFX_pol_leader_frame"
+					position = { x = 224 y = 244 }		
+					allwaystransparent = yes
+					scale = 0.9
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_gacek_leader_name"
+					position = { x = 0 y = 445 }
+					font = "hoi_18mbs"
+					text = "MAI_gacek_name_she_is_too_long_for_the_gui_to_fit_it_whole"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_gacek_deputies_supporting"
+					position = { x = 0 y = 490 }
+					font = "hoi_18mbs"
+					text = "Number of deputies:"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+
+				instantTextboxType = {
+					name = "mai_chp_childrenrepublic_faction_gacek_deputies_supporting_amount"
+					position = { x = 0 y = 510 }
+					font = "hoi_18mbs"
+					text = "[?MAI_gacek_supporting_deputies]"
+					maxWidth = 600
+					maxHeight = 20
+					format = center
+					vertical_alignment = center
+				}
+			}
 		}
 	}
 

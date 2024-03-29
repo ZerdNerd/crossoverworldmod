@@ -39,6 +39,26 @@ defined_text = {
 	}
 }
 
+defined_text = {
+	name = MAI_CHP_COSMETIC
+	text = {
+		trigger = {
+			tag = MAI
+            has_cosmetic_tag = CLD
+		}
+		localization_key = "Children Republic"
+	}
+	text = {
+		trigger = {
+			tag = MAI
+            NOT = {
+                has_cosmetic_tag = CLD
+            }
+		}
+		localization_key = "Central Kingdom"
+	}
+}
+
 defined_text = { 
 	name = REQ4_STATUS
 	text = {
@@ -4574,6 +4594,36 @@ defined_text = { #MAI Children Parliament Leaders
             check_variable = { current_children_parliament_leader_icon_frame = 5 }
         }
         localization_key = "MAI_children_parliament_current_leader_name_script.5"
+    }
+    text = {
+        trigger = {
+            check_variable = { current_children_parliament_leader_icon_frame = 6 }
+        }
+        localization_key = "MAI_children_parliament_current_leader_name_script.6"
+    }
+    text = {
+        trigger = {
+            check_variable = { current_children_parliament_leader_icon_frame = 7 }
+        }
+        localization_key = "MAI_children_parliament_current_leader_name_script.7"
+    }
+    text = {
+        trigger = {
+            check_variable = { current_children_parliament_leader_icon_frame = 8 }
+        }
+        localization_key = "MAI_children_parliament_current_leader_name_script.8"
+    }
+    text = {
+        trigger = {
+            check_variable = { current_children_parliament_leader_icon_frame = 9 }
+        }
+        localization_key = "MAI_children_parliament_current_leader_name_script.9"
+    }
+    text = {
+        trigger = {
+            check_variable = { current_children_parliament_leader_icon_frame = 10 }
+        }
+        localization_key = "MAI_children_parliament_current_leader_name_script.10"
     }
 }
 

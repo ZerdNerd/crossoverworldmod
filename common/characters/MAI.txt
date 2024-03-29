@@ -23,7 +23,9 @@ characters={
 					AND = {
 						tag = MAI
 						NOT = {
-							has_country_flag = children_revolution_underway
+							CLD = {
+								exists = yes
+							}
 						}
 					}
 					tag = CLD
@@ -35,7 +37,22 @@ characters={
 						tooltip = MAI_macius_is_king
 						AND = {
 							tag = MAI
-							has_global_flag = stephen_is_dead
+							has_country_leader = {
+								name = "Macius I"
+								ruling_only = yes
+							}
+						}
+					}
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
 						}
 					}
 					custom_trigger_tooltip = {
@@ -47,7 +64,7 @@ characters={
 							}
 						}
 					}
-				} 
+				}
 			}
 			traits = {
 				friend_of_the_king 
@@ -57,7 +74,7 @@ characters={
 			}
 		}
 		country_leader={
-			desc="POLITICS_TBD_DESC"
+			desc="POLITICS_FELIX_DESC"
 			ideology=paidocracy_sub
 			expire="1965.1.1.1"
 			id=-1
@@ -78,9 +95,29 @@ characters={
 				original_tag = MAI
 			}
 			available = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_macius_is_king
-					has_global_flag = stephen_is_dead
+				OR = {
+					custom_trigger_tooltip = {
+						tooltip = MAI_macius_is_king
+						AND = {
+							tag = MAI
+							has_country_leader = {
+								name = "Macius I"
+								ruling_only = yes
+							}
+						}
+					}
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
+						}
+					}
 				}
 			}
 			traits = {
@@ -112,7 +149,9 @@ characters={
 					AND = {
 						tag = MAI
 						NOT = {
-							has_country_flag = children_revolution_underway
+							CLD = {
+								exists = yes
+							}
 						}
 					}
 					tag = CLD
@@ -124,7 +163,22 @@ characters={
 						tooltip = MAI_macius_is_king
 						AND = {
 							tag = MAI
-							has_global_flag = stephen_is_dead
+							has_country_leader = {
+								name = "Macius I"
+								ruling_only = yes
+							}
+						}
+					}
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
 						}
 					}
 					custom_trigger_tooltip = {
@@ -262,6 +316,276 @@ characters={
 			ideology=marxism
 			expire="1965.1.1.1"
 			id=-1
+		}
+	}
+	MAI_emi={
+		name="Stanisława Emilia Gacek"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/stanislawaemiliagacek.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_EMI_DESC"
+			ideology=paidocracy_sub
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_odkrywca={
+		name="Jan Odkrywca"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/odkrywca.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_ODKRYWCA_DESC"
+			ideology=paidocracy_sub
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_odkrywca_king={
+		name="Jan I"
+		portraits={
+			civilian={
+				large="gfx/leaders/MAI/odkrywca.dds"
+			}
+		}
+		country_leader={
+			desc="POLITICS_ODKRYWCA_KING_DESC"
+			ideology=administrative_monarchy
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	MAI_flora_zwiedly={
+		name="Flora Zwiędły"
+		portraits={
+			civilian={
+				small="GFX_idea_MAI_flora"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_flora_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						has_cosmetic_tag = CLD
+						has_country_flag = ssgc_active
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				}
+			}
+			traits = { MAI_minister_of_finance }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MAI_faustyna={
+		name="Faustyna"
+		portraits={
+			civilian={
+				small="GFX_idea_MAI_faustyna"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_faustyna_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						has_cosmetic_tag = CLD
+						has_country_flag = ssgc_active
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				}
+			}
+			traits = { MAI_foreign_minister }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MAI_franek_kaganek={
+		name="Franciszek Kaganek"
+		portraits={
+			civilian={
+				small="GFX_idea_MAI_franek"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_franek_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						has_cosmetic_tag = CLD
+						has_country_flag = ssgc_active
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				}
+			}
+			traits = { MAI_minister_of_education_and_technology }
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	MAI_aniela={
+		name="Aniela"
+		portraits={
+			civilian={
+				small="GFX_idea_MAI_aniela"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = MAI_aniela_i
+			allowed = {
+				OR = {
+					tag = MAI
+					tag = CLD
+				}
+			}
+			visible = {
+				OR = {
+					AND = {
+						tag = MAI
+						has_cosmetic_tag = CLD
+						has_country_flag = ssgc_active
+					}
+					tag = CLD
+				}
+			}
+			available = {
+				OR = {
+					AND = {
+						custom_trigger_tooltip = {
+							tooltip = children_revolution_underway_peacfeul
+							MAI = {
+								has_government = paidocracy
+							}
+						}
+						custom_trigger_tooltip = {
+							tooltip = if_revolution_successful_only_automatically
+							always = no
+						}
+					}
+					custom_trigger_tooltip = {
+						tooltip = children_revolution_underway
+						AND = {
+							tag = CLD
+							MAI = {
+								has_country_flag = children_revolution_underway
+							}
+						}
+					}
+				}
+			}
+			traits = { compassionate_commoner silent_mule }
+			ai_will_do = {
+				factor = 1
+			}
 		}
 	}
 	MAI_dormesko={

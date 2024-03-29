@@ -4,7 +4,7 @@ NGame = {
 	START_DATE = "1936.1.1.12",
 	END_DATE = "1959.1.1.1",
 	MAP_SCALE_PIXEL_TO_KM = 7.114,					-- Yes, we did the math
-	SAVE_VERSION = 20,								-- 1.13.0 (TAAT)
+	SAVE_VERSION = 22,								-- 1.14.0 (ToA)
 	CHECKSUM_SALT = "zwOdv5d9wm9uDSOT",				-- Data to modify generated checksum when game binaries have changed but not any content files.
 	LAG_DAYS_FOR_LOWER_SPEED = 10,					-- Days of client lag for decrease of gamespeed
 	LAG_DAYS_FOR_PAUSE = 25,						-- Days of client lag for pause of gamespeed.
@@ -93,7 +93,7 @@ NDiplomacy = {
 	INFLUENCE_PER_ADJACENCY = 0.05,					-- How much influence to add per uncontested adjacent state in the PC (blob, don't snake)
 	
 	INFLUENCE_MAJOR_FACTOR = 1.0,					--How much influence discount a major will get
-	INFLUENCE_MINOR_FACTOR = 0.65,					--How much influence discount a minor will get
+	INFLUENCE_MINOR_FACTOR = 1.0,					--How much influence discount a minor will get
 	
 	PEACE_TRIGGER_AI_MAX_INFLUENCE_VALUE = 0.99,	-- Max influence value for pc_is_state_outside_influence_for trigger
 
@@ -219,10 +219,10 @@ NDiplomacy = {
 	CAPITAL_CAPITULATE_BONUS_SCORE_MUL = 1.5,		-- extra bonus multiplier when deciding who to capitulate to (applied to capital holder)
 	IDEOLOGY_JOIN_FACTION_MIN_LEVEL = 0.3,			-- ideology limit required to join faction
 	JOIN_FACTION_LIMIT_CHANGE_AT_WAR = 0.5,			-- if in defensive war this or your modifier is counted as limit to join factions (so if you have 80% join limit this now means you can join at 50%)
-	LICENSE_ACCEPTANCE_OPINION_FACTOR = 0.2,		-- Opinion modifier for acceptance of license production requests.
-	LICENSE_ACCEPTANCE_PUPPET_BASE = 20,			-- Acceptance modifier for puppets requesting production licenses.
-	LICENSE_ACCEPTANCE_TECH_DIFFERENCE = 5, 		-- Acceptance modifier for each year of technology difference.
-	LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 20,    -- Acceptance base for tech difference
+	LICENSE_ACCEPTANCE_OPINION_FACTOR = 0.4,		-- Opinion modifier for acceptance of license production requests.
+	LICENSE_ACCEPTANCE_PUPPET_BASE = 15,			-- Acceptance modifier for puppets requesting production licenses.
+	LICENSE_ACCEPTANCE_TECH_DIFFERENCE = 2, 		-- Acceptance modifier for each year of technology difference.
+	LICENSE_ACCEPTANCE_TECH_DIFFERENCE_BASE = 10,    -- Acceptance base for tech difference
 	LICENSE_ACCEPTANCE_SAME_FACTION = 20,			-- Acceptance modifier for being in the same faction
 
 	WARGOAL_COST_LEND_LEASE = -0.25,                -- cost modifier to wargoaljustification for LL
@@ -309,13 +309,13 @@ NCountry = {
 	DEFAULT_STABILITY = 0.5,						-- Default stability if not scripted otherwise.
 	DEFAULT_WAR_SUPPORT = 0.5,						-- Default war support if not scripted otherwise.
 	BASE_STABILITY_WAR_FACTOR = -0.2,				-- Default stability war factor
-	BASE_STABILITY_PARTY_POPULARITY_FACTOR = 0.10,	-- Default stability rulling party popularity factor
+	BASE_STABILITY_PARTY_POPULARITY_FACTOR = 0.15,	-- Default stability rulling party popularity factor
 	MIN_COUP_STABILITY_FACTOR = 0.0,				-- Min value of coup factor in stability
 	MAX_COUP_STABILITY_FACTOR = 2.0,				-- Max value of coup factor in stability
 	MIN_COUP_SUCCESS_STABILITY = 0.8,				-- Max stability when coup will happen
 	WAR_SUPPORT_OFFNSIVE_WAR = -0.2,				-- Impact of being in offensive war
-	WAR_SUPPORT_DEFENSIVE_WAR = 0.3,				-- Impact of being in defensive war
-	WAR_SUPPORT_TENSION_IMPACT = 0.3,				-- Total impact of world tension
+	WAR_SUPPORT_DEFENSIVE_WAR = 0.2,				-- Impact of being in defensive war
+	WAR_SUPPORT_TENSION_IMPACT = 0.4,				-- Total impact of world tension
 	MIN_STABILITY = -1.0,
 	MAX_STABILITY = 1.0,
 	MIN_WAR_SUPPORT = 0.0,
@@ -558,7 +558,7 @@ NResistance = {
 	SUPPRESSION_NEEDED_LOWER_CAP = 10.0,	-- if resistance is lower than this value then we always act as though it is at the define for the purpose of suppresion requirements
 	SUPPRESSION_NEEDED_UPPER_CAP = 50.0, -- if resistance is greater than this value then we always act as though it is at the define for the purpose of suppresion requirements
 	
-	GARRISON_MANPOWER_LOST_BY_ATTACK = 0.018, 	-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
+	GARRISON_MANPOWER_LOST_BY_ATTACK = 0.016, 	-- Ratio of manpower lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
 	GARRISON_EQUIPMENT_LOST_BY_ATTACK = 0.02, 	-- Ratio of equipment lost by garrison at each attack on garrison (this number will be reduced by the hardness of garrison template)
 	MAXIMUM_GARRISON_HARDNESS_WHEN_ATTACKED = 0.90,   -- Cap to be sure that garrison will suffer lost in attack, even with a almost 100% hardness
 	
@@ -1273,7 +1273,7 @@ NAir = {
 	ANTI_AIR_PLANE_DAMAGE_CHANCE = 0.1,					-- Anti Air Gun hit chance
 	ANTI_AIR_ATTACK_TO_DAMAGE_REDUCTION_FACTOR = 1.0,	-- Balancing value to convert equipment stat anti_air_attack to the damage reduction modifier apply to incoming air attacks against units with AA.
 	ANTI_AIR_MAXIMUM_DAMAGE_REDUCTION_FACTOR = 0.75,	-- Maximum damage reduction factor applied to incoming air attacks against units with AA.
-	AIR_DEPLOYMENT_DAYS = 30,							-- Days to deploy one air wing
+	AIR_DEPLOYMENT_DAYS = 2,							-- Days to deploy one air wing
 	NAVAL_STRIKE_BASE_STR_TO_PLANES_RATIO = 0.03,		-- Max airbombers to do port strike comparing to strength
 	NAVAL_COMBAT_EXTERNAL_PLANES_JOIN_RATIO = 0.05,		-- Max planes that can join a combat comparing to the total strength of the ships
 	NAVAL_COMBAT_EXTERNAL_PLANES_JOIN_RATIO_PER_DAY = 0.2, -- max extra plane % that can join every day
@@ -1467,7 +1467,7 @@ NNavy = {
 	COMBAT_BASE_CRITICAL_CHANCE = 0.05,								-- Base chance for receiving a critical chance. It get's scaled down with ship reliability.
 	COMBAT_CRITICAL_DAMAGE_MULT = 5.0,								-- Multiplier for the critical damage. Scaled down with the ship reliability.
 	COMBAT_ARMOR_PIERCING_CRITICAL_BONUS = 1.0,						-- Bonus to critical chance when shooter armor piercing is higher then target armor.
-	COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = 0,					-- All damage reduction % when target armor is >= then shooter armor piercing.
+	COMBAT_ARMOR_PIERCING_DAMAGE_REDUCTION = 0,					-- All damage reduction % when target armor is >= then shooter armor piercing. (depricated)
 	REPAIR_AND_RETURN_PRIO_LOW = 0.2,								-- % of total Strength. When below, navy will go to home base to repair.
 	REPAIR_AND_RETURN_PRIO_MEDIUM = 0.5,							-- % of total Strength. When below, navy will go to home base to repair.
 	REPAIR_AND_RETURN_PRIO_HIGH = 0.9,								-- % of total Strength. When below, navy will go to home base to repair.
@@ -1808,7 +1808,7 @@ NNavy = {
 		1.0,	-- small guns
 	},
 	
-	BASE_JOIN_COMBAT_HOURS						= 8,				-- the taskforces that wants to join existing combats will wait for at least this amount
+	BASE_JOIN_COMBAT_HOURS						= 2,				-- the taskforces that wants to join existing combats will wait for at least this amount
 	LOW_ORG_FACTOR_ON_JOIN_COMBAT_DURATION		= 4.0,				-- low org of the ships will be factored in when a taskforce wants to join combat
 		
 	BASE_POSITIONING												= 1.0,	-- base value for positioning
@@ -2089,14 +2089,17 @@ NAI = {
 	DIPLO_MAX_CONTAINMENT_ACCEPTANCE = 100,		-- Max value for 'wants to contain' diplo acceptance
 
 	RESEARCH_DAYS_BETWEEN_WEIGHT_UPDATE = 7, 	-- Refreshes need scores based on country situation.
+	RESEARCH_WEIGHT_TRUNCATION_THRESHOLD = 0.75,    -- When choosing a tech to research, use this truncation selection threshold. (for example, if the top score is 10, a threshold of 0.75 will pick randomly from anything above 7.5 score)
 	RESEARCH_LAND_DOCTRINE_NEED_GAIN_FACTOR = 0.15, -- Multiplies value based on relative military industry size / country size.
 	RESEARCH_NAVAL_DOCTRINE_NEED_GAIN_FACTOR = 0.05, -- Multiplies value based on relative naval industry size / country size.
 	RESEARCH_AIR_DOCTRINE_NEED_GAIN_FACTOR = 0.07, -- Multiplies value based on relative number of air base / country size.
-	RESEARCH_NEW_WEIGHT_FACTOR = 0.3, 			-- Impact of previously unexplored tech weights. Higher means more random exploration.
 	RESEARCH_NEW_DOCTRINE_RANDOM_FACTOR = 0.05,	-- How much randomness is allowed to contribute to do new research expressed as a factor of total tech weights. Higher means more random exploration.
-	RESEARCH_AHEAD_BONUS_FACTOR = 2.0,          -- To which extent AI should care about ahead of time bonuses to research
-	RESEARCH_BONUS_FACTOR = 0.9, 				-- To which extent AI should care about bonuses to research
-	MAX_AHEAD_RESEARCH_PENALTY = 2,             -- max ahead of tiem penalty ai will pick ever
+	RESEARCH_AHEAD_BONUS_FACTOR = 4.0,          -- To which extent AI should care about ahead of time bonuses to research
+	RESEARCH_BONUS_FACTOR = 5.0,                -- To which extent AI should care about research speed bonuses
+	RESEARCH_YEARS_BEHIND_FACTOR = 0.2,         -- To which extent AI should care about not falling behind (i.e. increase weight for old tech)
+	RESEARCH_NEEDS_FACTOR = 0.01,               -- To which extent AI should care about its research needs (research needs are matched against the tech category)
+	RESEARCH_LENGTH_FACTOR = 3,                 -- To which extent AI should care about how long it takes to research something (it prefers short research times)
+	MAX_AHEAD_RESEARCH_PENALTY = 3,             -- Max ahead of time penalty AI will ever consider (this also includes BASE_YEAR_AHEAD_PENALTY_FACTOR, so not the raw time)
 	RESEARCH_AHEAD_OF_TIME_FACTOR = 4.0, 		-- To which extent AI should care about ahead of time penalties to research
 	RESEARCH_BASE_DAYS = 60,					-- AI adds a base number of days when weighting completion time for techs to ensure it doesn't only research quick techs
 	DECLARE_WAR_RELATIVE_FORCE_FACTOR = 0.5,	-- Weight of relative force between nations that consider going to war
@@ -2156,10 +2159,10 @@ NAI = {
 
 	OPINION_CUTOFF_FOR_IMPROVE_RELATIONS = 80,	-- AI will never consider improving relations if above this opinion with target.
 
-	DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_LAND = 50,	-- Army XP needed before attempting to create a variant of a type that uses the tank designer (the tank designer DLC feature must be active).
+	DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_LAND = 35,	-- Army XP needed before attempting to create a variant of a type that uses the tank designer (the tank designer DLC feature must be active).
 	DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_NAVY = 50,	-- Same as above but for the ship designer.
 	DEFAULT_MODULE_VARIANT_CREATION_XP_CUTOFF_AIR = 25,		-- Same as above but for the plane designer.
-	DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_LAND = 50,	-- Army XP needed before attempting to create a variant of a type that uses the legacy upgrades system. ai_strategy supports land_xp_spend_priority upgrade_xp_cutoff. If none is set, this define is used instead.
+	DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_LAND = 35,	-- Army XP needed before attempting to create a variant of a type that uses the legacy upgrades system. ai_strategy supports land_xp_spend_priority upgrade_xp_cutoff. If none is set, this define is used instead.
 	DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_NAVY = 25,	-- Same as above but for navy XP and navy_xp_spend_priority.
 	DEFAULT_LEGACY_VARIANT_CREATION_XP_CUTOFF_AIR  = 25,	-- Same as above but for air XP and air_xp_spend_priority.
 	VARIANT_CREATION_XP_RESERVE_LAND = 50,					-- If the AI lacks army XP to create a variant it will reserve this much XP for variant creation so that it will eventually be able to create a variant.
@@ -2209,9 +2212,9 @@ NAI = {
 	DESIRE_USE_XP_TO_UPGRADE_LAND_EQUIPMENT = 1.0,  -- How quickly is desire to update/create land equipment variants accumulated?
 	DESIRE_USE_XP_TO_UPGRADE_NAVAL_EQUIPMENT = 1.0, -- How quickly is desire to update/create naval equipment variants accumulated?
 	DESIRE_USE_XP_TO_UPGRADE_AIR_EQUIPMENT = 1.0,   -- How quickly is desire to update/create air equipment variants accumulated?
-	DESIRE_USE_XP_TO_UNLOCK_ARMY_SPIRIT = 0.3,      -- How quickly is desire to unlock army spirits accumulated?
-	DESIRE_USE_XP_TO_UNLOCK_NAVY_SPIRIT = 0.3,      -- How quickly is desire to unlock naval spirits accumulated?
-	DESIRE_USE_XP_TO_UNLOCK_AIR_SPIRIT = 0.3,       -- How quickly is desire to unlock air spirits accumulated?
+	DESIRE_USE_XP_TO_UNLOCK_ARMY_SPIRIT = 0.20,     -- How quickly is desire to unlock army spirits accumulated?
+	DESIRE_USE_XP_TO_UNLOCK_NAVY_SPIRIT = 0.20,      -- How quickly is desire to unlock naval spirits accumulated?
+	DESIRE_USE_XP_TO_UNLOCK_AIR_SPIRIT = 0.25,      -- How quickly is desire to unlock air spirits accumulated?
 
 	DAYS_BETWEEN_CHECK_BEST_DOCTRINE = 7;       -- Recalculate desired best doctrine to unlock with this many days inbetween.
 	DAYS_BETWEEN_CHECK_BEST_TEMPLATE = 7;       -- Recalculate desired best template to upgrade with this many days inbetween.
@@ -2853,7 +2856,7 @@ NAI = {
 	LOW_PRIO_TEMPLATE_PENALTY_FOR_FRONTS = 500,		-- penalty to make ai less likely to assign low prio units to fronts
 
 	
-	DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_WARTIME = 0.3, 				-- deployment will try to buffer a ratio of deployed manpower (for reinforcements) during war time
+	DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_WARTIME = 0.2, 				-- deployment will try to buffer a ratio of deployed manpower (for reinforcements) during war time
 	DEPLOYED_UNIT_MANPOWER_RATIO_TO_BUFFER_PEACETIME = 0.1,     		-- deployment will try to buffer a ratio of deployed manpower (for reinforcements) during peace time
 	
 	MAX_AVAILABLE_MANPOWER_RATIO_TO_BUFFER_WARTIME = 0.4,			-- deployment will try to buffer a ratio of manpower (for reinforcements) during war time
@@ -2925,7 +2928,7 @@ NAI = {
 	MAX_MISSION_PER_TASKFORCE = {  -- max mission region/taskforce ratio
 		0, -- HOLD (consumes fuel HOLD_MISSION_MOVEMENT_COST fuel while moving)
 		1.5, -- PATROL		
-		4, -- STRIKE FORCE 
+		6, -- STRIKE FORCE 
 		1.5, -- CONVOY RAIDING
 		4, -- CONVOY ESCORT
 		2, -- MINES PLANTING
@@ -3205,10 +3208,10 @@ NAI = {
 	PEACE_AI_GROUP_PEACE_ACTIONS = true,                        -- Whether AI should group peace actions or greedily just select the most-desired peace actions
 	PEACE_AI_EVALUATE_FOR_SUBJECTS = true,                      -- Whether AI should include subjects when evaluating giving states to other winners (may affect performance on new conference turn)
 	PEACE_AI_EVALUATE_FOR_ALLIES = true,                        -- Whether AI should include allies when evaluating giving states to other winners (may affect performance on new conference turn)
-	PEACE_AI_EVALUATE_FOR_NON_ALLIES = true,                   -- Whether AI should include non-allies (not in same faction) when evaluating giving states to other winners (may affect performance on new conference turn)
+	PEACE_AI_EVALUATE_FOR_NON_ALLIES = false,                   -- Whether AI should include non-allies (not in same faction) when evaluating giving states to other winners (may affect performance on new conference turn)
 	PEACE_AI_EVALUATE_OTHER_IF_CORE = true,                     -- Whether AI should evaluate giving states to other winners if state is their core (may affect performance on new conference turn)
 	PEACE_AI_EVALUATE_OTHER_IF_CLAIM = true,                    -- Whether AI should evaluate giving states to other winners if they have a claim on the state (may affect performance on new conference turn)
-	PEACE_AI_EVALUATE_OTHER_ALWAYS = true,                     -- Whether AI should always evaluate giving states to other winners (!!! may heavily affect performance on new conference turn for large peace conferences !!!)
+	PEACE_AI_EVALUATE_OTHER_ALWAYS = false,                     -- Whether AI should always evaluate giving states to other winners (!!! may heavily affect performance on new conference turn for large peace conferences !!!)
 
 	DIVISION_SUPPLY_RATIO_TO_MOTORIZE = 0.80,						-- If supply ratio is less than this, consider motorizing any applicable nearby supply hub
 

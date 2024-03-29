@@ -1,3 +1,7 @@
+shared_focus = {
+	
+}
+
 focus_tree = {
 	id = childrenrepublic
 	
@@ -6,8 +10,766 @@ focus_tree = {
 		modifier = { 
 			add = 10 
 			tag = CLD
-		} 
+		}
 	} 
 	
 	default = no
+
+	focus = { 
+		id = CLD_the_first_free_elections
+		icon = GFX_focus_generic_elections
+		x = 10
+		y = 0
+		cost = 14.25
+		available_if_capitulated = yes 
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			country_event = {
+				id = childrenrepublic.4
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_create_the_new_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 0
+		y = 1
+		relative_position_id = CLD_the_first_free_elections
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_first_free_elections }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			country_event = {
+				id = childrenrepublic.5
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_choosing_new_government
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 0
+		y = 1
+		relative_position_id = CLD_create_the_new_constitution
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_create_the_new_constitution }
+		ai_will_do = { 
+			factor = 1
+		} 
+		completion_reward = {
+			country_event = {
+				id = childrenrepublic.12
+				days = 0
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_unlimited_power
+		icon = GFX_focus_felix_cld
+		x = -9
+		y = 1
+		relative_position_id = CLD_choosing_new_government
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_choosing_new_government }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = CLD_settling_up_with_traitors
+		icon = GFX_focus_generic_support_the_left_right
+		x = -2
+		y = 1
+		relative_position_id = CLD_unlimited_power
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_unlimited_power }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#country event - establishing separate courts for traitors
+		}
+	}
+
+	focus = { 
+		id = CLD_judgement_on_king_macius
+		icon = GFX_focus_rom_abdicate
+		x = -1
+		y = 1
+		relative_position_id = CLD_settling_up_with_traitors
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_settling_up_with_traitors }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#country event - court in session of King Macius
+			#if switched from Gacek tree - court in session of King Macius AND Secret Club
+			#SECOND EVENT AFTER SWTICH: civil war with democratic forces led by Secret Club' parents (if completed Install Own Judges, the forces will be stronger), start timer to save all defendants
+		}
+	}
+
+	focus = { 
+		id = CLD_positions_for_money
+		icon = GFX_focus_mex_privatisation
+		x = 0
+		y = 1
+		relative_position_id = CLD_unlimited_power
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_unlimited_power }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#country event - corruption during Felix reign + idea
+		}
+	}
+
+	focus = { 
+		id = CLD_install_own_judges
+		icon = GFX_goal_generic_dangerous_deal
+		x = -1
+		y = 1
+		relative_position_id = CLD_positions_for_money
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_settling_up_with_traitors }
+		prerequisite = { focus = CLD_positions_for_money }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#country event - Felix speech in Parliament regarding the judges' replacement
+		}
+	}
+
+	focus = { 
+		id = CLD_the_exemption_bill
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = -1
+		y = 1
+		relative_position_id = CLD_install_own_judges
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_judgement_on_king_macius }
+		prerequisite = { focus = CLD_install_own_judges }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event - Felix in Parliament about the bill
+		}
+	}
+
+	focus = { 
+		id = CLD_bring_down_the_prices
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 2
+		y = 1
+		relative_position_id = CLD_unlimited_power
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_unlimited_power }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#idea - lower pp, higher stab and war supp
+		}
+	}
+
+	focus = { 
+		id = CLD_take_control_over_the_media
+		icon = GFX_goal_generic_propaganda
+		x = -1
+		y = 1
+		relative_position_id = CLD_bring_down_the_prices
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_bring_down_the_prices }
+		prerequisite = { focus = CLD_positions_for_money }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#idea - media under Felix
+		}
+	}
+
+	focus = { 
+		id = CLD_adjust_the_taxes
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 1
+		y = 1
+		relative_position_id = CLD_bring_down_the_prices
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_bring_down_the_prices }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#idea - adjusted taxation
+		}
+	}
+
+	focus = { 
+		id = CLD_foreign_capital_bill
+		icon = GFX_goal_generic_forceful_treaty
+		x = -1
+		y = 1
+		relative_position_id = CLD_adjust_the_taxes
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_take_control_over_the_media }
+		prerequisite = { focus = CLD_adjust_the_taxes }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event - Felix in Parliament about the bill
+		}
+	}
+
+	focus = { 
+		id = CLD_for_safety_of_the_republic
+		icon = GFX_focus_generic_military_dictatorship
+		x = -2
+		y = 1
+		relative_position_id = CLD_foreign_capital_bill
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_exemption_bill }
+		prerequisite = { focus = CLD_foreign_capital_bill }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event - Felix in Parliament about the bill (+ removal of destruction after hartmut's invasion idea)
+		}
+	}
+
+	focus = { 
+		id = CLD_compromise_candidate
+		icon = GFX_focus_odkrywca
+		x = 0
+		y = 1
+		relative_position_id = CLD_choosing_new_government
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_choosing_new_government }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = CLD_the_great_rebuilding
+		icon = GFX_goal_generic_construction2
+		x = -2
+		y = 1
+		relative_position_id = CLD_compromise_candidate
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_compromise_candidate }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				CLD_the_great_rebuilding_idea
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_public_works
+		icon = GFX_goal_generic_construction
+		x = -1
+		y = 1
+		relative_position_id = CLD_the_great_rebuilding
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_great_rebuilding }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = CLD_public_works_idea
+				days = 250
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_encourage_investments
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 0
+		y = 1
+		relative_position_id = CLD_compromise_candidate
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_compromise_candidate }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				CLD_investments
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_benefits_for_the_needful
+		icon = GFX_goal_generic_national_unity
+		x = -1
+		y = 1
+		relative_position_id = CLD_encourage_investments
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_encourage_investments }
+		prerequisite = { focus = CLD_the_great_rebuilding }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				CLD_benefits_needful
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_lower_taxes
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 2
+		y = 1
+		relative_position_id = CLD_compromise_candidate
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_compromise_candidate }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = {
+				CLD_lower_level_of_taxation
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_help_the_farmers
+		icon = GFX_focus_generic_farmland
+		x = -1
+		y = 1
+		relative_position_id = CLD_lower_taxes
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_encourage_investments }
+		prerequisite = { focus = CLD_lower_taxes }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = CLD_farmers_subsidies
+				days = 200
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_abolish_chocolate_and_carousels
+		icon = GFX_goal_generic_dangerous_deal
+		x = 1
+		y = 1
+		relative_position_id = CLD_lower_taxes
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_lower_taxes }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = {
+				MAI_the_chocolate_and_carousels
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_expand_pioneer_camps
+		icon = GFX_focus_SWE_state_paid_vacation
+		x = -1
+		y = 1
+		relative_position_id = CLD_benefits_for_the_needful
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_benefits_for_the_needful }
+		prerequisite = { focus = CLD_public_works }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = MAI_pioneer_camps
+				add_idea = CLD_pioneer_camps
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_reestablish_city_rights
+		icon = GFX_focus_SWE_urbanization
+		x = -1
+		y = 1
+		relative_position_id = CLD_abolish_chocolate_and_carousels
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_help_the_farmers }
+		prerequisite = { focus = CLD_abolish_chocolate_and_carousels }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#several new vps across the nation, 10-15 pts, big pp detraction
+		}
+	}
+
+	focus = { 
+		id = CLD_healthier_democracy
+		icon = GFX_goal_support_democracy
+		x = 0
+		y = 1
+		relative_position_id = CLD_expand_pioneer_camps
+		mutually_exclusive = { focus = CLD_return_of_the_monarchy }
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_reestablish_city_rights }
+		prerequisite = { focus = CLD_expand_pioneer_camps }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = {
+				CLD_the_great_rebuilding_idea
+			}
+			add_ideas = {
+				CLD_a_healthy_democracy
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_return_of_the_monarchy
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 0
+		y = 1
+		relative_position_id = CLD_reestablish_city_rights
+		mutually_exclusive = { focus = CLD_healthier_democracy }
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_reestablish_city_rights }
+		prerequisite = { focus = CLD_expand_pioneer_camps }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = {
+				CLD_the_great_rebuilding_idea
+			}
+			drop_cosmetic_tag = CLD
+			set_politics = {
+				ruling_party = monarchism
+				election_frequency = 72
+				elections_allowed = no
+			}
+			set_popularities = {
+				democratic = 0
+				fascism = 0
+				communism = 0
+				paidocracy = 30
+				monarchism = 70
+			}
+			create_country_leader = {
+				name = "Jan I Odkrywca"
+				desc = "POLITICS_ODKRYWCA_KING_DESC"
+				picture = "odkrywca.dds"
+				expire = "1965.1.1"
+				ideology = administrative_monarchy
+				traits = {
+					underage_monarch
+				}
+			}
+		}
+	}
+
+	focus = { 
+		id = CLD_the_most_dangerous_secret_mission
+		icon = GFX_focus_emi_3
+		x = 8
+		y = 1
+		relative_position_id = CLD_choosing_new_government
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_choosing_new_government }
+		ai_will_do = { 
+			factor = 1
+		} 
+		available = {
+			always = no
+		}
+		completion_reward = {
+			custom_effect_tooltip = will_fire_automatically
+		}
+	}
+
+	focus = { 
+		id = CLD_reduce_spendings
+		icon = GFX_goal_generic_trade
+		x = -2
+		y = 1
+		relative_position_id = CLD_the_most_dangerous_secret_mission
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_most_dangerous_secret_mission }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#swap ideas - destruction after hartmut's invasion to rebuilding begins
+		}
+	}
+
+	focus = { 
+		id = CLD_bring_odkrywca_to_our_side
+		icon = GFX_goal_generic_improve_relations
+		x = 0
+		y = 1
+		relative_position_id = CLD_reduce_spendings
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_reduce_spendings }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event - negotiations between Gacek and Odkrywca (Gacek sometimes doesn't have enough support in Parliament and Odkrywca's faction is decisive in voting)
+		}
+	}
+
+	focus = { 
+		id = CLD_restoration_works
+		icon = GFX_focus_generic_modernize_industry
+		x = 0
+		y = 1
+		relative_position_id = CLD_bring_odkrywca_to_our_side
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_bring_odkrywca_to_our_side }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#swap ideas - rebuilding begins to nationwide restoration works
+		}
+	}
+
+	focus = { 
+		id = CLD_the_great_audit
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 1
+		relative_position_id = CLD_the_most_dangerous_secret_mission
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_most_dangerous_secret_mission }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the Secret Club starting audit on the Parliament's work
+		}
+	}
+
+	focus = { 
+		id = CLD_check_parliament_past
+		icon = GFX_focus_generic_university_2
+		x = -1
+		y = 1
+		relative_position_id = CLD_the_great_audit
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_great_audit }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the audit on the Parliament's past
+		}
+	}
+
+	focus = { 
+		id = CLD_invite_hartmut_to_talk
+		icon = GFX_focus_hartmut_talk #gfx with hartmut in black and white would be nice
+		x = 0
+		y = 1
+		relative_position_id = CLD_check_parliament_past
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_check_parliament_past }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the Club's secret meeting with Hartmut near the border
+			#approx 10 days later Aniela vanishes
+		}
+	}
+
+	focus = { 
+		id = CLD_meeting_with_general
+		icon = GFX_focus_general_talk #gfx with general would be nice
+		x = 1
+		y = 1
+		relative_position_id = CLD_the_great_audit
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_the_great_audit }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the Club's secret meeting with General; first lead on Felix
+			#approx 5 days later Faustyna vanishes
+		}
+	}
+
+	focus = { 
+		id = CLD_check_felix_background
+		icon = GFX_focus_analyze_felix
+		x = 0
+		y = 1
+		relative_position_id = CLD_meeting_with_general
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_meeting_with_general }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the Club focusing the work on Felix
+		}
+	}
+
+	focus = { 
+		id = CLD_validate_the_juidicary_system
+		icon = GFX_focus_generic_court
+		x = -1
+		y = 1
+		relative_position_id = CLD_invite_hartmut_to_talk
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_restoration_works }
+		prerequisite = { focus = CLD_invite_hartmut_to_talk }
+		prerequisite = { focus = CLD_check_felix_background }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the validation of juidicary system
+			#approx 10 days later Franek Kaganek vanishes
+		}
+	}
+
+	focus = { 
+		id = CLD_analyze_felix_during_the_kingdom
+		icon = GFX_focus_felix_boast
+		x = 0
+		y = 1
+		relative_position_id = CLD_check_felix_background
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_restoration_works }
+		prerequisite = { focus = CLD_invite_hartmut_to_talk }
+		prerequisite = { focus = CLD_check_felix_background }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event about the Club analyzing Felix work before the war with Hartmut
+			#approx 10 days later Flora vanishes
+		}
+	}
+
+	focus = { 
+		id = CLD_reveal_the_findings_in_parliament
+		icon = GFX_focus_emi_read
+		x = -2
+		y = 1
+		relative_position_id = CLD_analyze_felix_during_the_kingdom
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_analyze_felix_during_the_kingdom }
+		prerequisite = { focus = CLD_validate_the_juidicary_system }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#WHEN FOCUS PROGRESSES: Gacek receives several threats, first about Lucek Czapla, then about herself; the final ones have the option to fold
+			#FIRST EVENT IF MAINTAINED REVEAL: Gacek reveals the truth about Felix: corruption and stealing behind Macius' back and collaboration with the foreign spy
+			#SECOND EVENT IF MAINTAINED REVEAL: several hours later Felix confornts Gacek in her cabinet, and tries to kill her (event minigame with running)
+			#THIRD EVENT IF REVEALED AND RAN SUCCESSFULY: Felix is caught by the Parliament Guard; reveal that it's he who is behind Club's disappearance and threats
+			#FIRST EVENT IF FOLDED: Felix reveals that he got in contact with the kidnapper of the Club, offers Gacek to negotiate their release if she steps down (if steps down, switch to Felix tree)
+			#SECOND EVENT IF FOLDED: Gacek disappears, Felix takes over after a quick vote and swaps Czapla with Hanna as Parliament leader (switch to Felix tree)
+		}
+	}
+
+	focus = { 
+		id = CLD_we_need_to_talk_felix
+		icon = GFX_focus_macius_not_happy
+		x = 0
+		y = 1
+		relative_position_id = CLD_reveal_the_findings_in_parliament
+		cost = 7.25
+		available_if_capitulated = yes 
+		prerequisite = { focus = CLD_reveal_the_findings_in_parliament }
+		ai_will_do = { 
+			factor = 1
+		}
+		completion_reward = {
+			#event - Parliament, together with Macius, decides what to do with Felix
+			#second event - player is offered the choice to bring back Macius as the king with the parliament or without it, set up a mixed democracy with adults and children or maintain children republic
+		}
+	}
 }
