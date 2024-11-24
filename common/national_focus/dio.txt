@@ -155,11 +155,10 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 2
-				category = cat_mass_assault
+				category = land_doctrine
 			}
 		} 
 	}
@@ -276,12 +275,10 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 2
-				category = cat_superior_firepower
-				category = cat_mobile_warfare
+				category = land_doctrine
 			}
 		} 
 	}
@@ -301,12 +298,10 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
 				uses = 1
-				category = cat_superior_firepower
-				category = cat_mobile_warfare
+				category = land_doctrine
 			}
 			add_ideas = {
 				DIO_proper_handling
@@ -332,12 +327,10 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 1
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
 				uses = 1
-				category = motorized_equipment
-				category = cat_mechanized_equipment
+				category = land_doctrine
 			}
 		} 
 	}
@@ -1174,12 +1167,10 @@ focus_tree = {
 
 		completion_reward = {
 			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
 				uses = 2
-				category = cat_superior_firepower
-				category = cat_mobile_warfare
+				category = land_doctrine
 			}
 		} 
 	}
@@ -1199,12 +1190,10 @@ focus_tree = {
 		} 
 
 		completion_reward = {
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = cat_superior_firepower
-				category = cat_mobile_warfare
+			add_doctrine_cost_reduction = {
+				cost_reduction = 1
+				uses = 2
+				category = land_doctrine
 			}
 			add_ideas = {
 				DIO_improv_coordination
