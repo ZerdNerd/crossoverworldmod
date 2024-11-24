@@ -1140,6 +1140,9 @@ country_event = { #Macius receives ultimatum
 
 	option = {
 		name = centralkingdom.31.a
+		trigger = {
+			always = no #that branch is 0.4.0
+		}
 		ai_chance = {
 			base = 1
 			modifier = {

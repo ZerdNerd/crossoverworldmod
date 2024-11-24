@@ -380,6 +380,17 @@ country_event = { #Enchancian CW, support event triggered by focus trees
     				amount = 7500
     				
 				}
+				if = {
+					limit = {
+						ROOT = {
+							has_idea = modern_tech_idea
+						}
+					}
+					country_event = {
+						id = enchancia.85
+						days = 2
+					}
+				}
 			}
 			set_country_flag = ECW_support_dunwiddie
 		}
@@ -417,6 +428,17 @@ country_event = { #Enchancian CW, support event triggered by focus trees
     				type = infantry_equipment_0
     				amount = 7500
     				
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_idea = modern_tech_idea
+						}
+					}
+					country_event = {
+						id = enchancia.85
+						days = 2
+					}
 				}
 			}
 			set_country_flag = ECW_support_james
@@ -467,6 +489,17 @@ country_event = { #Enchancian CW, support event triggered by focus trees
     				type = infantry_equipment_0
     				amount = 7500
     				
+				}
+				if = {
+					limit = {
+						ROOT = {
+							has_idea = modern_tech_idea
+						}
+					}
+					country_event = {
+						id = enchancia.85
+						days = 2
+					}
 				}
 			}
 			set_country_flag = ECW_support_amber

@@ -4967,6 +4967,7 @@ focus_tree = {
 		}
 
 		allow_branch = {
+			always = no #0.4.0
 			NOT = {
 				has_war_with = FRI
 			}
@@ -6053,28 +6054,28 @@ focus_tree = {
 		}
 
 		available = {
-			OR = {
-				OR = {
-					has_completed_focus = MAI_we_still_have_work_to_do
-					has_completed_focus = MAI_return_to_sole_monarchy
-					has_completed_focus = MAI_partification_of_parliament
-					has_completed_focus = MAI_abdication
-				}
-				AND = {
-					has_completed_focus = MAI_reform_the_parliament
-					custom_trigger_tooltip = {
-						tooltip = coalition_or_majority
-						has_country_flag = government_has_majority_or_coalition
-					}
-					OR = {
-						has_completed_focus = MAI_amend_the_constitution
-						has_completed_focus = MAI_trade_restoration_bill
-						has_completed_focus = MAI_good_old_times_bill
-						has_completed_focus = MAI_easier_life_bill
-						has_completed_focus = MAI_a_change_in_direction
-					}
-				}
-			}
+		#	OR = {
+		#		OR = {
+		#			has_completed_focus = MAI_we_still_have_work_to_do
+		#			has_completed_focus = MAI_return_to_sole_monarchy
+		#			has_completed_focus = MAI_partification_of_parliament
+		#			has_completed_focus = MAI_abdication
+		#		}
+		#		AND = {
+		#			has_completed_focus = MAI_reform_the_parliament
+		#			custom_trigger_tooltip = {
+		#				tooltip = coalition_or_majority
+		#				has_country_flag = government_has_majority_or_coalition
+		#			}
+		#			OR = {
+		#				has_completed_focus = MAI_amend_the_constitution
+		#				has_completed_focus = MAI_trade_restoration_bill
+		#				has_completed_focus = MAI_good_old_times_bill
+		#				has_completed_focus = MAI_easier_life_bill
+		#				has_completed_focus = MAI_a_change_in_direction
+		#			}
+		#		}
+		#	}
 			has_war = no
 		}
 	
@@ -6093,12 +6094,13 @@ focus_tree = {
 		available_if_capitulated = yes 
 		prerequisite = { focus = MAI_a_new_foreign_policy }
 		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = children_parliament_does_not_exist
-				NOT = {
-					has_country_flag = children_parliament
-				}
-			}
+			always = yes
+		#	custom_trigger_tooltip = {
+		#		tooltip = children_parliament_does_not_exist
+		#		NOT = {
+		#			has_country_flag = children_parliament
+		#		}
+		#	}
 		}
 		available = {
 			NOT = {
@@ -6173,20 +6175,20 @@ focus_tree = {
 		ai_will_do = { 
 			factor = 1
 		}
-		available = {
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_colonies
-					has_country_flag = MAI_parliament_passed_colonies_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
-		}
+	#	available = {
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = MAI_parliament_passed_colonies
+	#				has_country_flag = MAI_parliament_passed_colonies_flag
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
+	#	}
 		available = {
 			NOT = {
 				has_war_with = GEN
@@ -6286,18 +6288,18 @@ focus_tree = {
 			NOT = {
 				has_war_with = 439.Owner
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_grn
-					has_country_flag = MAI_parliament_passed_grn_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = MAI_parliament_passed_grn
+	#				has_country_flag = MAI_parliament_passed_grn_flag
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 	
@@ -6384,15 +6386,15 @@ focus_tree = {
 			TSA = {
 				has_government = fascism
 			}
-			OR = {
-				has_country_flag = MAI_parliament_passed_liberation_of_danville_flag
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			has_country_flag = MAI_parliament_passed_liberation_of_danville_flag
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 
@@ -6432,18 +6434,18 @@ focus_tree = {
 				exists = yes
 				has_war_with = GRN
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_unity
-					has_country_flag = MAI_parliament_passed_unity_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = MAI_parliament_passed_unity
+	#				has_country_flag = MAI_parliament_passed_unity_flag
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 	
@@ -6472,18 +6474,18 @@ focus_tree = {
 				exists = yes
 				has_war_with = GRN
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_shen
-					has_country_flag = MAI_parliament_passed_shen_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			custom_trigger_tooltip = {
+	#				tooltip = MAI_parliament_passed_shen
+	#				has_country_flag = MAI_parliament_passed_shen_flag
+	#			}
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 	
@@ -6512,15 +6514,15 @@ focus_tree = {
 				exists = yes
 				has_war = yes
 			}
-			OR = {
-				has_country_flag = MAI_parliament_passed_attack_dio_flag
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			has_country_flag = MAI_parliament_passed_attack_dio_flag
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 	
@@ -6575,15 +6577,15 @@ focus_tree = {
 				exists = yes
 				has_war_with = JPN
 			}
-			OR = {
-				has_country_flag = MAI_parliament_passed_lechina_support_flag
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			has_country_flag = MAI_parliament_passed_lechina_support_flag
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 		bypass = {
@@ -6633,15 +6635,15 @@ focus_tree = {
 				}
 				has_war_with = LEC
 			}
-			OR = {
-				has_country_flag = MAI_parliament_passed_japanifornia_support_flag
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+	#		OR = {
+	#			has_country_flag = MAI_parliament_passed_japanifornia_support_flag
+	#			custom_trigger_tooltip = {
+	#				tooltip = children_parliament_does_not_exist
+	#				NOT = {
+	#					has_country_flag = children_parliament
+	#				}
+	#			}
+	#		}
 			has_war = no
 		}
 		bypass = {
@@ -6730,18 +6732,18 @@ focus_tree = {
 					exists = yes
 				}
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_enchancian_freedom
-					has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+		#	OR = {
+		#		custom_trigger_tooltip = {
+		#			tooltip = MAI_parliament_passed_enchancian_freedom
+		#			has_country_flag = MAI_parliament_passed_enchancian_freedom_flag
+		#		}
+		#		custom_trigger_tooltip = {
+		#			tooltip = children_parliament_does_not_exist
+		#			NOT = {
+		#				has_country_flag = children_parliament
+		#			}
+		#		}
+		#	}
 			has_war = no
 		}
 
@@ -6845,18 +6847,18 @@ focus_tree = {
 			KHA = {
 				has_government = fascism
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_khaldoun
-					has_country_flag = MAI_parliament_passed_khaldoun_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+		#	OR = {
+		#		custom_trigger_tooltip = {
+		#			tooltip = MAI_parliament_passed_khaldoun
+		#			has_country_flag = MAI_parliament_passed_khaldoun_flag
+		#		}
+		#		custom_trigger_tooltip = {
+		#			tooltip = children_parliament_does_not_exist
+		#			NOT = {
+		#				has_country_flag = children_parliament
+		#			}
+		#		}
+		#	}
 			NOT = {
 				has_war_with = GEN
 			}
@@ -6896,18 +6898,18 @@ focus_tree = {
 			RUD = {
 				has_government = fascism
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_rudistan
-					has_country_flag = MAI_parliament_passed_rudistan_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+		#	OR = {
+		#		custom_trigger_tooltip = {
+		#			tooltip = MAI_parliament_passed_rudistan
+		#			has_country_flag = MAI_parliament_passed_rudistan_flag
+		#		}
+		#		custom_trigger_tooltip = {
+		#			tooltip = children_parliament_does_not_exist
+		#			NOT = {
+		#				has_country_flag = children_parliament
+		#			}
+		#		}
+		#	}
 			NOT = {
 				has_war_with = GEN
 			}
@@ -6947,18 +6949,18 @@ focus_tree = {
 			COR = {
 				has_government = communism
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_corinthia
-					has_country_flag = MAI_parliament_passed_corinthia_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+		#	OR = {
+		#		custom_trigger_tooltip = {
+		#			tooltip = MAI_parliament_passed_corinthia
+		#			has_country_flag = MAI_parliament_passed_corinthia_flag
+		#		}
+		#		custom_trigger_tooltip = {
+		#			tooltip = children_parliament_does_not_exist
+		#			NOT = {
+		#				has_country_flag = children_parliament
+		#			}
+		#		}
+		#	}
 			NOT = {
 				has_war_with = GEN
 			}
@@ -6998,18 +7000,18 @@ focus_tree = {
 			TRU = {
 				has_government = communism
 			}
-			OR = {
-				custom_trigger_tooltip = {
-					tooltip = MAI_parliament_passed_trufflandia
-					has_country_flag = MAI_parliament_passed_trufflandia_flag
-				}
-				custom_trigger_tooltip = {
-					tooltip = children_parliament_does_not_exist
-					NOT = {
-						has_country_flag = children_parliament
-					}
-				}
-			}
+		#	OR = {
+		#		custom_trigger_tooltip = {
+		#			tooltip = MAI_parliament_passed_trufflandia
+		#			has_country_flag = MAI_parliament_passed_trufflandia_flag
+		#		}
+		#		custom_trigger_tooltip = {
+		#			tooltip = children_parliament_does_not_exist
+		#			NOT = {
+		#				has_country_flag = children_parliament
+		#			}
+		#		}
+		#	}
 			NOT = {
 				has_war_with = GEN
 			}

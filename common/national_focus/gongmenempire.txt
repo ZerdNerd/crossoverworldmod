@@ -993,7 +993,7 @@ focus_tree = {
 			factor = 10
 		} 
 		completion_reward = { 
-			declare_war_on = {
+			create_wargoal = {
 				target = NTR
 				type = annex_everything
 			}
@@ -1037,7 +1037,7 @@ focus_tree = {
 		} 
 
 		completion_reward = { 
-			declare_war_on = {
+			create_wargoal = {
 				target = LAL
 				type = annex_everything
 			}
@@ -1185,6 +1185,10 @@ focus_tree = {
 			}
 		}
 
+		bypass = {
+			has_completed_focus = GON_operation_tango_romeo
+		}
+
 		ai_will_do = { 
 			base = 5
 			modifier = {
@@ -1275,6 +1279,13 @@ focus_tree = {
 			227 = {
 				is_owned_by = GON
 			}
+		}
+
+		bypass = {
+			227 = {
+				is_owned_by = FLO
+			}
+			has_completed_focus = GON_shen_flower_pact
 		}
 
 		ai_will_do = { 

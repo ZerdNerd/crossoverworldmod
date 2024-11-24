@@ -2218,10 +2218,25 @@ focus_tree = {
 		} 
 		available = {
 			has_war = no
-			is_neighbor_of = VIS
+			OR = {
+				is_neighbor_of = KAN
+				SLD = {
+					is_puppet_of = FRI
+				}
+			}
 		}
-		completion_reward = { 
-			VIS = {
+		completion_reward = {  
+			NCA = {
+				every_owned_state = {
+					add_claim_by = NCA
+				}
+			}
+			KAN = {
+				every_owned_state = {
+					add_claim_by = FRI
+				}
+			}
+			LIN = {
 				every_owned_state = {
 					add_claim_by = FRI
 				}
@@ -2232,7 +2247,15 @@ focus_tree = {
 				}
 			}
 			create_wargoal = {
-				target = VIS
+				target = NCA
+				type = annex_everything	
+			}
+			create_wargoal = {
+				target = LIN
+				type = annex_everything	
+			}
+			create_wargoal = {
+				target = KAN
 				type = annex_everything	
 			}
 			create_wargoal = {

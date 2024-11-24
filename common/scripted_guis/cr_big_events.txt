@@ -502,4 +502,27 @@ scripted_gui = {
 			}
 		}
 	}
+	CR_bigevent_krosh_uni = {
+		context_type = player_context
+		window_name = "cr_big_event_krosh_uni"
+
+		visible = {
+			has_country_flag = big_event_krosh_uni
+		}
+	}
+
+	CR_bigevent_krosh_uni_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_krosh_uni_frame"
+
+		visible = {
+			has_country_flag = big_event_krosh_uni
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_krosh_uni
+			}
+		}
+	}
 }

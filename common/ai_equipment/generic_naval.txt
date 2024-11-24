@@ -230,7 +230,7 @@ generic_escorts = {
 		enable = {
 			AND = {
 				has_tech = improved_depth_charges
-				has_tech = decimetric_radar
+				has_tech = cavity_magnatron
 			}
 		}
 		role_icon_index = 2
@@ -657,8 +657,8 @@ naval_cruiser_heavy = {
 				mid_2_custom_slot = {
 					any_of = { ship_airplane_launcher ship_anti_air }
 					upgrade > current
-				}
-				rear_1_custom_slot > ship_medium_battery_2
+				
+}				rear_1_custom_slot > ship_medium_battery_2
 				rear_2_custom_slot = ship_anti_air
 			}
 		}
@@ -1472,7 +1472,7 @@ naval_mine_sweeper = {
 				rear_1_custom_slot = ship_mine_sweeper_1
 				mid_1_custom_slot = ship_mine_sweeper_1
 				fixed_ship_battery_slot = {
-					any_of = { dp_light_battery ship_light_battery_1 }
+					any_of = { dp_light_battery_1 ship_light_battery_1 }
 					upgrade > current
 				}
 				fixed_ship_engine_slot = light_ship_engine_1

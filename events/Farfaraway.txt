@@ -592,6 +592,7 @@ country_event = { #Fairy Godmother wants war with Swamp
 				add_core_of = FGM
 			}
 			FFA_fairy_godmother = {
+				set_nationality = FGM
 				add_corps_commander_role = {
 					Character = FFA_fairy_godmother
 					skill = 5
@@ -600,12 +601,9 @@ country_event = { #Fairy Godmother wants war with Swamp
 					planning_skill = 5
 					logistics_skill = 4
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_fairy_godmother
-				}
 			}
 			FFA_charming = {
+				set_nationality = FGM
 				if = {
 					limit = {
 						NOT = {
@@ -620,10 +618,6 @@ country_event = { #Fairy Godmother wants war with Swamp
 						planning_skill = 1
 						logistics_skill = 1
 					}
-				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_charming
 				}
 			}
 		}
@@ -741,6 +735,7 @@ country_event = { #Case of Shrek after detention and war (he wants to stay with 
 				add_core_of = FGM
 			}
 			FFA_fairy_godmother = {
+				set_nationality = FGM
 				add_corps_commander_role = {
 					Character = FFA_fairy_godmother
 					skill = 5
@@ -749,12 +744,9 @@ country_event = { #Case of Shrek after detention and war (he wants to stay with 
 					planning_skill = 5
 					logistics_skill = 4
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_fairy_godmother
-				}
 			}
 			FFA_charming = {
+				set_nationality = FGM
 				if = {
 					limit = {
 						NOT = {
@@ -769,10 +761,6 @@ country_event = { #Case of Shrek after detention and war (he wants to stay with 
 						planning_skill = 1
 						logistics_skill = 1
 					}
-				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_charming
 				}
 			}
 		}
@@ -1177,6 +1165,7 @@ country_event = { #The great ball
 					add_core_of = FGM
 				}
 				FFA_fairy_godmother = {
+					set_nationality = FGM
 					add_corps_commander_role = {
 						Character = FFA_fairy_godmother
 						skill = 5
@@ -1185,12 +1174,9 @@ country_event = { #The great ball
 						planning_skill = 5
 						logistics_skill = 4
 					}
-					set_nationality = {
-						target_country = FGM
-						character = FFA_fairy_godmother
-					}
 				}
 				FFA_charming = {
+					set_nationality = FGM
 					if = {
 						limit = {
 							NOT = {
@@ -1205,10 +1191,6 @@ country_event = { #The great ball
 							planning_skill = 1
 							logistics_skill = 1
 						}
-					}
-					set_nationality = {
-						target_country = FGM
-						character = FFA_charming
 					}
 				}
 			}
@@ -1315,6 +1297,7 @@ country_event = { #The great ball
 					add_core_of = FGM
 				}
 				FFA_fairy_godmother = {
+					set_nationality = FGM
 					add_corps_commander_role = {
 						Character = FFA_fairy_godmother
 						skill = 5
@@ -1323,12 +1306,9 @@ country_event = { #The great ball
 						planning_skill = 5
 						logistics_skill = 4
 					}
-					set_nationality = {
-						target_country = FGM
-						character = FFA_fairy_godmother
-					}
 				}
 				FFA_charming = {
+					set_nationality = FGM
 					if = {
 						limit = {
 							NOT = {
@@ -1343,10 +1323,6 @@ country_event = { #The great ball
 							planning_skill = 1
 							logistics_skill = 1
 						}
-					}
-					set_nationality = {
-						target_country = FGM
-						character = FFA_charming
 					}
 				}
 			}
@@ -2279,6 +2255,7 @@ country_event = { #The Great War of Prince Charming
 				add_core_of = FGM
 			}
 			FFA_charming = {
+				set_nationality = FGM
 				if = {
 					limit = {
 						NOT = {
@@ -2294,11 +2271,9 @@ country_event = { #The Great War of Prince Charming
 						logistics_skill = 2
 					}
 				}
-				set_nationality = {
-					target_country = FGM
-					character = FFA_charming
-				}
 				set_character_name = "King Charming"
+			}
+			FGM = {
 				add_country_leader_role = {
 					character = FFA_charming
 					country_leader = {
@@ -2321,6 +2296,7 @@ country_event = { #The Great War of Prince Charming
 						is_ai = yes
 					}
 					SWA_donkey = {
+						set_nationality = FFA
 						add_corps_commander_role = {
 							Character = SWA_donkey
 							skill = 0
@@ -2329,12 +2305,9 @@ country_event = { #The Great War of Prince Charming
 							planning_skill = 0
 							logistics_skill = 0
 						}
-						set_nationality = {
-							target_country = FFA
-							character = SWA_donkey
-						}
 					}
 					SWA_fiona_ogre = {
+						set_nationality = FFA
 						add_corps_commander_role = {
 							Character = SWA_fiona_ogre
 							skill = 4
@@ -2343,12 +2316,9 @@ country_event = { #The Great War of Prince Charming
 							planning_skill = 4
 							logistics_skill = 4
 						}
-						set_nationality = {
-							target_country = FFA
-							character = SWA_fiona_ogre
-						}
 					}
 					SWA_shrek = {
+						set_nationality = FFA
 						add_corps_commander_role = {
 							Character = SWA_shrek
 							skill = 5
@@ -2356,10 +2326,6 @@ country_event = { #The Great War of Prince Charming
 							defense_skill = 4
 							planning_skill = 4
 							logistics_skill = 4
-						}
-						set_nationality = {
-							target_country = FFA
-							character = SWA_shrek
 						}
 					}
 					create_country_leader = {

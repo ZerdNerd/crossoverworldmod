@@ -84,7 +84,6 @@ country_event = {
 		}
 		custom_effect_tooltip = ENC_queen_amber
 		hidden_effect = { 
-		retire_country_leader = yes
 		
 		set_country_flag = queen_amber
 
@@ -129,7 +128,6 @@ country_event = {
 		}
 		custom_effect_tooltip = ENC_king_james
 		hidden_effect = { 
-		retire_country_leader = yes
 		
 		set_country_flag = king_james
 
@@ -173,7 +171,6 @@ country_event = {
 		}
 		custom_effect_tooltip = ENC_queen_sofia
 		hidden_effect = { 
-		retire_country_leader = yes
 		
 		set_country_flag = queen_sofia
 
@@ -411,7 +408,49 @@ country_event = { #James is taken by his supporters to other part of country
 	fire_only_once = yes
 	
 	immediate = {
-		ENC_release_EN1 = yes
+		hidden_effect = {
+			ENC_release_EN1 = yes
+			ENC = {
+				ENC_james_character = {
+					set_nationality = EN1
+				}
+				ENC_james_adult_character = {
+					set_nationality = EN1
+				}
+			}
+			EN1 = {
+				ENC_james_character = {
+					if = {
+						limit = {
+							can_be_country_leader = yes
+						}
+						promote_character = administrative_monarchy
+						promote_character = centrism
+						else = {
+							add_country_leader_role = {
+								character = ENC_james_character
+								country_leader = {
+									ideology = administrative_monarchy
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}
+
+							add_country_leader_role = {
+								character = ENC_james_character
+								country_leader = {
+									ideology = centrism
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}	
+						}
+					}
+				}
+			}
+		}
 	}
 
 	is_triggered_only = yes
@@ -540,7 +579,49 @@ country_event = { #Miranda takes the leadership of country, Amber is taken by he
 	fire_only_once = yes
 	
 	immediate = {
-		ENC_release_EN2 = yes
+		hidden_effect = {
+			ENC_release_EN2 = yes
+			ENC = {
+				ENC_amber_character = {
+					set_nationality = EN2
+				}
+				ENC_amber_older_character = {
+					set_nationality = EN2
+				}
+			}
+			EN2 = {
+				ENC_amber_character = {
+					if = {
+						limit = {
+							can_be_country_leader = yes
+						}
+						promote_character = administrative_monarchy
+						promote_character = centrism
+						else = {
+							add_country_leader_role = {
+								character = ENC_amber_character
+								country_leader = {
+									ideology = administrative_monarchy
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}
+
+							add_country_leader_role = {
+								character = ENC_amber_character
+								country_leader = {
+									ideology = centrism
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}	
+						}
+					}
+				}
+			}
+		}
 	}
 
 	is_triggered_only = yes
@@ -669,7 +750,44 @@ country_event = { #Cedric becomes Great
 	fire_only_once = yes
 	
 	immediate = {
-		ENC_release_EN3 = yes
+		hidden_effect = {
+			ENC_release_EN3 = yes
+			ENC = {
+				ENC_cedric = {
+					set_nationality = EN3
+				}
+			}
+			EN3 = {
+				ENC_cedric = {
+					if = {
+						limit = {
+							can_be_country_leader = yes
+						}
+						promote_character = fascism_ideology
+						else = {
+							add_country_leader_role = {
+								character = ENC_cedric
+								country_leader = {
+									ideology = fascism_ideology
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}
+							add_country_leader_role = {
+								character = ENC_cedric
+								country_leader = {
+									ideology = administrative_monarchy
+									expire = "1965.1.1.1"
+									traits = {  }
+								}
+								promote_leader = yes
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	is_triggered_only = yes
@@ -3256,44 +3374,58 @@ country_event = { #Amber wants to resign due to what happened
 						has_variable = sofia_you_cannot_bring_younger_self
 					}
 				}
-				add_country_leader_role = {
-  					character = ENC_sofia_character
-  					promote_leader = yes
-  					country_leader = {
-    					ideology = administrative_monarchy
-   						expire = "1965.1.1.1"
-    					traits = { underage_monarch }
-					}
-				}
+				ENC_sofia_character = {
+					if = {
+						limit = {
+							can_be_country_leader = yes
+						}
+						promote_character = administrative_monarchy
+						promote_character = centrism
+						else = {
+							add_country_leader_role = {
+								character = ENC_sofia_character
+								country_leader = {
+									ideology = administrative_monarchy
+									expire = "1965.1.1.1"
+									traits = { underage_monarch }
+								}
+								promote_leader = yes
+							}
 
-				add_country_leader_role = {
-  					character = ENC_sofia_character
-  					promote_leader = yes
-  					country_leader = {
-    					ideology = centrism
-   						expire = "1965.1.1.1"
-    					traits = { underage_monarch }
-  					}
-				}
-				else = {
-					add_country_leader_role = {
-  						character = EN2_sofia_adult_character
-  						promote_leader = yes
-  						country_leader = {
-    						ideology = administrative_monarchy
-   							expire = "1965.1.1.1"
-    						traits = {  }
+							add_country_leader_role = {
+								character = ENC_sofia_character
+								country_leader = {
+									ideology = centrism
+									expire = "1965.1.1.1"
+									traits = { underage_monarch }
+								}
+								promote_leader = yes
+							}
 						}
 					}
+				}
+				else = {
+					ENC_sofia_older_character = {
+						set_character_name = "ENC_sofia_older_queen"
+						add_country_leader_role = {
+							character = ENC_sofia_older_character
+							country_leader = {
+								ideology = administrative_monarchy
+								expire = "1965.1.1.1"
+								traits = {  }
+							}
+							promote_leader = yes
+						}
 
-					add_country_leader_role = {
-  						character = EN2_sofia_adult_character
-  						promote_leader = yes
-  						country_leader = {
-    						ideology = centrism
-   							expire = "1965.1.1.1"
-    						traits = {  }
-  						}
+						add_country_leader_role = {
+							character = ENC_sofia_older_character
+							country_leader = {
+								ideology = centrism
+								expire = "1965.1.1.1"
+								traits = {  }
+							}
+							promote_leader = yes
+						}
 					}
 				}
 			}	
@@ -3337,24 +3469,27 @@ country_event = { #Sofia's 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = EN2_sofia_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			ENC_sofia_older_character = {
+				set_character_name = "ENC_sofia_older_queen"
+				add_country_leader_role = {
+					character = ENC_sofia_older_character
+					country_leader = {
+						ideology = administrative_monarchy
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+					promote_leader = yes
 				}
-			}
 
-			add_country_leader_role = {
-  				character = EN2_sofia_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
+				add_country_leader_role = {
+					character = ENC_sofia_older_character
+					country_leader = {
+						ideology = centrism
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+					promote_leader = yes
+				}
 			}
 		}
 	}
@@ -3436,33 +3571,99 @@ country_event = { #Amber's 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = ENC_amber_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			if = {
+				limit = {
+					tag = ENC
+					NOT = {
+						EN2 = {
+							exists = yes
+						}
+					}
 				}
-			}
-
-			add_country_leader_role = {
-  				character = ENC_amber_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
-			}	
-
-			add_corps_commander_role = {
-				character = ENC_james_adult_character
-				skill = 3
-    			attack_skill = 3
-    			defense_skill = 3
-    			planning_skill = 3
-  				logistics_skill = 3
+				if = {
+					limit = {
+						NOT = {
+							EN1 = {
+								exists = yes
+							}
+						}
+					}
+					ENC_james_adult_character = {
+						set_character_name = "ENC_james_adult_prince"
+						add_corps_commander_role = {
+							character = ENC_james_adult_character
+							skill = 3
+							attack_skill = 3
+							defense_skill = 3
+							planning_skill = 3
+							logistics_skill = 3
+						}
+					}
+				}
+				ENC_amber_older_character = {
+					set_character_name = "ENC_amber_older_queen"
+					add_country_leader_role = {
+						character = ENC_amber_older_character
+						country_leader = {
+							ideology = administrative_monarchy
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}
+					add_country_leader_role = {
+						character = ENC_amber_older_character
+						country_leader = {
+							ideology = centrism
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}	
+				}
+				else = {
+					ENC_amber_older_character = {
+						set_character_name = "ENC_amber_older_queen"
+						add_country_leader_role = {
+							character = ENC_amber_older_character
+							country_leader = {
+								ideology = administrative_monarchy
+								expire = "1965.1.1.1"
+								traits = {  }
+							}
+							promote_leader = yes
+						}
+						add_country_leader_role = {
+							character = ENC_amber_older_character
+							country_leader = {
+								ideology = centrism
+								expire = "1965.1.1.1"
+								traits = {  }
+							}
+							promote_leader = yes
+						}	
+					}
+					if = {
+						limit = {
+							NOT = {
+								EN1 = {
+									exists = yes
+								}
+							}
+						}
+						ENC_james_adult_character = {
+							set_character_name = "ENC_james_adult_prince"
+							add_corps_commander_role = {
+								character = ENC_james_adult_character
+								skill = 3
+								attack_skill = 3
+								defense_skill = 3
+								planning_skill = 3
+								logistics_skill = 3
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -3476,13 +3677,16 @@ country_event = { #Amber's 17th birthday
 		}
 		name = enchancia.81.a
 		hidden_effect = {
-			add_corps_commander_role = {
-				character = ENC_james_adult_character
-				skill = 3
-    			attack_skill = 3
-    			defense_skill = 3
-    			planning_skill = 3
-  				logistics_skill = 3
+			ENC_james_adult_character = {
+				set_character_name = "ENC_james_adult_prince"
+				add_corps_commander_role = {
+					character = ENC_james_adult_character
+					skill = 3
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 3
+				}
 			}
 		}
 	}
@@ -3501,33 +3705,36 @@ country_event = { #James' 17th birthday
 		name = enchancia.81.a
 		hidden_effect = {
 			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = EN1_james_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			ENC_james_adult_character = {
+				set_character_name = "ENC_james_adult_king"
+				add_country_leader_role = {
+					character = ENC_james_adult_character
+					country_leader = {
+						ideology = administrative_monarchy
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+					promote_leader = yes
 				}
-			}
 
-			add_country_leader_role = {
-  				character = EN1_james_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
-			}	
+				add_country_leader_role = {
+					character = ENC_james_adult_character
+					country_leader = {
+						ideology = centrism
+						expire = "1965.1.1.1"
+						traits = {  }
+					}
+					promote_leader = yes
+				}	
 
-			add_corps_commander_role = {
-				character = EN1_james_adult_character
-				skill = 3
-    			attack_skill = 3
-    			defense_skill = 3
-    			planning_skill = 3
-  				logistics_skill = 3
+				add_corps_commander_role = {
+					character = ENC_james_adult_character
+					skill = 3
+					attack_skill = 3
+					defense_skill = 3
+					planning_skill = 3
+					logistics_skill = 3
+				}
 			}
 		}
 	}
@@ -3566,27 +3773,36 @@ country_event = { #Winslows are found!
 		}
 		release = ENC
 		hidden_effect = {
-			ENC = {
-			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = EN1_james_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			every_possible_country = {
+				limit = { has_character = ENC_james_adult_character }
+				random_character = {
+					limit = { is_character = ENC_james_adult_character }
+					set_nationality = ENC
 				}
 			}
+			ENC = {
+				retire_country_leader = yes
+				ENC_james_adult_character = {
+					add_country_leader_role = {
+						character = ENC_james_adult_character
+						country_leader = {
+							ideology = administrative_monarchy
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}
 
-			add_country_leader_role = {
-  				character = EN1_james_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
-			}	
+					add_country_leader_role = {
+						character = ENC_james_adult_character
+						country_leader = {
+							ideology = centrism
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}	
+				}
 			}	
 		}
 	}
@@ -3598,27 +3814,36 @@ country_event = { #Winslows are found!
 		}
 		release = ENC
 		hidden_effect = {
-			ENC = {
-			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = ENC_amber_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			every_possible_country = {
+				limit = { has_character = ENC_amber_older_character }
+				random_character = {
+					limit = { is_character = ENC_amber_older_character }
+					set_nationality = ENC
 				}
 			}
+			ENC = {
+				retire_country_leader = yes
+				ENC_amber_older_character = {
+					add_country_leader_role = {
+						character = ENC_amber_older_character
+						country_leader = {
+							ideology = administrative_monarchy
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}
 
-			add_country_leader_role = {
-  				character = ENC_amber_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
-			}	
+					add_country_leader_role = {
+						character = ENC_amber_older_character
+						country_leader = {
+							ideology = centrism
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}	
+				}
 			}	
 		}
 	}
@@ -3630,31 +3855,98 @@ country_event = { #Winslows are found!
 		}
 		release = ENC
 		hidden_effect = {
-			ENC = {
-			retire_country_leader = yes
-			add_country_leader_role = {
-  				character = EN2_sofia_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = administrative_monarchy
-   					expire = "1965.1.1.1"
-    				traits = {  }
+			every_possible_country = {
+				limit = { has_character = ENC_sofia_older_character }
+				random_character = {
+					limit = { is_character = ENC_sofia_older_character }
+					set_nationality = ENC
 				}
 			}
+			ENC = {
+				retire_country_leader = yes
+				ENC_sofia_older_character = {
+					add_country_leader_role = {
+						character = ENC_sofia_older_character
+						country_leader = {
+							ideology = administrative_monarchy
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}
 
-			add_country_leader_role = {
-  				character = EN2_sofia_adult_character
-  				promote_leader = yes
-  				country_leader = {
-    				ideology = centrism
-   					expire = "1965.1.1.1"
-    				traits = {  }
-  				}
-			}
+					add_country_leader_role = {
+						promote_leader = yes
+						country_leader = {
+							ideology = centrism
+							expire = "1965.1.1.1"
+							traits = {  }
+						}
+						promote_leader = yes
+					}
+				}
 			}	
 		}
 	}
 }
+
+country_event = { #Country wants to sell us a wooden plane
+	id = enchancia.85
+	immediate = {log = "[GetDateText]: [Root.GetName]: event enchancia.85"}
+	title = enchancia.85.t
+	desc = enchancia.85.d
+	picture = GFX_report_enchancia_palace
+
+	is_triggered_only = yes
+
+	option = { #A good idea, actually
+		name = enchancia.85.a
+		add_political_power = -100
+		if = {
+			limit = { has_dlc = "By Blood Alone" }
+			set_technology = {
+				aa_lmg = 1
+				engines_1 = 1
+				early_bombs = 1
+				aircraft_construction = 1
+				basic_wooden_airframe = 1
+			}
+			add_equipment_to_stockpile = {
+				type = wooden_plane_airframe_0
+				amount = 5
+				producer = FROM
+			}
+			else = {
+				set_technology = {
+					wooden_fighter = 1
+				}
+				add_equipment_to_stockpile = {
+					type = wooden_fighter_equipment_0
+					amount = 5
+					producer = GER
+				}
+			}
+		}
+		capital_scope = {
+			add_building_construction = { 
+				type = air_base
+				level = 1 
+				instant_build = yes 
+			}
+		}
+		ai_chance = {
+			base = 75
+		}
+	}
+
+	option = { #Bah, wars cannot be fought in the air!
+		name = enchancia.85.b
+		ai_chance = {
+			base = 25
+		}
+	}
+}
+
 
 
 ##################################

@@ -2264,18 +2264,45 @@ focus_tree = {
 					limit = {
 						has_completed_focus = FFA_subsidies_for_fairy_godmothers_company
 					}
-					add_country_leader_role = {
-						character = FFA_fairy_godmother
-						promote_leader = yes
-						country_leader = {
-							ideology = despotic_monarchy
-							expire = "1965.1.1.1"
-							traits = { }
-						}
-					}
 					FFA_fairy_godmother = {
 						remove_country_leader_role = {
+							character = FFA_fairy_godmother
 							ideology = fascism_ideology
+						}
+						add_country_leader_role = {
+							character = FFA_fairy_godmother
+							promote_leader = yes
+							country_leader = {
+								ideology = despotic_monarchy
+								expire = "1965.1.1.1"
+								traits = { }
+							}
+						}
+						add_corps_commander_role = {
+							Character = FFA_fairy_godmother
+							skill = 5
+							attack_skill = 4
+							defense_skill = 3
+							planning_skill = 5
+							logistics_skill = 4
+						}
+						set_nationality = {
+							target_country = FGM
+							character = FFA_fairy_godmother
+						}
+					}
+					FFA_charming = {
+						set_nationality = {
+							target_country = FGM
+							character = FFA_charming
+						}
+						add_corps_commander_role = {
+							Character = FFA_charming
+							skill = 2
+							attack_skill = 2
+							defense_skill = 2
+							planning_skill = 1
+							logistics_skill = 1
 						}
 					}
 					FGM = {
@@ -2312,102 +2339,91 @@ focus_tree = {
 							target = FFA
 							type = annex_everything
 						}
+						retire_country_leader = yes
 					}
 					every_owned_state = {
 						add_core_of = FGM
 					}
-					FFA_fairy_godmother = {
-						add_corps_commander_role = {
-							Character = FFA_fairy_godmother
-							skill = 5
-							attack_skill = 4
-							defense_skill = 3
-							planning_skill = 5
-							logistics_skill = 4
+					else = {
+						FFA_fairy_godmother = {
+							remove_country_leader_role = {
+								character = FFA_fairy_godmother
+								ideology = fascism_ideology
+							}
+							add_country_leader_role = {
+								character = FFA_fairy_godmother
+								promote_leader = yes
+								country_leader = {
+									ideology = despotic_monarchy
+									expire = "1965.1.1.1"
+									traits = { }
+								}
+							}
+							add_corps_commander_role = {
+								Character = FFA_fairy_godmother
+								skill = 5
+								attack_skill = 4
+								defense_skill = 3
+								planning_skill = 5
+								logistics_skill = 4
+							}
+							set_nationality = {
+								target_country = FGM
+								character = FFA_fairy_godmother
+							}
 						}
-						set_nationality = {
-							target_country = FGM
-							character = FFA_fairy_godmother
+						FFA_charming = {
+							set_nationality = {
+								target_country = FGM
+								character = FFA_charming
+							}
+							add_corps_commander_role = {
+								Character = FFA_charming
+								skill = 2
+								attack_skill = 2
+								defense_skill = 2
+								planning_skill = 1
+								logistics_skill = 1
+							}
 						}
-					}
-					FFA_charming = {
-						set_nationality = {
-							target_country = FGM
-							character = FFA_charming
+						FGM = {
+							transfer_state = 216
+							transfer_state = 200
+							transfer_state = 233
+							transfer_state = 299
+							transfer_state = 135
+							transfer_state = 155
+							add_ideas = {
+								middleage_tech
+							}
+							inherit_technology = FFA
+							set_capital = { state = 216 }
+							set_popularities = {
+								democratic = 0
+								fascism = 0
+								communism = 0
+								monarchism = 100
+							}
+							set_politics = {
+								ruling_party = monarchism
+								last_election = "1930.7.1"
+								election_frequency = 72
+								elections_allowed = no
+							}
+							load_oob = FGM_rebellion_rumpel
+							add_equipment_to_stockpile = {
+								type = infantry_equipment_old
+								amount = 8000
+								producer = FFA
+							}
+							declare_war_on = {
+								target = FFA
+								type = annex_everything
+							}
+							retire_country_leader = yes
 						}
-					}
-				}
-				else = {
-					add_country_leader_role = {
-						character = FFA_fairy_godmother
-						promote_leader = yes
-						country_leader = {
-							ideology = despotic_monarchy
-							expire = "1965.1.1.1"
-							traits = { }
-						}
-					}
-					FFA_fairy_godmother = {
-						remove_country_leader_role = {
-							ideology = fascism_ideology
-						}
-					}
-					FGM = {
-						transfer_state = 216
-						transfer_state = 200
-						transfer_state = 233
-						transfer_state = 299
-						transfer_state = 135
-						transfer_state = 155
-						add_ideas = {
-							middleage_tech
-						}
-						inherit_technology = FFA
-						set_capital = { state = 216 }
-						set_popularities = {
-							democratic = 0
-							fascism = 0
-							communism = 0
-							monarchism = 100
-						}
-						set_politics = {
-							ruling_party = monarchism
-							last_election = "1930.7.1"
-							election_frequency = 72
-							elections_allowed = no
-						}
-						load_oob = FGM_rebellion_rumpel
-						add_equipment_to_stockpile = {
-							type = infantry_equipment_old
-							amount = 8000
-							producer = FFA
-						}
-						declare_war_on = {
-							target = FFA
-							type = annex_everything
-						}
-					}
-					every_owned_state = {
-						add_core_of = FGM
-					}
-					FFA_fairy_godmother = {
-						add_corps_commander_role = {
-							Character = FFA_fairy_godmother
-							skill = 5
-							attack_skill = 4
-							defense_skill = 3
-							planning_skill = 5
-							logistics_skill = 4
-						}
-						set_nationality = {
-							target_country = FGM
-							character = FFA_fairy_godmother
-						}
-					}
-					FFA_charming = {
-						set_nationality = {
-							target_country = FGM
-							character = FFA_charming
+						every_owned_state = {
+							add_core_of = FGM
 						}
 					}
 				}

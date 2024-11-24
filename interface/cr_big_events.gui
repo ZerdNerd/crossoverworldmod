@@ -1636,4 +1636,81 @@ guiTypes = {
 			Orientation = center
 		}
 	}
+	containerWindowType = {
+		name = "cr_big_event_krosh_uni"
+		size = { width = 580 height = 128 }
+		position = { x=0 y=-210 }
+		Orientation = center
+		Origo = center
+		clipping = no
+		#show_sound = cr_bigevent_krosh_uni_sound
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_thin_border2"
+		}
+
+		instantTextBoxType = {
+			name = "Title"
+			position = { x = 0 y = 15 }
+			font = "hoi_24header"
+			borderSize = {x = 0 y = 0}
+			text = "CR_BIGEVENT_KROSH_UNI"
+			maxWidth = 580
+			maxHeight = 24
+			format = centre
+		}
+
+		iconType = {
+			name ="image"
+			spriteType = "GFX_krosh_uni"
+			position = { x= -284 y = -10 }
+			Orientation = center
+			alwaystransparent = yes
+		}
+	}
+
+	containerWindowType = {
+		name = "cr_big_event_krosh_uni_frame"
+		size = { width = 588 height = 475 }
+		position = { x=0 y=10 }
+		Orientation = center
+		Origo = center
+		clipping = no
+
+		background = {
+			name = "Background"
+			quadTextureSprite ="GFX_tiled_window_bigevent_border_cr"
+		}
+
+		iconType = {
+			name ="underlay"
+			spriteType = "GFX_superevent_text_underlay"
+			position = { x= 10 y = -123 }
+			Orientation = lower_left
+			allwaystransparent = yes
+		}
+
+		instantTextBoxType = {
+			name = "text"
+			position = {  x = 15 y = -124 }
+			font = "hoi_24header"
+			text = "CR_BIGEVENT_KROSH_UNI_D"
+			maxWidth = 540
+			maxHeight = 173
+			fixedsize = yes
+			format = left
+			Orientation = lower_left
+		}
+
+		buttonType = {
+			name = "Option"
+			text = "A Dream Come True"
+			shortcut = "ESCAPE"
+			position = { x = -110 y = 206 }
+			quadTextureSprite ="GFX_button_221x34"
+			buttonFont = "hoi_20bs"
+			Orientation = center
+		}
+	}
 }

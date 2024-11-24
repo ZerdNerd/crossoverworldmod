@@ -1,0 +1,25 @@
+######################
+#	MARINE ROLE
+######################
+
+militia_generic = {
+	role = militia
+
+	upgrade_prio = {
+		factor = 1
+	}
+
+	militia_template = {
+		reinforce_prio = 2
+
+		upgrade_prio = {
+			factor = 2
+		}
+
+		target_template = {
+			regiments = {
+				militia = 6
+			}
+		}
+	}
+}

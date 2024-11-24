@@ -68,4 +68,44 @@ characters={
 			id=-1
 		}
 	}
+	PAT_mountaingeneral={
+		name="Mountain General"
+		portraits={
+			army={
+				small="GFX_idea_PAT_mountaingeneral"
+			}
+			army={
+				large="gfx/leaders/PAT/mountaingeneral.dds"
+			}
+		}
+		field_marshal={
+			traits={ superior_tactician }
+			skill=9
+			attack_skill=9
+			defense_skill=9
+			planning_skill=9
+			logistics_skill=9
+			legacy_id=7999
+		}
+	}
+	PAT_generalvostok={
+		name="General Vostok"
+		portraits={
+			army={
+				small="GFX_idea_PAT_generalvostok"
+			}
+			army={
+				large="gfx/leaders/PAT/generalvostok.dds"
+			}
+		}
+		field_marshal={
+			traits={ }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=7999
+		}
+	}
 }

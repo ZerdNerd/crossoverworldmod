@@ -2467,7 +2467,7 @@ occupation_dec_category = {
 		}
 	}
 
-	establish_southern_vinesauce_prot = {
+	establish_kandis_prot = {
 
 		icon = ger_mefo_bills
 
@@ -2484,16 +2484,13 @@ occupation_dec_category = {
 			ROOT = {
 				owns_state = 658
 				owns_state = 659
-				owns_state = 656
-				owns_state = 615
-				owns_state = 608
 				owns_state = 646
 				owns_state = 672
 				owns_state = 681
 				is_puppet = no
 			}
 			NOT = {
-				tag = VIS
+				tag = KAN
 			}
 			OR = {
 				AND = {
@@ -2509,31 +2506,9 @@ occupation_dec_category = {
 		}
 
 		complete_effect = {
-			JOE = {
-				add_state_core = 658
-				add_state_core = 659
-				add_state_core = 656
-				add_state_core = 615
-				add_state_core = 608
-				add_state_core = 646
-				transfer_state = 658
-				transfer_state = 659
-				transfer_state = 656
-				transfer_state = 615
-				transfer_state = 608
-				transfer_state = 646
-				if = {
-					limit = {
-						ROOT = {
-							NOT = {
-								tag = SLD
-								has_completed_focus = SLD_eastward_expansion
-							}
-						}
-					}
-					transfer_state = 672
-					transfer_state = 681
-				}
+			release = KAN
+			KAN = {
+				retire_country_leader = yes
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -2542,7 +2517,47 @@ occupation_dec_category = {
 		}
 	}
 
-	establish_vinesauce_prot = {
+	establish_vilvetian_prot = {
+
+		icon = ger_mefo_bills
+
+		cost = 0
+
+		ai_will_do = {
+			factor = 100
+		}
+
+		visible = {
+			NOT = {
+				tag = DIO
+			}
+			ROOT = {
+				owns_state = 656
+				owns_state = 615
+				owns_state = 596
+				owns_state = 608
+				owns_state = 559
+				owns_state = 569
+				is_puppet = no
+			}
+			LIN = {
+				exists = no
+			}
+		}
+
+		complete_effect = {
+			release = LIN
+			LIN = {
+				retire_country_leader = yes
+				ROOT = {
+					puppet = PREV
+					set_autonomy = { target = PREV autonomy_state = occupation_government }
+				}
+			}
+		}
+	}
+
+	establish_mouseton_prot = {
 
 		icon = ger_mefo_bills
 
@@ -2558,27 +2573,26 @@ occupation_dec_category = {
 			}
 			ROOT = {
 				owns_state = 566
-				owns_state = 513
-				owns_state = 545
+				owns_state = 576
 				owns_state = 612
-				owns_state = 596
-				owns_state = 559
+				owns_state = 545
+				owns_state = 513
+				owns_state = 463
+				owns_state = 500
 				is_puppet = no
 			}
-			VIS = {
+			NCA = {
 				exists = no
+			}
+			NOT = {
+				tag = DCB
 			}
 		}
 
 		complete_effect = {
-			VIS = {
-				set_cosmetic_tag = VinesauceProt
-				transfer_state = 566
-				transfer_state = 513
-				transfer_state = 545
-				transfer_state = 612
-				transfer_state = 596
-				transfer_state = 559
+			release = NCA
+			NCA = {
+				retire_country_leader = yes
 				ROOT = {
 					puppet = PREV
 					set_autonomy = { target = PREV autonomy_state = occupation_government }
@@ -2620,6 +2634,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = TSA
+			}
+			NOT = {
+				tag = NCA
 			}
 		}
 
@@ -3748,6 +3765,13 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+				owns_state = 518
+				owns_state = 474
+				owns_state = 467
+				owns_state = 432
+				owns_state = 439
+				owns_state = 22
+				owns_state = 23
 				NOT = {
 					has_variable = puppet_of_friedewalt_before_war
 				}
@@ -3780,19 +3804,18 @@ occupation_dec_category = {
 		complete_effect = {
 			every_owned_state = {
 				limit = {
-					is_core_of = GRN
 					NOT = {
 						is_core_of = ROOT
 						is_core_of = OUT
 						is_core_of = DES
-						state = 518
-						state = 474
-						state = 467
-						state = 432
-						state = 439
-						state = 22
-						state = 23
 					}
+					state = 518
+					state = 474
+					state = 467
+					state = 432
+					state = 439
+					state = 22
+					state = 23
 				}
 				set_variable = {
 					greenland_gg_set = 1
@@ -3835,6 +3858,19 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+				owns_state = 518
+				owns_state = 474
+				owns_state = 467
+				owns_state = 432
+				owns_state = 439
+				owns_state = 532
+				owns_state = 562
+				owns_state = 535
+				owns_state = 507
+				owns_state = 550
+				owns_state = 613
+				owns_state = 588
+				owns_state = 589
 			}
 			GRN = {
 				exists = no
@@ -3924,6 +3960,17 @@ occupation_dec_category = {
 				any_owned_state = {
 					is_core_of = GRN
 				}
+				owns_state = 508
+				owns_state = 557
+				owns_state = 555
+				owns_state = 524
+				owns_state = 591
+				owns_state = 610
+				owns_state = 599
+				owns_state = 622
+				owns_state = 637
+				owns_state = 651
+				owns_state = 653
 			}
 			GRN = {
 				exists = no
@@ -7158,6 +7205,9 @@ occupation_dec_category = {
 			NOT = {
 				tag = GON
 			}
+			NOT = {
+				tag = CVA
+			}
 			ROOT = {
 				owns_state = 520
 				is_puppet = no
@@ -7337,6 +7387,9 @@ occupation_dec_category = {
 			}
 			NOT = {
 				tag = DES
+			}
+			NOT = {
+				tag = CVA
 			}
 			ROOT = {
 				owns_state = 440

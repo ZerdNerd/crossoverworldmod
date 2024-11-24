@@ -1431,49 +1431,17 @@ country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
 		hidden_effect = {
 			if = {
 				limit = {
-					TUG = {
-						exists = no
+					FLE = {
+						is_puppet_of = FRI
 					}
 				}
-				KLU = {
-					transfer_state = 802
-					transfer_state = 1018
-					transfer_state = 797
-					transfer_state = 1026
-					transfer_state = 1033
-					transfer_state = 1020
-					transfer_state = 795
-					transfer_state = 745
-					transfer_state = 1039
-					transfer_state = 699
-					transfer_state = 1040
-					transfer_state = 37
-					transfer_state = 38
-					transfer_state = 33
-					transfer_state = 34
-					add_state_core = 24
-					set_capital = { state = 802 }
-					load_oob = KLU_native_uprising
-				}
-				every_state = {
+				if = {
 					limit = {
-						is_core_of = FLE
-						NOT = {
-							state = 632
-							state = 634
-							state = 638
+						TUG = {
+							exists = no
 						}
 					}
-					add_core_of = KLU
-				}
-				KLU = {
-					declare_war_on = {
-						target = FLE
-						type = annex_everything
-					}
-				}
-				else = {
-					TUG = {
+					KLU = {
 						transfer_state = 802
 						transfer_state = 1018
 						transfer_state = 797
@@ -1490,6 +1458,7 @@ country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
 						transfer_state = 33
 						transfer_state = 34
 						add_state_core = 24
+						set_capital = { state = 802 }
 						load_oob = KLU_native_uprising
 					}
 					every_state = {
@@ -1501,16 +1470,101 @@ country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
 								state = 638
 							}
 						}
-						add_core_of = TUG
+						add_core_of = KLU
 					}
-					TUG = {
+					KLU = {
 						declare_war_on = {
 							target = FLE
 							type = annex_everything
 						}
 					}
+					else = {
+						TUG = {
+							transfer_state = 802
+							transfer_state = 1018
+							transfer_state = 797
+							transfer_state = 1026
+							transfer_state = 1033
+							transfer_state = 1020
+							transfer_state = 795
+							transfer_state = 745
+							transfer_state = 1039
+							transfer_state = 699
+							transfer_state = 1040
+							transfer_state = 37
+							transfer_state = 38
+							transfer_state = 33
+							transfer_state = 34
+							add_state_core = 24
+							load_oob = KLU_native_uprising
+						}
+						every_state = {
+							limit = {
+								is_core_of = FLE
+								NOT = {
+									state = 632
+									state = 634
+									state = 638
+								}
+							}
+							add_core_of = TUG
+						}
+						TUG = {
+							declare_war_on = {
+								target = FLE
+								type = annex_everything
+							}
+						}
+					}
+				}
+				log = "[GetDateText]: [Root.GetName]: Rebellion of natives in support of Macius executed successfully"
+				else = {
+					if = {
+						limit = {
+							TUG = {
+								exists = no
+							}
+						}
+						KLU = {
+							transfer_state = 971
+							transfer_state = 33
+							transfer_state = 34
+							set_capital = { state = 971 }
+							load_oob = KLU_native_uprising_no_FLE
+						}
+						every_state = {
+							limit = {
+								OR = {
+									state = 971
+									state = 33
+									state = 34
+								}
+							}
+							add_core_of = KLU
+						}
+						else = {
+							TUG = {
+								transfer_state = 971
+								transfer_state = 33
+								transfer_state = 34
+								load_oob = KLU_native_uprising_no_FLE
+							}
+							every_state = {
+								limit = {
+									OR = {
+										state = 971
+										state = 33
+										state = 34
+									}
+								}
+								add_core_of = TUG
+							}
+						}
+					}
+					log = "[GetDateText]: [Root.GetName]: Rebellion of natives in support of Macius executed successfully (no Flensburg)"
 				}
 			}
+			
 		}
 	}
 
@@ -1519,9 +1573,22 @@ country_event = { #Klu-Klu and Macius launch an uprising in the colonies!
 		hidden_effect = {
 			set_country_flag = hartmut_did_not_resign
 		}
-		declare_war_on = {
-			target = KLU
-			type = annex_everything
+		if = {
+			limit = {
+				KLU = {
+					exists = yes
+				}
+			}
+			declare_war_on = {
+				target = KLU
+				type = annex_everything
+			}
+			else = {
+				declare_war_on = {
+					target = TUG
+					type = annex_everything
+				}
+			}
 		}
 	}
 }

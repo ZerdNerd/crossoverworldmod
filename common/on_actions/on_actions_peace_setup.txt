@@ -1,0 +1,174 @@
+on_actions = {
+
+	#ROOT is winner, FROM is loser (called for all winners against all losers)
+	on_peaceconference_started = {
+		effect = {
+			log = "on_peaceconference_started [GetLogRoot] [GetLogFrom]"
+
+			#set up PC country arrays
+			if = {
+				limit = { NOT = { has_global_flag = TCWM_set_up_pc_arrays } }
+				set_global_flag = TCWM_set_up_pc_arrays
+				every_country = {
+					limit = { pc_is_winner = yes }
+					add_to_array = { global.pc_winners_array = THIS }
+					if = {
+						limit = { is_major = yes }
+						set_global_flag = pc_has_major_winner
+					}
+					if = {
+						limit = { is_subject = no }
+						set_global_flag = pc_has_non_subject_winner
+					}
+				}
+				every_country = {
+					limit = { pc_is_loser = yes }
+					every_owned_state = { add_to_array = { PREV.pc_owned_states = THIS } }
+					add_to_array = { global.pc_losers_array = THIS }
+				}
+			}
+		}
+	}
+
+	#ROOT is winner #FROM is loser
+	on_peaceconference_ended = {
+		effect = {
+			log = "on_peaceconference_ended [GetLogRoot] [GetLogFrom]"
+
+			#Remove redundant wargoals
+			if = {
+				limit = { has_wargoal_against = FROM }
+				remove_wargoal = { target = FROM type = all }
+			}
+			FROM = {
+				if = {
+					limit = { has_wargoal_against = ROOT }
+					remove_wargoal = { target = ROOT type = all }
+				}
+			}
+
+			### transfer impassables to the correct targets
+			for_each_scope_loop = {
+				array = global.paired_impassable_states
+				if = {
+					limit = { NOT = { is_owned_by = var:paired_impassable:owner } }
+					transfer_state_to = paired_impassable:owner
+				}
+			}
+
+			# post-PC data cleanup
+			if = {
+				limit = {
+					set_temp_variable = { last_winner_index = global.pc_winners_array^num }
+					subtract_from_temp_variable = { last_winner_index = 1 }
+					check_variable = { global.pc_winners_array^last_winner_index = ROOT }
+
+					set_temp_variable = { last_loser_index = global.pc_losers_array^num }
+					subtract_from_temp_variable = { last_loser_index = 1 }
+					check_variable = { global.pc_losers_array^last_loser_index = FROM }
+				}
+
+				### workaround to fix endless AI-on-AI contests leaving losers alive
+				for_each_scope_loop = {
+					array = global.pc_losers_array
+					if = {
+						limit = {
+							exists = yes
+							is_ai = yes
+							check_variable = { num_owned_states < pc_owned_states^num } #== states were taken in a normal PC
+						}
+						for_each_scope_loop = {
+							array = pc_owned_states
+							if = {
+								limit = { is_owned_by = PREV }
+								random_neighbor_state = {
+									limit = {
+										impassable = no
+										NOT = { is_owned_by = PREV.PREV }
+										is_in_array = { PREV.PREV.pc_owned_states = THIS }
+									}
+									owner = { transfer_state = PREV.PREV }
+								}
+							}
+							else = {
+								if = {
+									limit = { NOT = { is_in_array = { owners_@PREV = owner } } }
+									add_to_temp_array = { owners_@PREV = owner }
+								}
+								add_to_temp_variable = { total_score_@var:owner = state_strategic_value }
+							}
+						}
+						for_each_loop = {
+							array = owners_@PREV
+							add_to_temp_array = { owner_scores_@PREV = total_score_@var:v }
+						}
+						find_highest_in_array = { array = owner_scores_@PREV }
+						var:owners_@PREV^i = { annex_country = { target = PREV } }
+					}
+					clear_array = pc_owned_states
+				}
+
+				clr_global_flag = TCWM_set_up_pc_arrays
+				clr_global_flag = pc_has_major_winner
+				clr_global_flag = pc_has_non_subject_winner
+				clear_array = global.pc_winners_array
+				clear_array = global.pc_losers_array
+			}
+
+			# remove the force-surrender idea, just in case it's still there
+			FROM = { remove_ideas = ready_to_surrender }
+
+			### give temporary military access after scripted peaces
+			if = {
+				limit = {
+					country_exists = ROOT
+					country_exists = FROM
+					NOT = { is_neighbor_of = FROM }
+					NOT = { is_ally_with = FROM } #just in case
+					NOT = { FROM = { any_neighbor_country = { is_ally_with = ROOT } } }
+				}
+				if = {
+					limit = { any_owned_state = { FROM = { divisions_in_state = { state = PREV size > 0 } } } }
+					give_military_access = FROM
+				}
+				FROM = {
+					if = {
+						limit = { any_owned_state = { ROOT = { divisions_in_state = { state = PREV size > 0 } } } }
+						give_military_access = ROOT
+					}
+				}
+			}
+
+			### civil war tags should always annex each other
+			if = {
+				limit = {
+					FROM = {
+						exists = yes #so that we don't keep checking this for every winner-loser pair
+						has_capitulated = yes
+					}
+					OR = {
+						AND = {
+							OR = {
+								tag = ENC
+								tag = EN1
+								tag = EN2
+								tag = EN3
+								tag = EN4
+							}
+							FROM = { 
+								OR = {
+									tag = ENC
+									tag = EN1
+									tag = EN2
+									tag = EN3
+									tag = EN4
+								}
+							}
+						}
+					}
+				}
+				annex_country = { target = FROM transfer_troops = yes }
+			}
+		}
+	}
+}

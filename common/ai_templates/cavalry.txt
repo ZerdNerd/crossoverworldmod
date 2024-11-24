@@ -1,0 +1,51 @@
+line_cavalry = {
+	available_for = {
+		SIO
+	}
+
+	role = infantry
+
+	upgrade_prio = {
+		factor = 1
+	}
+
+	cavalry_default_nonmodern = {
+
+		upgrade_prio = {
+			base = 1
+			modifier = {
+				factor = 0
+				tag = SIO
+				NOT = {
+					has_completed_focus = SIO_get_lost_humsin
+				}
+			}
+		}
+
+		target_template = {
+			regiments = {
+				cavalry = 6
+			}
+		}
+	}
+
+	cavalry_arty = {
+
+		upgrade_prio = {
+			base = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					has_idea = modern_tech_idea
+				}
+			}
+		}
+
+		target_template = {
+			regiments = {
+				cavalry = 9
+				artillery_brigade = 3
+			}
+		}
+	}
+}

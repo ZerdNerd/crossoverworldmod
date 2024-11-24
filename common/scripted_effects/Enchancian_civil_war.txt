@@ -51,38 +51,9 @@ ENC_release_EN1 = {
 				limit = {
 					has_country_flag = king_james
 				}
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = administrative_monarchy
-					traits = {
-						#
-					}
-				}
-
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = centrism
-					traits = {
-						#
-					}
-				}
-		
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						#
-					}
+				ENC_miranda_character = {
+					promote_character = administrative_monarchy
+					promote_character = centrism
 				}
 			}
 		}
@@ -153,38 +124,9 @@ ENC_release_EN2 = {
 						has_country_flag = queen_sofia
 					}
 				}
-				retire_country_leader = yes
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = administrative_monarchy
-					traits = {
-						#
-					}
-				}
-
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = centrism
-					traits = {
-						#
-					}
-				}
-		
-				create_country_leader = {
-					name = "Miranda"
-					desc = "POLITICS_MIRANDA_DESC"
-					picture = "miranda.dds"
-					expire = "1965.1.1"
-					ideology = conservatism
-					traits = {
-						#
-					}
+				ENC_miranda_character = {
+					promote_character = administrative_monarchy
+					promote_character = centrism
 				}
 			}
 		}

@@ -1944,7 +1944,10 @@ focus_tree = {
 			focus = DUL_exchange_embassies
 		}
 		available = {
-			has_war = no
+			OR = {
+				has_war = no
+				has_war_with = AVA
+			}
 			custom_trigger_tooltip = {
 				tooltip = DUL_a_dream_of_empire_complicated_requirements
 				OR = {
@@ -2562,7 +2565,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_small_arms
@@ -2628,7 +2631,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_doctrines
@@ -2656,7 +2659,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_artillery
@@ -2684,7 +2687,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_doctrines
@@ -2732,7 +2735,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_artillery
@@ -2760,7 +2763,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_military_academy
@@ -2785,7 +2788,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_allies_build_infantry
@@ -2813,7 +2816,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_motorized
@@ -2841,7 +2844,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_NZL_bob_semple_tank
@@ -2869,7 +2872,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_motorized
@@ -2897,7 +2900,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_army_tanks
@@ -2946,7 +2949,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_build_tank
@@ -3047,7 +3050,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		mutually_exclusive = { focus = DUL_quantity_first } 
@@ -3073,7 +3076,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		}
 		mutually_exclusive = { focus = DUL_quality_first } 
@@ -3099,7 +3102,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_military_academy
@@ -3125,7 +3128,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_military_mission
@@ -3150,7 +3153,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_license_production
@@ -3176,7 +3179,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_military_mission
@@ -3201,7 +3204,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_manpower
@@ -3226,7 +3229,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_secret_rearmament
@@ -3251,7 +3254,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_manpower
@@ -3286,7 +3289,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_occupy_states_coastal
@@ -3319,7 +3322,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_construct_naval_dockyard
@@ -3368,7 +3371,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_build_navy
@@ -3406,7 +3409,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_navy_submarine
@@ -3438,7 +3441,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_destroyer
@@ -3470,7 +3473,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_cruiser2
@@ -3503,7 +3506,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
@@ -3537,7 +3540,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_navy_battleship
@@ -3571,7 +3574,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_navy_battleship2
@@ -3606,7 +3609,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_navy_battleship2
@@ -3646,7 +3649,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_amphibious_assault
@@ -3679,7 +3682,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_navy_anti_submarine
@@ -3715,7 +3718,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_navy_submarine
@@ -3757,7 +3760,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_build_airforce
@@ -3796,7 +3799,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_air_fighter
@@ -3823,7 +3826,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_air_fighter2
@@ -3851,7 +3854,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_air_bomber
@@ -3878,7 +3881,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_usa_escort_fighters
@@ -3905,7 +3908,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_generic_military_academy
@@ -3933,7 +3936,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_focus_research
@@ -3962,7 +3965,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_air_fighter
@@ -3985,7 +3988,7 @@ focus_tree = {
 			base = 0
 			modifier = {
 				has_war = yes
-				add = 2
+				add = 1
 			}
 		} 
 		icon = GFX_goal_generic_CAS

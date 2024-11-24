@@ -7,8 +7,8 @@ add_namespace = chamomilevalley
 country_event = {
 	id = chamomilevalley.1
 	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
-	title = "Kar-Karych retires"
-	desc = "This morning, Kar-Karych announced his retirement from politics. After dedicating an enormous amount of his heart and mind to running the nation, he now feels completely worn out."
+	title = chamomilevalley.1.t
+	desc = chamomilevalley.1.d
 	picture = GFX_report_karych_retires
 
 	fire_only_once = yes
@@ -16,7 +16,7 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = "The old raven deserves a retirement."
+		name = chamomilevalley.1.a
 		hidden_effect = {
 			kill_country_leader = yes
 		}
@@ -26,8 +26,8 @@ country_event = {
 country_event = {
 	id = chamomilevalley.2
 	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
-	title = "Snap Election!"
-	desc = "The election is finally here. As the voting is concluded and the results are in, the winner is..."
+	title = chamomilevalley.2.t
+	desc = chamomilevalley.2.d
 	picture = GFX_report_chamomile_valley
 
 	fire_only_once = yes
@@ -35,16 +35,19 @@ country_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = "Krosh!"
+		name = chamomilevalley.2.a
+		ai_chance = {
+			base = 100
+		}
 		hidden_effect = {
-			complete_national_focus = CVA_krosh
+			complete_national_focus = CVA_krosh_leader
 			news_event = { 
 				id = chamomilenews.1 days = 2
 			}
 			}
 	}
 	option = {
-		name = "Barash!"
+		name = chamomilevalley.2.b
 		hidden_effect = {
 			news_event = { 
 				id = chamomilenews.2 days = 2
@@ -67,7 +70,7 @@ country_event = {
 		}
 	}
 	option = {
-		name = "Losyash!"
+		name = chamomilevalley.2.c
 		hidden_effect = {
 			news_event = { 
 				id = chamomilenews.3 days = 2
@@ -225,7 +228,7 @@ country_event = { #We have been accepted into the faction
 	is_triggered_only = yes
 
 	option = {
-		name = "Splendid!"
+		name = "chamomilevalley.11.a"
 		FROM = {
 			add_to_faction = CVA
 		}
@@ -242,7 +245,7 @@ country_event = { #We have been refused from joining the faction
 	is_triggered_only = yes
 
 	option = {
-		name = "Shame."
+		name = "chamomilevalley.8.a"
 	}
 }
 country_event = { 
@@ -260,6 +263,1140 @@ country_event = {
 			add_ideas = {
 			CVA_pluto_fleet
 			}
+		}
 	}
 }
+country_event = { 
+	id = chamomilevalley.10
+	title = chamomilevalley.17.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.a
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.11
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.12
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+			puppet = BEE
+		}
+	}
+}
+country_event = { #They accept
+	id = chamomilevalley.11
+	title = chamomilevalley.11.t
+	desc = chamomilevalley.11.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = chamomilevalley.11.a
+		hidden_effect = {
+			BEE = {
+				every_owned_state = {
+					if = {
+						limit = {
+							is_core_of = BEE
+						}
+						add_core_of = CVA
+					}
+				}
+			}
+			annex_country = {
+   				target = BEE
+    			transfer_troops = yes
+			}
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.12
+	title = "chamomilevalley.12.t"
+	desc = "chamomilevalley.12.d"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "chamomilevalley.8.a"
+		BEE = {
+			every_owned_state = {
+				add_claim_by = CVA
+			}
+		}
+		create_wargoal = {
+			target = BEE
+			type = annex_everything
+		}	
+	}
+}
+country_event = { 
+	id = chamomilevalley.13
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.13.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.a
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.14
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+			puppet = TIG
+		}
+	}
+}
+country_event = { #They accept
+	id = chamomilevalley.14
+	title = chamomilevalley.11.t
+	desc = chamomilevalley.11.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { 
+		name = chamomilevalley.14.a
+		hidden_effect = {
+			TIG = {
+				every_owned_state = {
+					if = {
+						limit = {
+							is_core_of = TIG
+						}
+						add_core_of = CVA
+					}
+				}
+			}
+			annex_country = {
+   				target = TIG
+    			transfer_troops = yes
+			}
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.15
+	title = "chamomilevalley.12.t"
+	desc = "chamomilevalley.12.d"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "chamomilevalley.8.a"
+		TIG = {
+			every_owned_state = {
+				add_claim_by = CVA
+			}
+		}
+		create_wargoal = {
+			target = TIG
+			type = annex_everything
+		}	
+	}
+}
+country_event = { 
+	id = chamomilevalley.16
+	title = "chamomilevalley.16.t"
+	desc = "chamomilevalley.16.d"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "chamomilevalley.11.a"
+	}
+}
+country_event = { 
+	id = chamomilevalley.17
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = TUG
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.18
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = JOJ
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.19
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = GRN
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.20
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = SIO
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.21
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = FLO
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.22
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = MO2
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.23
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = ELW
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.24
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = SIX
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.25
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = ARE
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.26
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = RAB
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.27
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = MIC
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.28
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = SOO
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.29
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = NTR
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.30
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = LAL
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.31
+	title = chamomilevalley.31.t
+	desc = chamomilevalley.31.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.31.a
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.32
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.31.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.33
+				days = 0
+			}
+		FLE = {
+			set_capital = { state = 782 }
+		}
+		SIO = {
+		transfer_state = 634
+		transfer_state = 638
+		transfer_state = 632
+		}
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.32
+	title = "chamomilevalley.32.t"
+	desc = "chamomilevalley.32.d"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "chamomilevalley.32.a"
+	}
+}
+country_event = { 
+	id = chamomilevalley.33
+	title = "chamomilevalley.33.t"
+	desc = "chamomilevalley.33.d"
+	
+	picture = GFX_report_event_generic_rally_3
+
+	is_triggered_only = yes
+
+	option = {
+		name = "chamomilevalley.33.a"
+	}
+}
+country_event = { 
+	id = chamomilevalley.34
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = DUC
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.35
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = OFL
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.36
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = SQU
+		}
+	}
+}
+country_event = { 
+	id = chamomilevalley.37
+	title = chamomilevalley.13.t
+	desc = chamomilevalley.17.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.13.b
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.15
+				days = 0
+			}
+		}
+	}
+	option = {
+		name = chamomilevalley.13.c
+		CVA = { 
+			country_event = {
+				id = chamomilevalley.16
+				days = 0
+			}
+		puppet = TRL
+		}
+	}
+}
+country_event = {
+	id = chamomilevalley.38
+	title = chamomilevalley.38.t
+	desc = chamomilevalley.38.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.38.a
+	}
+}
+country_event = {
+	id = chamomilevalley.39
+	title = chamomilevalley.39.t
+	desc = chamomilevalley.39.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.39.a
+	}
+}
+country_event = {
+	id = chamomilevalley.40
+	title = chamomilevalley.40.t
+	desc = chamomilevalley.40.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.40.a
+	}
+}
+country_event = {
+	id = chamomilevalley.41
+	title = chamomilevalley.41.t
+	desc = chamomilevalley.41.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.41.a
+			country_event = {
+				id = chamomilevalley.42
+				days = 0
+			}
+	}
+}
+country_event = {
+	id = chamomilevalley.42
+	title = chamomilevalley.42.t
+	desc = chamomilevalley.42.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.42.a
+	}
+}
+country_event = {
+	id = chamomilevalley.43
+	title = chamomilevalley.43.t
+	desc = chamomilevalley.43.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.43.a
+	}
+}
+country_event = {
+	id = chamomilevalley.44
+	title = chamomilevalley.44.t
+	desc = chamomilevalley.44.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.44.a
+	}
+}
+country_event = {
+	id = chamomilevalley.45
+	title = chamomilevalley.45.t
+	desc = chamomilevalley.45.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.45.a
+	}
+}
+country_event = {
+	id = chamomilevalley.46
+	title = chamomilevalley.46.t
+	desc = chamomilevalley.46.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.46.a
+	}
+}
+country_event = {
+	id = chamomilevalley.47
+	title = chamomilevalley.47.t
+	desc = chamomilevalley.47.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.47.a
+	}
+}
+country_event = {
+	id = chamomilevalley.48
+	title = chamomilevalley.48.t
+	desc = chamomilevalley.48.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.48.a
+	}
+}
+country_event = {
+	id = chamomilevalley.49
+	title = chamomilevalley.49.t
+	desc = chamomilevalley.49.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.49.a
+	}
+}
+country_event = {
+	id = chamomilevalley.50
+	title = chamomilevalley.50.t
+	desc = chamomilevalley.50.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.50.a
+	}
+}
+country_event = {
+	id = chamomilevalley.51
+	title = chamomilevalley.51.t
+	desc = chamomilevalley.51.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.51.a
+	}
+}
+country_event = {
+	id = chamomilevalley.52
+	title = chamomilevalley.52.t
+	desc = chamomilevalley.52.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.52.a
+			country_event = {
+				id = chamomilevalley.53
+				days = 0
+			}
+	}
+}
+country_event = {
+	id = chamomilevalley.53
+	title = chamomilevalley.53.t
+	desc = chamomilevalley.53.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.53.a
+	}
+}
+country_event = {
+	id = chamomilevalley.54
+	title = chamomilevalley.54.t
+	desc = chamomilevalley.54.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.54.a
+	}
+}
+country_event = {
+	id = chamomilevalley.55
+	title = chamomilevalley.55.t
+	desc = chamomilevalley.55.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.55.a
+	}
+}
+country_event = {
+	id = chamomilevalley.56
+	title = chamomilevalley.56.t
+	desc = chamomilevalley.56.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.56.a
+			country_event = {
+				id = chamomilevalley.57
+				days = 0
+			}
+	}
+}
+country_event = {
+	id = chamomilevalley.57
+	title = chamomilevalley.57.t
+	desc = chamomilevalley.57.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.57.a
+	}
+}
+country_event = {
+	id = chamomilevalley.58
+	title = chamomilevalley.58.t
+	desc = chamomilevalley.58.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.58.a
+	}
+}
+country_event = {
+	id = chamomilevalley.59
+	title = chamomilevalley.59.t
+	desc = chamomilevalley.59.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.59.a
+	}
+}
+country_event = {
+	id = chamomilevalley.60
+	title = chamomilevalley.60.t
+	desc = chamomilevalley.60.d
+	picture = GFX_report_chamomile_valley
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = chamomilevalley.60.a
+	}
+}
+
 

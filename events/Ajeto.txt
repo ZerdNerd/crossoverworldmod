@@ -1,0 +1,482 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = ajeto
+
+country_event = {
+	id = ajeto.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.1.t
+	desc = ajeto.1.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.1.a
+				hidden_effect = {
+			country_event = {
+				id = ajeto.2
+				days = 300
+			}			
+		}	
+		}
+	option = {
+		name = ajeto.1.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+						country_event = {
+				id = ajeto.3
+				days = 35
+			}	
+		}
+	}
+}
+country_event = {
+	id = ajeto.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.2.t
+	desc = ajeto.2.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+			complete_national_focus = PAT_coup_aftermath
+			kill_country_leader = yes
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.45
+			}
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.35
+			}
+		name = ajeto.2.a
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+		create_country_leader = {
+			name = "General Vostok"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "generalvostok.dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+				#
+			}
+		}
+				hidden_effect = {
+			country_event = {
+				id = ajeto.10
+				days = 100
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.3.t
+	desc = ajeto.3.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.3.a
+				hidden_effect = {
+			country_event = {
+				id = ajeto.2
+				days = 14
+			}			
+		}	
+		}
+	option = {
+		name = ajeto.3.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+						country_event = {
+				id = ajeto.4
+				days = 35
+			}	
+		}
+	}
+}
+country_event = {
+	id = ajeto.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.4.t
+	desc = ajeto.4.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.4.a
+		ai_chance = {
+			base = 100
+		}
+				hidden_effect = {
+						country_event = {
+				id = ajeto.5
+				days = 35
+			}			
+		}	
+		}
+	option = {
+		name = ajeto.4.b
+		hidden_effect = {
+						country_event = {
+				id = ajeto.2
+				days = 230
+			}	
+		}
+	}
+}
+country_event = {
+	id = ajeto.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.5.t
+	desc = ajeto.5.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.5.a
+				hidden_effect = {
+						country_event = {
+				id = ajeto.6
+				days = 35
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.6.t
+	desc = ajeto.6.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.6.a
+				hidden_effect = {
+						country_event = {
+				id = ajeto.7
+				days = 35
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.7.t
+	desc = ajeto.7.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.7.a
+				hidden_effect = {
+						country_event = {
+				id = ajeto.8
+				days = 35
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.8.t
+	desc = ajeto.8.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.8.a
+				hidden_effect = {
+			country_event = {
+				id = ajeto.2
+				days = 14
+			}			
+		}	
+		}
+	option = {
+		name = ajeto.8.b
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = ajeto.8.c
+				hidden_effect = {
+			country_event = {
+				id = ajeto.2
+				days = 14
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.9.t
+	desc = ajeto.9.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+			complete_national_focus = PAT_spejbl_and_hurvinek
+mark_focus_tree_layout_dirty = yes
+		name = ajeto.9.a
+		create_country_leader = {
+			name = "Spejbl and Hurvínek"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "spejbl_hurvinek.dds"
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				#
+			}
+		}	
+		}
+}
+country_event = {
+	id = ajeto.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.10.t
+	desc = ajeto.10.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.10.a
+		create_country_leader = {
+			name = "Mountain General"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "mountaingeneral.dds"
+			expire = "1965.1.1"
+			ideology = despotism
+			traits = {
+				#
+			}
+		}
+				hidden_effect = {
+			country_event = {
+				id = ajeto.11
+				days = 50
+			}			
+		}	
+		}
+}
+country_event = {
+	id = ajeto.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.11.t
+	desc = ajeto.11.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.11.a
+			complete_national_focus = PAT_deal_with_resistance
+			complete_national_focus = PAT_vostok_civilwar
+		start_civil_war = {
+   			ideology = democratic
+			size = 0.5
+    		capital = 703
+    		states = { 703 756 731 }
+			PREV = {  # Original country
+				PAT_generalvostok = { # Character
+					set_nationality = PREV
+				}
+			}
+		}
+	}
+	option = {
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		add_popularity = {
+				ideology = democratic
+				popularity = 0.35
+			}
+		name = ajeto.11.b
+			complete_national_focus = PAT_deal_with_resistance
+			complete_national_focus = PAT_mountaingeneral_civilwar
+		start_civil_war = {
+			ideology = communism
+			size = 0.5
+			capital = 740
+			states = { 740 760 775 762 785 793 804 807 784 }
+			PREV = {  # Original country
+				PAT_mountaingeneral = { # Character
+					set_nationality = PREV
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = ajeto.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.12.t
+	desc = ajeto.12.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.12.a
+			create_wargoal = {
+    			type = annex_everything
+    			target = FRI
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = MAI
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = WEK
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = SLD
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = ICK
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = DUL
+			}	
+			create_wargoal = {
+    			type = annex_everything
+    			target = CDK
+			}	
+			create_wargoal = {
+    			type = annex_everything
+    			target = FRK
+			}	
+		}
+	option = {
+		name = ajeto.12.b
+			MAI = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			SLD = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			FRI = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			WEK = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			ICK = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			DUL = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			CDK = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+			FRK = {
+				add_opinion_modifier = {
+    				target = PAT
+    				modifier = MAI_true_relations
+				} 
+			} 
+	}
+}
+country_event = {
+	id = ajeto.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = ajeto.13.t
+	desc = ajeto.13.d
+	picture = GFX_report_prague
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = ajeto.13.a
+		ai_chance = {
+			base = 100
+		}
+		PAT = {
+			add_to_faction = SMU
+		}	
+		}
+	option = {
+		name = ajeto.1.b
+
+	}
+}

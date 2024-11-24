@@ -46,6 +46,73 @@ on_actions = {
 
 	on_daily = {
 		effect = {
+			if = {
+				limit = {
+					tag = ENC
+					date > 1943.08.05
+					date < 1943.08.06
+					OR = {
+						NOT = {
+							has_global_flag = enchancian_civil_war
+						}
+						has_global_flag = enchancian_civil_war_over
+					}
+				}
+				ENC = {
+					country_event = {
+						id = enchancia.82
+						days = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = EN1
+					EN1 = {
+						exists = yes
+					}
+					date > 1943.08.05
+					date < 1943.08.06
+				}
+				EN1 = {
+					country_event = {
+						id = enchancia.83
+						days = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = EN2
+					EN2 = {
+						exists = yes
+					}
+					date > 1943.08.05
+					date < 1943.08.06
+				}
+				EN2 = {
+					country_event = {
+						id = enchancia.82
+						days = 0
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = EN2
+					EN2 = {
+						exists = yes
+					}
+					date > 1943.10.06
+					date < 1943.10.07
+				}
+				EN2 = {
+					country_event = {
+						id = enchancia.81
+						days = 0
+					}
+				}
+			}
 			APS = {
 				if = {
 					limit = {
@@ -4720,6 +4787,211 @@ on_actions = {
 			if = {
 				limit = {
 					ROOT = {
+						tag = ENC
+					}
+					FROM = {
+						OR = {
+							tag = EN1
+							tag = EN2
+							tag = EN3
+							tag = EN4
+						}
+					}
+				}
+				ENC = {
+					ENC_miranda_character = {
+						remove_country_leader_role = {
+							ideology = administrative_monarchy
+						}
+						remove_country_leader_role = {
+							ideology = centrism
+						}
+					}
+					if = {
+						limit = {
+							EN1 = {
+								exists = yes
+							}
+						}
+						ENC_sofia_character = {
+							set_nationality = EN1
+						}
+						ENC_sofia_older_character = {
+							set_nationality = EN1
+						}
+						ENC_miranda_character = {
+							set_nationality = EN1
+						}
+						else = {
+							ENC_sofia_character = {
+								set_nationality = EN2
+							}
+							ENC_sofia_older_character = {
+								set_nationality = EN2
+							}
+							ENC_miranda_character = {
+								set_nationality = EN2
+							}
+							if = {
+								limit = {
+									has_character = ENC_james_character
+								}
+								ENC_james_character = {
+									set_nationality = EN2
+								}
+								ENC_james_adult_character = {
+									set_nationality = EN2
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = EN1
+					}
+					FROM = {
+						OR = {
+							tag = ENC
+							tag = EN2
+							tag = EN3
+							tag = EN4
+						}
+					}
+				}
+				EN1 = {
+					ENC_james_character = {
+						remove_country_leader_role = {
+							ideology = administrative_monarchy
+						}
+						remove_country_leader_role = {
+							ideology = centrism
+						}
+					}
+					if = {
+						limit = {
+							ENC = {
+								exists = yes
+							}
+						}
+						if = {
+							limit = {
+								has_character = ENC_amber_character
+							}
+							ENC_amber_character = {
+								set_nationality = ENC
+							}
+							ENC_amber_older_character = {
+								set_nationality = ENC
+							}
+						}
+						ENC_james_character = {
+							set_nationality = ENC
+						}
+						ENC_james_adult_character = {
+							set_nationality = ENC
+						}
+						else = {
+							ENC_james_character = {
+								set_nationality = EN2
+							}
+							ENC_james_adult_character = {
+								set_nationality = EN2
+							}
+							if = {
+								limit = {
+									has_character = ENC_sofia_character
+								}
+								ENC_sofia_character = {
+									set_nationality = EN2
+								}
+								ENC_sofia_older_character = {
+									set_nationality = EN2
+								}
+								ENC_miranda_character = {
+									set_nationality = EN2
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
+						tag = EN2
+					}
+					FROM = {
+						OR = {
+							tag = ENC
+							tag = EN1
+							tag = EN3
+							tag = EN4
+						}
+					}
+				}
+				EN2 = {
+					ENC_amber_character = {
+						remove_country_leader_role = {
+							ideology = administrative_monarchy
+						}
+						remove_country_leader_role = {
+							ideology = centrism
+						}
+					}
+					if = {
+						limit = {
+							ENC = {
+								exists = yes
+							}
+						}
+						if = {
+							limit = {
+								has_character = ENC_james_character
+							}
+							ENC_james_character = {
+								set_nationality = ENC
+							}
+							ENC_james_adult_character = {
+								set_nationality = ENC
+							}
+						}
+						ENC_amber_character = {
+							set_nationality = ENC
+						}
+						ENC_amber_older_character = {
+							set_nationality = ENC
+						}
+						else = {
+							ENC_amber_character = {
+								set_nationality = EN1
+							}
+							ENC_amber_older_character = {
+								set_nationality = EN1
+							}
+							if = {
+								limit = {
+									has_character = ENC_sofia_character
+								}
+								ENC_sofia_character = {
+									set_nationality = EN1
+								}
+								ENC_sofia_older_character = {
+									set_nationality = EN1
+								}
+								ENC_miranda_character = {
+									set_nationality = EN1
+								}
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					ROOT = {
 						tag = FLE
 					}
 					FROM = {
@@ -5798,28 +6070,6 @@ on_actions = {
 				country_event = {
 					id = starfleet.19
 					days = 180
-				}
-			}
-			ENC = {
-				country_event = {
-					id = enchancia.82
-					days = 2772
-				}
-			}
-			EN1 = {
-				country_event = {
-					id = enchancia.83
-					days = 2772
-				}
-			}
-			EN2 = {
-				country_event = {
-					id = enchancia.82
-					days = 2772
-				}
-				country_event = {
-					id = enchancia.81
-					days = 2835
 				}
 			}
 			ARE = {

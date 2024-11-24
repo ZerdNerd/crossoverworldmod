@@ -151,81 +151,72 @@ enemy_has_equal_or_better_radar_tech_trigger = {
 		tooltip = enemy_has_equal_or_better_radar_tech_trigger_tt
 		if = {
 			limit = {
-				ROOT = { 
-					has_tech = radio_detection 
+				ROOT = {
+					has_tech = radio_detection
 					NOT = {
-						has_tech = decimetric_radar
+						has_tech = cavity_magnatron
 					}
-				} 
+				}
 			}
-			FROM = { 
+			FROM = {
 				OR = {
-					has_tech = radio_detection 
-					has_tech = decimetric_radar
+					has_tech = radio_detection
+					has_tech = cavity_magnatron
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
-					has_tech = decimetric_radar 
-					NOT = {
-						has_tech = improved_decimetric_radar
-					}
-				} 
-			}
-			FROM = { 
-				OR = {
-					has_tech = decimetric_radar 
-					has_tech = improved_decimetric_radar
+				ROOT = {
+					has_tech = cavity_magnatron
+
 				}
+			}
+			FROM = {
+				has_tech = cavity_magnatron
 			}
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
-					has_tech = improved_decimetric_radar 
+				ROOT = {
 					NOT = {
 						has_tech = centimetric_radar
 					}
-				} 
+				}
 			}
-			FROM = { 
-				OR = {
-					has_tech = improved_decimetric_radar 
+			FROM = {
+				has_tech = centimetric_radar
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = {
 					has_tech = centimetric_radar
+					NOT = {
+						has_tech = phased_array
+					}
+				}
+			}
+			FROM = {
+				OR = {
+					has_tech = centimetric_radar
+					has_tech = phased_array
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				ROOT = { 
-					has_tech = centimetric_radar 
+				ROOT = {
+					has_tech = phased_array
 					NOT = {
-						has_tech = improved_centimetric_radar
+						has_tech = monopulse_radar
 					}
-				} 
-			}
-			FROM = { 
-				OR = {
-					has_tech = centimetric_radar 
-					has_tech = improved_centimetric_radar
 				}
 			}
-		}
-		else_if = {
-			limit = {
-				ROOT = { 
-					has_tech = improved_centimetric_radar 
-					NOT = {
-						has_tech = advanced_centimetric_radar
-					}
-				} 
-			}
-			FROM = { 
+			FROM = {
 				OR = {
-					has_tech = improved_centimetric_radar 
-					has_tech = advanced_centimetric_radar
+					has_tech = phased_array
+					has_tech = monopulse_radar
 				}
 			}
 		}
@@ -249,6 +240,59 @@ has_large_ally_not_pick_closed_economy = {
 		
 		NOT = { tag = PREV }
 		num_of_military_factories > 30
+	}
+}
+
+
+can_unlock_new_special_forces_tree = {
+	if = {
+		limit = { NOT = { has_variable = sf_trees } }
+		custom_trigger_tooltip = {
+			tooltip = can_unlock_new_special_forces_tree_none
+			NOT = { has_variable = sf_trees }
+		}
+	}
+	else_if = {
+		limit = { check_variable = { sf_trees > 0 } }
+		custom_trigger_tooltip = {
+			tooltip = can_unlock_new_special_forces_tree_more_yes
+			check_variable = { sf_trees > 0 }
+		}
+	}
+	else = {
+		custom_trigger_tooltip = {
+			tooltip = can_unlock_new_special_forces_tree_more_no
+			always = no
+		}
+	}
+}
+# These are to make strength comparisons easier 
+
+FROM_is_stronger = {
+	strength_ratio = {
+		tag = FROM 
+		ratio < 1
+	}
+}
+
+FROM_is_twice_as_strong = {
+	strength_ratio = {
+		tag = FROM 
+		ratio < 0.5
+	}
+}
+
+FROM_is_weaker = {
+	strength_ratio = {
+		tag = FROM 
+		ratio > 1
+	}
+}
+
+FROM_is_twice_as_weak = {
+	strength_ratio = {
+		tag = FROM 
+		ratio > 2
 	}
 }
 
@@ -293,32 +337,45 @@ ai_has_completed_naval_doctrine = {
 	}
 }
 
-mio_original_country_exists_and_not_at_war_with_ROOT = { #Used for MIO decisions visibility - THIS is original country
-	exists = yes
-	has_capitulated = no
+### Neutrality Act - only trade with countries at peace 
+trade_partner_not_at_war = {
+	custom_trigger_tooltip = {
+		tooltip = trade_partner_not_at_war_tt
+		FROM = { 
+			has_war = yes 
+		}
+	}
+}
+
+is_democratic_seller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = "Democratic Countries"
+		FROM = {
+			has_government = democratic
+		}
+	}
+}
+
+#Subsidy Seller Triggers
+is_fascist_seller_trigger = {
+	NOT = { has_war_with = ROOT	}
+	has_government = fascism 
+}
+
+is_democracy_seller_trigger = {
+	NOT = { has_war_with = ROOT	}
+	has_government = democratic 
+}
+
+is_communist_seller_trigger = {
 	NOT = { has_war_with = ROOT }
+	has_government = communism
 }
 
-
-can_unlock_new_special_forces_tree = {
-	if = {
-		limit = { NOT = { has_variable = sf_trees } }
-		custom_trigger_tooltip = {
-			tooltip = can_unlock_new_special_forces_tree_none
-			NOT = { has_variable = sf_trees }
-		}
-	}
-	else_if = {
-		limit = { check_variable = { sf_trees > 0 } }
-		custom_trigger_tooltip = {
-			tooltip = can_unlock_new_special_forces_tree_more_yes
-			check_variable = { sf_trees > 0 }
-		}
-	}
-	else = {
-		custom_trigger_tooltip = {
-			tooltip = can_unlock_new_special_forces_tree_more_no
-			always = no
-		}
+is_allied_seller_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = subsidy_allied_nation_tt
+		FROM = { is_in_faction_with = ROOT }
 	}
 }
+

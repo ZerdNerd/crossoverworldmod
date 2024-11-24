@@ -1,16 +1,35 @@
-# Scripted AI desire for peace actions.
-# See documentation.info file for more detailed scripting information.
+# Temp variables
+# Old actions will be stored as temp variables
+# For Winners:
+#	taken_states@TAG: an array where each element contains the state that is taken by country TAG
+#	taken_by@STATE_ID: is set to country that took the state
+# For Losers:
+# 	current_states@TAG: Remaining states of loser
+# For each subject action:
+#   subject_states@TAG : an array where each element contains the state that is subjected by country TAG
+#   subject_countries@TAG : an array where each element contains the country that is subjected by country TAG
+#   subjected_by@STATE_ID : a variable for each state that is subjected by a country, value is overlord
+#   subjected_by@TAG : an array for each loser that is subjected, array contains overlord
+# For each liberated:
+#   liberate_states@TAG : an array where each element contains the state that is liberated by country TAG
+#   liberate_countries@TAG : an array where each element contains the country that is liberated by country TAG
+# A trigger named "build_temp_vars" will be called before any evaluation so further temp variables can be calculated
 
 peace_ai_desires = {
-	gongmen_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = GON
-            }
-			OR = {
-				WOL = { at_conference_has_war_with_ROOT = yes }
-				FLO = { at_conference_no_war_with_ROOT = yes }
+
+	# EACH NATION FOR THEMSELVES
+
+	gongmen_ignore_wolves_if_flo_has_claims = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = GON
+			}
+			FROM.FROM = {
+				OR = {
+					tag = WOL
+					tag = WEA
+				}
 			}
 			FROM.FROM.FROM = {
 				OR = {
@@ -18,32 +37,38 @@ peace_ai_desires = {
 					is_claimed_by = FLO
 				}
 			}
-        }
-        ai_desire = 0
-    }
+		}
+		ai_desire = -4000 #offsets do_not_grant_states_randomly
+	}
 
-    flower_hill_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = FLO
-            }
+	flo_take_all_wolves_weasels = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = FLO
+			}
+			FROM.FROM = {
+				OR = {
+					tag = WOL
+					tag = WEA
+				}
+			}
 			FROM.FROM.FROM = {
 				OR = {
 					is_core_of = WOL
 					is_core_of = WEA
 				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    greenland_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = GRN
-            }
+	greenland_takes_humsin_and_iceworld = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = GRN
+			}
 			FROM.FROM.FROM = {
 				OR = {
 					is_core_of = GRN
@@ -70,16 +95,16 @@ peace_ai_desires = {
 					state = 610
 				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    sultan_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = SKO
-            }
+	sultan_fri = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = SKO
+			}
 			FROM.FROM.FROM = {
 				OR = {
 					state = 905
@@ -99,20 +124,35 @@ peace_ai_desires = {
 					state = 900
 				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    sultan_2 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = SKO
-            }
+	doofania_north_fri = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = TSA
+				has_government = fascism
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 758
+					state = 758
 					state = 763
+				}
+			}
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
+
+	macius_central_fri_colony = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = MAI
+			}
+			FROM.FROM.FROM = {
+				OR = {
 					state = 872
 					state = 853
 					state = 869
@@ -124,89 +164,56 @@ peace_ai_desires = {
 					state = 29
 				}
 			}
-        }
-        ai_desire = 0
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    doofania_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = TSA
-                has_government = fascism
-            }
-			FROM.FROM.FROM = {
-				OR = {
-                    state = 758
-					state = 763
-					state = 872
-					state = 853
-					state = 869
-					state = 835
-					state = 819
-					state = 830
-					state = 838
-					state = 884
-					state = 29
-				}
+	greenland_eastern_gong = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = GRN
 			}
-        }
-        ai_desire = 10
-    }
-
-    macius_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = MAI
-            }
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 872
-					state = 853
-					state = 869
-					state = 835
-					state = 819
-					state = 830
-					state = 838
-					state = 884
-					state = 29
-				}
-			}
-        }
-        ai_desire = 10
-    }
-
-    greenland_2 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = GRN
-            }
-			FROM.FROM.FROM = {
-				OR = {
-                    state = 268
+					state = 268
 					state = 251
 					state = 249
 					state = 231
 					state = 194
 					state = 177
 					state = 217
-                    is_core_of = LAL
+				}
+			}
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
+
+	greenland_lalaoopsy_northrep = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = GRN
+			}
+			FROM.FROM.FROM = {
+				OR = {
+					is_core_of = LAL
 					is_core_of = NTR
 				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    greenland_3 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = GRN
-            }
-			FLO = { at_conference_no_war_with_ROOT = yes }
+	greenland_west_gongmen_flo_present = {
+		peace_action_type = take_states
+		enable = {
+			FLO = {
+				pc_is_winner = yes
+			}
+			ROOT.FROM = {
+				tag = GRN
+			}
 			FROM.FROM.FROM = {
 				OR = {
 					state = 190
@@ -219,19 +226,19 @@ peace_ai_desires = {
 					state = 236
 				}
 			}
-        }
-        ai_desire = 0
-    }
+		}
+		ai_desire = -4000 #offsets do_not_grant_states_randomly
+	}
 
-    flower_hill_2 = {
-        peace_action_type = { take_states }
-        enable = {
-            ROOT.FROM = {
-                tag = FLO
-            }
+	flo_west_gongmen = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = FLO
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 190
+					state = 190
 					state = 167
 					state = 181
 					state = 192
@@ -241,128 +248,140 @@ peace_ai_desires = {
 					state = 236
 				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    fascist_japanifornia_plz_be_annexed = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = JPN
-                has_government = fascism
-            }
-			FROM.FROM.FROM = {
-				is_core_of = JPN
+	please_annex_japanifornia_guys = {
+		peace_action_type = take_states
+		enable = {
+			JPN = {
+				has_government = fascism
 			}
-        }
-        ai_desire = 10
-    }
-
-    liberation_of_enchancia_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                has_government = monarchism
-            }
 			FROM.FROM.FROM = {
-                OR = {
-				    region = 22
+				OR = {
+					is_core_of = JPN
+				}
+			}
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
+
+	liberation_of_enchancia = {
+		peace_action_type = take_states
+		enable = {
+			FROM = {
+				NOT = {
+					tag = ENC
+					tag = EN1
+					tag = EN2
+				}
+				has_government = monarchism
+			}
+			FROM.FROM.FROM = {
+				OR = {
+					region = 22
 					region = 23
 					region = 24
 					region = 25
 					region = 26
 					region = 27
 					region = 28
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    ajeto_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = PAT
-            }
-            NOT = {
-				FRI = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
+	western_spalding_for_ajeto = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = PAT
 			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 736
-				    state = 767
-				    state = 773
-				    state = 776
-				    region = 4
-                }
-			}
-        }
-        ai_desire = 10
-    }
-
-    friedewalt_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = FRI
-            }
-            NOT = {
-				PAT = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
-			}
-			FROM.FROM.FROM = {
-				OR = {
-                    state = 736
+					state = 736
 					state = 767
 					state = 773
 					state = 776
 					region = 4
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    san_escobar_1 = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = SAN
-            }
-            NOT = {
-				FRI = { is_in_peace_conference = yes at_conference_no_war_with_ROOT = yes }
+	western_spalding_for_fri_if_two_not_present = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				PAT = {
+					pc_is_winner = yes
+				}
+				SAN = {
+					pc_is_winner = yes
+				}
 			}
-			FROM.FROM.FROM = {
-				is_core_of = SLD
+			ROOT.FROM = {
+				tag = FRI
 			}
-        }
-        ai_desire = 10
-    }
-
-    san_escobar_dont_touch_mah_states = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = SAN
-            }
-            FRI = { at_conference_no_war_with_ROOT = yes }
-			FROM.FROM.FROM = {
-				is_core_of = SLD
-			}
-        }
-        ai_desire = 0
-    }
-
-    southern_lechia_lands = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = JPN
-            }
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 764
+					state = 736
+					state = 767
+					state = 773
+					state = 776
+					region = 4
+				}
+			}
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
+
+	escobar_all_spalding_cores_if_fri_not_present = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				FRI = {
+					pc_is_winner = yes
+				}
+			}
+			ROOT.FROM = {
+				tag = SAN
+			}
+			FROM.FROM.FROM = {
+				is_core_of = SLD
+			}
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
+
+	escobar_not_all_spalding_cores_if_fri_present = {
+		peace_action_type = take_states
+		enable = {
+			FRI = {
+				pc_is_winner = yes
+			}
+			ROOT.FROM = {
+				tag = SAN
+			}
+			FROM.FROM.FROM = {
+				is_core_of = SLD
+			}
+		}
+		ai_desire = -4000 #offsets do_not_grant_states_randomly
+	}
+
+	japanifornia_southern_lechia = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = JPN
+			}
+			FROM.FROM.FROM = {
+				OR = {
+					state = 764
 					state = 781
 					state = 738
 					state = 778
@@ -371,41 +390,41 @@ peace_ai_desires = {
 					state = 779
 					state = 800
 					state = 810
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    myszyniec_lands = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = PAT
-            }
+	ajeto_myszyniec = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = PAT
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 702
+					state = 702
 					state = 720
 					state = 721
 					state = 739
 					state = 693
 					state = 694
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    karlino_wadowice_lands = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = AVA
-            }
+	avalor_karlino_wado_vice = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = AVA
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 655
+					state = 655
 					state = 685
 					state = 650
 					state = 682
@@ -416,69 +435,75 @@ peace_ai_desires = {
 					state = 766
 					state = 730
 					state = 754
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    wadowice_lands_not_ava = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = JPN
-            }
-            NOT = {
-				AVA = { is_in_peace_conference = yes }
+	avalor_not_present_wado_vice = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				AVA = {
+					pc_is_winner = yes
+				}
+			}
+			ROOT.FROM = {
+				tag = JPN
 			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 746
+					state = 746
 					state = 716
 					state = 725
 					state = 766
 					state = 730
 					state = 754
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    karlino_lands_not_ava = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = PAT
-            }
-            NOT = {
-				AVA = { is_in_peace_conference = yes }
+	avalor_not_present_karlino = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				AVA = {
+					pc_is_winner = yes
+				}
+			}
+			ROOT.FROM = {
+				tag = PAT
 			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 655
+					state = 655
 					state = 685
 					state = 650
 					state = 682
 					state = 673
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    southern_lands_not_ava = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = PAT
-            }
-            NOT = {
-				JPN = { is_in_peace_conference = yes }
+	japanifornia_not_present_southlechia = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				JPN = {
+					pc_is_winner = yes
+				}
+			}
+			ROOT.FROM = {
+				tag = PAT
 			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 764
+					state = 764
 					state = 781
 					state = 738
 					state = 778
@@ -487,45 +512,47 @@ peace_ai_desires = {
 					state = 779
 					state = 800
 					state = 810
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    kuydubie_and_sultan = { #to be removed, c'qrwosaurs will take soon
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = KUY
-            }
+	kuydubie_aliencolony_not = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = KUY
+			}
 			FROM.FROM.FROM = {
 				is_core_of = SKO
 			}
-        }
-        ai_desire = 0
-    }
+		}
+		ai_desire = -4000 #offsets do_not_grant_states_randomly
+	}
 
-    western_fri_colony = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = AVA
-            }
+	fri_western_colony_avalor = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = AVA
+			}
 			FROM.FROM.FROM = {
 				state = 29
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    ice_kingdom_stuff = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = ICK
-            }
-            JPN = {
+	icekingdom_if_noones_around = {
+		peace_action_type = take_states
+		enable = {
+			NOT = {
+				LEC = {
+					pc_is_winner = yes
+				}
+			}
+			JPN = {
 				NOT = {
 					has_war_with = LEC
 				}
@@ -535,9 +562,12 @@ peace_ai_desires = {
 					has_war_with = LEC
 				}
 			}	
+			ROOT.FROM = {
+				tag = ICK
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 746
+					state = 746
 					state = 766
 					state = 730
 					state = 754
@@ -557,46 +587,46 @@ peace_ai_desires = {
 					state = 771
 					state = 764
 					state = 738
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    myszyniec_lands_2 = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = SMU
-            }
-            PAT = {
+	smurfs_myszyniec_no_ajeto = {
+		peace_action_type = take_states
+		enable = {
+			PAT = {
 				NOT = {
 					has_war_with = LEC
 				}
 			}
+			ROOT.FROM = {
+				tag = SMU
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 720
+					state = 720
 					state = 721
 					state = 702
 					state = 739
 					state = 693
 					state = 694
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    lechists_patmat = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = LEC
-            }
+	lechists_patmat = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = LEC
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 740
+					state = 740
 					state = 760
 					state = 775
 					state = 793
@@ -608,61 +638,61 @@ peace_ai_desires = {
 					state = 756
 					state = 731
 					state = 703
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    lechists_japanifornia = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = LEC
-            }
+	lechists_japanifornia_punish = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = LEC
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 825
+					state = 825
 					state = 813
 					state = 837
 					state = 829
 					state = 821
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    lechists_spaldingbay = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = LEC
-            }
+	lechists_spaldingbayport = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = LEC
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 623
+					state = 623
 					state = 607
 					state = 617
 					state = 657
 					state = 691
 					state = 668
 					state = 648
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    lechists_northern_avalor = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = LEC
-            }
+	lechists_northern_avalor = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = LEC
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 728
+					state = 728
 					state = 717
 					state = 28
 					state = 723
@@ -671,21 +701,21 @@ peace_ai_desires = {
 					state = 712
 					state = 729
 					state = 755
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    lechists_duloc = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = LEC
-            }
+	lechists_duloc = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = LEC
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 590
+					state = 590
 					state = 595
 					state = 543
 					state = 552
@@ -695,21 +725,21 @@ peace_ai_desires = {
 					state = 436
 					state = 423
 					state = 397
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 
-    starfleet_aliens = {
-        peace_action_type = { take_states }
-        enable = {
-            FROM.FROM = {
-                tag = KPT
-            }
+	starfleet_aliencolony = {
+		peace_action_type = take_states
+		enable = {
+			ROOT.FROM = {
+				tag = KPT
+			}
 			FROM.FROM.FROM = {
 				OR = {
-                    state = 924
+					state = 924
 					state = 937
 					state = 948
 					state = 938
@@ -729,9 +759,10 @@ peace_ai_desires = {
 					state = 954
 					state = 947
 					state = 59
-                }
+				}
 			}
-        }
-        ai_desire = 10
-    }
+		}
+		ai_desire = 400 #offsets do_not_grant_states_randomly
+	}
 }
+

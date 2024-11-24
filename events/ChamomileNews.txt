@@ -6,8 +6,8 @@ add_namespace = chamomilenews
 
 news_event = {
 	id = chamomilenews.1
-	title = "Krosh elected President in Chamomile Valley!"
-	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, which were won by Krosh the rabbit. Adored by Smeshariks for his positivity, kindness and enthusiasm with which he accomplishes things, he is now the new leader."
+	title = chamomilenews.1.t
+	desc = chamomilenews.1.d
 	picture = GFX_news_CVA_krosh
 	
 	major = yes
@@ -15,7 +15,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "Isn't he too young?"
+		name = chamomilenews.1.a
 		trigger = {
 			NOT = {
 				tag = CVA
@@ -23,7 +23,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = "Onwards with our Sunny Bunny in charge!"
+		name = chamomilenews.1.b
 		trigger = {
 				tag = CVA
 		}
@@ -31,8 +31,8 @@ news_event = {
 }
 news_event = {
 	id = chamomilenews.2
-	title = "Barash elected President in Chamomile Valley!"
-	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, which were won by Barash the ram. An animal with a deep appreciation of finer things in life, he is now in charge of the nation."
+	title = chamomilenews.2.t
+	desc = chamomilenews.2.d
 	picture = GFX_news_CVA_barash
 	
 	major = yes
@@ -40,7 +40,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "Let's see what this poet can do"
+		name = chamomilenews.2.a
 		trigger = {
 			NOT = {
 				tag = CVA
@@ -48,7 +48,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = "Yes, Barash! Yes, sheep's son!"
+		name = chamomilenews.2.b
 		trigger = {
 				tag = CVA
 		}
@@ -56,8 +56,8 @@ news_event = {
 }
 news_event = {
 	id = chamomilenews.3
-	title = "Losyash elected President in Chamomile Valley!"
-	desc = "Following Kar-Karych's retirement from politics, elections were held in Chamomile Valley, Losyash the moose, scientist known for his intelligence and eccenricity, has been elected president."
+	title = chamomilenews.3.t
+	desc = chamomilenews.3.d
 	picture = GFX_news_CVA_losyash
 	
 	major = yes
@@ -65,7 +65,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "Let's see what this scientist can do"
+		name = chamomilenews.3.a
 		trigger = {
 			NOT = {
 				tag = CVA
@@ -73,7 +73,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = "Our greatest mind shall lead us"
+		name = chamomilenews.3.b
 		trigger = {
 				tag = CVA
 		}
@@ -81,8 +81,8 @@ news_event = {
 }
 news_event = {
 	id = chamomilenews.4
-	title = "Coronation of Princess Nyusha!"
-	desc = "In an unexpected twist of events, Nyusha, an underage commoner pig girl has been crowned as princess of Chamomile Valley. This event has the international community severely confused, and partically nobody knows what to expect next."
+	title = chamomilenews.4.t
+	desc = chamomilenews.4.d
 	picture = GFX_news_CVA_princess_nyusha
 	
 	major = yes
@@ -90,7 +90,7 @@ news_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "...What?"
+		name = chamomilenews.4.a
 		trigger = {
 			NOT = {
 				tag = CVA
@@ -98,7 +98,7 @@ news_event = {
 		}
 	}
 	option = {
-		name = "Dreams come true!"
+		name = chamomilenews.4.b
 		trigger = {
 				tag = CVA
 		}
