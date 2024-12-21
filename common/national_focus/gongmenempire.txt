@@ -1330,7 +1330,7 @@ focus_tree = {
 		prerequisite = { focus = GON_organize_conquered_territories focus = GON_announce_colonization_plans }
 
 		available = {
-			has_war = no
+	#		has_war = no
 			OR = {
 				AND = {
 					has_country_flag = GON_FLO_accepted_pact
@@ -1477,9 +1477,9 @@ focus_tree = {
 		available_if_capitulated = yes 
 		prerequisite = { focus = GON_negotiate_with_humsin }
 
-		available = {
-			has_war = no
-		}
+	#	available = {
+	#		has_war = no
+	#	}
 
 		ai_will_do = { 
 			factor = 5
