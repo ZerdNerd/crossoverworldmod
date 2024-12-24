@@ -1,0 +1,632 @@
+﻿###########################
+# Events for Everrealm
+###########################
+
+add_namespace = arendelle
+
+country_event = { #Longdong gamer
+	id = arendelle.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event arendelle.1" }
+	title = "arendelle.1.t"
+	desc = "arendelle.1.d"
+	picture = GFX_report_longdong
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 5
+	}
+
+	trigger = {
+		date > 1936.8.15
+		tag = ARE
+	}
+
+	option = { #start civil war
+		name = arendelle.1.a
+		ai_chance = {
+			base = 100
+		}
+		start_civil_war = {
+   			ruling_party = monarchism
+   			ideology = democratic
+    		capital = 970
+    		states = { 970 }
+   			size = 0.6
+		}
+		hidden_effect = {
+			complete_national_focus = ARE_civil_war
+			complete_national_focus = ARE_crown_side
+			if = {
+				limit = {
+					NOT = { has_idea = middleage_tech }
+				}
+				add_ideas = { middleage_tech }
+			}
+			every_country = {
+				limit = {
+					original_tag = ARE
+					has_government = democratic
+				}
+				if = {
+					limit = {
+						NOT = { has_idea = middleage_tech }
+					}
+					add_ideas = { modern_tech }
+				}
+			}
+		}
+	}
+	option = {
+		name = arendelle.1.b
+		hidden_effect = {
+			complete_national_focus = ARE_civil_war
+			complete_national_focus = ARE_long_side
+		}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.25
+			}
+		start_civil_war = {
+   			ruling_party = democratic
+   			ideology = monarchism
+    		states = { 178 154 208 226 263 232 254 207 169 149 235 196  }
+   			size = 0.4
+		}
+		
+	}
+}
+country_event = {
+	id = arendelle.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = arendelle.2.t
+	desc = arendelle.2.d
+	picture = GFX_report_agnarr_dead
+
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	trigger = {
+		date > 1936.8.01
+		tag = ARE
+	}
+
+	option = {
+		name = arendelle.2.a
+		hidden_effect = {
+			complete_national_focus = ARE_tragedy_strikes
+			kill_country_leader = yes
+		create_country_leader = {
+			name = "Regency Council"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "regency_council.dds"
+			expire = "1965.1.1"
+			ideology = parliamentary_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = arendelle.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = arendelle.3.t
+	desc = arendelle.3.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.3.a
+		hidden_effect = {
+			country_event = {
+				id = arendelle.4
+				days = 1095
+			}
+			complete_national_focus = ARE_winter_aftermath
+			complete_national_focus = ARE_sisters_rule
+			kill_country_leader = yes
+		create_country_leader = {
+			name = "Elsa"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "queen_elsa.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = arendelle.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = arendelle.4.t
+	desc = arendelle.4.d
+	picture = GFX_report_queen_anna
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.4.a
+		hidden_effect = {
+			kill_country_leader = yes
+		create_country_leader = {
+			name = "Anna"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "queen_anna.dds"
+			expire = "1965.1.1"
+			ideology = administrative_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = arendelle.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = arendelle.5.t
+	desc = arendelle.5.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.5.a
+	}
+}
+country_event = {
+	id = arendelle.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = arendelle.6.t
+	desc = arendelle.6.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.6.a
+	}
+}
+country_event = {
+	id = arendelle.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = arendelle.7.t
+	desc = arendelle.7.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.5.a
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.25
+			}
+	}
+}
+country_event = {
+	id = arendelle.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = arendelle.8.t
+	desc = arendelle.8.d
+	picture = GFX_report_longdong
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.8.a
+			add_ideas = {
+				ARE_civil_war_devastation
+			}
+
+		hidden_effect = { 
+		every_country = {
+			limit = {
+				is_ai = no
+			}
+			set_country_flag = big_event_longdong_wins
+		}
+		every_country = {
+			limit = {
+				has_variable = cr_superevent_music_status
+			}
+			sound_effect = cr_bigevent_longdong_wins_sound
+			play_song = cisza45
+		}
+		}
+		}
+
+	}
+country_event = {
+	id = arendelle.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event centralkingdom.8"}
+	title = arendelle.9.t
+	desc = arendelle.9.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.9.a
+			add_ideas = {
+				ARE_civil_war_devastation
+			}
+	}
+}
+
+country_event = {
+	id = arendelle.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.1"}
+	title = arendelle.10.t
+	desc = arendelle.10.d
+	picture = GFX_report_hans_authoritarian
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.10.a
+		hidden_effect = {
+			country_event = {
+				id = arendelle.19
+				days = 100
+			}
+			complete_national_focus = ARE_winter_aftermath
+			complete_national_focus = ARE_palace_coup
+		add_popularity = {
+    			ideology = fascism
+    			popularity = 0.35
+			}
+			kill_country_leader = yes
+		create_country_leader = {
+			name = "Hans"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "prince_hans.dds"
+			expire = "1965.1.1"
+			ideology = despotic_monarchy
+			traits = {
+				#
+			}
+		}
+		}
+	}
+}
+country_event = {
+	id = arendelle.11
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.11.t
+	desc = arendelle.11.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.11.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.12
+				days = 1460
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.12
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.11.t
+	desc = arendelle.12.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.12.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.12
+				days = 1460
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.13
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.13.t
+	desc = arendelle.13.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.13.a
+		ai_chance = {
+			base = 100
+		}
+		GRN = {
+			add_to_faction = ARE
+		}	
+		}
+	option = {
+		name = arendelle.13.b
+
+	}
+}
+country_event = {
+	id = arendelle.14
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.14.t
+	desc = arendelle.14.d
+	picture = GFX_report_queen_elsa
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.14.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.15
+				days = 1
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.15
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.15.t
+	desc = arendelle.15.d
+	picture = GFX_report_hans_authoritarian
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.15.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.3
+				days = 1
+			}			
+		}	
+		}
+	option = {
+		name = arendelle.15.b
+				hidden_effect = {
+			country_event = {
+				id = arendelle.10
+				days = 1
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.16
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.16.t
+	desc = arendelle.16.d
+	picture = GFX_report_hans_liberal
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.16.a
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			add_research_slot = 2
+			}
+		}
+}
+country_event = {
+	id = arendelle.17
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.17.t
+	desc = arendelle.17.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.17.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.18
+				days = 50
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.18
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.18.t
+	desc = arendelle.18.d
+	picture = GFX_report_hans_liberal
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.18.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.16
+				days = 365
+			}
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.57
+			}
+		add_popularity = {
+    			ideology = fascism
+    			popularity = -1
+			}
+		add_popularity = {
+    			ideology = monarchism
+    			popularity = 0.25
+			}
+			set_politics = {
+				ruling_party = monarchism
+				elections_allowed = yes
+				election_frequency = 120
+			}
+		kill_country_leader = yes
+		create_country_leader = {
+			name = "Hans"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = "benevolent_hans.dds"
+			expire = "1965.1.1"
+			ideology = parliamentary_monarchy
+			traits = {
+				#
+			}
+		}
+			add_country_leader_trait = the_reformer			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.19
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.19.t
+	desc = arendelle.19.d
+	picture = GFX_report_hans_window
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.19.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.20
+				days = 50
+			}			
+		}	
+		}
+}
+country_event = {
+	id = arendelle.20
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.20.t
+	desc = arendelle.20.d
+	picture = GFX_report_hans_authoritarian
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.20.a
+				hidden_effect = {
+			country_event = {
+				id = arendelle.17
+				days = 50
+			}			
+		}	
+		}
+}
+country_event = { 
+	id = arendelle.21
+	title = arendelle.21.t
+	desc = arendelle.21.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.21.a
+			add_political_power = -150
+		ARE = { 
+			country_event = {
+				id = arendelle.22
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = arendelle.21.b
+		ARE = { 
+			country_event = {
+				id = arendelle.23
+				days = 1
+			}
+		}
+	}
+}
+country_event = {
+	id = arendelle.22
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.22.t
+	desc = arendelle.22.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.22.a
+		add_offsite_building = { type = industrial_complex level = 1 }	
+		}
+}
+country_event = {
+	id = arendelle.23
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = arendelle.23.t
+	desc = arendelle.23.d
+	picture = GFX_report_arendelle
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = arendelle.23.a
+		}
+}

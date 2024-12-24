@@ -1,0 +1,2452 @@
+focus_tree = {
+	id = arendelle
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = ARE
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = ARE_kingdom_of_isolation
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 2
+		y = 0
+		cost = 3
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+			hidden_effect = {
+		 	country_event = {
+		 		id = arendelle.5
+		 		days = 1
+		 	}
+		 	}
+		}		
+	}
+
+	focus = { 
+		id = ARE_limit_staff
+		icon = GFX_focus_generic_self_management
+		x = 2
+		y = 1
+		cost = 3
+		prerequisite = { focus = ARE_kingdom_of_isolation }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+			hidden_effect = {
+		 	country_event = {
+		 		id = arendelle.6
+		 		days = 1
+		 	}
+		 	}
+		}		
+	}
+	focus = { 
+		id = ARE_conceal
+		icon = GFX_focus_generic_concessions
+		x = 2
+		y = 2
+		cost = 3
+		prerequisite = { focus = ARE_limit_staff }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+			hidden_effect = {
+		 	country_event = {
+		 		id = arendelle.7
+		 		days = 1
+		 	}
+		 	}
+		}		
+	}
+	focus = { 
+		id = ARE_mines
+		icon = GFX_focus_generic_industry_3
+		x = 1
+		y = 3
+		cost = 7
+		prerequisite = { focus = ARE_conceal }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_science
+		icon = GFX_focus_research
+		x = 3
+		y = 3
+		cost = 7
+		prerequisite = { focus = ARE_conceal }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_research_slot = 1
+		}		
+	}
+	focus = { 
+		id = ARE_into_industrial_era
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 2
+		y = 4
+		cost = 10
+		prerequisite = { focus = ARE_mines }
+		prerequisite = { focus = ARE_science }
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = middleage_tech
+				add_idea = pre-industrial_tech
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_tragedy_strikes
+		icon = GFX_focus_generic_coastal_fort
+		x = 12
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		allow_branch = {
+			ARE = {
+				has_completed_focus = ARE_tragedy_strikes
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = ARE_civil_war
+		icon = GFX_goal_generic_attack_allies
+		x = 12
+		y = 1
+		cost = 10
+		prerequisite = { focus = ARE_tragedy_strikes }
+		available_if_capitulated = yes
+		allow_branch = {
+			ARE = {
+				has_completed_focus = ARE_civil_war
+			}
+		}
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+		}		
+	}
+	focus = { 
+		id = ARE_long_side
+		icon = GFX_goal_tfv_can_compromise_with_quebec
+		x = 15
+		y = 2
+		cost = 10
+		prerequisite = { focus = ARE_civil_war }
+		mutually_exclusive = {
+			focus = ARE_crown_side
+		}
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+		}		
+	}
+	focus = { 
+		id = ARE_rally_volunteers
+		icon = GFX_goal_generic_demand_territory
+		x = 14
+		y = 3
+		cost = 1
+		prerequisite = { focus = ARE_long_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_manpower = 10000
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.25
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_ally_equalists
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 14
+		y = 5
+		cost = 1
+		prerequisite = { focus = ARE_rally_volunteers }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.1
+			}
+			add_manpower = 10000
+		}		
+	}
+	focus = { 
+		id = ARE_underground_arms_production
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 16
+		y = 3
+		cost = 1
+		prerequisite = { focus = ARE_long_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = arms_factory level = 1 }
+		}		
+	}
+	focus = { 
+		id = ARE_gun_stockpiles
+		icon = GFX_focus_focus_fra_maquis
+		x = 16
+		y = 5
+		cost = 1
+		prerequisite = { focus = ARE_underground_arms_production }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+add_equipment_to_stockpile = {
+                    type = infantry_equipment_old
+                    amount = 2500
+                }
+		}		
+	}
+	focus = { 
+		id = ARE_battle_experience
+		icon = GFX_focus_generic_little_entente
+		x = 15
+		y = 4
+		cost = 1
+		prerequisite = { focus = ARE_long_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			army_experience = 20
+			add_political_power = 250
+		}		
+	}
+	focus = { 
+		id = ARE_long_triumph
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 15
+		y = 6
+		cost = 1
+		prerequisite = { focus = ARE_gun_stockpiles }
+		prerequisite = { focus = ARE_battle_experience }
+		prerequisite = { focus = ARE_ally_equalists }
+		available_if_capitulated = no
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		 	country_event = {
+		 		id = arendelle.8
+		 		days = 1
+		 	}
+		}		
+	}
+	focus = { 
+		id = ARE_crown_side
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 9
+		y = 2
+		cost = 10
+		prerequisite = { focus = ARE_civil_war }
+		mutually_exclusive = {
+			focus = ARE_long_side
+		}
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = -100
+		}		
+	}
+	focus = { 
+		id = ARE_appease_peasants
+		icon = GFX_focus_generic_military_academy
+		x = 10
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_crown_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_political_power = 300
+		}		
+	}
+	focus = { 
+		id = ARE_fortify_capital
+		icon = GFX_goal_generic_fortify_city
+		x = 10
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_appease_peasants }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			178 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4662
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_military_buildup
+		icon = GFX_focus_generic_little_entente
+		x = 8
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_crown_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_army_skill
+		icon = GFX_focus_generic_military_mission
+		x = 8
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_military_buildup }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			army_experience = 20
+		}		
+	}
+	focus = { 
+		id = ARE_purge_revolutionaries
+		icon = GFX_goal_anti_comintern_pact
+		x = 9
+		y = 4
+		cost = 1
+		prerequisite = { focus = ARE_crown_side }
+		available_if_capitulated = yes
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_manpower = -40000
+		add_popularity = {
+    			ideology = democratic
+    			popularity = -1
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_regency_stands
+		icon = GFX_goal_generic_neutrality_focus
+		x = 9
+		y = 6
+		cost = 1
+		prerequisite = { focus = ARE_purge_revolutionaries }
+		prerequisite = { focus = ARE_army_skill }
+		prerequisite = { focus = ARE_fortify_capital }
+		available_if_capitulated = no
+		available = {
+			NOT = {
+				has_war = yes
+			}
+		}
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		 	country_event = {
+		 		id = arendelle.9
+		 		days = 1
+		 	}
+		}		
+	}
+	focus = { 
+		id = ARE_reconstruction
+		icon = GFX_goal_generic_construction2
+		prerequisite = {
+		 focus = ARE_regency_stands
+		 focus = ARE_long_triumph
+		}
+		x = 12
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+		add_offsite_building = { type = industrial_complex level = 2 }
+			add_political_power = 100
+		} 
+	}
+	focus = { 
+		id = ARE_kingdom_of_plenty
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = {
+		 focus = ARE_regency_stands
+		}
+		x = 4
+		y = 7
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			add_ideas = {
+				ARE_kingdom_of_plenty
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_help_from_everrealm
+		icon = GFX_focus_enchancia
+		prerequisite = {
+		 focus = ARE_kingdom_of_plenty
+		}
+		x = 2
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			ISL = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+			MAR = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+		add_offsite_building = { type = industrial_complex level = 1 }	
+		} 
+	}
+	focus = { 
+		id = ARE_help_from_central
+		icon = GFX_goal_generic_improve_relations
+		prerequisite = {
+		 focus = ARE_kingdom_of_plenty
+		}
+		x = 4
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			MAI = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+			FRI = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+			WEK = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+		add_offsite_building = { type = industrial_complex level = 1 }	
+		} 
+	}
+	focus = { 
+		id = ARE_help_from_greenland
+		icon = GFX_focus_greenland
+		prerequisite = {
+		 focus = ARE_kingdom_of_plenty
+		}
+		x = 6
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			GRN = {
+				add_opinion_modifier = {
+    				target = ARE
+    				modifier = MAI_true_relations
+				} 
+			}
+		add_offsite_building = { type = industrial_complex level = 1 }	
+		} 
+	}
+	focus = { 
+		id = ARE_waiting_game
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = ARE_help_from_everrealm }
+		prerequisite = { focus = ARE_help_from_central }
+		prerequisite = { focus = ARE_help_from_greenland }
+		x = 4
+		y = 9
+		cost = 10
+		available_if_capitulated = no
+		available = {
+					date > 1939.1.1
+		}
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+		 	country_event = {
+		 		id = arendelle.14
+		 		days = 1
+		 	}
+		} 
+	}
+	focus = { 
+		id = ARE_winter_aftermath
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = {
+		 focus = ARE_waiting_game
+		}
+		x = 4
+		y = 10
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+
+		} 
+	}
+	focus = { 
+		id = ARE_sisters_rule
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = {
+		 focus = ARE_winter_aftermath
+		}
+		mutually_exclusive = {
+			focus = ARE_palace_coup
+		}
+		x = 3
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+
+		} 
+	}
+	focus = { 
+		id = ARE_palace_coup
+		icon = GFX_focus_rom_abdicate
+		prerequisite = {
+		 focus = ARE_winter_aftermath
+		}
+		mutually_exclusive = {
+			focus = ARE_sisters_rule
+		}
+		x = 5
+		y = 11
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+
+		} 
+	}
+	focus = { 
+		id = ARE_dawn_of_forent_stat
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = {
+		 focus = ARE_long_triumph
+		}
+		x = 20
+		y = 7
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			add_ideas = {
+				ARE_dawn_of_forent_stat
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_destroy_monopoly
+		icon = GFX_focus_mex_privatisation
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 19
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			add_ideas = {
+				ARE_destroy_monopoly
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_support_coutryside
+		icon = GFX_focus_generic_agriculture
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 21
+		y = 8
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+		} 
+	}
+	focus = { 
+		id = ARE_new_schools
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 18
+		y = 9
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			add_research_slot = 1
+		} 
+	}
+	focus = { 
+		id = ARE_urbanization
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 20
+		y = 9
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+		} 
+	}
+	focus = { 
+		id = ARE_arsenal_of_democracy
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 22
+		y = 9
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+		random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = dockyard
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = dockyard
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_imperial_presidency
+		icon = GFX_focus_generic_elections
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 19
+		y = 10
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+						country_event = {
+				id = arendelle.11
+				days = 1
+			}	
+		} 
+	}
+	focus = { 
+		id = ARE_share_the_wealth
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = {
+		 focus = ARE_dawn_of_forent_stat
+		}
+		x = 21
+		y = 10
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			add_ideas = {
+				ARE_share_the_wealth
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_every_man_a_king
+		icon = GFX_focus_spa_save_the_alcazar
+		prerequisite = { focus = ARE_destroy_monopoly }
+		prerequisite = { focus = ARE_support_coutryside }
+		prerequisite = { focus = ARE_new_schools }
+		prerequisite = { focus = ARE_urbanization }
+		prerequisite = { focus = ARE_arsenal_of_democracy }
+		prerequisite = { focus = ARE_imperial_presidency }
+		prerequisite = { focus = ARE_share_the_wealth }
+		x = 20
+		y = 11
+		cost = 5
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_rebuild_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = ARE_reconstruction }
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+			random_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1 
+					instant_build = yes 
+				}
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_rebuild_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = ARE_reconstruction }
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_rebuild_military
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = ARE_reconstruction }
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 4
+		}  
+
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+		} 
+	}
+	focus = { 
+		id = ARE_rebuild_stability
+		icon = GFX_goal_generic_demand_territory
+		x = 12
+		y = 9
+		cost = 1
+		prerequisite = { focus = ARE_rebuild_infrastructure }
+		prerequisite = { focus = ARE_rebuild_industry }
+		prerequisite = { focus = ARE_rebuild_military }
+		available_if_capitulated = no
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			remove_ideas = {
+				ARE_civil_war_devastation
+			}
+			add_stability = 0.25	
+			add_war_support = 0.25
+		}		
+	}
+	focus = { 
+		id = ARE_foreign_policy
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 27
+		y = 0
+		cost = 1
+		available_if_capitulated = no
+		available = {
+				has_completed_focus = ARE_rebuild_stability
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		}		
+	}
+	focus = { 
+		id = ARE_foreign_royal
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 24
+		y = 1
+		cost = 5
+		prerequisite = { focus = ARE_foreign_policy }
+		mutually_exclusive = {
+			focus = ARE_foreign_democratic
+		}
+		available_if_capitulated = no
+		available = {
+			ARE = {
+				has_government = monarchism
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		}		
+	}
+	focus = { 
+		id = ARE_maintain_neutrality
+		icon = GFX_goal_generic_defence
+		x = 22
+		y = 2
+		cost = 5
+		prerequisite = { focus = ARE_foreign_royal }
+		mutually_exclusive = {
+			focus = ARE_strike_first
+		}
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				neutrality_idea
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_build_up_defenses
+		icon = GFX_goal_generic_fortify_city
+		x = 22
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_maintain_neutrality }
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				ARE_build_up_defenses
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_mobilize_manpower
+		icon = GFX_focus_spr_the_anti_fascist_workers_revolution
+		x = 21
+		y = 4
+		cost = 5
+		prerequisite = { focus = ARE_build_up_defenses }
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_manpower = 100000
+		}		
+	}
+	focus = { 
+		id = ARE_military_industry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 23
+		y = 4
+		cost = 5
+		prerequisite = { focus = ARE_build_up_defenses }
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+		random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+		random_owned_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}	
+		}		
+	}
+	focus = { 
+		id = ARE_strike_first
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 26
+		y = 2
+		cost = 5
+		prerequisite = { focus = ARE_foreign_royal }
+		mutually_exclusive = {
+			focus = ARE_maintain_neutrality
+		}
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = DIO
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = PIL
+			}
+		}		
+	}
+
+	focus = { 
+		id = ARE_foreign_democratic
+		icon = GFX_goal_support_democracy
+		x = 30
+		y = 1
+		cost = 5
+		prerequisite = { focus = ARE_foreign_policy }
+		mutually_exclusive = {
+			focus = ARE_foreign_royal
+		}
+		available_if_capitulated = no
+		available = {
+			ARE = {
+				has_government = democratic
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		}		
+	}
+	focus = { 
+		id = ARE_take_initiative
+		icon = GFX_goal_generic_major_war
+		x = 28
+		y = 2
+		cost = 5
+		prerequisite = { focus = ARE_foreign_democratic }
+		mutually_exclusive = {
+			focus = ARE_defense_ageements
+		}
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = DIO
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = PIL
+			}
+		}	
+	}
+	focus = { 
+		id = ARE_defense_ageements
+		icon = GFX_focus_generic_self_management
+		x = 32
+		y = 2
+		cost = 5
+		prerequisite = { focus = ARE_foreign_democratic }
+		mutually_exclusive = {
+			focus = ARE_take_initiative
+		}
+		available_if_capitulated = no
+		available = {
+			 OR = {
+			RAB = {
+				exists = yes
+			}
+			MIC = {
+				exists = yes
+			}
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			give_guarantee = MIC
+			give_guarantee = RAB
+		}		
+	}
+	focus = { 
+		id = ARE_dragon_prince
+		icon = GFX_focus_tabaluga_crowned
+		x = 26
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_strike_first
+		}
+
+		available_if_capitulated = no
+		available = {
+			DIO = {
+					NOT = {
+				exists = yes
+			}
+			}
+			GRN = {
+				exists = yes
+				is_faction_leader = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			GRN = {
+			country_event = {
+				id = arendelle.13
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_approach_tabaluga
+		icon = GFX_focus_tabaluga
+		x = 28
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_defense_ageements 
+			focus = ARE_take_initiative
+		}
+
+		available_if_capitulated = no
+		available = {
+			DIO = {
+					NOT = {
+				exists = yes
+			}
+			}
+			GRN = {
+				exists = yes
+				is_faction_leader = yes
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			GRN = {
+			country_event = {
+				id = arendelle.13
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_on_our_own
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 32
+		y = 3
+		cost = 5
+		prerequisite = { focus = ARE_defense_ageements 
+			focus = ARE_take_initiative
+		}
+
+		available_if_capitulated = no
+		available = {
+			DIO = {
+					NOT = {
+				exists = yes
+			}
+			}
+			GRN = {
+					NOT = {
+				is_faction_leader = yes
+			}
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_faction = "Arendelle Pact"
+		}		
+	}
+	focus = { 
+		id = ARE_island_conquest
+		icon = GFX_goal_generic_military_sphere
+		x = 33
+		y = 4
+		cost = 5
+		prerequisite = { focus = ARE_on_our_own
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = KHO
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = BER
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = VIC
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_continental_conquest
+		icon = GFX_focus_generic_little_entente
+		x = 31
+		y = 4
+		cost = 5
+		prerequisite = { focus = ARE_on_our_own
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = RAB
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = MIC
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_crusade_against_evil
+		icon = GFX_focus_generic_manpower
+		x = 27
+		y = 4
+		cost = 5
+		prerequisite = { focus = ARE_approach_tabaluga
+				focus = ARE_dragon_prince
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				ARE_crusade_against_evil
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_humsin
+		icon = GFX_goal_generic_territory_or_war
+		x = 24
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_crusade_against_evil
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = DES
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_arktos
+		icon = GFX_focus_eng_expose_the_belly_of_the_bear
+		x = 26
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_crusade_against_evil
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = ICW
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_shen
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 28
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_crusade_against_evil
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = GON
+			}
+		}		
+	}
+	focus = { 
+		id = ARE_flower_hill
+		icon = GFX_goal_anti_comintern_pact
+		x = 30
+		y = 5
+		cost = 5
+		prerequisite = { focus = ARE_crusade_against_evil
+		}
+
+		available_if_capitulated = no
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = FLO
+			}
+		}		
+	}
+	focus = {
+		id = ARE_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 32
+		y = 7
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+					date > 1938.1.1
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = ARE_generic__army_effort }
+		x = -3
+		y = 1
+		relative_position_id = ARE_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ARE_generic__weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = ARE_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = ARE_generic__artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = ARE_generic__army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = ARE_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.25
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ARE_generic__army_effort }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = ARE_generic__weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = ARE_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = ARE_generic__motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = ARE_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ARE_generic__practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = ARE_generic__motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = ARE_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ARE_generic__doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = ARE_generic__doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = ARE_generic__weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = ARE_generic__mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = ARE_generic__weapon_development_3 }
+		prerequisite = { focus = ARE_generic__military_academy }
+		prerequisite = { focus = ARE_generic__armor_effort }
+		prerequisite = { focus = ARE_generic__new_officer_corps }
+		prerequisite = { focus = ARE_generic__study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = ARE_generic_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+	focus = {
+		id = ARE_generic_naval_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 40
+		y = 0
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+					date > 1938.1.1
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			random_owned_state = {
+				limit = {
+					is_coastal = yes
+				}
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    				type = dockyard
+    				level = 3
+    				instant_build = yes
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_flexible_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_navy
+		prerequisite = { focus = ARE_generic__naval_effort }
+		mutually_exclusive = { focus = ARE_generic__large_navy }
+		x = -3
+		y = 1
+		relative_position_id = ARE_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = sub_op_bonus
+				bonus = 1.0
+				uses = 1
+				technology = convoy_interdiction_ti
+				technology = unrestricted_submarine_warfare
+				technology = wolfpacks
+				technology = advanced_submarine_warfare
+				technology = combined_operations_raiding
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_large_navy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = ARE_generic__naval_effort }
+		mutually_exclusive = { focus = ARE_generic__flexible_navy }
+		x = 3
+		y = 1
+		relative_position_id = ARE_generic_naval_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = fleet_in_being_bonus
+				bonus = 1.0
+				uses = 1
+				category = fleet_in_being_tree
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_naval_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = ARE_generic__flexible_navy focus = ARE_generic__large_navy }
+		x = -4
+		y = 1
+		relative_position_id = ARE_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_a_new_type_of_infantry
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = ARE_generic__naval_academy }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_naval_academy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				technology = marines
+				technology = marines2
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_destroyer_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = ARE_generic__flexible_navy focus = ARE_generic__large_navy }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_flexible_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = dd_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_submarine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_submarine
+		prerequisite = { focus = ARE_generic__destroyer_effort }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_destroyer_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = ss_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_floating_airfields
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = ARE_generic__large_navy focus = ARE_generic__flexible_navy }
+		x = -2
+		y = 1
+		relative_position_id = ARE_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+			has_idea = modern_tech_idea
+		}
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_naval_air_force
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_air_fighter2
+		prerequisite = { focus = ARE_generic__floating_airfields }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_floating_airfields
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 2
+				category = naval_bomber
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_cruiser_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ARE_generic__large_navy focus = ARE_generic__flexible_navy }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_large_navy
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = cl_tech
+				category = ca_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ARE_generic_capital_ships_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ARE_generic__cruiser_effort }
+		x = 0
+		y = 1
+		relative_position_id = ARE_generic_cruiser_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		completion_reward = {
+			navy_experience = 25
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = bc_tech
+				category = bb_tech
+			}
+		}
+	}
+
+
+}

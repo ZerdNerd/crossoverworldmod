@@ -6057,6 +6057,9 @@ on_actions = {
 					limit = {
 						exists = yes
 						is_ai = no
+						NOT = {
+							tag = ARE
+						}
 					}
 					set_variable = { cr_superevent_music_status = 1 }
 					set_variable = { cr_welcome_screen = 1 }
@@ -6070,12 +6073,6 @@ on_actions = {
 				country_event = {
 					id = starfleet.19
 					days = 180
-				}
-			}
-			ARE = {
-				country_event = {
-					id = blackmonday.35
-					days = 200
 				}
 			}
 			random_country = {

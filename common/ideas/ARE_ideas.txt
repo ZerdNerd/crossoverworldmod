@@ -1,0 +1,83 @@
+ideas = {
+	country = {
+		ARE_build_up_defenses = {
+			picture = generic_pp_unity_bonus
+			allowed = {
+				always = no
+			}
+			modifier = {
+				defence = 0.5
+			}
+		}
+		ARE_crusade_against_evil = {
+			picture = generic_victors_of_ww1
+			allowed = {
+				always = no
+			}
+			modifier = {
+				offence = 0.5
+			}
+		}
+		ARE_destroy_monopoly = {
+			picture = generic_political_support
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.15
+				production_factory_efficiency_gain_factor = 0.15
+				production_factory_max_efficiency_factor = 0.15
+			}
+		}
+		ARE_share_the_wealth = {
+			picture = prc_low_popular_support3
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.05
+				MONTHLY_POPULATION = 0.05
+			production_speed_buildings_factor = 0.1
+			production_factory_efficiency_gain_factor = 0.1
+			production_factory_max_efficiency_factor = 0.1
+			research_speed_factor = 0.05
+			army_morale_factor = 0.25
+			}
+		}
+		ARE_civil_war_devastation = {
+			picture = great_depression
+			allowed = {
+				always = no
+			}
+			modifier = {
+				consumer_goods_factor = 0.5
+				political_power_factor = -0.5
+			}
+		}
+		ARE_dawn_of_forent_stat = {
+			picture = generic_army_war_college
+			allowed = {
+				always = no
+			}
+			modifier = {
+				political_power_factor = 0.05
+				research_speed_factor = 0.05
+				stability_factor = 0.1
+				army_org_factor = 0.1
+				surrender_limit = 0.25
+			}
+		}
+		ARE_kingdom_of_plenty = {
+			picture = generic_monarchist_uprising
+			allowed = {
+				always = no
+			}
+			modifier = {
+				stability_factor = 0.25
+				war_support_factor = 0.25
+				political_power_gain = 0.1
+			}
+		}
+	}
+}	

@@ -525,4 +525,28 @@ scripted_gui = {
 			}
 		}
 	}
+	CR_bigevent_longdong_wins = {
+		context_type = player_context
+		window_name = "cr_big_event_longdong_wins"
+
+		visible = {
+			has_country_flag = big_event_longdong_wins
+		}
+	}
+
+	CR_bigevent_longdong_wins_frame = {
+		context_type = player_context
+		window_name = "cr_big_event_longdong_wins_frame"
+
+		visible = {
+			has_country_flag = big_event_longdong_wins
+		}
+
+		effects = {
+			Option_click = {
+				clr_country_flag = big_event_longdong_wins
+			}
+		}
+	}
+
 }
