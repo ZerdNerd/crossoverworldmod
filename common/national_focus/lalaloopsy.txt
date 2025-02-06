@@ -1,0 +1,2511 @@
+focus_tree = {
+	id = lalaloopsy
+	
+	country = { 
+		factor = 0 
+		modifier = { 
+			add = 10 
+			tag = LAL
+		} 
+	} 
+	
+	default = no
+
+	focus = { 
+		id = LAL_queenie_reign
+		icon = GFX_focus_LAL_queenie
+		x = 15
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			country_event = {
+				id = lalaloopsy.6
+				days = 0
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_farming_development
+		icon = GFX_focus_generic_agriculture
+		x = 5
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_queenie_reign
+		}
+		mutually_exclusive = {
+			focus = LAL_industrial_development
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_way
+		icon = GFX_focus_LAL_sunny
+		x = 3
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_farming_development
+		}
+		mutually_exclusive = {
+			focus = LAL_jam_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_barns
+		icon = GFX_focus_generic_self_management
+		x = 2
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = industrial_complex level = 2 }
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_fields
+		icon = GFX_goal_generic_construction2
+		x = 4
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_visit_flower_hill
+		icon = GFX_focus_darami
+		x = 3
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_barns
+		}
+		prerequisite = {
+			focus = LAL_sunny_fields
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			country_event = {
+				id = lalaloopsy.4
+				days = 0
+			}
+			FLO = {
+				add_opinion_modifier = {
+    				target = LAL
+    				modifier = MAI_true_relations
+				} 
+			} 
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_streamline_production
+		icon = GFX_focus_generic_industry_3
+		x = 2
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_visit_flower_hill
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = industrial_complex level = 2 }
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_production_quotas
+		icon = GFX_focus_generic_treaty
+		x = 4
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_visit_flower_hill
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_producion_quotas
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_solidarity
+		icon = GFX_focus_generic_concessions
+		x = 3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_streamline_production
+		}
+		prerequisite = {
+			focus = LAL_sunny_production_quotas
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_solidarity
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_countryside_development
+		icon = GFX_focus_generic_industry_1
+		x = 4
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_solidarity
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_population_boom
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 2
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_solidarity
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_population_boom
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_worker_councils
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		x = 3
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_countryside_development
+		}
+		prerequisite = {
+			focus = LAL_sunny_population_boom
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_agrarian_socialism
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 5
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_worker_councils
+			focus = LAL_jam_farmer_collectives
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.4
+			}
+			add_research_slot = 1
+		}		
+	}
+	focus = { 
+		id = LAL_sunny_in_charge
+		icon = GFX_focus_LAL_sunny
+		x = 3
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_sunny_worker_councils
+		}
+		prerequisite = {
+			focus = LAL_agrarian_socialism
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_monarchy_stays
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = communism
+			}
+		create_country_leader = {
+			name = "Sunny Side Up"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_sunny_side_up
+			expire = "1965.1.1"
+			ideology = socialism
+			traits = {
+				hero_of_the_peasantry
+			}
+		}
+
+		}		
+	}
+	focus = { 
+		id = LAL_jam_way
+		icon = GFX_focus_LAL_jam
+		x = 7
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_farming_development
+		}
+		mutually_exclusive = {
+			focus = LAL_sunny_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_jam_crops
+		icon = GFX_focus_generic_socialist_science
+		x = 6
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_new_crops
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_harvesting
+		icon = GFX_goal_generic_construct_civilian
+		x = 8
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = industrial_complex level = 2 }
+		}		
+	}
+	focus = { 
+		id = LAL_jam_visit_chamomile
+		icon = GFX_focus_krosh_socialism
+		x = 7
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_crops
+		}
+		prerequisite = {
+			focus = LAL_jam_harvesting
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			country_event = {
+				id = lalaloopsy.4
+				days = 0
+			}
+			CVA = {
+				add_opinion_modifier = {
+    				target = LAL
+    				modifier = MAI_true_relations
+				} 
+			} 
+		}		
+	}
+	focus = { 
+		id = LAL_jam_encourage_volunteers
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_visit_chamomile
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_volunteers
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_community_bonds
+		icon = GFX_goal_generic_consumer_goods
+		x = 8
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_visit_chamomile
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_community_bonds
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_freedom_and_friendship
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 7
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_encourage_volunteers
+		}
+		prerequisite = {
+			focus = LAL_jam_community_bonds
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 5
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_guarantee_liberty
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 6
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_freedom_and_friendship
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_guarantee_liberty
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_sharing_is_caring
+		icon = GFX_goal_generic_national_unity
+		x = 8
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_freedom_and_friendship
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_sharing
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_farmer_collectives
+		icon = GFX_focus_hol_abandon_the_gold_standard
+		x = 7
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_guarantee_liberty
+		}
+		prerequisite = {
+			focus = LAL_jam_sharing_is_caring
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_jam_in_charge
+		icon = GFX_focus_LAL_jam
+		x = 7
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_jam_farmer_collectives
+		}
+		prerequisite = {
+			focus = LAL_agrarian_socialism
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_monarchy_stays
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = communism
+			}
+		create_country_leader = {
+			name = "Berry Jars 'N' Jam"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_berry_jas_n_jam
+			expire = "1965.1.1"
+			ideology = anarchist_communism
+			traits = {
+				connected_citizen
+			}
+		}
+		}		
+	}
+	focus = { 
+		id = LAL_defense
+		icon = GFX_focus_generic_strike_at_democracy2
+		x = 15
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_queenie_reign
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			country_event = {
+				id = lalaloopsy.7
+				days = 0
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_dusty_plan
+		icon = GFX_focus_LAL_dusty
+		x = 11
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_defense
+		}
+		mutually_exclusive = {
+			focus = LAL_battlescarred_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_defensive_strategy
+		icon = GFX_goal_generic_defence
+		x = 11
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_dusty_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			army_experience = 50
+			add_doctrine_cost_reduction = {
+				cost_reduction= 0.5
+				uses = 1
+				category = cat_grand_battle_plan
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_guarantee_sooty
+		icon = GFX_goal_generic_improve_relations
+		x = 10
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_defensive_strategy
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			give_guarantee = SOO
+		}		
+	}
+	focus = { 
+		id = LAL_guarantee_republic
+		icon = GFX_goal_generic_improve_relations
+		x = 12
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_defensive_strategy
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			give_guarantee = NTR
+		}		
+	}
+	focus = { 
+		id = LAL_fortification
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 13
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_dusty_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_timed_idea = {
+				idea = LAL_fortify_against_shen
+				days = 365
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_defense_lines
+		icon = GFX_goal_generic_fortify_city
+		x = 13
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_fortification
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			148 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 545
+				}
+			}
+			148 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 4065
+				}
+			}
+			153 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3476
+				}
+			}
+			153 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 3692
+				}
+			}
+			153 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6226
+				}
+			}
+			161 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6309
+				}
+			}
+			161 = {
+				add_building_construction = {
+					type = bunker
+					level = 2
+					instant_build = yes
+					province = 6336
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_military_research
+		icon = GFX_goal_generic_production2
+		x = 9
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_dusty_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 2
+				category = infantry_weapons
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_military_industry
+		icon = GFX_goal_generic_small_arms
+		x = 9
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_military_research
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = arms_factory level = 2 }
+		}		
+	}
+	focus = { 
+		id = LAL_train_defenders
+		icon = GFX_focus_generic_coastal_fort
+		x = 11
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_guarantee_sooty
+		}
+		prerequisite = {
+			focus = LAL_guarantee_republic
+		}
+		prerequisite = {
+			focus = LAL_military_industry
+		}
+		prerequisite = {
+			focus = LAL_defense_lines
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_prepared_defense
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_peace_in_our_time
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 11
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_train_defenders
+		}
+		available = {
+				LAL = {
+				NOT = {
+					is_puppet = yes
+					}
+					}
+				GON = {
+				OR = {
+					is_puppet = yes
+				NOT = {
+					has_government = fascism
+					}
+				NOT = {
+					exists = yes
+					}
+					}
+					}
+			}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_guarantee_elwood
+		icon = GFX_goal_generic_improve_relations
+		x = 11
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_peace_in_our_time
+		}
+		available = {
+				ELW = {
+				NOT = {
+					is_puppet = yes
+					}
+					}
+			}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			give_guarantee = ELW
+		}		
+	}
+	focus = { 
+		id = LAL_dusty_in_charge
+		icon = GFX_focus_LAL_dusty
+		x = 11
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_guarantee_elwood
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_monarchy_stays
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = democratic
+			}
+		create_country_leader = {
+			name = "Praire Dusty Trails"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_praire_dusty_trails
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+				freedom_fighter
+			}
+		}
+
+		}		
+	}
+	focus = { 
+		id = LAL_join_greenland
+		icon = GFX_focus_tabaluga
+		x = 11
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_dusty_in_charge
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			GRN = {
+			country_event = {
+				id = lalaloopsy.8
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_battlescarred_plan
+		icon = GFX_focus_LAL_sir
+		x = 19
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_defense
+		}
+		mutually_exclusive = {
+			focus = LAL_dusty_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_anti_shen_coalition
+		icon = GFX_goal_generic_national_unity
+		x = 19
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_battlescarred_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_faction = "Anti-Shen Coalition"
+			army_experience = 15
+		}		
+	}
+	focus = { 
+		id = LAL_expand_knight_order
+		icon = GFX_focus_generic_little_entente
+		x = 17
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_battlescarred_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_manpower = 15000
+		}		
+	}
+	focus = { 
+		id = LAL_keep_high_standards
+		icon = GFX_focus_generic_support_the_left_right
+		x = 17
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_expand_knight_order
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_knighthood
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_hand_crafting_weapons
+		icon = GFX_focus_focus_fra_maquis
+		x = 21
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_battlescarred_plan
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+add_equipment_to_stockpile = {
+                    type = infantry_equipment_old
+                    amount = 1500
+                }
+		}		
+	}
+	focus = { 
+		id = LAL_oganize_military_production
+		icon = GFX_goal_generic_military_sphere
+		x = 21
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_hand_crafting_weapons
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_offsite_building = { type = arms_factory level = 1 }
+		}		
+	}
+	focus = { 
+		id = LAL_invite_sooty
+		icon = GFX_goal_generic_major_alliance
+		x = 18
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_anti_shen_coalition
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			SOO = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_invite_northern_republic
+		icon = GFX_goal_generic_major_alliance
+		x = 20
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_anti_shen_coalition
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			NTR = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_diffuse_the_menace
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 19
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_keep_high_standards
+		}
+		prerequisite = {
+			focus = LAL_oganize_military_production
+		}
+		prerequisite = {
+			focus = LAL_invite_sooty
+		}
+		prerequisite = {
+			focus = LAL_invite_northern_republic
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			create_wargoal = {
+    			type = annex_everything
+    			target = GON
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_reform_the_alliance
+		icon = GFX_focus_usa_union_representation_act
+		x = 19
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_diffuse_the_menace
+		}
+		available = {
+				LAL = {
+				NOT = {
+					is_puppet = yes
+					}
+					}
+				GON = {
+				OR = {
+					is_puppet = yes
+				NOT = {
+					has_government = fascism
+					}
+				NOT = {
+					exists = yes
+					}
+					}
+					}
+			}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+set_faction_name = "Northern Alliance"
+		}		
+	}
+	focus = { 
+		id = LAL_invite_elwood
+		icon = GFX_goal_generic_major_alliance
+		x = 19
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_reform_the_alliance
+		}
+		available = {
+				ELW = {
+				NOT = {
+					is_puppet = yes
+					}
+					}
+			}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			ELW = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_batlescarred_in_charge
+		icon = GFX_focus_LAL_sir
+		x = 19
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_invite_elwood
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_monarchy_stays
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = democratic
+			}
+		create_country_leader = {
+			name = "Sir Battlescarred"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_sir_battlescarred
+			expire = "1965.1.1"
+			ideology = conservatism
+			traits = {
+				democratic_crusader
+			}
+		}
+
+		}		
+	}
+	focus = { 
+		id = LAL_war_with_flower_hill
+		icon = GFX_focus_ger_great_red_menace
+		x = 19
+		y = 11
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_batlescarred_in_charge
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			DUC = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+			SQU = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+			TRL = {
+			country_event = {
+				id = lalaloopsy.1
+				days = 0
+			}
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = FLO
+			}
+			create_wargoal = {
+    			type = annex_everything
+    			target = WOL
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_liberated
+		icon = GFX_goal_generic_demand_territory
+		x = 15
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_train_defenders
+			focus = LAL_diffuse_the_menace
+		}
+		available = {
+				LAL = {
+					is_puppet = yes
+					}
+				GON = {
+				OR = {
+					is_puppet = yes
+				NOT = {
+					has_government = fascism
+					}
+				NOT = {
+					exists = yes
+					}
+					}
+					}
+			}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_restored_monarchy
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 15
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_liberated
+		}
+		available = {
+				LAL = {
+					has_government = monarchism
+					}
+					}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_popularity = {
+    			ideology = monarchism
+    			popularity = 0.15
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_monarchy_stays
+		icon = GFX_focus_generic_monarchy_2
+		x = 15
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_restored_monarchy
+			focus = LAL_industrial_democracy
+			focus = LAL_agrarian_socialism
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_country_leader_trait = popular_queen
+		}		
+	}
+	focus = { 
+		id = LAL_democracy_installed
+		icon = GFX_goal_support_democracy
+		x = 13
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_liberated
+		}
+		available = {
+				LAL = {
+					has_government = democratic
+					}
+					}
+		ai_will_do = { 
+			factor = 10
+		} 
+
+		completion_reward = { 
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.15
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_socialism_installed
+		icon = GFX_focus_por_workers_of_iberia
+		x = 17
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_liberated
+		}
+		available = {
+				LAL = {
+					has_government = communism
+					}
+					}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_popularity = {
+    			ideology = communism
+    			popularity = 0.15
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_industrial_development
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 25
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_queenie_reign
+		}
+		mutually_exclusive = {
+			focus = LAL_farming_development
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_forest_way
+		icon = GFX_focus_LAL_forest
+		x = 23
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_industrial_development
+		}
+		mutually_exclusive = {
+			focus = LAL_ace_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_forest_rural_industries
+		icon = GFX_focus_generic_industry_3
+		x = 22
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_urban_industries
+		icon = GFX_focus_generic_industry_1
+		x = 24
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = city
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+					random_owned_state = {
+				limit = {
+					has_state_category = city
+				}
+				add_building_construction= { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_economic_investments
+		icon = GFX_focus_mex_privatisation
+		x = 23
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_rural_industries
+		}
+		prerequisite = {
+			focus = LAL_forest_urban_industries
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_economic_investments
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_machines_efficiency
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_economic_investments
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_machinery
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_environmental_preserves
+		icon = GFX_focus_generic_self_management
+		x = 24
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_economic_investments
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_extra_state_shared_building_slots = 2
+			}		
+		}		
+	}
+	focus = { 
+		id = LAL_forest_life_quality
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 23
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_machines_efficiency
+		}
+		prerequisite = {
+			focus = LAL_forest_environmental_preserves
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_life_quality
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_healthcare
+		icon = GFX_focus_generic_concessions
+		x = 22
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_life_quality
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_ideas = {
+				LAL_healthcare
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_urbanization
+		icon = GFX_focus_generic_self_management
+		x = 24
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_life_quality
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_developed
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		x = 23
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_forest_healthcare
+		}
+		prerequisite = {
+			focus = LAL_forest_urbanization
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_way
+		icon = GFX_focus_LAL_ace
+		x = 27
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_industrial_development
+		}
+		mutually_exclusive = {
+			focus = LAL_forest_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+
+		}		
+	}
+	focus = { 
+		id = LAL_ace_education
+		icon = GFX_focus_generic_military_academy
+		x = 26
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			add_research_slot = 1
+		}		
+	}
+	focus = { 
+		id = LAL_ace_engineering
+		icon = GFX_goal_generic_production
+		x = 28
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_way
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+				add_tech_bonus = {
+					name = industrial_bonus
+					bonus = 1.0
+					uses = 5
+					category = industry
+				}	
+		}		
+	}
+	focus = { 
+		id = LAL_ace_urbanization_first
+		icon = GFX_focus_vver
+		x = 27
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_education
+		}
+		prerequisite = {
+			focus = LAL_ace_engineering
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 26
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_urbanization_first
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			every_owned_state = {
+				add_building_construction = { 
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_electricity
+		icon = GFX_goal_generic_radar
+		x = 28
+		y = 5
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_urbanization_first
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+				add_tech_bonus = {
+					name = electronics_bonus
+					bonus = 1.0
+					uses = 3
+					category = electronics
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_urbnization_second
+		icon = GFX_focus_rbmk
+		x = 27
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_infrastructure
+		}
+		prerequisite = {
+			focus = LAL_ace_electricity
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+					random_owned_state = {
+				limit = {
+					has_state_category = rural
+				}
+				set_state_category = city
+				}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_military
+		icon = GFX_focus_generic_combined_arms
+		x = 26
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_urbnization_second
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			random_owned_state = {
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 28
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_urbnization_second
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+			random_owned_state = {
+				add_building_construction = {
+    				type = industrial_complex
+    				level = 1
+    				instant_build = yes
+				}
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_ace_modernized
+		icon = GFX_focus_atom
+		x = 27
+		y = 8
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_military
+		}
+		prerequisite = {
+			focus = LAL_ace_industry
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+			hidden_effect = {
+				preindustrial_to_modern = yes
+			}
+		}		
+	}
+	focus = { 
+		id = LAL_industrial_democracy
+		icon = GFX_goal_support_democracy
+		x = 25
+		y = 9
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_ace_modernized
+			focus = LAL_forest_developed
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+		add_popularity = {
+    			ideology = democratic
+    			popularity = 0.4
+			}
+			add_research_slot = 2
+		}		
+	}
+	focus = { 
+		id = LAL_ace_in_charge
+		icon = GFX_focus_LAL_ace
+		x = 27
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_industrial_democracy
+		}
+		prerequisite = {
+			focus = LAL_ace_modernized
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_forest_in_charge
+				has_completed_focus = LAL_monarchy_stays
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = democratic
+			}
+		create_country_leader = {
+			name = "Ace Fender Bender"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_ace_fender_bender
+			expire = "1965.1.1"
+			ideology = technocracy
+			traits = {
+				technocrat
+			}
+		}
+		}		
+	}
+	focus = { 
+		id = LAL_forest_in_charge
+		icon = GFX_focus_LAL_forest
+		x = 23
+		y = 10
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = {
+			focus = LAL_industrial_democracy
+		}
+		prerequisite = {
+			focus = LAL_forest_developed
+		}
+		available = {
+			NOT = {
+				has_completed_focus = LAL_sunny_in_charge
+				has_completed_focus = LAL_jam_in_charge
+				has_completed_focus = LAL_dusty_in_charge
+				has_completed_focus = LAL_batlescarred_in_charge
+				has_completed_focus = LAL_monarchy_stays
+				has_completed_focus = LAL_ace_in_charge
+			}
+		}
+		ai_will_do = { 
+			factor = 10
+		} 
+		completion_reward = { 
+			set_politics = {
+				ruling_party = democratic
+			}
+		create_country_leader = {
+			name = "Forest Evergreen"
+			desc = "POLITICS_TBA_I_DESC"
+			picture = GFX_portrait_forest_evergreen
+			expire = "1965.1.1"
+			ideology = moderatism
+			traits = {
+				industry_reformer
+			}
+		}
+		}		
+	}
+	focus = {
+		id = LAL_generic_army_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_allies_build_infantry
+		x = 37
+		y = 0
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		available = {
+					date > 1938.1.1
+		}
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_weapon_development
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = LAL_generic_army_effort }
+		x = -3
+		y = 1
+		relative_position_id = LAL_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_artillery_research
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = LAL_generic_weapon_development }
+		x = 1
+		y = 1
+		relative_position_id = LAL_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = artillery_bonus
+				bonus = 1.0
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_new_officer_corps
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = LAL_generic_artillery_research }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_artillery_research
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 10
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_motorization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = LAL_generic_army_effort }
+		bypass = { has_tech = motorised_infantry }
+		x = 3
+		y = 1
+		relative_position_id = LAL_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				bonus = 0.25
+				technology = motorised_infantry
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_doctrine_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = LAL_generic_army_effort }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_army_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_weapons_and_co
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = LAL_generic_weapon_development }
+		x = -1
+		y = 1
+		relative_position_id = LAL_generic_weapon_development
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_practice_reverse_engineering
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_production2
+		prerequisite = { focus = LAL_generic_motorization_effort }
+		x = -1
+		y = 1
+		relative_position_id = LAL_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_tech_bonus = {
+				name = infantry_bonus
+				bonus = 1.0
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 1.0
+				uses = 1
+				category = electronics
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_study_foreign_tanks
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = LAL_generic_practice_reverse_engineering }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_practice_reverse_engineering
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_mechanization_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_build_tank
+		prerequisite = { focus = LAL_generic_motorization_effort }
+		x = 1
+		y = 1
+		relative_position_id = LAL_generic_motorization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = motorized_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_doctrine_effort_2
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = LAL_generic_doctrine_effort }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_doctrine_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_military_academy
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = LAL_generic_doctrine_effort_2 }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_doctrine_effort_2
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			army_experience = 5
+			add_ideas = {
+				generic_war_studies_university
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_weapon_development_3
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = LAL_generic_weapons_and_co }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_weapons_and_co
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = infantry_artillery_bonus
+				ahead_reduction = 2
+				uses = 1
+				category = infantry_weapons
+				category = artillery
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_armor_effort
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = LAL_generic_mechanization_effort }
+		x = 0
+		y = 1
+		relative_position_id = LAL_generic_mechanization_effort
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = armor_bonus
+				bonus = 1.0
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = LAL_generic_special_forces
+		ai_will_do = { 
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 2
+			}
+		} 
+		icon = GFX_goal_generic_special_forces
+		prerequisite = { focus = LAL_generic_weapon_development_3 }
+		prerequisite = { focus = LAL_generic_military_academy }
+		prerequisite = { focus = LAL_generic_armor_effort }
+		prerequisite = { focus = LAL_generic_new_officer_corps }
+		prerequisite = { focus = LAL_generic_study_foreign_tanks }
+		x = 4
+		y = 1
+		relative_position_id = LAL_generic_weapon_development_3
+		cost = 7.25
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+			add_ideas = special_forces
+			add_tech_bonus = {
+				name = special_forces_bonus
+				bonus = 1.0
+				uses = 1
+				technology = paratroopers
+				technology = paratroopers2
+				technology = tech_mountaineers
+				technology = tech_mountaineers2
+			}
+		}
+	}
+
+}

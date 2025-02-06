@@ -1,0 +1,239 @@
+﻿###########################
+# CK Events
+###########################
+
+add_namespace = lalaloopsy
+
+country_event = {
+	id = lalaloopsy.1
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.1.t
+	desc = lalaloopsy.1.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.1.a
+		ai_chance = {
+			base = 100
+		}
+				hidden_effect = {
+		LAL = {
+			country_event = {
+				id = lalaloopsy.2
+				days = 1
+			}	
+			}		
+		}	
+		}
+	option = {
+		name = lalaloopsy.1.b
+				hidden_effect = {
+		LAL = {
+			country_event = {
+				id = lalaloopsy.3
+				days = 1
+			}
+			}
+	}
+}
+}
+country_event = {
+	id = lalaloopsy.2
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.2.t
+	desc = lalaloopsy.2.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.2.a
+		LAL = {
+		add_to_faction = FROM
+		}	
+		}
+}
+country_event = {
+	id = lalaloopsy.3
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.3.t
+	desc = lalaloopsy.3.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.3.a	
+		}
+}
+country_event = {
+	id = lalaloopsy.4
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.4.t
+	desc = lalaloopsy.4.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.4.a	
+			add_timed_idea = {
+				idea = LAL_socialist_modernizaion
+				days = 500
+			}
+			country_event = {
+				id = lalaloopsy.5
+				days = 500
+			}
+		}
+}
+country_event = {
+	id = lalaloopsy.5
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.5.t
+	desc = lalaloopsy.5.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.5.a	
+			hidden_effect = {
+			swap_ideas = {
+				remove_idea = pre-industrial_tech
+				add_idea = modern_tech_idea
+			}
+				preindustrial_to_modern = yes
+			}
+		}
+}
+country_event = {
+	id = lalaloopsy.6
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.6.t
+	desc = lalaloopsy.6.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.6.a	
+			hidden_effect = {
+			}
+		}
+}
+country_event = {
+	id = lalaloopsy.7
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.7.t
+	desc = lalaloopsy.7.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.7.a	
+		ai_chance = {
+			base = 99
+		}
+		
+			hidden_effect = {
+			complete_national_focus = LAL_dusty_plan
+			}
+		}
+	option = {
+		name = lalaloopsy.7.b	
+		ai_chance = {
+			base = 1
+		}
+			hidden_effect = {
+			complete_national_focus = LAL_battlescarred_plan
+			}
+		}
+}
+country_event = {
+	id = lalaloopsy.8
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.8.t
+	desc = lalaloopsy.8.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.8.a
+		ai_chance = {
+			base = 100
+		}
+				hidden_effect = {
+		LAL = {
+			country_event = {
+				id = lalaloopsy.9
+				days = 1
+			}	
+			}		
+		}	
+		}
+	option = {
+		name = lalaloopsy.8.b
+				hidden_effect = {
+		LAL = {
+			country_event = {
+				id = lalaloopsy.10
+				days = 1
+			}
+			}
+	}
+}
+}
+country_event = {
+	id = lalaloopsy.9
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.9.t
+	desc = lalaloopsy.9.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = no
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.9.a
+		GRN = {
+		add_to_faction = LAL
+		}	
+		}
+}
+country_event = {
+	id = lalaloopsy.10
+	immediate = {log = "[GetDateText]: [Root.GetName]: event chamomilevalley.2"}
+	title = lalaloopsy.10.t
+	desc = lalaloopsy.10.d
+	picture = GFX_report_lalaloopsy
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = lalaloopsy.10.a	
+		}
+}

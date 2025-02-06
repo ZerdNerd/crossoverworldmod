@@ -1682,7 +1682,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = ARE_generic__army_effort }
+		prerequisite = { focus = ARE_generic_army_effort }
 		x = -3
 		y = 1
 		relative_position_id = ARE_generic_army_effort
@@ -1710,7 +1710,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = ARE_generic__weapon_development }
+		prerequisite = { focus = ARE_generic_weapon_development }
 		x = 1
 		y = 1
 		relative_position_id = ARE_generic_weapon_development
@@ -1738,7 +1738,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_focus_generic_military_mission
-		prerequisite = { focus = ARE_generic__artillery_research }
+		prerequisite = { focus = ARE_generic_artillery_research }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_artillery_research
@@ -1766,7 +1766,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = ARE_generic__army_effort }
+		prerequisite = { focus = ARE_generic_army_effort }
 		bypass = { has_tech = motorised_infantry }
 		x = 3
 		y = 1
@@ -1794,7 +1794,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = ARE_generic__army_effort }
+		prerequisite = { focus = ARE_generic_army_effort }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_army_effort
@@ -1822,7 +1822,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = ARE_generic__weapon_development }
+		prerequisite = { focus = ARE_generic_weapon_development }
 		x = -1
 		y = 1
 		relative_position_id = ARE_generic_weapon_development
@@ -1850,7 +1850,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_production2
-		prerequisite = { focus = ARE_generic__motorization_effort }
+		prerequisite = { focus = ARE_generic_motorization_effort }
 		x = -1
 		y = 1
 		relative_position_id = ARE_generic_motorization_effort
@@ -1884,7 +1884,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = ARE_generic__practice_reverse_engineering }
+		prerequisite = { focus = ARE_generic_practice_reverse_engineering }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_practice_reverse_engineering
@@ -1912,7 +1912,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = ARE_generic__motorization_effort }
+		prerequisite = { focus = ARE_generic_motorization_effort }
 		x = 1
 		y = 1
 		relative_position_id = ARE_generic_motorization_effort
@@ -1940,7 +1940,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = ARE_generic__doctrine_effort }
+		prerequisite = { focus = ARE_generic_doctrine_effort }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_doctrine_effort
@@ -1968,7 +1968,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_position_armies
-		prerequisite = { focus = ARE_generic__doctrine_effort_2 }
+		prerequisite = { focus = ARE_generic_doctrine_effort_2 }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_doctrine_effort_2
@@ -1994,7 +1994,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = ARE_generic__weapons_and_co }
+		prerequisite = { focus = ARE_generic_weapons_and_co }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_weapons_and_co
@@ -2023,7 +2023,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = ARE_generic__mechanization_effort }
+		prerequisite = { focus = ARE_generic_mechanization_effort }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_mechanization_effort
@@ -2051,11 +2051,11 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_special_forces
-		prerequisite = { focus = ARE_generic__weapon_development_3 }
-		prerequisite = { focus = ARE_generic__military_academy }
-		prerequisite = { focus = ARE_generic__armor_effort }
-		prerequisite = { focus = ARE_generic__new_officer_corps }
-		prerequisite = { focus = ARE_generic__study_foreign_tanks }
+		prerequisite = { focus = ARE_generic_weapon_development_3 }
+		prerequisite = { focus = ARE_generic_military_academy }
+		prerequisite = { focus = ARE_generic_armor_effort }
+		prerequisite = { focus = ARE_generic_new_officer_corps }
+		prerequisite = { focus = ARE_generic_study_foreign_tanks }
 		x = 4
 		y = 1
 		relative_position_id = ARE_generic_weapon_development_3
@@ -2122,8 +2122,8 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = ARE_generic__naval_effort }
-		mutually_exclusive = { focus = ARE_generic__large_navy }
+		prerequisite = { focus = ARE_generic_naval_effort }
+		mutually_exclusive = { focus = ARE_generic_large_navy }
 		x = -3
 		y = 1
 		relative_position_id = ARE_generic_naval_effort
@@ -2160,8 +2160,8 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = ARE_generic__naval_effort }
-		mutually_exclusive = { focus = ARE_generic__flexible_navy }
+		prerequisite = { focus = ARE_generic_naval_effort }
+		mutually_exclusive = { focus = ARE_generic_flexible_navy }
 		x = 3
 		y = 1
 		relative_position_id = ARE_generic_naval_effort
@@ -2194,7 +2194,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_focus_generic_military_academy
-		prerequisite = { focus = ARE_generic__flexible_navy focus = ARE_generic__large_navy }
+		prerequisite = { focus = ARE_generic_flexible_navy focus = ARE_generic_large_navy }
 		x = -4
 		y = 1
 		relative_position_id = ARE_generic_large_navy
@@ -2226,7 +2226,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_amphibious_assault
-		prerequisite = { focus = ARE_generic__naval_academy }
+		prerequisite = { focus = ARE_generic_naval_academy }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_naval_academy
@@ -2259,7 +2259,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_focus_generic_destroyer
-		prerequisite = { focus = ARE_generic__flexible_navy focus = ARE_generic__large_navy }
+		prerequisite = { focus = ARE_generic_flexible_navy focus = ARE_generic_large_navy }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_flexible_navy
@@ -2291,7 +2291,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = ARE_generic__destroyer_effort }
+		prerequisite = { focus = ARE_generic_destroyer_effort }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_destroyer_effort
@@ -2323,7 +2323,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_navy_carrier
-		prerequisite = { focus = ARE_generic__large_navy focus = ARE_generic__flexible_navy }
+		prerequisite = { focus = ARE_generic_large_navy focus = ARE_generic_flexible_navy }
 		x = -2
 		y = 1
 		relative_position_id = ARE_generic_large_navy
@@ -2359,7 +2359,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_air_fighter2
-		prerequisite = { focus = ARE_generic__floating_airfields }
+		prerequisite = { focus = ARE_generic_floating_airfields }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_floating_airfields
@@ -2391,7 +2391,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = ARE_generic__large_navy focus = ARE_generic__flexible_navy }
+		prerequisite = { focus = ARE_generic_large_navy focus = ARE_generic_flexible_navy }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_large_navy
@@ -2424,7 +2424,7 @@ add_equipment_to_stockpile = {
 			}
 		} 
 		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = ARE_generic__cruiser_effort }
+		prerequisite = { focus = ARE_generic_cruiser_effort }
 		x = 0
 		y = 1
 		relative_position_id = ARE_generic_cruiser_effort

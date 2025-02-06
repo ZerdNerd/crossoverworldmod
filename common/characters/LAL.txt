@@ -33,20 +33,6 @@ characters={
 			id=-1
 		}
 	}
-	LAL_lalaloopsy_council={
-		name="Lalaloopsy Council"
-		portraits={
-			civilian={
-				large="gfx/leaders/LAL/council.dds"
-			}
-		}
-		country_leader={
-			desc="POLITICS_TBD_DESC"
-			ideology=centrism
-			expire="1965.1.1.1"
-			id=-1
-		}
-	}
 	LAL_bob_smith={
 		name="Bob Smith"
 		portraits={
@@ -60,4 +46,252 @@ characters={
 			id=-1
 		}
 	}
+	LAL_queenie_red_heart={
+		name="Queenie Red Heart"
+		portraits={
+			civilian={
+				large="GFX_portrait_queenie_red_heart"
+			}
+		}
+		gender = female
+		country_leader={
+			ideology=administrative_monarchy
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_praire_dusty_trails={
+		name="Praire Dusty Trails"
+		portraits={
+			civilian={
+				large="GFX_portrait_praire_dusty_trails"
+			}
+			army={
+				small="GFX_idea_LAL_praire"
+			}
+		}
+		gender = female
+		advisor={
+			ledger = army
+			idea_token = LAL_praire_dusty_trails_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				army_chief_defensive_3
+			}
+			}
+		corps_commander={
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_sir_battlescarred={
+		name="Sir Battlescarred"
+		portraits={
+			civilian={
+				large="GFX_portrait_sir_battlescarred"
+			}
+			army={
+				small="GFX_idea_LAL_sir"
+			}
+		}
+		advisor={
+			ledger = army
+			idea_token = LAL_sir_battlescarred_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				army_chief_offensive_3
+			}
+			}
+		field_marshal={
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_sunny_side_up={
+		name="Sunny Side Up"
+		portraits={
+			civilian={
+				large="GFX_portrait_sunny_side_up"
+			}
+		}
+		gender = female
+		country_leader={
+			ideology=socialism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_berry_jars_n_jam={
+		name="Berry Jars 'N' Jam"
+		portraits={
+			civilian={
+				large="GFX_portrait_berry_jas_n_jam"
+			}
+		}
+		gender = female
+		country_leader={
+			ideology=anarchist_communism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_forest_evergreen={
+		name="Forest Evergreen"
+		portraits={
+			civilian={
+				large="GFX_portrait_forest_evergreen"
+			}
+		}
+		country_leader={
+			ideology=moderatism
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_ace_fender_bender={
+		name="Ace Fender Bender"
+		portraits={
+			civilian={
+				large="GFX_portrait_ace_fender_bender"
+			}
+		}
+		country_leader={
+			ideology=technocracy
+			expire="1948.1.1.12"
+			id=-1
+		}
+	}
+	LAL_bea_spells_a_lot={
+		name="Bea Spells-a-Lot"
+		portraits={
+			army={
+				small="GFX_idea_LAL_bea"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = LAL_bea_spells_a_lot_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				the_thinker
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	LAL_jewel_sparkles={
+		name="Jewel Sparkles"
+		portraits={
+			army={
+				small="GFX_idea_LAL_jewel"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = LAL_jewel_sparkles_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				popular_figurehead3
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	LAL_crumbs_sugar_cookie={
+		name="Crumbs Sugar Cookie"
+		portraits={
+			army={
+				small="GFX_idea_LAL_crumbs"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = LAL_crumbs_suar_cookie_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				silent_workhorse
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	LAL_mittens_fluff_n_stuff={
+		name="Mittens Fluff 'N' Stuff"
+		portraits={
+			army={
+				small="GFX_idea_LAL_mittens"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = LAL_mittens_fluff_n_stuff_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				compassionate_commoner
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+	LAL_spot_splatter_splash={
+		name="Spot Splatter Splash"
+		portraits={
+			army={
+				small="GFX_idea_LAL_spot"
+			}
+		}
+		gender = female
+		advisor={
+			slot = political_advisor
+			idea_token = LAL_spot_splatter_splash_i
+			allowed = {
+				original_tag = LAL
+			}
+			traits = {
+				editor
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
 }
